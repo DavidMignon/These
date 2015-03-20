@@ -1,0 +1,134 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry}
+
+\usepackage[utf8]{inputenc}   % le fichier .tex est en UTF-8     
+\usepackage[francais]{babel}  %typo française                    
+\usepackage[T1]{fontenc}      % encodage des fonts latex         
+\usepackage{lmodern}                                             
+\usepackage{microtype}        % typo supplémentaires             
+
+
+\usepackage{multirow}  %  pour des tableaux multilignes/multicolonnes
+
+\usepackage{graphicx} %inclusion de graphiques
+
+\usepackage{hyperref} % liens dans le pdf
+\hypersetup{%
+  pdftitle={Title},
+  pdfauthor={Author1, Author2},
+  pdfkeywords={keywords}
+  pdfsubject={article},
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
+  citecolor=black
+}
+
+
+
+
+\begin{document}
+
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=8.45cm]{marcel_seq/1BE9/similarity_bypos.pdf} &
+       \includegraphics[width=8.45cm]{marcel_seq/1BE9/similarity_byseq_frequency.pdf} \\
+     \end{tabular}
+
+     \caption{1BE9 séquences de Marcel.}
+     \label{1ABO}
+   \end{figure}
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=8.45cm]{marcel_seq/1CJ1/similarity_bypos.pdf} &
+       \includegraphics[width=8.45cm]{marcel_seq/1CJ1/similarity_byseq_frequency.pdf} \\
+     \end{tabular}
+
+     \caption{1CJ1 séquences de Marcel.}
+     \label{1ABO}
+   \end{figure}
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=8.45cm]{marcel_seq/1CKA/similarity_bypos.pdf} &
+       \includegraphics[width=8.45cm]{marcel_seq/1CKA/similarity_byseq_frequency.pdf} \\
+     \end{tabular}
+
+     \caption{1CKA séquences de Marcel.}
+     \label{1ABO}
+   \end{figure}
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=8.45cm]{marcel_seq/1CSK/similarity_bypos.pdf} &
+       \includegraphics[width=8.45cm]{marcel_seq/1CSK/similarity_byseq_frequency.pdf} \\
+     \end{tabular}
+
+     \caption{1CSK séquences de Marcel.}
+     \label{1ABO}
+   \end{figure}
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=8.45cm]{marcel_seq/1QAU/similarity_bypos.pdf} &
+       \includegraphics[width=8.45cm]{marcel_seq/1QAU/similarity_byseq_frequency.pdf} \\
+     \end{tabular}
+
+     \caption{1QAU séquences de Marcel.}
+     \label{1ABO}
+   \end{figure}
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=8.45cm]{marcel_seq/1UTI/similarity_bypos.pdf} &
+       \includegraphics[width=8.45cm]{marcel_seq/1UTI/similarity_byseq_frequency.pdf} \\
+     \end{tabular}
+
+     \caption{1UTI séquences de Marcel.}
+     \label{1ABO}
+   \end{figure}
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=8.45cm]{marcel_seq/1ZFP/similarity_bypos.pdf} &
+       \includegraphics[width=8.45cm]{marcel_seq/1ZFP/similarity_byseq_frequency.pdf} \\
+     \end{tabular}
+
+     \caption{1ZFP séquences de Marcel.}
+     \label{1ABO}
+   \end{figure}
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=8.45cm]{marcel_seq/2FE5/similarity_bypos.pdf} &
+       \includegraphics[width=8.45cm]{marcel_seq/2FE5/similarity_byseq_frequency.pdf} \\
+     \end{tabular}
+
+     \caption{2FE5 séquences de Marcel.}
+     \label{1ABO}
+   \end{figure}
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,29 @@
+Detailed balance is a simple and powerful rule to describe the dynamics of two-state systems.
+
+If you know the probability of a transition from a state A to the other state B of a physical system (in some appropriate time unit), and you also know the probability of the reverse reaction , then you automatically know what is equilibrium condition for N bodies distributed in the two states:
+
+.
+
+The above equation, together with the hypothesis (for a given total N), provides the "occupation numbers"  and of the two states at equilibrium. Since there are many physical systems in Nature which consist of two states, detailed balance is quite useful, and the dynamics of these systems end up being all similar to each other.
+
+A few years ago, after cleaning the tiles of our apartment in a seaside resort from the sand brought in by my children, I wrote a post explaining how detailed balance could be used by garbage collectors to optimize their technique of sweeping the floor. Today I was reminded of the few notions I had put together there when I tried to convince my son that, in order to get rid of a bee who had paid visit to his room, the best strategy was not necessarily the one of opening the window.
+
+The reasoning is the following: there is a sizable chance for the bee to find the way out in, say, five minutes. However, there are bees outside too, and the chance that any one of them comes in by the open window in the same time interval is small but not negligible.
+
+The act of opening the window creates a non-equilibrium situation, and it is not clear whether the equilibrium toward which the system goes is one with fewer bees in the room, or more.
+
+Say that the chance that the bee inside the room leaves is , and say that one of the bees around the house has a chance of getting in. Now, if there are more than 20 bees outside, detailed balance predicts that the system tends to go toward a situation with more than one bee in the room! That is evident by rewriting the equation above:
+
+
+ 
+which yields
+
+
+    
+or, if the probabilities are of 1% and 20% as hypothesized above,  for .
+
+Now, the relation of detailed balance is an equilibrium condition. However, the motion of bees in and out of the room is a stochastic process subjected to fluctuations; for small N, one may observe any population distribution a finite fraction of the time.
+
+Indeed, as I was about to conclude my explanation of the maths above to my son, arguing that there were far too many bees outside for his strategy to succeed, the bee quietly flew out of the window, my son closed it, and I was immediately reminded that humans, like Maxwell's Daemon, have the power to invert the natural evolution of systems toward the state of maximum entropy.
+
+Entropy, however, will have to wait to be explained to my son. At least until I figure out an everyday example which cannot be cracked by such obvious cheating! 

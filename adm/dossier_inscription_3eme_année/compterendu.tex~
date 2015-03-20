@@ -1,0 +1,63 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}   % le fichier .tex est en UTF-8     
+\usepackage[francais]{babel}  %typo française                    
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{pdfcolmk}
+\usepackage{setspace}
+\usepackage[numbers,super,comma,sort&compress]{natbib}
+\renewcommand{\bibnumfmt}[1]{#1.}
+\bibliographystyle{jpc}
+\usepackage{hyperref}
+\hypersetup{%
+  pdftitle={Compte rendu de l'avancement des travaux - 1ere année de thèse},
+  pdfauthor={David Mignon},
+  pdfkeywords={keywords}
+  pdfsubject={article},
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
+  citecolor=black
+}
+
+\title{Compte rendu de l'avancement des travaux - 2ème année de thèse}
+
+\author{David Mignon}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{spacing}{1.0}
+
+  Sujet de thèse:
+  Computational protein design (CPD): un outil pour l'ingénierie des protéines et la biologie synthétique.
+ 
+  Le CPD est en développement au sein de notre laboratoire depuis déjà quelques années, avec plusieurs succès à son actif.
+  Ce sont ces résultats prometteurs qui fondent notre motivation à aller de l'avant en améliorant nos outils, en enrichissant 
+  nos programmes pour progresser encore dans nos résultats. En particulier, mon travail se concentre sur le problème de l'exploration de l'espace des séquences d'acides aminées et son contrôle.
+
+  Cette année un système d'exécution parallèle a été ajouté à notre programme de recherche de séquences (proteus). Il s'agit d'une parallélisation de type mémoire partagée effectue avec la bibliothèque openMP. En plus d'une meilleure utilisation de la mémoire des ordinateurs, cela nous a permis d'ajouter un autre algorithme de recherche le Monte Carlo avec échange de répliques (MCER). Cet algorithme est une évolution du Monte Carlo qui respecte les propriétés importantes et permet en plus des sauts énergétiques.
+  Alors, une série de comparaisons entre les algorithmes de proteus ont été effectuées. Ces comparaisons portent sur trois familles de protéines (SH2,SH3 et PDZ) avec dans chaque famille deux ou trois représentants. Le jeu de données constitué a également été utilisé pour optimiser certain paramètre de MCER: distribution des températures, nombre de répliques, fréquences des échanges, etc. Les comparaisons montrent une amélioration de l'exploration de l'espace. 
+
+  Toujours pour évaluer proteus, nous avons utilisé le programme toulbar2 d'une équipe de l'Université de Toulouse (UMR792) qui propose un algorithme de recherche exacte de type Dead End Elimination (DEE) dans un espace limité. Nous avons alors fixé plusieurs acides aminés de nos protéines afin de simplifier l'espace de recherche. Les résultats dans ce cadre confirment les qualités de proteus.
+
+  Un objectif important de notre projet est le passable d'un modèle à squelette de protéine fixe vers un modèle multi-squelette. Pour cet objectif plusieurs choses ont été faites:
+Une nouvelle version de proteus a été écrite qui fusionne le travail de Karen Druart (doctorante dans l'équipe) sur le modèle multi-squelette  avec le MCER. Notre programme de calcul d'énergie (Xplor) a été enrichi d'un système extensible de gestions des coordonnées des atomes. Les scripts ont été rendus plus modulaire en séparant des phases de préparation du modèle avec des phases de calcul de l'énergie.     
+
+  Maintenant, il faut poursuivre la mise au point du proteus multi-squelette. Une protéine PDZ avec deux squelettes est à l'étude. L'expérience avec le toulbar2 nous conduit à penser qu'il serait possible d'assouplir les critères de sélections du DEE pour obtenir un nouvel algorithme prometteur. Pour l'étape suivante du squelette flexible, une collaboration avec ``la maison de la simulation'' au CEA et l'IDRIS débutée cette année permettra le passage de nos programmes sur les super-ordinateurs. Par ailleurs, des discussions avec des utilisateurs à l'INSERM ont révélé qu'un meilleur système de modifications de séquences est nécessaire dans proteus.   
+
+
+
+\end{spacing}
+
+
+\end{document}

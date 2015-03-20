@@ -1,0 +1,30 @@
+Procedure to demonstrate the validity of MC algo:
+1- Decide which distribution N we want to sample.
+2- deltailed balance:
+  K(o->n)=K(n->o)
+
+with K(o->n)= N(o) x alpha(o->n) x acc(o->n)
+
+3- Determine the probabilities of generating a particular configuration.
+
+4- Derive the condition which needs to be fulfilled by the acceptance rules.
+
+MC simulation:
+
+1- select a particle  o
+2- random displacement o-> n
+3- the move is accepted with a probability
+
+   acc(o->n) = min(1,exp(-beta[U(n)-U[o]]))
+
+
+Justification:
+
+Here
+
+alpha(o->n)=alpha(n->o)=alpha
+
+substitution in in the detailed balance:
+	       acc(o->n)/acc(n->o)= exp(-beta (U(n)-U(o))))
+
+Our rule obeys this condition.

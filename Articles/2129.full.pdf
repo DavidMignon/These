@@ -1,0 +1,126 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html
+      xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>A new framework for computational protein design through cost function network optimization </title>
+      <meta name="googlebot" content="NOODP" />
+      <meta name="HW.ad-path" content="/cgi/content/reprint/29/17/2129" /><script type="text/javascript"
+              src="http://www.deepdyve.com.gate1.inist.fr/assets/scripts/RentalLink.js"></script><script type="text/javascript">
+        deepdyve.host = 'www.deepdyve.com';
+        // replace with an affiliateId that we provide
+	deepdyve.affiliateId = "highwire-oupjournals";
+	
+        // the div to fill in with the rental link
+        deepdyve.divIdList = ['rentalLink', 'rentalLink2']; 
+        // this is the anchor text for the rental link
+	deepdyve.rentText = "Rent Article at DeepDyve";
+        deepdyve.divIdMap = {'rentalLink':'Rent Article at DeepDyve','rentalLink2':'Learn more here.'};
+
+        // document identifier and identifier type
+        deepdyve.fieldName = 'journal_doi';
+	deepdyve.docId = "10.1093/bioinformatics/btt374";
+	</script><meta content="/bioinfo/29/17/2129.atom" name="HW.identifier" />
+      <meta name="DC.Format" content="text/html" />
+      <meta name="DC.Language" content="en" />
+      <meta content="A new framework for computational protein design through cost function network optimization"
+            name="DC.Title" />
+      <meta content="10.1093/bioinformatics/btt374" name="DC.Identifier" />
+      <meta content="2013-09-01" name="DC.Date" />
+      <meta content="Oxford University Press" name="DC.Publisher" />
+      <meta content="Seydou Traoré" name="DC.Contributor" />
+      <meta content="David Allouche" name="DC.Contributor" />
+      <meta content="Isabelle André" name="DC.Contributor" />
+      <meta content="Simon de Givry" name="DC.Contributor" />
+      <meta content="George Katsirelos" name="DC.Contributor" />
+      <meta content="Thomas Schiex" name="DC.Contributor" />
+      <meta content="Sophie Barbe" name="DC.Contributor" />
+      <meta content="Bioinformatics" name="citation_journal_title" />
+      <meta content="Bioinformatics" name="citation_journal_abbrev" />
+      <meta content="1367-4803" name="citation_issn" />
+      <meta content="1460-2059" name="citation_issn" />
+      <meta name="citation_author" content="Seydou Traoré" />
+      <meta name="citation_author_institution"
+            content="1Université de Toulouse; INSA, UPS, INP; LISBP, 135 Avenue de Rangueil, F-31077 Toulouse, France, 2INRA, UMR792, Ingénierie des Systèmes Biologiques et des Procédés, F-31400 Toulouse, France, 3CNRS, UMR5504, F-31400 Toulouse, France and 4Unité de Mathématiques et Informatique Appliquées, UR 875, INRA, F-31320 Castanet Tolosan, France" />
+      <meta name="citation_author_institution"
+            content="1Université de Toulouse; INSA, UPS, INP; LISBP, 135 Avenue de Rangueil, F-31077 Toulouse, France, 2INRA, UMR792, Ingénierie des Systèmes Biologiques et des Procédés, F-31400 Toulouse, France, 3CNRS, UMR5504, F-31400 Toulouse, France and 4Unité de Mathématiques et Informatique Appliquées, UR 875, INRA, F-31320 Castanet Tolosan, France" />
+      <meta name="citation_author_institution"
+            content="1Université de Toulouse; INSA, UPS, INP; LISBP, 135 Avenue de Rangueil, F-31077 Toulouse, France, 2INRA, UMR792, Ingénierie des Systèmes Biologiques et des Procédés, F-31400 Toulouse, France, 3CNRS, UMR5504, F-31400 Toulouse, France and 4Unité de Mathématiques et Informatique Appliquées, UR 875, INRA, F-31320 Castanet Tolosan, France" />
+      <meta name="citation_author" content="David Allouche" />
+      <meta name="citation_author_institution"
+            content="1Université de Toulouse; INSA, UPS, INP; LISBP, 135 Avenue de Rangueil, F-31077 Toulouse, France, 2INRA, UMR792, Ingénierie des Systèmes Biologiques et des Procédés, F-31400 Toulouse, France, 3CNRS, UMR5504, F-31400 Toulouse, France and 4Unité de Mathématiques et Informatique Appliquées, UR 875, INRA, F-31320 Castanet Tolosan, France" />
+      <meta name="citation_author" content="Isabelle André" />
+      <meta name="citation_author_institution"
+            content="1Université de Toulouse; INSA, UPS, INP; LISBP, 135 Avenue de Rangueil, F-31077 Toulouse, France, 2INRA, UMR792, Ingénierie des Systèmes Biologiques et des Procédés, F-31400 Toulouse, France, 3CNRS, UMR5504, F-31400 Toulouse, France and 4Unité de Mathématiques et Informatique Appliquées, UR 875, INRA, F-31320 Castanet Tolosan, France" />
+      <meta name="citation_author_institution"
+            content="1Université de Toulouse; INSA, UPS, INP; LISBP, 135 Avenue de Rangueil, F-31077 Toulouse, France, 2INRA, UMR792, Ingénierie des Systèmes Biologiques et des Procédés, F-31400 Toulouse, France, 3CNRS, UMR5504, F-31400 Toulouse, France and 4Unité de Mathématiques et Informatique Appliquées, UR 875, INRA, F-31320 Castanet Tolosan, France" />
+      <meta name="citation_author_institution"
+            content="1Université de Toulouse; INSA, UPS, INP; LISBP, 135 Avenue de Rangueil, F-31077 Toulouse, France, 2INRA, UMR792, Ingénierie des Systèmes Biologiques et des Procédés, F-31400 Toulouse, France, 3CNRS, UMR5504, F-31400 Toulouse, France and 4Unité de Mathématiques et Informatique Appliquées, UR 875, INRA, F-31320 Castanet Tolosan, France" />
+      <meta name="citation_author" content="Simon de Givry" />
+      <meta name="citation_author_institution"
+            content="1Université de Toulouse; INSA, UPS, INP; LISBP, 135 Avenue de Rangueil, F-31077 Toulouse, France, 2INRA, UMR792, Ingénierie des Systèmes Biologiques et des Procédés, F-31400 Toulouse, France, 3CNRS, UMR5504, F-31400 Toulouse, France and 4Unité de Mathématiques et Informatique Appliquées, UR 875, INRA, F-31320 Castanet Tolosan, France" />
+      <meta name="citation_author" content="George Katsirelos" />
+      <meta name="citation_author_institution"
+            content="1Université de Toulouse; INSA, UPS, INP; LISBP, 135 Avenue de Rangueil, F-31077 Toulouse, France, 2INRA, UMR792, Ingénierie des Systèmes Biologiques et des Procédés, F-31400 Toulouse, France, 3CNRS, UMR5504, F-31400 Toulouse, France and 4Unité de Mathématiques et Informatique Appliquées, UR 875, INRA, F-31320 Castanet Tolosan, France" />
+      <meta name="citation_author" content="Thomas Schiex" />
+      <meta name="citation_author_institution"
+            content="1Université de Toulouse; INSA, UPS, INP; LISBP, 135 Avenue de Rangueil, F-31077 Toulouse, France, 2INRA, UMR792, Ingénierie des Systèmes Biologiques et des Procédés, F-31400 Toulouse, France, 3CNRS, UMR5504, F-31400 Toulouse, France and 4Unité de Mathématiques et Informatique Appliquées, UR 875, INRA, F-31320 Castanet Tolosan, France" />
+      <meta name="citation_author" content="Sophie Barbe" />
+      <meta name="citation_author_institution"
+            content="1Université de Toulouse; INSA, UPS, INP; LISBP, 135 Avenue de Rangueil, F-31077 Toulouse, France, 2INRA, UMR792, Ingénierie des Systèmes Biologiques et des Procédés, F-31400 Toulouse, France, 3CNRS, UMR5504, F-31400 Toulouse, France and 4Unité de Mathématiques et Informatique Appliquées, UR 875, INRA, F-31320 Castanet Tolosan, France" />
+      <meta name="citation_author_institution"
+            content="1Université de Toulouse; INSA, UPS, INP; LISBP, 135 Avenue de Rangueil, F-31077 Toulouse, France, 2INRA, UMR792, Ingénierie des Systèmes Biologiques et des Procédés, F-31400 Toulouse, France, 3CNRS, UMR5504, F-31400 Toulouse, France and 4Unité de Mathématiques et Informatique Appliquées, UR 875, INRA, F-31320 Castanet Tolosan, France" />
+      <meta name="citation_author_institution"
+            content="1Université de Toulouse; INSA, UPS, INP; LISBP, 135 Avenue de Rangueil, F-31077 Toulouse, France, 2INRA, UMR792, Ingénierie des Systèmes Biologiques et des Procédés, F-31400 Toulouse, France, 3CNRS, UMR5504, F-31400 Toulouse, France and 4Unité de Mathématiques et Informatique Appliquées, UR 875, INRA, F-31320 Castanet Tolosan, France" />
+      <meta content="A new framework for computational protein design through cost function network optimization"
+            name="citation_title" />
+      <meta content="09/01/2013" name="citation_date" />
+      <meta content="29" name="citation_volume" />
+      <meta content="17" name="citation_issue" />
+      <meta content="2129" name="citation_firstpage" />
+      <meta content="2136" name="citation_lastpage" />
+      <meta content="29/17/2129" name="citation_id" />
+      <meta content="29/17/2129" name="citation_id_from_sass_path" />
+      <meta content="bioinfo;29/17/2129" name="citation_mjid" />
+      <meta content="10.1093/bioinformatics/btt374" name="citation_doi" />
+      <meta content="http://bioinformatics.oxfordjournals.org.gate1.inist.fr/content/29/17/2129.abstract"
+            name="citation_abstract_html_url" />
+      <meta content="http://bioinformatics.oxfordjournals.org.gate1.inist.fr/content/29/17/2129.full"
+            name="citation_fulltext_html_url" />
+      <meta content="http://bioinformatics.oxfordjournals.org.gate1.inist.fr/content/29/17/2129.full.pdf"
+            name="citation_pdf_url" />
+      <meta content="http://bioinformatics.oxfordjournals.org.gate1.inist.fr/content/29/17/2129"
+            name="citation_public_url" />
+      <meta content="23842814" name="citation_pmid" />
+      <meta name="citation_section" content="Original Paper" />
+      <meta name="robots" content="noarchive,nofollow" />
+      <meta name="googlebot" content="noarchive" />
+      <link href="/content/29/17/2122.short" rel="prev" />
+      <link href="/content/29/17/2137.short" rel="next" />
+      <link rel="stylesheet" type="text/css" href="/shared/css/hw-global.css" />
+      <link rel="stylesheet" type="text/css" href="/shared/css/hw-print.css" />
+      <link rel="stylesheet" type="text/css" href="/local/css/hw-local-global.css" />
+      <link rel="stylesheet" type="text/css" href="/publisher/css/hw-publisher-global.css" />
+      <link rel="stylesheet" type="text/css" href="/publisher/css/hw-publisher-ac.css" />
+      <link rel="stylesheet" type="text/css" href="/shared/css/hw-page-content.css" />
+      <link rel="stylesheet" type="text/css" href="/shared/css/jquery.fancybox-1.3.4.css" />
+      <link rel="stylesheet" type="text/css" href="/shared/css/hw-global-colexpand.css" />
+      <link rel="stylesheet" type="text/css"
+            href="/publisher/css/hw-publisher-page-content.css" /><script type="text/javascript" src="/shared/js/jquery-min.js"></script><script type="text/javascript" src="/shared/js/fingerprint.js"></script><script type="text/javascript" src="/shared/js/hw-shared.js"></script><script type="text/javascript" src="/publisher/js/hw-publisher-site.js"></script><script type="text/javascript" src="/local/js/local-js-vars.js"></script><script type="text/javascript" src="/shared/js/pages/hw-content.js"></script><script type="text/javascript" src="/shared/js/util/AccessCheckLib.js"></script><script type="text/javascript" src="/shared/js/util/executeAccessCheck.js"></script><script type="text/javascript" src="/shared/js/fancybox/jquery.fancybox-1.3.4.js"></script><script type="text/javascript" src="/shared/js/fancybox/jquery.easing-1.3.pack.js"></script><script type="text/javascript"
+              src="/shared/js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script><script type="text/javascript" src="/shared/js/util/content.jquery.addVariantLink.js"></script><script type="text/javascript" src="/shared/js/util/hw-col-expand.js"></script><script type="text/javascript" src="/publisher/js/hw-publisher-modalwin-vars.js"></script><script type="text/javascript"
+              src="/publisher/js/hw-publisher-article-dynamic-elements.js"></script><script type="text/javascript" src="/publisher/js/hw-publisher-content.js"></script></head>
+   <frameset rows="*">
+      <frameset cols="780,*">
+         <frame src="/content/29/17/2129.full.pdf#page=1&amp;view=FitH" name="ContentsPage"
+                title="Contents Frame" />
+         <frame src="/content/29/17/2129.full.pdf+html?frame=sidebar" name="SidebarLinks"
+                title="Sidebar Links Frame" />
+      </frameset>
+      <noframes>
+         <body></body>
+      </noframes>
+   </frameset>
+</html>

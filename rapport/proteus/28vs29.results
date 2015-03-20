@@ -1,0 +1,99 @@
+Comparaison proteus28  contre proteus29
+ 
+ node13	proteus28	heur	1CKA  Fri May 10 10:55:27 CEST 2013  Fri May 10 19:15:21 CEST 2013
+       
+ node13	proteus29	heur	1CKA  Fri May 10 10:55:33 CEST 2013  Fri May 10 12:34:16 CEST 2013
+
+ node13	proteus28	heur	1O4C  Fri May 10 10:55:39 CEST 2013
+             
+ node13	proteus29	heur	1O4C  Fri May 10 10:55:47 CEST 2013  Fri May 10 17:18:26 CEST 2013
+              
+ node13	proteus28	mc	1CKA    Fri May 10 10:55:52 CEST 2013 Fri May 10 10:58:39 CEST 2013
+       
+ node13	proteus29	mc	1CKA  Fri May 10 10:55:56 CEST 2013  Fri May 10 11:00:08 CEST 2013
+
+ node13	proteus28	mc	1O4C  Fri May 10 10:56:00 CEST 2013  Fri May 10 11:03:39 CEST 2013       
+       
+ node13	proteus29	mc	1O4C    Fri May 10 10:56:03 CEST 2013  Fri May 10 11:04:30 CEST 2013
+              
+ node0	proteus28	heur	1CKA  Fri May 10 12:04:41 CEST 2013  Fri May 10 22:15:42 CEST 2013
+       
+ node0	proteus29	heur	1CKA  Fri May 10 22:15:44 CEST 2013  Sat May 11 01:10:44 CEST 2013
+
+ node0	proteus28	heur	1O4C  Sat May 11 01:10:46 CEST 2013
+              
+ node0	proteus29	heur	1O4C  Sun May 12 01:11:15 CEST 2013  Sun May 12 13:11:11 CEST 2013
+       
+ node0	proteus28	mc	1CKA   Sun May 12 13:11:13 CEST 2013   Sun May 12 13:14:08 CEST 2013
+       
+ node0	proteus29	mc	1CKA   Sun May 12 13:14:10 CEST 2013  Sun May 12 13:18:25 CEST 2013
+
+ node0	proteus28	mc	1O4C   Sun May 12 13:18:27 CEST 2013  Sun May 12 13:25:32 CEST 2013
+              
+ node0	proteus29	mc	1O4C   Sun May 12 13:25:34 CEST 2013   Sun May 12 13:35:29 CEST 2013
+
+-------------------------------------------------
+1CKA: total residue number: 49
+1O4C: total residue number: 96
+
+---------------------------------------------
+node0:
+
+     *-cpu:0
+          description: CPU
+          product: Intel(R) Xeon(R) CPU           E5450  @ 3.00GHz
+          vendor: Intel Corp.
+          physical id: 400
+          bus info: cpu@0
+          slot: CPU
+          size: 3GHz
+          capacity: 3800MHz
+          width: 64 bits
+          clock: 1333MHz
+          capabilities: fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx x86-64 constant_tsc arch_perfmon pebs bts rep_good aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 xsave lahf_lm tpr_shadow vnmi flexpriority
+        *-cache:0
+             description: L1 cache
+             physical id: 700
+             size: 32KiB
+             capacity: 32KiB
+             capabilities: internal write-back data
+        *-cache:1
+             description: L2 cache
+             physical id: 701
+             size: 12MiB
+             capacity: 12MiB
+             capabilities: internal varies unified
+
+
+node13:
+     *-cpu:0
+          description: CPU
+          product: Intel(R) Xeon(R) CPU           E5640  @ 2.67GHz
+          vendor: Intel Corp.
+          physical id: 400
+          bus info: cpu@0
+          version: Intel(R) Xeon(R) CPU           E5640  @ 2.67GHz
+          slot: CPU1
+          size: 2666MHz
+          capacity: 3600MHz
+          width: 64 bits
+          clock: 1565MHz
+          capabilities: fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp x86-64 constant_tsc arch_perfmon pebs bts rep_good xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 sse4_2 popcnt aes lahf_lm ida arat tpr_shadow vnmi flexpriority ept vpid
+        *-cache:0
+             description: L1 cache
+             physical id: 700
+             size: 128KiB
+             capacity: 128KiB
+             capabilities: internal write-back data
+        *-cache:1
+             description: L2 cache
+             physical id: 701
+             size: 1MiB
+             capacity: 2MiB
+             capabilities: internal write-back unified
+        *-cache:2
+             description: L3 cache
+             physical id: 702
+             size: 12MiB
+             capacity: 12MiB
+             capabilities: internal write-back unified

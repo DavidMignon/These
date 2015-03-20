@@ -1,0 +1,81 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry}
+
+\usepackage[utf8]{inputenc}   % le fichier .tex est en UTF-8     
+\usepackage[francais]{babel}  %typo française                    
+\usepackage[T1]{fontenc}      % encodage des fonts latex         
+\usepackage{lmodern}                                             
+\usepackage{microtype}        % typo supplémentaires             
+
+
+\usepackage{graphicx} %inclusion de graphiques
+
+
+\usepackage{hyperref} % liens dans le pdf
+\hypersetup{%
+  pdftitle={Title},
+  pdfauthor={Author1, Author2},
+  pdfkeywords={keywords}
+  pdfsubject={article},
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
+  citecolor=black
+}
+
+
+
+\begin{document}
+
+
+
+    \begin{table}[!htbp]
+      \centering
+
+
+      \begin{tabular}{|p{0.2\linewidth}|p{0.35\linewidth}|p{0.45\linewidth}|}
+
+        \hline
+        Tag type  & Tag name & Description \\
+        \hline
+          Exploration method  & Mode &  define the execution mode, the possible values are  HEURISTIC,MONTECARLO,MEANFIELD and POSTPROCESS  \\  \hline    
+                        & Trajectory\_Length  &  the length of a Monte Carlo trajectory \\  \cline{2-3}
+        Number of steps & Trajectory\_Number  &  the number of Monte Carlo trajectories    \\  \cline{2-3}
+                        & Cycle\_Number  &    proteus gives a sequence at each cycle in the HEURISTIC mode   \\ \cline{2-3}  
+                        & Sequence\_Loop\_Number  &  the maximun number of iteration over the structure at each cycle.(only in the HEURISTIC mode)    \\ \hline  
+        Choice of the starting sequence/structure &  Seq\_Input\_File &   a input file with the starting values    \\ \cline{2-3}
+                                                  & Rseed\_Definition  &   The seed value for the random number generator (the generator sets the starting values if Seq\_Input\_File is not defined   \\    \hline 
+        Energy function &  Optimization\_Configuration &   definition of the energy function\\               \cline{2-3}
+                        &  Group\_definition &   group energies and group interaction energies are the basic elements of the energy function\\  \hline  
+        Restrictions on sequence/rotamer space & Space\_Constraints   &  restrict the possible states or force residues to have the same amino acid  \\ \hline                
+                         & Surf\_Ener\_Factor  &   energy parameter\\               \cline{2-3}
+        Model parameters & Dielectric\_Constant &  energy parameter \\               \cline{2-3}
+                         & Lambda\_Parameter & parameter of the Mean Field method \\              \cline{2-3} 
+                         & Initial\_Weights &  parameter of the Mean Field method \\              \cline{2-3} 
+                         & Temperature & usefull for the Mean Field or Monte Carlo mode  \\          \hline     
+                         & Random\_Generator &  The type of random number generator as defined in the GNU Scientific Library \\ \cline{2-3}
+                         & Rot\_Proba &  probability to have a rotamer change at each step \\              
+                         & Rot\_Rot\_Proba &  probability to have a couple of rotamer change at each step\\          
+        Monte Carlo      & Mut\_Proba &  ... \\              
+            controls     & Mut\_Mut\_Proba & ... \\              
+                         & Mut\_Rot\_Proba & ... \\             \cline{2-3}  
+                         & Neighbor\_Threshold & At each step the changes will be in the same neighborhood.This tag is a parameter for the neighborhood definition.\\   \hline           
+                         & Energy\_Directory & the directory of the input energy files\\    \cline{2-3}                
+                         & Fasta\_File & the fasta file name (POSTPROCESS mode)\\    \cline{2-3}             
+        Input/Output     & Seq\_Output\_File & the name of the sequence output file\\    \cline{2-3}             
+                         & Energy\_Output\_File & the name of the energy output file  \\   \hline              
+
+      \end{tabular} 
+
+      \caption{ Possible commands in the proteus command file}      
+
+      \label{table1}
+
+  \end{table}
+
+\end{document}
+
+
+
+
+

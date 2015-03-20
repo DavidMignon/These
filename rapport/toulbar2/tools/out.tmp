@@ -1,0 +1,2352 @@
++ PROTO_LIST=p0
++ active_nb=10
++ . ./lib.sh
+++ declare -A name
+++ separator=::
+++ name["p0"]=MC0
+++ name["p3"]=MC3
+++ name["p4"]=MC43
+++ name["p44"]=MC4-
+++ name["p432"]=MC4
+++ name["p433"]=MC4-
+++ name["p42"]=MC42-
+++ name["p43"]=MC42
+++ name["p5"]=RE1
+++ name["p6"]=RE2
+++ name["p62"]=RE2-
+++ name["p7"]=RE5
+++ name["p8"]=RE3
+++ name["p82"]=RE32
+++ name["p9"]=RE4
+++ name["p11"]=RE42
+++ name["ph"]=H
+++ name["ph2"]=H-
+++ name["toulbar2"]=GMEC
++ declare -a TAB
++ declare -a L
++ L=(Protéine)
++ for p in toulbar2 '$PROTO_LIST'
++ L+=(${name[$p]})
++ for p in toulbar2 '$PROTO_LIST'
++ L+=(${name[$p]})
++ TAB=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=Protéine
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=GMEC
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=MC0
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo 'Protéine::&::GMEC::&::MC0::\\'
++ print_tab 'TAB[@]'
++ tab=("${!1}")
++ local -a tab
++ echo '\hline'
+\hline
++ echo 'Protéine::&::GMEC::&::MC0::\\'
++ perl -pe 's/::/ /g'
+Protéine & GMEC & MC0 \\
++ echo '\hline'
+\hline
+++ seq 1 1
++ for i in '$(seq 1 ${#tab[@]})'
++ echo
++ perl -pe 's/::/ /g'
+
++ echo '\hline'
+\hline
++ cd /home/mignon/bioinfo/toulbar2
++ for prot in '*_casa'
++ i=0
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1A81_select1
++ L=($select)
++ '[' -f 1A81_casa/actives/10/13_15_39_41_53_86_89_90_93_103/gmec.seq ']'
+++ cut -d ' ' -f 3 1A81_casa/actives/10/13_15_39_41_53_86_89_90_93_103/gmec.seq
+++ tail -n 1
++ GMEC=-583.9354
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1A81_casa/actives/10/13_15_39_41_53_86_89_90_93_103/p0.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/13_15_39_41_53_86_89_90_93_103/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -583.9354 == none ']'
+++ echo -583.9354 - none
+++ bc -l
++ DELTA=-583.9354
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1A81_select1
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-583.9354
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-583.9354
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1A81_select1::&::-583.9354::&::-583.9354::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1A81_select2
++ L=($select)
++ '[' -f 1A81_casa/actives/10/39_41_53_55_64_66_76_89_92_103/gmec.seq ']'
+++ cut -d ' ' -f 3 1A81_casa/actives/10/39_41_53_55_64_66_76_89_92_103/gmec.seq
+++ tail -n 1
++ GMEC=-581.7802
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1A81_casa/actives/10/39_41_53_55_64_66_76_89_92_103/p0.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/39_41_53_55_64_66_76_89_92_103/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -581.7802 == none ']'
+++ echo -581.7802 - none
+++ bc -l
++ DELTA=-581.7802
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1A81_select2
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-581.7802
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-581.7802
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1A81_select2::&::-581.7802::&::-581.7802::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1A81_select3
++ L=($select)
++ '[' -f 1A81_casa/actives/10/51_53_64_66_68_74_76_82_88_92/gmec.seq ']'
+++ cut -d ' ' -f 3 1A81_casa/actives/10/51_53_64_66_68_74_76_82_88_92/gmec.seq
+++ tail -n 1
++ GMEC=-587.4392
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1A81_casa/actives/10/51_53_64_66_68_74_76_82_88_92/p0.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/51_53_64_66_68_74_76_82_88_92/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -587.4392 == none ']'
+++ echo -587.4392 - none
+++ bc -l
++ DELTA=-587.4392
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1A81_select3
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-587.4392
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-587.4392
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1A81_select3::&::-587.4392::&::-587.4392::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1A81_select4
++ L=($select)
++ '[' -f 1A81_casa/actives/10/76_82_87_88_90_91_92_95_97_99/gmec.seq ']'
+++ cut -d ' ' -f 3 1A81_casa/actives/10/76_82_87_88_90_91_92_95_97_99/gmec.seq
+++ tail -n 1
++ GMEC=-589.1322
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1A81_casa/actives/10/76_82_87_88_90_91_92_95_97_99/p0.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/76_82_87_88_90_91_92_95_97_99/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -589.1322 == none ']'
+++ echo -589.1322 - none
+++ bc -l
++ DELTA=-589.1322
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1A81_select4
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-589.1322
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-589.1322
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1A81_select4::&::-589.1322::&::-589.1322::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1A81_select5
++ L=($select)
++ '[' -f 1A81_casa/actives/10/9_10_11_16_41_51_53_66_88_89/gmec.seq ']'
+++ cut -d ' ' -f 3 1A81_casa/actives/10/9_10_11_16_41_51_53_66_88_89/gmec.seq
+++ tail -n 1
++ GMEC=-578.2558
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1A81_casa/actives/10/9_10_11_16_41_51_53_66_88_89/p0.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/9_10_11_16_41_51_53_66_88_89/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -578.2558 == none ']'
+++ echo -578.2558 - none
+++ bc -l
++ DELTA=-578.2558
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1A81_select5
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-578.2558
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-578.2558
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1A81_select5::&::-578.2558::&::-578.2558::\\'
++ for prot in '*_casa'
++ i=0
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1ABO_select1
++ L=($select)
++ '[' -f 1ABO_casa/actives/10/64_72_74_79_89_91_101_103_108_111/gmec.seq ']'
+++ cut -d ' ' -f 3 1ABO_casa/actives/10/64_72_74_79_89_91_101_103_108_111/gmec.seq
+++ tail -n 1
++ GMEC=-309.1670
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1ABO_casa/actives/10/64_72_74_79_89_91_101_103_108_111/p0.ener.sort.xz ']'
++ '[' -f 1ABO_casa/actives/10/64_72_74_79_89_91_101_103_108_111/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -309.1670 == none ']'
+++ echo -309.1670 - none
+++ bc -l
++ DELTA=-309.1670
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1ABO_select1
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-309.1670
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-309.1670
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1ABO_select1::&::-309.1670::&::-309.1670::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1ABO_select2
++ L=($select)
++ '[' -f 1ABO_casa/actives/10/66_68_80_82_88_90_100_102_104_111/gmec.seq ']'
+++ cut -d ' ' -f 3 1ABO_casa/actives/10/66_68_80_82_88_90_100_102_104_111/gmec.seq
+++ tail -n 1
++ GMEC=-308.8387
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1ABO_casa/actives/10/66_68_80_82_88_90_100_102_104_111/p0.ener.sort.xz ']'
++ '[' -f 1ABO_casa/actives/10/66_68_80_82_88_90_100_102_104_111/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -308.8387 == none ']'
+++ echo -308.8387 - none
+++ bc -l
++ DELTA=-308.8387
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1ABO_select2
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-308.8387
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-308.8387
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1ABO_select2::&::-308.8387::&::-308.8387::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1ABO_select3
++ L=($select)
++ '[' -f 1ABO_casa/actives/10/69_70_72_115_74_80_81_106_113_114/gmec.seq ']'
+++ cut -d ' ' -f 3 1ABO_casa/actives/10/69_70_72_115_74_80_81_106_113_114/gmec.seq
+++ tail -n 1
++ GMEC=-303.8520
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1ABO_casa/actives/10/69_70_72_115_74_80_81_106_113_114/p0.ener.sort.xz ']'
++ '[' -f 1ABO_casa/actives/10/69_70_72_115_74_80_81_106_113_114/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -303.8520 == none ']'
+++ echo -303.8520 - none
+++ bc -l
++ DELTA=-303.8520
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1ABO_select3
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-303.8520
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-303.8520
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1ABO_select3::&::-303.8520::&::-303.8520::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1ABO_select4
++ L=($select)
++ '[' -f 1ABO_casa/actives/10/71_83_84_78_94_99_101_104_105_106/gmec.seq ']'
+++ cut -d ' ' -f 3 1ABO_casa/actives/10/71_83_84_78_94_99_101_104_105_106/gmec.seq
+++ tail -n 1
++ GMEC=-310.0087
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1ABO_casa/actives/10/71_83_84_78_94_99_101_104_105_106/p0.ener.sort.xz ']'
++ '[' -f 1ABO_casa/actives/10/71_83_84_78_94_99_101_104_105_106/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -310.0087 == none ']'
+++ echo -310.0087 - none
+++ bc -l
++ DELTA=-310.0087
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1ABO_select4
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-310.0087
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-310.0087
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1ABO_select4::&::-310.0087::&::-310.0087::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1ABO_select5
++ L=($select)
++ '[' -f 1ABO_casa/actives/10/72_79_94_99_82_102_104_106_111_115/gmec.seq ']'
+++ cut -d ' ' -f 3 1ABO_casa/actives/10/72_79_94_99_82_102_104_106_111_115/gmec.seq
+++ tail -n 1
++ GMEC=-301.6727
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1ABO_casa/actives/10/72_79_94_99_82_102_104_106_111_115/p0.ener.sort.xz ']'
++ '[' -f 1ABO_casa/actives/10/72_79_94_99_82_102_104_106_111_115/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -301.6727 == none ']'
+++ echo -301.6727 - none
+++ bc -l
++ DELTA=-301.6727
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1ABO_select5
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-301.6727
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-301.6727
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1ABO_select5::&::-301.6727::&::-301.6727::\\'
++ for prot in '*_casa'
++ i=0
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1BM2_select1
++ L=($select)
++ '[' -f 1BM2_casa/actives/10/119_120_121_122_123_125_131_134_135_140/gmec.seq ']'
+++ cut -d ' ' -f 3 1BM2_casa/actives/10/119_120_121_122_123_125_131_134_135_140/gmec.seq
+++ tail -n 1
++ GMEC=-549.8638
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1BM2_casa/actives/10/119_120_121_122_123_125_131_134_135_140/p0.ener.sort.xz ']'
+++ xzcat 1BM2_casa/actives/10/119_120_121_122_123_125_131_134_135_140/p0.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ BEST_ENER=-550.0621
++ '[' -549.8638 == none ']'
+++ echo -549.8638 - -550.0621
+++ bc -l
++ DELTA=.1983
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1BM2_select1
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-549.8638
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=.1983
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1BM2_select1::&::-549.8638::&::.1983::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1BM2_select2
++ L=($select)
++ '[' -f 1BM2_casa/actives/10/125_126_127_129_130_133_134_136_137_147/gmec.seq ']'
+++ cut -d ' ' -f 3 1BM2_casa/actives/10/125_126_127_129_130_133_134_136_137_147/gmec.seq
+++ tail -n 1
++ GMEC=-541.5944
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1BM2_casa/actives/10/125_126_127_129_130_133_134_136_137_147/p0.ener.sort.xz ']'
++ '[' -f 1BM2_casa/actives/10/125_126_127_129_130_133_134_136_137_147/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -541.5944 == none ']'
+++ echo -541.5944 - none
+++ bc -l
++ DELTA=-541.5944
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1BM2_select2
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-541.5944
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-541.5944
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1BM2_select2::&::-541.5944::&::-541.5944::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1BM2_select3
++ L=($select)
++ '[' -f 1BM2_casa/actives/10/83_99_101_106_108_135_140_141_146_148/gmec.seq ']'
+++ cut -d ' ' -f 3 1BM2_casa/actives/10/83_99_101_106_108_135_140_141_146_148/gmec.seq
+++ tail -n 1
++ GMEC=-543.7434
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1BM2_casa/actives/10/83_99_101_106_108_135_140_141_146_148/p0.ener.sort.xz ']'
++ '[' -f 1BM2_casa/actives/10/83_99_101_106_108_135_140_141_146_148/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -543.7434 == none ']'
+++ echo -543.7434 - none
+++ bc -l
++ DELTA=-543.7434
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1BM2_select3
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-543.7434
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-543.7434
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1BM2_select3::&::-543.7434::&::-543.7434::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1BM2_select4
++ L=($select)
++ '[' -f 1BM2_casa/actives/10/85_95_97_110_118_120_125_128_131_132/gmec.seq ']'
+++ cut -d ' ' -f 3 1BM2_casa/actives/10/85_95_97_110_118_120_125_128_131_132/gmec.seq
+++ tail -n 1
++ GMEC=-549.0453
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1BM2_casa/actives/10/85_95_97_110_118_120_125_128_131_132/p0.ener.sort.xz ']'
++ '[' -f 1BM2_casa/actives/10/85_95_97_110_118_120_125_128_131_132/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -549.0453 == none ']'
+++ echo -549.0453 - none
+++ bc -l
++ DELTA=-549.0453
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1BM2_select4
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-549.0453
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-549.0453
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1BM2_select4::&::-549.0453::&::-549.0453::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1BM2_select5
++ L=($select)
++ '[' -f 1BM2_casa/actives/10/99_101_106_139_140_141_142_143_144_146/gmec.seq ']'
+++ cut -d ' ' -f 3 1BM2_casa/actives/10/99_101_106_139_140_141_142_143_144_146/gmec.seq
+++ tail -n 1
++ GMEC=-544.1447
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1BM2_casa/actives/10/99_101_106_139_140_141_142_143_144_146/p0.ener.sort.xz ']'
+++ xzcat 1BM2_casa/actives/10/99_101_106_139_140_141_142_143_144_146/p0.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ BEST_ENER=-545.2790
++ '[' -544.1447 == none ']'
+++ echo -544.1447 - -545.2790
+++ bc -l
++ DELTA=1.1343
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1BM2_select5
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-544.1447
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1.1343
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1BM2_select5::&::-544.1447::&::1.1343::\\'
++ for prot in '*_casa'
++ i=0
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1CKA_select1
++ L=($select)
++ '[' -f 1CKA_casa/actives/10/134_135_160_161_162_173_174_175_176_179/gmec.seq ']'
+++ cut -d ' ' -f 3 1CKA_casa/actives/10/134_135_160_161_162_173_174_175_176_179/gmec.seq
+++ tail -n 1
++ GMEC=-305.8477
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1CKA_casa/actives/10/134_135_160_161_162_173_174_175_176_179/p0.ener.sort.xz ']'
++ '[' -f 1CKA_casa/actives/10/134_135_160_161_162_173_174_175_176_179/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -305.8477 == none ']'
+++ echo -305.8477 - none
+++ bc -l
++ DELTA=-305.8477
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1CKA_select1
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-305.8477
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-305.8477
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1CKA_select1::&::-305.8477::&::-305.8477::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1CKA_select2
++ L=($select)
++ '[' -f 1CKA_casa/actives/10/137_139_143_151_153_157_159_172_182_186/gmec.seq ']'
+++ cut -d ' ' -f 3 1CKA_casa/actives/10/137_139_143_151_153_157_159_172_182_186/gmec.seq
+++ tail -n 1
++ GMEC=-309.9886
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1CKA_casa/actives/10/137_139_143_151_153_157_159_172_182_186/p0.ener.sort.xz ']'
++ '[' -f 1CKA_casa/actives/10/137_139_143_151_153_157_159_172_182_186/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -309.9886 == none ']'
+++ echo -309.9886 - none
+++ bc -l
++ DELTA=-309.9886
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1CKA_select2
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-309.9886
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-309.9886
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1CKA_select2::&::-309.9886::&::-309.9886::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1CKA_select3
++ L=($select)
++ '[' -f 1CKA_casa/actives/10/138_140_147_149_150_155_166_169_181_188/gmec.seq ']'
+++ cut -d ' ' -f 3 1CKA_casa/actives/10/138_140_147_149_150_155_166_169_181_188/gmec.seq
+++ tail -n 1
++ GMEC=-304.6618
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1CKA_casa/actives/10/138_140_147_149_150_155_166_169_181_188/p0.ener.sort.xz ']'
++ '[' -f 1CKA_casa/actives/10/138_140_147_149_150_155_166_169_181_188/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -304.6618 == none ']'
+++ echo -304.6618 - none
+++ bc -l
++ DELTA=-304.6618
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1CKA_select3
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-304.6618
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-304.6618
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1CKA_select3::&::-304.6618::&::-304.6618::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1CKA_select4
++ L=($select)
++ '[' -f 1CKA_casa/actives/10/140_141_153_154_155_157_174_175_184_186/gmec.seq ']'
+++ cut -d ' ' -f 3 1CKA_casa/actives/10/140_141_153_154_155_157_174_175_184_186/gmec.seq
+++ tail -n 1
++ GMEC=-302.4894
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1CKA_casa/actives/10/140_141_153_154_155_157_174_175_184_186/p0.ener.sort.xz ']'
++ '[' -f 1CKA_casa/actives/10/140_141_153_154_155_157_174_175_184_186/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -302.4894 == none ']'
+++ echo -302.4894 - none
+++ bc -l
++ DELTA=-302.4894
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1CKA_select4
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-302.4894
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-302.4894
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1CKA_select4::&::-302.4894::&::-302.4894::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1CKA_select5
++ L=($select)
++ '[' -f 1CKA_casa/actives/10/151_153_157_166_168_173_174_176_178_179/gmec.seq ']'
+++ cut -d ' ' -f 3 1CKA_casa/actives/10/151_153_157_166_168_173_174_176_178_179/gmec.seq
+++ tail -n 1
++ GMEC=-299.2329
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1CKA_casa/actives/10/151_153_157_166_168_173_174_176_178_179/p0.ener.sort.xz ']'
+++ xzcat 1CKA_casa/actives/10/151_153_157_166_168_173_174_176_178_179/p0.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ BEST_ENER=-310.0573
++ '[' -299.2329 == none ']'
+++ echo -299.2329 - -310.0573
+++ bc -l
++ DELTA=10.8244
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1CKA_select5
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-299.2329
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=10.8244
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1CKA_select5::&::-299.2329::&::10.8244::\\'
++ for prot in '*_casa'
++ i=0
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1G9O_select1
++ L=($select)
++ '[' -f 1G9O_casa/actives/10/10_11_13_14_15_16_53_54_57_92/gmec.seq ']'
+++ cut -d ' ' -f 3 1G9O_casa/actives/10/10_11_13_14_15_16_53_54_57_92/gmec.seq
+++ tail -n 1
++ GMEC=-466.6764
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1G9O_casa/actives/10/10_11_13_14_15_16_53_54_57_92/p0.ener.sort.xz ']'
++ '[' -f 1G9O_casa/actives/10/10_11_13_14_15_16_53_54_57_92/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -466.6764 == none ']'
+++ echo -466.6764 - none
+++ bc -l
++ DELTA=-466.6764
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1G9O_select1
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-466.6764
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-466.6764
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1G9O_select1::&::-466.6764::&::-466.6764::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1G9O_select2
++ L=($select)
++ '[' -f 1G9O_casa/actives/10/15_17_24_26_39_42_48_51_53_88/gmec.seq ']'
+++ cut -d ' ' -f 3 1G9O_casa/actives/10/15_17_24_26_39_42_48_51_53_88/gmec.seq
+++ tail -n 1
++ GMEC=-478.8797
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1G9O_casa/actives/10/15_17_24_26_39_42_48_51_53_88/p0.ener.sort.xz ']'
++ '[' -f 1G9O_casa/actives/10/15_17_24_26_39_42_48_51_53_88/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -478.8797 == none ']'
+++ echo -478.8797 - none
+++ bc -l
++ DELTA=-478.8797
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1G9O_select2
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-478.8797
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-478.8797
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1G9O_select2::&::-478.8797::&::-478.8797::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1G9O_select3
++ L=($select)
++ '[' -f 1G9O_casa/actives/10/26_28_39_42_48_53_57_59_88_90/gmec.seq ']'
+++ cut -d ' ' -f 3 1G9O_casa/actives/10/26_28_39_42_48_53_57_59_88_90/gmec.seq
+++ tail -n 1
++ GMEC=-477.2503
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1G9O_casa/actives/10/26_28_39_42_48_53_57_59_88_90/p0.ener.sort.xz ']'
++ '[' -f 1G9O_casa/actives/10/26_28_39_42_48_53_57_59_88_90/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -477.2503 == none ']'
+++ echo -477.2503 - none
+++ bc -l
++ DELTA=-477.2503
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1G9O_select3
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-477.2503
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-477.2503
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1G9O_select3::&::-477.2503::&::-477.2503::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1G9O_select4
++ L=($select)
++ '[' -f 1G9O_casa/actives/10/34_35_58_60_68_70_74_75_89_91/gmec.seq ']'
+++ cut -d ' ' -f 3 1G9O_casa/actives/10/34_35_58_60_68_70_74_75_89_91/gmec.seq
+++ tail -n 1
++ GMEC=-470.6458
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1G9O_casa/actives/10/34_35_58_60_68_70_74_75_89_91/p0.ener.sort.xz ']'
++ '[' -f 1G9O_casa/actives/10/34_35_58_60_68_70_74_75_89_91/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -470.6458 == none ']'
+++ echo -470.6458 - none
+++ bc -l
++ DELTA=-470.6458
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1G9O_select4
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-470.6458
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-470.6458
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1G9O_select4::&::-470.6458::&::-470.6458::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1G9O_select5
++ L=($select)
++ '[' -f 1G9O_casa/actives/10/71_73_74_77_80_81_82_83_84_85/gmec.seq ']'
+++ cut -d ' ' -f 3 1G9O_casa/actives/10/71_73_74_77_80_81_82_83_84_85/gmec.seq
+++ tail -n 1
++ GMEC=-464.8659
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1G9O_casa/actives/10/71_73_74_77_80_81_82_83_84_85/p0.ener.sort.xz ']'
+++ xzcat 1G9O_casa/actives/10/71_73_74_77_80_81_82_83_84_85/p0.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ BEST_ENER=-470.3636
++ '[' -464.8659 == none ']'
+++ echo -464.8659 - -470.3636
+++ bc -l
++ DELTA=5.4977
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1G9O_select5
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-464.8659
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=5.4977
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1G9O_select5::&::-464.8659::&::5.4977::\\'
++ for prot in '*_casa'
++ i=0
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1M61_select1
++ L=($select)
++ '[' -f 1M61_casa/actives/10/10_12_20_23_24_27_35_49_102_104/gmec.seq ']'
+++ cut -d ' ' -f 3 1M61_casa/actives/10/10_12_20_23_24_27_35_49_102_104/gmec.seq
+++ tail -n 1
++ GMEC=-550.0699
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1M61_casa/actives/10/10_12_20_23_24_27_35_49_102_104/p0.ener.sort.xz ']'
+++ xzcat 1M61_casa/actives/10/10_12_20_23_24_27_35_49_102_104/p0.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ BEST_ENER=-553.1086
++ '[' -550.0699 == none ']'
+++ echo -550.0699 - -553.1086
+++ bc -l
++ DELTA=3.0387
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1M61_select1
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-550.0699
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=3.0387
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1M61_select1::&::-550.0699::&::3.0387::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1M61_select2
++ L=($select)
++ '[' -f 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/gmec.seq ']'
+++ cut -d ' ' -f 3 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/gmec.seq
+++ tail -n 1
++ GMEC=-538.6026
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/p0.ener.sort.xz ']'
+++ xzcat 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/p0.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ BEST_ENER=-545.8703
++ '[' -538.6026 == none ']'
+++ echo -538.6026 - -545.8703
+++ bc -l
++ DELTA=7.2677
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1M61_select2
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-538.6026
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=7.2677
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1M61_select2::&::-538.6026::&::7.2677::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1M61_select3
++ L=($select)
++ '[' -f 1M61_casa/actives/10/34_36_46_48_59_61_71_83_84_87/gmec.seq ']'
+++ cut -d ' ' -f 3 1M61_casa/actives/10/34_36_46_48_59_61_71_83_84_87/gmec.seq
+++ tail -n 1
++ GMEC=-552.2673
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1M61_casa/actives/10/34_36_46_48_59_61_71_83_84_87/p0.ener.sort.xz ']'
++ '[' -f 1M61_casa/actives/10/34_36_46_48_59_61_71_83_84_87/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -552.2673 == none ']'
+++ echo -552.2673 - none
+++ bc -l
++ DELTA=-552.2673
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1M61_select3
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-552.2673
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-552.2673
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1M61_select3::&::-552.2673::&::-552.2673::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1M61_select4
++ L=($select)
++ '[' -f 1M61_casa/actives/10/5_6_11_36_46_48_61_69_83_84/gmec.seq ']'
+++ cut -d ' ' -f 3 1M61_casa/actives/10/5_6_11_36_46_48_61_69_83_84/gmec.seq
+++ tail -n 1
++ GMEC=-550.0553
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1M61_casa/actives/10/5_6_11_36_46_48_61_69_83_84/p0.ener.sort.xz ']'
++ '[' -f 1M61_casa/actives/10/5_6_11_36_46_48_61_69_83_84/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -550.0553 == none ']'
+++ echo -550.0553 - none
+++ bc -l
++ DELTA=-550.0553
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1M61_select4
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-550.0553
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-550.0553
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1M61_select4::&::-550.0553::&::-550.0553::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1M61_select5
++ L=($select)
++ '[' -f 1M61_casa/actives/10/59_61_70_71_75_77_83_86_87_92/gmec.seq ']'
+++ cut -d ' ' -f 3 1M61_casa/actives/10/59_61_70_71_75_77_83_86_87_92/gmec.seq
+++ tail -n 1
++ GMEC=-553.6559
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1M61_casa/actives/10/59_61_70_71_75_77_83_86_87_92/p0.ener.sort.xz ']'
+++ xzcat 1M61_casa/actives/10/59_61_70_71_75_77_83_86_87_92/p0.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ BEST_ENER=-555.3645
++ '[' -553.6559 == none ']'
+++ echo -553.6559 - -555.3645
+++ bc -l
++ DELTA=1.7086
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1M61_select5
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-553.6559
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1.7086
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1M61_select5::&::-553.6559::&::1.7086::\\'
++ for prot in '*_casa'
++ i=0
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1O4C_select1
++ L=($select)
++ '[' -f 1O4C_casa/actives/10/31_33_45_47_61_63_73_86_89_100/gmec.seq ']'
+++ cut -d ' ' -f 3 1O4C_casa/actives/10/31_33_45_47_61_63_73_86_89_100/gmec.seq
+++ tail -n 1
++ GMEC=-587.4665
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1O4C_casa/actives/10/31_33_45_47_61_63_73_86_89_100/p0.ener.sort.xz ']'
++ '[' -f 1O4C_casa/actives/10/31_33_45_47_61_63_73_86_89_100/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -587.4665 == none ']'
+++ echo -587.4665 - none
+++ bc -l
++ DELTA=-587.4665
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1O4C_select1
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-587.4665
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-587.4665
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1O4C_select1::&::-587.4665::&::-587.4665::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1O4C_select2
++ L=($select)
++ '[' -f 1O4C_casa/actives/10/50_51_52_53_63_72_73_77_85_89/gmec.seq ']'
+++ cut -d ' ' -f 3 1O4C_casa/actives/10/50_51_52_53_63_72_73_77_85_89/gmec.seq
+++ tail -n 1
++ GMEC=-585.8545
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1O4C_casa/actives/10/50_51_52_53_63_72_73_77_85_89/p0.ener.sort.xz ']'
+++ xzcat 1O4C_casa/actives/10/50_51_52_53_63_72_73_77_85_89/p0.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ BEST_ENER=-587.3721
++ '[' -585.8545 == none ']'
+++ echo -585.8545 - -587.3721
+++ bc -l
++ DELTA=1.5176
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1O4C_select2
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-585.8545
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1.5176
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1O4C_select2::&::-585.8545::&::1.5176::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1O4C_select3
++ L=($select)
++ '[' -f 1O4C_casa/actives/10/61_62_63_71_72_73_79_85_88_89/gmec.seq ']'
+++ cut -d ' ' -f 3 1O4C_casa/actives/10/61_62_63_71_72_73_79_85_88_89/gmec.seq
+++ tail -n 1
++ GMEC=-580.3505
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1O4C_casa/actives/10/61_62_63_71_72_73_79_85_88_89/p0.ener.sort.xz ']'
+++ xzcat 1O4C_casa/actives/10/61_62_63_71_72_73_79_85_88_89/p0.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ BEST_ENER=-581.3904
++ '[' -580.3505 == none ']'
+++ echo -580.3505 - -581.3904
+++ bc -l
++ DELTA=1.0399
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1O4C_select3
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-580.3505
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1.0399
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1O4C_select3::&::-580.3505::&::1.0399::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1O4C_select4
++ L=($select)
++ '[' -f 1O4C_casa/actives/10/73_74_75_76_77_89_92_94_96_101/gmec.seq ']'
+++ cut -d ' ' -f 3 1O4C_casa/actives/10/73_74_75_76_77_89_92_94_96_101/gmec.seq
+++ tail -n 1
++ GMEC=-587.1548
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1O4C_casa/actives/10/73_74_75_76_77_89_92_94_96_101/p0.ener.sort.xz ']'
+++ xzcat 1O4C_casa/actives/10/73_74_75_76_77_89_92_94_96_101/p0.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ BEST_ENER=-588.4871
++ '[' -587.1548 == none ']'
+++ echo -587.1548 - -588.4871
+++ bc -l
++ DELTA=1.3323
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1O4C_select4
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-587.1548
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1.3323
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1O4C_select4::&::-587.1548::&::1.3323::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1O4C_select5
++ L=($select)
++ '[' -f 1O4C_casa/actives/10/90_91_93_96_98_99_101_102_103_104/gmec.seq ']'
+++ cut -d ' ' -f 3 1O4C_casa/actives/10/90_91_93_96_98_99_101_102_103_104/gmec.seq
+++ tail -n 1
++ GMEC=-590.2650
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1O4C_casa/actives/10/90_91_93_96_98_99_101_102_103_104/p0.ener.sort.xz ']'
+++ xzcat 1O4C_casa/actives/10/90_91_93_96_98_99_101_102_103_104/p0.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ BEST_ENER=-590.2650
++ '[' -590.2650 == none ']'
+++ echo -590.2650 - -590.2650
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1O4C_select5
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-590.2650
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1O4C_select5::&::-590.2650::&::0::\\'
++ for prot in '*_casa'
++ i=0
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1R6J_select1
++ L=($select)
++ '[' -f 1R6J_casa/actives/10/193_194_195_197_199_218_232_236_267_269/gmec.seq ']'
+++ cut -d ' ' -f 3 1R6J_casa/actives/10/193_194_195_197_199_218_232_236_267_269/gmec.seq
+++ tail -n 1
++ GMEC=-448.8351
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1R6J_casa/actives/10/193_194_195_197_199_218_232_236_267_269/p0.ener.sort.xz ']'
+++ xzcat 1R6J_casa/actives/10/193_194_195_197_199_218_232_236_267_269/p0.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ BEST_ENER=-453.1551
++ '[' -448.8351 == none ']'
+++ echo -448.8351 - -453.1551
+++ bc -l
++ DELTA=4.3200
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1R6J_select1
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-448.8351
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=4.3200
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1R6J_select1::&::-448.8351::&::4.3200::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1R6J_select2
++ L=($select)
++ '[' -f 1R6J_casa/actives/10/199_209_211_213_218_227_232_238_265_267/gmec.seq ']'
+++ cut -d ' ' -f 3 1R6J_casa/actives/10/199_209_211_213_218_227_232_238_265_267/gmec.seq
+++ tail -n 1
++ GMEC=-448.4631
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1R6J_casa/actives/10/199_209_211_213_218_227_232_238_265_267/p0.ener.sort.xz ']'
+++ xzcat 1R6J_casa/actives/10/199_209_211_213_218_227_232_238_265_267/p0.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ BEST_ENER=-449.5029
++ '[' -448.4631 == none ']'
+++ echo -448.4631 - -449.5029
+++ bc -l
++ DELTA=1.0398
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1R6J_select2
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-448.4631
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1.0398
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1R6J_select2::&::-448.4631::&::1.0398::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1R6J_select3
++ L=($select)
++ '[' -f 1R6J_casa/actives/10/201_204_205_209_211_218_241_258_265_267/gmec.seq ']'
+++ cut -d ' ' -f 3 1R6J_casa/actives/10/201_204_205_209_211_218_241_258_265_267/gmec.seq
+++ tail -n 1
++ GMEC=-450.3950
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1R6J_casa/actives/10/201_204_205_209_211_218_241_258_265_267/p0.ener.sort.xz ']'
++ '[' -f 1R6J_casa/actives/10/201_204_205_209_211_218_241_258_265_267/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -450.3950 == none ']'
+++ echo -450.3950 - none
+++ bc -l
++ DELTA=-450.3950
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1R6J_select3
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-450.3950
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-450.3950
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1R6J_select3::&::-450.3950::&::-450.3950::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1R6J_select4
++ L=($select)
++ '[' -f 1R6J_casa/actives/10/209_211_213_218_227_238_241_258_265_267/gmec.seq ']'
+++ cut -d ' ' -f 3 1R6J_casa/actives/10/209_211_213_218_227_238_241_258_265_267/gmec.seq
+++ tail -n 1
++ GMEC=-451.7211
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1R6J_casa/actives/10/209_211_213_218_227_238_241_258_265_267/p0.ener.sort.xz ']'
+++ xzcat 1R6J_casa/actives/10/209_211_213_218_227_238_241_258_265_267/p0.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ BEST_ENER=-451.7800
++ '[' -451.7211 == none ']'
+++ echo -451.7211 - -451.7800
+++ bc -l
++ DELTA=.0589
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1R6J_select4
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-451.7211
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=.0589
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1R6J_select4::&::-451.7211::&::.0589::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1R6J_select5
++ L=($select)
++ '[' -f 1R6J_casa/actives/10/238_240_241_242_246_257_258_261_265_267/gmec.seq ']'
+++ cut -d ' ' -f 3 1R6J_casa/actives/10/238_240_241_242_246_257_258_261_265_267/gmec.seq
+++ tail -n 1
++ GMEC=-450.9943
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 1R6J_casa/actives/10/238_240_241_242_246_257_258_261_265_267/p0.ener.sort.xz ']'
+++ xzcat 1R6J_casa/actives/10/238_240_241_242_246_257_258_261_265_267/p0.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ BEST_ENER=-451.4217
++ '[' -450.9943 == none ']'
+++ echo -450.9943 - -451.4217
+++ bc -l
++ DELTA=.4274
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1R6J_select5
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-450.9943
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=.4274
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '1R6J_select5::&::-450.9943::&::.4274::\\'
++ for prot in '*_casa'
++ i=0
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=2BYG_select1
++ L=($select)
++ '[' -f 2BYG_casa/actives/10/194_196_203_205_224_233_239_245_274_276/gmec.seq ']'
+++ cut -d ' ' -f 3 2BYG_casa/actives/10/194_196_203_205_224_233_239_245_274_276/gmec.seq
+++ tail -n 1
++ GMEC=-511.3882
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 2BYG_casa/actives/10/194_196_203_205_224_233_239_245_274_276/p0.ener.sort.xz ']'
+++ xzcat 2BYG_casa/actives/10/194_196_203_205_224_233_239_245_274_276/p0.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ BEST_ENER=-505.6397
++ '[' -511.3882 == none ']'
+++ echo -511.3882 - -505.6397
+++ bc -l
++ DELTA=-5.7485
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=2BYG_select1
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-511.3882
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-5.7485
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '2BYG_select1::&::-511.3882::&::-5.7485::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=2BYG_select2
++ L=($select)
++ '[' -f 2BYG_casa/actives/10/203_205_207_224_227_233_239_243_245_276/gmec.seq ']'
+++ cut -d ' ' -f 3 2BYG_casa/actives/10/203_205_207_224_227_233_239_243_245_276/gmec.seq
+++ tail -n 1
++ GMEC=-504.7389
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 2BYG_casa/actives/10/203_205_207_224_227_233_239_243_245_276/p0.ener.sort.xz ']'
++ '[' -f 2BYG_casa/actives/10/203_205_207_224_227_233_239_243_245_276/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -504.7389 == none ']'
+++ echo -504.7389 - none
+++ bc -l
++ DELTA=-504.7389
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=2BYG_select2
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-504.7389
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-504.7389
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '2BYG_select2::&::-504.7389::&::-504.7389::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=2BYG_select3
++ L=($select)
++ '[' -f 2BYG_casa/actives/10/206_207_222_245_248_253_256_261_264_265/gmec.seq ']'
+++ cut -d ' ' -f 3 2BYG_casa/actives/10/206_207_222_245_248_253_256_261_264_265/gmec.seq
+++ tail -n 1
++ GMEC=-504.3048
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 2BYG_casa/actives/10/206_207_222_245_248_253_256_261_264_265/p0.ener.sort.xz ']'
+++ xzcat 2BYG_casa/actives/10/206_207_222_245_248_253_256_261_264_265/p0.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ BEST_ENER=-505.5793
++ '[' -504.3048 == none ']'
+++ echo -504.3048 - -505.5793
+++ bc -l
++ DELTA=1.2745
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=2BYG_select3
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-504.3048
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1.2745
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '2BYG_select3::&::-504.3048::&::1.2745::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=2BYG_select4
++ L=($select)
++ '[' -f 2BYG_casa/actives/10/221_222_245_248_251_253_256_261_264_265/gmec.seq ']'
+++ cut -d ' ' -f 3 2BYG_casa/actives/10/221_222_245_248_251_253_256_261_264_265/gmec.seq
+++ tail -n 1
++ GMEC=-504.3466
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 2BYG_casa/actives/10/221_222_245_248_251_253_256_261_264_265/p0.ener.sort.xz ']'
+++ xzcat 2BYG_casa/actives/10/221_222_245_248_251_253_256_261_264_265/p0.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ BEST_ENER=-505.0396
++ '[' -504.3466 == none ']'
+++ echo -504.3466 - -505.0396
+++ bc -l
++ DELTA=.6930
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=2BYG_select4
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-504.3466
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=.6930
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '2BYG_select4::&::-504.3466::&::.6930::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=2BYG_select5
++ L=($select)
++ '[' -f 2BYG_casa/actives/10/247_248_249_251_250_252_259_262_263_275/gmec.seq ']'
+++ cut -d ' ' -f 3 2BYG_casa/actives/10/247_248_249_251_250_252_259_262_263_275/gmec.seq
+++ tail -n 1
++ GMEC=-491.6095
++ L+=($GMEC)
++ for p in '$PROTO_LIST'
++ '[' -f 2BYG_casa/actives/10/247_248_249_251_250_252_259_262_263_275/p0.ener.sort.xz ']'
++ '[' -f 2BYG_casa/actives/10/247_248_249_251_250_252_259_262_263_275/p0.ener.sort ']'
++ BEST_ENER=none
++ '[' -491.6095 == none ']'
+++ echo -491.6095 - none
+++ bc -l
++ DELTA=-491.6095
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=2BYG_select5
+++ string+=::
+++ '[' 1 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-491.6095
+++ string+=::
+++ '[' 2 -lt 3 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-491.6095
+++ string+=::
+++ '[' 3 -lt 3 ']'
+++ string+='\\'
+++ echo '2BYG_select5::&::-491.6095::&::-491.6095::\\'
++ print_tab 'TAB[@]'
++ tab=("${!1}")
++ local -a tab
++ echo '\hline'
+\hline
++ echo 'Protéine::&::GMEC::&::MC0::\\'
++ perl -pe 's/::/ /g'
+Protéine & GMEC & MC0 \\
++ echo '\hline'
+\hline
+++ seq 1 46
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1A81_select1::&::-583.9354::&::-583.9354::\\'
++ perl -pe 's/::/ /g'
+1A81_select1 & -583.9354 & -583.9354 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1A81_select2::&::-581.7802::&::-581.7802::\\'
++ perl -pe 's/::/ /g'
+1A81_select2 & -581.7802 & -581.7802 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1A81_select3::&::-587.4392::&::-587.4392::\\'
++ perl -pe 's/::/ /g'
+1A81_select3 & -587.4392 & -587.4392 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1A81_select4::&::-589.1322::&::-589.1322::\\'
++ perl -pe 's/::/ /g'
+1A81_select4 & -589.1322 & -589.1322 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1A81_select5::&::-578.2558::&::-578.2558::\\'
++ perl -pe 's/::/ /g'
+1A81_select5 & -578.2558 & -578.2558 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1ABO_select1::&::-309.1670::&::-309.1670::\\'
++ perl -pe 's/::/ /g'
+1ABO_select1 & -309.1670 & -309.1670 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1ABO_select2::&::-308.8387::&::-308.8387::\\'
++ perl -pe 's/::/ /g'
+1ABO_select2 & -308.8387 & -308.8387 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1ABO_select3::&::-303.8520::&::-303.8520::\\'
++ perl -pe 's/::/ /g'
+1ABO_select3 & -303.8520 & -303.8520 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1ABO_select4::&::-310.0087::&::-310.0087::\\'
++ perl -pe 's/::/ /g'
+1ABO_select4 & -310.0087 & -310.0087 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1ABO_select5::&::-301.6727::&::-301.6727::\\'
++ perl -pe 's/::/ /g'
+1ABO_select5 & -301.6727 & -301.6727 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1BM2_select1::&::-549.8638::&::.1983::\\'
++ perl -pe 's/::/ /g'
+1BM2_select1 & -549.8638 & .1983 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1BM2_select2::&::-541.5944::&::-541.5944::\\'
++ perl -pe 's/::/ /g'
+1BM2_select2 & -541.5944 & -541.5944 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1BM2_select3::&::-543.7434::&::-543.7434::\\'
++ perl -pe 's/::/ /g'
+1BM2_select3 & -543.7434 & -543.7434 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1BM2_select4::&::-549.0453::&::-549.0453::\\'
++ perl -pe 's/::/ /g'
+1BM2_select4 & -549.0453 & -549.0453 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1BM2_select5::&::-544.1447::&::1.1343::\\'
++ perl -pe 's/::/ /g'
+1BM2_select5 & -544.1447 & 1.1343 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1CKA_select1::&::-305.8477::&::-305.8477::\\'
++ perl -pe 's/::/ /g'
+1CKA_select1 & -305.8477 & -305.8477 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1CKA_select2::&::-309.9886::&::-309.9886::\\'
++ perl -pe 's/::/ /g'
+1CKA_select2 & -309.9886 & -309.9886 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1CKA_select3::&::-304.6618::&::-304.6618::\\'
++ perl -pe 's/::/ /g'
+1CKA_select3 & -304.6618 & -304.6618 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1CKA_select4::&::-302.4894::&::-302.4894::\\'
++ perl -pe 's/::/ /g'
+1CKA_select4 & -302.4894 & -302.4894 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1CKA_select5::&::-299.2329::&::10.8244::\\'
++ perl -pe 's/::/ /g'
+1CKA_select5 & -299.2329 & 10.8244 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1G9O_select1::&::-466.6764::&::-466.6764::\\'
++ perl -pe 's/::/ /g'
+1G9O_select1 & -466.6764 & -466.6764 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1G9O_select2::&::-478.8797::&::-478.8797::\\'
++ perl -pe 's/::/ /g'
+1G9O_select2 & -478.8797 & -478.8797 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1G9O_select3::&::-477.2503::&::-477.2503::\\'
++ perl -pe 's/::/ /g'
+1G9O_select3 & -477.2503 & -477.2503 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1G9O_select4::&::-470.6458::&::-470.6458::\\'
++ perl -pe 's/::/ /g'
+1G9O_select4 & -470.6458 & -470.6458 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1G9O_select5::&::-464.8659::&::5.4977::\\'
++ perl -pe 's/::/ /g'
+1G9O_select5 & -464.8659 & 5.4977 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1M61_select1::&::-550.0699::&::3.0387::\\'
++ perl -pe 's/::/ /g'
+1M61_select1 & -550.0699 & 3.0387 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1M61_select2::&::-538.6026::&::7.2677::\\'
++ perl -pe 's/::/ /g'
+1M61_select2 & -538.6026 & 7.2677 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1M61_select3::&::-552.2673::&::-552.2673::\\'
++ perl -pe 's/::/ /g'
+1M61_select3 & -552.2673 & -552.2673 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1M61_select4::&::-550.0553::&::-550.0553::\\'
++ perl -pe 's/::/ /g'
+1M61_select4 & -550.0553 & -550.0553 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1M61_select5::&::-553.6559::&::1.7086::\\'
++ perl -pe 's/::/ /g'
+1M61_select5 & -553.6559 & 1.7086 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1O4C_select1::&::-587.4665::&::-587.4665::\\'
++ perl -pe 's/::/ /g'
+1O4C_select1 & -587.4665 & -587.4665 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1O4C_select2::&::-585.8545::&::1.5176::\\'
++ perl -pe 's/::/ /g'
+1O4C_select2 & -585.8545 & 1.5176 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1O4C_select3::&::-580.3505::&::1.0399::\\'
++ perl -pe 's/::/ /g'
+1O4C_select3 & -580.3505 & 1.0399 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1O4C_select4::&::-587.1548::&::1.3323::\\'
++ perl -pe 's/::/ /g'
+1O4C_select4 & -587.1548 & 1.3323 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1O4C_select5::&::-590.2650::&::0::\\'
++ perl -pe 's/::/ /g'
+1O4C_select5 & -590.2650 & 0 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1R6J_select1::&::-448.8351::&::4.3200::\\'
++ perl -pe 's/::/ /g'
+1R6J_select1 & -448.8351 & 4.3200 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1R6J_select2::&::-448.4631::&::1.0398::\\'
++ perl -pe 's/::/ /g'
+1R6J_select2 & -448.4631 & 1.0398 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1R6J_select3::&::-450.3950::&::-450.3950::\\'
++ perl -pe 's/::/ /g'
+1R6J_select3 & -450.3950 & -450.3950 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1R6J_select4::&::-451.7211::&::.0589::\\'
++ perl -pe 's/::/ /g'
+1R6J_select4 & -451.7211 & .0589 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1R6J_select5::&::-450.9943::&::.4274::\\'
++ perl -pe 's/::/ /g'
+1R6J_select5 & -450.9943 & .4274 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '2BYG_select1::&::-511.3882::&::-5.7485::\\'
++ perl -pe 's/::/ /g'
+2BYG_select1 & -511.3882 & -5.7485 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '2BYG_select2::&::-504.7389::&::-504.7389::\\'
++ perl -pe 's/::/ /g'
+2BYG_select2 & -504.7389 & -504.7389 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '2BYG_select3::&::-504.3048::&::1.2745::\\'
++ perl -pe 's/::/ /g'
+2BYG_select3 & -504.3048 & 1.2745 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '2BYG_select4::&::-504.3466::&::.6930::\\'
++ perl -pe 's/::/ /g'
+2BYG_select4 & -504.3466 & .6930 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '2BYG_select5::&::-491.6095::&::-491.6095::\\'
++ perl -pe 's/::/ /g'
+2BYG_select5 & -491.6095 & -491.6095 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo
++ perl -pe 's/::/ /g'
+
++ echo '\hline'
+\hline
