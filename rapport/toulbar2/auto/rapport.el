@@ -13,7 +13,8 @@
      "tab_echec1M61__1"
      "tab_echec1O4C__1"
      "tab_echec1R6J__1"
-     "tab_echec2BYG__1")
+     "tab_echec2BYG__1"
+     "temps_CPU")
     (TeX-run-style-hooks
      "hyperref"
      "graphicx"

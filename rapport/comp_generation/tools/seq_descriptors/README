@@ -1,0 +1,50 @@
+====================
+Sequence Descriptors
+README file
+====================
+
+Thomas Gaillard, April 2012
+Jialin Liu, March 2012
+
+-----------
+Description
+-----------
+
+This archive contains sequence analysis scripts (in the lib folder) and
+a complete example of application (seq_descriptors.sh).
+
+Typical usage is the comparison of designed sequences with reference
+sequences, the latter can for example be a single native sequence or a
+Pfam alignment.
+
+Various sequence properties are calculated, such as sequence identity
+and similarity scores with respect to the reference sequence or
+alignment, charge, mass, volume, reference energy, etc. Some properties
+are also calculated by position.
+
+In order to be general, the scripts handle sequences in the SEQ format,
+which is the simplest multiple alignment format (one sequence by line,
+nothing else). Sequences in any format can thus be treated after
+conversion to the SEQ format.
+
+For more details, read code and comments in scripts.
+
+-------
+CONTENT
+-------
+
+README                             This file
+designed.seq                       Example of designed sequences in SEQ format
+native.seq                         Example of native sequence in SEQ format
+PF00018.seed                       Example of Pfam alignment in STOCKHOLM format
+native.aligned_to_PF00018.seed.seq Example of native sequence aligned to the Pfam alignment in SEQ format
+seq_descriptors.sh                 Example script illustrating possible applications
+clean.sh                           Script to clean files produced by seq_descriptors.sh
+lib/BLOSUM62                       BLOSUM62 similarity matrix (MATBLAS format)
+lib/dict_aa                        Dictionary file of amino acid properties
+lib/seq_check.pl                   Script to check SEQ file consistency
+lib/seq_compos.pl                  Script to calculate global composition of a SEQ alignment
+lib/seq_descriptors.pl             Script to calculate descriptors of sequences with respect to other sequences
+lib/stockholm2seq.pl               Script to convert a sequence alignment from STOCKHOLM to SEQ format
+lib/seq2profile.pl                 Script to build a profile from a SEQ alignment
+lib/seq_add_gaps.pl                Script to add gaps to and truncate a SEQ alignment according to a reference sequence
