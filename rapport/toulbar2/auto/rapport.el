@@ -4,7 +4,7 @@
      "tab_protoMC"
      "tab_protoRE"
      "tab_protoH"
-     "tab_temps_all"
+     "temps_CPU"
      "tab_best_ener_all"
      "Distrib_E_RE3"
      "TRAJ_T_RE1"
@@ -13,8 +13,7 @@
      "tab_echec1M61__1"
      "tab_echec1O4C__1"
      "tab_echec1R6J__1"
-     "tab_echec2BYG__1"
-     "temps_CPU")
+     "tab_echec2BYG__1")
     (TeX-run-style-hooks
      "hyperref"
      "graphicx"
