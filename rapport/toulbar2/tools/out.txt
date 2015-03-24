@@ -1,0 +1,5050 @@
++ ALGO_LIST='ph p8 p82'
++ active_nb=10
++ PROT_LIST='1A81_casa  1ABO_casa  1BM2_casa  1CKA_casa  1G9O_casa  1M61_casa  1O4C_casa  1R6J_casa  2BYG_casa'
++ . ./lib.sh
+++ declare -A name
+++ separator=::
+++ name["p0"]=MC0
+++ name["p00"]=MC0-
+++ name["p3"]=MC3
+++ name["p4"]=MC43
+++ name["p44"]=MC4-
+++ name["p432"]=MC4
+++ name["p433"]=MC4-
+++ name["p42"]=MC42-
+++ name["p43"]=MC42
+++ name["p5"]=RE1
+++ name["p6"]=RE2
+++ name["p62"]=RE2-
+++ name["p63"]=RE22-
+++ name["p64"]=RE22
+++ name["p7"]=RE5
+++ name["p8"]=RE3
+++ name["p82"]=RE32
+++ name["p9"]=RE4
+++ name["p11"]=RE42
+++ name["ph"]=H
+++ name["ph2"]=H-
+++ name["toulbar2"]=GMEC
++ declare -a TAB
++ declare -a L
++ declare -A best_ener
++ declare -A ener_exists
++ L=(Protéine)
++ for p in toulbar2 '$ALGO_LIST'
++ L+=(${name[$p]})
++ for p in toulbar2 '$ALGO_LIST'
++ L+=(${name[$p]})
++ for p in toulbar2 '$ALGO_LIST'
++ L+=(${name[$p]})
++ for p in toulbar2 '$ALGO_LIST'
++ L+=(${name[$p]})
++ TAB=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=Protéine
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=GMEC
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=H
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=RE3
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=RE32
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo 'Protéine::&::GMEC::&::H::&::RE3::&::RE32::\\'
++ print_tab 'TAB[@]'
++ tab=("${!1}")
++ local -a tab
++ echo '\hline'
+\hline
++ echo 'Protéine::&::GMEC::&::H::&::RE3::&::RE32::\\'
++ perl -pe 's/::/ /g'
+Protéine & GMEC & H & RE3 & RE32 \\
++ echo '\hline'
+\hline
+++ seq 1 1
++ for i in '$(seq 1 ${#tab[@]})'
++ echo
++ perl -pe 's/::/ /g'
+
++ echo '\hline'
+\hline
++ cd /home/mignon/bioinfo/toulbar2
++ for prot in '$PROT_LIST'
++ i=0
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1A81_s1
++ L=($select)
++ '[' -f 1A81_casa/actives/10/13_15_39_41_53_86_89_90_93_103/gmec.seq ']'
+++ cut -d ' ' -f 3 1A81_casa/actives/10/13_15_39_41_53_86_89_90_93_103/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-583.9354
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-583.9354
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1A81_casa/actives/10/13_15_39_41_53_86_89_90_93_103/ph.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/13_15_39_41_53_86_89_90_93_103/ph.ener.sort ']'
+++ head -1 1A81_casa/actives/10/13_15_39_41_53_86_89_90_93_103/ph.ener.sort
+++ cut -d ' ' -f 2
++ best_ener[$p]=-583.9354
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -583.9354 > -583.9354'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1A81_casa/actives/10/13_15_39_41_53_86_89_90_93_103/p8.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/13_15_39_41_53_86_89_90_93_103/p8.ener.sort ']'
++ '[' -f 1A81_casa/actives/10/13_15_39_41_53_86_89_90_93_103/p8.seq.sort ']'
++ '[' -f 1A81_casa/actives/10/13_15_39_41_53_86_89_90_93_103/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -583.9354'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1A81_casa/actives/10/13_15_39_41_53_86_89_90_93_103/p82.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/13_15_39_41_53_86_89_90_93_103/p82.ener.sort ']'
++ '[' -f 1A81_casa/actives/10/13_15_39_41_53_86_89_90_93_103/p82.seq.sort ']'
++ '[' -f 1A81_casa/actives/10/13_15_39_41_53_86_89_90_93_103/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -583.9354'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-583.9354 - -583.9354'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -583.9354'
+++ bc -l
++ DELTA=583.9354
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -583.9354'
+++ bc -l
++ DELTA=583.9354
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1A81_s1
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-583.9354
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=583.9354
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=583.9354
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1A81_s1::&::-583.9354::&::0::&::583.9354::&::583.9354::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1A81_s2
++ L=($select)
++ '[' -f 1A81_casa/actives/10/39_41_53_55_64_66_76_89_92_103/gmec.seq ']'
+++ cut -d ' ' -f 3 1A81_casa/actives/10/39_41_53_55_64_66_76_89_92_103/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-581.7802
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-581.7802
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1A81_casa/actives/10/39_41_53_55_64_66_76_89_92_103/ph.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/39_41_53_55_64_66_76_89_92_103/ph.ener.sort ']'
+++ head -1 1A81_casa/actives/10/39_41_53_55_64_66_76_89_92_103/ph.ener.sort
+++ cut -d ' ' -f 2
++ best_ener[$p]=-581.7802
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -581.7802 > -581.7802'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1A81_casa/actives/10/39_41_53_55_64_66_76_89_92_103/p8.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/39_41_53_55_64_66_76_89_92_103/p8.ener.sort ']'
++ '[' -f 1A81_casa/actives/10/39_41_53_55_64_66_76_89_92_103/p8.seq.sort ']'
++ '[' -f 1A81_casa/actives/10/39_41_53_55_64_66_76_89_92_103/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -581.7802'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1A81_casa/actives/10/39_41_53_55_64_66_76_89_92_103/p82.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/39_41_53_55_64_66_76_89_92_103/p82.ener.sort ']'
++ '[' -f 1A81_casa/actives/10/39_41_53_55_64_66_76_89_92_103/p82.seq.sort ']'
++ '[' -f 1A81_casa/actives/10/39_41_53_55_64_66_76_89_92_103/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -581.7802'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-581.7802 - -581.7802'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -581.7802'
+++ bc -l
++ DELTA=581.7802
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -581.7802'
+++ bc -l
++ DELTA=581.7802
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1A81_s2
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-581.7802
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=581.7802
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=581.7802
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1A81_s2::&::-581.7802::&::0::&::581.7802::&::581.7802::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1A81_s3
++ L=($select)
++ '[' -f 1A81_casa/actives/10/51_53_64_66_68_74_76_82_88_92/gmec.seq ']'
+++ cut -d ' ' -f 3 1A81_casa/actives/10/51_53_64_66_68_74_76_82_88_92/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-587.4392
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-587.4392
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1A81_casa/actives/10/51_53_64_66_68_74_76_82_88_92/ph.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/51_53_64_66_68_74_76_82_88_92/ph.ener.sort ']'
+++ head -1 1A81_casa/actives/10/51_53_64_66_68_74_76_82_88_92/ph.ener.sort
+++ cut -d ' ' -f 2
++ best_ener[$p]=-587.4393
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -587.4393 > -587.4392'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1A81_casa/actives/10/51_53_64_66_68_74_76_82_88_92/p8.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/51_53_64_66_68_74_76_82_88_92/p8.ener.sort ']'
++ '[' -f 1A81_casa/actives/10/51_53_64_66_68_74_76_82_88_92/p8.seq.sort ']'
++ '[' -f 1A81_casa/actives/10/51_53_64_66_68_74_76_82_88_92/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -587.4392'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1A81_casa/actives/10/51_53_64_66_68_74_76_82_88_92/p82.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/51_53_64_66_68_74_76_82_88_92/p82.ener.sort ']'
++ '[' -f 1A81_casa/actives/10/51_53_64_66_68_74_76_82_88_92/p82.seq.sort ']'
++ '[' -f 1A81_casa/actives/10/51_53_64_66_68_74_76_82_88_92/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -587.4392'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-587.4393 - -587.4392'
+++ bc -l
++ DELTA=-.0001
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -587.4392'
+++ bc -l
++ DELTA=587.4392
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -587.4392'
+++ bc -l
++ DELTA=587.4392
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1A81_s3
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-587.4392
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-.0001
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=587.4392
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=587.4392
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1A81_s3::&::-587.4392::&::-.0001::&::587.4392::&::587.4392::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1A81_s4
++ L=($select)
++ '[' -f 1A81_casa/actives/10/76_82_87_88_90_91_92_95_97_99/gmec.seq ']'
+++ cut -d ' ' -f 3 1A81_casa/actives/10/76_82_87_88_90_91_92_95_97_99/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-589.1322
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-589.1322
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1A81_casa/actives/10/76_82_87_88_90_91_92_95_97_99/ph.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/76_82_87_88_90_91_92_95_97_99/ph.ener.sort ']'
+++ head -1 1A81_casa/actives/10/76_82_87_88_90_91_92_95_97_99/ph.ener.sort
+++ cut -d ' ' -f 2
++ best_ener[$p]=-589.1322
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -589.1322 > -589.1322'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1A81_casa/actives/10/76_82_87_88_90_91_92_95_97_99/p8.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/76_82_87_88_90_91_92_95_97_99/p8.ener.sort ']'
++ '[' -f 1A81_casa/actives/10/76_82_87_88_90_91_92_95_97_99/p8.seq.sort ']'
++ '[' -f 1A81_casa/actives/10/76_82_87_88_90_91_92_95_97_99/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -589.1322'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1A81_casa/actives/10/76_82_87_88_90_91_92_95_97_99/p82.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/76_82_87_88_90_91_92_95_97_99/p82.ener.sort ']'
++ '[' -f 1A81_casa/actives/10/76_82_87_88_90_91_92_95_97_99/p82.seq.sort ']'
++ '[' -f 1A81_casa/actives/10/76_82_87_88_90_91_92_95_97_99/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -589.1322'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-589.1322 - -589.1322'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -589.1322'
+++ bc -l
++ DELTA=589.1322
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -589.1322'
+++ bc -l
++ DELTA=589.1322
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1A81_s4
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-589.1322
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=589.1322
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=589.1322
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1A81_s4::&::-589.1322::&::0::&::589.1322::&::589.1322::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1A81_s5
++ L=($select)
++ '[' -f 1A81_casa/actives/10/9_10_11_16_41_51_53_66_88_89/gmec.seq ']'
+++ cut -d ' ' -f 3 1A81_casa/actives/10/9_10_11_16_41_51_53_66_88_89/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-578.2558
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-578.2558
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1A81_casa/actives/10/9_10_11_16_41_51_53_66_88_89/ph.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/9_10_11_16_41_51_53_66_88_89/ph.ener.sort ']'
+++ head -1 1A81_casa/actives/10/9_10_11_16_41_51_53_66_88_89/ph.ener.sort
+++ cut -d ' ' -f 2
++ best_ener[$p]=-578.2558
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -578.2558 > -578.2558'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1A81_casa/actives/10/9_10_11_16_41_51_53_66_88_89/p8.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/9_10_11_16_41_51_53_66_88_89/p8.ener.sort ']'
++ '[' -f 1A81_casa/actives/10/9_10_11_16_41_51_53_66_88_89/p8.seq.sort ']'
++ '[' -f 1A81_casa/actives/10/9_10_11_16_41_51_53_66_88_89/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -578.2558'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1A81_casa/actives/10/9_10_11_16_41_51_53_66_88_89/p82.ener.sort.xz ']'
++ '[' -f 1A81_casa/actives/10/9_10_11_16_41_51_53_66_88_89/p82.ener.sort ']'
++ '[' -f 1A81_casa/actives/10/9_10_11_16_41_51_53_66_88_89/p82.seq.sort ']'
++ '[' -f 1A81_casa/actives/10/9_10_11_16_41_51_53_66_88_89/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -578.2558'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-578.2558 - -578.2558'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -578.2558'
+++ bc -l
++ DELTA=578.2558
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -578.2558'
+++ bc -l
++ DELTA=578.2558
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1A81_s5
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-578.2558
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=578.2558
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=578.2558
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1A81_s5::&::-578.2558::&::0::&::578.2558::&::578.2558::\\'
++ for prot in '$PROT_LIST'
++ i=0
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1ABO_s1
++ L=($select)
++ '[' -f 1ABO_casa/actives/10/64_72_74_79_89_91_101_103_108_111/gmec.seq ']'
+++ cut -d ' ' -f 3 1ABO_casa/actives/10/64_72_74_79_89_91_101_103_108_111/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-309.1670
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-309.1670
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1ABO_casa/actives/10/64_72_74_79_89_91_101_103_108_111/ph.ener.sort.xz ']'
+++ xzcat 1ABO_casa/actives/10/64_72_74_79_89_91_101_103_108_111/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-309.2345
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -309.2345 > -309.1670'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1ABO_casa/actives/10/64_72_74_79_89_91_101_103_108_111/p8.ener.sort.xz ']'
++ '[' -f 1ABO_casa/actives/10/64_72_74_79_89_91_101_103_108_111/p8.ener.sort ']'
++ '[' -f 1ABO_casa/actives/10/64_72_74_79_89_91_101_103_108_111/p8.seq.sort ']'
++ '[' -f 1ABO_casa/actives/10/64_72_74_79_89_91_101_103_108_111/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -309.1670'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1ABO_casa/actives/10/64_72_74_79_89_91_101_103_108_111/p82.ener.sort.xz ']'
++ '[' -f 1ABO_casa/actives/10/64_72_74_79_89_91_101_103_108_111/p82.ener.sort ']'
++ '[' -f 1ABO_casa/actives/10/64_72_74_79_89_91_101_103_108_111/p82.seq.sort ']'
++ '[' -f 1ABO_casa/actives/10/64_72_74_79_89_91_101_103_108_111/p82.seq.sort.xz ']'
+++ xzcat 1ABO_casa/actives/10/64_72_74_79_89_91_101_103_108_111/p82.seq.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo '  > -309.1670'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-309.2345 - -309.1670'
+++ bc -l
++ DELTA=-.0675
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -309.1670'
+++ bc -l
++ DELTA=309.1670
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo ' - -309.1670'
+++ bc -l
++ DELTA=309.1670
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1ABO_s1
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-309.1670
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-.0675
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=309.1670
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=309.1670
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1ABO_s1::&::-309.1670::&::-.0675::&::309.1670::&::309.1670::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1ABO_s2
++ L=($select)
++ '[' -f 1ABO_casa/actives/10/66_68_80_82_88_90_100_102_104_111/gmec.seq ']'
+++ cut -d ' ' -f 3 1ABO_casa/actives/10/66_68_80_82_88_90_100_102_104_111/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-308.8387
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-308.8387
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1ABO_casa/actives/10/66_68_80_82_88_90_100_102_104_111/ph.ener.sort.xz ']'
+++ xzcat 1ABO_casa/actives/10/66_68_80_82_88_90_100_102_104_111/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-308.8387
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -308.8387 > -308.8387'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1ABO_casa/actives/10/66_68_80_82_88_90_100_102_104_111/p8.ener.sort.xz ']'
++ '[' -f 1ABO_casa/actives/10/66_68_80_82_88_90_100_102_104_111/p8.ener.sort ']'
++ '[' -f 1ABO_casa/actives/10/66_68_80_82_88_90_100_102_104_111/p8.seq.sort ']'
++ '[' -f 1ABO_casa/actives/10/66_68_80_82_88_90_100_102_104_111/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -308.8387'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1ABO_casa/actives/10/66_68_80_82_88_90_100_102_104_111/p82.ener.sort.xz ']'
++ '[' -f 1ABO_casa/actives/10/66_68_80_82_88_90_100_102_104_111/p82.ener.sort ']'
++ '[' -f 1ABO_casa/actives/10/66_68_80_82_88_90_100_102_104_111/p82.seq.sort ']'
++ '[' -f 1ABO_casa/actives/10/66_68_80_82_88_90_100_102_104_111/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -308.8387'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-308.8387 - -308.8387'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -308.8387'
+++ bc -l
++ DELTA=308.8387
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -308.8387'
+++ bc -l
++ DELTA=308.8387
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1ABO_s2
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-308.8387
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=308.8387
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=308.8387
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1ABO_s2::&::-308.8387::&::0::&::308.8387::&::308.8387::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1ABO_s3
++ L=($select)
++ '[' -f 1ABO_casa/actives/10/69_70_72_115_74_80_81_106_113_114/gmec.seq ']'
+++ cut -d ' ' -f 3 1ABO_casa/actives/10/69_70_72_115_74_80_81_106_113_114/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-303.8520
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-303.8520
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1ABO_casa/actives/10/69_70_72_115_74_80_81_106_113_114/ph.ener.sort.xz ']'
+++ xzcat 1ABO_casa/actives/10/69_70_72_115_74_80_81_106_113_114/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-303.8520
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -303.8520 > -303.8520'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1ABO_casa/actives/10/69_70_72_115_74_80_81_106_113_114/p8.ener.sort.xz ']'
++ '[' -f 1ABO_casa/actives/10/69_70_72_115_74_80_81_106_113_114/p8.ener.sort ']'
++ '[' -f 1ABO_casa/actives/10/69_70_72_115_74_80_81_106_113_114/p8.seq.sort ']'
++ '[' -f 1ABO_casa/actives/10/69_70_72_115_74_80_81_106_113_114/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -303.8520'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1ABO_casa/actives/10/69_70_72_115_74_80_81_106_113_114/p82.ener.sort.xz ']'
++ '[' -f 1ABO_casa/actives/10/69_70_72_115_74_80_81_106_113_114/p82.ener.sort ']'
++ '[' -f 1ABO_casa/actives/10/69_70_72_115_74_80_81_106_113_114/p82.seq.sort ']'
++ '[' -f 1ABO_casa/actives/10/69_70_72_115_74_80_81_106_113_114/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -303.8520'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-303.8520 - -303.8520'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -303.8520'
+++ bc -l
++ DELTA=303.8520
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -303.8520'
+++ bc -l
++ DELTA=303.8520
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1ABO_s3
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-303.8520
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=303.8520
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=303.8520
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1ABO_s3::&::-303.8520::&::0::&::303.8520::&::303.8520::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1ABO_s4
++ L=($select)
++ '[' -f 1ABO_casa/actives/10/71_83_84_78_94_99_101_104_105_106/gmec.seq ']'
+++ cut -d ' ' -f 3 1ABO_casa/actives/10/71_83_84_78_94_99_101_104_105_106/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-310.0087
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-310.0087
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1ABO_casa/actives/10/71_83_84_78_94_99_101_104_105_106/ph.ener.sort.xz ']'
+++ xzcat 1ABO_casa/actives/10/71_83_84_78_94_99_101_104_105_106/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-310.0087
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -310.0087 > -310.0087'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1ABO_casa/actives/10/71_83_84_78_94_99_101_104_105_106/p8.ener.sort.xz ']'
++ '[' -f 1ABO_casa/actives/10/71_83_84_78_94_99_101_104_105_106/p8.ener.sort ']'
++ '[' -f 1ABO_casa/actives/10/71_83_84_78_94_99_101_104_105_106/p8.seq.sort ']'
++ '[' -f 1ABO_casa/actives/10/71_83_84_78_94_99_101_104_105_106/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -310.0087'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1ABO_casa/actives/10/71_83_84_78_94_99_101_104_105_106/p82.ener.sort.xz ']'
++ '[' -f 1ABO_casa/actives/10/71_83_84_78_94_99_101_104_105_106/p82.ener.sort ']'
++ '[' -f 1ABO_casa/actives/10/71_83_84_78_94_99_101_104_105_106/p82.seq.sort ']'
++ '[' -f 1ABO_casa/actives/10/71_83_84_78_94_99_101_104_105_106/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -310.0087'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-310.0087 - -310.0087'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -310.0087'
+++ bc -l
++ DELTA=310.0087
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -310.0087'
+++ bc -l
++ DELTA=310.0087
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1ABO_s4
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-310.0087
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=310.0087
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=310.0087
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1ABO_s4::&::-310.0087::&::0::&::310.0087::&::310.0087::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1ABO_s5
++ L=($select)
++ '[' -f 1ABO_casa/actives/10/72_79_94_99_82_102_104_106_111_115/gmec.seq ']'
+++ cut -d ' ' -f 3 1ABO_casa/actives/10/72_79_94_99_82_102_104_106_111_115/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-301.6727
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-301.6727
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1ABO_casa/actives/10/72_79_94_99_82_102_104_106_111_115/ph.ener.sort.xz ']'
+++ xzcat 1ABO_casa/actives/10/72_79_94_99_82_102_104_106_111_115/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-301.6727
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -301.6727 > -301.6727'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1ABO_casa/actives/10/72_79_94_99_82_102_104_106_111_115/p8.ener.sort.xz ']'
++ '[' -f 1ABO_casa/actives/10/72_79_94_99_82_102_104_106_111_115/p8.ener.sort ']'
++ '[' -f 1ABO_casa/actives/10/72_79_94_99_82_102_104_106_111_115/p8.seq.sort ']'
++ '[' -f 1ABO_casa/actives/10/72_79_94_99_82_102_104_106_111_115/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -301.6727'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1ABO_casa/actives/10/72_79_94_99_82_102_104_106_111_115/p82.ener.sort.xz ']'
++ '[' -f 1ABO_casa/actives/10/72_79_94_99_82_102_104_106_111_115/p82.ener.sort ']'
++ '[' -f 1ABO_casa/actives/10/72_79_94_99_82_102_104_106_111_115/p82.seq.sort ']'
++ '[' -f 1ABO_casa/actives/10/72_79_94_99_82_102_104_106_111_115/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -301.6727'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-301.6727 - -301.6727'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -301.6727'
+++ bc -l
++ DELTA=301.6727
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -301.6727'
+++ bc -l
++ DELTA=301.6727
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1ABO_s5
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-301.6727
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=301.6727
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=301.6727
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1ABO_s5::&::-301.6727::&::0::&::301.6727::&::301.6727::\\'
++ for prot in '$PROT_LIST'
++ i=0
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1BM2_s1
++ L=($select)
++ '[' -f 1BM2_casa/actives/10/119_120_121_122_123_125_131_134_135_140/gmec.seq ']'
+++ cut -d ' ' -f 3 1BM2_casa/actives/10/119_120_121_122_123_125_131_134_135_140/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-549.8638
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-549.8638
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1BM2_casa/actives/10/119_120_121_122_123_125_131_134_135_140/ph.ener.sort.xz ']'
++ '[' -f 1BM2_casa/actives/10/119_120_121_122_123_125_131_134_135_140/ph.ener.sort ']'
+++ head -1 1BM2_casa/actives/10/119_120_121_122_123_125_131_134_135_140/ph.ener.sort
+++ cut -d ' ' -f 2
++ best_ener[$p]=-549.8638
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -549.8638 > -549.8638'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1BM2_casa/actives/10/119_120_121_122_123_125_131_134_135_140/p8.ener.sort.xz ']'
++ '[' -f 1BM2_casa/actives/10/119_120_121_122_123_125_131_134_135_140/p8.ener.sort ']'
++ '[' -f 1BM2_casa/actives/10/119_120_121_122_123_125_131_134_135_140/p8.seq.sort ']'
++ '[' -f 1BM2_casa/actives/10/119_120_121_122_123_125_131_134_135_140/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -549.8638'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1BM2_casa/actives/10/119_120_121_122_123_125_131_134_135_140/p82.ener.sort.xz ']'
++ '[' -f 1BM2_casa/actives/10/119_120_121_122_123_125_131_134_135_140/p82.ener.sort ']'
++ '[' -f 1BM2_casa/actives/10/119_120_121_122_123_125_131_134_135_140/p82.seq.sort ']'
++ '[' -f 1BM2_casa/actives/10/119_120_121_122_123_125_131_134_135_140/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -549.8638'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-549.8638 - -549.8638'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -549.8638'
+++ bc -l
++ DELTA=549.8638
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -549.8638'
+++ bc -l
++ DELTA=549.8638
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1BM2_s1
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-549.8638
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=549.8638
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=549.8638
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1BM2_s1::&::-549.8638::&::0::&::549.8638::&::549.8638::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1BM2_s2
++ L=($select)
++ '[' -f 1BM2_casa/actives/10/125_126_127_129_130_133_134_136_137_147/gmec.seq ']'
+++ cut -d ' ' -f 3 1BM2_casa/actives/10/125_126_127_129_130_133_134_136_137_147/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-541.5944
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-541.5944
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1BM2_casa/actives/10/125_126_127_129_130_133_134_136_137_147/ph.ener.sort.xz ']'
++ '[' -f 1BM2_casa/actives/10/125_126_127_129_130_133_134_136_137_147/ph.ener.sort ']'
+++ head -1 1BM2_casa/actives/10/125_126_127_129_130_133_134_136_137_147/ph.ener.sort
+++ cut -d ' ' -f 2
++ best_ener[$p]=-541.5944
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -541.5944 > -541.5944'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1BM2_casa/actives/10/125_126_127_129_130_133_134_136_137_147/p8.ener.sort.xz ']'
++ '[' -f 1BM2_casa/actives/10/125_126_127_129_130_133_134_136_137_147/p8.ener.sort ']'
++ '[' -f 1BM2_casa/actives/10/125_126_127_129_130_133_134_136_137_147/p8.seq.sort ']'
++ '[' -f 1BM2_casa/actives/10/125_126_127_129_130_133_134_136_137_147/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -541.5944'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1BM2_casa/actives/10/125_126_127_129_130_133_134_136_137_147/p82.ener.sort.xz ']'
++ '[' -f 1BM2_casa/actives/10/125_126_127_129_130_133_134_136_137_147/p82.ener.sort ']'
++ '[' -f 1BM2_casa/actives/10/125_126_127_129_130_133_134_136_137_147/p82.seq.sort ']'
++ '[' -f 1BM2_casa/actives/10/125_126_127_129_130_133_134_136_137_147/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -541.5944'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-541.5944 - -541.5944'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -541.5944'
+++ bc -l
++ DELTA=541.5944
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -541.5944'
+++ bc -l
++ DELTA=541.5944
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1BM2_s2
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-541.5944
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=541.5944
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=541.5944
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1BM2_s2::&::-541.5944::&::0::&::541.5944::&::541.5944::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1BM2_s3
++ L=($select)
++ '[' -f 1BM2_casa/actives/10/83_99_101_106_108_135_140_141_146_148/gmec.seq ']'
+++ cut -d ' ' -f 3 1BM2_casa/actives/10/83_99_101_106_108_135_140_141_146_148/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-543.7434
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-543.7434
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1BM2_casa/actives/10/83_99_101_106_108_135_140_141_146_148/ph.ener.sort.xz ']'
++ '[' -f 1BM2_casa/actives/10/83_99_101_106_108_135_140_141_146_148/ph.ener.sort ']'
+++ head -1 1BM2_casa/actives/10/83_99_101_106_108_135_140_141_146_148/ph.ener.sort
+++ cut -d ' ' -f 2
++ best_ener[$p]=-543.7434
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -543.7434 > -543.7434'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1BM2_casa/actives/10/83_99_101_106_108_135_140_141_146_148/p8.ener.sort.xz ']'
++ '[' -f 1BM2_casa/actives/10/83_99_101_106_108_135_140_141_146_148/p8.ener.sort ']'
++ '[' -f 1BM2_casa/actives/10/83_99_101_106_108_135_140_141_146_148/p8.seq.sort ']'
++ '[' -f 1BM2_casa/actives/10/83_99_101_106_108_135_140_141_146_148/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -543.7434'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1BM2_casa/actives/10/83_99_101_106_108_135_140_141_146_148/p82.ener.sort.xz ']'
++ '[' -f 1BM2_casa/actives/10/83_99_101_106_108_135_140_141_146_148/p82.ener.sort ']'
++ '[' -f 1BM2_casa/actives/10/83_99_101_106_108_135_140_141_146_148/p82.seq.sort ']'
++ '[' -f 1BM2_casa/actives/10/83_99_101_106_108_135_140_141_146_148/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -543.7434'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-543.7434 - -543.7434'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -543.7434'
+++ bc -l
++ DELTA=543.7434
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -543.7434'
+++ bc -l
++ DELTA=543.7434
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1BM2_s3
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-543.7434
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=543.7434
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=543.7434
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1BM2_s3::&::-543.7434::&::0::&::543.7434::&::543.7434::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1BM2_s4
++ L=($select)
++ '[' -f 1BM2_casa/actives/10/85_95_97_110_118_120_125_128_131_132/gmec.seq ']'
+++ cut -d ' ' -f 3 1BM2_casa/actives/10/85_95_97_110_118_120_125_128_131_132/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-549.0453
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-549.0453
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1BM2_casa/actives/10/85_95_97_110_118_120_125_128_131_132/ph.ener.sort.xz ']'
++ '[' -f 1BM2_casa/actives/10/85_95_97_110_118_120_125_128_131_132/ph.ener.sort ']'
+++ head -1 1BM2_casa/actives/10/85_95_97_110_118_120_125_128_131_132/ph.ener.sort
+++ cut -d ' ' -f 2
++ best_ener[$p]=-549.0453
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -549.0453 > -549.0453'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1BM2_casa/actives/10/85_95_97_110_118_120_125_128_131_132/p8.ener.sort.xz ']'
++ '[' -f 1BM2_casa/actives/10/85_95_97_110_118_120_125_128_131_132/p8.ener.sort ']'
++ '[' -f 1BM2_casa/actives/10/85_95_97_110_118_120_125_128_131_132/p8.seq.sort ']'
++ '[' -f 1BM2_casa/actives/10/85_95_97_110_118_120_125_128_131_132/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -549.0453'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1BM2_casa/actives/10/85_95_97_110_118_120_125_128_131_132/p82.ener.sort.xz ']'
++ '[' -f 1BM2_casa/actives/10/85_95_97_110_118_120_125_128_131_132/p82.ener.sort ']'
++ '[' -f 1BM2_casa/actives/10/85_95_97_110_118_120_125_128_131_132/p82.seq.sort ']'
++ '[' -f 1BM2_casa/actives/10/85_95_97_110_118_120_125_128_131_132/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -549.0453'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-549.0453 - -549.0453'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -549.0453'
+++ bc -l
++ DELTA=549.0453
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -549.0453'
+++ bc -l
++ DELTA=549.0453
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1BM2_s4
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-549.0453
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=549.0453
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=549.0453
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1BM2_s4::&::-549.0453::&::0::&::549.0453::&::549.0453::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1BM2_s5
++ L=($select)
++ '[' -f 1BM2_casa/actives/10/99_101_106_139_140_141_142_143_144_146/gmec.seq ']'
+++ cut -d ' ' -f 3 1BM2_casa/actives/10/99_101_106_139_140_141_142_143_144_146/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-544.1447
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-544.1447
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1BM2_casa/actives/10/99_101_106_139_140_141_142_143_144_146/ph.ener.sort.xz ']'
++ '[' -f 1BM2_casa/actives/10/99_101_106_139_140_141_142_143_144_146/ph.ener.sort ']'
+++ head -1 1BM2_casa/actives/10/99_101_106_139_140_141_142_143_144_146/ph.ener.sort
+++ cut -d ' ' -f 2
++ best_ener[$p]=-544.1447
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -544.1447 > -544.1447'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1BM2_casa/actives/10/99_101_106_139_140_141_142_143_144_146/p8.ener.sort.xz ']'
++ '[' -f 1BM2_casa/actives/10/99_101_106_139_140_141_142_143_144_146/p8.ener.sort ']'
++ '[' -f 1BM2_casa/actives/10/99_101_106_139_140_141_142_143_144_146/p8.seq.sort ']'
++ '[' -f 1BM2_casa/actives/10/99_101_106_139_140_141_142_143_144_146/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -544.1447'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1BM2_casa/actives/10/99_101_106_139_140_141_142_143_144_146/p82.ener.sort.xz ']'
++ '[' -f 1BM2_casa/actives/10/99_101_106_139_140_141_142_143_144_146/p82.ener.sort ']'
++ '[' -f 1BM2_casa/actives/10/99_101_106_139_140_141_142_143_144_146/p82.seq.sort ']'
++ '[' -f 1BM2_casa/actives/10/99_101_106_139_140_141_142_143_144_146/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -544.1447'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-544.1447 - -544.1447'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -544.1447'
+++ bc -l
++ DELTA=544.1447
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -544.1447'
+++ bc -l
++ DELTA=544.1447
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1BM2_s5
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-544.1447
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=544.1447
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=544.1447
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1BM2_s5::&::-544.1447::&::0::&::544.1447::&::544.1447::\\'
++ for prot in '$PROT_LIST'
++ i=0
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1CKA_s1
++ L=($select)
++ '[' -f 1CKA_casa/actives/10/134_135_160_161_162_173_174_175_176_179/gmec.seq ']'
+++ cut -d ' ' -f 3 1CKA_casa/actives/10/134_135_160_161_162_173_174_175_176_179/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-305.8477
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-305.8477
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1CKA_casa/actives/10/134_135_160_161_162_173_174_175_176_179/ph.ener.sort.xz ']'
+++ xzcat 1CKA_casa/actives/10/134_135_160_161_162_173_174_175_176_179/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-305.8477
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -305.8477 > -305.8477'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1CKA_casa/actives/10/134_135_160_161_162_173_174_175_176_179/p8.ener.sort.xz ']'
++ '[' -f 1CKA_casa/actives/10/134_135_160_161_162_173_174_175_176_179/p8.ener.sort ']'
++ '[' -f 1CKA_casa/actives/10/134_135_160_161_162_173_174_175_176_179/p8.seq.sort ']'
++ '[' -f 1CKA_casa/actives/10/134_135_160_161_162_173_174_175_176_179/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -305.8477'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1CKA_casa/actives/10/134_135_160_161_162_173_174_175_176_179/p82.ener.sort.xz ']'
++ '[' -f 1CKA_casa/actives/10/134_135_160_161_162_173_174_175_176_179/p82.ener.sort ']'
++ '[' -f 1CKA_casa/actives/10/134_135_160_161_162_173_174_175_176_179/p82.seq.sort ']'
++ '[' -f 1CKA_casa/actives/10/134_135_160_161_162_173_174_175_176_179/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -305.8477'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-305.8477 - -305.8477'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -305.8477'
+++ bc -l
++ DELTA=305.8477
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -305.8477'
+++ bc -l
++ DELTA=305.8477
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1CKA_s1
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-305.8477
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=305.8477
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=305.8477
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1CKA_s1::&::-305.8477::&::0::&::305.8477::&::305.8477::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1CKA_s2
++ L=($select)
++ '[' -f 1CKA_casa/actives/10/137_139_143_151_153_157_159_172_182_186/gmec.seq ']'
+++ cut -d ' ' -f 3 1CKA_casa/actives/10/137_139_143_151_153_157_159_172_182_186/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-309.9886
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-309.9886
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1CKA_casa/actives/10/137_139_143_151_153_157_159_172_182_186/ph.ener.sort.xz ']'
+++ xzcat 1CKA_casa/actives/10/137_139_143_151_153_157_159_172_182_186/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-309.9886
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -309.9886 > -309.9886'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1CKA_casa/actives/10/137_139_143_151_153_157_159_172_182_186/p8.ener.sort.xz ']'
++ '[' -f 1CKA_casa/actives/10/137_139_143_151_153_157_159_172_182_186/p8.ener.sort ']'
++ '[' -f 1CKA_casa/actives/10/137_139_143_151_153_157_159_172_182_186/p8.seq.sort ']'
++ '[' -f 1CKA_casa/actives/10/137_139_143_151_153_157_159_172_182_186/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -309.9886'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1CKA_casa/actives/10/137_139_143_151_153_157_159_172_182_186/p82.ener.sort.xz ']'
++ '[' -f 1CKA_casa/actives/10/137_139_143_151_153_157_159_172_182_186/p82.ener.sort ']'
++ '[' -f 1CKA_casa/actives/10/137_139_143_151_153_157_159_172_182_186/p82.seq.sort ']'
++ '[' -f 1CKA_casa/actives/10/137_139_143_151_153_157_159_172_182_186/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -309.9886'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-309.9886 - -309.9886'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -309.9886'
+++ bc -l
++ DELTA=309.9886
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -309.9886'
+++ bc -l
++ DELTA=309.9886
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1CKA_s2
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-309.9886
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=309.9886
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=309.9886
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1CKA_s2::&::-309.9886::&::0::&::309.9886::&::309.9886::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1CKA_s3
++ L=($select)
++ '[' -f 1CKA_casa/actives/10/138_140_147_149_150_155_166_169_181_188/gmec.seq ']'
+++ cut -d ' ' -f 3 1CKA_casa/actives/10/138_140_147_149_150_155_166_169_181_188/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-304.6618
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-304.6618
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1CKA_casa/actives/10/138_140_147_149_150_155_166_169_181_188/ph.ener.sort.xz ']'
+++ xzcat 1CKA_casa/actives/10/138_140_147_149_150_155_166_169_181_188/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-304.6618
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -304.6618 > -304.6618'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1CKA_casa/actives/10/138_140_147_149_150_155_166_169_181_188/p8.ener.sort.xz ']'
++ '[' -f 1CKA_casa/actives/10/138_140_147_149_150_155_166_169_181_188/p8.ener.sort ']'
++ '[' -f 1CKA_casa/actives/10/138_140_147_149_150_155_166_169_181_188/p8.seq.sort ']'
++ '[' -f 1CKA_casa/actives/10/138_140_147_149_150_155_166_169_181_188/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -304.6618'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1CKA_casa/actives/10/138_140_147_149_150_155_166_169_181_188/p82.ener.sort.xz ']'
++ '[' -f 1CKA_casa/actives/10/138_140_147_149_150_155_166_169_181_188/p82.ener.sort ']'
++ '[' -f 1CKA_casa/actives/10/138_140_147_149_150_155_166_169_181_188/p82.seq.sort ']'
++ '[' -f 1CKA_casa/actives/10/138_140_147_149_150_155_166_169_181_188/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -304.6618'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-304.6618 - -304.6618'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -304.6618'
+++ bc -l
++ DELTA=304.6618
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -304.6618'
+++ bc -l
++ DELTA=304.6618
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1CKA_s3
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-304.6618
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=304.6618
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=304.6618
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1CKA_s3::&::-304.6618::&::0::&::304.6618::&::304.6618::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1CKA_s4
++ L=($select)
++ '[' -f 1CKA_casa/actives/10/140_141_153_154_155_157_174_175_184_186/gmec.seq ']'
+++ cut -d ' ' -f 3 1CKA_casa/actives/10/140_141_153_154_155_157_174_175_184_186/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-302.4894
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-302.4894
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1CKA_casa/actives/10/140_141_153_154_155_157_174_175_184_186/ph.ener.sort.xz ']'
+++ xzcat 1CKA_casa/actives/10/140_141_153_154_155_157_174_175_184_186/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-302.4894
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -302.4894 > -302.4894'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1CKA_casa/actives/10/140_141_153_154_155_157_174_175_184_186/p8.ener.sort.xz ']'
++ '[' -f 1CKA_casa/actives/10/140_141_153_154_155_157_174_175_184_186/p8.ener.sort ']'
++ '[' -f 1CKA_casa/actives/10/140_141_153_154_155_157_174_175_184_186/p8.seq.sort ']'
++ '[' -f 1CKA_casa/actives/10/140_141_153_154_155_157_174_175_184_186/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -302.4894'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' -f 1CKA_casa/actives/10/140_141_153_154_155_157_174_175_184_186/p82.ener.sort.xz ']'
++ '[' -f 1CKA_casa/actives/10/140_141_153_154_155_157_174_175_184_186/p82.ener.sort ']'
++ '[' -f 1CKA_casa/actives/10/140_141_153_154_155_157_174_175_184_186/p82.seq.sort ']'
++ '[' -f 1CKA_casa/actives/10/140_141_153_154_155_157_174_175_184_186/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo '  > -302.4894'
+++ bc -l
+(standard_in) 1: syntax error
++ '[' -eq 1 ']'
+./array_ener_with_actives.sh: line 81: [: -eq: unary operator expected
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-302.4894 - -302.4894'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -302.4894'
+++ bc -l
++ DELTA=302.4894
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo ' - -302.4894'
+++ bc -l
++ DELTA=302.4894
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1CKA_s4
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-302.4894
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=302.4894
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=302.4894
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1CKA_s4::&::-302.4894::&::0::&::302.4894::&::302.4894::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1CKA_s5
++ L=($select)
++ '[' -f 1CKA_casa/actives/10/151_153_157_166_168_173_174_176_178_179/gmec.seq ']'
+++ cut -d ' ' -f 3 1CKA_casa/actives/10/151_153_157_166_168_173_174_176_178_179/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-299.2329
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-299.2329
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1CKA_casa/actives/10/151_153_157_166_168_173_174_176_178_179/ph.ener.sort.xz ']'
+++ xzcat 1CKA_casa/actives/10/151_153_157_166_168_173_174_176_178_179/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-299.5188
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -299.5188 > -299.2329'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1CKA_casa/actives/10/151_153_157_166_168_173_174_176_178_179/p8.ener.sort.xz ']'
++ '[' -f 1CKA_casa/actives/10/151_153_157_166_168_173_174_176_178_179/p8.ener.sort ']'
++ '[' -f 1CKA_casa/actives/10/151_153_157_166_168_173_174_176_178_179/p8.seq.sort ']'
++ '[' -f 1CKA_casa/actives/10/151_153_157_166_168_173_174_176_178_179/p8.seq.sort.xz ']'
+++ xzcat 1CKA_casa/actives/10/151_153_157_166_168_173_174_176_178_179/p8.seq.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-300.5174
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -300.5174 > -299.2329'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1CKA_casa/actives/10/151_153_157_166_168_173_174_176_178_179/p82.ener.sort.xz ']'
++ '[' -f 1CKA_casa/actives/10/151_153_157_166_168_173_174_176_178_179/p82.ener.sort ']'
++ '[' -f 1CKA_casa/actives/10/151_153_157_166_168_173_174_176_178_179/p82.seq.sort ']'
++ '[' -f 1CKA_casa/actives/10/151_153_157_166_168_173_174_176_178_179/p82.seq.sort.xz ']'
+++ xzcat 1CKA_casa/actives/10/151_153_157_166_168_173_174_176_178_179/p82.seq.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-299.2329
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -299.2329 > -299.2329'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-299.5188 - -299.2329'
+++ bc -l
++ DELTA=-.2859
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-300.5174 - -299.2329'
+++ bc -l
++ DELTA=-1.2845
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-299.2329 - -299.2329'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1CKA_s5
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-299.2329
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-.2859
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-1.2845
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1CKA_s5::&::-299.2329::&::-.2859::&::-1.2845::&::0::\\'
++ for prot in '$PROT_LIST'
++ i=0
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1G9O_s1
++ L=($select)
++ '[' -f 1G9O_casa/actives/10/10_11_13_14_15_16_53_54_57_92/gmec.seq ']'
+++ cut -d ' ' -f 3 1G9O_casa/actives/10/10_11_13_14_15_16_53_54_57_92/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-466.6764
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-466.6764
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1G9O_casa/actives/10/10_11_13_14_15_16_53_54_57_92/ph.ener.sort.xz ']'
+++ xzcat 1G9O_casa/actives/10/10_11_13_14_15_16_53_54_57_92/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-466.6764
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -466.6764 > -466.6764'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1G9O_casa/actives/10/10_11_13_14_15_16_53_54_57_92/p8.ener.sort.xz ']'
++ '[' -f 1G9O_casa/actives/10/10_11_13_14_15_16_53_54_57_92/p8.ener.sort ']'
++ '[' -f 1G9O_casa/actives/10/10_11_13_14_15_16_53_54_57_92/p8.seq.sort ']'
++ '[' -f 1G9O_casa/actives/10/10_11_13_14_15_16_53_54_57_92/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -300.5174 > -466.6764'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=-300.5174
++ echo BEST_ENER -300.5174
+BEST_ENER -300.5174
++ for p in '$ALGO_LIST'
++ '[' -f 1G9O_casa/actives/10/10_11_13_14_15_16_53_54_57_92/p82.ener.sort.xz ']'
++ '[' -f 1G9O_casa/actives/10/10_11_13_14_15_16_53_54_57_92/p82.ener.sort ']'
++ '[' -f 1G9O_casa/actives/10/10_11_13_14_15_16_53_54_57_92/p82.seq.sort ']'
++ '[' -f 1G9O_casa/actives/10/10_11_13_14_15_16_53_54_57_92/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -299.2329 > -300.5174'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=-299.2329
++ echo BEST_ENER -299.2329
+BEST_ENER -299.2329
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-466.6764 - -299.2329'
+++ bc -l
++ DELTA=-167.4435
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-300.5174 - -299.2329'
+++ bc -l
++ DELTA=-1.2845
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-299.2329 - -299.2329'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1G9O_s1
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-466.6764
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-167.4435
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-1.2845
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1G9O_s1::&::-466.6764::&::-167.4435::&::-1.2845::&::0::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1G9O_s2
++ L=($select)
++ '[' -f 1G9O_casa/actives/10/15_17_24_26_39_42_48_51_53_88/gmec.seq ']'
+++ cut -d ' ' -f 3 1G9O_casa/actives/10/15_17_24_26_39_42_48_51_53_88/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-478.8797
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-478.8797
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1G9O_casa/actives/10/15_17_24_26_39_42_48_51_53_88/ph.ener.sort.xz ']'
+++ xzcat 1G9O_casa/actives/10/15_17_24_26_39_42_48_51_53_88/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-478.8797
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -478.8797 > -478.8797'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1G9O_casa/actives/10/15_17_24_26_39_42_48_51_53_88/p8.ener.sort.xz ']'
++ '[' -f 1G9O_casa/actives/10/15_17_24_26_39_42_48_51_53_88/p8.ener.sort ']'
++ '[' -f 1G9O_casa/actives/10/15_17_24_26_39_42_48_51_53_88/p8.seq.sort ']'
++ '[' -f 1G9O_casa/actives/10/15_17_24_26_39_42_48_51_53_88/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -300.5174 > -478.8797'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=-300.5174
++ echo BEST_ENER -300.5174
+BEST_ENER -300.5174
++ for p in '$ALGO_LIST'
++ '[' -f 1G9O_casa/actives/10/15_17_24_26_39_42_48_51_53_88/p82.ener.sort.xz ']'
++ '[' -f 1G9O_casa/actives/10/15_17_24_26_39_42_48_51_53_88/p82.ener.sort ']'
++ '[' -f 1G9O_casa/actives/10/15_17_24_26_39_42_48_51_53_88/p82.seq.sort ']'
++ '[' -f 1G9O_casa/actives/10/15_17_24_26_39_42_48_51_53_88/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -299.2329 > -300.5174'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=-299.2329
++ echo BEST_ENER -299.2329
+BEST_ENER -299.2329
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-478.8797 - -299.2329'
+++ bc -l
++ DELTA=-179.6468
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-300.5174 - -299.2329'
+++ bc -l
++ DELTA=-1.2845
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-299.2329 - -299.2329'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1G9O_s2
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-478.8797
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-179.6468
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-1.2845
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1G9O_s2::&::-478.8797::&::-179.6468::&::-1.2845::&::0::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1G9O_s3
++ L=($select)
++ '[' -f 1G9O_casa/actives/10/26_28_39_42_48_53_57_59_88_90/gmec.seq ']'
+++ cut -d ' ' -f 3 1G9O_casa/actives/10/26_28_39_42_48_53_57_59_88_90/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-477.2503
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-477.2503
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1G9O_casa/actives/10/26_28_39_42_48_53_57_59_88_90/ph.ener.sort.xz ']'
+++ xzcat 1G9O_casa/actives/10/26_28_39_42_48_53_57_59_88_90/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-477.3869
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -477.3869 > -477.2503'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1G9O_casa/actives/10/26_28_39_42_48_53_57_59_88_90/p8.ener.sort.xz ']'
++ '[' -f 1G9O_casa/actives/10/26_28_39_42_48_53_57_59_88_90/p8.ener.sort ']'
++ '[' -f 1G9O_casa/actives/10/26_28_39_42_48_53_57_59_88_90/p8.seq.sort ']'
++ '[' -f 1G9O_casa/actives/10/26_28_39_42_48_53_57_59_88_90/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -300.5174 > -477.2503'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=-300.5174
++ echo BEST_ENER -300.5174
+BEST_ENER -300.5174
++ for p in '$ALGO_LIST'
++ '[' -f 1G9O_casa/actives/10/26_28_39_42_48_53_57_59_88_90/p82.ener.sort.xz ']'
++ '[' -f 1G9O_casa/actives/10/26_28_39_42_48_53_57_59_88_90/p82.ener.sort ']'
++ '[' -f 1G9O_casa/actives/10/26_28_39_42_48_53_57_59_88_90/p82.seq.sort ']'
++ '[' -f 1G9O_casa/actives/10/26_28_39_42_48_53_57_59_88_90/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -299.2329 > -300.5174'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=-299.2329
++ echo BEST_ENER -299.2329
+BEST_ENER -299.2329
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-477.3869 - -299.2329'
+++ bc -l
++ DELTA=-178.1540
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-300.5174 - -299.2329'
+++ bc -l
++ DELTA=-1.2845
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-299.2329 - -299.2329'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1G9O_s3
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-477.2503
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-178.1540
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-1.2845
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1G9O_s3::&::-477.2503::&::-178.1540::&::-1.2845::&::0::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1G9O_s4
++ L=($select)
++ '[' -f 1G9O_casa/actives/10/34_35_58_60_68_70_74_75_89_91/gmec.seq ']'
+++ cut -d ' ' -f 3 1G9O_casa/actives/10/34_35_58_60_68_70_74_75_89_91/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-470.6458
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-470.6458
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1G9O_casa/actives/10/34_35_58_60_68_70_74_75_89_91/ph.ener.sort.xz ']'
+++ xzcat 1G9O_casa/actives/10/34_35_58_60_68_70_74_75_89_91/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-470.6458
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -470.6458 > -470.6458'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1G9O_casa/actives/10/34_35_58_60_68_70_74_75_89_91/p8.ener.sort.xz ']'
++ '[' -f 1G9O_casa/actives/10/34_35_58_60_68_70_74_75_89_91/p8.ener.sort ']'
++ '[' -f 1G9O_casa/actives/10/34_35_58_60_68_70_74_75_89_91/p8.seq.sort ']'
++ '[' -f 1G9O_casa/actives/10/34_35_58_60_68_70_74_75_89_91/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -300.5174 > -470.6458'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=-300.5174
++ echo BEST_ENER -300.5174
+BEST_ENER -300.5174
++ for p in '$ALGO_LIST'
++ '[' -f 1G9O_casa/actives/10/34_35_58_60_68_70_74_75_89_91/p82.ener.sort.xz ']'
++ '[' -f 1G9O_casa/actives/10/34_35_58_60_68_70_74_75_89_91/p82.ener.sort ']'
++ '[' -f 1G9O_casa/actives/10/34_35_58_60_68_70_74_75_89_91/p82.seq.sort ']'
++ '[' -f 1G9O_casa/actives/10/34_35_58_60_68_70_74_75_89_91/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -299.2329 > -300.5174'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=-299.2329
++ echo BEST_ENER -299.2329
+BEST_ENER -299.2329
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-470.6458 - -299.2329'
+++ bc -l
++ DELTA=-171.4129
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ bc -l
+++ echo '-300.5174 - -299.2329'
++ DELTA=-1.2845
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-299.2329 - -299.2329'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1G9O_s4
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-470.6458
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-171.4129
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-1.2845
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1G9O_s4::&::-470.6458::&::-171.4129::&::-1.2845::&::0::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1G9O_s5
++ L=($select)
++ '[' -f 1G9O_casa/actives/10/71_73_74_77_80_81_82_83_84_85/gmec.seq ']'
+++ cut -d ' ' -f 3 1G9O_casa/actives/10/71_73_74_77_80_81_82_83_84_85/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-464.8659
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-464.8659
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1G9O_casa/actives/10/71_73_74_77_80_81_82_83_84_85/ph.ener.sort.xz ']'
+++ xzcat 1G9O_casa/actives/10/71_73_74_77_80_81_82_83_84_85/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-464.8659
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -464.8659 > -464.8659'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1G9O_casa/actives/10/71_73_74_77_80_81_82_83_84_85/p8.ener.sort.xz ']'
++ '[' -f 1G9O_casa/actives/10/71_73_74_77_80_81_82_83_84_85/p8.ener.sort ']'
++ '[' -f 1G9O_casa/actives/10/71_73_74_77_80_81_82_83_84_85/p8.seq.sort ']'
++ '[' -f 1G9O_casa/actives/10/71_73_74_77_80_81_82_83_84_85/p8.seq.sort.xz ']'
+++ xzcat 1G9O_casa/actives/10/71_73_74_77_80_81_82_83_84_85/p8.seq.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=0
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' 0 > -464.8659'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=0
++ echo BEST_ENER 0
+BEST_ENER 0
++ for p in '$ALGO_LIST'
++ '[' -f 1G9O_casa/actives/10/71_73_74_77_80_81_82_83_84_85/p82.ener.sort.xz ']'
++ '[' -f 1G9O_casa/actives/10/71_73_74_77_80_81_82_83_84_85/p82.ener.sort ']'
++ '[' -f 1G9O_casa/actives/10/71_73_74_77_80_81_82_83_84_85/p82.seq.sort ']'
++ '[' -f 1G9O_casa/actives/10/71_73_74_77_80_81_82_83_84_85/p82.seq.sort.xz ']'
+++ xzcat 1G9O_casa/actives/10/71_73_74_77_80_81_82_83_84_85/p82.seq.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-464.8659
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -464.8659 > 0'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-464.8659 - 0'
+++ bc -l
++ DELTA=-464.8659
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '0 - 0'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-464.8659 - 0'
+++ bc -l
++ DELTA=-464.8659
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1G9O_s5
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-464.8659
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-464.8659
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-464.8659
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1G9O_s5::&::-464.8659::&::-464.8659::&::0::&::-464.8659::\\'
++ for prot in '$PROT_LIST'
++ i=0
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1M61_s1
++ L=($select)
++ '[' -f 1M61_casa/actives/10/10_12_20_23_24_27_35_49_102_104/gmec.seq ']'
+++ cut -d ' ' -f 3 1M61_casa/actives/10/10_12_20_23_24_27_35_49_102_104/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-550.0699
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-550.0699
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1M61_casa/actives/10/10_12_20_23_24_27_35_49_102_104/ph.ener.sort.xz ']'
+++ xzcat 1M61_casa/actives/10/10_12_20_23_24_27_35_49_102_104/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-550.0699
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -550.0699 > -550.0699'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1M61_casa/actives/10/10_12_20_23_24_27_35_49_102_104/p8.ener.sort.xz ']'
++ '[' -f 1M61_casa/actives/10/10_12_20_23_24_27_35_49_102_104/p8.ener.sort ']'
++ '[' -f 1M61_casa/actives/10/10_12_20_23_24_27_35_49_102_104/p8.seq.sort ']'
++ '[' -f 1M61_casa/actives/10/10_12_20_23_24_27_35_49_102_104/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' 0 > -550.0699'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=0
++ echo BEST_ENER 0
+BEST_ENER 0
++ for p in '$ALGO_LIST'
++ '[' -f 1M61_casa/actives/10/10_12_20_23_24_27_35_49_102_104/p82.ener.sort.xz ']'
++ '[' -f 1M61_casa/actives/10/10_12_20_23_24_27_35_49_102_104/p82.ener.sort ']'
++ '[' -f 1M61_casa/actives/10/10_12_20_23_24_27_35_49_102_104/p82.seq.sort ']'
++ '[' -f 1M61_casa/actives/10/10_12_20_23_24_27_35_49_102_104/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -464.8659 > 0'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-550.0699 - 0'
+++ bc -l
++ DELTA=-550.0699
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '0 - 0'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-464.8659 - 0'
+++ bc -l
++ DELTA=-464.8659
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1M61_s1
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-550.0699
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-550.0699
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-464.8659
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1M61_s1::&::-550.0699::&::-550.0699::&::0::&::-464.8659::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1M61_s2
++ L=($select)
++ '[' -f 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/gmec.seq ']'
+++ cut -d ' ' -f 3 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-538.6026
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-538.6026
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/ph.ener.sort.xz ']'
++ '[' -f 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/ph.ener.sort ']'
+++ head -1 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/ph.ener.sort
+++ cut -d ' ' -f 2
++ best_ener[$p]=-542.1131
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -542.1131 > -538.6026'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/p8.ener.sort.xz ']'
++ '[' -f 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/p8.ener.sort ']'
++ '[' -f 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/p8.seq.sort ']'
++ '[' -f 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/p8.seq.sort.xz ']'
+++ xzcat 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/p8.seq.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=0
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' 0 > -538.6026'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=0
++ echo BEST_ENER 0
+BEST_ENER 0
++ for p in '$ALGO_LIST'
++ '[' -f 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/p82.ener.sort.xz ']'
++ '[' -f 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/p82.ener.sort ']'
++ '[' -f 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/p82.seq.sort ']'
++ '[' -f 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/p82.seq.sort.xz ']'
+++ xzcat 1M61_casa/actives/10/17_20_21_24_37_39_40_47_49_58/p82.seq.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-542.2516
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -542.2516 > 0'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-542.1131 - 0'
+++ bc -l
++ DELTA=-542.1131
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '0 - 0'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-542.2516 - 0'
+++ bc -l
++ DELTA=-542.2516
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1M61_s2
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-538.6026
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-542.1131
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-542.2516
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1M61_s2::&::-538.6026::&::-542.1131::&::0::&::-542.2516::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1M61_s3
++ L=($select)
++ '[' -f 1M61_casa/actives/10/34_36_46_48_59_61_71_83_84_87/gmec.seq ']'
+++ cut -d ' ' -f 3 1M61_casa/actives/10/34_36_46_48_59_61_71_83_84_87/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-552.2673
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-552.2673
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1M61_casa/actives/10/34_36_46_48_59_61_71_83_84_87/ph.ener.sort.xz ']'
+++ xzcat 1M61_casa/actives/10/34_36_46_48_59_61_71_83_84_87/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-552.2673
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -552.2673 > -552.2673'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1M61_casa/actives/10/34_36_46_48_59_61_71_83_84_87/p8.ener.sort.xz ']'
++ '[' -f 1M61_casa/actives/10/34_36_46_48_59_61_71_83_84_87/p8.ener.sort ']'
++ '[' -f 1M61_casa/actives/10/34_36_46_48_59_61_71_83_84_87/p8.seq.sort ']'
++ '[' -f 1M61_casa/actives/10/34_36_46_48_59_61_71_83_84_87/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' 0 > -552.2673'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=0
++ echo BEST_ENER 0
+BEST_ENER 0
++ for p in '$ALGO_LIST'
++ '[' -f 1M61_casa/actives/10/34_36_46_48_59_61_71_83_84_87/p82.ener.sort.xz ']'
++ '[' -f 1M61_casa/actives/10/34_36_46_48_59_61_71_83_84_87/p82.ener.sort ']'
++ '[' -f 1M61_casa/actives/10/34_36_46_48_59_61_71_83_84_87/p82.seq.sort ']'
++ '[' -f 1M61_casa/actives/10/34_36_46_48_59_61_71_83_84_87/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -542.2516 > 0'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-552.2673 - 0'
+++ bc -l
++ DELTA=-552.2673
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '0 - 0'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-542.2516 - 0'
+++ bc -l
++ DELTA=-542.2516
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1M61_s3
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-552.2673
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-552.2673
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-542.2516
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1M61_s3::&::-552.2673::&::-552.2673::&::0::&::-542.2516::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1M61_s4
++ L=($select)
++ '[' -f 1M61_casa/actives/10/5_6_11_36_46_48_61_69_83_84/gmec.seq ']'
+++ cut -d ' ' -f 3 1M61_casa/actives/10/5_6_11_36_46_48_61_69_83_84/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-550.0553
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-550.0553
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1M61_casa/actives/10/5_6_11_36_46_48_61_69_83_84/ph.ener.sort.xz ']'
++ '[' -f 1M61_casa/actives/10/5_6_11_36_46_48_61_69_83_84/ph.ener.sort ']'
+++ head -1 1M61_casa/actives/10/5_6_11_36_46_48_61_69_83_84/ph.ener.sort
+++ cut -d ' ' -f 2
++ best_ener[$p]=-550.0553
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -550.0553 > -550.0553'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1M61_casa/actives/10/5_6_11_36_46_48_61_69_83_84/p8.ener.sort.xz ']'
++ '[' -f 1M61_casa/actives/10/5_6_11_36_46_48_61_69_83_84/p8.ener.sort ']'
++ '[' -f 1M61_casa/actives/10/5_6_11_36_46_48_61_69_83_84/p8.seq.sort ']'
++ '[' -f 1M61_casa/actives/10/5_6_11_36_46_48_61_69_83_84/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' 0 > -550.0553'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=0
++ echo BEST_ENER 0
+BEST_ENER 0
++ for p in '$ALGO_LIST'
++ '[' -f 1M61_casa/actives/10/5_6_11_36_46_48_61_69_83_84/p82.ener.sort.xz ']'
++ '[' -f 1M61_casa/actives/10/5_6_11_36_46_48_61_69_83_84/p82.ener.sort ']'
++ '[' -f 1M61_casa/actives/10/5_6_11_36_46_48_61_69_83_84/p82.seq.sort ']'
++ '[' -f 1M61_casa/actives/10/5_6_11_36_46_48_61_69_83_84/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -542.2516 > 0'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-550.0553 - 0'
+++ bc -l
++ DELTA=-550.0553
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '0 - 0'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-542.2516 - 0'
+++ bc -l
++ DELTA=-542.2516
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1M61_s4
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-550.0553
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-550.0553
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-542.2516
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1M61_s4::&::-550.0553::&::-550.0553::&::0::&::-542.2516::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1M61_s5
++ L=($select)
++ '[' -f 1M61_casa/actives/10/59_61_70_71_75_77_83_86_87_92/gmec.seq ']'
+++ cut -d ' ' -f 3 1M61_casa/actives/10/59_61_70_71_75_77_83_86_87_92/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-553.6559
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-553.6559
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1M61_casa/actives/10/59_61_70_71_75_77_83_86_87_92/ph.ener.sort.xz ']'
+++ xzcat 1M61_casa/actives/10/59_61_70_71_75_77_83_86_87_92/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-553.6559
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -553.6559 > -553.6559'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1M61_casa/actives/10/59_61_70_71_75_77_83_86_87_92/p8.ener.sort.xz ']'
++ '[' -f 1M61_casa/actives/10/59_61_70_71_75_77_83_86_87_92/p8.ener.sort ']'
++ '[' -f 1M61_casa/actives/10/59_61_70_71_75_77_83_86_87_92/p8.seq.sort ']'
++ '[' -f 1M61_casa/actives/10/59_61_70_71_75_77_83_86_87_92/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' 0 > -553.6559'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=0
++ echo BEST_ENER 0
+BEST_ENER 0
++ for p in '$ALGO_LIST'
++ '[' -f 1M61_casa/actives/10/59_61_70_71_75_77_83_86_87_92/p82.ener.sort.xz ']'
++ '[' -f 1M61_casa/actives/10/59_61_70_71_75_77_83_86_87_92/p82.ener.sort ']'
++ '[' -f 1M61_casa/actives/10/59_61_70_71_75_77_83_86_87_92/p82.seq.sort ']'
++ '[' -f 1M61_casa/actives/10/59_61_70_71_75_77_83_86_87_92/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -542.2516 > 0'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-553.6559 - 0'
+++ bc -l
++ DELTA=-553.6559
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '0 - 0'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-542.2516 - 0'
+++ bc -l
++ DELTA=-542.2516
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1M61_s5
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-553.6559
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-553.6559
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-542.2516
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1M61_s5::&::-553.6559::&::-553.6559::&::0::&::-542.2516::\\'
++ for prot in '$PROT_LIST'
++ i=0
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1O4C_s1
++ L=($select)
++ '[' -f 1O4C_casa/actives/10/31_33_45_47_61_63_73_86_89_100/gmec.seq ']'
+++ cut -d ' ' -f 3 1O4C_casa/actives/10/31_33_45_47_61_63_73_86_89_100/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-587.4665
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-587.4665
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1O4C_casa/actives/10/31_33_45_47_61_63_73_86_89_100/ph.ener.sort.xz ']'
+++ xzcat 1O4C_casa/actives/10/31_33_45_47_61_63_73_86_89_100/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-587.4665
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -587.4665 > -587.4665'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1O4C_casa/actives/10/31_33_45_47_61_63_73_86_89_100/p8.ener.sort.xz ']'
++ '[' -f 1O4C_casa/actives/10/31_33_45_47_61_63_73_86_89_100/p8.ener.sort ']'
++ '[' -f 1O4C_casa/actives/10/31_33_45_47_61_63_73_86_89_100/p8.seq.sort ']'
++ '[' -f 1O4C_casa/actives/10/31_33_45_47_61_63_73_86_89_100/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' 0 > -587.4665'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=0
++ echo BEST_ENER 0
+BEST_ENER 0
++ for p in '$ALGO_LIST'
++ '[' -f 1O4C_casa/actives/10/31_33_45_47_61_63_73_86_89_100/p82.ener.sort.xz ']'
++ '[' -f 1O4C_casa/actives/10/31_33_45_47_61_63_73_86_89_100/p82.ener.sort ']'
++ '[' -f 1O4C_casa/actives/10/31_33_45_47_61_63_73_86_89_100/p82.seq.sort ']'
++ '[' -f 1O4C_casa/actives/10/31_33_45_47_61_63_73_86_89_100/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -542.2516 > 0'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-587.4665 - 0'
+++ bc -l
++ DELTA=-587.4665
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '0 - 0'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-542.2516 - 0'
+++ bc -l
++ DELTA=-542.2516
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1O4C_s1
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-587.4665
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-587.4665
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-542.2516
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1O4C_s1::&::-587.4665::&::-587.4665::&::0::&::-542.2516::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1O4C_s2
++ L=($select)
++ '[' -f 1O4C_casa/actives/10/50_51_52_53_63_72_73_77_85_89/gmec.seq ']'
+++ cut -d ' ' -f 3 1O4C_casa/actives/10/50_51_52_53_63_72_73_77_85_89/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-585.8545
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-585.8545
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1O4C_casa/actives/10/50_51_52_53_63_72_73_77_85_89/ph.ener.sort.xz ']'
+++ xzcat 1O4C_casa/actives/10/50_51_52_53_63_72_73_77_85_89/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-585.8545
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -585.8545 > -585.8545'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1O4C_casa/actives/10/50_51_52_53_63_72_73_77_85_89/p8.ener.sort.xz ']'
++ '[' -f 1O4C_casa/actives/10/50_51_52_53_63_72_73_77_85_89/p8.ener.sort ']'
++ '[' -f 1O4C_casa/actives/10/50_51_52_53_63_72_73_77_85_89/p8.seq.sort ']'
++ '[' -f 1O4C_casa/actives/10/50_51_52_53_63_72_73_77_85_89/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' 0 > -585.8545'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=0
++ echo BEST_ENER 0
+BEST_ENER 0
++ for p in '$ALGO_LIST'
++ '[' -f 1O4C_casa/actives/10/50_51_52_53_63_72_73_77_85_89/p82.ener.sort.xz ']'
++ '[' -f 1O4C_casa/actives/10/50_51_52_53_63_72_73_77_85_89/p82.ener.sort ']'
++ '[' -f 1O4C_casa/actives/10/50_51_52_53_63_72_73_77_85_89/p82.seq.sort ']'
++ '[' -f 1O4C_casa/actives/10/50_51_52_53_63_72_73_77_85_89/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -542.2516 > 0'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-585.8545 - 0'
+++ bc -l
++ DELTA=-585.8545
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '0 - 0'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-542.2516 - 0'
+++ bc -l
++ DELTA=-542.2516
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1O4C_s2
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-585.8545
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-585.8545
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-542.2516
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1O4C_s2::&::-585.8545::&::-585.8545::&::0::&::-542.2516::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1O4C_s3
++ L=($select)
++ '[' -f 1O4C_casa/actives/10/61_62_63_71_72_73_79_85_88_89/gmec.seq ']'
+++ cut -d ' ' -f 3 1O4C_casa/actives/10/61_62_63_71_72_73_79_85_88_89/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-580.3505
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-580.3505
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1O4C_casa/actives/10/61_62_63_71_72_73_79_85_88_89/ph.ener.sort.xz ']'
+++ xzcat 1O4C_casa/actives/10/61_62_63_71_72_73_79_85_88_89/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-580.3505
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -580.3505 > -580.3505'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1O4C_casa/actives/10/61_62_63_71_72_73_79_85_88_89/p8.ener.sort.xz ']'
++ '[' -f 1O4C_casa/actives/10/61_62_63_71_72_73_79_85_88_89/p8.ener.sort ']'
++ '[' -f 1O4C_casa/actives/10/61_62_63_71_72_73_79_85_88_89/p8.seq.sort ']'
++ '[' -f 1O4C_casa/actives/10/61_62_63_71_72_73_79_85_88_89/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' 0 > -580.3505'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=0
++ echo BEST_ENER 0
+BEST_ENER 0
++ for p in '$ALGO_LIST'
++ '[' -f 1O4C_casa/actives/10/61_62_63_71_72_73_79_85_88_89/p82.ener.sort.xz ']'
++ '[' -f 1O4C_casa/actives/10/61_62_63_71_72_73_79_85_88_89/p82.ener.sort ']'
++ '[' -f 1O4C_casa/actives/10/61_62_63_71_72_73_79_85_88_89/p82.seq.sort ']'
++ '[' -f 1O4C_casa/actives/10/61_62_63_71_72_73_79_85_88_89/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -542.2516 > 0'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-580.3505 - 0'
+++ bc -l
++ DELTA=-580.3505
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '0 - 0'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-542.2516 - 0'
+++ bc -l
++ DELTA=-542.2516
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1O4C_s3
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-580.3505
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-580.3505
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-542.2516
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1O4C_s3::&::-580.3505::&::-580.3505::&::0::&::-542.2516::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1O4C_s4
++ L=($select)
++ '[' -f 1O4C_casa/actives/10/73_74_75_76_77_89_92_94_96_101/gmec.seq ']'
+++ cut -d ' ' -f 3 1O4C_casa/actives/10/73_74_75_76_77_89_92_94_96_101/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-587.1548
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-587.1548
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1O4C_casa/actives/10/73_74_75_76_77_89_92_94_96_101/ph.ener.sort.xz ']'
+++ xzcat 1O4C_casa/actives/10/73_74_75_76_77_89_92_94_96_101/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-587.1548
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -587.1548 > -587.1548'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1O4C_casa/actives/10/73_74_75_76_77_89_92_94_96_101/p8.ener.sort.xz ']'
++ '[' -f 1O4C_casa/actives/10/73_74_75_76_77_89_92_94_96_101/p8.ener.sort ']'
++ '[' -f 1O4C_casa/actives/10/73_74_75_76_77_89_92_94_96_101/p8.seq.sort ']'
++ '[' -f 1O4C_casa/actives/10/73_74_75_76_77_89_92_94_96_101/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' 0 > -587.1548'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=0
++ echo BEST_ENER 0
+BEST_ENER 0
++ for p in '$ALGO_LIST'
++ '[' -f 1O4C_casa/actives/10/73_74_75_76_77_89_92_94_96_101/p82.ener.sort.xz ']'
++ '[' -f 1O4C_casa/actives/10/73_74_75_76_77_89_92_94_96_101/p82.ener.sort ']'
++ '[' -f 1O4C_casa/actives/10/73_74_75_76_77_89_92_94_96_101/p82.seq.sort ']'
++ '[' -f 1O4C_casa/actives/10/73_74_75_76_77_89_92_94_96_101/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -542.2516 > 0'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-587.1548 - 0'
+++ bc -l
++ DELTA=-587.1548
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '0 - 0'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-542.2516 - 0'
+++ bc -l
++ DELTA=-542.2516
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1O4C_s4
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-587.1548
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-587.1548
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-542.2516
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1O4C_s4::&::-587.1548::&::-587.1548::&::0::&::-542.2516::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1O4C_s5
++ L=($select)
++ '[' -f 1O4C_casa/actives/10/90_91_93_96_98_99_101_102_103_104/gmec.seq ']'
+++ cut -d ' ' -f 3 1O4C_casa/actives/10/90_91_93_96_98_99_101_102_103_104/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-590.2650
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-590.2650
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1O4C_casa/actives/10/90_91_93_96_98_99_101_102_103_104/ph.ener.sort.xz ']'
+++ xzcat 1O4C_casa/actives/10/90_91_93_96_98_99_101_102_103_104/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-590.2650
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -590.2650 > -590.2650'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1O4C_casa/actives/10/90_91_93_96_98_99_101_102_103_104/p8.ener.sort.xz ']'
++ '[' -f 1O4C_casa/actives/10/90_91_93_96_98_99_101_102_103_104/p8.ener.sort ']'
++ '[' -f 1O4C_casa/actives/10/90_91_93_96_98_99_101_102_103_104/p8.seq.sort ']'
++ '[' -f 1O4C_casa/actives/10/90_91_93_96_98_99_101_102_103_104/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' 0 > -590.2650'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=0
++ echo BEST_ENER 0
+BEST_ENER 0
++ for p in '$ALGO_LIST'
++ '[' -f 1O4C_casa/actives/10/90_91_93_96_98_99_101_102_103_104/p82.ener.sort.xz ']'
++ '[' -f 1O4C_casa/actives/10/90_91_93_96_98_99_101_102_103_104/p82.ener.sort ']'
++ '[' -f 1O4C_casa/actives/10/90_91_93_96_98_99_101_102_103_104/p82.seq.sort ']'
++ '[' -f 1O4C_casa/actives/10/90_91_93_96_98_99_101_102_103_104/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -542.2516 > 0'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-590.2650 - 0'
+++ bc -l
++ DELTA=-590.2650
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '0 - 0'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-542.2516 - 0'
+++ bc -l
++ DELTA=-542.2516
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1O4C_s5
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-590.2650
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-590.2650
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-542.2516
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1O4C_s5::&::-590.2650::&::-590.2650::&::0::&::-542.2516::\\'
++ for prot in '$PROT_LIST'
++ i=0
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1R6J_s1
++ L=($select)
++ '[' -f 1R6J_casa/actives/10/193_194_195_197_199_218_232_236_267_269/gmec.seq ']'
+++ cut -d ' ' -f 3 1R6J_casa/actives/10/193_194_195_197_199_218_232_236_267_269/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-448.8351
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-448.8351
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1R6J_casa/actives/10/193_194_195_197_199_218_232_236_267_269/ph.ener.sort.xz ']'
+++ xzcat 1R6J_casa/actives/10/193_194_195_197_199_218_232_236_267_269/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-448.8351
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -448.8351 > -448.8351'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1R6J_casa/actives/10/193_194_195_197_199_218_232_236_267_269/p8.ener.sort.xz ']'
++ '[' -f 1R6J_casa/actives/10/193_194_195_197_199_218_232_236_267_269/p8.ener.sort ']'
++ '[' -f 1R6J_casa/actives/10/193_194_195_197_199_218_232_236_267_269/p8.seq.sort ']'
++ '[' -f 1R6J_casa/actives/10/193_194_195_197_199_218_232_236_267_269/p8.seq.sort.xz ']'
+++ xzcat 1R6J_casa/actives/10/193_194_195_197_199_218_232_236_267_269/p8.seq.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-451.2337
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -451.2337 > -448.8351'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1R6J_casa/actives/10/193_194_195_197_199_218_232_236_267_269/p82.ener.sort.xz ']'
++ '[' -f 1R6J_casa/actives/10/193_194_195_197_199_218_232_236_267_269/p82.ener.sort ']'
++ '[' -f 1R6J_casa/actives/10/193_194_195_197_199_218_232_236_267_269/p82.seq.sort ']'
++ '[' -f 1R6J_casa/actives/10/193_194_195_197_199_218_232_236_267_269/p82.seq.sort.xz ']'
+++ xzcat 1R6J_casa/actives/10/193_194_195_197_199_218_232_236_267_269/p82.seq.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-451.2526
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -451.2526 > -448.8351'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-448.8351 - -448.8351'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-451.2337 - -448.8351'
+++ bc -l
++ DELTA=-2.3986
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-451.2526 - -448.8351'
+++ bc -l
++ DELTA=-2.4175
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1R6J_s1
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-448.8351
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-2.3986
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-2.4175
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1R6J_s1::&::-448.8351::&::0::&::-2.3986::&::-2.4175::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1R6J_s2
++ L=($select)
++ '[' -f 1R6J_casa/actives/10/199_209_211_213_218_227_232_238_265_267/gmec.seq ']'
+++ cut -d ' ' -f 3 1R6J_casa/actives/10/199_209_211_213_218_227_232_238_265_267/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-448.4631
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-448.4631
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1R6J_casa/actives/10/199_209_211_213_218_227_232_238_265_267/ph.ener.sort.xz ']'
+++ xzcat 1R6J_casa/actives/10/199_209_211_213_218_227_232_238_265_267/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-448.4631
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -448.4631 > -448.4631'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1R6J_casa/actives/10/199_209_211_213_218_227_232_238_265_267/p8.ener.sort.xz ']'
++ '[' -f 1R6J_casa/actives/10/199_209_211_213_218_227_232_238_265_267/p8.ener.sort ']'
++ '[' -f 1R6J_casa/actives/10/199_209_211_213_218_227_232_238_265_267/p8.seq.sort ']'
++ '[' -f 1R6J_casa/actives/10/199_209_211_213_218_227_232_238_265_267/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -451.2337 > -448.4631'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1R6J_casa/actives/10/199_209_211_213_218_227_232_238_265_267/p82.ener.sort.xz ']'
++ '[' -f 1R6J_casa/actives/10/199_209_211_213_218_227_232_238_265_267/p82.ener.sort ']'
++ '[' -f 1R6J_casa/actives/10/199_209_211_213_218_227_232_238_265_267/p82.seq.sort ']'
++ '[' -f 1R6J_casa/actives/10/199_209_211_213_218_227_232_238_265_267/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -451.2526 > -448.4631'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-448.4631 - -448.4631'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-451.2337 - -448.4631'
+++ bc -l
++ DELTA=-2.7706
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-451.2526 - -448.4631'
+++ bc -l
++ DELTA=-2.7895
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1R6J_s2
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-448.4631
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-2.7706
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-2.7895
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1R6J_s2::&::-448.4631::&::0::&::-2.7706::&::-2.7895::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1R6J_s3
++ L=($select)
++ '[' -f 1R6J_casa/actives/10/201_204_205_209_211_218_241_258_265_267/gmec.seq ']'
+++ cut -d ' ' -f 3 1R6J_casa/actives/10/201_204_205_209_211_218_241_258_265_267/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-450.3950
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-450.3950
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1R6J_casa/actives/10/201_204_205_209_211_218_241_258_265_267/ph.ener.sort.xz ']'
+++ xzcat 1R6J_casa/actives/10/201_204_205_209_211_218_241_258_265_267/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-450.3950
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -450.3950 > -450.3950'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1R6J_casa/actives/10/201_204_205_209_211_218_241_258_265_267/p8.ener.sort.xz ']'
++ '[' -f 1R6J_casa/actives/10/201_204_205_209_211_218_241_258_265_267/p8.ener.sort ']'
++ '[' -f 1R6J_casa/actives/10/201_204_205_209_211_218_241_258_265_267/p8.seq.sort ']'
++ '[' -f 1R6J_casa/actives/10/201_204_205_209_211_218_241_258_265_267/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -451.2337 > -450.3950'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1R6J_casa/actives/10/201_204_205_209_211_218_241_258_265_267/p82.ener.sort.xz ']'
++ '[' -f 1R6J_casa/actives/10/201_204_205_209_211_218_241_258_265_267/p82.ener.sort ']'
++ '[' -f 1R6J_casa/actives/10/201_204_205_209_211_218_241_258_265_267/p82.seq.sort ']'
++ '[' -f 1R6J_casa/actives/10/201_204_205_209_211_218_241_258_265_267/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -451.2526 > -450.3950'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-450.3950 - -450.3950'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-451.2337 - -450.3950'
+++ bc -l
++ DELTA=-.8387
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-451.2526 - -450.3950'
+++ bc -l
++ DELTA=-.8576
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1R6J_s3
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-450.3950
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-.8387
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-.8576
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1R6J_s3::&::-450.3950::&::0::&::-.8387::&::-.8576::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1R6J_s4
++ L=($select)
++ '[' -f 1R6J_casa/actives/10/209_211_213_218_227_238_241_258_265_267/gmec.seq ']'
+++ cut -d ' ' -f 3 1R6J_casa/actives/10/209_211_213_218_227_238_241_258_265_267/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-451.7211
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-451.7211
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1R6J_casa/actives/10/209_211_213_218_227_238_241_258_265_267/ph.ener.sort.xz ']'
+++ xzcat 1R6J_casa/actives/10/209_211_213_218_227_238_241_258_265_267/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-451.7211
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -451.7211 > -451.7211'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1R6J_casa/actives/10/209_211_213_218_227_238_241_258_265_267/p8.ener.sort.xz ']'
++ '[' -f 1R6J_casa/actives/10/209_211_213_218_227_238_241_258_265_267/p8.ener.sort ']'
++ '[' -f 1R6J_casa/actives/10/209_211_213_218_227_238_241_258_265_267/p8.seq.sort ']'
++ '[' -f 1R6J_casa/actives/10/209_211_213_218_227_238_241_258_265_267/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -451.2337 > -451.7211'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=-451.2337
++ echo BEST_ENER -451.2337
+BEST_ENER -451.2337
++ for p in '$ALGO_LIST'
++ '[' -f 1R6J_casa/actives/10/209_211_213_218_227_238_241_258_265_267/p82.ener.sort.xz ']'
++ '[' -f 1R6J_casa/actives/10/209_211_213_218_227_238_241_258_265_267/p82.ener.sort ']'
++ '[' -f 1R6J_casa/actives/10/209_211_213_218_227_238_241_258_265_267/p82.seq.sort ']'
++ '[' -f 1R6J_casa/actives/10/209_211_213_218_227_238_241_258_265_267/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -451.2526 > -451.2337'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-451.7211 - -451.2337'
+++ bc -l
++ DELTA=-.4874
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-451.2337 - -451.2337'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-451.2526 - -451.2337'
+++ bc -l
++ DELTA=-.0189
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1R6J_s4
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-451.7211
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-.4874
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-.0189
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1R6J_s4::&::-451.7211::&::-.4874::&::0::&::-.0189::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=1R6J_s5
++ L=($select)
++ '[' -f 1R6J_casa/actives/10/238_240_241_242_246_257_258_261_265_267/gmec.seq ']'
+++ cut -d ' ' -f 3 1R6J_casa/actives/10/238_240_241_242_246_257_258_261_265_267/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-450.9943
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-450.9943
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 1R6J_casa/actives/10/238_240_241_242_246_257_258_261_265_267/ph.ener.sort.xz ']'
+++ xzcat 1R6J_casa/actives/10/238_240_241_242_246_257_258_261_265_267/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-450.9943
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -450.9943 > -450.9943'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1R6J_casa/actives/10/238_240_241_242_246_257_258_261_265_267/p8.ener.sort.xz ']'
++ '[' -f 1R6J_casa/actives/10/238_240_241_242_246_257_258_261_265_267/p8.ener.sort ']'
++ '[' -f 1R6J_casa/actives/10/238_240_241_242_246_257_258_261_265_267/p8.seq.sort ']'
++ '[' -f 1R6J_casa/actives/10/238_240_241_242_246_257_258_261_265_267/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -451.2337 > -450.9943'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 1R6J_casa/actives/10/238_240_241_242_246_257_258_261_265_267/p82.ener.sort.xz ']'
++ '[' -f 1R6J_casa/actives/10/238_240_241_242_246_257_258_261_265_267/p82.ener.sort ']'
++ '[' -f 1R6J_casa/actives/10/238_240_241_242_246_257_258_261_265_267/p82.seq.sort ']'
++ '[' -f 1R6J_casa/actives/10/238_240_241_242_246_257_258_261_265_267/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -451.2526 > -450.9943'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-450.9943 - -450.9943'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-451.2337 - -450.9943'
+++ bc -l
++ DELTA=-.2394
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ bc -l
+++ echo '-451.2526 - -450.9943'
++ DELTA=-.2583
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=1R6J_s5
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-450.9943
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-.2394
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-.2583
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '1R6J_s5::&::-450.9943::&::0::&::-.2394::&::-.2583::\\'
++ for prot in '$PROT_LIST'
++ i=0
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=2BYG_s1
++ L=($select)
++ '[' -f 2BYG_casa/actives/10/194_196_203_205_224_233_239_245_274_276/gmec.seq ']'
+++ cut -d ' ' -f 3 2BYG_casa/actives/10/194_196_203_205_224_233_239_245_274_276/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-511.3882
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-511.3882
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 2BYG_casa/actives/10/194_196_203_205_224_233_239_245_274_276/ph.ener.sort.xz ']'
+++ xzcat 2BYG_casa/actives/10/194_196_203_205_224_233_239_245_274_276/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-505.6397
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -505.6397 > -511.3882'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=-505.6397
++ echo BEST_ENER -505.6397
+BEST_ENER -505.6397
++ for p in '$ALGO_LIST'
++ '[' -f 2BYG_casa/actives/10/194_196_203_205_224_233_239_245_274_276/p8.ener.sort.xz ']'
++ '[' -f 2BYG_casa/actives/10/194_196_203_205_224_233_239_245_274_276/p8.ener.sort ']'
++ '[' -f 2BYG_casa/actives/10/194_196_203_205_224_233_239_245_274_276/p8.seq.sort ']'
++ '[' -f 2BYG_casa/actives/10/194_196_203_205_224_233_239_245_274_276/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -451.2337 > -505.6397'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=-451.2337
++ echo BEST_ENER -451.2337
+BEST_ENER -451.2337
++ for p in '$ALGO_LIST'
++ '[' -f 2BYG_casa/actives/10/194_196_203_205_224_233_239_245_274_276/p82.ener.sort.xz ']'
++ '[' -f 2BYG_casa/actives/10/194_196_203_205_224_233_239_245_274_276/p82.ener.sort ']'
++ '[' -f 2BYG_casa/actives/10/194_196_203_205_224_233_239_245_274_276/p82.seq.sort ']'
++ '[' -f 2BYG_casa/actives/10/194_196_203_205_224_233_239_245_274_276/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -451.2526 > -451.2337'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-505.6397 - -451.2337'
+++ bc -l
++ DELTA=-54.4060
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-451.2337 - -451.2337'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-451.2526 - -451.2337'
+++ bc -l
++ DELTA=-.0189
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=2BYG_s1
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-511.3882
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-54.4060
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-.0189
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '2BYG_s1::&::-511.3882::&::-54.4060::&::0::&::-.0189::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=2BYG_s2
++ L=($select)
++ '[' -f 2BYG_casa/actives/10/203_205_207_224_227_233_239_243_245_276/gmec.seq ']'
+++ cut -d ' ' -f 3 2BYG_casa/actives/10/203_205_207_224_227_233_239_243_245_276/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-504.7389
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-504.7389
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 2BYG_casa/actives/10/203_205_207_224_227_233_239_243_245_276/ph.ener.sort.xz ']'
+++ xzcat 2BYG_casa/actives/10/203_205_207_224_227_233_239_243_245_276/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-504.7389
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -504.7389 > -504.7389'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 2BYG_casa/actives/10/203_205_207_224_227_233_239_243_245_276/p8.ener.sort.xz ']'
++ '[' -f 2BYG_casa/actives/10/203_205_207_224_227_233_239_243_245_276/p8.ener.sort ']'
++ '[' -f 2BYG_casa/actives/10/203_205_207_224_227_233_239_243_245_276/p8.seq.sort ']'
++ '[' -f 2BYG_casa/actives/10/203_205_207_224_227_233_239_243_245_276/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -451.2337 > -504.7389'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=-451.2337
++ echo BEST_ENER -451.2337
+BEST_ENER -451.2337
++ for p in '$ALGO_LIST'
++ '[' -f 2BYG_casa/actives/10/203_205_207_224_227_233_239_243_245_276/p82.ener.sort.xz ']'
++ '[' -f 2BYG_casa/actives/10/203_205_207_224_227_233_239_243_245_276/p82.ener.sort ']'
++ '[' -f 2BYG_casa/actives/10/203_205_207_224_227_233_239_243_245_276/p82.seq.sort ']'
++ '[' -f 2BYG_casa/actives/10/203_205_207_224_227_233_239_243_245_276/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -451.2526 > -451.2337'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-504.7389 - -451.2337'
+++ bc -l
++ DELTA=-53.5052
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-451.2337 - -451.2337'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-451.2526 - -451.2337'
+++ bc -l
++ DELTA=-.0189
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=2BYG_s2
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-504.7389
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-53.5052
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-.0189
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '2BYG_s2::&::-504.7389::&::-53.5052::&::0::&::-.0189::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=2BYG_s3
++ L=($select)
++ '[' -f 2BYG_casa/actives/10/206_207_222_245_248_253_256_261_264_265/gmec.seq ']'
+++ cut -d ' ' -f 3 2BYG_casa/actives/10/206_207_222_245_248_253_256_261_264_265/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-504.3048
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-504.3048
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 2BYG_casa/actives/10/206_207_222_245_248_253_256_261_264_265/ph.ener.sort.xz ']'
+++ xzcat 2BYG_casa/actives/10/206_207_222_245_248_253_256_261_264_265/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-504.3048
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -504.3048 > -504.3048'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 2BYG_casa/actives/10/206_207_222_245_248_253_256_261_264_265/p8.ener.sort.xz ']'
++ '[' -f 2BYG_casa/actives/10/206_207_222_245_248_253_256_261_264_265/p8.ener.sort ']'
++ '[' -f 2BYG_casa/actives/10/206_207_222_245_248_253_256_261_264_265/p8.seq.sort ']'
++ '[' -f 2BYG_casa/actives/10/206_207_222_245_248_253_256_261_264_265/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -451.2337 > -504.3048'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=-451.2337
++ echo BEST_ENER -451.2337
+BEST_ENER -451.2337
++ for p in '$ALGO_LIST'
++ '[' -f 2BYG_casa/actives/10/206_207_222_245_248_253_256_261_264_265/p82.ener.sort.xz ']'
++ '[' -f 2BYG_casa/actives/10/206_207_222_245_248_253_256_261_264_265/p82.ener.sort ']'
++ '[' -f 2BYG_casa/actives/10/206_207_222_245_248_253_256_261_264_265/p82.seq.sort ']'
++ '[' -f 2BYG_casa/actives/10/206_207_222_245_248_253_256_261_264_265/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -451.2526 > -451.2337'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-504.3048 - -451.2337'
+++ bc -l
++ DELTA=-53.0711
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-451.2337 - -451.2337'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-451.2526 - -451.2337'
+++ bc -l
++ DELTA=-.0189
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=2BYG_s3
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-504.3048
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-53.0711
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-.0189
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '2BYG_s3::&::-504.3048::&::-53.0711::&::0::&::-.0189::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=2BYG_s4
++ L=($select)
++ '[' -f 2BYG_casa/actives/10/221_222_245_248_251_253_256_261_264_265/gmec.seq ']'
+++ cut -d ' ' -f 3 2BYG_casa/actives/10/221_222_245_248_251_253_256_261_264_265/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-504.3466
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-504.3466
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 2BYG_casa/actives/10/221_222_245_248_251_253_256_261_264_265/ph.ener.sort.xz ']'
+++ xzcat 2BYG_casa/actives/10/221_222_245_248_251_253_256_261_264_265/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-504.3466
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -504.3466 > -504.3466'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 2BYG_casa/actives/10/221_222_245_248_251_253_256_261_264_265/p8.ener.sort.xz ']'
++ '[' -f 2BYG_casa/actives/10/221_222_245_248_251_253_256_261_264_265/p8.ener.sort ']'
++ '[' -f 2BYG_casa/actives/10/221_222_245_248_251_253_256_261_264_265/p8.seq.sort ']'
++ '[' -f 2BYG_casa/actives/10/221_222_245_248_251_253_256_261_264_265/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -451.2337 > -504.3466'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=-451.2337
++ echo BEST_ENER -451.2337
+BEST_ENER -451.2337
++ for p in '$ALGO_LIST'
++ '[' -f 2BYG_casa/actives/10/221_222_245_248_251_253_256_261_264_265/p82.ener.sort.xz ']'
++ '[' -f 2BYG_casa/actives/10/221_222_245_248_251_253_256_261_264_265/p82.ener.sort ']'
++ '[' -f 2BYG_casa/actives/10/221_222_245_248_251_253_256_261_264_265/p82.seq.sort ']'
++ '[' -f 2BYG_casa/actives/10/221_222_245_248_251_253_256_261_264_265/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -451.2526 > -451.2337'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-504.3466 - -451.2337'
+++ bc -l
++ DELTA=-53.1129
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-451.2337 - -451.2337'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-451.2526 - -451.2337'
+++ bc -l
++ DELTA=-.0189
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=2BYG_s4
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-504.3466
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-53.1129
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-.0189
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '2BYG_s4::&::-504.3466::&::-53.1129::&::0::&::-.0189::\\'
++ for WORK_DIR in '$prot/actives/$active_nb/*'
++ (( i++ ))
++ select=2BYG_s5
++ L=($select)
++ '[' -f 2BYG_casa/actives/10/247_248_249_251_250_252_259_262_263_275/gmec.seq ']'
+++ cut -d ' ' -f 3 2BYG_casa/actives/10/247_248_249_251_250_252_259_262_263_275/gmec.seq
+++ tail -n 1
++ best_ener["toulbar2"]=-491.6095
++ ener_exists["toulbar2"]=TRUE
++ BEST_ENER=-491.6095
++ L+=(${best_ener["toulbar2"]})
++ for p in '$ALGO_LIST'
++ '[' -f 2BYG_casa/actives/10/247_248_249_251_250_252_259_262_263_275/ph.ener.sort.xz ']'
+++ xzcat 2BYG_casa/actives/10/247_248_249_251_250_252_259_262_263_275/ph.ener.sort.xz
+++ head -1
+++ cut -d ' ' -f 2
++ best_ener[$p]=-491.6095
++ ener_exists[$p]=TRUE
++ '[' TRUE==TRUE ']'
+++ echo ' -491.6095 > -491.6095'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' -f 2BYG_casa/actives/10/247_248_249_251_250_252_259_262_263_275/p8.ener.sort.xz ']'
++ '[' -f 2BYG_casa/actives/10/247_248_249_251_250_252_259_262_263_275/p8.ener.sort ']'
++ '[' -f 2BYG_casa/actives/10/247_248_249_251_250_252_259_262_263_275/p8.seq.sort ']'
++ '[' -f 2BYG_casa/actives/10/247_248_249_251_250_252_259_262_263_275/p8.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -451.2337 > -491.6095'
+++ bc -l
++ '[' 1 -eq 1 ']'
++ BEST_ENER=-451.2337
++ echo BEST_ENER -451.2337
+BEST_ENER -451.2337
++ for p in '$ALGO_LIST'
++ '[' -f 2BYG_casa/actives/10/247_248_249_251_250_252_259_262_263_275/p82.ener.sort.xz ']'
++ '[' -f 2BYG_casa/actives/10/247_248_249_251_250_252_259_262_263_275/p82.ener.sort ']'
++ '[' -f 2BYG_casa/actives/10/247_248_249_251_250_252_259_262_263_275/p82.seq.sort ']'
++ '[' -f 2BYG_casa/actives/10/247_248_249_251_250_252_259_262_263_275/p82.seq.sort.xz ']'
++ ener_exists[$p]=FALSE
++ '[' FALSE==TRUE ']'
+++ echo ' -451.2526 > -451.2337'
+++ bc -l
++ '[' 0 -eq 1 ']'
++ for p in '$ALGO_LIST'
++ '[' TRUE==TRUE ']'
+++ echo '-491.6095 - -451.2337'
+++ bc -l
++ DELTA=-40.3758
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-451.2337 - -451.2337'
+++ bc -l
++ DELTA=0
++ L+=($DELTA)
++ for p in '$ALGO_LIST'
++ '[' FALSE==TRUE ']'
+++ echo '-451.2526 - -451.2337'
+++ bc -l
++ DELTA=-.0189
++ L+=($DELTA)
++ TAB+=($(tab_line L[@]))
+++ tab_line 'L[@]'
+++ words=("${!1}")
+++ local -a words
+++ local -i i=0
+++ local string=
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=2BYG_s5
+++ string+=::
+++ '[' 1 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-491.6095
+++ string+=::
+++ '[' 2 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-40.3758
+++ string+=::
+++ '[' 3 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=0
+++ string+=::
+++ '[' 4 -lt 5 ']'
+++ string+='&'
+++ string+=::
+++ for word in '${words[@]}'
+++ (( i++ ))
+++ string+=-.0189
+++ string+=::
+++ '[' 5 -lt 5 ']'
+++ string+='\\'
+++ echo '2BYG_s5::&::-491.6095::&::-40.3758::&::0::&::-.0189::\\'
++ print_tab 'TAB[@]'
++ tab=("${!1}")
++ local -a tab
++ echo '\hline'
+\hline
++ echo 'Protéine::&::GMEC::&::H::&::RE3::&::RE32::\\'
++ perl -pe 's/::/ /g'
+Protéine & GMEC & H & RE3 & RE32 \\
++ echo '\hline'
+\hline
+++ seq 1 46
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1A81_s1::&::-583.9354::&::0::&::583.9354::&::583.9354::\\'
++ perl -pe 's/::/ /g'
+1A81_s1 & -583.9354 & 0 & 583.9354 & 583.9354 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1A81_s2::&::-581.7802::&::0::&::581.7802::&::581.7802::\\'
++ perl -pe 's/::/ /g'
+1A81_s2 & -581.7802 & 0 & 581.7802 & 581.7802 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1A81_s3::&::-587.4392::&::-.0001::&::587.4392::&::587.4392::\\'
++ perl -pe 's/::/ /g'
+1A81_s3 & -587.4392 & -.0001 & 587.4392 & 587.4392 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1A81_s4::&::-589.1322::&::0::&::589.1322::&::589.1322::\\'
++ perl -pe 's/::/ /g'
+1A81_s4 & -589.1322 & 0 & 589.1322 & 589.1322 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1A81_s5::&::-578.2558::&::0::&::578.2558::&::578.2558::\\'
++ perl -pe 's/::/ /g'
+1A81_s5 & -578.2558 & 0 & 578.2558 & 578.2558 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1ABO_s1::&::-309.1670::&::-.0675::&::309.1670::&::309.1670::\\'
++ perl -pe 's/::/ /g'
+1ABO_s1 & -309.1670 & -.0675 & 309.1670 & 309.1670 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1ABO_s2::&::-308.8387::&::0::&::308.8387::&::308.8387::\\'
++ perl -pe 's/::/ /g'
+1ABO_s2 & -308.8387 & 0 & 308.8387 & 308.8387 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1ABO_s3::&::-303.8520::&::0::&::303.8520::&::303.8520::\\'
++ perl -pe 's/::/ /g'
+1ABO_s3 & -303.8520 & 0 & 303.8520 & 303.8520 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1ABO_s4::&::-310.0087::&::0::&::310.0087::&::310.0087::\\'
++ perl -pe 's/::/ /g'
+1ABO_s4 & -310.0087 & 0 & 310.0087 & 310.0087 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1ABO_s5::&::-301.6727::&::0::&::301.6727::&::301.6727::\\'
++ perl -pe 's/::/ /g'
+1ABO_s5 & -301.6727 & 0 & 301.6727 & 301.6727 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1BM2_s1::&::-549.8638::&::0::&::549.8638::&::549.8638::\\'
++ perl -pe 's/::/ /g'
+1BM2_s1 & -549.8638 & 0 & 549.8638 & 549.8638 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1BM2_s2::&::-541.5944::&::0::&::541.5944::&::541.5944::\\'
++ perl -pe 's/::/ /g'
+1BM2_s2 & -541.5944 & 0 & 541.5944 & 541.5944 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1BM2_s3::&::-543.7434::&::0::&::543.7434::&::543.7434::\\'
++ perl -pe 's/::/ /g'
+1BM2_s3 & -543.7434 & 0 & 543.7434 & 543.7434 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1BM2_s4::&::-549.0453::&::0::&::549.0453::&::549.0453::\\'
++ perl -pe 's/::/ /g'
+1BM2_s4 & -549.0453 & 0 & 549.0453 & 549.0453 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1BM2_s5::&::-544.1447::&::0::&::544.1447::&::544.1447::\\'
++ perl -pe 's/::/ /g'
+1BM2_s5 & -544.1447 & 0 & 544.1447 & 544.1447 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1CKA_s1::&::-305.8477::&::0::&::305.8477::&::305.8477::\\'
++ perl -pe 's/::/ /g'
+1CKA_s1 & -305.8477 & 0 & 305.8477 & 305.8477 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1CKA_s2::&::-309.9886::&::0::&::309.9886::&::309.9886::\\'
++ perl -pe 's/::/ /g'
+1CKA_s2 & -309.9886 & 0 & 309.9886 & 309.9886 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1CKA_s3::&::-304.6618::&::0::&::304.6618::&::304.6618::\\'
++ perl -pe 's/::/ /g'
+1CKA_s3 & -304.6618 & 0 & 304.6618 & 304.6618 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1CKA_s4::&::-302.4894::&::0::&::302.4894::&::302.4894::\\'
++ perl -pe 's/::/ /g'
+1CKA_s4 & -302.4894 & 0 & 302.4894 & 302.4894 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1CKA_s5::&::-299.2329::&::-.2859::&::-1.2845::&::0::\\'
++ perl -pe 's/::/ /g'
+1CKA_s5 & -299.2329 & -.2859 & -1.2845 & 0 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1G9O_s1::&::-466.6764::&::-167.4435::&::-1.2845::&::0::\\'
++ perl -pe 's/::/ /g'
+1G9O_s1 & -466.6764 & -167.4435 & -1.2845 & 0 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1G9O_s2::&::-478.8797::&::-179.6468::&::-1.2845::&::0::\\'
++ perl -pe 's/::/ /g'
+1G9O_s2 & -478.8797 & -179.6468 & -1.2845 & 0 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1G9O_s3::&::-477.2503::&::-178.1540::&::-1.2845::&::0::\\'
++ perl -pe 's/::/ /g'
+1G9O_s3 & -477.2503 & -178.1540 & -1.2845 & 0 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1G9O_s4::&::-470.6458::&::-171.4129::&::-1.2845::&::0::\\'
++ perl -pe 's/::/ /g'
+1G9O_s4 & -470.6458 & -171.4129 & -1.2845 & 0 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1G9O_s5::&::-464.8659::&::-464.8659::&::0::&::-464.8659::\\'
++ perl -pe 's/::/ /g'
+1G9O_s5 & -464.8659 & -464.8659 & 0 & -464.8659 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1M61_s1::&::-550.0699::&::-550.0699::&::0::&::-464.8659::\\'
++ perl -pe 's/::/ /g'
+1M61_s1 & -550.0699 & -550.0699 & 0 & -464.8659 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1M61_s2::&::-538.6026::&::-542.1131::&::0::&::-542.2516::\\'
++ perl -pe 's/::/ /g'
+1M61_s2 & -538.6026 & -542.1131 & 0 & -542.2516 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1M61_s3::&::-552.2673::&::-552.2673::&::0::&::-542.2516::\\'
++ perl -pe 's/::/ /g'
+1M61_s3 & -552.2673 & -552.2673 & 0 & -542.2516 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1M61_s4::&::-550.0553::&::-550.0553::&::0::&::-542.2516::\\'
++ perl -pe 's/::/ /g'
+1M61_s4 & -550.0553 & -550.0553 & 0 & -542.2516 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1M61_s5::&::-553.6559::&::-553.6559::&::0::&::-542.2516::\\'
++ perl -pe 's/::/ /g'
+1M61_s5 & -553.6559 & -553.6559 & 0 & -542.2516 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1O4C_s1::&::-587.4665::&::-587.4665::&::0::&::-542.2516::\\'
++ perl -pe 's/::/ /g'
+1O4C_s1 & -587.4665 & -587.4665 & 0 & -542.2516 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1O4C_s2::&::-585.8545::&::-585.8545::&::0::&::-542.2516::\\'
++ perl -pe 's/::/ /g'
+1O4C_s2 & -585.8545 & -585.8545 & 0 & -542.2516 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1O4C_s3::&::-580.3505::&::-580.3505::&::0::&::-542.2516::\\'
++ perl -pe 's/::/ /g'
+1O4C_s3 & -580.3505 & -580.3505 & 0 & -542.2516 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1O4C_s4::&::-587.1548::&::-587.1548::&::0::&::-542.2516::\\'
++ perl -pe 's/::/ /g'
+1O4C_s4 & -587.1548 & -587.1548 & 0 & -542.2516 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1O4C_s5::&::-590.2650::&::-590.2650::&::0::&::-542.2516::\\'
++ perl -pe 's/::/ /g'
+1O4C_s5 & -590.2650 & -590.2650 & 0 & -542.2516 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1R6J_s1::&::-448.8351::&::0::&::-2.3986::&::-2.4175::\\'
++ perl -pe 's/::/ /g'
+1R6J_s1 & -448.8351 & 0 & -2.3986 & -2.4175 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1R6J_s2::&::-448.4631::&::0::&::-2.7706::&::-2.7895::\\'
++ perl -pe 's/::/ /g'
+1R6J_s2 & -448.4631 & 0 & -2.7706 & -2.7895 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1R6J_s3::&::-450.3950::&::0::&::-.8387::&::-.8576::\\'
++ perl -pe 's/::/ /g'
+1R6J_s3 & -450.3950 & 0 & -.8387 & -.8576 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1R6J_s4::&::-451.7211::&::-.4874::&::0::&::-.0189::\\'
++ perl -pe 's/::/ /g'
+1R6J_s4 & -451.7211 & -.4874 & 0 & -.0189 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '1R6J_s5::&::-450.9943::&::0::&::-.2394::&::-.2583::\\'
++ perl -pe 's/::/ /g'
+1R6J_s5 & -450.9943 & 0 & -.2394 & -.2583 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '2BYG_s1::&::-511.3882::&::-54.4060::&::0::&::-.0189::\\'
++ perl -pe 's/::/ /g'
+2BYG_s1 & -511.3882 & -54.4060 & 0 & -.0189 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '2BYG_s2::&::-504.7389::&::-53.5052::&::0::&::-.0189::\\'
++ perl -pe 's/::/ /g'
+2BYG_s2 & -504.7389 & -53.5052 & 0 & -.0189 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '2BYG_s3::&::-504.3048::&::-53.0711::&::0::&::-.0189::\\'
++ perl -pe 's/::/ /g'
+2BYG_s3 & -504.3048 & -53.0711 & 0 & -.0189 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '2BYG_s4::&::-504.3466::&::-53.1129::&::0::&::-.0189::\\'
++ perl -pe 's/::/ /g'
+2BYG_s4 & -504.3466 & -53.1129 & 0 & -.0189 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo '2BYG_s5::&::-491.6095::&::-40.3758::&::0::&::-.0189::\\'
++ perl -pe 's/::/ /g'
+2BYG_s5 & -491.6095 & -40.3758 & 0 & -.0189 \\
++ for i in '$(seq 1 ${#tab[@]})'
++ echo
++ perl -pe 's/::/ /g'
+
++ echo '\hline'
+\hline
