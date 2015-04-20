@@ -1,60 +1,97 @@
 #!/usr/bin/env python
+#coding=utf-8
+
+
+
+from __future__ import unicode_literals
+import matplotlib as mpl
+mpl.rcParams['text.usetex']=True
+mpl.rcParams['text.latex.unicode']=True
 
 
 import sys
 import numpy as np
-
+from matplotlib.ticker import FuncFormatter 
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 try:
     titre       = sys.argv[1]
-    toulbar2    = sys.argv[2]
-    H           = sys.argv[3]
-    MC          = sys.argv[4]
-    RE          = sys.argv[5]
-    output_file = sys.argv[6]
+    result_file = sys.argv[2]
+    output_file = sys.argv[3]
+    
 except:
-    print "usage: \n" + sys.argv[0] + " titre data_H data_MC data_RE graph_name.png \n" 
+    print "usage: \n" + sys.argv[0] + " titre result_file graph_name.png \n" 
     sys.exit(2)
 
 
 
+
+def base(x, pos):
+    if x==1:
+        return 0 
+    elif x==2:
+        return 1
+    elif x==3:
+        return 5
+    elif x==4:
+        return 10
+    elif x==5:
+        return 20
+    elif x==6:
+        return 30
+
+
+formatter = FuncFormatter(base)                                                                                                                                                        
+    
+    
 fig = Figure()
 canvas = FigureCanvas(fig)
 ax = fig.add_subplot(111)
 ax.set_title(titre)
 
+fo=open("file.txt","r")
+lignes=fo.readlines()
+
+my_marker=""
+my_color='b'
+
+keys=lignes[0].split()[1:] # Récupération des clés en ligne 0
+print "keys :",keys
+ 
+
+for ligne in lignes[1:]:
+    data=ligne.split()
+    print "data: ",data
+    if data[3]!="toulbar2":
+        my_marker='*'
+    else:
+        my_marker='o'
         
-posi_toulbar2   = np.loadtxt(toulbar2,usecols=[0])
-nb_err_toulbar2 = np.loadtxt(toulbar2,usecols=[1])
+    if data[0]!="H":
+        my_color="red"
+    elif data[0]!="MC":
+        color="blue"
+    elif data[0]!="RE":
+        color="black"
+    print "data[1]",data[1]
+    print "data[2]",data[2]
+    print "my_color",my_color    
+    print "my_marker",my_marker    
+#    ax.plot(data[1],data[2],color=my_color,marker=my_marker)
+    ax.plot(int(data[1]),float(data[2]),color=my_color,marker=my_marker)
 
-posi_H          = np.loadtxt(H,usecols=[0])
-delta_H         = np.loadtxt(H,usecols=[1])
-type_delta_H    = np.loadtxt(H,usecols=[2])
+ax.xaxis.set_ticks([1,2,3,4,5,6])
+ax.xaxis.set_major_formatter(formatter)
+ax.set_xlim(0.5, 6.5)
 
-posi_MC         = np.loadtxt(MC,usecols=[0])
-time_MC         = np.loadtxt(MC,usecols=[1])
-type_delta_MC   = np.loadtxt(H,usecols=[2])
+ax.yaxis.set_ticks([1.,2.,3.])
 
-posi_RE         = np.loadtxt(RE,usecols=[0])
-time_RE         = np.loadtxt(RE,usecols=[1])
-type_delta_RE   = np.loadtxt(H,usecols=[2])
+ax.grid(False)
+#ax.set_ylabel('delta E')
+ax.set_ylabel(r'\Delta', fontsize=16)
 
-
-for p in posi_toulbar2:
-    if 
-
-
-ax.plot(posi_toulbar2,time_toulbar2,label='toulbar2',color="red")
-ax.plot(posi_H,time_H,label='Heuristic',color="blue")
-ax.plot(posi_MC,time_MC,label='Monte-Carlo',color="black")
-ax.plot(posi_RE,time_RE,label='Replica Exchange',color="green")
-
-
-ax.grid(True)
-ax.set_ylabel('temps CPU en seconde')
 ax.set_xlabel('nombre de positions actives')
 ax.legend(loc=0)
 
