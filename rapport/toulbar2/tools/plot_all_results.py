@@ -26,21 +26,11 @@ except:
     sys.exit(2)
 
 
-
+conv = {'0': 1, '1': 2, '5': 3, '10': 4,'20': 5, '30': 6}
+conv_inv = {1:0,2:1,3:5,4:10,5:20,6:30}
 
 def base(x, pos):
-    if x==1:
-        return 0 
-    elif x==2:
-        return 1
-    elif x==3:
-        return 5
-    elif x==4:
-        return 10
-    elif x==5:
-        return 20
-    elif x==6:
-        return 30
+    return conv_inv[x]
 
 
 formatter = FuncFormatter(base)                                                                                                                                                        
@@ -51,7 +41,7 @@ canvas = FigureCanvas(fig)
 ax = fig.add_subplot(111)
 ax.set_title(titre)
 
-fo=open("file.txt","r")
+fo=open(result_file,"r")
 lignes=fo.readlines()
 
 my_marker=""
@@ -80,7 +70,7 @@ for ligne in lignes[1:]:
     print "my_color",my_color    
     print "my_marker",my_marker    
 #    ax.plot(data[1],data[2],color=my_color,marker=my_marker)
-    ax.plot(int(data[1]),float(data[2]),color=my_color,marker=my_marker)
+    ax.plot(conv[data[1]],float(data[2]),color=my_color,marker=my_marker)
 
 ax.xaxis.set_ticks([1,2,3,4,5,6])
 ax.xaxis.set_major_formatter(formatter)
@@ -89,8 +79,8 @@ ax.set_xlim(0.5, 6.5)
 ax.yaxis.set_ticks([1.,2.,3.])
 
 ax.grid(False)
-#ax.set_ylabel('delta E')
-ax.set_ylabel(r'\Delta', fontsize=16)
+#ax.set_ylabel(u'\u1D6AB')
+ax.set_ylabel(r"\Delta E", fontsize=16)
 
 ax.set_xlabel('nombre de positions actives')
 ax.legend(loc=0)
