@@ -68,6 +68,6 @@ ax.grid(False)
 ax.set_xlabel('steps (mega)')
 ax.set_ylabel('Temperature')
 
-ax.legend(loc=4)
+ax.legend(loc=1)
 canvas.print_figure(output_file)
 
