@@ -17,7 +17,7 @@ from matplotlib.figure import Figure
 
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
-import matplotlib.lines as mlines
+
 
 try:
     titre       = sys.argv[1]
@@ -106,7 +106,7 @@ ax.yaxis.set_ticks([1.,2.,3.,4,5,6,7])
 
 ax.grid(False)
 #ax.set_ylabel(u'\u1D6AB')
-ax.set_ylabel(r"\Delta E", fontsize=16)
+#ax.set_ylabel(r"\Delta E", fontsize=16)
 
 ax.set_xlabel('nombre de positions actives')
 ax.legend(loc=0)
@@ -116,12 +116,13 @@ ax.legend(loc=0)
 #handles, labels = ax.get_legend_handles_labels()
 #ax.legend(handles, labels)
 
-#red_patch = mpatches.Patch(color='red', label='The red data')
-#fig.legend(handles=[red_patch])
+red_patch = mpatches.Patch(color='red', label='The red data')
 
-blue_line = mlines.Line2D([], [], color='blue', marker='*',
-                          markersize=15, label='Blue stars')
-plt.legend(handles=[blue_line])
+ax.set_label("test label")
+# Put a legend below current axis
+ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05),
+          fancybox=True, shadow=True, ncol=5,handles=[red_patch])
+
 
 
 canvas.print_figure(output_file)
