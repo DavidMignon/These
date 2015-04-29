@@ -62,10 +62,18 @@ ax.set_yscale('log')
 ax.yaxis.set_major_formatter(formatter)
 
 ax.set_ylim(0.005,20)
-ax.grid(True)
+ax.grid(False)
 ax.set_xlabel('steps (mega)')
 ax.set_ylabel('Temperature')
 
-ax.legend(loc=4)
+
+# Shrink current axis by 10%
+box = ax.get_position()
+ax.set_position([box.x0, box.y0, box.width * 0.95, box.height])
+ax.legend(loc='center left',bbox_to_anchor=(1, 0.5))
+
+
+
+
 canvas.print_figure(output_file)
 

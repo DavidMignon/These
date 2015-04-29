@@ -10,7 +10,10 @@ declare -a L
 
 L=(Protéine)  
 
-for p in ph  p3  p4  p5  p6  p7  p8  p9
+algo_list="ph  p3  p4  p5  p6  p7  p8  p82 p83 p9 p11"
+
+
+for p in $algo_list
 
 do
     L+=(${name[$p]}) 
@@ -30,7 +33,7 @@ do
     L=(${prot/_casa/})
     WORK_DIR=$prot/actives/all
     
-    for p in ph  p3  p4  p5  p6  p7  p8  p9
+    for p in $algo_list
 	     
     do
     if [ -f $WORK_DIR/$p.ener.sort.xz ]
@@ -39,6 +42,12 @@ do
     elif [ -f $WORK_DIR/$p.ener.sort ]
     then
 	BEST_ENER=`head -1 $WORK_DIR/$p.ener.sort | cut -d " " -f 2 `;
+    elif [ -f $WORK_DIR/$p.seq.sort ]
+    then
+	BEST_ENER=`head -1 $WORK_DIR/$p.seq.sort | cut -d " " -f 3 `;
+    elif [ -f $WORK_DIR/$p.seq.sort.xz ]
+    then
+	BEST_ENER=` xzcat $WORK_DIR/$p.seq.sort.xz | head -1 | cut -d " " -f 3 `;	
     else
 	echo !!!!! $PWD $prot/actives/all/$p.ener.sort
     fi

@@ -20,6 +20,7 @@ name["p64"]=RE22;
 name["p7"]=RE5;
 name["p8"]=RE3;
 name["p82"]=RE32;
+name["p83"]=RE33;
 name["p9"]=RE4;
 name["p11"]=RE42;
 name["ph"]=H;

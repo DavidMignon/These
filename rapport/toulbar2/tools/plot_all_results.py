@@ -2,11 +2,10 @@
 #coding=utf-8
 
 
-
-from __future__ import unicode_literals
-import matplotlib as mpl
-mpl.rcParams['text.usetex']=True
-mpl.rcParams['text.latex.unicode']=True
+#from __future__ import unicode_literals
+#import matplotlib as mpl
+#mpl.rcParams['text.usetex']=True
+#mpl.rcParams['text.latex.unicode']=True
 
 
 import sys
@@ -14,6 +13,8 @@ import numpy as np
 from matplotlib.ticker import FuncFormatter 
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
+import matplotlib.lines as mlines
+
 
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
@@ -25,7 +26,7 @@ try:
     output_file = sys.argv[3]
     
 except:
-    print "usage: \n" + sys.argv[0] + " titre result_file graph_name.png \n" 
+    print  "usage: \n" + sys.argv[0] + " titre result_file graph_name.png \n"  
     sys.exit(2)
 
 
@@ -53,22 +54,20 @@ my_color='b'
 translation1=0
 translation2=0
 
-ax.bar(0.6,7.8,0.8,color='0.9',linewidth=0)
-ax.bar(1.6,7.8,0.8,color='0.9',linewidth=0)
-ax.bar(2.6,7.8,0.8,color='0.9',linewidth=0)
-ax.bar(3.6,7.8,0.8,color='0.9',linewidth=0)
-ax.bar(4.6,7.8,0.8,color='0.9',linewidth=0)
-ax.bar(5.6,7.8,0.8,color='0.9',linewidth=0)
+ax.bar(0.6,8,0.8,bottom=-0.2,color='0.9',linewidth=0)
+ax.bar(1.6,8,0.8,bottom=-0.2,color='0.9',linewidth=0)
+ax.bar(2.6,8,0.8,bottom=-0.2,color='0.9',linewidth=0)
+ax.bar(3.6,8,0.8,bottom=-0.2,color='0.9',linewidth=0)
+ax.bar(4.6,8,0.8,bottom=-0.2,color='0.9',linewidth=0)
+ax.bar(5.6,8,0.8,bottom=-0.2,color='0.9',linewidth=0)
 
 
 
 keys=lignes[0].split()[1:] # Récupération des clés en ligne 0
-print "keys :",keys
  
 
 for ligne in lignes[1:]:
     data=ligne.split()
-    print "data: ",data
     if data[3]=="toulbar2":
         my_marker='o'
         translation1=0.1
@@ -87,41 +86,43 @@ for ligne in lignes[1:]:
     elif data[0]=="RE":
         my_color="green"
         translation2=0.2
-    print "data[0]",data[0]
-    print "data[1]",data[1]
-    print "data[2]",data[2]
-    print "my_color",my_color    
-    print "my_marker",my_marker
-    print "trans1",translation1
-    print "trans2",translation2
     
-#    ax.plot(data[1],data[2],color=my_color,marker=my_marker)
     ax.plot(conv[data[1]]+translation1+translation2,float(data[2]),color=my_color,marker=my_marker)
 
 ax.xaxis.set_ticks([1,2,3,4,5,6])
 ax.xaxis.set_major_formatter(formatter)
 ax.set_xlim(0.5, 6.5)
-ax.set_ylim(0, 7.8)
-ax.yaxis.set_ticks([1.,2.,3.,4,5,6,7])
+ax.set_ylim(-0.2, 7.8)
+ax.yaxis.set_ticks([0.,1.,2.,3.,4,5,6,7])
 
 ax.grid(False)
-#ax.set_ylabel(u'\u1D6AB')
-#ax.set_ylabel(r"\Delta E", fontsize=16)
+#ax.set_ylabel(u'')
+#ax.set_ylabel(u'\u1D6E5'+'E (kcal/mol)')
+ax.set_ylabel(u'\u0394'+ 'E (kcal/mol)', fontsize=11)
+#ax.set_ylabel(r"\Delta E(kcal/mol)", fontsize=16)
 
-ax.set_xlabel('nombre de positions actives')
-ax.legend(loc=0)
+ax.set_xlabel("number of active positions", fontsize=11)
+
+#ax.tick_params(labeltop='off', labelright='off')
+ax.tick_params(axis = 'x', color='0.9')
+
+# Shrink current axis by 10%
+box = ax.get_position()
+ax.set_position([box.x0, box.y0, box.width * 0.95, box.height])
+
+red_patch = mpatches.Patch(color='red', label='H test')
+blue_patch = mpatches.Patch(color='blue', label='MC test')
+green_patch = mpatches.Patch(color='green', label='RE test')
+
+circle = mlines.Line2D(range(1), range(1), color="white", marker='o', markerfacecolor="white",label='Best: toulbar2')
+square = mlines.Line2D(range(1), range(1), color="white", marker='s',markerfacecolor="white",label='Best: RE')
+star = mlines.Line2D(range(1), range(1), color="white", marker='*', markerfacecolor="white",label='Best: H')
+
+# Put a legend to the right of the current axis
+ax.legend(loc='center left',fontsize=9,labelspacing=0.2 ,numpoints=1,bbox_to_anchor=(1, 0.5),fancybox=True, shadow=True, ncol=1,handles=[red_patch,blue_patch,green_patch,circle,star,square])
 
 
 
-#handles, labels = ax.get_legend_handles_labels()
-#ax.legend(handles, labels)
-
-red_patch = mpatches.Patch(color='red', label='The red data')
-
-ax.set_label("test label")
-# Put a legend below current axis
-ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05),
-          fancybox=True, shadow=True, ncol=5,handles=[red_patch])
 
 
 
