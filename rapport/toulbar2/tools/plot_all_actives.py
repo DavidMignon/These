@@ -44,10 +44,10 @@ ax.set_title(titre)
 
 proteins = np.genfromtxt(result_file,usecols=(0),dtype=None)
 
-H,MCa,MCb,RE4a,RE4b,RE4c,RE8a1,RE8a2,RE8a3,RE8b1,RE8b2 = np.loadtxt(result_file,usecols=[1,2,3,4,5,6,7,8,9,10,11])
+H,MCa,MCb,RE4a,RE4b,RE4c,RE8a1,RE8a2,RE8a3,RE8b1,RE8b2 = np.loadtxt(result_file,usecols=[1,2,3,4,5,6,7,8,9,10,11],unpack=True)
 
-
-ax.plot(conv[proteins],float(H),color='r',marker='o')
+print H
+ax.plot(proteins,H,color='r',marker='o')
 
 
 ax.xaxis.set_ticks([1,2,3,4,5,6,7,8,9])
