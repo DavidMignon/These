@@ -7,9 +7,20 @@ declare -a TAB
 declare -a L
 declare -A best_ener
 
-algo_list="ph  p3  p4  p5  p6  p7  p8  p82 p83 p9 p112"
+algo_list="ph  p3  p4  p5  p6  p9 p7 p112 p8  p82 p83 "
 
 cd /home/mignon/bioinfo/toulbar2
+
+
+# header
+
+for p in $algo_list
+
+do
+    L+=(${name[$p]}) 
+done
+
+TAB+=($(tab_line L[@]))    
 
 
 for prot in *_casa
@@ -23,7 +34,6 @@ do
     for p in $algo_list
 	     
     do
-	echo $p "_________________________"
 	if [ -f $WORK_DIR/$p.ener.sort.xz ]
 	then
 	    best_ener[$p]=`xzcat $WORK_DIR/$p.ener.sort.xz | head -1 | cut -d " " -f 2 `; 
@@ -42,7 +52,6 @@ do
 	    BEST_ENER=${best_ener[$p]}
 	fi
     done
-    
     for p in $algo_list 
     do
 	DELTA=`echo "${best_ener[$p]} - $BEST_ENER" | bc -l `
