@@ -24,7 +24,7 @@ except:
     sys.exit(2)
 
 conv = {'1A81' : 1 , '1ABO' : 2 , '1BM2' : 3 , '1CKA' : 4 ,'1G9O' : 5 , '1M61' : 6 , '1O4C' : 7 , '1R6J' : 8 ,'2BYG' : 9 }
-conv_inv = { 1 : '1CKA' , 2 : '1ABO' , 3 : '1R6J' , 4 : '1G9O', 5 : '2BYG' , 6 : '1BM2'  , 7 : '1O4C' , 8 : '1A81'  ,     9 : '1M61'  }
+conv_inv = { 1 : '1CKA' , 2 : '1ABO' , 3 : '1R6J' , 4 : '1G9O', 5 : '2BYG' , 6 : '1BM2'  , 7 : '1O4C' ,     8 : '1M61'  , 9 : '1A81'   }
 
 def base(x, pos):
     return conv_inv[x]
@@ -45,26 +45,28 @@ ax.set_title(titre)
 proteins = np.genfromtxt(result_file,usecols=(1),dtype=None)
 
 
-H,MCa,MCb,RE4a,RE4b,RE4c,RE8a1,RE8a2,RE8b1,RE8b2,RE8b3 = np.loadtxt(result_file,usecols=[2,3,4,5,6,7,8,9,11,12],unpack=True)
+H,MCa,MCb,RE4a,RE4b,RE4c,RE8a1,RE8a2,RE8b1,RE8b2,RE8b3 = np.loadtxt(result_file,usecols=[2,3,4,5,6,7,8,9,10,11,12],unpack=True)
 
-ax.plot(proteins,H,color='black',marker='o')
-ax.plot(proteins,MCa,color='blue',marker='o')
-ax.plot(proteins,MCb,color='green',marker='o')
-ax.plot(proteins,RE4a,color='cyan',marker='o')
-ax.plot(proteins,RE4b,color='magenta',marker='o')
-ax.plot(proteins,RE4c,color='yellow',marker='o')
-ax.plot(proteins,RE8a1,color='black',marker='o')
-ax.plot(proteins,RE8a2,color='white',marker='o')
-ax.plot(proteins,RE8b1,color='0.7',marker='o')
-ax.plot(proteins,RE8b2,color='black',marker='o')
-ax.plot(proteins,RE8b3,color='burlywood',marker='o')
+ax.plot(proteins,H,color='red',marker='o',label="H")
+ax.plot(proteins,MCa,color='blue',marker='^',label="MC a")
+ax.plot(proteins,MCb,color='green',marker='^',label="MC b")
+#ax.plot(proteins,RE4a,color='cyan',marker='s',label="RE 4 a")
+#ax.plot(proteins,RE4b,color='magenta',marker='s',label="RE 4 b")
+#ax.plot(proteins,RE4c,color='yellow',marker='s',label="RE 4 c")
+#ax.plot(proteins,RE8a1,color='cyan',marker='*',label="RE 8 a 1")
+#ax.plot(proteins,RE8a2,color='blue',marker='*',label="RE 8 a 2")
+#ax.plot(proteins,RE8b1,color='0.8',marker='*',label="RE 8 b 1")
+#ax.plot(proteins,RE8b2,color='black',marker='*',label="RE 8 b 2")
+#ax.plot(proteins,RE8b3,color='burlywood',marker='*',label="RE 8 b 3")
+
+
 
 
 ax.xaxis.set_ticks([1,2,3,4,5,6,7,8,9])
 ax.xaxis.set_major_formatter(formatter)
 ax.set_xlim(0, 10)
-ax.set_ylim(-2, 30)
-ax.yaxis.set_ticks([0.,4.,8.,12.,16,20,24,28])
+ax.set_ylim(-2, 28)
+ax.yaxis.set_ticks([0.,4.,8.,12.,16,20,24])
 
 ax.grid(False)
 
@@ -78,13 +80,13 @@ ax.set_xlabel("Proteins", fontsize=11)
 box = ax.get_position()
 ax.set_position([box.x0, box.y0, box.width * 0.95, box.height])
 
-red_patch = mpatches.Patch(color='red', label='H test')
-blue_patch = mpatches.Patch(color='blue', label='MC test')
-green_patch = mpatches.Patch(color='green', label='RE test')
+#red_patch = mpatches.Patch(color='red', label='H test')
+#blue_patch = mpatches.Patch(color='blue', label='MC test')
+#green_patch = mpatches.Patch(color='green', label='RE test')
 
 
 # Put a legend to the right of the current axis
-ax.legend(loc='center left',fontsize=9,labelspacing=0.2 ,numpoints=1,bbox_to_anchor=(1, 0.5),fancybox=True, shadow=True, ncol=1,handles=[red_patch,blue_patch,green_patch])
+ax.legend(loc='center left',fontsize=9,labelspacing=0.2 ,numpoints=1,bbox_to_anchor=(1, 0.5),fancybox=True, shadow=True, ncol=1)
 
 
 canvas.print_figure(output_file)
