@@ -1,0 +1,89 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry}
+
+\usepackage[utf8]{inputenc}   % le fichier .tex est en UTF-8     
+\usepackage[francais]{babel}  %typo française                    
+\usepackage[T1]{fontenc}      % encodage des fonts latex         
+\usepackage{lmodern}                                             
+\usepackage{microtype}        % typo supplémentaires             
+
+
+\usepackage{multirow}  %  pour des tableaux multilignes/multicolonnes
+
+\usepackage{graphicx} %inclusion de graphiques
+
+\usepackage{hyperref} % liens dans le pdf
+\hypersetup{%
+  pdftitle={Title},
+  pdfauthor={Author1, Author2},
+  pdfkeywords={keywords}
+  pdfsubject={article},
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
+  citecolor=black
+}
+
+
+
+
+\begin{document}
+
+    \begin{table}[h]
+      \centering
+
+      \begin{tabular}{|c|c|c|c|c|}
+
+
+        \hline
+        Protein & GMEC & H & MC & RE \\
+        \hline
+        1CKA 3 & -304.6618 & 0 & 0 & \\
+        1CKA 4 & -302.4894 & 0 & 0 & \\
+        1CKA 5 & -299.2329 & -0.2859 & -3.2525 & 0 \\
+        1G9O 3 & -477.2503 & -0.1366 & 0 & \\
+        1G9O 4 & -470.6458 & 0 & 0 & \\
+        1G9O 5 & -464.8659 & 0 & -3.9599 &  0 \\
+        1M61 1 & -550.0699 & 0 & -0.0776 & \\
+        1M61 2 & -538.6026 & -3.5105 & -4.5062 & 0.3215 \\
+        1M61 5 & -553.6559 & 0 & -0.0432 & \\
+        
+        \hline
+
+
+ \end{tabular}      
+ \label{tab_1}      
+\end{table}
+
+
+    \begin{table}[h]
+      \centering
+
+      \begin{tabular}{|c|c|c|c|c|c|c|}
+
+
+        \hline
+        Protein & seq-rot nb gmec+1 & H rank  & MC rank  & seq nb gmec+1 & H mut nb & MC mut nb \\
+        \hline
+        1CKA 3 & 67669 & 1 & 1 & 227 & 0 & 0 \\
+        1CKA 4 & 4649 & 1 & 1 & 498 & 0 & 0 \\
+        1CKA 5 & 1388 & 78 & ? & 77 & 0 & 2 \\
+        1G9O 3 & 354559 & 23 & 1 & 63 & 1 & 0 \\
+        1G9O 4 & 22639 & 1 & 1 & 381 & 0 & 0 \\
+        1G9O 5 & 8658395 & 1 & ? &  11 & 0 & 0 \\
+        1M61 1 & 11199153 & ? & ? & 21 & 3 & 7 \\
+        1M61 2 & 11199153 & 1 & 1 & 88 & 0 & 0 \\
+        1M61 5 & 16417604 & 1 & 1 & 83 & 0 & 0 \\
+        
+        \hline
+
+
+ \end{tabular}      
+ \label{tab_2}      
+\end{table}
+
+
+
+
+
+\end{document}

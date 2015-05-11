@@ -1,0 +1,65 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry}
+
+\usepackage[utf8]{inputenc}   % le fichier .tex est en UTF-8     
+\usepackage[francais]{babel}  %typo française                    
+\usepackage[T1]{fontenc}      % encodage des fonts latex         
+\usepackage{lmodern}                                             
+\usepackage{microtype}        % typo supplémentaires             
+
+
+\usepackage{multirow}  %  pour des tableaux multilignes/multicolonnes
+\usepackage{rotating}  %  pour les rotations de tables
+
+\usepackage{graphicx} %inclusion de graphiques
+
+\usepackage{hyperref} % liens dans le pdf
+\hypersetup{%
+  pdftitle={Title},
+  pdfauthor={Author1, Author2},
+  pdfkeywords={keywords}
+  pdfsubject={article},
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
+  citecolor=black
+}
+
+
+
+
+\begin{document}
+   \section{Les protocoles} 
+
+   \subsection{ Résultats Superfamily}
+
+
+      \raggedleft
+
+      \begin{tabular}{|c|c|c|c|c|c|}
+
+        \hline
+        Protein & Match/seq size & Superfamily Evalue & superfamily success & Family Evalue & family success\\
+        \hline
+        1A81 & no & & & & \\
+        1ABO & 51/58 & 4.4e-4 & 100\% & 2.8e-3 & 100\% \\
+        1BM2 & 78/98 & 4.2e-5 & 100\% & 2.6e-3 & 100\% \\
+        1CKA & 40/57 & 1.1e-5 & 100\% & 3.4e-3. & 100\% \\
+        1G9O & 79/91 & 7.0e-7 & 100\% & 2.5e-3 & 100\%  \\
+        1M61 & 97/109 & 7.2e-7 & 100\% & 2.6e-4 &  100\% \\
+        1O4C & 95/104 & 2.1e-4 & 100\% & 4.5e-3 &  100\% \\
+        1R6J & 74/82 & 9.8e-6 & 100\% & 4.6e-3 &  100\% \\
+        2BYG & 59/97 & 1.4e-5 & 100\% & 7.1e-3 &  100\% \\
+
+        \hline
+
+
+ \end{tabular}      
+
+
+    \clearpage
+
+
+\end{document}
+
+
