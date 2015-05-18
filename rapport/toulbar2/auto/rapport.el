@@ -13,7 +13,10 @@
      "tab_echec1M61__1"
      "tab_echec1O4C__1"
      "tab_echec1R6J__1"
-     "tab_echec2BYG__1")
+     "tab_echec2BYG__1"
+     "tab_echec_10_20"
+     "tab_1"
+     "tab_2")
     (TeX-run-style-hooks
      "hyperref"
      "graphicx"
