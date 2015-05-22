@@ -55,9 +55,13 @@ do
 	echo 1 BEST_ENER $BEST_ENER
 
 	
-	for p in $ALGO_LIST 
+	for p in toulbar2 $ALGO_LIST
 		 
 	do
+		if [ $p == "toulbar2" ]
+		then
+
+		fi
 	    
 	    if [ -f $WORK_DIR/$p.ener.sort.xz ]
 	    then
@@ -88,7 +92,7 @@ do
 	    fi
 	done
 	echo 2 BEST_ENER $BEST_ENER
-	for p in $ALGO_LIST 
+	for p in toulbar2 $ALGO_LIST
 	do
 	    
 	    if [ ${ener_exists[$p]} == "TRUE"  ]
