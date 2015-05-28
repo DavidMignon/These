@@ -1,0 +1,100 @@
+\hypertarget{structrequest__t}{\section{Référence de la structure request\+\_\+t}
+\label{structrequest__t}\index{request\+\_\+t@{request\+\_\+t}}
+}
+
+
+{\ttfamily \#include $<$request\+\_\+ring.\+h$>$}
+
+
+
+Graphe de collaboration de request\+\_\+t\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{structrequest__t__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Types publics}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{structrequest__t_aca0697afc961f559b2e88cf9c36230a9a1357877ac56fad2ccf5e936b88c44db0}{S\+T\+A\+T\+U\+S\+\_\+\+E\+M\+P\+T\+Y}, 
+\hyperlink{structrequest__t_aca0697afc961f559b2e88cf9c36230a9a9827bd9303cad6afd9f28f4a7980fa95}{S\+T\+A\+T\+U\+S\+\_\+\+F\+O\+R\+W\+A\+R\+D\+E\+D}, 
+\hyperlink{structrequest__t_aca0697afc961f559b2e88cf9c36230a9afede9eb5f5997a15e1b724938d00e9b8}{S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+C\+A\+L}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Champs de données}
+\begin{DoxyCompactItemize}
+\item 
+enum request\+\_\+t\+:: \{ ... \}  \hyperlink{structrequest__t_a091a4bcea10a60e492f6d5e0701971b1}{status}
+\item 
+\hyperlink{structparam__t}{param\+\_\+t} \hyperlink{structrequest__t_aecda29724bf99d52cb493c1230c78c56}{key}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\hyperlink{global_8h_a596407b6fb2365e332aae2fa812dadc7}{ener\_id\_t} \hyperlink{structrequest__t_a89f0d4bedb0b3309d3788d83361fca7b}{forwarded\_request}\\
+\>double \hyperlink{structrequest__t_adfaf572f76ed3e073cf055e07fc2c78b}{local\_value}\\
+\} \hyperlink{structrequest__t_a6729b77b960ade21ba25c05752728d1d}{content}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+
+
+Définition à la ligne 6 du fichier request\+\_\+ring.\+h.
+
+
+
+\subsection{Documentation des énumérations membres}
+\hypertarget{structrequest__t_aca0697afc961f559b2e88cf9c36230a9}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{structrequest__t_aca0697afc961f559b2e88cf9c36230a9}
+status of this request S\+T\+A\+T\+U\+S\+\_\+\+E\+M\+P\+T\+Y\+: it does not contain anything S\+T\+A\+T\+U\+S\+\_\+\+F\+O\+R\+W\+A\+R\+D\+E\+D\+: it's been forwarded and its id is forwarded\+\_\+request S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+C\+A\+L\+: it's in ring and its value is local\+\_\+value \begin{Desc}
+\item[Valeurs énumérées]\par
+\begin{description}
+\index{S\+T\+A\+T\+U\+S\+\_\+\+E\+M\+P\+T\+Y@{S\+T\+A\+T\+U\+S\+\_\+\+E\+M\+P\+T\+Y}!request\+\_\+t@{request\+\_\+t}}\index{request\+\_\+t@{request\+\_\+t}!S\+T\+A\+T\+U\+S\+\_\+\+E\+M\+P\+T\+Y@{S\+T\+A\+T\+U\+S\+\_\+\+E\+M\+P\+T\+Y}}\item[{\em 
+\hypertarget{structrequest__t_aca0697afc961f559b2e88cf9c36230a9a1357877ac56fad2ccf5e936b88c44db0}{S\+T\+A\+T\+U\+S\+\_\+\+E\+M\+P\+T\+Y}\label{structrequest__t_aca0697afc961f559b2e88cf9c36230a9a1357877ac56fad2ccf5e936b88c44db0}
+}]\index{S\+T\+A\+T\+U\+S\+\_\+\+F\+O\+R\+W\+A\+R\+D\+E\+D@{S\+T\+A\+T\+U\+S\+\_\+\+F\+O\+R\+W\+A\+R\+D\+E\+D}!request\+\_\+t@{request\+\_\+t}}\index{request\+\_\+t@{request\+\_\+t}!S\+T\+A\+T\+U\+S\+\_\+\+F\+O\+R\+W\+A\+R\+D\+E\+D@{S\+T\+A\+T\+U\+S\+\_\+\+F\+O\+R\+W\+A\+R\+D\+E\+D}}\item[{\em 
+\hypertarget{structrequest__t_aca0697afc961f559b2e88cf9c36230a9a9827bd9303cad6afd9f28f4a7980fa95}{S\+T\+A\+T\+U\+S\+\_\+\+F\+O\+R\+W\+A\+R\+D\+E\+D}\label{structrequest__t_aca0697afc961f559b2e88cf9c36230a9a9827bd9303cad6afd9f28f4a7980fa95}
+}]\index{S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+C\+A\+L@{S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+C\+A\+L}!request\+\_\+t@{request\+\_\+t}}\index{request\+\_\+t@{request\+\_\+t}!S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+C\+A\+L@{S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+C\+A\+L}}\item[{\em 
+\hypertarget{structrequest__t_aca0697afc961f559b2e88cf9c36230a9afede9eb5f5997a15e1b724938d00e9b8}{S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+C\+A\+L}\label{structrequest__t_aca0697afc961f559b2e88cf9c36230a9afede9eb5f5997a15e1b724938d00e9b8}
+}]\end{description}
+\end{Desc}
+
+
+Définition à la ligne 12 du fichier request\+\_\+ring.\+h.
+
+
+
+\subsection{Documentation des champs}
+\hypertarget{structrequest__t_a6729b77b960ade21ba25c05752728d1d}{\index{request\+\_\+t@{request\+\_\+t}!content@{content}}
+\index{content@{content}!request\+\_\+t@{request\+\_\+t}}
+\subsubsection[{content}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \}   request\+\_\+t\+::content}}\label{structrequest__t_a6729b77b960ade21ba25c05752728d1d}
+\hypertarget{structrequest__t_a89f0d4bedb0b3309d3788d83361fca7b}{\index{request\+\_\+t@{request\+\_\+t}!forwarded\+\_\+request@{forwarded\+\_\+request}}
+\index{forwarded\+\_\+request@{forwarded\+\_\+request}!request\+\_\+t@{request\+\_\+t}}
+\subsubsection[{forwarded\+\_\+request}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ener\+\_\+id\+\_\+t} request\+\_\+t\+::forwarded\+\_\+request}}\label{structrequest__t_a89f0d4bedb0b3309d3788d83361fca7b}
+
+
+Définition à la ligne 17 du fichier request\+\_\+ring.\+h.
+
+\hypertarget{structrequest__t_aecda29724bf99d52cb493c1230c78c56}{\index{request\+\_\+t@{request\+\_\+t}!key@{key}}
+\index{key@{key}!request\+\_\+t@{request\+\_\+t}}
+\subsubsection[{key}]{\setlength{\rightskip}{0pt plus 5cm}{\bf param\+\_\+t} request\+\_\+t\+::key}}\label{structrequest__t_aecda29724bf99d52cb493c1230c78c56}
+
+
+Définition à la ligne 14 du fichier request\+\_\+ring.\+h.
+
+\hypertarget{structrequest__t_adfaf572f76ed3e073cf055e07fc2c78b}{\index{request\+\_\+t@{request\+\_\+t}!local\+\_\+value@{local\+\_\+value}}
+\index{local\+\_\+value@{local\+\_\+value}!request\+\_\+t@{request\+\_\+t}}
+\subsubsection[{local\+\_\+value}]{\setlength{\rightskip}{0pt plus 5cm}double request\+\_\+t\+::local\+\_\+value}}\label{structrequest__t_adfaf572f76ed3e073cf055e07fc2c78b}
+
+
+Définition à la ligne 19 du fichier request\+\_\+ring.\+h.
+
+\hypertarget{structrequest__t_a091a4bcea10a60e492f6d5e0701971b1}{\index{request\+\_\+t@{request\+\_\+t}!status@{status}}
+\index{status@{status}!request\+\_\+t@{request\+\_\+t}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}enum \{ ... \}   request\+\_\+t\+::status}}\label{structrequest__t_a091a4bcea10a60e492f6d5e0701971b1}
+status of this request S\+T\+A\+T\+U\+S\+\_\+\+E\+M\+P\+T\+Y\+: it does not contain anything S\+T\+A\+T\+U\+S\+\_\+\+F\+O\+R\+W\+A\+R\+D\+E\+D\+: it's been forwarded and its id is forwarded\+\_\+request S\+T\+A\+T\+U\+S\+\_\+\+L\+O\+C\+A\+L\+: it's in ring and its value is local\+\_\+value 
+
+La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+/home/mignon/bioinfo/proteus/gitlab/proteus/\hyperlink{request__ring_8h}{request\+\_\+ring.\+h}\end{DoxyCompactItemize}

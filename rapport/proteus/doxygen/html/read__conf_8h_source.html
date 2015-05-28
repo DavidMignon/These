@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>proteus:  Fichier source de /home/mignon/bioinfo/proteus/gitlab/proteus/read_conf.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">proteus
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b75a2afd3124dc514e77c0f10e744ba9.html">proteus</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">read_conf.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="read__conf_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include&lt;gsl/gsl_rng.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="backbone_8h.html">backbone.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="global_8h.html">global.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8h.html">utils.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// config codes</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a7c4f79891c21be232ca76de678caca08">    7</a></span>&#160;<span class="preprocessor">#define RSEED_DEFINITION      0</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="read__conf_8h.html#aac22d8151905a0eafa71d7537f928239">    8</a></span>&#160;<span class="preprocessor">#define ENERGY_DIR            1</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a47a4db1caa818addbdd16f995fd5f84e">    9</a></span>&#160;<span class="preprocessor">#define GROUP_DEFINITION      2</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="read__conf_8h.html#af471bf0a76ab20bbacccd83ae3f08ddf">   10</a></span>&#160;<span class="preprocessor">#define SPACE_CONSTRAINTS     3</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a5550cfd86c0230224b4852dbc00c2e67">   11</a></span>&#160;<span class="preprocessor">#define SEQ_PASS_NB           4</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a0eafa592e67b4299c35093d00ec1c4eb">   12</a></span>&#160;<span class="preprocessor">#define OPTM_CONFIG           5</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="read__conf_8h.html#ab8c52c1b4c021ed3e6b6b677bd2ac019">   13</a></span>&#160;<span class="preprocessor">#define MODE                  6</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a2e7d384828b3a4529dfea96e2d849a11">   14</a></span>&#160;<span class="preprocessor">#define CYCLE_NB              7</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a21d48bd5db669b0f4535d71d5de11ca3">   15</a></span>&#160;<span class="preprocessor">#define SURF_ENER_FACTOR      8</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a9acd81cce77bdb7b271b7a9c017c33db">   16</a></span>&#160;<span class="preprocessor">#define DIELECT_CONST         9</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="read__conf_8h.html#aefd9eb0c9903e6de67363602d893e9b9">   17</a></span>&#160;<span class="preprocessor">#define SEQ_OUTPUT_FILE      10</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="read__conf_8h.html#ab717506f3b47a445383e74d9cf0b1725">   18</a></span>&#160;<span class="preprocessor">#define FASTA_FILE           11</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a221b62bd10b42b63840ce88df49173df">   19</a></span>&#160;<span class="preprocessor">#define LAMBDA_PARAM         12</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="read__conf_8h.html#af4e8dcb1c210baad2e179d49669eabff">   20</a></span>&#160;<span class="preprocessor">#define TEMPERATURE          13</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a9ec14eb7ba2f14b90ef9d739e083a77f">   21</a></span>&#160;<span class="preprocessor">#define INIT_WEIGHTS         14</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a89ff7faa0ab2b3125735ba95662e4d8f">   22</a></span>&#160;<span class="preprocessor">#define ROT_PROBA            15</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="read__conf_8h.html#ad1044df204e01accfe0eafdb2ea9cad7">   23</a></span>&#160;<span class="preprocessor">#define ROT_ROT_PROBA        16</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a2aaae7c3eb2673604d0cceab84a9d567">   24</a></span>&#160;<span class="preprocessor">#define MUT_PROBA            17</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="read__conf_8h.html#ac1c3d2392312485d800f62aa57cf275c">   25</a></span>&#160;<span class="preprocessor">#define MUT_MUT_PROBA        18</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="read__conf_8h.html#ab1cb047241407cedbc8db8863f1a8565">   26</a></span>&#160;<span class="preprocessor">#define MUT_ROT_PROBA        19</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a1a50fe15dd5b3399a7f3a90b1b021d48">   27</a></span>&#160;<span class="preprocessor">#define NEIGHBOR_THRESHOLD   20</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="read__conf_8h.html#abf411f95e6a112353dca664df9f23e80">   28</a></span>&#160;<span class="preprocessor">#define RANDOM_GENERATOR     21</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a19e1de351564fb61758b7bdb6cb7a5bc">   29</a></span>&#160;<span class="preprocessor">#define TRAJ_LENGTH          22</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a9187e943295df05048aaabccb8e30ec6">   30</a></span>&#160;<span class="preprocessor">#define ENER_OUTPUT_FILE     23</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="read__conf_8h.html#ae27c4159a480e01f02ae1945530709d0">   31</a></span>&#160;<span class="preprocessor">#define SEQ_INPUT_FILE       24</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a3123636125eb24308427058bc94dfdac">   32</a></span>&#160;<span class="preprocessor">#define TRAJ_NB              25</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a6c375cf80886538f2a37136262b06d3b">   33</a></span>&#160;<span class="preprocessor">#define SEQ_INPUT            26</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="read__conf_8h.html#acd17b8785032f6a003520e5fb4e7473d">   34</a></span>&#160;<span class="preprocessor">#define RESET_ENERGIES       27</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="read__conf_8h.html#ab17ce395bcb5f2688c2783ec9e5e17a0">   35</a></span>&#160;<span class="preprocessor">#define WALKER_NB            28</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="read__conf_8h.html#ab501a9d006ee282a664f42d2c95ee161">   36</a></span>&#160;<span class="preprocessor">#define SWAP_PERIOD          29</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="read__conf_8h.html#ab8d8ca3b652e51993214232ec753b356">   37</a></span>&#160;<span class="preprocessor">#define ENERGY_FILE          30</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="read__conf_8h.html#ae9a696a0191035025e761dc570cb46ef">   38</a></span>&#160;<span class="preprocessor">#define BACKBONE_PROBA       31</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="read__conf_8h.html#af70b67011ec7358b19fc567fb22f1797">   39</a></span>&#160;<span class="preprocessor">#define WEIGHT_EXCHANGE_FILE 32</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a5143868b6d2e2de58444172c9fffc2cc">   40</a></span>&#160;<span class="preprocessor">#define REF_ENER             33</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a8d0ac7033fb1bd905e0215fadfb69c57">   41</a></span>&#160;<span class="preprocessor">#define PRINT_THRESHOLD      34</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// execution mode</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a0b81eb0d3a39eecc762d6f29b4579427">   44</a></span>&#160;<span class="preprocessor">#define Heuristic    0</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a6c09feb12ab992f9d9254bf56b696940">   45</a></span>&#160;<span class="preprocessor">#define MeanField    1</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="read__conf_8h.html#ad3cfac2a6786afb5b2c0f96b629c2cbb">   46</a></span>&#160;<span class="preprocessor">#define MonteCarlo   2</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="read__conf_8h.html#aedb855f0de08fb5442f790cfe31c4549">   47</a></span>&#160;<span class="preprocessor">#define PostProcess  3</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="read__conf_8h.html#a603b183edd0b53b24f584a8dfcf9e013">   48</a></span>&#160;<span class="preprocessor">#define Info         4</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="read__conf_8h.html#afb31aa2d196755fb259d43a03c18c9d7">   50</a></span>&#160;<span class="preprocessor">#define MAX_FLOAT    FLT_MAX</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="read__conf_8h.html#ac27cb1a4497026d6d8e3f99af66c4da7">   51</a></span>&#160;<span class="preprocessor">#define MIN_POSITIVE FLT_MIN</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="read__conf_8h.html#aaa1ac5caef84256eaeb39594e58e096f">   52</a></span>&#160;<span class="preprocessor">#define MAX_INT      INT_MAX</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span> <a class="code" href="read__conf_8h.html#a0d96ff6836114f50fefb70232bf5eb64">TAGS</a>[<a class="code" href="global_8h.html#a9b69fba98c1dfe5bf628cfa9e90aa9d7">TAG_NB</a>][<a class="code" href="utils_8h.html#a82acb32225c05e9aa4c524c40bc5852a">MAX_CHAR</a>];</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="structterm.html">   57</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structterm.html#a0e3099fefaeda94c8f11abcfe8eb071f">   58</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="structterm.html#a0e3099fefaeda94c8f11abcfe8eb071f">factor</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structterm.html#aad99db478acafec56675d26230546978">   59</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="structterm.html#aad99db478acafec56675d26230546978">grp_pair_idx</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} <a class="code" href="structterm.html">term</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="structopt__formula.html">   64</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="structopt__formula.html#a6b5a48d9fd86a6c9d7eb08e2218c382d">   65</a></span>&#160;  <span class="keywordtype">char</span>   <span class="keywordtype">string</span>[<a class="code" href="utils_8h.html#a82acb32225c05e9aa4c524c40bc5852a">MAX_CHAR</a>];</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="structopt__formula.html#ad605fd58d412c3f432e712901c48fb63">   66</a></span>&#160;  <span class="keywordtype">float</span>  <a class="code" href="structopt__formula.html#ad605fd58d412c3f432e712901c48fb63">factor</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="structopt__formula.html#abbe0c9a081cd5aea377286c914e5371c">   67</a></span>&#160;  <span class="keywordtype">float</span>  <a class="code" href="structopt__formula.html#abbe0c9a081cd5aea377286c914e5371c">threshold</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structopt__formula.html#a3402a90a45675c67bb00037812216906">   68</a></span>&#160;  <span class="keywordtype">char</span>   core[<a class="code" href="utils_8h.html#a82acb32225c05e9aa4c524c40bc5852a">MAX_CHAR</a>];</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="structopt__formula.html#a26227308e487fa63c9a10bba39a856b0">   69</a></span>&#160;  <a class="code" href="structterm.html">term</a>*  <a class="code" href="structopt__formula.html#a26227308e487fa63c9a10bba39a856b0">terms</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structopt__formula.html#a88d621da87e6c9a3787c7e69d78d8a69">   70</a></span>&#160;  <span class="keywordtype">int</span>    <a class="code" href="structopt__formula.html#a88d621da87e6c9a3787c7e69d78d8a69">term_nb</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;} <a class="code" href="structopt__formula.html">opt_formula</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">extern</span> <a class="code" href="structopt__formula.html">opt_formula</a>* <a class="code" href="read__conf_8h.html#af2e12a68ed24f8ec049781947e8c41b6">formula</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">extern</span> <a class="code" href="structopt__formula.html">opt_formula</a>* <a class="code" href="read__conf_8h.html#a8f1e2e14840d175cec00fa22ab1d52cb">formula_prev</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="structref__ener.html">   80</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="structref__ener.html#a0be7a83f7ea09b93f426425b14bc44d1">   81</a></span>&#160;  <span class="keywordtype">char</span>  type3l[4];</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structref__ener.html#a044c52971d7c36e9bf532a6cbe27efa5">   82</a></span>&#160;  <span class="keywordtype">char</span> * <a class="code" href="structref__ener.html#a044c52971d7c36e9bf532a6cbe27efa5">PDB_name</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="structref__ener.html#a53197ad188efb30815d326df7eb6f746">   83</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="structref__ener.html#a53197ad188efb30815d326df7eb6f746">value</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;} <a class="code" href="structref__ener.html">ref_ener</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">extern</span> <a class="code" href="structref__ener.html">ref_ener</a> * <a class="code" href="read__conf_8h.html#a83fcb9a2c03da4a1810f237ef1ba92cd">ref_eners</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="read__conf_8h.html#a145b137996f39d1bb6b4f743f8d53a4c">ref_eners_nb</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="struct_proba.html">   92</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="struct_proba.html#a0d99db17b016f293ec4e7fb87a7659c5">   94</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="struct_proba.html#a0d99db17b016f293ec4e7fb87a7659c5">backbone</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="struct_proba.html#a4fa9409e1684d2f42524567d2305b0c4">   96</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="struct_proba.html#a4fa9409e1684d2f42524567d2305b0c4">rot</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="struct_proba.html#a0d48353cb0e8d591d25b1ec243cb5a9f">   98</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="struct_proba.html#a0d48353cb0e8d591d25b1ec243cb5a9f">rot_rot</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="struct_proba.html#a832f8efe020ca9f60a5c9cf7a7aecda5">  100</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="struct_proba.html#a832f8efe020ca9f60a5c9cf7a7aecda5">mut</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="struct_proba.html#a9d6ba546e4120b335d1ce9eae107fbc0">  102</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="struct_proba.html#a9d6ba546e4120b335d1ce9eae107fbc0">mut_rot</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="struct_proba.html#a754ae5112e69caa40b6f48703acc3133">  104</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="struct_proba.html#a754ae5112e69caa40b6f48703acc3133">mut_mut</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="struct_proba.html#ab672f681e88ef8d71a84091a9692bf56">  106</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="struct_proba.html#ab672f681e88ef8d71a84091a9692bf56">length_relaxation</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;} <a class="code" href="struct_proba.html">Proba</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="structins___proba.html">  110</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="structins___proba.html#aea043481f2fc62dc33dc1ca86b3152dd">  112</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="structins___proba.html#aea043481f2fc62dc33dc1ca86b3152dd">rot</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="structins___proba.html#af53671eed50e63606035b392b4b2bba9">  114</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="structins___proba.html#af53671eed50e63606035b392b4b2bba9">mut</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;} <a class="code" href="structins___proba.html">ins_Proba</a>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="struct_p_i.html">  118</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_p_i.html">PI</a> {</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="struct_p_i.html#aeacab9a46c42d74eca7e1c74e56b8e8a">  120</a></span>&#160;  <span class="keywordtype">int</span>   <a class="code" href="struct_p_i.html#aeacab9a46c42d74eca7e1c74e56b8e8a">id</a>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="struct_p_i.html#a9e85457e1a500295d0cb90343850477b">  122</a></span>&#160;  <span class="keywordtype">int</span>   <a class="code" href="struct_p_i.html#a9e85457e1a500295d0cb90343850477b">posi</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="struct_p_i.html#afd1d054c2fea5717dada3b2560b65018">  124</a></span>&#160;  <span class="keywordtype">int</span>   <a class="code" href="struct_p_i.html#afd1d054c2fea5717dada3b2560b65018">grp</a>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="struct_p_i.html#a21eeeb2f51ed38c4a9eb79cdc4e2a4be">  126</a></span>&#160;  <span class="keywordtype">int</span>** <a class="code" href="struct_p_i.html#a21eeeb2f51ed38c4a9eb79cdc4e2a4be">space</a>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="struct_p_i.html#a1bc33fdfb4ad3f30c03e48d1410031ce">  128</a></span>&#160;  <span class="keywordtype">int</span>*  <a class="code" href="struct_p_i.html#a1bc33fdfb4ad3f30c03e48d1410031ce">rot_nb</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="struct_p_i.html#a954c178498f0744535e44aa722ee43ef">  130</a></span>&#160;  <span class="keywordtype">int</span>   <a class="code" href="struct_p_i.html#a954c178498f0744535e44aa722ee43ef">type_nb</a>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="struct_p_i.html#a484820c535c3c1c8f9fc4b6550b0d2fb">  132</a></span>&#160;  <span class="keywordtype">int</span>   <a class="code" href="struct_p_i.html#a484820c535c3c1c8f9fc4b6550b0d2fb">tot_rot_nb</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="struct_p_i.html#aa6edf4498113227513f9d2aed0c493c4">  134</a></span>&#160;  <span class="keywordtype">int</span>   <a class="code" href="struct_p_i.html#aa6edf4498113227513f9d2aed0c493c4">global_idx</a>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="struct_p_i.html#a74c23a2ec90e005366f6b1bda1b0cdb7">  136</a></span>&#160;  <a class="code" href="structins___proba.html">ins_Proba</a> <a class="code" href="struct_p_i.html#a74c23a2ec90e005366f6b1bda1b0cdb7">proba</a>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="struct_p_i.html#a8588f7c65e7d4c8442a8440fd620e96a">  138</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="struct_p_i.html">PI</a>*   <a class="code" href="struct_p_i.html#a8588f7c65e7d4c8442a8440fd620e96a">dupl</a>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="struct_p_i.html#aee5b9d9ac837b1564d456d8966c9bf47">  140</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="struct_p_i.html">PI</a>*   <a class="code" href="struct_p_i.html#aee5b9d9ac837b1564d456d8966c9bf47">dupl_from</a>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;};</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">  145</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_i.html">PI</a>  <a class="code" href="struct_p_i.html">posi_instance</a>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="structgroup.html">  147</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="structgroup.html#a55a316cced9c73cc1778aa4554c383cc">  148</a></span>&#160;  <span class="keywordtype">char</span>*   <a class="code" href="structgroup.html#a55a316cced9c73cc1778aa4554c383cc">name</a>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="structgroup.html#a7fcfe31c7d959576282d8546148f263f">  150</a></span>&#160;  <span class="keywordtype">int</span>    <a class="code" href="structgroup.html#a7fcfe31c7d959576282d8546148f263f">ins_nb</a>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="structgroup.html#a8704d94395c07371f3b0d7ce1aeea8a3">  152</a></span>&#160;  <a class="code" href="struct_p_i.html">posi_instance</a>* <a class="code" href="structgroup.html#a8704d94395c07371f3b0d7ce1aeea8a3">ins</a>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;} <a class="code" href="structgroup.html">group</a>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keyword">extern</span> <a class="code" href="structgroup.html">group</a>* <a class="code" href="read__conf_8h.html#ae6501cc9c7c378077ab2ed8f7aafdde4">groups</a>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span>    <a class="code" href="read__conf_8h.html#ae812d9b8e495b3d30980e0aa1e50d20b">ins_nb</a>;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span>    <a class="code" href="read__conf_8h.html#acdb7eeffc57954e75937777fb662ae94">grp_nb</a>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="read__conf_8h.html#a43b9b0bde478ad2582edd58be5615357">grp_pair_nb</a>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keyword">extern</span> <a class="code" href="struct_p_i.html">posi_instance</a>** <a class="code" href="read__conf_8h.html#a6c58ad65fc393826034b7615e5003d26">ins_list</a>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span>    <a class="code" href="read__conf_8h.html#ac123799e520741745e481e9424551bd5">bb_ins_nb</a>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="keywordtype">int</span> <a class="code" href="read__conf_8h.html#a6c6a6154689187874c3cf046e9cb3b8c">split_str</a>(<span class="keywordtype">char</span>* <span class="keywordtype">string</span>, <span class="keyword">const</span> <span class="keywordtype">char</span>* delimiter, <span class="keywordtype">char</span>*** ptab);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="keywordtype">void</span> <a class="code" href="read__conf_8h.html#a6286527c8fedf0d55c0620d6a2d53778">free_array</a>(<span class="keywordtype">void</span>*** array, <span class="keyword">const</span> <span class="keywordtype">int</span> ori, <span class="keyword">const</span> <span class="keywordtype">int</span> array_size);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="keywordtype">int</span> <a class="code" href="read__conf_8h.html#a93be39a6399217f69d6a447835719d5f">det_grp</a>(<span class="keywordtype">char</span>* grp_name);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="keywordtype">int</span> <a class="code" href="read__conf_8h.html#a9debdfff60a59ebb52cd64f77af41d18">search_grp</a>(<span class="keywordtype">char</span>* <span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<a class="code" href="struct_p_i.html">posi_instance</a>* <a class="code" href="read__conf_8h.html#a14280be1afbd848795c58bf3fa268022">det_ins</a>(<span class="keywordtype">int</span> grp , <span class="keywordtype">int</span> posi);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="keywordtype">int</span> <a class="code" href="read__conf_8h.html#a01b41c0f2bab1f8de712d86b42b5fcc0">get_grp_pair</a>(<a class="code" href="structgrp__pair.html">grp_pair</a>* p[],<span class="keywordtype">int</span> i_idx, <span class="keywordtype">int</span> j_idx);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="read__conf_8h.html#ab83144f4034d7c6de02eb446048379bb">is_dupl</a>(<a class="code" href="struct_p_i.html">posi_instance</a>* ins_i, <a class="code" href="struct_p_i.html">posi_instance</a>* ins_j);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="keywordtype">int</span> <a class="code" href="read__conf_8h.html#a08c9926f99d554e88c6424a343841d2a">get_reset_ener</a>();</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="keywordtype">int</span> <a class="code" href="read__conf_8h.html#a51668fd7e1a2e74126e89bdb585df83b">def_traj_length</a>();</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="keywordtype">int</span> <a class="code" href="read__conf_8h.html#a2afa9afb51377588c60a8ece358deddd">max_idx_bb_ener</a>();</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="keywordtype">int</span> <a class="code" href="read__conf_8h.html#a2b695fb12a512cb22f513937b919e0ce">def_traj_nb</a>();</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="keywordtype">float</span> <a class="code" href="read__conf_8h.html#af06a338c6c612881bab63df24cdbbc72">get_print_threshold</a>();</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="keywordtype">void</span> <a class="code" href="read__conf_8h.html#a14c54e6d7a7780e3661249b1d1fe4140">def_terms</a>(<a class="code" href="structopt__formula.html">opt_formula</a>* pf,<a class="code" href="structgrp__pair.html">grp_pair</a>* pgp[]);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="keywordtype">float</span>* <a class="code" href="read__conf_8h.html#a2e432d4309e4b088908ccd28f6f2b526">getTemperatures</a>(<span class="keywordtype">int</span> T_size);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="keywordtype">void</span> <a class="code" href="read__conf_8h.html#a0041075fb1cdc76d73e19228aab5223c">def_constraints</a>(<a class="code" href="structgroup.html">group</a> groups[]);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<a class="code" href="structgroup.html">group</a>* <a class="code" href="read__conf_8h.html#a817c18574878dd96d959fc3fd5351eb6">def_groups</a>();</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="keywordtype">char</span>* <a class="code" href="read__conf_8h.html#ae57789bd9b816848bdb50f6417c17b69">def_enerdir</a>();</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="keywordtype">float</span> <a class="code" href="read__conf_8h.html#a8b4485b4af2f24e34590fd276e82c6cf">def_alpha</a>();</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="keywordtype">float</span> <a class="code" href="read__conf_8h.html#aad728e2ed40ca3013760fd856708cf2c">def_epsilon</a>();</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="keywordtype">int</span> <a class="code" href="read__conf_8h.html#af724c4fda3d621dbd10912f2dc4798b8">def_mode</a>();</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;gsl_rng* <a class="code" href="read__conf_8h.html#ae562c3e49e67c27ed8fc5d5be6fb0b3c">defRandGenerator</a>(<span class="keywordtype">int</span> thread_id);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="keywordtype">void</span> <a class="code" href="read__conf_8h.html#a7e114f31cac0bafa3337726a29b1f980">prepareRandGenerator</a>();</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="keywordtype">void</span> <a class="code" href="read__conf_8h.html#a4870662d81498da427e23e6c9f2349a9">getTagInfo</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* first_line,<span class="keyword">const</span> <span class="keywordtype">char</span>* tag ,<span class="keywordtype">int</span> code,<span class="keywordtype">char</span>** <a class="code" href="global_8h.html#ae8dc11ebaa96c7726e55b42412243b50">config</a>[], FILE* config_file);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="keywordtype">void</span> <a class="code" href="read__conf_8h.html#a12e8c4c0add90db4ef57acfa71d9c354">get_config</a>(<span class="keywordtype">char</span>** <a class="code" href="global_8h.html#ae8dc11ebaa96c7726e55b42412243b50">config</a>[] );</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="keywordtype">void</span>  <a class="code" href="read__conf_8h.html#ad5fd155d9492c8628ccd496305b7954a">read_formula</a>(<a class="code" href="structgrp__pair.html">grp_pair</a>* pgp[]);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<a class="code" href="struct_proba.html">Proba</a> <a class="code" href="read__conf_8h.html#aea72bd4febf557552057022672d4ceff">readProba</a>();</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<a class="code" href="structref__ener.html">ref_ener</a> * <a class="code" href="read__conf_8h.html#a3d2fd9efca4e50fd277e793f10e55a40">read_Ref_eners</a>();</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;</div>
+<div class="ttc" id="structins___proba_html"><div class="ttname"><a href="structins___proba.html">ins_Proba</a></div><div class="ttdoc">Monte Carlo probabilities for a position instance. </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00110">read_conf.h:110</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a43b9b0bde478ad2582edd58be5615357"><div class="ttname"><a href="read__conf_8h.html#a43b9b0bde478ad2582edd58be5615357">grp_pair_nb</a></div><div class="ttdeci">int grp_pair_nb</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00025">read_conf.c:25</a></div></div>
+<div class="ttc" id="read__conf_8h_html_acdb7eeffc57954e75937777fb662ae94"><div class="ttname"><a href="read__conf_8h.html#acdb7eeffc57954e75937777fb662ae94">grp_nb</a></div><div class="ttdeci">int grp_nb</div><div class="ttdoc">the group number </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00068">read_conf.c:68</a></div></div>
+<div class="ttc" id="read__conf_8h_html_af06a338c6c612881bab63df24cdbbc72"><div class="ttname"><a href="read__conf_8h.html#af06a338c6c612881bab63df24cdbbc72">get_print_threshold</a></div><div class="ttdeci">float get_print_threshold()</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00373">read_conf.c:373</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a2b695fb12a512cb22f513937b919e0ce"><div class="ttname"><a href="read__conf_8h.html#a2b695fb12a512cb22f513937b919e0ce">def_traj_nb</a></div><div class="ttdeci">int def_traj_nb()</div></div>
+<div class="ttc" id="read__conf_8h_html_a9debdfff60a59ebb52cd64f77af41d18"><div class="ttname"><a href="read__conf_8h.html#a9debdfff60a59ebb52cd64f77af41d18">search_grp</a></div><div class="ttdeci">int search_grp(char *string)</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00193">read_conf.c:193</a></div></div>
+<div class="ttc" id="struct_p_i_html_aa6edf4498113227513f9d2aed0c493c4"><div class="ttname"><a href="struct_p_i.html#aa6edf4498113227513f9d2aed0c493c4">PI::global_idx</a></div><div class="ttdeci">int global_idx</div><div class="ttdoc">number of rotamers over all residues types in the space </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00134">read_conf.h:134</a></div></div>
+<div class="ttc" id="struct_proba_html_ab672f681e88ef8d71a84091a9692bf56"><div class="ttname"><a href="struct_proba.html#ab672f681e88ef8d71a84091a9692bf56">Proba::length_relaxation</a></div><div class="ttdeci">int length_relaxation</div><div class="ttdoc">length of the MC relaxation </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00106">read_conf.h:106</a></div></div>
+<div class="ttc" id="backbone_8h_html"><div class="ttname"><a href="backbone_8h.html">backbone.h</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a6c58ad65fc393826034b7615e5003d26"><div class="ttname"><a href="read__conf_8h.html#a6c58ad65fc393826034b7615e5003d26">ins_list</a></div><div class="ttdeci">posi_instance ** ins_list</div><div class="ttdoc">1D matrix of all the instance pointers </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00023">read_conf.c:23</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a14c54e6d7a7780e3661249b1d1fe4140"><div class="ttname"><a href="read__conf_8h.html#a14c54e6d7a7780e3661249b1d1fe4140">def_terms</a></div><div class="ttdeci">void def_terms(opt_formula *pf, grp_pair *pgp[])</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00413">read_conf.c:413</a></div></div>
+<div class="ttc" id="read__conf_8h_html_aea72bd4febf557552057022672d4ceff"><div class="ttname"><a href="read__conf_8h.html#aea72bd4febf557552057022672d4ceff">readProba</a></div><div class="ttdeci">Proba readProba()</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00270">read_conf.c:270</a></div></div>
+<div class="ttc" id="struct_proba_html_a0d99db17b016f293ec4e7fb87a7659c5"><div class="ttname"><a href="struct_proba.html#a0d99db17b016f293ec4e7fb87a7659c5">Proba::backbone</a></div><div class="ttdeci">float backbone</div><div class="ttdoc">probability to change the backbone </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00094">read_conf.h:94</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a3d2fd9efca4e50fd277e793f10e55a40"><div class="ttname"><a href="read__conf_8h.html#a3d2fd9efca4e50fd277e793f10e55a40">read_Ref_eners</a></div><div class="ttdeci">ref_ener * read_Ref_eners()</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00315">read_conf.c:315</a></div></div>
+<div class="ttc" id="structgroup_html_a8704d94395c07371f3b0d7ce1aeea8a3"><div class="ttname"><a href="structgroup.html#a8704d94395c07371f3b0d7ce1aeea8a3">group::ins</a></div><div class="ttdeci">posi_instance * ins</div><div class="ttdoc">array of position instance </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00152">read_conf.h:152</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a4870662d81498da427e23e6c9f2349a9"><div class="ttname"><a href="read__conf_8h.html#a4870662d81498da427e23e6c9f2349a9">getTagInfo</a></div><div class="ttdeci">void getTagInfo(const char *first_line, const char *tag, int code, char **config[], FILE *config_file)</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00976">read_conf.c:976</a></div></div>
+<div class="ttc" id="struct_proba_html_a832f8efe020ca9f60a5c9cf7a7aecda5"><div class="ttname"><a href="struct_proba.html#a832f8efe020ca9f60a5c9cf7a7aecda5">Proba::mut</a></div><div class="ttdeci">bool mut</div><div class="ttdoc">mutation probability </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00100">read_conf.h:100</a></div></div>
+<div class="ttc" id="structterm_html_a0e3099fefaeda94c8f11abcfe8eb071f"><div class="ttname"><a href="structterm.html#a0e3099fefaeda94c8f11abcfe8eb071f">term::factor</a></div><div class="ttdeci">float factor</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00058">read_conf.h:58</a></div></div>
+<div class="ttc" id="struct_p_i_html_aeacab9a46c42d74eca7e1c74e56b8e8a"><div class="ttname"><a href="struct_p_i.html#aeacab9a46c42d74eca7e1c74e56b8e8a">PI::id</a></div><div class="ttdeci">int id</div><div class="ttdoc">uniq id </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00120">read_conf.h:120</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a6c6a6154689187874c3cf046e9cb3b8c"><div class="ttname"><a href="read__conf_8h.html#a6c6a6154689187874c3cf046e9cb3b8c">split_str</a></div><div class="ttdeci">int split_str(char *string, const char *delimiter, char ***ptab)</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00146">read_conf.c:146</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a14280be1afbd848795c58bf3fa268022"><div class="ttname"><a href="read__conf_8h.html#a14280be1afbd848795c58bf3fa268022">det_ins</a></div><div class="ttdeci">posi_instance * det_ins(int grp, int posi)</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00214">read_conf.c:214</a></div></div>
+<div class="ttc" id="global_8h_html_ae8dc11ebaa96c7726e55b42412243b50"><div class="ttname"><a href="global_8h.html#ae8dc11ebaa96c7726e55b42412243b50">config</a></div><div class="ttdeci">char ** config[TAG_NB]</div><div class="ttdoc">store the info from the config file: tag number x lines by tag </div><div class="ttdef"><b>Definition:</b> <a href="proteus_8c_source.html#l00067">proteus.c:67</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a93be39a6399217f69d6a447835719d5f"><div class="ttname"><a href="read__conf_8h.html#a93be39a6399217f69d6a447835719d5f">det_grp</a></div><div class="ttdeci">int det_grp(char *grp_name)</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00179">read_conf.c:179</a></div></div>
+<div class="ttc" id="structref__ener_html_a53197ad188efb30815d326df7eb6f746"><div class="ttname"><a href="structref__ener.html#a53197ad188efb30815d326df7eb6f746">ref_ener::value</a></div><div class="ttdeci">float value</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00083">read_conf.h:83</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a2e432d4309e4b088908ccd28f6f2b526"><div class="ttname"><a href="read__conf_8h.html#a2e432d4309e4b088908ccd28f6f2b526">getTemperatures</a></div><div class="ttdeci">float * getTemperatures(int T_size)</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00516">read_conf.c:516</a></div></div>
+<div class="ttc" id="structopt__formula_html_ad605fd58d412c3f432e712901c48fb63"><div class="ttname"><a href="structopt__formula.html#ad605fd58d412c3f432e712901c48fb63">opt_formula::factor</a></div><div class="ttdeci">float factor</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00066">read_conf.h:66</a></div></div>
+<div class="ttc" id="global_8h_html"><div class="ttname"><a href="global_8h.html">global.h</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a8b4485b4af2f24e34590fd276e82c6cf"><div class="ttname"><a href="read__conf_8h.html#a8b4485b4af2f24e34590fd276e82c6cf">def_alpha</a></div><div class="ttdeci">float def_alpha()</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00839">read_conf.c:839</a></div></div>
+<div class="ttc" id="structterm_html_aad99db478acafec56675d26230546978"><div class="ttname"><a href="structterm.html#aad99db478acafec56675d26230546978">term::grp_pair_idx</a></div><div class="ttdeci">int grp_pair_idx</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00059">read_conf.h:59</a></div></div>
+<div class="ttc" id="read__conf_8h_html_aad728e2ed40ca3013760fd856708cf2c"><div class="ttname"><a href="read__conf_8h.html#aad728e2ed40ca3013760fd856708cf2c">def_epsilon</a></div><div class="ttdeci">float def_epsilon()</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00854">read_conf.c:854</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a0041075fb1cdc76d73e19228aab5223c"><div class="ttname"><a href="read__conf_8h.html#a0041075fb1cdc76d73e19228aab5223c">def_constraints</a></div><div class="ttdeci">void def_constraints(group groups[])</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00550">read_conf.c:550</a></div></div>
+<div class="ttc" id="read__conf_8h_html_af724c4fda3d621dbd10912f2dc4798b8"><div class="ttname"><a href="read__conf_8h.html#af724c4fda3d621dbd10912f2dc4798b8">def_mode</a></div><div class="ttdeci">int def_mode()</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00868">read_conf.c:868</a></div></div>
+<div class="ttc" id="utils_8h_html"><div class="ttname"><a href="utils_8h.html">utils.h</a></div></div>
+<div class="ttc" id="struct_proba_html"><div class="ttname"><a href="struct_proba.html">Proba</a></div><div class="ttdoc">Monte Carlo probabilities for a cycle. </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00092">read_conf.h:92</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a83fcb9a2c03da4a1810f237ef1ba92cd"><div class="ttname"><a href="read__conf_8h.html#a83fcb9a2c03da4a1810f237ef1ba92cd">ref_eners</a></div><div class="ttdeci">ref_ener * ref_eners</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00018">read_conf.c:18</a></div></div>
+<div class="ttc" id="structref__ener_html_a044c52971d7c36e9bf532a6cbe27efa5"><div class="ttname"><a href="structref__ener.html#a044c52971d7c36e9bf532a6cbe27efa5">ref_ener::PDB_name</a></div><div class="ttdeci">char * PDB_name</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00082">read_conf.h:82</a></div></div>
+<div class="ttc" id="struct_p_i_html_a484820c535c3c1c8f9fc4b6550b0d2fb"><div class="ttname"><a href="struct_p_i.html#a484820c535c3c1c8f9fc4b6550b0d2fb">PI::tot_rot_nb</a></div><div class="ttdeci">int tot_rot_nb</div><div class="ttdoc">number of rotamers over all residues types in the space </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00132">read_conf.h:132</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a0d96ff6836114f50fefb70232bf5eb64"><div class="ttname"><a href="read__conf_8h.html#a0d96ff6836114f50fefb70232bf5eb64">TAGS</a></div><div class="ttdeci">char TAGS[TAG_NB][MAX_CHAR]</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00028">read_conf.c:28</a></div></div>
+<div class="ttc" id="read__conf_8h_html_ae562c3e49e67c27ed8fc5d5be6fb0b3c"><div class="ttname"><a href="read__conf_8h.html#ae562c3e49e67c27ed8fc5d5be6fb0b3c">defRandGenerator</a></div><div class="ttdeci">gsl_rng * defRandGenerator(int thread_id)</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00903">read_conf.c:903</a></div></div>
+<div class="ttc" id="read__conf_8h_html_ab83144f4034d7c6de02eb446048379bb"><div class="ttname"><a href="read__conf_8h.html#ab83144f4034d7c6de02eb446048379bb">is_dupl</a></div><div class="ttdeci">bool is_dupl(posi_instance *ins_i, posi_instance *ins_j)</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00244">read_conf.c:244</a></div></div>
+<div class="ttc" id="structgroup_html_a7fcfe31c7d959576282d8546148f263f"><div class="ttname"><a href="structgroup.html#a7fcfe31c7d959576282d8546148f263f">group::ins_nb</a></div><div class="ttdeci">int ins_nb</div><div class="ttdoc">number of position instance </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00150">read_conf.h:150</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a12e8c4c0add90db4ef57acfa71d9c354"><div class="ttname"><a href="read__conf_8h.html#a12e8c4c0add90db4ef57acfa71d9c354">get_config</a></div><div class="ttdeci">void get_config(char **config[])</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l01027">read_conf.c:1027</a></div></div>
+<div class="ttc" id="read__conf_8h_html_ad5fd155d9492c8628ccd496305b7954a"><div class="ttname"><a href="read__conf_8h.html#ad5fd155d9492c8628ccd496305b7954a">read_formula</a></div><div class="ttdeci">void read_formula(grp_pair *pgp[])</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l01083">read_conf.c:1083</a></div></div>
+<div class="ttc" id="read__conf_8h_html_ae57789bd9b816848bdb50f6417c17b69"><div class="ttname"><a href="read__conf_8h.html#ae57789bd9b816848bdb50f6417c17b69">def_enerdir</a></div><div class="ttdeci">char * def_enerdir()</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00820">read_conf.c:820</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a145b137996f39d1bb6b4f743f8d53a4c"><div class="ttname"><a href="read__conf_8h.html#a145b137996f39d1bb6b4f743f8d53a4c">ref_eners_nb</a></div><div class="ttdeci">int ref_eners_nb</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00019">read_conf.c:19</a></div></div>
+<div class="ttc" id="read__conf_8h_html_ac123799e520741745e481e9424551bd5"><div class="ttname"><a href="read__conf_8h.html#ac123799e520741745e481e9424551bd5">bb_ins_nb</a></div><div class="ttdeci">int bb_ins_nb</div><div class="ttdoc">number of position instance og backbone </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00069">read_conf.c:69</a></div></div>
+<div class="ttc" id="read__conf_8h_html_af2e12a68ed24f8ec049781947e8c41b6"><div class="ttname"><a href="read__conf_8h.html#af2e12a68ed24f8ec049781947e8c41b6">formula</a></div><div class="ttdeci">opt_formula * formula</div><div class="ttdoc">the set of formula </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00015">read_conf.c:15</a></div></div>
+<div class="ttc" id="structopt__formula_html"><div class="ttname"><a href="structopt__formula.html">opt_formula</a></div><div class="ttdoc">for the configuration of the optimization </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00064">read_conf.h:64</a></div></div>
+<div class="ttc" id="struct_p_i_html_a954c178498f0744535e44aa722ee43ef"><div class="ttname"><a href="struct_p_i.html#a954c178498f0744535e44aa722ee43ef">PI::type_nb</a></div><div class="ttdeci">int type_nb</div><div class="ttdoc">number of residue type in the space </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00130">read_conf.h:130</a></div></div>
+<div class="ttc" id="struct_proba_html_a0d48353cb0e8d591d25b1ec243cb5a9f"><div class="ttname"><a href="struct_proba.html#a0d48353cb0e8d591d25b1ec243cb5a9f">Proba::rot_rot</a></div><div class="ttdeci">bool rot_rot</div><div class="ttdoc">probability of a change of two rotamers </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00098">read_conf.h:98</a></div></div>
+<div class="ttc" id="struct_p_i_html_a74c23a2ec90e005366f6b1bda1b0cdb7"><div class="ttname"><a href="struct_p_i.html#a74c23a2ec90e005366f6b1bda1b0cdb7">PI::proba</a></div><div class="ttdeci">ins_Proba proba</div><div class="ttdoc">the MC proba of changing the PI </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00136">read_conf.h:136</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a08c9926f99d554e88c6424a343841d2a"><div class="ttname"><a href="read__conf_8h.html#a08c9926f99d554e88c6424a343841d2a">get_reset_ener</a></div><div class="ttdeci">int get_reset_ener()</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00360">read_conf.c:360</a></div></div>
+<div class="ttc" id="structref__ener_html"><div class="ttname"><a href="structref__ener.html">ref_ener</a></div><div class="ttdoc">to change the reference energy of a type of residue </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00080">read_conf.h:80</a></div></div>
+<div class="ttc" id="utils_8h_html_a82acb32225c05e9aa4c524c40bc5852a"><div class="ttname"><a href="utils_8h.html#a82acb32225c05e9aa4c524c40bc5852a">MAX_CHAR</a></div><div class="ttdeci">#define MAX_CHAR</div><div class="ttdef"><b>Definition:</b> <a href="utils_8h_source.html#l00002">utils.h:2</a></div></div>
+<div class="ttc" id="structopt__formula_html_a26227308e487fa63c9a10bba39a856b0"><div class="ttname"><a href="structopt__formula.html#a26227308e487fa63c9a10bba39a856b0">opt_formula::terms</a></div><div class="ttdeci">term * terms</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00069">read_conf.h:69</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a51668fd7e1a2e74126e89bdb585df83b"><div class="ttname"><a href="read__conf_8h.html#a51668fd7e1a2e74126e89bdb585df83b">def_traj_length</a></div><div class="ttdeci">int def_traj_length()</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00389">read_conf.c:389</a></div></div>
+<div class="ttc" id="structins___proba_html_af53671eed50e63606035b392b4b2bba9"><div class="ttname"><a href="structins___proba.html#af53671eed50e63606035b392b4b2bba9">ins_Proba::mut</a></div><div class="ttdeci">float mut</div><div class="ttdoc">mutation probability </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00114">read_conf.h:114</a></div></div>
+<div class="ttc" id="struct_proba_html_a9d6ba546e4120b335d1ce9eae107fbc0"><div class="ttname"><a href="struct_proba.html#a9d6ba546e4120b335d1ce9eae107fbc0">Proba::mut_rot</a></div><div class="ttdeci">bool mut_rot</div><div class="ttdoc">probability of a mutation and a rotamer change </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00102">read_conf.h:102</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a8f1e2e14840d175cec00fa22ab1d52cb"><div class="ttname"><a href="read__conf_8h.html#a8f1e2e14840d175cec00fa22ab1d52cb">formula_prev</a></div><div class="ttdeci">opt_formula * formula_prev</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00016">read_conf.c:16</a></div></div>
+<div class="ttc" id="read__conf_8h_html_ae812d9b8e495b3d30980e0aa1e50d20b"><div class="ttname"><a href="read__conf_8h.html#ae812d9b8e495b3d30980e0aa1e50d20b">ins_nb</a></div><div class="ttdeci">int ins_nb</div><div class="ttdoc">number of position instance </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00067">read_conf.c:67</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a2afa9afb51377588c60a8ece358deddd"><div class="ttname"><a href="read__conf_8h.html#a2afa9afb51377588c60a8ece358deddd">max_idx_bb_ener</a></div><div class="ttdeci">int max_idx_bb_ener()</div></div>
+<div class="ttc" id="structins___proba_html_aea043481f2fc62dc33dc1ca86b3152dd"><div class="ttname"><a href="structins___proba.html#aea043481f2fc62dc33dc1ca86b3152dd">ins_Proba::rot</a></div><div class="ttdeci">float rot</div><div class="ttdoc">rotamer change probality </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00112">read_conf.h:112</a></div></div>
+<div class="ttc" id="structgroup_html"><div class="ttname"><a href="structgroup.html">group</a></div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00147">read_conf.h:147</a></div></div>
+<div class="ttc" id="struct_proba_html_a754ae5112e69caa40b6f48703acc3133"><div class="ttname"><a href="struct_proba.html#a754ae5112e69caa40b6f48703acc3133">Proba::mut_mut</a></div><div class="ttdeci">bool mut_mut</div><div class="ttdoc">probability of a two mutations </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00104">read_conf.h:104</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a6286527c8fedf0d55c0620d6a2d53778"><div class="ttname"><a href="read__conf_8h.html#a6286527c8fedf0d55c0620d6a2d53778">free_array</a></div><div class="ttdeci">void free_array(void ***array, const int ori, const int array_size)</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00167">read_conf.c:167</a></div></div>
+<div class="ttc" id="structterm_html"><div class="ttname"><a href="structterm.html">term</a></div><div class="ttdoc">term in a formula </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00057">read_conf.h:57</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a7e114f31cac0bafa3337726a29b1f980"><div class="ttname"><a href="read__conf_8h.html#a7e114f31cac0bafa3337726a29b1f980">prepareRandGenerator</a></div><div class="ttdeci">void prepareRandGenerator()</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00922">read_conf.c:922</a></div></div>
+<div class="ttc" id="structopt__formula_html_a88d621da87e6c9a3787c7e69d78d8a69"><div class="ttname"><a href="structopt__formula.html#a88d621da87e6c9a3787c7e69d78d8a69">opt_formula::term_nb</a></div><div class="ttdeci">int term_nb</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00070">read_conf.h:70</a></div></div>
+<div class="ttc" id="struct_p_i_html"><div class="ttname"><a href="struct_p_i.html">PI</a></div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00118">read_conf.h:118</a></div></div>
+<div class="ttc" id="struct_p_i_html_a21eeeb2f51ed38c4a9eb79cdc4e2a4be"><div class="ttname"><a href="struct_p_i.html#a21eeeb2f51ed38c4a9eb79cdc4e2a4be">PI::space</a></div><div class="ttdeci">int ** space</div><div class="ttdoc">2D matrix (types, rotamer indexes) it is the state space </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00126">read_conf.h:126</a></div></div>
+<div class="ttc" id="struct_p_i_html_a1bc33fdfb4ad3f30c03e48d1410031ce"><div class="ttname"><a href="struct_p_i.html#a1bc33fdfb4ad3f30c03e48d1410031ce">PI::rot_nb</a></div><div class="ttdeci">int * rot_nb</div><div class="ttdoc">1D matrix for number of rotamers by type </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00128">read_conf.h:128</a></div></div>
+<div class="ttc" id="struct_p_i_html_aee5b9d9ac837b1564d456d8966c9bf47"><div class="ttname"><a href="struct_p_i.html#aee5b9d9ac837b1564d456d8966c9bf47">PI::dupl_from</a></div><div class="ttdeci">struct PI * dupl_from</div><div class="ttdoc">the mother instance </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00140">read_conf.h:140</a></div></div>
+<div class="ttc" id="structopt__formula_html_abbe0c9a081cd5aea377286c914e5371c"><div class="ttname"><a href="structopt__formula.html#abbe0c9a081cd5aea377286c914e5371c">opt_formula::threshold</a></div><div class="ttdeci">float threshold</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00067">read_conf.h:67</a></div></div>
+<div class="ttc" id="read__conf_8h_html_ae6501cc9c7c378077ab2ed8f7aafdde4"><div class="ttname"><a href="read__conf_8h.html#ae6501cc9c7c378077ab2ed8f7aafdde4">groups</a></div><div class="ttdeci">group * groups</div><div class="ttdoc">the group list </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00021">read_conf.c:21</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a01b41c0f2bab1f8de712d86b42b5fcc0"><div class="ttname"><a href="read__conf_8h.html#a01b41c0f2bab1f8de712d86b42b5fcc0">get_grp_pair</a></div><div class="ttdeci">int get_grp_pair(grp_pair *p[], int i_idx, int j_idx)</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00227">read_conf.c:227</a></div></div>
+<div class="ttc" id="global_8h_html_a9b69fba98c1dfe5bf628cfa9e90aa9d7"><div class="ttname"><a href="global_8h.html#a9b69fba98c1dfe5bf628cfa9e90aa9d7">TAG_NB</a></div><div class="ttdeci">#define TAG_NB</div><div class="ttdef"><b>Definition:</b> <a href="global_8h_source.html#l00011">global.h:11</a></div></div>
+<div class="ttc" id="read__conf_8h_html_a817c18574878dd96d959fc3fd5351eb6"><div class="ttname"><a href="read__conf_8h.html#a817c18574878dd96d959fc3fd5351eb6">def_groups</a></div><div class="ttdeci">group * def_groups()</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8c_source.html#l00710">read_conf.c:710</a></div></div>
+<div class="ttc" id="struct_p_i_html_afd1d054c2fea5717dada3b2560b65018"><div class="ttname"><a href="struct_p_i.html#afd1d054c2fea5717dada3b2560b65018">PI::grp</a></div><div class="ttdeci">int grp</div><div class="ttdoc">index of its group </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00124">read_conf.h:124</a></div></div>
+<div class="ttc" id="struct_proba_html_a4fa9409e1684d2f42524567d2305b0c4"><div class="ttname"><a href="struct_proba.html#a4fa9409e1684d2f42524567d2305b0c4">Proba::rot</a></div><div class="ttdeci">bool rot</div><div class="ttdoc">rotamer change probality </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00096">read_conf.h:96</a></div></div>
+<div class="ttc" id="structgroup_html_a55a316cced9c73cc1778aa4554c383cc"><div class="ttname"><a href="structgroup.html#a55a316cced9c73cc1778aa4554c383cc">group::name</a></div><div class="ttdeci">char * name</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00148">read_conf.h:148</a></div></div>
+<div class="ttc" id="struct_p_i_html_a8588f7c65e7d4c8442a8440fd620e96a"><div class="ttname"><a href="struct_p_i.html#a8588f7c65e7d4c8442a8440fd620e96a">PI::dupl</a></div><div class="ttdeci">struct PI * dupl</div><div class="ttdoc">the child instance </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00138">read_conf.h:138</a></div></div>
+<div class="ttc" id="struct_p_i_html_a9e85457e1a500295d0cb90343850477b"><div class="ttname"><a href="struct_p_i.html#a9e85457e1a500295d0cb90343850477b">PI::posi</a></div><div class="ttdeci">int posi</div><div class="ttdoc">position </div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00122">read_conf.h:122</a></div></div>
+<div class="ttc" id="structgrp__pair_html"><div class="ttname"><a href="structgrp__pair.html">grp_pair</a></div><div class="ttdef"><b>Definition:</b> <a href="global_8h_source.html#l00053">global.h:53</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi 27 Mai 2015 10:00:24 pour proteus par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

@@ -1,0 +1,1093 @@
+\hypertarget{read__conf_8h}{\section{Référence du fichier /home/mignon/bioinfo/proteus/gitlab/proteus/read\+\_\+conf.h}
+\label{read__conf_8h}\index{/home/mignon/bioinfo/proteus/gitlab/proteus/read\+\_\+conf.\+h@{/home/mignon/bioinfo/proteus/gitlab/proteus/read\+\_\+conf.\+h}}
+}
+{\ttfamily \#include $<$gsl/gsl\+\_\+rng.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}backbone.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}global.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de read\+\_\+conf.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{read__conf_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{read__conf_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structterm}{term}
+\begin{DoxyCompactList}\small\item\em term in a formula \end{DoxyCompactList}\item 
+struct \hyperlink{structopt__formula}{opt\+\_\+formula}
+\begin{DoxyCompactList}\small\item\em for the configuration of the optimization \end{DoxyCompactList}\item 
+struct \hyperlink{structref__ener}{ref\+\_\+ener}
+\begin{DoxyCompactList}\small\item\em to change the reference energy of a type of residue \end{DoxyCompactList}\item 
+struct \hyperlink{struct_proba}{Proba}
+\begin{DoxyCompactList}\small\item\em Monte Carlo probabilities for a cycle. \end{DoxyCompactList}\item 
+struct \hyperlink{structins___proba}{ins\+\_\+\+Proba}
+\begin{DoxyCompactList}\small\item\em Monte Carlo probabilities for a position instance. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_p_i}{P\+I}
+\item 
+struct \hyperlink{structgroup}{group}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{read__conf_8h_a7c4f79891c21be232ca76de678caca08}{R\+S\+E\+E\+D\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N}~0
+\item 
+\#define \hyperlink{read__conf_8h_aac22d8151905a0eafa71d7537f928239}{E\+N\+E\+R\+G\+Y\+\_\+\+D\+I\+R}~1
+\item 
+\#define \hyperlink{read__conf_8h_a47a4db1caa818addbdd16f995fd5f84e}{G\+R\+O\+U\+P\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N}~2
+\item 
+\#define \hyperlink{read__conf_8h_af471bf0a76ab20bbacccd83ae3f08ddf}{S\+P\+A\+C\+E\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+T\+S}~3
+\item 
+\#define \hyperlink{read__conf_8h_a5550cfd86c0230224b4852dbc00c2e67}{S\+E\+Q\+\_\+\+P\+A\+S\+S\+\_\+\+N\+B}~4
+\item 
+\#define \hyperlink{read__conf_8h_a0eafa592e67b4299c35093d00ec1c4eb}{O\+P\+T\+M\+\_\+\+C\+O\+N\+F\+I\+G}~5
+\item 
+\#define \hyperlink{read__conf_8h_ab8c52c1b4c021ed3e6b6b677bd2ac019}{M\+O\+D\+E}~6
+\item 
+\#define \hyperlink{read__conf_8h_a2e7d384828b3a4529dfea96e2d849a11}{C\+Y\+C\+L\+E\+\_\+\+N\+B}~7
+\item 
+\#define \hyperlink{read__conf_8h_a21d48bd5db669b0f4535d71d5de11ca3}{S\+U\+R\+F\+\_\+\+E\+N\+E\+R\+\_\+\+F\+A\+C\+T\+O\+R}~8
+\item 
+\#define \hyperlink{read__conf_8h_a9acd81cce77bdb7b271b7a9c017c33db}{D\+I\+E\+L\+E\+C\+T\+\_\+\+C\+O\+N\+S\+T}~9
+\item 
+\#define \hyperlink{read__conf_8h_aefd9eb0c9903e6de67363602d893e9b9}{S\+E\+Q\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+L\+E}~10
+\item 
+\#define \hyperlink{read__conf_8h_ab717506f3b47a445383e74d9cf0b1725}{F\+A\+S\+T\+A\+\_\+\+F\+I\+L\+E}~11
+\item 
+\#define \hyperlink{read__conf_8h_a221b62bd10b42b63840ce88df49173df}{L\+A\+M\+B\+D\+A\+\_\+\+P\+A\+R\+A\+M}~12
+\item 
+\#define \hyperlink{read__conf_8h_af4e8dcb1c210baad2e179d49669eabff}{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E}~13
+\item 
+\#define \hyperlink{read__conf_8h_a9ec14eb7ba2f14b90ef9d739e083a77f}{I\+N\+I\+T\+\_\+\+W\+E\+I\+G\+H\+T\+S}~14
+\item 
+\#define \hyperlink{read__conf_8h_a89ff7faa0ab2b3125735ba95662e4d8f}{R\+O\+T\+\_\+\+P\+R\+O\+B\+A}~15
+\item 
+\#define \hyperlink{read__conf_8h_ad1044df204e01accfe0eafdb2ea9cad7}{R\+O\+T\+\_\+\+R\+O\+T\+\_\+\+P\+R\+O\+B\+A}~16
+\item 
+\#define \hyperlink{read__conf_8h_a2aaae7c3eb2673604d0cceab84a9d567}{M\+U\+T\+\_\+\+P\+R\+O\+B\+A}~17
+\item 
+\#define \hyperlink{read__conf_8h_ac1c3d2392312485d800f62aa57cf275c}{M\+U\+T\+\_\+\+M\+U\+T\+\_\+\+P\+R\+O\+B\+A}~18
+\item 
+\#define \hyperlink{read__conf_8h_ab1cb047241407cedbc8db8863f1a8565}{M\+U\+T\+\_\+\+R\+O\+T\+\_\+\+P\+R\+O\+B\+A}~19
+\item 
+\#define \hyperlink{read__conf_8h_a1a50fe15dd5b3399a7f3a90b1b021d48}{N\+E\+I\+G\+H\+B\+O\+R\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D}~20
+\item 
+\#define \hyperlink{read__conf_8h_abf411f95e6a112353dca664df9f23e80}{R\+A\+N\+D\+O\+M\+\_\+\+G\+E\+N\+E\+R\+A\+T\+O\+R}~21
+\item 
+\#define \hyperlink{read__conf_8h_a19e1de351564fb61758b7bdb6cb7a5bc}{T\+R\+A\+J\+\_\+\+L\+E\+N\+G\+T\+H}~22
+\item 
+\#define \hyperlink{read__conf_8h_a9187e943295df05048aaabccb8e30ec6}{E\+N\+E\+R\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+L\+E}~23
+\item 
+\#define \hyperlink{read__conf_8h_ae27c4159a480e01f02ae1945530709d0}{S\+E\+Q\+\_\+\+I\+N\+P\+U\+T\+\_\+\+F\+I\+L\+E}~24
+\item 
+\#define \hyperlink{read__conf_8h_a3123636125eb24308427058bc94dfdac}{T\+R\+A\+J\+\_\+\+N\+B}~25
+\item 
+\#define \hyperlink{read__conf_8h_a6c375cf80886538f2a37136262b06d3b}{S\+E\+Q\+\_\+\+I\+N\+P\+U\+T}~26
+\item 
+\#define \hyperlink{read__conf_8h_acd17b8785032f6a003520e5fb4e7473d}{R\+E\+S\+E\+T\+\_\+\+E\+N\+E\+R\+G\+I\+E\+S}~27
+\item 
+\#define \hyperlink{read__conf_8h_ab17ce395bcb5f2688c2783ec9e5e17a0}{W\+A\+L\+K\+E\+R\+\_\+\+N\+B}~28
+\item 
+\#define \hyperlink{read__conf_8h_ab501a9d006ee282a664f42d2c95ee161}{S\+W\+A\+P\+\_\+\+P\+E\+R\+I\+O\+D}~29
+\item 
+\#define \hyperlink{read__conf_8h_ab8d8ca3b652e51993214232ec753b356}{E\+N\+E\+R\+G\+Y\+\_\+\+F\+I\+L\+E}~30
+\item 
+\#define \hyperlink{read__conf_8h_ae9a696a0191035025e761dc570cb46ef}{B\+A\+C\+K\+B\+O\+N\+E\+\_\+\+P\+R\+O\+B\+A}~31
+\item 
+\#define \hyperlink{read__conf_8h_af70b67011ec7358b19fc567fb22f1797}{W\+E\+I\+G\+H\+T\+\_\+\+E\+X\+C\+H\+A\+N\+G\+E\+\_\+\+F\+I\+L\+E}~32
+\item 
+\#define \hyperlink{read__conf_8h_a5143868b6d2e2de58444172c9fffc2cc}{R\+E\+F\+\_\+\+E\+N\+E\+R}~33
+\item 
+\#define \hyperlink{read__conf_8h_a8d0ac7033fb1bd905e0215fadfb69c57}{P\+R\+I\+N\+T\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D}~34
+\item 
+\#define \hyperlink{read__conf_8h_a0b81eb0d3a39eecc762d6f29b4579427}{Heuristic}~0
+\item 
+\#define \hyperlink{read__conf_8h_a6c09feb12ab992f9d9254bf56b696940}{Mean\+Field}~1
+\item 
+\#define \hyperlink{read__conf_8h_ad3cfac2a6786afb5b2c0f96b629c2cbb}{Monte\+Carlo}~2
+\item 
+\#define \hyperlink{read__conf_8h_aedb855f0de08fb5442f790cfe31c4549}{Post\+Process}~3
+\item 
+\#define \hyperlink{read__conf_8h_a603b183edd0b53b24f584a8dfcf9e013}{Info}~4
+\item 
+\#define \hyperlink{read__conf_8h_afb31aa2d196755fb259d43a03c18c9d7}{M\+A\+X\+\_\+\+F\+L\+O\+A\+T}~F\+L\+T\+\_\+\+M\+A\+X
+\item 
+\#define \hyperlink{read__conf_8h_ac27cb1a4497026d6d8e3f99af66c4da7}{M\+I\+N\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E}~F\+L\+T\+\_\+\+M\+I\+N
+\item 
+\#define \hyperlink{read__conf_8h_aaa1ac5caef84256eaeb39594e58e096f}{M\+A\+X\+\_\+\+I\+N\+T}~I\+N\+T\+\_\+\+M\+A\+X
+\end{DoxyCompactItemize}
+\subsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct_p_i}{P\+I} \hyperlink{read__conf_8h_ae233ac376b010d04519bd914edac5260}{posi\+\_\+instance}
+\begin{DoxyCompactList}\small\item\em instance of a position \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{read__conf_8h_a6c6a6154689187874c3cf046e9cb3b8c}{split\+\_\+str} (char $\ast$string, const char $\ast$delimiter, char $\ast$$\ast$$\ast$ptab)
+\item 
+void \hyperlink{read__conf_8h_a6286527c8fedf0d55c0620d6a2d53778}{free\+\_\+array} (void $\ast$$\ast$$\ast$array, const int ori, const int array\+\_\+size)
+\item 
+int \hyperlink{read__conf_8h_a93be39a6399217f69d6a447835719d5f}{det\+\_\+grp} (char $\ast$grp\+\_\+name)
+\item 
+int \hyperlink{read__conf_8h_a9debdfff60a59ebb52cd64f77af41d18}{search\+\_\+grp} (char $\ast$string)
+\item 
+\hyperlink{read__conf_8h_ae233ac376b010d04519bd914edac5260}{posi\+\_\+instance} $\ast$ \hyperlink{read__conf_8h_a14280be1afbd848795c58bf3fa268022}{det\+\_\+ins} (int grp, int posi)
+\item 
+int \hyperlink{read__conf_8h_a01b41c0f2bab1f8de712d86b42b5fcc0}{get\+\_\+grp\+\_\+pair} (\hyperlink{structgrp__pair}{grp\+\_\+pair} $\ast$p\mbox{[}$\,$\mbox{]}, int i\+\_\+idx, int j\+\_\+idx)
+\item 
+bool \hyperlink{read__conf_8h_ab83144f4034d7c6de02eb446048379bb}{is\+\_\+dupl} (\hyperlink{read__conf_8h_ae233ac376b010d04519bd914edac5260}{posi\+\_\+instance} $\ast$ins\+\_\+i, \hyperlink{read__conf_8h_ae233ac376b010d04519bd914edac5260}{posi\+\_\+instance} $\ast$ins\+\_\+j)
+\item 
+int \hyperlink{read__conf_8h_a08c9926f99d554e88c6424a343841d2a}{get\+\_\+reset\+\_\+ener} ()
+\item 
+int \hyperlink{read__conf_8h_a51668fd7e1a2e74126e89bdb585df83b}{def\+\_\+traj\+\_\+length} ()
+\item 
+int \hyperlink{read__conf_8h_a2afa9afb51377588c60a8ece358deddd}{max\+\_\+idx\+\_\+bb\+\_\+ener} ()
+\item 
+int \hyperlink{read__conf_8h_a2b695fb12a512cb22f513937b919e0ce}{def\+\_\+traj\+\_\+nb} ()
+\item 
+float \hyperlink{read__conf_8h_af06a338c6c612881bab63df24cdbbc72}{get\+\_\+print\+\_\+threshold} ()
+\item 
+void \hyperlink{read__conf_8h_a14c54e6d7a7780e3661249b1d1fe4140}{def\+\_\+terms} (\hyperlink{structopt__formula}{opt\+\_\+formula} $\ast$pf, \hyperlink{structgrp__pair}{grp\+\_\+pair} $\ast$pgp\mbox{[}$\,$\mbox{]})
+\item 
+float $\ast$ \hyperlink{read__conf_8h_a2e432d4309e4b088908ccd28f6f2b526}{get\+Temperatures} (int T\+\_\+size)
+\item 
+void \hyperlink{read__conf_8h_a0041075fb1cdc76d73e19228aab5223c}{def\+\_\+constraints} (\hyperlink{structgroup}{group} \hyperlink{read__conf_8h_ae6501cc9c7c378077ab2ed8f7aafdde4}{groups}\mbox{[}$\,$\mbox{]})
+\item 
+\hyperlink{structgroup}{group} $\ast$ \hyperlink{read__conf_8h_a817c18574878dd96d959fc3fd5351eb6}{def\+\_\+groups} ()
+\item 
+char $\ast$ \hyperlink{read__conf_8h_ae57789bd9b816848bdb50f6417c17b69}{def\+\_\+enerdir} ()
+\item 
+float \hyperlink{read__conf_8h_a8b4485b4af2f24e34590fd276e82c6cf}{def\+\_\+alpha} ()
+\item 
+float \hyperlink{read__conf_8h_aad728e2ed40ca3013760fd856708cf2c}{def\+\_\+epsilon} ()
+\item 
+int \hyperlink{read__conf_8h_af724c4fda3d621dbd10912f2dc4798b8}{def\+\_\+mode} ()
+\item 
+gsl\+\_\+rng $\ast$ \hyperlink{read__conf_8h_ae562c3e49e67c27ed8fc5d5be6fb0b3c}{def\+Rand\+Generator} (int thread\+\_\+id)
+\item 
+void \hyperlink{read__conf_8h_a7e114f31cac0bafa3337726a29b1f980}{prepare\+Rand\+Generator} ()
+\item 
+void \hyperlink{read__conf_8h_a4870662d81498da427e23e6c9f2349a9}{get\+Tag\+Info} (const char $\ast$first\+\_\+line, const char $\ast$tag, int code, char $\ast$$\ast$\hyperlink{proteus_8c_ae8dc11ebaa96c7726e55b42412243b50}{config}\mbox{[}$\,$\mbox{]}, F\+I\+L\+E $\ast$config\+\_\+file)
+\item 
+void \hyperlink{read__conf_8h_a12e8c4c0add90db4ef57acfa71d9c354}{get\+\_\+config} (char $\ast$$\ast$\hyperlink{proteus_8c_ae8dc11ebaa96c7726e55b42412243b50}{config}\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{read__conf_8h_ad5fd155d9492c8628ccd496305b7954a}{read\+\_\+formula} (\hyperlink{structgrp__pair}{grp\+\_\+pair} $\ast$pgp\mbox{[}$\,$\mbox{]})
+\item 
+\hyperlink{struct_proba}{Proba} \hyperlink{read__conf_8h_aea72bd4febf557552057022672d4ceff}{read\+Proba} ()
+\item 
+\hyperlink{structref__ener}{ref\+\_\+ener} $\ast$ \hyperlink{read__conf_8h_a3d2fd9efca4e50fd277e793f10e55a40}{read\+\_\+\+Ref\+\_\+eners} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{read__conf_8h_a0d96ff6836114f50fefb70232bf5eb64}{T\+A\+G\+S} \mbox{[}\hyperlink{global_8h_a9b69fba98c1dfe5bf628cfa9e90aa9d7}{T\+A\+G\+\_\+\+N\+B}\mbox{]}\mbox{[}\hyperlink{utils_8h_a82acb32225c05e9aa4c524c40bc5852a}{M\+A\+X\+\_\+\+C\+H\+A\+R}\mbox{]}
+\item 
+\hyperlink{structopt__formula}{opt\+\_\+formula} $\ast$ \hyperlink{read__conf_8h_af2e12a68ed24f8ec049781947e8c41b6}{formula}
+\begin{DoxyCompactList}\small\item\em the set of formula \end{DoxyCompactList}\item 
+\hyperlink{structopt__formula}{opt\+\_\+formula} $\ast$ \hyperlink{read__conf_8h_a8f1e2e14840d175cec00fa22ab1d52cb}{formula\+\_\+prev}
+\item 
+\hyperlink{structref__ener}{ref\+\_\+ener} $\ast$ \hyperlink{read__conf_8h_a83fcb9a2c03da4a1810f237ef1ba92cd}{ref\+\_\+eners}
+\item 
+int \hyperlink{read__conf_8h_a145b137996f39d1bb6b4f743f8d53a4c}{ref\+\_\+eners\+\_\+nb}
+\item 
+\hyperlink{structgroup}{group} $\ast$ \hyperlink{read__conf_8h_ae6501cc9c7c378077ab2ed8f7aafdde4}{groups}
+\begin{DoxyCompactList}\small\item\em the group list \end{DoxyCompactList}\item 
+int \hyperlink{read__conf_8h_ae812d9b8e495b3d30980e0aa1e50d20b}{ins\+\_\+nb}
+\begin{DoxyCompactList}\small\item\em number of position instance \end{DoxyCompactList}\item 
+int \hyperlink{read__conf_8h_acdb7eeffc57954e75937777fb662ae94}{grp\+\_\+nb}
+\begin{DoxyCompactList}\small\item\em the group number \end{DoxyCompactList}\item 
+int \hyperlink{read__conf_8h_a43b9b0bde478ad2582edd58be5615357}{grp\+\_\+pair\+\_\+nb}
+\item 
+\hyperlink{read__conf_8h_ae233ac376b010d04519bd914edac5260}{posi\+\_\+instance} $\ast$$\ast$ \hyperlink{read__conf_8h_a6c58ad65fc393826034b7615e5003d26}{ins\+\_\+list}
+\begin{DoxyCompactList}\small\item\em 1\+D matrix of all the instance pointers \end{DoxyCompactList}\item 
+int \hyperlink{read__conf_8h_ac123799e520741745e481e9424551bd5}{bb\+\_\+ins\+\_\+nb}
+\begin{DoxyCompactList}\small\item\em number of position instance og backbone \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des macros}
+\hypertarget{read__conf_8h_ae9a696a0191035025e761dc570cb46ef}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!B\+A\+C\+K\+B\+O\+N\+E\+\_\+\+P\+R\+O\+B\+A@{B\+A\+C\+K\+B\+O\+N\+E\+\_\+\+P\+R\+O\+B\+A}}
+\index{B\+A\+C\+K\+B\+O\+N\+E\+\_\+\+P\+R\+O\+B\+A@{B\+A\+C\+K\+B\+O\+N\+E\+\_\+\+P\+R\+O\+B\+A}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{B\+A\+C\+K\+B\+O\+N\+E\+\_\+\+P\+R\+O\+B\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+A\+C\+K\+B\+O\+N\+E\+\_\+\+P\+R\+O\+B\+A~31}}\label{read__conf_8h_ae9a696a0191035025e761dc570cb46ef}
+
+
+Définition à la ligne 38 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a2e7d384828b3a4529dfea96e2d849a11}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!C\+Y\+C\+L\+E\+\_\+\+N\+B@{C\+Y\+C\+L\+E\+\_\+\+N\+B}}
+\index{C\+Y\+C\+L\+E\+\_\+\+N\+B@{C\+Y\+C\+L\+E\+\_\+\+N\+B}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{C\+Y\+C\+L\+E\+\_\+\+N\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+Y\+C\+L\+E\+\_\+\+N\+B~7}}\label{read__conf_8h_a2e7d384828b3a4529dfea96e2d849a11}
+
+
+Définition à la ligne 14 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a9acd81cce77bdb7b271b7a9c017c33db}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!D\+I\+E\+L\+E\+C\+T\+\_\+\+C\+O\+N\+S\+T@{D\+I\+E\+L\+E\+C\+T\+\_\+\+C\+O\+N\+S\+T}}
+\index{D\+I\+E\+L\+E\+C\+T\+\_\+\+C\+O\+N\+S\+T@{D\+I\+E\+L\+E\+C\+T\+\_\+\+C\+O\+N\+S\+T}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{D\+I\+E\+L\+E\+C\+T\+\_\+\+C\+O\+N\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+I\+E\+L\+E\+C\+T\+\_\+\+C\+O\+N\+S\+T~9}}\label{read__conf_8h_a9acd81cce77bdb7b271b7a9c017c33db}
+
+
+Définition à la ligne 16 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a9187e943295df05048aaabccb8e30ec6}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!E\+N\+E\+R\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+L\+E@{E\+N\+E\+R\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+L\+E}}
+\index{E\+N\+E\+R\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+L\+E@{E\+N\+E\+R\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+L\+E}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{E\+N\+E\+R\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+N\+E\+R\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+L\+E~23}}\label{read__conf_8h_a9187e943295df05048aaabccb8e30ec6}
+
+
+Définition à la ligne 30 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_aac22d8151905a0eafa71d7537f928239}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!E\+N\+E\+R\+G\+Y\+\_\+\+D\+I\+R@{E\+N\+E\+R\+G\+Y\+\_\+\+D\+I\+R}}
+\index{E\+N\+E\+R\+G\+Y\+\_\+\+D\+I\+R@{E\+N\+E\+R\+G\+Y\+\_\+\+D\+I\+R}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{E\+N\+E\+R\+G\+Y\+\_\+\+D\+I\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+N\+E\+R\+G\+Y\+\_\+\+D\+I\+R~1}}\label{read__conf_8h_aac22d8151905a0eafa71d7537f928239}
+
+
+Définition à la ligne 8 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_ab8d8ca3b652e51993214232ec753b356}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!E\+N\+E\+R\+G\+Y\+\_\+\+F\+I\+L\+E@{E\+N\+E\+R\+G\+Y\+\_\+\+F\+I\+L\+E}}
+\index{E\+N\+E\+R\+G\+Y\+\_\+\+F\+I\+L\+E@{E\+N\+E\+R\+G\+Y\+\_\+\+F\+I\+L\+E}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{E\+N\+E\+R\+G\+Y\+\_\+\+F\+I\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+N\+E\+R\+G\+Y\+\_\+\+F\+I\+L\+E~30}}\label{read__conf_8h_ab8d8ca3b652e51993214232ec753b356}
+
+
+Définition à la ligne 37 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_ab717506f3b47a445383e74d9cf0b1725}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!F\+A\+S\+T\+A\+\_\+\+F\+I\+L\+E@{F\+A\+S\+T\+A\+\_\+\+F\+I\+L\+E}}
+\index{F\+A\+S\+T\+A\+\_\+\+F\+I\+L\+E@{F\+A\+S\+T\+A\+\_\+\+F\+I\+L\+E}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{F\+A\+S\+T\+A\+\_\+\+F\+I\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+A\+S\+T\+A\+\_\+\+F\+I\+L\+E~11}}\label{read__conf_8h_ab717506f3b47a445383e74d9cf0b1725}
+
+
+Définition à la ligne 18 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a47a4db1caa818addbdd16f995fd5f84e}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!G\+R\+O\+U\+P\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N@{G\+R\+O\+U\+P\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N}}
+\index{G\+R\+O\+U\+P\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N@{G\+R\+O\+U\+P\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{G\+R\+O\+U\+P\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+R\+O\+U\+P\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N~2}}\label{read__conf_8h_a47a4db1caa818addbdd16f995fd5f84e}
+
+
+Définition à la ligne 9 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a0b81eb0d3a39eecc762d6f29b4579427}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!Heuristic@{Heuristic}}
+\index{Heuristic@{Heuristic}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{Heuristic}]{\setlength{\rightskip}{0pt plus 5cm}\#define Heuristic~0}}\label{read__conf_8h_a0b81eb0d3a39eecc762d6f29b4579427}
+
+
+Définition à la ligne 44 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a603b183edd0b53b24f584a8dfcf9e013}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!Info@{Info}}
+\index{Info@{Info}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{Info}]{\setlength{\rightskip}{0pt plus 5cm}\#define Info~4}}\label{read__conf_8h_a603b183edd0b53b24f584a8dfcf9e013}
+
+
+Définition à la ligne 48 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a9ec14eb7ba2f14b90ef9d739e083a77f}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!I\+N\+I\+T\+\_\+\+W\+E\+I\+G\+H\+T\+S@{I\+N\+I\+T\+\_\+\+W\+E\+I\+G\+H\+T\+S}}
+\index{I\+N\+I\+T\+\_\+\+W\+E\+I\+G\+H\+T\+S@{I\+N\+I\+T\+\_\+\+W\+E\+I\+G\+H\+T\+S}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{I\+N\+I\+T\+\_\+\+W\+E\+I\+G\+H\+T\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+I\+T\+\_\+\+W\+E\+I\+G\+H\+T\+S~14}}\label{read__conf_8h_a9ec14eb7ba2f14b90ef9d739e083a77f}
+
+
+Définition à la ligne 21 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a221b62bd10b42b63840ce88df49173df}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!L\+A\+M\+B\+D\+A\+\_\+\+P\+A\+R\+A\+M@{L\+A\+M\+B\+D\+A\+\_\+\+P\+A\+R\+A\+M}}
+\index{L\+A\+M\+B\+D\+A\+\_\+\+P\+A\+R\+A\+M@{L\+A\+M\+B\+D\+A\+\_\+\+P\+A\+R\+A\+M}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{L\+A\+M\+B\+D\+A\+\_\+\+P\+A\+R\+A\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+A\+M\+B\+D\+A\+\_\+\+P\+A\+R\+A\+M~12}}\label{read__conf_8h_a221b62bd10b42b63840ce88df49173df}
+
+
+Définition à la ligne 19 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_afb31aa2d196755fb259d43a03c18c9d7}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!M\+A\+X\+\_\+\+F\+L\+O\+A\+T@{M\+A\+X\+\_\+\+F\+L\+O\+A\+T}}
+\index{M\+A\+X\+\_\+\+F\+L\+O\+A\+T@{M\+A\+X\+\_\+\+F\+L\+O\+A\+T}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+F\+L\+O\+A\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+F\+L\+O\+A\+T~F\+L\+T\+\_\+\+M\+A\+X}}\label{read__conf_8h_afb31aa2d196755fb259d43a03c18c9d7}
+
+
+Définition à la ligne 50 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_aaa1ac5caef84256eaeb39594e58e096f}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!M\+A\+X\+\_\+\+I\+N\+T@{M\+A\+X\+\_\+\+I\+N\+T}}
+\index{M\+A\+X\+\_\+\+I\+N\+T@{M\+A\+X\+\_\+\+I\+N\+T}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+I\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+I\+N\+T~I\+N\+T\+\_\+\+M\+A\+X}}\label{read__conf_8h_aaa1ac5caef84256eaeb39594e58e096f}
+
+
+Définition à la ligne 52 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a6c09feb12ab992f9d9254bf56b696940}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!Mean\+Field@{Mean\+Field}}
+\index{Mean\+Field@{Mean\+Field}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{Mean\+Field}]{\setlength{\rightskip}{0pt plus 5cm}\#define Mean\+Field~1}}\label{read__conf_8h_a6c09feb12ab992f9d9254bf56b696940}
+
+
+Définition à la ligne 45 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_ac27cb1a4497026d6d8e3f99af66c4da7}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!M\+I\+N\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E@{M\+I\+N\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E}}
+\index{M\+I\+N\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E@{M\+I\+N\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{M\+I\+N\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+I\+N\+\_\+\+P\+O\+S\+I\+T\+I\+V\+E~F\+L\+T\+\_\+\+M\+I\+N}}\label{read__conf_8h_ac27cb1a4497026d6d8e3f99af66c4da7}
+
+
+Définition à la ligne 51 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_ab8c52c1b4c021ed3e6b6b677bd2ac019}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!M\+O\+D\+E@{M\+O\+D\+E}}
+\index{M\+O\+D\+E@{M\+O\+D\+E}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{M\+O\+D\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+O\+D\+E~6}}\label{read__conf_8h_ab8c52c1b4c021ed3e6b6b677bd2ac019}
+
+
+Définition à la ligne 13 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_ad3cfac2a6786afb5b2c0f96b629c2cbb}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!Monte\+Carlo@{Monte\+Carlo}}
+\index{Monte\+Carlo@{Monte\+Carlo}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{Monte\+Carlo}]{\setlength{\rightskip}{0pt plus 5cm}\#define Monte\+Carlo~2}}\label{read__conf_8h_ad3cfac2a6786afb5b2c0f96b629c2cbb}
+
+
+Définition à la ligne 46 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_ac1c3d2392312485d800f62aa57cf275c}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!M\+U\+T\+\_\+\+M\+U\+T\+\_\+\+P\+R\+O\+B\+A@{M\+U\+T\+\_\+\+M\+U\+T\+\_\+\+P\+R\+O\+B\+A}}
+\index{M\+U\+T\+\_\+\+M\+U\+T\+\_\+\+P\+R\+O\+B\+A@{M\+U\+T\+\_\+\+M\+U\+T\+\_\+\+P\+R\+O\+B\+A}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{M\+U\+T\+\_\+\+M\+U\+T\+\_\+\+P\+R\+O\+B\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+U\+T\+\_\+\+M\+U\+T\+\_\+\+P\+R\+O\+B\+A~18}}\label{read__conf_8h_ac1c3d2392312485d800f62aa57cf275c}
+
+
+Définition à la ligne 25 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a2aaae7c3eb2673604d0cceab84a9d567}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!M\+U\+T\+\_\+\+P\+R\+O\+B\+A@{M\+U\+T\+\_\+\+P\+R\+O\+B\+A}}
+\index{M\+U\+T\+\_\+\+P\+R\+O\+B\+A@{M\+U\+T\+\_\+\+P\+R\+O\+B\+A}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{M\+U\+T\+\_\+\+P\+R\+O\+B\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+U\+T\+\_\+\+P\+R\+O\+B\+A~17}}\label{read__conf_8h_a2aaae7c3eb2673604d0cceab84a9d567}
+
+
+Définition à la ligne 24 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_ab1cb047241407cedbc8db8863f1a8565}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!M\+U\+T\+\_\+\+R\+O\+T\+\_\+\+P\+R\+O\+B\+A@{M\+U\+T\+\_\+\+R\+O\+T\+\_\+\+P\+R\+O\+B\+A}}
+\index{M\+U\+T\+\_\+\+R\+O\+T\+\_\+\+P\+R\+O\+B\+A@{M\+U\+T\+\_\+\+R\+O\+T\+\_\+\+P\+R\+O\+B\+A}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{M\+U\+T\+\_\+\+R\+O\+T\+\_\+\+P\+R\+O\+B\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+U\+T\+\_\+\+R\+O\+T\+\_\+\+P\+R\+O\+B\+A~19}}\label{read__conf_8h_ab1cb047241407cedbc8db8863f1a8565}
+
+
+Définition à la ligne 26 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a1a50fe15dd5b3399a7f3a90b1b021d48}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!N\+E\+I\+G\+H\+B\+O\+R\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D@{N\+E\+I\+G\+H\+B\+O\+R\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D}}
+\index{N\+E\+I\+G\+H\+B\+O\+R\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D@{N\+E\+I\+G\+H\+B\+O\+R\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{N\+E\+I\+G\+H\+B\+O\+R\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+E\+I\+G\+H\+B\+O\+R\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D~20}}\label{read__conf_8h_a1a50fe15dd5b3399a7f3a90b1b021d48}
+
+
+Définition à la ligne 27 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a0eafa592e67b4299c35093d00ec1c4eb}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!O\+P\+T\+M\+\_\+\+C\+O\+N\+F\+I\+G@{O\+P\+T\+M\+\_\+\+C\+O\+N\+F\+I\+G}}
+\index{O\+P\+T\+M\+\_\+\+C\+O\+N\+F\+I\+G@{O\+P\+T\+M\+\_\+\+C\+O\+N\+F\+I\+G}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{O\+P\+T\+M\+\_\+\+C\+O\+N\+F\+I\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+T\+M\+\_\+\+C\+O\+N\+F\+I\+G~5}}\label{read__conf_8h_a0eafa592e67b4299c35093d00ec1c4eb}
+
+
+Définition à la ligne 12 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_aedb855f0de08fb5442f790cfe31c4549}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!Post\+Process@{Post\+Process}}
+\index{Post\+Process@{Post\+Process}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{Post\+Process}]{\setlength{\rightskip}{0pt plus 5cm}\#define Post\+Process~3}}\label{read__conf_8h_aedb855f0de08fb5442f790cfe31c4549}
+
+
+Définition à la ligne 47 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a8d0ac7033fb1bd905e0215fadfb69c57}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!P\+R\+I\+N\+T\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D@{P\+R\+I\+N\+T\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D}}
+\index{P\+R\+I\+N\+T\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D@{P\+R\+I\+N\+T\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{P\+R\+I\+N\+T\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+I\+N\+T\+\_\+\+T\+H\+R\+E\+S\+H\+O\+L\+D~34}}\label{read__conf_8h_a8d0ac7033fb1bd905e0215fadfb69c57}
+
+
+Définition à la ligne 41 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_abf411f95e6a112353dca664df9f23e80}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!R\+A\+N\+D\+O\+M\+\_\+\+G\+E\+N\+E\+R\+A\+T\+O\+R@{R\+A\+N\+D\+O\+M\+\_\+\+G\+E\+N\+E\+R\+A\+T\+O\+R}}
+\index{R\+A\+N\+D\+O\+M\+\_\+\+G\+E\+N\+E\+R\+A\+T\+O\+R@{R\+A\+N\+D\+O\+M\+\_\+\+G\+E\+N\+E\+R\+A\+T\+O\+R}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{R\+A\+N\+D\+O\+M\+\_\+\+G\+E\+N\+E\+R\+A\+T\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+A\+N\+D\+O\+M\+\_\+\+G\+E\+N\+E\+R\+A\+T\+O\+R~21}}\label{read__conf_8h_abf411f95e6a112353dca664df9f23e80}
+
+
+Définition à la ligne 28 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a5143868b6d2e2de58444172c9fffc2cc}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!R\+E\+F\+\_\+\+E\+N\+E\+R@{R\+E\+F\+\_\+\+E\+N\+E\+R}}
+\index{R\+E\+F\+\_\+\+E\+N\+E\+R@{R\+E\+F\+\_\+\+E\+N\+E\+R}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{R\+E\+F\+\_\+\+E\+N\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+F\+\_\+\+E\+N\+E\+R~33}}\label{read__conf_8h_a5143868b6d2e2de58444172c9fffc2cc}
+
+
+Définition à la ligne 40 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_acd17b8785032f6a003520e5fb4e7473d}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!R\+E\+S\+E\+T\+\_\+\+E\+N\+E\+R\+G\+I\+E\+S@{R\+E\+S\+E\+T\+\_\+\+E\+N\+E\+R\+G\+I\+E\+S}}
+\index{R\+E\+S\+E\+T\+\_\+\+E\+N\+E\+R\+G\+I\+E\+S@{R\+E\+S\+E\+T\+\_\+\+E\+N\+E\+R\+G\+I\+E\+S}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{R\+E\+S\+E\+T\+\_\+\+E\+N\+E\+R\+G\+I\+E\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+S\+E\+T\+\_\+\+E\+N\+E\+R\+G\+I\+E\+S~27}}\label{read__conf_8h_acd17b8785032f6a003520e5fb4e7473d}
+
+
+Définition à la ligne 34 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a89ff7faa0ab2b3125735ba95662e4d8f}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!R\+O\+T\+\_\+\+P\+R\+O\+B\+A@{R\+O\+T\+\_\+\+P\+R\+O\+B\+A}}
+\index{R\+O\+T\+\_\+\+P\+R\+O\+B\+A@{R\+O\+T\+\_\+\+P\+R\+O\+B\+A}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{R\+O\+T\+\_\+\+P\+R\+O\+B\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+T\+\_\+\+P\+R\+O\+B\+A~15}}\label{read__conf_8h_a89ff7faa0ab2b3125735ba95662e4d8f}
+
+
+Définition à la ligne 22 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_ad1044df204e01accfe0eafdb2ea9cad7}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!R\+O\+T\+\_\+\+R\+O\+T\+\_\+\+P\+R\+O\+B\+A@{R\+O\+T\+\_\+\+R\+O\+T\+\_\+\+P\+R\+O\+B\+A}}
+\index{R\+O\+T\+\_\+\+R\+O\+T\+\_\+\+P\+R\+O\+B\+A@{R\+O\+T\+\_\+\+R\+O\+T\+\_\+\+P\+R\+O\+B\+A}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{R\+O\+T\+\_\+\+R\+O\+T\+\_\+\+P\+R\+O\+B\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+T\+\_\+\+R\+O\+T\+\_\+\+P\+R\+O\+B\+A~16}}\label{read__conf_8h_ad1044df204e01accfe0eafdb2ea9cad7}
+
+
+Définition à la ligne 23 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a7c4f79891c21be232ca76de678caca08}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!R\+S\+E\+E\+D\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N@{R\+S\+E\+E\+D\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N}}
+\index{R\+S\+E\+E\+D\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N@{R\+S\+E\+E\+D\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{R\+S\+E\+E\+D\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+S\+E\+E\+D\+\_\+\+D\+E\+F\+I\+N\+I\+T\+I\+O\+N~0}}\label{read__conf_8h_a7c4f79891c21be232ca76de678caca08}
+
+
+Définition à la ligne 7 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a6c375cf80886538f2a37136262b06d3b}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!S\+E\+Q\+\_\+\+I\+N\+P\+U\+T@{S\+E\+Q\+\_\+\+I\+N\+P\+U\+T}}
+\index{S\+E\+Q\+\_\+\+I\+N\+P\+U\+T@{S\+E\+Q\+\_\+\+I\+N\+P\+U\+T}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{S\+E\+Q\+\_\+\+I\+N\+P\+U\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+Q\+\_\+\+I\+N\+P\+U\+T~26}}\label{read__conf_8h_a6c375cf80886538f2a37136262b06d3b}
+
+
+Définition à la ligne 33 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_ae27c4159a480e01f02ae1945530709d0}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!S\+E\+Q\+\_\+\+I\+N\+P\+U\+T\+\_\+\+F\+I\+L\+E@{S\+E\+Q\+\_\+\+I\+N\+P\+U\+T\+\_\+\+F\+I\+L\+E}}
+\index{S\+E\+Q\+\_\+\+I\+N\+P\+U\+T\+\_\+\+F\+I\+L\+E@{S\+E\+Q\+\_\+\+I\+N\+P\+U\+T\+\_\+\+F\+I\+L\+E}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{S\+E\+Q\+\_\+\+I\+N\+P\+U\+T\+\_\+\+F\+I\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+Q\+\_\+\+I\+N\+P\+U\+T\+\_\+\+F\+I\+L\+E~24}}\label{read__conf_8h_ae27c4159a480e01f02ae1945530709d0}
+
+
+Définition à la ligne 31 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_aefd9eb0c9903e6de67363602d893e9b9}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!S\+E\+Q\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+L\+E@{S\+E\+Q\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+L\+E}}
+\index{S\+E\+Q\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+L\+E@{S\+E\+Q\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+L\+E}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{S\+E\+Q\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+Q\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+F\+I\+L\+E~10}}\label{read__conf_8h_aefd9eb0c9903e6de67363602d893e9b9}
+
+
+Définition à la ligne 17 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a5550cfd86c0230224b4852dbc00c2e67}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!S\+E\+Q\+\_\+\+P\+A\+S\+S\+\_\+\+N\+B@{S\+E\+Q\+\_\+\+P\+A\+S\+S\+\_\+\+N\+B}}
+\index{S\+E\+Q\+\_\+\+P\+A\+S\+S\+\_\+\+N\+B@{S\+E\+Q\+\_\+\+P\+A\+S\+S\+\_\+\+N\+B}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{S\+E\+Q\+\_\+\+P\+A\+S\+S\+\_\+\+N\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+Q\+\_\+\+P\+A\+S\+S\+\_\+\+N\+B~4}}\label{read__conf_8h_a5550cfd86c0230224b4852dbc00c2e67}
+
+
+Définition à la ligne 11 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_af471bf0a76ab20bbacccd83ae3f08ddf}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!S\+P\+A\+C\+E\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+T\+S@{S\+P\+A\+C\+E\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+T\+S}}
+\index{S\+P\+A\+C\+E\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+T\+S@{S\+P\+A\+C\+E\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+T\+S}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{S\+P\+A\+C\+E\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+T\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+P\+A\+C\+E\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+T\+S~3}}\label{read__conf_8h_af471bf0a76ab20bbacccd83ae3f08ddf}
+
+
+Définition à la ligne 10 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a21d48bd5db669b0f4535d71d5de11ca3}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!S\+U\+R\+F\+\_\+\+E\+N\+E\+R\+\_\+\+F\+A\+C\+T\+O\+R@{S\+U\+R\+F\+\_\+\+E\+N\+E\+R\+\_\+\+F\+A\+C\+T\+O\+R}}
+\index{S\+U\+R\+F\+\_\+\+E\+N\+E\+R\+\_\+\+F\+A\+C\+T\+O\+R@{S\+U\+R\+F\+\_\+\+E\+N\+E\+R\+\_\+\+F\+A\+C\+T\+O\+R}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{S\+U\+R\+F\+\_\+\+E\+N\+E\+R\+\_\+\+F\+A\+C\+T\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+U\+R\+F\+\_\+\+E\+N\+E\+R\+\_\+\+F\+A\+C\+T\+O\+R~8}}\label{read__conf_8h_a21d48bd5db669b0f4535d71d5de11ca3}
+
+
+Définition à la ligne 15 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_ab501a9d006ee282a664f42d2c95ee161}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!S\+W\+A\+P\+\_\+\+P\+E\+R\+I\+O\+D@{S\+W\+A\+P\+\_\+\+P\+E\+R\+I\+O\+D}}
+\index{S\+W\+A\+P\+\_\+\+P\+E\+R\+I\+O\+D@{S\+W\+A\+P\+\_\+\+P\+E\+R\+I\+O\+D}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{S\+W\+A\+P\+\_\+\+P\+E\+R\+I\+O\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+W\+A\+P\+\_\+\+P\+E\+R\+I\+O\+D~29}}\label{read__conf_8h_ab501a9d006ee282a664f42d2c95ee161}
+
+
+Définition à la ligne 36 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_af4e8dcb1c210baad2e179d49669eabff}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E@{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E}}
+\index{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E@{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E~13}}\label{read__conf_8h_af4e8dcb1c210baad2e179d49669eabff}
+
+
+Définition à la ligne 20 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a19e1de351564fb61758b7bdb6cb7a5bc}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!T\+R\+A\+J\+\_\+\+L\+E\+N\+G\+T\+H@{T\+R\+A\+J\+\_\+\+L\+E\+N\+G\+T\+H}}
+\index{T\+R\+A\+J\+\_\+\+L\+E\+N\+G\+T\+H@{T\+R\+A\+J\+\_\+\+L\+E\+N\+G\+T\+H}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{T\+R\+A\+J\+\_\+\+L\+E\+N\+G\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+R\+A\+J\+\_\+\+L\+E\+N\+G\+T\+H~22}}\label{read__conf_8h_a19e1de351564fb61758b7bdb6cb7a5bc}
+
+
+Définition à la ligne 29 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_a3123636125eb24308427058bc94dfdac}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!T\+R\+A\+J\+\_\+\+N\+B@{T\+R\+A\+J\+\_\+\+N\+B}}
+\index{T\+R\+A\+J\+\_\+\+N\+B@{T\+R\+A\+J\+\_\+\+N\+B}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{T\+R\+A\+J\+\_\+\+N\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+R\+A\+J\+\_\+\+N\+B~25}}\label{read__conf_8h_a3123636125eb24308427058bc94dfdac}
+
+
+Définition à la ligne 32 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_ab17ce395bcb5f2688c2783ec9e5e17a0}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!W\+A\+L\+K\+E\+R\+\_\+\+N\+B@{W\+A\+L\+K\+E\+R\+\_\+\+N\+B}}
+\index{W\+A\+L\+K\+E\+R\+\_\+\+N\+B@{W\+A\+L\+K\+E\+R\+\_\+\+N\+B}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{W\+A\+L\+K\+E\+R\+\_\+\+N\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+A\+L\+K\+E\+R\+\_\+\+N\+B~28}}\label{read__conf_8h_ab17ce395bcb5f2688c2783ec9e5e17a0}
+
+
+Définition à la ligne 35 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{read__conf_8h_af70b67011ec7358b19fc567fb22f1797}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!W\+E\+I\+G\+H\+T\+\_\+\+E\+X\+C\+H\+A\+N\+G\+E\+\_\+\+F\+I\+L\+E@{W\+E\+I\+G\+H\+T\+\_\+\+E\+X\+C\+H\+A\+N\+G\+E\+\_\+\+F\+I\+L\+E}}
+\index{W\+E\+I\+G\+H\+T\+\_\+\+E\+X\+C\+H\+A\+N\+G\+E\+\_\+\+F\+I\+L\+E@{W\+E\+I\+G\+H\+T\+\_\+\+E\+X\+C\+H\+A\+N\+G\+E\+\_\+\+F\+I\+L\+E}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{W\+E\+I\+G\+H\+T\+\_\+\+E\+X\+C\+H\+A\+N\+G\+E\+\_\+\+F\+I\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+E\+I\+G\+H\+T\+\_\+\+E\+X\+C\+H\+A\+N\+G\+E\+\_\+\+F\+I\+L\+E~32}}\label{read__conf_8h_af70b67011ec7358b19fc567fb22f1797}
+
+
+Définition à la ligne 39 du fichier read\+\_\+conf.\+h.
+
+
+
+\subsection{Documentation des définitions de type}
+\hypertarget{read__conf_8h_ae233ac376b010d04519bd914edac5260}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!posi\+\_\+instance@{posi\+\_\+instance}}
+\index{posi\+\_\+instance@{posi\+\_\+instance}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{posi\+\_\+instance}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf P\+I} {\bf posi\+\_\+instance}}}\label{read__conf_8h_ae233ac376b010d04519bd914edac5260}
+
+
+instance of a position 
+
+
+
+Définition à la ligne 145 du fichier read\+\_\+conf.\+h.
+
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{read__conf_8h_a8b4485b4af2f24e34590fd276e82c6cf}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!def\+\_\+alpha@{def\+\_\+alpha}}
+\index{def\+\_\+alpha@{def\+\_\+alpha}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{def\+\_\+alpha}]{\setlength{\rightskip}{0pt plus 5cm}float def\+\_\+alpha (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a8b4485b4af2f24e34590fd276e82c6cf}
+Define the alpha value read from the .conf \begin{DoxyReturn}{Renvoie}
+the alpha value 
+\end{DoxyReturn}
+
+
+Définition à la ligne 839 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a0041075fb1cdc76d73e19228aab5223c}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!def\+\_\+constraints@{def\+\_\+constraints}}
+\index{def\+\_\+constraints@{def\+\_\+constraints}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{def\+\_\+constraints}]{\setlength{\rightskip}{0pt plus 5cm}void def\+\_\+constraints (
+\begin{DoxyParamCaption}
+\item[{{\bf group}}]{groups\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a0041075fb1cdc76d73e19228aab5223c}
+Define constraints space of rotamer read from the .conf 
+\begin{DoxyParams}{Paramètres}
+{\em groups} & the group which contains residues to constraint \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 550 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_ae57789bd9b816848bdb50f6417c17b69}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!def\+\_\+enerdir@{def\+\_\+enerdir}}
+\index{def\+\_\+enerdir@{def\+\_\+enerdir}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{def\+\_\+enerdir}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ def\+\_\+enerdir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_ae57789bd9b816848bdb50f6417c17b69}
+Define the directory read from the .conf containing the matrix.\+bb and matrix.\+pw files \begin{DoxyReturn}{Renvoie}
+the directory 
+\end{DoxyReturn}
+
+
+Définition à la ligne 820 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_aad728e2ed40ca3013760fd856708cf2c}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!def\+\_\+epsilon@{def\+\_\+epsilon}}
+\index{def\+\_\+epsilon@{def\+\_\+epsilon}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{def\+\_\+epsilon}]{\setlength{\rightskip}{0pt plus 5cm}float def\+\_\+epsilon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_aad728e2ed40ca3013760fd856708cf2c}
+Define the psilon value read from the .conf \begin{DoxyReturn}{Renvoie}
+the epsilon value 
+\end{DoxyReturn}
+
+
+Définition à la ligne 854 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a817c18574878dd96d959fc3fd5351eb6}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!def\+\_\+groups@{def\+\_\+groups}}
+\index{def\+\_\+groups@{def\+\_\+groups}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{def\+\_\+groups}]{\setlength{\rightskip}{0pt plus 5cm}{\bf group}$\ast$ def\+\_\+groups (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a817c18574878dd96d959fc3fd5351eb6}
+Define the different groups in group\+\_\+definition tag read from the .conf \begin{DoxyReturn}{Renvoie}
+the structure groups constructed
+\end{DoxyReturn}
+Define the different groups read from the .conf file \begin{DoxyReturn}{Renvoie}
+the group structure containing all groups of the simulation 
+\end{DoxyReturn}
+
+
+Définition à la ligne 710 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_af724c4fda3d621dbd10912f2dc4798b8}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!def\+\_\+mode@{def\+\_\+mode}}
+\index{def\+\_\+mode@{def\+\_\+mode}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{def\+\_\+mode}]{\setlength{\rightskip}{0pt plus 5cm}int def\+\_\+mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_af724c4fda3d621dbd10912f2dc4798b8}
+Define the mode of simulation (Monte\+Carlo, Heuristic, Mean\+Field or Post\+Processing) \begin{DoxyReturn}{Renvoie}
+the number associated to the mode 
+\end{DoxyReturn}
+
+
+Définition à la ligne 868 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a14c54e6d7a7780e3661249b1d1fe4140}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!def\+\_\+terms@{def\+\_\+terms}}
+\index{def\+\_\+terms@{def\+\_\+terms}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{def\+\_\+terms}]{\setlength{\rightskip}{0pt plus 5cm}void def\+\_\+terms (
+\begin{DoxyParamCaption}
+\item[{{\bf opt\+\_\+formula} $\ast$}]{pf, }
+\item[{{\bf grp\+\_\+pair} $\ast$}]{pgp\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a14c54e6d7a7780e3661249b1d1fe4140}
+Define the terms of the optimization formule read from the .conf 
+
+Définition à la ligne 413 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a51668fd7e1a2e74126e89bdb585df83b}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!def\+\_\+traj\+\_\+length@{def\+\_\+traj\+\_\+length}}
+\index{def\+\_\+traj\+\_\+length@{def\+\_\+traj\+\_\+length}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{def\+\_\+traj\+\_\+length}]{\setlength{\rightskip}{0pt plus 5cm}int def\+\_\+traj\+\_\+length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a51668fd7e1a2e74126e89bdb585df83b}
+Define the length of the trajectory read from the .conf \begin{DoxyReturn}{Renvoie}
+the length of the trajectory 
+\end{DoxyReturn}
+
+
+Définition à la ligne 389 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a2b695fb12a512cb22f513937b919e0ce}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!def\+\_\+traj\+\_\+nb@{def\+\_\+traj\+\_\+nb}}
+\index{def\+\_\+traj\+\_\+nb@{def\+\_\+traj\+\_\+nb}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{def\+\_\+traj\+\_\+nb}]{\setlength{\rightskip}{0pt plus 5cm}int def\+\_\+traj\+\_\+nb (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a2b695fb12a512cb22f513937b919e0ce}
+Define the number of trajectory read from the .conf \begin{DoxyReturn}{Renvoie}
+the number of trajectory 
+\end{DoxyReturn}
+\hypertarget{read__conf_8h_ae562c3e49e67c27ed8fc5d5be6fb0b3c}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!def\+Rand\+Generator@{def\+Rand\+Generator}}
+\index{def\+Rand\+Generator@{def\+Rand\+Generator}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{def\+Rand\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}gsl\+\_\+rng$\ast$ def\+Rand\+Generator (
+\begin{DoxyParamCaption}
+\item[{int}]{thread\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_ae562c3e49e67c27ed8fc5d5be6fb0b3c}
+Define the Random Generator 
+\begin{DoxyParams}{Paramètres}
+{\em thread\+\_\+id} & the id of the thread \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the random number 
+\end{DoxyReturn}
+
+
+Définition à la ligne 903 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a93be39a6399217f69d6a447835719d5f}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!det\+\_\+grp@{det\+\_\+grp}}
+\index{det\+\_\+grp@{det\+\_\+grp}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{det\+\_\+grp}]{\setlength{\rightskip}{0pt plus 5cm}int det\+\_\+grp (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{grp\+\_\+name}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a93be39a6399217f69d6a447835719d5f}
+Check if the group name exists 
+\begin{DoxyParams}{Paramètres}
+{\em grp\+\_\+name} & the name of the group to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the number of the group name if existing. Else exit 
+\end{DoxyReturn}
+
+
+Définition à la ligne 179 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a14280be1afbd848795c58bf3fa268022}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!det\+\_\+ins@{det\+\_\+ins}}
+\index{det\+\_\+ins@{det\+\_\+ins}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{det\+\_\+ins}]{\setlength{\rightskip}{0pt plus 5cm}{\bf posi\+\_\+instance}$\ast$ det\+\_\+ins (
+\begin{DoxyParamCaption}
+\item[{int}]{grp, }
+\item[{int}]{posi}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a14280be1afbd848795c58bf3fa268022}
+Searching the instance number of a P\+D\+B position in a group 
+\begin{DoxyParams}{Paramètres}
+{\em grp} & the group containing the P\+D\+B position \\
+\hline
+{\em posi} & the P\+D\+B position to search in the group \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the instance of the position P\+D\+B given 
+\end{DoxyReturn}
+
+
+Définition à la ligne 214 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a6286527c8fedf0d55c0620d6a2d53778}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!free\+\_\+array@{free\+\_\+array}}
+\index{free\+\_\+array@{free\+\_\+array}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{free\+\_\+array}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+array (
+\begin{DoxyParamCaption}
+\item[{void $\ast$$\ast$$\ast$}]{array, }
+\item[{const int}]{ori, }
+\item[{const int}]{array\+\_\+size}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a6286527c8fedf0d55c0620d6a2d53778}
+Free memory of array 
+\begin{DoxyParams}{Paramètres}
+{\em array} & the array to free \\
+\hline
+{\em ori} & the origine or beginning to free \\
+\hline
+{\em array\+\_\+size} & the size of the array \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 167 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a12e8c4c0add90db4ef57acfa71d9c354}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!get\+\_\+config@{get\+\_\+config}}
+\index{get\+\_\+config@{get\+\_\+config}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{get\+\_\+config}]{\setlength{\rightskip}{0pt plus 5cm}void get\+\_\+config (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{config\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a12e8c4c0add90db4ef57acfa71d9c354}
+Stock datas/parameters between two (beginning and final) tag lines in config read from the .conf 
+\begin{DoxyParams}{Paramètres}
+{\em config} & the table to fill with data/parameters \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 1027 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a01b41c0f2bab1f8de712d86b42b5fcc0}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!get\+\_\+grp\+\_\+pair@{get\+\_\+grp\+\_\+pair}}
+\index{get\+\_\+grp\+\_\+pair@{get\+\_\+grp\+\_\+pair}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{get\+\_\+grp\+\_\+pair}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+grp\+\_\+pair (
+\begin{DoxyParamCaption}
+\item[{{\bf grp\+\_\+pair} $\ast$}]{p\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{i\+\_\+idx, }
+\item[{int}]{j\+\_\+idx}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a01b41c0f2bab1f8de712d86b42b5fcc0}
+Get the group pair 
+\begin{DoxyParams}{Paramètres}
+{\em p} & table containing the pair of group \\
+\hline
+{\em i\+\_\+idx} & index of i \\
+\hline
+{\em j\+\_\+idx} & index of j \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+
+\end{DoxyReturn}
+
+
+Définition à la ligne 227 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_af06a338c6c612881bab63df24cdbbc72}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!get\+\_\+print\+\_\+threshold@{get\+\_\+print\+\_\+threshold}}
+\index{get\+\_\+print\+\_\+threshold@{get\+\_\+print\+\_\+threshold}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{get\+\_\+print\+\_\+threshold}]{\setlength{\rightskip}{0pt plus 5cm}float get\+\_\+print\+\_\+threshold (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_af06a338c6c612881bab63df24cdbbc72}
+Read the print threshold from the .conf \begin{DoxyReturn}{Renvoie}
+the threshold 
+\end{DoxyReturn}
+
+
+Définition à la ligne 373 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a08c9926f99d554e88c6424a343841d2a}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!get\+\_\+reset\+\_\+ener@{get\+\_\+reset\+\_\+ener}}
+\index{get\+\_\+reset\+\_\+ener@{get\+\_\+reset\+\_\+ener}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{get\+\_\+reset\+\_\+ener}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+reset\+\_\+ener (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a08c9926f99d554e88c6424a343841d2a}
+Initialize bit size value of energy \begin{DoxyReturn}{Renvoie}
+the size (M\+A\+X\+\_\+\+I\+N\+T or 100) 
+\end{DoxyReturn}
+
+
+Définition à la ligne 360 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a4870662d81498da427e23e6c9f2349a9}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!get\+Tag\+Info@{get\+Tag\+Info}}
+\index{get\+Tag\+Info@{get\+Tag\+Info}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{get\+Tag\+Info}]{\setlength{\rightskip}{0pt plus 5cm}void get\+Tag\+Info (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{first\+\_\+line, }
+\item[{const char $\ast$}]{tag, }
+\item[{int}]{code, }
+\item[{char $\ast$$\ast$}]{config\mbox{[}$\,$\mbox{]}, }
+\item[{F\+I\+L\+E $\ast$}]{config\+\_\+file}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a4870662d81498da427e23e6c9f2349a9}
+Read tag lines of the .conf and complete the table config by size of tag 
+\begin{DoxyParams}{Paramètres}
+{\em first\+\_\+line} & the opening line tag \\
+\hline
+{\em tag} & the tag concerning \\
+\hline
+{\em code} & the code of the tag (defined values) \\
+\hline
+{\em config} & the table containing the code and information about tag \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 976 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a2e432d4309e4b088908ccd28f6f2b526}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!get\+Temperatures@{get\+Temperatures}}
+\index{get\+Temperatures@{get\+Temperatures}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{get\+Temperatures}]{\setlength{\rightskip}{0pt plus 5cm}float$\ast$ get\+Temperatures (
+\begin{DoxyParamCaption}
+\item[{int}]{T\+\_\+size}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a2e432d4309e4b088908ccd28f6f2b526}
+Read temperatures in the .conf file 
+\begin{DoxyParams}{Paramètres}
+{\em T\+\_\+size} & the size of the array to build \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the temperature array 
+\end{DoxyReturn}
+
+
+Définition à la ligne 516 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_ab83144f4034d7c6de02eb446048379bb}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!is\+\_\+dupl@{is\+\_\+dupl}}
+\index{is\+\_\+dupl@{is\+\_\+dupl}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{is\+\_\+dupl}]{\setlength{\rightskip}{0pt plus 5cm}bool is\+\_\+dupl (
+\begin{DoxyParamCaption}
+\item[{{\bf posi\+\_\+instance} $\ast$}]{ins\+\_\+i, }
+\item[{{\bf posi\+\_\+instance} $\ast$}]{ins\+\_\+j}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_ab83144f4034d7c6de02eb446048379bb}
+Check if two instances are duplicates 
+\begin{DoxyParams}{Paramètres}
+{\em ins\+\_\+i} & instance i to compare \\
+\hline
+{\em ins\+\_\+j} & instance j to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true or false 
+\end{DoxyReturn}
+
+
+Définition à la ligne 244 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a2afa9afb51377588c60a8ece358deddd}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!max\+\_\+idx\+\_\+bb\+\_\+ener@{max\+\_\+idx\+\_\+bb\+\_\+ener}}
+\index{max\+\_\+idx\+\_\+bb\+\_\+ener@{max\+\_\+idx\+\_\+bb\+\_\+ener}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{max\+\_\+idx\+\_\+bb\+\_\+ener}]{\setlength{\rightskip}{0pt plus 5cm}int max\+\_\+idx\+\_\+bb\+\_\+ener (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a2afa9afb51377588c60a8ece358deddd}
+Define the maximum of idx\+\_\+bb\+\_\+ener to add a table \begin{DoxyReturn}{Renvoie}
+the max of the idx\+\_\+bb\+\_\+ener 
+\end{DoxyReturn}
+\hypertarget{read__conf_8h_a7e114f31cac0bafa3337726a29b1f980}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!prepare\+Rand\+Generator@{prepare\+Rand\+Generator}}
+\index{prepare\+Rand\+Generator@{prepare\+Rand\+Generator}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{prepare\+Rand\+Generator}]{\setlength{\rightskip}{0pt plus 5cm}void prepare\+Rand\+Generator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a7e114f31cac0bafa3337726a29b1f980}
+Prepare Random Generator 
+
+Définition à la ligne 922 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_ad5fd155d9492c8628ccd496305b7954a}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!read\+\_\+formula@{read\+\_\+formula}}
+\index{read\+\_\+formula@{read\+\_\+formula}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{read\+\_\+formula}]{\setlength{\rightskip}{0pt plus 5cm}void read\+\_\+formula (
+\begin{DoxyParamCaption}
+\item[{{\bf grp\+\_\+pair} $\ast$}]{pgp\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_ad5fd155d9492c8628ccd496305b7954a}
+Read the optimization confiuration from the .conf 
+\begin{DoxyParams}{Paramètres}
+{\em pgp} & the group pair \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 1083 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a3d2fd9efca4e50fd277e793f10e55a40}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!read\+\_\+\+Ref\+\_\+eners@{read\+\_\+\+Ref\+\_\+eners}}
+\index{read\+\_\+\+Ref\+\_\+eners@{read\+\_\+\+Ref\+\_\+eners}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{read\+\_\+\+Ref\+\_\+eners}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\+\_\+ener}$\ast$ read\+\_\+\+Ref\+\_\+eners (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a3d2fd9efca4e50fd277e793f10e55a40}
+Read references energies put in the configuration file \begin{DoxyReturn}{Renvoie}
+the \hyperlink{structref__ener}{ref\+\_\+ener} structure containing data 
+\end{DoxyReturn}
+
+
+Définition à la ligne 315 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_aea72bd4febf557552057022672d4ceff}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!read\+Proba@{read\+Proba}}
+\index{read\+Proba@{read\+Proba}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{read\+Proba}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Proba} read\+Proba (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_aea72bd4febf557552057022672d4ceff}
+Save all probabilities from the .conf file in the \hyperlink{struct_proba}{Proba} structure \begin{DoxyReturn}{Renvoie}
+the \hyperlink{struct_proba}{Proba} structure containing all probabilities 
+\end{DoxyReturn}
+
+
+Définition à la ligne 270 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a9debdfff60a59ebb52cd64f77af41d18}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!search\+\_\+grp@{search\+\_\+grp}}
+\index{search\+\_\+grp@{search\+\_\+grp}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{search\+\_\+grp}]{\setlength{\rightskip}{0pt plus 5cm}int search\+\_\+grp (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a9debdfff60a59ebb52cd64f77af41d18}
+Search a group name in astring 
+\begin{DoxyParams}{Paramètres}
+{\em string} & the string to study to find the group name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the number of the group if found in the string 
+\end{DoxyReturn}
+
+
+Définition à la ligne 193 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a6c6a6154689187874c3cf046e9cb3b8c}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!split\+\_\+str@{split\+\_\+str}}
+\index{split\+\_\+str@{split\+\_\+str}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{split\+\_\+str}]{\setlength{\rightskip}{0pt plus 5cm}int split\+\_\+str (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string, }
+\item[{const char $\ast$}]{delimiter, }
+\item[{char $\ast$$\ast$$\ast$}]{ptab}
+\end{DoxyParamCaption}
+)}}\label{read__conf_8h_a6c6a6154689187874c3cf046e9cb3b8c}
+Split a string 
+\begin{DoxyParams}{Paramètres}
+{\em string} & the string to split \\
+\hline
+{\em delimiter} & the delimiter used to split \\
+\hline
+{\em ptab} & table containing parts of string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+number of parts of string = numbe rof delimiter + 1 
+\end{DoxyReturn}
+
+
+Définition à la ligne 146 du fichier read\+\_\+conf.\+c.
+
+
+
+\subsection{Documentation des variables}
+\hypertarget{read__conf_8h_ac123799e520741745e481e9424551bd5}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!bb\+\_\+ins\+\_\+nb@{bb\+\_\+ins\+\_\+nb}}
+\index{bb\+\_\+ins\+\_\+nb@{bb\+\_\+ins\+\_\+nb}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{bb\+\_\+ins\+\_\+nb}]{\setlength{\rightskip}{0pt plus 5cm}int bb\+\_\+ins\+\_\+nb}}\label{read__conf_8h_ac123799e520741745e481e9424551bd5}
+
+
+number of position instance og backbone 
+
+
+
+Définition à la ligne 69 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_af2e12a68ed24f8ec049781947e8c41b6}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!formula@{formula}}
+\index{formula@{formula}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{formula}]{\setlength{\rightskip}{0pt plus 5cm}{\bf opt\+\_\+formula}$\ast$ formula}}\label{read__conf_8h_af2e12a68ed24f8ec049781947e8c41b6}
+
+
+the set of formula 
+
+
+
+Définition à la ligne 15 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a8f1e2e14840d175cec00fa22ab1d52cb}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!formula\+\_\+prev@{formula\+\_\+prev}}
+\index{formula\+\_\+prev@{formula\+\_\+prev}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{formula\+\_\+prev}]{\setlength{\rightskip}{0pt plus 5cm}{\bf opt\+\_\+formula}$\ast$ formula\+\_\+prev}}\label{read__conf_8h_a8f1e2e14840d175cec00fa22ab1d52cb}
+
+
+Définition à la ligne 16 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_ae6501cc9c7c378077ab2ed8f7aafdde4}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!groups@{groups}}
+\index{groups@{groups}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{groups}]{\setlength{\rightskip}{0pt plus 5cm}{\bf group}$\ast$ groups}}\label{read__conf_8h_ae6501cc9c7c378077ab2ed8f7aafdde4}
+
+
+the group list 
+
+
+
+Définition à la ligne 21 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_acdb7eeffc57954e75937777fb662ae94}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!grp\+\_\+nb@{grp\+\_\+nb}}
+\index{grp\+\_\+nb@{grp\+\_\+nb}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{grp\+\_\+nb}]{\setlength{\rightskip}{0pt plus 5cm}int grp\+\_\+nb}}\label{read__conf_8h_acdb7eeffc57954e75937777fb662ae94}
+
+
+the group number 
+
+
+
+Définition à la ligne 68 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a43b9b0bde478ad2582edd58be5615357}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!grp\+\_\+pair\+\_\+nb@{grp\+\_\+pair\+\_\+nb}}
+\index{grp\+\_\+pair\+\_\+nb@{grp\+\_\+pair\+\_\+nb}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{grp\+\_\+pair\+\_\+nb}]{\setlength{\rightskip}{0pt plus 5cm}int grp\+\_\+pair\+\_\+nb}}\label{read__conf_8h_a43b9b0bde478ad2582edd58be5615357}
+
+
+Définition à la ligne 25 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a6c58ad65fc393826034b7615e5003d26}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!ins\+\_\+list@{ins\+\_\+list}}
+\index{ins\+\_\+list@{ins\+\_\+list}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{ins\+\_\+list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf posi\+\_\+instance}$\ast$$\ast$ ins\+\_\+list}}\label{read__conf_8h_a6c58ad65fc393826034b7615e5003d26}
+
+
+1\+D matrix of all the instance pointers 
+
+
+
+Définition à la ligne 23 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_ae812d9b8e495b3d30980e0aa1e50d20b}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!ins\+\_\+nb@{ins\+\_\+nb}}
+\index{ins\+\_\+nb@{ins\+\_\+nb}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{ins\+\_\+nb}]{\setlength{\rightskip}{0pt plus 5cm}int ins\+\_\+nb}}\label{read__conf_8h_ae812d9b8e495b3d30980e0aa1e50d20b}
+
+
+number of position instance 
+
+
+
+Définition à la ligne 67 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a83fcb9a2c03da4a1810f237ef1ba92cd}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!ref\+\_\+eners@{ref\+\_\+eners}}
+\index{ref\+\_\+eners@{ref\+\_\+eners}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{ref\+\_\+eners}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ref\+\_\+ener}$\ast$ ref\+\_\+eners}}\label{read__conf_8h_a83fcb9a2c03da4a1810f237ef1ba92cd}
+
+
+Définition à la ligne 18 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a145b137996f39d1bb6b4f743f8d53a4c}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!ref\+\_\+eners\+\_\+nb@{ref\+\_\+eners\+\_\+nb}}
+\index{ref\+\_\+eners\+\_\+nb@{ref\+\_\+eners\+\_\+nb}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{ref\+\_\+eners\+\_\+nb}]{\setlength{\rightskip}{0pt plus 5cm}int ref\+\_\+eners\+\_\+nb}}\label{read__conf_8h_a145b137996f39d1bb6b4f743f8d53a4c}
+
+
+Définition à la ligne 19 du fichier read\+\_\+conf.\+c.
+
+\hypertarget{read__conf_8h_a0d96ff6836114f50fefb70232bf5eb64}{\index{read\+\_\+conf.\+h@{read\+\_\+conf.\+h}!T\+A\+G\+S@{T\+A\+G\+S}}
+\index{T\+A\+G\+S@{T\+A\+G\+S}!read\+\_\+conf.\+h@{read\+\_\+conf.\+h}}
+\subsubsection[{T\+A\+G\+S}]{\setlength{\rightskip}{0pt plus 5cm}char T\+A\+G\+S\mbox{[}{\bf T\+A\+G\+\_\+\+N\+B}\mbox{]}\mbox{[}{\bf M\+A\+X\+\_\+\+C\+H\+A\+R}\mbox{]}}}\label{read__conf_8h_a0d96ff6836114f50fefb70232bf5eb64}
+
+
+Définition à la ligne 28 du fichier read\+\_\+conf.\+c.
+

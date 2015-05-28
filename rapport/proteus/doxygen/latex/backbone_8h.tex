@@ -1,0 +1,147 @@
+\hypertarget{backbone_8h}{\section{Référence du fichier /home/mignon/bioinfo/proteus/gitlab/proteus/backbone.h}
+\label{backbone_8h}\index{/home/mignon/bioinfo/proteus/gitlab/proteus/backbone.\+h@{/home/mignon/bioinfo/proteus/gitlab/proteus/backbone.\+h}}
+}
+{\ttfamily \#include \char`\"{}residues.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de backbone.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{backbone_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{backbone_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_p_d_b__data}{P\+D\+B\+\_\+data}
+\item 
+struct \hyperlink{structresidue__ener}{residue\+\_\+ener}
+\item 
+struct \hyperlink{structbb__ener}{bb\+\_\+ener}
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{backbone_8h_a4f7e10de2257dad45c9978bf0fc8ee8c}{det\+\_\+backbone} (char $\ast$name, int nb\+\_\+bb)
+\item 
+\hyperlink{struct_p_d_b__data}{P\+D\+B\+\_\+data} \hyperlink{backbone_8h_a0d2051fc3ba1876a9162a59ed3657920}{read\+\_\+posi} (char $\ast$P\+D\+B\+\_\+posi, \hyperlink{struct_p_d_b__data}{P\+D\+B\+\_\+data} info\+\_\+posi)
+\item 
+int \hyperlink{backbone_8h_a4d0088db3af31120e3d209e27a7636b4}{det\+\_\+posi\+\_\+bb} (int residi)
+\item 
+int \hyperlink{backbone_8h_a8204380d91a43feae0e0288985ee6fcd}{posi\+\_\+exists\+\_\+name\+\_\+bb} (char $\ast$P\+D\+B\+\_\+name, int l)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structbb__ener}{bb\+\_\+ener} $\ast$ \hyperlink{backbone_8h_a82bfdf85feb95b552bf2a10f4aa96fc4}{bb\+\_\+eners}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{backbone_8h_a4f7e10de2257dad45c9978bf0fc8ee8c}{\index{backbone.\+h@{backbone.\+h}!det\+\_\+backbone@{det\+\_\+backbone}}
+\index{det\+\_\+backbone@{det\+\_\+backbone}!backbone.\+h@{backbone.\+h}}
+\subsubsection[{det\+\_\+backbone}]{\setlength{\rightskip}{0pt plus 5cm}int det\+\_\+backbone (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{int}]{nb\+\_\+bb}
+\end{DoxyParamCaption}
+)}}\label{backbone_8h_a4f7e10de2257dad45c9978bf0fc8ee8c}
+Define the id of the backbone from the chain name 
+\begin{DoxyParams}{Paramètres}
+{\em name} & the name of the chain \\
+\hline
+{\em nb\+\_\+bb} & the number of backbone \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+id of the backbone 
+\end{DoxyReturn}
+
+
+Définition à la ligne 15 du fichier backbone.\+c.
+
+\hypertarget{backbone_8h_a4d0088db3af31120e3d209e27a7636b4}{\index{backbone.\+h@{backbone.\+h}!det\+\_\+posi\+\_\+bb@{det\+\_\+posi\+\_\+bb}}
+\index{det\+\_\+posi\+\_\+bb@{det\+\_\+posi\+\_\+bb}!backbone.\+h@{backbone.\+h}}
+\subsubsection[{det\+\_\+posi\+\_\+bb}]{\setlength{\rightskip}{0pt plus 5cm}int det\+\_\+posi\+\_\+bb (
+\begin{DoxyParamCaption}
+\item[{int}]{residi}
+\end{DoxyParamCaption}
+)}}\label{backbone_8h_a4d0088db3af31120e3d209e27a7636b4}
+Define the effective position in the backbone array from a P\+D\+B position 
+\begin{DoxyParams}{Paramètres}
+{\em residi} & the pdb position to search \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the effective position in the backbone array 
+\end{DoxyReturn}
+
+
+Définition à la ligne 73 du fichier backbone.\+c.
+
+\hypertarget{backbone_8h_a8204380d91a43feae0e0288985ee6fcd}{\index{backbone.\+h@{backbone.\+h}!posi\+\_\+exists\+\_\+name\+\_\+bb@{posi\+\_\+exists\+\_\+name\+\_\+bb}}
+\index{posi\+\_\+exists\+\_\+name\+\_\+bb@{posi\+\_\+exists\+\_\+name\+\_\+bb}!backbone.\+h@{backbone.\+h}}
+\subsubsection[{posi\+\_\+exists\+\_\+name\+\_\+bb}]{\setlength{\rightskip}{0pt plus 5cm}int posi\+\_\+exists\+\_\+name\+\_\+bb (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{P\+D\+B\+\_\+name, }
+\item[{int}]{l}
+\end{DoxyParamCaption}
+)}}\label{backbone_8h_a8204380d91a43feae0e0288985ee6fcd}
+Search if the number is a pdb position in bb\+\_\+eners (for a backbone id given) 
+\begin{DoxyParams}{Paramètres}
+{\em P\+D\+B\+\_\+name} & the P\+D\+B name of the position (6\+A or 6\+::\+A) \\
+\hline
+{\em l} & the backbone id to search \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+boolean true or false 
+\end{DoxyReturn}
+
+
+Définition à la ligne 90 du fichier backbone.\+c.
+
+\hypertarget{backbone_8h_a0d2051fc3ba1876a9162a59ed3657920}{\index{backbone.\+h@{backbone.\+h}!read\+\_\+posi@{read\+\_\+posi}}
+\index{read\+\_\+posi@{read\+\_\+posi}!backbone.\+h@{backbone.\+h}}
+\subsubsection[{read\+\_\+posi}]{\setlength{\rightskip}{0pt plus 5cm}{\bf P\+D\+B\+\_\+data} read\+\_\+posi (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{P\+D\+B\+\_\+posi, }
+\item[{{\bf P\+D\+B\+\_\+data}}]{info\+\_\+posi}
+\end{DoxyParamCaption}
+)}}\label{backbone_8h_a0d2051fc3ba1876a9162a59ed3657920}
+Read all information from P\+D\+B\+\_\+posi (6\+::\+A or 6\+A) 
+\begin{DoxyParams}{Paramètres}
+{\em P\+D\+B\+\_\+posi} & the name of the P\+D\+B position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the P\+D\+B\+\_\+datas containing all informations 
+\end{DoxyReturn}
+mode 5\+::\+A
+
+mode 5\+A or 5
+
+if its a int
+
+if its a char 
+
+Définition à la ligne 29 du fichier backbone.\+c.
+
+
+
+\subsection{Documentation des variables}
+\hypertarget{backbone_8h_a82bfdf85feb95b552bf2a10f4aa96fc4}{\index{backbone.\+h@{backbone.\+h}!bb\+\_\+eners@{bb\+\_\+eners}}
+\index{bb\+\_\+eners@{bb\+\_\+eners}!backbone.\+h@{backbone.\+h}}
+\subsubsection[{bb\+\_\+eners}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bb\+\_\+ener}$\ast$ bb\+\_\+eners}}\label{backbone_8h_a82bfdf85feb95b552bf2a10f4aa96fc4}
+
+
+Définition à la ligne 13 du fichier backbone.\+c.
+

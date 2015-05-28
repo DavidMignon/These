@@ -1,0 +1,1668 @@
+\hypertarget{proteus_8c}{\section{Référence du fichier /home/mignon/bioinfo/proteus/gitlab/proteus/proteus.c}
+\label{proteus_8c}\index{/home/mignon/bioinfo/proteus/gitlab/proteus/proteus.\+c@{/home/mignon/bioinfo/proteus/gitlab/proteus/proteus.\+c}}
+}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$assert.\+h$>$}\\*
+{\ttfamily \#include $<$signal.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$mcheck.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$limits.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$dirent.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include $<$gsl/gsl\+\_\+rng.\+h$>$}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$float.\+h$>$}\\*
+{\ttfamily \#include $<$omp.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}global.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}read\+\_\+conf.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ener\+\_\+cache.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}read\+\_\+ener.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de proteus.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{proteus_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structconformation}{conformation}
+\item 
+struct \hyperlink{structdesc__conf}{desc\+\_\+conf}
+\item 
+struct \hyperlink{structins__modif}{ins\+\_\+modif}
+\item 
+struct \hyperlink{structins__modifs}{ins\+\_\+modifs}
+\item 
+struct \hyperlink{structpossible__instances}{possible\+\_\+instances}
+\item 
+struct \hyperlink{structneighbors}{neighbors}
+\begin{DoxyCompactList}\small\item\em pos\+J is a neighbor of pos\+I if there are rot\+J and rot\+I with ener\mbox{[}rot\+I\mbox{]}\mbox{[}rot\+J\mbox{]}$>$= neighbor\+\_\+threshold \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{proteus_8c_a5c71a5e59a53413cd6c270266d63b031}{R}~0.\+001987
+\item 
+\#define \hyperlink{proteus_8c_a691389aa8e7978a9a084ac9f0992cc00}{F\+I\+R\+S\+T\+\_\+\+I\+N\+S\+\_\+\+C\+O\+L}~3
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{proteus_8c_a0d20b69b0ad703df78459e1033d5c1d4}{print\+Help} ()
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{proteus_8c_af681462fc359907fa5af227855dca2d4}{open\+\_\+output\+\_\+file} (int tag\+\_\+id, int suffix\+\_\+id, const char $\ast$default\+\_\+name)
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{proteus_8c_a04c0f2c9c83f06a4b8de5b0cc3caabb6}{open\+\_\+seq\+\_\+input} ()
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{proteus_8c_afc7660c6f8c63bbab7fedc42a6fe3dee}{get\+\_\+seq\+\_\+input} ()
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{proteus_8c_a27244f5c7cc2852b1e0d9be9ae0398c6}{init\+\_\+seq\+\_\+output} (int suffix\+\_\+id)
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{proteus_8c_aec6e0d8148cdee200b06e4cdcfc9ba48}{init\+\_\+ener\+\_\+output} (int suffix\+\_\+id)
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{proteus_8c_a6152a764a53f80617eb6ef74ca627ebf}{open\+\_\+efasta} ()
+\item 
+int \hyperlink{proteus_8c_aab8d489303aaf8d14fb48baeb0fef2d3}{def\+\_\+cycle\+\_\+nb} ()
+\item 
+int \hyperlink{proteus_8c_a61bd0fe013955ba289b43c86f897958e}{def\+\_\+walker\+\_\+nb} ()
+\item 
+int \hyperlink{proteus_8c_aacf741d8211a4deac3d0c1e7eb01f180}{def\+\_\+seq\+\_\+pass\+\_\+nb} ()
+\item 
+int \hyperlink{proteus_8c_a1bde5604afb0738da014d65e82c51f8a}{det\+\_\+type\+\_\+of\+\_\+rot} (int rot, int ins\+\_\+id)
+\item 
+int \hyperlink{proteus_8c_ae5f812689e4890d3b811a4b88f8042c4}{rand\+\_\+int} (gsl\+\_\+rng $\ast$rng, const int from\+\_\+int, const int size)
+\item 
+int \hyperlink{proteus_8c_a9f685c8cbc950140f172106b0812d3af}{rand\+\_\+type} (gsl\+\_\+rng $\ast$rng, int ins)
+\item 
+int \hyperlink{proteus_8c_afa26efb523c367fcb66ebf726cb60a11}{det\+\_\+active} (int walker\+\_\+id)
+\item 
+int \hyperlink{proteus_8c_a827a592b2200bd99ba71d238d4cb2dd8}{det\+\_\+prev\+\_\+active} (int walker\+\_\+id)
+\item 
+int \hyperlink{proteus_8c_ad9e5af9dd7bf454be1adc8716180a388}{def\+\_\+swap\+\_\+period} (int walker\+\_\+nb)
+\item 
+void \hyperlink{proteus_8c_ae32201c8da7250658f1856e9a7ba01cf}{def\+\_\+matrix\+\_\+transition} ()
+\item 
+int \hyperlink{proteus_8c_a7d3e41bc13746a0ed305a244b6501481}{type\+\_\+exists} (int i, char $\ast$\hyperlink{structtype}{type})
+\item 
+int \hyperlink{proteus_8c_a6a0f75985d8bc0028d966afbebdb6d4c}{rot\+\_\+exists} (int i, int j, int rotam)
+\item 
+void \hyperlink{proteus_8c_ad8b909e6e8a856ef3e0409f2c0187d2b}{build\+\_\+residues} ()
+\item 
+\hyperlink{structconformation}{conformation} \hyperlink{proteus_8c_aea3c185eac36f6e7a0305fe08a1b0f25}{def\+\_\+confo} ()
+\item 
+int \hyperlink{proteus_8c_aeaeb2f7ae94205f6bbd92b8be4d848fb}{init\+\_\+confo} (gsl\+\_\+rng $\ast$rng, \hyperlink{structconformation}{conformation} c, int init\+\_\+cpt, F\+I\+L\+E $\ast$seq\+\_\+input, int init\+\_\+nb, float proba\+\_\+bb, int walker\+\_\+id)
+\item 
+int \hyperlink{proteus_8c_ab8be778b186760a7d8efaca0b068cb27}{next\+Confo} (\hyperlink{structins__modifs}{ins\+\_\+modifs} modifs, const int \hyperlink{structtype}{type})
+\item 
+double \hyperlink{proteus_8c_a079ccb20595247d3b0346b7297baa036}{compute\+Formula} (double grp\+\_\+eners\mbox{[}$\,$\mbox{]}, \hyperlink{structopt__formula}{opt\+\_\+formula} $\ast$\hyperlink{read__conf_8h_af2e12a68ed24f8ec049781947e8c41b6}{formula}, int walker\+\_\+id)
+\item 
+int \hyperlink{proteus_8c_a7b25e2f53ffa1b9978ac0c04e3c3b5f6}{def\+\_\+bb\+\_\+grp} (char $\ast$grp\+\_\+name)
+\item 
+void \hyperlink{proteus_8c_a558ac7c2d8a8a59c86dae5801b59cc93}{compute\+\_\+grp\+\_\+eners} (\hyperlink{structconformation}{conformation} c, double grp\+\_\+eners\mbox{[}$\,$\mbox{]}, double best\+\_\+grp\+\_\+eners\mbox{[}$\,$\mbox{]}, int walker\+\_\+id)
+\item 
+void \hyperlink{proteus_8c_a2fa955e7cc14fe012043d75254fac1de}{update\+\_\+grp\+\_\+eners} (\hyperlink{structconformation}{conformation} c, \hyperlink{structins__modifs}{ins\+\_\+modifs} modifs, double grp\+\_\+eners\mbox{[}$\,$\mbox{]}, int walker\+\_\+id)
+\item 
+\hyperlink{structgrp__pair}{grp\+\_\+pair} \hyperlink{proteus_8c_a5dc0f5ecdbfeab4757d61fe8c224705e}{def\+\_\+id\+\_\+grp} (int ins\+\_\+id, \hyperlink{structgrp__pair}{grp\+\_\+pair} tab)
+\item 
+void \hyperlink{proteus_8c_a18fa04c69302e1a30480460f27fc2907}{apply\+\_\+modifs} (\hyperlink{structconformation}{conformation} c, \hyperlink{structins__modifs}{ins\+\_\+modifs} modifs)
+\item 
+void \hyperlink{proteus_8c_ac8e35219a05e618d430b94a39be2f31e}{init\+Mean\+Field} (long double E\mbox{[}$\,$\mbox{]}, long double \hyperlink{proteus_8c_a8526a54c363472a4f331ae9ca3cef5ab}{P}\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{proteus_8c_aabdf238899d33c4d71864b8059eb956b}{print\+Mean\+Field} (F\+I\+L\+E $\ast$seq\+\_\+output)
+\item 
+void \hyperlink{proteus_8c_a19480b2cfece84c7b05fb3511309ecf9}{compute\+Mean\+Field} ()
+\item 
+void \hyperlink{proteus_8c_a1daace82b4d6fb4b236574997dbcf22a}{print\+\_\+result} (F\+I\+L\+E $\ast$seq\+\_\+output, F\+I\+L\+E $\ast$ener\+\_\+output, \hyperlink{structconformation}{conformation} c, double best\+\_\+grp\+\_\+eners\mbox{[}$\,$\mbox{]}, double best\+\_\+ener, int step, int print\+\_\+id, float T, int walker\+\_\+id, int cmpt)
+\item 
+void \hyperlink{proteus_8c_a14b40b4baef2d124b76c72cde215486a}{print\+\_\+stat} (int thread\+\_\+id, clock\+\_\+t start, int cycle, char $\ast$\hyperlink{structtype}{type})
+\item 
+void \hyperlink{proteus_8c_a423f1a78d7fd37c25663c6be24024e9c}{free\+\_\+confo} (\hyperlink{structconformation}{conformation} c)
+\item 
+void \hyperlink{proteus_8c_a60db393f5bed3c5fa71f903a3f9756a5}{free\+\_\+grp\+\_\+ener\+\_\+walker} (\hyperlink{structgrp__ener__walker}{grp\+\_\+ener\+\_\+walker} $\ast$grp)
+\item 
+int \hyperlink{proteus_8c_abae7f2399e89680f4b5e55ed63afd4af}{is\+\_\+\+Better} (double new\+\_\+ener, double best\+\_\+ener)
+\item 
+int \hyperlink{proteus_8c_a3b2e3ef0c7df7d15528c5e0aa6b79c12}{is\+\_\+\+M\+Cbetter} (gsl\+\_\+rng $\ast$rng, double new\+\_\+ener, double best\+\_\+ener, float T, int t, int bb\+\_\+change)
+\item 
+int \hyperlink{proteus_8c_a04223642d59299e0a5493d9a6dba8d13}{is\+\_\+\+M\+Crel\+\_\+better} (gsl\+\_\+rng $\ast$rng, \hyperlink{structdesc__conf}{desc\+\_\+conf} conf, double best\+\_\+ener, float T)
+\item 
+int \hyperlink{proteus_8c_a81e39d86857d7436d5402939df985726}{is\+\_\+swap\+\_\+allowed} (gsl\+\_\+rng $\ast$rng, float Ei, float Ej, float Ti, float Tj)
+\item 
+void \hyperlink{proteus_8c_aaab1db88cbb74543d4af864e5582d3e6}{reset\+\_\+modifs} (\hyperlink{structins__modifs}{ins\+\_\+modifs} $\ast$pm)
+\item 
+void \hyperlink{proteus_8c_a799126fbcc36b54abef07e34b7b9974a}{prepare\+\_\+modifs} (\hyperlink{structins__modifs}{ins\+\_\+modifs} $\ast$pm, \hyperlink{read__conf_8h_ae233ac376b010d04519bd914edac5260}{posi\+\_\+instance} $\ast$ins)
+\item 
+void \hyperlink{proteus_8c_a83b433767fad06351ce204ae0141edff}{compute\+Heuristic} ()
+\item 
+void \hyperlink{proteus_8c_a95053af503c7ca4f0cbef717fe4cd763}{set\+\_\+ins\+\_\+proba} (\hyperlink{read__conf_8h_ae233ac376b010d04519bd914edac5260}{posi\+\_\+instance} $\ast$ins, float proba, int code)
+\item 
+void \hyperlink{proteus_8c_a814517d01c5859fea553eceb12a72a6e}{read\+\_\+proba\+\_\+lines} (int code)
+\item 
+void \hyperlink{proteus_8c_a193e774103ff1578b407f3486dcf46c8}{get\+\_\+ins\+\_\+proba} (\hyperlink{struct_proba}{Proba} proba)
+\item 
+void \hyperlink{proteus_8c_aac3cbd4d369d42c529e229842409d1de}{init\+\_\+possible\+\_\+instances} (\hyperlink{structpossible__instances}{possible\+\_\+instances} $\ast$pi, int ref\+\_\+ins, \hyperlink{structneighbors}{neighbors} $\ast$neighborhoods)
+\item 
+void \hyperlink{proteus_8c_a7e36c5704a548ac42289733874795534}{update\+\_\+possible\+\_\+instances} (int ins\+\_\+id, \hyperlink{structpossible__instances}{possible\+\_\+instances} $\ast$pi, \hyperlink{structneighbors}{neighbors} $\ast$neighborhoods)
+\item 
+void \hyperlink{proteus_8c_a4392d9f6c92f9e7d9cb937ee08f83ab0}{update\+\_\+modifs} (\hyperlink{read__conf_8h_ae233ac376b010d04519bd914edac5260}{posi\+\_\+instance} $\ast$ins, int \hyperlink{structtype}{type}, int rot, \hyperlink{structins__modifs}{ins\+\_\+modifs} $\ast$pm)
+\item 
+void \hyperlink{proteus_8c_a5ef2bf0bb77dda336bd2b7393efa7b53}{modif\+\_\+confo} (gsl\+\_\+rng $\ast$rng, \hyperlink{read__conf_8h_ae233ac376b010d04519bd914edac5260}{posi\+\_\+instance} $\ast$ins0, int \hyperlink{structtype}{type}, \hyperlink{structins__modifs}{ins\+\_\+modifs} $\ast$pm, \hyperlink{structpossible__instances}{possible\+\_\+instances} $\ast$pi, \hyperlink{structneighbors}{neighbors} $\ast$neighborhoods)
+\item 
+\hyperlink{read__conf_8h_ae233ac376b010d04519bd914edac5260}{posi\+\_\+instance} $\ast$ \hyperlink{proteus_8c_ab12ee197aa24ced2d1ec48b32d2c01ec}{rand\+\_\+ins} (gsl\+\_\+rng $\ast$rng, \hyperlink{structpossible__instances}{possible\+\_\+instances} pi)
+\item 
+\hyperlink{read__conf_8h_ae233ac376b010d04519bd914edac5260}{posi\+\_\+instance} $\ast$ \hyperlink{proteus_8c_a7a3bc26e436f05c0cd81aa298cfa0f62}{rand\+\_\+ins\+\_\+bb} (gsl\+\_\+rng $\ast$rng, int $\ast$ne\+\_\+bb)
+\item 
+int \hyperlink{proteus_8c_a85837744e96b8154f887e9f3e79d3c0e}{is\+\_\+true\+\_\+modif} (\hyperlink{structconformation}{conformation} c, \hyperlink{structins__modifs}{ins\+\_\+modifs} $\ast$pm, int bb\+\_\+change)
+\item 
+int \hyperlink{proteus_8c_a91092e960d470534eb5840e636cc417c}{next\+State} (gsl\+\_\+rng $\ast$rng, \hyperlink{structconformation}{conformation} c, \hyperlink{struct_proba}{Proba} proba, float proba\+\_\+bb, \hyperlink{structins__modifs}{ins\+\_\+modifs} $\ast$pmodifs, \hyperlink{structneighbors}{neighbors} $\ast$neighborhoods, int $\ast$ne\+\_\+bb, int bb\+\_\+change, int walker\+\_\+id)
+\item 
+\hyperlink{structneighbors}{neighbors} $\ast$ \hyperlink{proteus_8c_ad93dc3a8714d8665c5fc51d626c80679}{def\+\_\+neighborhoods} ()
+\item 
+int \hyperlink{proteus_8c_a810804ede89ae89a7d957c3bd58a125c}{det\+\_\+ins\+\_\+bb} (int ins\+\_\+id)
+\item 
+int \hyperlink{proteus_8c_a534600d441d254bb0e1785cdc38711b8}{ins\+\_\+exist} (int $\ast$ne\+\_\+bb, int ins\+\_\+id, int length)
+\item 
+int $\ast$ \hyperlink{proteus_8c_a87fdcf20651b0d8f00e4cf6535508ec4}{def\+\_\+neighborhoods\+\_\+bb} (\hyperlink{structneighbors}{neighbors} $\ast$ne\+\_\+prot)
+\item 
+void \hyperlink{proteus_8c_a03e5b721c407076699f7b652f631a710}{cpy\+\_\+grp\+\_\+ener} (int walker\+\_\+id)
+\item 
+void \hyperlink{proteus_8c_aac076fa2cbd91398c7a28569e807cca9}{cpy\+\_\+best\+\_\+grp\+\_\+ener} (int walker\+\_\+id)
+\item 
+void \hyperlink{proteus_8c_adfe3253f405122b701cdadb7ad52db6b}{print\+\_\+grp\+\_\+ener} (double $\ast$tab, int length)
+\item 
+void \hyperlink{proteus_8c_a7697ee0f381590ca68871bf74a5368ca}{reset\+\_\+bb} (int walker\+\_\+id)
+\item 
+\hyperlink{structconformation}{conformation} \hyperlink{proteus_8c_a15554e16ba3e1993f099a63151a460d7}{cpy\+\_\+conf} (\hyperlink{structconformation}{conformation} source, \hyperlink{structconformation}{conformation} dest)
+\item 
+void \hyperlink{proteus_8c_a8ecb37c91205b8d0fdc2af2a8a16210b}{print\+\_\+conf} (\hyperlink{structconformation}{conformation} c)
+\item 
+double $\ast$ \hyperlink{proteus_8c_abed9226baf88c835f446d8578a07a536}{update\+\_\+grp\+\_\+eners\+\_\+prev} (double $\ast$grp\+\_\+eners\+\_\+prev, int walker\+\_\+id)
+\item 
+double $\ast$ \hyperlink{proteus_8c_a577db92217f385a4813d114ed0d4b689}{update\+\_\+grp\+\_\+eners\+\_\+prev\+\_\+back} (double $\ast$grp\+\_\+eners\+\_\+prev, int walker\+\_\+id)
+\item 
+\hyperlink{structdesc__conf}{desc\+\_\+conf} \hyperlink{proteus_8c_a901ff3e3d99a6dbdd22f750ad2409586}{M\+C\+\_\+relaxation} (\hyperlink{structdesc__conf}{desc\+\_\+conf} conf\+\_\+bb, \hyperlink{structins__modifs}{ins\+\_\+modifs} modifs, gsl\+\_\+rng $\ast$rng, \hyperlink{structconformation}{conformation} c, \hyperlink{struct_proba}{Proba} proba, float proba\+\_\+bb, double new\+\_\+eners, double best\+\_\+eners, double $\ast$grp\+\_\+eners, int step, float T, int $\ast$ne\+\_\+bb, \hyperlink{structneighbors}{neighbors} $\ast$neighborhoods, int walker\+\_\+id)
+\item 
+\hyperlink{structopt__formula}{opt\+\_\+formula} $\ast$ \hyperlink{proteus_8c_a8a1b8d716bf7fa8022b4651d8116315f}{dupl\+\_\+formula} (\hyperlink{structopt__formula}{opt\+\_\+formula} $\ast$\hyperlink{read__conf_8h_af2e12a68ed24f8ec049781947e8c41b6}{formula}, int walker\+\_\+nb)
+\item 
+void \hyperlink{proteus_8c_a6822e6360f81a25c434c22a987617242}{dupl\+\_\+matrix} (int walker\+\_\+nb)
+\item 
+void \hyperlink{proteus_8c_afef7a68c2f30b42ac8d5a338164e14e4}{dupl\+\_\+grp\+\_\+ener\+\_\+walker} (int walker\+\_\+nb)
+\item 
+void \hyperlink{proteus_8c_a6956cc5c54e3bc7e5619f8190b0e1a12}{compute\+Monte\+Carlo} ()
+\item 
+void \hyperlink{proteus_8c_a25d788f29118274aad5b401c6f1851c2}{build\+\_\+efasta} (\hyperlink{struct_proba}{Proba} proba)
+\item 
+void \hyperlink{proteus_8c_a2122242147f92a3b6f5bfe30693f774c}{free\+\_\+groups} ()
+\item 
+void \hyperlink{proteus_8c_a7b38d2b5e12519ab24bc6cc45fa83ed7}{free\+\_\+residues} ()
+\item 
+int \hyperlink{proteus_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{proteus_8c_ab3f078684998b83967d507d0f453f454}{verbose} =false
+\item 
+bool \hyperlink{proteus_8c_ae4426f467d61ae456b95844d4d9c2dcd}{quiet} =false
+\item 
+float \hyperlink{proteus_8c_ab1551d8043c2aa4410fb7dbb1fe3be7b}{alpha}
+\item 
+float \hyperlink{proteus_8c_a2dceb63003a97fa431d06d1d07edc449}{epsilon}
+\item 
+float \hyperlink{proteus_8c_acac4a565486bad0b88b62387d8a5d891}{lambda}
+\item 
+char $\ast$ \hyperlink{proteus_8c_a51a3838749893681c8816f3572d19b4f}{enerdir}
+\item 
+int \hyperlink{proteus_8c_a82578da3962ce46ce29e2019b7904491}{rot\+\_\+nb} =0
+\item 
+int \hyperlink{proteus_8c_a7a3346e48f134b69f8bab0c96cf780b7}{nb\+\_\+posi\+\_\+total} =0
+\item 
+int \hyperlink{proteus_8c_a4bea311882e7028639c0132838970aba}{bb\+\_\+nb} =0
+\item 
+int \hyperlink{proteus_8c_a895aa28767af54e97bf83a28961c2299}{posi\+\_\+nb} =0
+\begin{DoxyCompactList}\small\item\em number of position in the $\ast$.bb file \end{DoxyCompactList}\item 
+int \hyperlink{proteus_8c_a1ea5d0cb93f22f7d0fdf804bd68c3326}{mode}
+\item 
+D\+I\+R $\ast$ \hyperlink{proteus_8c_a201b60e51b49f9eae91168c6dd7d3cc2}{ener\+\_\+folder}
+\item 
+char $\ast$$\ast$ \hyperlink{proteus_8c_ae8dc11ebaa96c7726e55b42412243b50}{config} \mbox{[}\hyperlink{global_8h_a9b69fba98c1dfe5bf628cfa9e90aa9d7}{T\+A\+G\+\_\+\+N\+B}\mbox{]}
+\begin{DoxyCompactList}\small\item\em store the info from the config file\+: tag number x lines by tag \end{DoxyCompactList}\item 
+\hyperlink{structmatrix__transition}{matrix\+\_\+transition} $\ast$ \hyperlink{proteus_8c_a4fe1d8c4466c04cbb4132fad3c88c5ca}{matrix\+\_\+trans}
+\item 
+\hyperlink{structgrp__pair}{grp\+\_\+pair} $\ast$ \hyperlink{proteus_8c_a9f7317e6cb3ede7fd0e1cdada2ebb46d}{grp\+\_\+pairs}
+\item 
+\hyperlink{structgrp__ener__walker}{grp\+\_\+ener\+\_\+walker} $\ast$ \hyperlink{proteus_8c_a205145c2f6049d25c0993356584edabb}{grps\+\_\+ener\+\_\+walker}
+\item 
+long double $\ast$ \hyperlink{proteus_8c_a8526a54c363472a4f331ae9ca3cef5ab}{P}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des macros}
+\hypertarget{proteus_8c_a691389aa8e7978a9a084ac9f0992cc00}{\index{proteus.\+c@{proteus.\+c}!F\+I\+R\+S\+T\+\_\+\+I\+N\+S\+\_\+\+C\+O\+L@{F\+I\+R\+S\+T\+\_\+\+I\+N\+S\+\_\+\+C\+O\+L}}
+\index{F\+I\+R\+S\+T\+\_\+\+I\+N\+S\+\_\+\+C\+O\+L@{F\+I\+R\+S\+T\+\_\+\+I\+N\+S\+\_\+\+C\+O\+L}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{F\+I\+R\+S\+T\+\_\+\+I\+N\+S\+\_\+\+C\+O\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+I\+R\+S\+T\+\_\+\+I\+N\+S\+\_\+\+C\+O\+L~3}}\label{proteus_8c_a691389aa8e7978a9a084ac9f0992cc00}
+
+
+Définition à la ligne 51 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a5c71a5e59a53413cd6c270266d63b031}{\index{proteus.\+c@{proteus.\+c}!R@{R}}
+\index{R@{R}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R~0.\+001987}}\label{proteus_8c_a5c71a5e59a53413cd6c270266d63b031}
+
+
+Définition à la ligne 50 du fichier proteus.\+c.
+
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{proteus_8c_a18fa04c69302e1a30480460f27fc2907}{\index{proteus.\+c@{proteus.\+c}!apply\+\_\+modifs@{apply\+\_\+modifs}}
+\index{apply\+\_\+modifs@{apply\+\_\+modifs}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{apply\+\_\+modifs}]{\setlength{\rightskip}{0pt plus 5cm}void apply\+\_\+modifs (
+\begin{DoxyParamCaption}
+\item[{{\bf conformation}}]{c, }
+\item[{{\bf ins\+\_\+modifs}}]{modifs}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a18fa04c69302e1a30480460f27fc2907}
+Apply modifications in the conformation 
+\begin{DoxyParams}{Paramètres}
+{\em c} & the current conformation \\
+\hline
+{\em modifs} & the modifs to apply \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 1285 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a25d788f29118274aad5b401c6f1851c2}{\index{proteus.\+c@{proteus.\+c}!build\+\_\+efasta@{build\+\_\+efasta}}
+\index{build\+\_\+efasta@{build\+\_\+efasta}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{build\+\_\+efasta}]{\setlength{\rightskip}{0pt plus 5cm}void build\+\_\+efasta (
+\begin{DoxyParamCaption}
+\item[{{\bf Proba}}]{proba}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a25d788f29118274aad5b401c6f1851c2}
+Build the output file in F\+A\+S\+T\+A format 
+
+Définition à la ligne 3091 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_ad8b909e6e8a856ef3e0409f2c0187d2b}{\index{proteus.\+c@{proteus.\+c}!build\+\_\+residues@{build\+\_\+residues}}
+\index{build\+\_\+residues@{build\+\_\+residues}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{build\+\_\+residues}]{\setlength{\rightskip}{0pt plus 5cm}void build\+\_\+residues (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_ad8b909e6e8a856ef3e0409f2c0187d2b}
+Read the backbone energy fail matrix.\+bb to build the residues and the bb\+\_\+eners arraies si c'est fixe
+
+si la position existe
+
+mettu residues dans res
+
+sinon on met res à -\/1
+
+si c'est flexible
+
+si la position existe
+
+mettre id du residues dans res
+
+sinon on met res à -\/1
+
+change the references energies if the type3l is stored in the \hyperlink{structref__ener}{ref\+\_\+ener} structure 
+
+Définition à la ligne 585 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a558ac7c2d8a8a59c86dae5801b59cc93}{\index{proteus.\+c@{proteus.\+c}!compute\+\_\+grp\+\_\+eners@{compute\+\_\+grp\+\_\+eners}}
+\index{compute\+\_\+grp\+\_\+eners@{compute\+\_\+grp\+\_\+eners}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{compute\+\_\+grp\+\_\+eners}]{\setlength{\rightskip}{0pt plus 5cm}void compute\+\_\+grp\+\_\+eners (
+\begin{DoxyParamCaption}
+\item[{{\bf conformation}}]{c, }
+\item[{double}]{grp\+\_\+eners\mbox{[}$\,$\mbox{]}, }
+\item[{double}]{best\+\_\+grp\+\_\+eners\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{walker\+\_\+id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{proteus_8c_a558ac7c2d8a8a59c86dae5801b59cc93}
+Compute the energy of groups (from the formula) 
+\begin{DoxyParams}{Paramètres}
+{\em c} & the current conformation \\
+\hline
+{\em grp\+\_\+eners} & the energy of the group \\
+\hline
+{\em best\+\_\+grp\+\_\+eners} & the energy of the best group \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 1077 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a079ccb20595247d3b0346b7297baa036}{\index{proteus.\+c@{proteus.\+c}!compute\+Formula@{compute\+Formula}}
+\index{compute\+Formula@{compute\+Formula}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{compute\+Formula}]{\setlength{\rightskip}{0pt plus 5cm}double compute\+Formula (
+\begin{DoxyParamCaption}
+\item[{double}]{grp\+\_\+eners\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf opt\+\_\+formula} $\ast$}]{formula, }
+\item[{int}]{walker\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a079ccb20595247d3b0346b7297baa036}
+Compute a formula 
+\begin{DoxyParams}{Paramètres}
+{\em grp\+\_\+eners} & the energy of the group in the formula \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the result of the formula computed 
+\end{DoxyReturn}
+
+
+Définition à la ligne 1041 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a83b433767fad06351ce204ae0141edff}{\index{proteus.\+c@{proteus.\+c}!compute\+Heuristic@{compute\+Heuristic}}
+\index{compute\+Heuristic@{compute\+Heuristic}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{compute\+Heuristic}]{\setlength{\rightskip}{0pt plus 5cm}void compute\+Heuristic (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a83b433767fad06351ce204ae0141edff}
+
+
+Définition à la ligne 1762 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a19480b2cfece84c7b05fb3511309ecf9}{\index{proteus.\+c@{proteus.\+c}!compute\+Mean\+Field@{compute\+Mean\+Field}}
+\index{compute\+Mean\+Field@{compute\+Mean\+Field}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{compute\+Mean\+Field}]{\setlength{\rightskip}{0pt plus 5cm}void compute\+Mean\+Field (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a19480b2cfece84c7b05fb3511309ecf9}
+
+
+Définition à la ligne 1438 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a6956cc5c54e3bc7e5619f8190b0e1a12}{\index{proteus.\+c@{proteus.\+c}!compute\+Monte\+Carlo@{compute\+Monte\+Carlo}}
+\index{compute\+Monte\+Carlo@{compute\+Monte\+Carlo}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{compute\+Monte\+Carlo}]{\setlength{\rightskip}{0pt plus 5cm}void compute\+Monte\+Carlo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a6956cc5c54e3bc7e5619f8190b0e1a12}
+Compute the Monte Carlo algorithm Duplication of formula, formula\+\_\+prev and matrix\+\_\+trans if there is more than one walker in multibb
+
+conservation de la conformation 
+
+Définition à la ligne 2860 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_aac076fa2cbd91398c7a28569e807cca9}{\index{proteus.\+c@{proteus.\+c}!cpy\+\_\+best\+\_\+grp\+\_\+ener@{cpy\+\_\+best\+\_\+grp\+\_\+ener}}
+\index{cpy\+\_\+best\+\_\+grp\+\_\+ener@{cpy\+\_\+best\+\_\+grp\+\_\+ener}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{cpy\+\_\+best\+\_\+grp\+\_\+ener}]{\setlength{\rightskip}{0pt plus 5cm}void cpy\+\_\+best\+\_\+grp\+\_\+ener (
+\begin{DoxyParamCaption}
+\item[{int}]{walker\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_aac076fa2cbd91398c7a28569e807cca9}
+
+
+Définition à la ligne 2498 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a15554e16ba3e1993f099a63151a460d7}{\index{proteus.\+c@{proteus.\+c}!cpy\+\_\+conf@{cpy\+\_\+conf}}
+\index{cpy\+\_\+conf@{cpy\+\_\+conf}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{cpy\+\_\+conf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf conformation} cpy\+\_\+conf (
+\begin{DoxyParamCaption}
+\item[{{\bf conformation}}]{source, }
+\item[{{\bf conformation}}]{dest}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a15554e16ba3e1993f099a63151a460d7}
+
+
+Définition à la ligne 2611 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a03e5b721c407076699f7b652f631a710}{\index{proteus.\+c@{proteus.\+c}!cpy\+\_\+grp\+\_\+ener@{cpy\+\_\+grp\+\_\+ener}}
+\index{cpy\+\_\+grp\+\_\+ener@{cpy\+\_\+grp\+\_\+ener}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{cpy\+\_\+grp\+\_\+ener}]{\setlength{\rightskip}{0pt plus 5cm}void cpy\+\_\+grp\+\_\+ener (
+\begin{DoxyParamCaption}
+\item[{int}]{walker\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a03e5b721c407076699f7b652f631a710}
+
+
+Définition à la ligne 2485 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a7b25e2f53ffa1b9978ac0c04e3c3b5f6}{\index{proteus.\+c@{proteus.\+c}!def\+\_\+bb\+\_\+grp@{def\+\_\+bb\+\_\+grp}}
+\index{def\+\_\+bb\+\_\+grp@{def\+\_\+bb\+\_\+grp}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{def\+\_\+bb\+\_\+grp}]{\setlength{\rightskip}{0pt plus 5cm}int def\+\_\+bb\+\_\+grp (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{grp\+\_\+name}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a7b25e2f53ffa1b9978ac0c04e3c3b5f6}
+Define the id of the group from the name of the backbone 
+\begin{DoxyParams}{Paramètres}
+{\em grp\+\_\+name} & the name of the backbone to find \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the id of the backbone if exists, or -\/1 else. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 1059 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_aea3c185eac36f6e7a0305fe08a1b0f25}{\index{proteus.\+c@{proteus.\+c}!def\+\_\+confo@{def\+\_\+confo}}
+\index{def\+\_\+confo@{def\+\_\+confo}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{def\+\_\+confo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf conformation} def\+\_\+confo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_aea3c185eac36f6e7a0305fe08a1b0f25}
+Define the conformation of a protein \begin{DoxyReturn}{Renvoie}
+the conformation defined 
+\end{DoxyReturn}
+
+
+Définition à la ligne 819 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_aab8d489303aaf8d14fb48baeb0fef2d3}{\index{proteus.\+c@{proteus.\+c}!def\+\_\+cycle\+\_\+nb@{def\+\_\+cycle\+\_\+nb}}
+\index{def\+\_\+cycle\+\_\+nb@{def\+\_\+cycle\+\_\+nb}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{def\+\_\+cycle\+\_\+nb}]{\setlength{\rightskip}{0pt plus 5cm}int def\+\_\+cycle\+\_\+nb (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_aab8d489303aaf8d14fb48baeb0fef2d3}
+
+
+Définition à la ligne 298 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a5dc0f5ecdbfeab4757d61fe8c224705e}{\index{proteus.\+c@{proteus.\+c}!def\+\_\+id\+\_\+grp@{def\+\_\+id\+\_\+grp}}
+\index{def\+\_\+id\+\_\+grp@{def\+\_\+id\+\_\+grp}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{def\+\_\+id\+\_\+grp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf grp\+\_\+pair} def\+\_\+id\+\_\+grp (
+\begin{DoxyParamCaption}
+\item[{int}]{ins\+\_\+id, }
+\item[{{\bf grp\+\_\+pair}}]{tab}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a5dc0f5ecdbfeab4757d61fe8c224705e}
+
+
+Définition à la ligne 1263 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_ae32201c8da7250658f1856e9a7ba01cf}{\index{proteus.\+c@{proteus.\+c}!def\+\_\+matrix\+\_\+transition@{def\+\_\+matrix\+\_\+transition}}
+\index{def\+\_\+matrix\+\_\+transition@{def\+\_\+matrix\+\_\+transition}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{def\+\_\+matrix\+\_\+transition}]{\setlength{\rightskip}{0pt plus 5cm}void def\+\_\+matrix\+\_\+transition (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_ae32201c8da7250658f1856e9a7ba01cf}
+Read the matrix transition from the file read in .conf reading the first line containing names of differents flexible groups
+
+reading all lines unless the first one\+: nb\+\_\+grp for each column of 0 or1, +1 the label column
+
+number of group with who each group can exchange
+
+if groups can be exchange (1 in the matrix)
+
+put the index of the group which can exchange 
+
+Définition à la ligne 465 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_ad93dc3a8714d8665c5fc51d626c80679}{\index{proteus.\+c@{proteus.\+c}!def\+\_\+neighborhoods@{def\+\_\+neighborhoods}}
+\index{def\+\_\+neighborhoods@{def\+\_\+neighborhoods}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{def\+\_\+neighborhoods}]{\setlength{\rightskip}{0pt plus 5cm}{\bf neighbors}$\ast$ def\+\_\+neighborhoods (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_ad93dc3a8714d8665c5fc51d626c80679}
+Define the neighborhood of each instance \begin{DoxyReturn}{Renvoie}
+the neighbors structure 
+\end{DoxyReturn}
+
+
+Définition à la ligne 2323 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a87fdcf20651b0d8f00e4cf6535508ec4}{\index{proteus.\+c@{proteus.\+c}!def\+\_\+neighborhoods\+\_\+bb@{def\+\_\+neighborhoods\+\_\+bb}}
+\index{def\+\_\+neighborhoods\+\_\+bb@{def\+\_\+neighborhoods\+\_\+bb}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{def\+\_\+neighborhoods\+\_\+bb}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ def\+\_\+neighborhoods\+\_\+bb (
+\begin{DoxyParamCaption}
+\item[{{\bf neighbors} $\ast$}]{ne\+\_\+prot}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a87fdcf20651b0d8f00e4cf6535508ec4}
+Define the neighborhood for each instance of the backbone \begin{DoxyReturn}{Renvoie}
+the neighbors structure of the backbone 
+\end{DoxyReturn}
+
+
+Définition à la ligne 2420 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_aacf741d8211a4deac3d0c1e7eb01f180}{\index{proteus.\+c@{proteus.\+c}!def\+\_\+seq\+\_\+pass\+\_\+nb@{def\+\_\+seq\+\_\+pass\+\_\+nb}}
+\index{def\+\_\+seq\+\_\+pass\+\_\+nb@{def\+\_\+seq\+\_\+pass\+\_\+nb}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{def\+\_\+seq\+\_\+pass\+\_\+nb}]{\setlength{\rightskip}{0pt plus 5cm}int def\+\_\+seq\+\_\+pass\+\_\+nb (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_aacf741d8211a4deac3d0c1e7eb01f180}
+
+
+Définition à la ligne 334 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_ad9e5af9dd7bf454be1adc8716180a388}{\index{proteus.\+c@{proteus.\+c}!def\+\_\+swap\+\_\+period@{def\+\_\+swap\+\_\+period}}
+\index{def\+\_\+swap\+\_\+period@{def\+\_\+swap\+\_\+period}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{def\+\_\+swap\+\_\+period}]{\setlength{\rightskip}{0pt plus 5cm}int def\+\_\+swap\+\_\+period (
+\begin{DoxyParamCaption}
+\item[{int}]{walker\+\_\+nb}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_ad9e5af9dd7bf454be1adc8716180a388}
+
+
+Définition à la ligne 437 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a61bd0fe013955ba289b43c86f897958e}{\index{proteus.\+c@{proteus.\+c}!def\+\_\+walker\+\_\+nb@{def\+\_\+walker\+\_\+nb}}
+\index{def\+\_\+walker\+\_\+nb@{def\+\_\+walker\+\_\+nb}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{def\+\_\+walker\+\_\+nb}]{\setlength{\rightskip}{0pt plus 5cm}int def\+\_\+walker\+\_\+nb (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a61bd0fe013955ba289b43c86f897958e}
+
+
+Définition à la ligne 316 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_afa26efb523c367fcb66ebf726cb60a11}{\index{proteus.\+c@{proteus.\+c}!det\+\_\+active@{det\+\_\+active}}
+\index{det\+\_\+active@{det\+\_\+active}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{det\+\_\+active}]{\setlength{\rightskip}{0pt plus 5cm}int det\+\_\+active (
+\begin{DoxyParamCaption}
+\item[{int}]{walker\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_afa26efb523c367fcb66ebf726cb60a11}
+define which backbone is active in the list \begin{DoxyReturn}{Renvoie}
+the index of the active backbone 
+\end{DoxyReturn}
+
+
+Définition à la ligne 408 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a810804ede89ae89a7d957c3bd58a125c}{\index{proteus.\+c@{proteus.\+c}!det\+\_\+ins\+\_\+bb@{det\+\_\+ins\+\_\+bb}}
+\index{det\+\_\+ins\+\_\+bb@{det\+\_\+ins\+\_\+bb}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{det\+\_\+ins\+\_\+bb}]{\setlength{\rightskip}{0pt plus 5cm}int det\+\_\+ins\+\_\+bb (
+\begin{DoxyParamCaption}
+\item[{int}]{ins\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a810804ede89ae89a7d957c3bd58a125c}
+
+
+Définition à la ligne 2388 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a827a592b2200bd99ba71d238d4cb2dd8}{\index{proteus.\+c@{proteus.\+c}!det\+\_\+prev\+\_\+active@{det\+\_\+prev\+\_\+active}}
+\index{det\+\_\+prev\+\_\+active@{det\+\_\+prev\+\_\+active}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{det\+\_\+prev\+\_\+active}]{\setlength{\rightskip}{0pt plus 5cm}int det\+\_\+prev\+\_\+active (
+\begin{DoxyParamCaption}
+\item[{int}]{walker\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a827a592b2200bd99ba71d238d4cb2dd8}
+define which backbone is active in the list \begin{DoxyReturn}{Renvoie}
+the index of the active backbone 
+\end{DoxyReturn}
+
+
+Définition à la ligne 423 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a1bde5604afb0738da014d65e82c51f8a}{\index{proteus.\+c@{proteus.\+c}!det\+\_\+type\+\_\+of\+\_\+rot@{det\+\_\+type\+\_\+of\+\_\+rot}}
+\index{det\+\_\+type\+\_\+of\+\_\+rot@{det\+\_\+type\+\_\+of\+\_\+rot}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{det\+\_\+type\+\_\+of\+\_\+rot}]{\setlength{\rightskip}{0pt plus 5cm}int det\+\_\+type\+\_\+of\+\_\+rot (
+\begin{DoxyParamCaption}
+\item[{int}]{rot, }
+\item[{int}]{ins\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a1bde5604afb0738da014d65e82c51f8a}
+Define the effective type index (for this instance) 
+\begin{DoxyParams}{Paramètres}
+{\em rot} & the effective position of the rotamer \\
+\hline
+{\em ins\+\_\+id} & the id of the instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the effective type index for this instance 
+\end{DoxyReturn}
+
+
+Définition à la ligne 360 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a8a1b8d716bf7fa8022b4651d8116315f}{\index{proteus.\+c@{proteus.\+c}!dupl\+\_\+formula@{dupl\+\_\+formula}}
+\index{dupl\+\_\+formula@{dupl\+\_\+formula}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{dupl\+\_\+formula}]{\setlength{\rightskip}{0pt plus 5cm}{\bf opt\+\_\+formula}$\ast$ dupl\+\_\+formula (
+\begin{DoxyParamCaption}
+\item[{{\bf opt\+\_\+formula} $\ast$}]{formula, }
+\item[{int}]{walker\+\_\+nb}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a8a1b8d716bf7fa8022b4651d8116315f}
+
+
+Définition à la ligne 2769 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_afef7a68c2f30b42ac8d5a338164e14e4}{\index{proteus.\+c@{proteus.\+c}!dupl\+\_\+grp\+\_\+ener\+\_\+walker@{dupl\+\_\+grp\+\_\+ener\+\_\+walker}}
+\index{dupl\+\_\+grp\+\_\+ener\+\_\+walker@{dupl\+\_\+grp\+\_\+ener\+\_\+walker}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{dupl\+\_\+grp\+\_\+ener\+\_\+walker}]{\setlength{\rightskip}{0pt plus 5cm}void dupl\+\_\+grp\+\_\+ener\+\_\+walker (
+\begin{DoxyParamCaption}
+\item[{int}]{walker\+\_\+nb}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_afef7a68c2f30b42ac8d5a338164e14e4}
+
+
+Définition à la ligne 2832 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a6822e6360f81a25c434c22a987617242}{\index{proteus.\+c@{proteus.\+c}!dupl\+\_\+matrix@{dupl\+\_\+matrix}}
+\index{dupl\+\_\+matrix@{dupl\+\_\+matrix}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{dupl\+\_\+matrix}]{\setlength{\rightskip}{0pt plus 5cm}void dupl\+\_\+matrix (
+\begin{DoxyParamCaption}
+\item[{int}]{walker\+\_\+nb}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a6822e6360f81a25c434c22a987617242}
+
+
+Définition à la ligne 2797 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a423f1a78d7fd37c25663c6be24024e9c}{\index{proteus.\+c@{proteus.\+c}!free\+\_\+confo@{free\+\_\+confo}}
+\index{free\+\_\+confo@{free\+\_\+confo}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{free\+\_\+confo}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+confo (
+\begin{DoxyParamCaption}
+\item[{{\bf conformation}}]{c}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a423f1a78d7fd37c25663c6be24024e9c}
+Free the conformation structure 
+\begin{DoxyParams}{Paramètres}
+{\em c} & the conformation to free \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 1614 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a2122242147f92a3b6f5bfe30693f774c}{\index{proteus.\+c@{proteus.\+c}!free\+\_\+groups@{free\+\_\+groups}}
+\index{free\+\_\+groups@{free\+\_\+groups}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{free\+\_\+groups}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+groups (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a2122242147f92a3b6f5bfe30693f774c}
+Free groups structure 
+
+Définition à la ligne 3153 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a60db393f5bed3c5fa71f903a3f9756a5}{\index{proteus.\+c@{proteus.\+c}!free\+\_\+grp\+\_\+ener\+\_\+walker@{free\+\_\+grp\+\_\+ener\+\_\+walker}}
+\index{free\+\_\+grp\+\_\+ener\+\_\+walker@{free\+\_\+grp\+\_\+ener\+\_\+walker}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{free\+\_\+grp\+\_\+ener\+\_\+walker}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+grp\+\_\+ener\+\_\+walker (
+\begin{DoxyParamCaption}
+\item[{{\bf grp\+\_\+ener\+\_\+walker} $\ast$}]{grp}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a60db393f5bed3c5fa71f903a3f9756a5}
+Free the \hyperlink{structgrp__ener__walker}{grp\+\_\+ener\+\_\+walker} structure 
+\begin{DoxyParams}{Paramètres}
+{\em grp\+\_\+eners\+\_\+walker} & the structure to free \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 1623 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a7b38d2b5e12519ab24bc6cc45fa83ed7}{\index{proteus.\+c@{proteus.\+c}!free\+\_\+residues@{free\+\_\+residues}}
+\index{free\+\_\+residues@{free\+\_\+residues}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{free\+\_\+residues}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+residues (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a7b38d2b5e12519ab24bc6cc45fa83ed7}
+Free residues structure 
+
+Définition à la ligne 3176 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a193e774103ff1578b407f3486dcf46c8}{\index{proteus.\+c@{proteus.\+c}!get\+\_\+ins\+\_\+proba@{get\+\_\+ins\+\_\+proba}}
+\index{get\+\_\+ins\+\_\+proba@{get\+\_\+ins\+\_\+proba}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{get\+\_\+ins\+\_\+proba}]{\setlength{\rightskip}{0pt plus 5cm}void get\+\_\+ins\+\_\+proba (
+\begin{DoxyParamCaption}
+\item[{{\bf Proba}}]{proba}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a193e774103ff1578b407f3486dcf46c8}
+
+
+Définition à la ligne 1942 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_afc7660c6f8c63bbab7fedc42a6fe3dee}{\index{proteus.\+c@{proteus.\+c}!get\+\_\+seq\+\_\+input@{get\+\_\+seq\+\_\+input}}
+\index{get\+\_\+seq\+\_\+input@{get\+\_\+seq\+\_\+input}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{get\+\_\+seq\+\_\+input}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ get\+\_\+seq\+\_\+input (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_afc7660c6f8c63bbab7fedc42a6fe3dee}
+
+
+Définition à la ligne 198 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_aeaeb2f7ae94205f6bbd92b8be4d848fb}{\index{proteus.\+c@{proteus.\+c}!init\+\_\+confo@{init\+\_\+confo}}
+\index{init\+\_\+confo@{init\+\_\+confo}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{init\+\_\+confo}]{\setlength{\rightskip}{0pt plus 5cm}int init\+\_\+confo (
+\begin{DoxyParamCaption}
+\item[{gsl\+\_\+rng $\ast$}]{rng, }
+\item[{{\bf conformation}}]{c, }
+\item[{int}]{init\+\_\+cpt, }
+\item[{F\+I\+L\+E $\ast$}]{seq\+\_\+input, }
+\item[{int}]{init\+\_\+nb, }
+\item[{float}]{proba\+\_\+bb, }
+\item[{int}]{walker\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_aeaeb2f7ae94205f6bbd92b8be4d848fb}
+Initialize the conformation of a protein 
+\begin{DoxyParams}{Paramètres}
+{\em rng} & pointer to an instance of a random number generator \\
+\hline
+{\em c} & the conformation to initialize \\
+\hline
+{\em cpt} & the counter used to check if its less than init\+\_\+nb (used for a random initialization) \\
+\hline
+{\em seq\+\_\+input} & the input file containing the last conformation of a previous simulation \\
+\hline
+{\em init\+\_\+nb} & number of initialization to do (the max) \\
+\hline
+{\em proba} & the probabilities to mutate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the boolean true or false if the conformation was initialized 
+\end{DoxyReturn}
+apply modifs to backbone active/inactive
+
+changer le facteur de la formule 
+
+Définition à la ligne 839 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_aec6e0d8148cdee200b06e4cdcfc9ba48}{\index{proteus.\+c@{proteus.\+c}!init\+\_\+ener\+\_\+output@{init\+\_\+ener\+\_\+output}}
+\index{init\+\_\+ener\+\_\+output@{init\+\_\+ener\+\_\+output}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{init\+\_\+ener\+\_\+output}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ init\+\_\+ener\+\_\+output (
+\begin{DoxyParamCaption}
+\item[{int}]{suffix\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_aec6e0d8148cdee200b06e4cdcfc9ba48}
+Initialize the energies output file with the first information line 
+\begin{DoxyParams}{Paramètres}
+{\em suffix} & the suffix of the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the file 
+\end{DoxyReturn}
+
+
+Définition à la ligne 248 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_aac3cbd4d369d42c529e229842409d1de}{\index{proteus.\+c@{proteus.\+c}!init\+\_\+possible\+\_\+instances@{init\+\_\+possible\+\_\+instances}}
+\index{init\+\_\+possible\+\_\+instances@{init\+\_\+possible\+\_\+instances}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{init\+\_\+possible\+\_\+instances}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+possible\+\_\+instances (
+\begin{DoxyParamCaption}
+\item[{{\bf possible\+\_\+instances} $\ast$}]{pi, }
+\item[{int}]{ref\+\_\+ins, }
+\item[{{\bf neighbors} $\ast$}]{neighborhoods}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_aac3cbd4d369d42c529e229842409d1de}
+Initialize the possible instances 
+\begin{DoxyParams}{Paramètres}
+{\em pi} & the pointer to possible instances \\
+\hline
+{\em ref\+\_\+ins} & the reference of the instance \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 1977 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a27244f5c7cc2852b1e0d9be9ae0398c6}{\index{proteus.\+c@{proteus.\+c}!init\+\_\+seq\+\_\+output@{init\+\_\+seq\+\_\+output}}
+\index{init\+\_\+seq\+\_\+output@{init\+\_\+seq\+\_\+output}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{init\+\_\+seq\+\_\+output}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ init\+\_\+seq\+\_\+output (
+\begin{DoxyParamCaption}
+\item[{int}]{suffix\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a27244f5c7cc2852b1e0d9be9ae0398c6}
+Initialize the sequences output file with the first information line 
+\begin{DoxyParams}{Paramètres}
+{\em suffix\+\_\+id} & the suffix of the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the file 
+\end{DoxyReturn}
+
+
+Définition à la ligne 226 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_ac8e35219a05e618d430b94a39be2f31e}{\index{proteus.\+c@{proteus.\+c}!init\+Mean\+Field@{init\+Mean\+Field}}
+\index{init\+Mean\+Field@{init\+Mean\+Field}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{init\+Mean\+Field}]{\setlength{\rightskip}{0pt plus 5cm}void init\+Mean\+Field (
+\begin{DoxyParamCaption}
+\item[{long double}]{E\mbox{[}$\,$\mbox{]}, }
+\item[{long double}]{P\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_ac8e35219a05e618d430b94a39be2f31e}
+
+
+Définition à la ligne 1295 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a534600d441d254bb0e1785cdc38711b8}{\index{proteus.\+c@{proteus.\+c}!ins\+\_\+exist@{ins\+\_\+exist}}
+\index{ins\+\_\+exist@{ins\+\_\+exist}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{ins\+\_\+exist}]{\setlength{\rightskip}{0pt plus 5cm}int ins\+\_\+exist (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{ne\+\_\+bb, }
+\item[{int}]{ins\+\_\+id, }
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a534600d441d254bb0e1785cdc38711b8}
+
+
+Définition à la ligne 2404 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_abae7f2399e89680f4b5e55ed63afd4af}{\index{proteus.\+c@{proteus.\+c}!is\+\_\+\+Better@{is\+\_\+\+Better}}
+\index{is\+\_\+\+Better@{is\+\_\+\+Better}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{is\+\_\+\+Better}]{\setlength{\rightskip}{0pt plus 5cm}int is\+\_\+\+Better (
+\begin{DoxyParamCaption}
+\item[{double}]{new\+\_\+ener, }
+\item[{double}]{best\+\_\+ener}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{proteus_8c_abae7f2399e89680f4b5e55ed63afd4af}
+Compare two energies and check if the new one is the best --- N\+O\+T U\+S\+E\+D I\+N M\+O\+N\+T\+E C\+A\+R\+L\+O 
+\begin{DoxyParams}{Paramètres}
+{\em new\+\_\+eners} & energies of the new conformation \\
+\hline
+{\em best\+\_\+eners} & energies of the current conformation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+boolean true or false 
+\end{DoxyReturn}
+
+
+Définition à la ligne 1638 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a3b2e3ef0c7df7d15528c5e0aa6b79c12}{\index{proteus.\+c@{proteus.\+c}!is\+\_\+\+M\+Cbetter@{is\+\_\+\+M\+Cbetter}}
+\index{is\+\_\+\+M\+Cbetter@{is\+\_\+\+M\+Cbetter}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{is\+\_\+\+M\+Cbetter}]{\setlength{\rightskip}{0pt plus 5cm}int is\+\_\+\+M\+Cbetter (
+\begin{DoxyParamCaption}
+\item[{gsl\+\_\+rng $\ast$}]{rng, }
+\item[{double}]{new\+\_\+ener, }
+\item[{double}]{best\+\_\+ener, }
+\item[{float}]{T, }
+\item[{int}]{t, }
+\item[{int}]{bb\+\_\+change}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a3b2e3ef0c7df7d15528c5e0aa6b79c12}
+The Monte Carlo test\+: Compare two energies and check if the new one is the best, else compare with the Metropolis criteria 
+\begin{DoxyParams}{Paramètres}
+{\em rng} & pointer to an instance of a random number generator \\
+\hline
+{\em new\+\_\+eners} & energies of the new conformation \\
+\hline
+{\em best\+\_\+eners} & energies of the current conformation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+boolean true or false 
+\end{DoxyReturn}
+
+
+Définition à la ligne 1660 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a04223642d59299e0a5493d9a6dba8d13}{\index{proteus.\+c@{proteus.\+c}!is\+\_\+\+M\+Crel\+\_\+better@{is\+\_\+\+M\+Crel\+\_\+better}}
+\index{is\+\_\+\+M\+Crel\+\_\+better@{is\+\_\+\+M\+Crel\+\_\+better}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{is\+\_\+\+M\+Crel\+\_\+better}]{\setlength{\rightskip}{0pt plus 5cm}int is\+\_\+\+M\+Crel\+\_\+better (
+\begin{DoxyParamCaption}
+\item[{gsl\+\_\+rng $\ast$}]{rng, }
+\item[{{\bf desc\+\_\+conf}}]{conf, }
+\item[{double}]{best\+\_\+ener, }
+\item[{float}]{T}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a04223642d59299e0a5493d9a6dba8d13}
+
+
+Définition à la ligne 1689 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a81e39d86857d7436d5402939df985726}{\index{proteus.\+c@{proteus.\+c}!is\+\_\+swap\+\_\+allowed@{is\+\_\+swap\+\_\+allowed}}
+\index{is\+\_\+swap\+\_\+allowed@{is\+\_\+swap\+\_\+allowed}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{is\+\_\+swap\+\_\+allowed}]{\setlength{\rightskip}{0pt plus 5cm}int is\+\_\+swap\+\_\+allowed (
+\begin{DoxyParamCaption}
+\item[{gsl\+\_\+rng $\ast$}]{rng, }
+\item[{float}]{Ei, }
+\item[{float}]{Ej, }
+\item[{float}]{Ti, }
+\item[{float}]{Tj}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a81e39d86857d7436d5402939df985726}
+
+
+Définition à la ligne 1709 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a85837744e96b8154f887e9f3e79d3c0e}{\index{proteus.\+c@{proteus.\+c}!is\+\_\+true\+\_\+modif@{is\+\_\+true\+\_\+modif}}
+\index{is\+\_\+true\+\_\+modif@{is\+\_\+true\+\_\+modif}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{is\+\_\+true\+\_\+modif}]{\setlength{\rightskip}{0pt plus 5cm}int is\+\_\+true\+\_\+modif (
+\begin{DoxyParamCaption}
+\item[{{\bf conformation}}]{c, }
+\item[{{\bf ins\+\_\+modifs} $\ast$}]{pm, }
+\item[{int}]{bb\+\_\+change}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{proteus_8c_a85837744e96b8154f887e9f3e79d3c0e}
+Check if there is a modification between the current conformation and the modif to apply 
+\begin{DoxyParams}{Paramètres}
+{\em c} & the current conformation \\
+\hline
+{\em pm} & the instances to modify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+boolean true or false 
+\end{DoxyReturn}
+
+
+Définition à la ligne 2135 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{proteus.\+c@{proteus.\+c}!main@{main}}
+\index{main@{main}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a0ddf1224851353fc92bfbff6f499fa97}
+A R\+E\+V\+O\+R P\+O\+U\+R T\+O\+U\+S L\+E\+S M\+A\+R\+C\+H\+E\+U\+R\+S 
+
+Définition à la ligne 3190 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a901ff3e3d99a6dbdd22f750ad2409586}{\index{proteus.\+c@{proteus.\+c}!M\+C\+\_\+relaxation@{M\+C\+\_\+relaxation}}
+\index{M\+C\+\_\+relaxation@{M\+C\+\_\+relaxation}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{M\+C\+\_\+relaxation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf desc\+\_\+conf} M\+C\+\_\+relaxation (
+\begin{DoxyParamCaption}
+\item[{{\bf desc\+\_\+conf}}]{conf\+\_\+bb, }
+\item[{{\bf ins\+\_\+modifs}}]{modifs, }
+\item[{gsl\+\_\+rng $\ast$}]{rng, }
+\item[{{\bf conformation}}]{c, }
+\item[{{\bf Proba}}]{proba, }
+\item[{float}]{proba\+\_\+bb, }
+\item[{double}]{new\+\_\+eners, }
+\item[{double}]{best\+\_\+eners, }
+\item[{double $\ast$}]{grp\+\_\+eners, }
+\item[{int}]{step, }
+\item[{float}]{T, }
+\item[{int $\ast$}]{ne\+\_\+bb, }
+\item[{{\bf neighbors} $\ast$}]{neighborhoods, }
+\item[{int}]{walker\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a901ff3e3d99a6dbdd22f750ad2409586}
+variables to calculate the acceptabilities
+
+initialization of data for previous and current backbone -\/ used to calculate the acceptability of the previous backbone 
+
+Définition à la ligne 2658 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a5ef2bf0bb77dda336bd2b7393efa7b53}{\index{proteus.\+c@{proteus.\+c}!modif\+\_\+confo@{modif\+\_\+confo}}
+\index{modif\+\_\+confo@{modif\+\_\+confo}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{modif\+\_\+confo}]{\setlength{\rightskip}{0pt plus 5cm}void modif\+\_\+confo (
+\begin{DoxyParamCaption}
+\item[{gsl\+\_\+rng $\ast$}]{rng, }
+\item[{{\bf posi\+\_\+instance} $\ast$}]{ins0, }
+\item[{int}]{type, }
+\item[{{\bf ins\+\_\+modifs} $\ast$}]{pm, }
+\item[{{\bf possible\+\_\+instances} $\ast$}]{pi, }
+\item[{{\bf neighbors} $\ast$}]{neighborhoods}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{proteus_8c_a5ef2bf0bb77dda336bd2b7393efa7b53}
+Add a modification (a new random rotamer) of the current conformation at the given ins with the given type 
+\begin{DoxyParams}{Paramètres}
+{\em rng} & pointer to an instance of a random number generator \\
+\hline
+{\em c} & the current conformation \\
+\hline
+{\em ins0} & the initial instance \\
+\hline
+{\em type} & the type of the new rotamer to add \\
+\hline
+{\em pm} & the instance modifs to modify \\
+\hline
+{\em pi} & the possible instance to update \\
+\hline
+\end{DoxyParams}
+update the modif on all backbone
+
+define the id of the groups and possible instance
+
+define if the name of this group is in backbone 
+
+Définition à la ligne 2046 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_ab8be778b186760a7d8efaca0b068cb27}{\index{proteus.\+c@{proteus.\+c}!next\+Confo@{next\+Confo}}
+\index{next\+Confo@{next\+Confo}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{next\+Confo}]{\setlength{\rightskip}{0pt plus 5cm}int next\+Confo (
+\begin{DoxyParamCaption}
+\item[{{\bf ins\+\_\+modifs}}]{modifs, }
+\item[{const int}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{proteus_8c_ab8be778b186760a7d8efaca0b068cb27}
+
+
+Définition à la ligne 1017 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a91092e960d470534eb5840e636cc417c}{\index{proteus.\+c@{proteus.\+c}!next\+State@{next\+State}}
+\index{next\+State@{next\+State}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{next\+State}]{\setlength{\rightskip}{0pt plus 5cm}int next\+State (
+\begin{DoxyParamCaption}
+\item[{gsl\+\_\+rng $\ast$}]{rng, }
+\item[{{\bf conformation}}]{c, }
+\item[{{\bf Proba}}]{proba, }
+\item[{float}]{proba\+\_\+bb, }
+\item[{{\bf ins\+\_\+modifs} $\ast$}]{pmodifs, }
+\item[{{\bf neighbors} $\ast$}]{neighborhoods, }
+\item[{int $\ast$}]{ne\+\_\+bb, }
+\item[{int}]{bb\+\_\+change, }
+\item[{int}]{walker\+\_\+id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{proteus_8c_a91092e960d470534eb5840e636cc417c}
+Define the next state of the conformation -\/ use probabilty to change it 
+\begin{DoxyParams}{Paramètres}
+{\em rng} & pointer to an instance of a random number generator \\
+\hline
+{\em c} & the current conformation \\
+\hline
+{\em proba} & the proba structure containing all probabilities \\
+\hline
+{\em pmodifs} & the pointer of modifs chosen randomly \\
+\hline
+\end{DoxyParams}
+apply modifs to backbone active/inactive
+
+changer le facteur de la formule 
+
+Définition à la ligne 2157 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a6152a764a53f80617eb6ef74ca627ebf}{\index{proteus.\+c@{proteus.\+c}!open\+\_\+efasta@{open\+\_\+efasta}}
+\index{open\+\_\+efasta@{open\+\_\+efasta}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{open\+\_\+efasta}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ open\+\_\+efasta (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a6152a764a53f80617eb6ef74ca627ebf}
+Open the output file in F\+A\+S\+T\+A format (for postprocessing) \begin{DoxyReturn}{Renvoie}
+the file opened 
+\end{DoxyReturn}
+
+
+Définition à la ligne 279 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_af681462fc359907fa5af227855dca2d4}{\index{proteus.\+c@{proteus.\+c}!open\+\_\+output\+\_\+file@{open\+\_\+output\+\_\+file}}
+\index{open\+\_\+output\+\_\+file@{open\+\_\+output\+\_\+file}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{open\+\_\+output\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ open\+\_\+output\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{int}]{tag\+\_\+id, }
+\item[{int}]{suffix\+\_\+id, }
+\item[{const char $\ast$}]{default\+\_\+name}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_af681462fc359907fa5af227855dca2d4}
+Open the sequences output file 
+\begin{DoxyParams}{Paramètres}
+{\em tag\+\_\+id} & the config tag for the file name \\
+\hline
+{\em suffix\+\_\+id} & a suffix of the file if thread number $>$ 1 \\
+\hline
+{\em default\+\_\+name} & the default file name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the file 
+\end{DoxyReturn}
+
+
+Définition à la ligne 154 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a04c0f2c9c83f06a4b8de5b0cc3caabb6}{\index{proteus.\+c@{proteus.\+c}!open\+\_\+seq\+\_\+input@{open\+\_\+seq\+\_\+input}}
+\index{open\+\_\+seq\+\_\+input@{open\+\_\+seq\+\_\+input}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{open\+\_\+seq\+\_\+input}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ open\+\_\+seq\+\_\+input (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a04c0f2c9c83f06a4b8de5b0cc3caabb6}
+Open the sequences input file \begin{DoxyReturn}{Renvoie}
+the file 
+\end{DoxyReturn}
+
+
+Définition à la ligne 181 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a799126fbcc36b54abef07e34b7b9974a}{\index{proteus.\+c@{proteus.\+c}!prepare\+\_\+modifs@{prepare\+\_\+modifs}}
+\index{prepare\+\_\+modifs@{prepare\+\_\+modifs}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{prepare\+\_\+modifs}]{\setlength{\rightskip}{0pt plus 5cm}void prepare\+\_\+modifs (
+\begin{DoxyParamCaption}
+\item[{{\bf ins\+\_\+modifs} $\ast$}]{pm, }
+\item[{{\bf posi\+\_\+instance} $\ast$}]{ins}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a799126fbcc36b54abef07e34b7b9974a}
+
+
+Définition à la ligne 1739 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a8ecb37c91205b8d0fdc2af2a8a16210b}{\index{proteus.\+c@{proteus.\+c}!print\+\_\+conf@{print\+\_\+conf}}
+\index{print\+\_\+conf@{print\+\_\+conf}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{print\+\_\+conf}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+conf (
+\begin{DoxyParamCaption}
+\item[{{\bf conformation}}]{c}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a8ecb37c91205b8d0fdc2af2a8a16210b}
+
+
+Définition à la ligne 2623 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_adfe3253f405122b701cdadb7ad52db6b}{\index{proteus.\+c@{proteus.\+c}!print\+\_\+grp\+\_\+ener@{print\+\_\+grp\+\_\+ener}}
+\index{print\+\_\+grp\+\_\+ener@{print\+\_\+grp\+\_\+ener}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{print\+\_\+grp\+\_\+ener}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+grp\+\_\+ener (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{tab, }
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_adfe3253f405122b701cdadb7ad52db6b}
+
+
+Définition à la ligne 2511 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a1daace82b4d6fb4b236574997dbcf22a}{\index{proteus.\+c@{proteus.\+c}!print\+\_\+result@{print\+\_\+result}}
+\index{print\+\_\+result@{print\+\_\+result}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{print\+\_\+result}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+result (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{seq\+\_\+output, }
+\item[{F\+I\+L\+E $\ast$}]{ener\+\_\+output, }
+\item[{{\bf conformation}}]{c, }
+\item[{double}]{best\+\_\+grp\+\_\+eners\mbox{[}$\,$\mbox{]}, }
+\item[{double}]{best\+\_\+ener, }
+\item[{int}]{step, }
+\item[{int}]{print\+\_\+id, }
+\item[{float}]{T, }
+\item[{int}]{walker\+\_\+id, }
+\item[{int}]{cmpt}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a1daace82b4d6fb4b236574997dbcf22a}
+Print result in the output file 
+\begin{DoxyParams}{Paramètres}
+{\em seq\+\_\+output} & the output file containing sequences \\
+\hline
+{\em ener\+\_\+output} & the output file containing groups energies \\
+\hline
+{\em c} & the current conformation \\
+\hline
+{\em best\+\_\+grp\+\_\+eners} & the best group energies \\
+\hline
+{\em best\+\_\+ener} & the best energy \\
+\hline
+{\em step} & the current step \\
+\hline
+{\em print\+\_\+id} & the id to print \\
+\hline
+{\em T} & the temperature \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 1539 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a14b40b4baef2d124b76c72cde215486a}{\index{proteus.\+c@{proteus.\+c}!print\+\_\+stat@{print\+\_\+stat}}
+\index{print\+\_\+stat@{print\+\_\+stat}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{print\+\_\+stat}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+stat (
+\begin{DoxyParamCaption}
+\item[{int}]{thread\+\_\+id, }
+\item[{clock\+\_\+t}]{start, }
+\item[{int}]{cycle, }
+\item[{char $\ast$}]{type}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a14b40b4baef2d124b76c72cde215486a}
+Print the state of the simulation to the screen 
+\begin{DoxyParams}{Paramètres}
+{\em thread\+\_\+id} & the thread id \\
+\hline
+{\em start} & the time of completion \\
+\hline
+{\em cycle} & the number of the cycle \\
+\hline
+{\em type} & the type of simulation \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 1593 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a0d20b69b0ad703df78459e1033d5c1d4}{\index{proteus.\+c@{proteus.\+c}!print\+Help@{print\+Help}}
+\index{print\+Help@{print\+Help}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{print\+Help}]{\setlength{\rightskip}{0pt plus 5cm}void print\+Help (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a0d20b69b0ad703df78459e1033d5c1d4}
+
+
+Définition à la ligne 130 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_aabdf238899d33c4d71864b8059eb956b}{\index{proteus.\+c@{proteus.\+c}!print\+Mean\+Field@{print\+Mean\+Field}}
+\index{print\+Mean\+Field@{print\+Mean\+Field}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{print\+Mean\+Field}]{\setlength{\rightskip}{0pt plus 5cm}void print\+Mean\+Field (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{seq\+\_\+output}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_aabdf238899d33c4d71864b8059eb956b}
+
+
+Définition à la ligne 1364 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_ab12ee197aa24ced2d1ec48b32d2c01ec}{\index{proteus.\+c@{proteus.\+c}!rand\+\_\+ins@{rand\+\_\+ins}}
+\index{rand\+\_\+ins@{rand\+\_\+ins}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{rand\+\_\+ins}]{\setlength{\rightskip}{0pt plus 5cm}{\bf posi\+\_\+instance}$\ast$ rand\+\_\+ins (
+\begin{DoxyParamCaption}
+\item[{gsl\+\_\+rng $\ast$}]{rng, }
+\item[{{\bf possible\+\_\+instances}}]{pi}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{proteus_8c_ab12ee197aa24ced2d1ec48b32d2c01ec}
+Search a random instance within the possible instance set and update the array of possible instances 
+\begin{DoxyParams}{Paramètres}
+{\em pi} & the possible instance to set and update \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the random instance 
+\end{DoxyReturn}
+
+
+Définition à la ligne 2094 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a7a3bc26e436f05c0cd81aa298cfa0f62}{\index{proteus.\+c@{proteus.\+c}!rand\+\_\+ins\+\_\+bb@{rand\+\_\+ins\+\_\+bb}}
+\index{rand\+\_\+ins\+\_\+bb@{rand\+\_\+ins\+\_\+bb}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{rand\+\_\+ins\+\_\+bb}]{\setlength{\rightskip}{0pt plus 5cm}{\bf posi\+\_\+instance}$\ast$ rand\+\_\+ins\+\_\+bb (
+\begin{DoxyParamCaption}
+\item[{gsl\+\_\+rng $\ast$}]{rng, }
+\item[{int $\ast$}]{ne\+\_\+bb}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{proteus_8c_a7a3bc26e436f05c0cd81aa298cfa0f62}
+Search a random instance within the possible instance set and update the array of possible instances 
+\begin{DoxyParams}{Paramètres}
+{\em pi} & the possible instance to set and update \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the random instance 
+\end{DoxyReturn}
+
+
+Définition à la ligne 2117 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_ae5f812689e4890d3b811a4b88f8042c4}{\index{proteus.\+c@{proteus.\+c}!rand\+\_\+int@{rand\+\_\+int}}
+\index{rand\+\_\+int@{rand\+\_\+int}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{rand\+\_\+int}]{\setlength{\rightskip}{0pt plus 5cm}int rand\+\_\+int (
+\begin{DoxyParamCaption}
+\item[{gsl\+\_\+rng $\ast$}]{rng, }
+\item[{const int}]{from\+\_\+int, }
+\item[{const int}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{proteus_8c_ae5f812689e4890d3b811a4b88f8042c4}
+Define a random integer from from\+\_\+int to from\+\_\+int + size − 1 inclusive 
+\begin{DoxyParams}{Paramètres}
+{\em rng} & pointer to an instance of a random number generator \\
+\hline
+{\em from\+\_\+int} & the first minimum of the selection \\
+\hline
+{\em size} & the length of the range (max= from\+\_\+int + size -\/1 included) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the int chosen in the range 
+\end{DoxyReturn}
+
+
+Définition à la ligne 382 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a9f685c8cbc950140f172106b0812d3af}{\index{proteus.\+c@{proteus.\+c}!rand\+\_\+type@{rand\+\_\+type}}
+\index{rand\+\_\+type@{rand\+\_\+type}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{rand\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}int rand\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{gsl\+\_\+rng $\ast$}]{rng, }
+\item[{int}]{ins}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{proteus_8c_a9f685c8cbc950140f172106b0812d3af}
+Choose randomly a type in its range 
+\begin{DoxyParams}{Paramètres}
+{\em int} & the duplicate instance of the type \\
+\hline
+{\em c} & the conformation of the current protein (why? not used here...) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the type chosen in the range 
+\end{DoxyReturn}
+
+
+Définition à la ligne 398 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a814517d01c5859fea553eceb12a72a6e}{\index{proteus.\+c@{proteus.\+c}!read\+\_\+proba\+\_\+lines@{read\+\_\+proba\+\_\+lines}}
+\index{read\+\_\+proba\+\_\+lines@{read\+\_\+proba\+\_\+lines}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{read\+\_\+proba\+\_\+lines}]{\setlength{\rightskip}{0pt plus 5cm}void read\+\_\+proba\+\_\+lines (
+\begin{DoxyParamCaption}
+\item[{int}]{code}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a814517d01c5859fea553eceb12a72a6e}
+
+
+Définition à la ligne 1877 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a7697ee0f381590ca68871bf74a5368ca}{\index{proteus.\+c@{proteus.\+c}!reset\+\_\+bb@{reset\+\_\+bb}}
+\index{reset\+\_\+bb@{reset\+\_\+bb}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{reset\+\_\+bb}]{\setlength{\rightskip}{0pt plus 5cm}void reset\+\_\+bb (
+\begin{DoxyParamCaption}
+\item[{int}]{walker\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a7697ee0f381590ca68871bf74a5368ca}
+Apply modifs to the backbone if not accepted -\/ change current active backbone and factors of formula search which backbone was previously active
+
+change current and previous active backbone
+
+change factors in the formula for previous and current backbone 
+
+Définition à la ligne 2587 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_aaab1db88cbb74543d4af864e5582d3e6}{\index{proteus.\+c@{proteus.\+c}!reset\+\_\+modifs@{reset\+\_\+modifs}}
+\index{reset\+\_\+modifs@{reset\+\_\+modifs}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{reset\+\_\+modifs}]{\setlength{\rightskip}{0pt plus 5cm}void reset\+\_\+modifs (
+\begin{DoxyParamCaption}
+\item[{{\bf ins\+\_\+modifs} $\ast$}]{pm}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_aaab1db88cbb74543d4af864e5582d3e6}
+Reset modifications 
+\begin{DoxyParams}{Paramètres}
+{\em pm} & the pointer to the instances modifs to reset \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 1730 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a6a0f75985d8bc0028d966afbebdb6d4c}{\index{proteus.\+c@{proteus.\+c}!rot\+\_\+exists@{rot\+\_\+exists}}
+\index{rot\+\_\+exists@{rot\+\_\+exists}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{rot\+\_\+exists}]{\setlength{\rightskip}{0pt plus 5cm}int rot\+\_\+exists (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{int}]{j, }
+\item[{int}]{rotam}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a6a0f75985d8bc0028d966afbebdb6d4c}
+Search if the rot exists in residues.\+type.\+rot 
+\begin{DoxyParams}{Paramètres}
+{\em i} & the id of the residue \\
+\hline
+{\em j} & the id of the type \\
+\hline
+{\em rotam} & the rotam number to search \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+boolean true or false 
+\end{DoxyReturn}
+
+
+Définition à la ligne 566 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a95053af503c7ca4f0cbef717fe4cd763}{\index{proteus.\+c@{proteus.\+c}!set\+\_\+ins\+\_\+proba@{set\+\_\+ins\+\_\+proba}}
+\index{set\+\_\+ins\+\_\+proba@{set\+\_\+ins\+\_\+proba}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{set\+\_\+ins\+\_\+proba}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+ins\+\_\+proba (
+\begin{DoxyParamCaption}
+\item[{{\bf posi\+\_\+instance} $\ast$}]{ins, }
+\item[{float}]{proba, }
+\item[{int}]{code}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a95053af503c7ca4f0cbef717fe4cd763}
+
+
+Définition à la ligne 1866 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a7d3e41bc13746a0ed305a244b6501481}{\index{proteus.\+c@{proteus.\+c}!type\+\_\+exists@{type\+\_\+exists}}
+\index{type\+\_\+exists@{type\+\_\+exists}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{type\+\_\+exists}]{\setlength{\rightskip}{0pt plus 5cm}int type\+\_\+exists (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{char $\ast$}]{type}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a7d3e41bc13746a0ed305a244b6501481}
+Search if the type exists in residues.\+types 
+\begin{DoxyParams}{Paramètres}
+{\em i} & the id of the residue \\
+\hline
+{\em type} & the type of the residue to search \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+boolean true or false 
+\end{DoxyReturn}
+
+
+Définition à la ligne 547 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a2fa955e7cc14fe012043d75254fac1de}{\index{proteus.\+c@{proteus.\+c}!update\+\_\+grp\+\_\+eners@{update\+\_\+grp\+\_\+eners}}
+\index{update\+\_\+grp\+\_\+eners@{update\+\_\+grp\+\_\+eners}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{update\+\_\+grp\+\_\+eners}]{\setlength{\rightskip}{0pt plus 5cm}void update\+\_\+grp\+\_\+eners (
+\begin{DoxyParamCaption}
+\item[{{\bf conformation}}]{c, }
+\item[{{\bf ins\+\_\+modifs}}]{modifs, }
+\item[{double}]{grp\+\_\+eners\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{walker\+\_\+id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{proteus_8c_a2fa955e7cc14fe012043d75254fac1de}
+Update energies of the group 
+\begin{DoxyParams}{Paramètres}
+{\em c} & the current conformation \\
+\hline
+{\em modifs} & the modifs to apply \\
+\hline
+{\em grp\+\_\+eners} & the energy of the group to update \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 1164 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_abed9226baf88c835f446d8578a07a536}{\index{proteus.\+c@{proteus.\+c}!update\+\_\+grp\+\_\+eners\+\_\+prev@{update\+\_\+grp\+\_\+eners\+\_\+prev}}
+\index{update\+\_\+grp\+\_\+eners\+\_\+prev@{update\+\_\+grp\+\_\+eners\+\_\+prev}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{update\+\_\+grp\+\_\+eners\+\_\+prev}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ update\+\_\+grp\+\_\+eners\+\_\+prev (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{grp\+\_\+eners\+\_\+prev, }
+\item[{int}]{walker\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_abed9226baf88c835f446d8578a07a536}
+
+
+Définition à la ligne 2633 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a577db92217f385a4813d114ed0d4b689}{\index{proteus.\+c@{proteus.\+c}!update\+\_\+grp\+\_\+eners\+\_\+prev\+\_\+back@{update\+\_\+grp\+\_\+eners\+\_\+prev\+\_\+back}}
+\index{update\+\_\+grp\+\_\+eners\+\_\+prev\+\_\+back@{update\+\_\+grp\+\_\+eners\+\_\+prev\+\_\+back}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{update\+\_\+grp\+\_\+eners\+\_\+prev\+\_\+back}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ update\+\_\+grp\+\_\+eners\+\_\+prev\+\_\+back (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{grp\+\_\+eners\+\_\+prev, }
+\item[{int}]{walker\+\_\+id}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a577db92217f385a4813d114ed0d4b689}
+
+
+Définition à la ligne 2645 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a4392d9f6c92f9e7d9cb937ee08f83ab0}{\index{proteus.\+c@{proteus.\+c}!update\+\_\+modifs@{update\+\_\+modifs}}
+\index{update\+\_\+modifs@{update\+\_\+modifs}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{update\+\_\+modifs}]{\setlength{\rightskip}{0pt plus 5cm}void update\+\_\+modifs (
+\begin{DoxyParamCaption}
+\item[{{\bf posi\+\_\+instance} $\ast$}]{ins, }
+\item[{int}]{type, }
+\item[{int}]{rot, }
+\item[{{\bf ins\+\_\+modifs} $\ast$}]{pm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{proteus_8c_a4392d9f6c92f9e7d9cb937ee08f83ab0}
+Update modification -\/ adding a new modif to \hyperlink{structins__modifs}{ins\+\_\+modifs} 
+\begin{DoxyParams}{Paramètres}
+{\em ins} & the position instance to add \\
+\hline
+{\em type} & the type to add \\
+\hline
+{\em rot} & the rotamer to add \\
+\hline
+{\em pm} & the pointer of modifs to update \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 2024 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a7e36c5704a548ac42289733874795534}{\index{proteus.\+c@{proteus.\+c}!update\+\_\+possible\+\_\+instances@{update\+\_\+possible\+\_\+instances}}
+\index{update\+\_\+possible\+\_\+instances@{update\+\_\+possible\+\_\+instances}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{update\+\_\+possible\+\_\+instances}]{\setlength{\rightskip}{0pt plus 5cm}void update\+\_\+possible\+\_\+instances (
+\begin{DoxyParamCaption}
+\item[{int}]{ins\+\_\+id, }
+\item[{{\bf possible\+\_\+instances} $\ast$}]{pi, }
+\item[{{\bf neighbors} $\ast$}]{neighborhoods}
+\end{DoxyParamCaption}
+)}}\label{proteus_8c_a7e36c5704a548ac42289733874795534}
+Update the possible instances 
+\begin{DoxyParams}{Paramètres}
+{\em ins\+\_\+id} & the id of the instance to update \\
+\hline
+{\em pi} & the pointer of the possible instance to update\+In the array of possible instances, we put the last value at the ins\+\_\+id position, we decrease the possible instances nb Thus, there is no repetition in the return values of the function rand\+\_\+ins. \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 2004 du fichier proteus.\+c.
+
+
+
+\subsection{Documentation des variables}
+\hypertarget{proteus_8c_ab1551d8043c2aa4410fb7dbb1fe3be7b}{\index{proteus.\+c@{proteus.\+c}!alpha@{alpha}}
+\index{alpha@{alpha}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{alpha}]{\setlength{\rightskip}{0pt plus 5cm}float alpha}}\label{proteus_8c_ab1551d8043c2aa4410fb7dbb1fe3be7b}
+
+
+Définition à la ligne 58 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a4bea311882e7028639c0132838970aba}{\index{proteus.\+c@{proteus.\+c}!bb\+\_\+nb@{bb\+\_\+nb}}
+\index{bb\+\_\+nb@{bb\+\_\+nb}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{bb\+\_\+nb}]{\setlength{\rightskip}{0pt plus 5cm}int bb\+\_\+nb =0}}\label{proteus_8c_a4bea311882e7028639c0132838970aba}
+
+
+Définition à la ligne 63 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_ae8dc11ebaa96c7726e55b42412243b50}{\index{proteus.\+c@{proteus.\+c}!config@{config}}
+\index{config@{config}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{config}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ config\mbox{[}{\bf T\+A\+G\+\_\+\+N\+B}\mbox{]}}}\label{proteus_8c_ae8dc11ebaa96c7726e55b42412243b50}
+
+
+store the info from the config file\+: tag number x lines by tag 
+
+
+
+Définition à la ligne 67 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a201b60e51b49f9eae91168c6dd7d3cc2}{\index{proteus.\+c@{proteus.\+c}!ener\+\_\+folder@{ener\+\_\+folder}}
+\index{ener\+\_\+folder@{ener\+\_\+folder}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{ener\+\_\+folder}]{\setlength{\rightskip}{0pt plus 5cm}D\+I\+R$\ast$ ener\+\_\+folder}}\label{proteus_8c_a201b60e51b49f9eae91168c6dd7d3cc2}
+
+
+Définition à la ligne 66 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a51a3838749893681c8816f3572d19b4f}{\index{proteus.\+c@{proteus.\+c}!enerdir@{enerdir}}
+\index{enerdir@{enerdir}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{enerdir}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ enerdir}}\label{proteus_8c_a51a3838749893681c8816f3572d19b4f}
+
+
+Définition à la ligne 59 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a2dceb63003a97fa431d06d1d07edc449}{\index{proteus.\+c@{proteus.\+c}!epsilon@{epsilon}}
+\index{epsilon@{epsilon}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{epsilon}]{\setlength{\rightskip}{0pt plus 5cm}float epsilon}}\label{proteus_8c_a2dceb63003a97fa431d06d1d07edc449}
+
+
+Définition à la ligne 58 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a9f7317e6cb3ede7fd0e1cdada2ebb46d}{\index{proteus.\+c@{proteus.\+c}!grp\+\_\+pairs@{grp\+\_\+pairs}}
+\index{grp\+\_\+pairs@{grp\+\_\+pairs}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{grp\+\_\+pairs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf grp\+\_\+pair}$\ast$ grp\+\_\+pairs}}\label{proteus_8c_a9f7317e6cb3ede7fd0e1cdada2ebb46d}
+
+
+Définition à la ligne 72 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a205145c2f6049d25c0993356584edabb}{\index{proteus.\+c@{proteus.\+c}!grps\+\_\+ener\+\_\+walker@{grps\+\_\+ener\+\_\+walker}}
+\index{grps\+\_\+ener\+\_\+walker@{grps\+\_\+ener\+\_\+walker}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{grps\+\_\+ener\+\_\+walker}]{\setlength{\rightskip}{0pt plus 5cm}{\bf grp\+\_\+ener\+\_\+walker}$\ast$ grps\+\_\+ener\+\_\+walker}}\label{proteus_8c_a205145c2f6049d25c0993356584edabb}
+
+
+Définition à la ligne 73 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_acac4a565486bad0b88b62387d8a5d891}{\index{proteus.\+c@{proteus.\+c}!lambda@{lambda}}
+\index{lambda@{lambda}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{lambda}]{\setlength{\rightskip}{0pt plus 5cm}float lambda}}\label{proteus_8c_acac4a565486bad0b88b62387d8a5d891}
+
+
+Définition à la ligne 58 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a4fe1d8c4466c04cbb4132fad3c88c5ca}{\index{proteus.\+c@{proteus.\+c}!matrix\+\_\+trans@{matrix\+\_\+trans}}
+\index{matrix\+\_\+trans@{matrix\+\_\+trans}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{matrix\+\_\+trans}]{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix\+\_\+transition}$\ast$ matrix\+\_\+trans}}\label{proteus_8c_a4fe1d8c4466c04cbb4132fad3c88c5ca}
+
+
+Définition à la ligne 69 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a1ea5d0cb93f22f7d0fdf804bd68c3326}{\index{proteus.\+c@{proteus.\+c}!mode@{mode}}
+\index{mode@{mode}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}int mode}}\label{proteus_8c_a1ea5d0cb93f22f7d0fdf804bd68c3326}
+
+
+Définition à la ligne 65 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a7a3346e48f134b69f8bab0c96cf780b7}{\index{proteus.\+c@{proteus.\+c}!nb\+\_\+posi\+\_\+total@{nb\+\_\+posi\+\_\+total}}
+\index{nb\+\_\+posi\+\_\+total@{nb\+\_\+posi\+\_\+total}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{nb\+\_\+posi\+\_\+total}]{\setlength{\rightskip}{0pt plus 5cm}int nb\+\_\+posi\+\_\+total =0}}\label{proteus_8c_a7a3346e48f134b69f8bab0c96cf780b7}
+
+
+Définition à la ligne 61 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a8526a54c363472a4f331ae9ca3cef5ab}{\index{proteus.\+c@{proteus.\+c}!P@{P}}
+\index{P@{P}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{P}]{\setlength{\rightskip}{0pt plus 5cm}long double$\ast$ P}}\label{proteus_8c_a8526a54c363472a4f331ae9ca3cef5ab}
+
+
+Définition à la ligne 75 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a895aa28767af54e97bf83a28961c2299}{\index{proteus.\+c@{proteus.\+c}!posi\+\_\+nb@{posi\+\_\+nb}}
+\index{posi\+\_\+nb@{posi\+\_\+nb}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{posi\+\_\+nb}]{\setlength{\rightskip}{0pt plus 5cm}int posi\+\_\+nb =0}}\label{proteus_8c_a895aa28767af54e97bf83a28961c2299}
+
+
+number of position in the $\ast$.bb file 
+
+
+
+Définition à la ligne 64 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_ae4426f467d61ae456b95844d4d9c2dcd}{\index{proteus.\+c@{proteus.\+c}!quiet@{quiet}}
+\index{quiet@{quiet}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{quiet}]{\setlength{\rightskip}{0pt plus 5cm}bool quiet =false}}\label{proteus_8c_ae4426f467d61ae456b95844d4d9c2dcd}
+
+
+Définition à la ligne 55 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_a82578da3962ce46ce29e2019b7904491}{\index{proteus.\+c@{proteus.\+c}!rot\+\_\+nb@{rot\+\_\+nb}}
+\index{rot\+\_\+nb@{rot\+\_\+nb}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{rot\+\_\+nb}]{\setlength{\rightskip}{0pt plus 5cm}int rot\+\_\+nb =0}}\label{proteus_8c_a82578da3962ce46ce29e2019b7904491}
+
+
+Définition à la ligne 60 du fichier proteus.\+c.
+
+\hypertarget{proteus_8c_ab3f078684998b83967d507d0f453f454}{\index{proteus.\+c@{proteus.\+c}!verbose@{verbose}}
+\index{verbose@{verbose}!proteus.\+c@{proteus.\+c}}
+\subsubsection[{verbose}]{\setlength{\rightskip}{0pt plus 5cm}bool verbose =false}}\label{proteus_8c_ab3f078684998b83967d507d0f453f454}
+
+
+Définition à la ligne 54 du fichier proteus.\+c.
+

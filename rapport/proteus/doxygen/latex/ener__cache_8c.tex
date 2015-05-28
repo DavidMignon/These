@@ -1,0 +1,220 @@
+\hypertarget{ener__cache_8c}{\section{Référence du fichier /home/mignon/bioinfo/proteus/gitlab/proteus/ener\+\_\+cache.c}
+\label{ener__cache_8c}\index{/home/mignon/bioinfo/proteus/gitlab/proteus/ener\+\_\+cache.\+c@{/home/mignon/bioinfo/proteus/gitlab/proteus/ener\+\_\+cache.\+c}}
+}
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}ener\+\_\+cache.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}read\+\_\+ener.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}request\+\_\+ring.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}residues.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de ener\+\_\+cache.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ener__cache_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structpair}{pair}
+\item 
+struct \hyperlink{structcache}{cache}
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \hyperlink{ener__cache_8c_a5f63d84e28c19b3612051bf340efab06}{hash} (\hyperlink{structparam__t}{param\+\_\+t} val)
+\item 
+bool \hyperlink{ener__cache_8c_a929cd981dcfc2a700d9723b5622243c5}{equals} (\hyperlink{structparam__t}{param\+\_\+t} a, \hyperlink{structparam__t}{param\+\_\+t} b)
+\item 
+bool \hyperlink{ener__cache_8c_a0a28fdb9864e11369beb9d74152a303f}{contains} (\hyperlink{structparam__t}{param\+\_\+t} val)
+\item 
+float $\ast$ \hyperlink{ener__cache_8c_a216f0bc5f0fca30f9349a150a9cf369a}{read\+\_\+cache} (\hyperlink{structparam__t}{param\+\_\+t} val)
+\item 
+void \hyperlink{ener__cache_8c_aed979dc94139afdcd9852be479fbcf79}{put\+\_\+cache} (\hyperlink{structparam__t}{param\+\_\+t} key, double val)
+\item 
+void \hyperlink{ener__cache_8c_a2fc6b52afd63b17dfbc997c1ea8399f1}{build\+\_\+cache} ()
+\item 
+\hyperlink{global_8h_a596407b6fb2365e332aae2fa812dadc7}{ener\+\_\+id\+\_\+t} \hyperlink{ener__cache_8c_a0506d0bfa291beed7b19db2212e8edd5}{compute\+\_\+ener\+\_\+cache} (int posi1, int posi2, int rot1, int rot2)
+\item 
+double \hyperlink{ener__cache_8c_a38eb7bde3321b7bec251008cb21e6ec1}{wait\+\_\+ener\+\_\+cache} (\hyperlink{global_8h_a596407b6fb2365e332aae2fa812dadc7}{ener\+\_\+id\+\_\+t} id)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structcache}{cache} \hyperlink{ener__cache_8c_a1736170bfada3ad143e890642c4394f4}{L\+R\+U}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{ener__cache_8c_a2fc6b52afd63b17dfbc997c1ea8399f1}{\index{ener\+\_\+cache.\+c@{ener\+\_\+cache.\+c}!build\+\_\+cache@{build\+\_\+cache}}
+\index{build\+\_\+cache@{build\+\_\+cache}!ener\+\_\+cache.\+c@{ener\+\_\+cache.\+c}}
+\subsubsection[{build\+\_\+cache}]{\setlength{\rightskip}{0pt plus 5cm}void build\+\_\+cache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ener__cache_8c_a2fc6b52afd63b17dfbc997c1ea8399f1}
+Build the cache array 
+
+Définition à la ligne 163 du fichier ener\+\_\+cache.\+c.
+
+\hypertarget{ener__cache_8c_a0506d0bfa291beed7b19db2212e8edd5}{\index{ener\+\_\+cache.\+c@{ener\+\_\+cache.\+c}!compute\+\_\+ener\+\_\+cache@{compute\+\_\+ener\+\_\+cache}}
+\index{compute\+\_\+ener\+\_\+cache@{compute\+\_\+ener\+\_\+cache}!ener\+\_\+cache.\+c@{ener\+\_\+cache.\+c}}
+\subsubsection[{compute\+\_\+ener\+\_\+cache}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ener\+\_\+id\+\_\+t} compute\+\_\+ener\+\_\+cache (
+\begin{DoxyParamCaption}
+\item[{int}]{posi1, }
+\item[{int}]{posi2, }
+\item[{int}]{rot1, }
+\item[{int}]{rot2}
+\end{DoxyParamCaption}
+)}}\label{ener__cache_8c_a0506d0bfa291beed7b19db2212e8edd5}
+Read the energy in the cache 
+\begin{DoxyParams}{Paramètres}
+{\em posi1} & the position of the first residue \\
+\hline
+{\em posi2} & the position of the second residue \\
+\hline
+{\em rot1} & the rotamer of the first residue \\
+\hline
+{\em rot2} & the rotamer of the second residue \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the id of the adress containing the energy of the couple computed 
+\end{DoxyReturn}
+
+
+Définition à la ligne 188 du fichier ener\+\_\+cache.\+c.
+
+\hypertarget{ener__cache_8c_a0a28fdb9864e11369beb9d74152a303f}{\index{ener\+\_\+cache.\+c@{ener\+\_\+cache.\+c}!contains@{contains}}
+\index{contains@{contains}!ener\+\_\+cache.\+c@{ener\+\_\+cache.\+c}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}bool contains (
+\begin{DoxyParamCaption}
+\item[{{\bf param\+\_\+t}}]{val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{ener__cache_8c_a0a28fdb9864e11369beb9d74152a303f}
+Checking if the index value of the cache contains the key 
+\begin{DoxyParams}{Paramètres}
+{\em val} & the pos1, pos2, rot1, rot2 structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true or false 
+\end{DoxyReturn}
+
+
+Définition à la ligne 84 du fichier ener\+\_\+cache.\+c.
+
+\hypertarget{ener__cache_8c_a929cd981dcfc2a700d9723b5622243c5}{\index{ener\+\_\+cache.\+c@{ener\+\_\+cache.\+c}!equals@{equals}}
+\index{equals@{equals}!ener\+\_\+cache.\+c@{ener\+\_\+cache.\+c}}
+\subsubsection[{equals}]{\setlength{\rightskip}{0pt plus 5cm}bool equals (
+\begin{DoxyParamCaption}
+\item[{{\bf param\+\_\+t}}]{a, }
+\item[{{\bf param\+\_\+t}}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{ener__cache_8c_a929cd981dcfc2a700d9723b5622243c5}
+Compare two structures \hyperlink{structparam__t}{param\+\_\+t} 
+\begin{DoxyParams}{Paramètres}
+{\em a} & the first structure to compare \\
+\hline
+{\em b} & the second structure to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true or false 
+\end{DoxyReturn}
+
+
+Définition à la ligne 71 du fichier ener\+\_\+cache.\+c.
+
+\hypertarget{ener__cache_8c_a5f63d84e28c19b3612051bf340efab06}{\index{ener\+\_\+cache.\+c@{ener\+\_\+cache.\+c}!hash@{hash}}
+\index{hash@{hash}!ener\+\_\+cache.\+c@{ener\+\_\+cache.\+c}}
+\subsubsection[{hash}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t hash (
+\begin{DoxyParamCaption}
+\item[{{\bf param\+\_\+t}}]{val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{ener__cache_8c_a5f63d84e28c19b3612051bf340efab06}
+Hash function 
+\begin{DoxyParams}{Paramètres}
+{\em val} & the combination of posi1, posi2, rot1, rot2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the hash value 
+\end{DoxyReturn}
+
+
+Définition à la ligne 45 du fichier ener\+\_\+cache.\+c.
+
+\hypertarget{ener__cache_8c_aed979dc94139afdcd9852be479fbcf79}{\index{ener\+\_\+cache.\+c@{ener\+\_\+cache.\+c}!put\+\_\+cache@{put\+\_\+cache}}
+\index{put\+\_\+cache@{put\+\_\+cache}!ener\+\_\+cache.\+c@{ener\+\_\+cache.\+c}}
+\subsubsection[{put\+\_\+cache}]{\setlength{\rightskip}{0pt plus 5cm}void put\+\_\+cache (
+\begin{DoxyParamCaption}
+\item[{{\bf param\+\_\+t}}]{key, }
+\item[{double}]{val}
+\end{DoxyParamCaption}
+)}}\label{ener__cache_8c_aed979dc94139afdcd9852be479fbcf79}
+Put a value and a key in the cache 
+\begin{DoxyParams}{Paramètres}
+{\em key} & the key to put in the cache (pos1, pos2, rot1, rot2) \\
+\hline
+{\em val} & the venergy value to put in the cache \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 119 du fichier ener\+\_\+cache.\+c.
+
+\hypertarget{ener__cache_8c_a216f0bc5f0fca30f9349a150a9cf369a}{\index{ener\+\_\+cache.\+c@{ener\+\_\+cache.\+c}!read\+\_\+cache@{read\+\_\+cache}}
+\index{read\+\_\+cache@{read\+\_\+cache}!ener\+\_\+cache.\+c@{ener\+\_\+cache.\+c}}
+\subsubsection[{read\+\_\+cache}]{\setlength{\rightskip}{0pt plus 5cm}float$\ast$ read\+\_\+cache (
+\begin{DoxyParamCaption}
+\item[{{\bf param\+\_\+t}}]{val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{ener__cache_8c_a216f0bc5f0fca30f9349a150a9cf369a}
+Read the value in the cache from the key 
+\begin{DoxyParams}{Paramètres}
+{\em val} & the pos1, pos2, rot1, rot2 structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+energy value existing 
+\end{DoxyReturn}
+
+
+Définition à la ligne 101 du fichier ener\+\_\+cache.\+c.
+
+\hypertarget{ener__cache_8c_a38eb7bde3321b7bec251008cb21e6ec1}{\index{ener\+\_\+cache.\+c@{ener\+\_\+cache.\+c}!wait\+\_\+ener\+\_\+cache@{wait\+\_\+ener\+\_\+cache}}
+\index{wait\+\_\+ener\+\_\+cache@{wait\+\_\+ener\+\_\+cache}!ener\+\_\+cache.\+c@{ener\+\_\+cache.\+c}}
+\subsubsection[{wait\+\_\+ener\+\_\+cache}]{\setlength{\rightskip}{0pt plus 5cm}double wait\+\_\+ener\+\_\+cache (
+\begin{DoxyParamCaption}
+\item[{{\bf ener\+\_\+id\+\_\+t}}]{id}
+\end{DoxyParamCaption}
+)}}\label{ener__cache_8c_a38eb7bde3321b7bec251008cb21e6ec1}
+Read the adresse of the energy computed form the cache 
+\begin{DoxyParams}{Paramètres}
+{\em id} & the id of the adress to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the energy of the couple 
+\end{DoxyReturn}
+
+
+Définition à la ligne 209 du fichier ener\+\_\+cache.\+c.
+
+
+
+\subsection{Documentation des variables}
+\hypertarget{ener__cache_8c_a1736170bfada3ad143e890642c4394f4}{\index{ener\+\_\+cache.\+c@{ener\+\_\+cache.\+c}!L\+R\+U@{L\+R\+U}}
+\index{L\+R\+U@{L\+R\+U}!ener\+\_\+cache.\+c@{ener\+\_\+cache.\+c}}
+\subsubsection[{L\+R\+U}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cache} L\+R\+U}}\label{ener__cache_8c_a1736170bfada3ad143e890642c4394f4}
+
+
+Définition à la ligne 38 du fichier ener\+\_\+cache.\+c.
+

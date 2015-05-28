@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>proteus: Référence du fichier /home/mignon/bioinfo/proteus/gitlab/proteus/residues.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">proteus
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b75a2afd3124dc514e77c0f10e744ba9.html">proteus</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier residues.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="global_8h_source.html">global.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="residues_8h_source.html">residues.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de residues.c:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="residues_8c__incl.svg" width="527" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="residues_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:aa2e4bed942e95a002d487e0757c4f39a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="residues_8c.html#aa2e4bed942e95a002d487e0757c4f39a">det_posi</a> (int residi)</td></tr>
+<tr class="separator:aa2e4bed942e95a002d487e0757c4f39a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af68020f900a4ab3f449ad4a5129ebfd5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="residues_8c.html#af68020f900a4ab3f449ad4a5129ebfd5">det_posi_chain</a> (int residi, char *name)</td></tr>
+<tr class="separator:af68020f900a4ab3f449ad4a5129ebfd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a831093cde96c42d8b831b654bacef3dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="residues_8c.html#a831093cde96c42d8b831b654bacef3dd">det_posi_name</a> (char *name)</td></tr>
+<tr class="separator:a831093cde96c42d8b831b654bacef3dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3842dcbb882b66b29038a093a4951261"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="residues_8c.html#a3842dcbb882b66b29038a093a4951261">posi_exists_name</a> (char *PDB_name)</td></tr>
+<tr class="separator:a3842dcbb882b66b29038a093a4951261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89f77b08ed6926fe6c380d0454658401"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="residues_8c.html#a89f77b08ed6926fe6c380d0454658401">posi_exists</a> (int posi)</td></tr>
+<tr class="separator:a89f77b08ed6926fe6c380d0454658401"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae112d856807b0b59d9998923361b5221"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="residues_8c.html#ae112d856807b0b59d9998923361b5221">det_rot_idx</a> (int posi, int <a class="el" href="structtype.html">type</a>, int id)</td></tr>
+<tr class="separator:ae112d856807b0b59d9998923361b5221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a794733677b3b88590c4227e6ba5261"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="residues_8c.html#a7a794733677b3b88590c4227e6ba5261">det_rot</a> (int posi, int idx, int *ptype, int *pid)</td></tr>
+<tr class="separator:a7a794733677b3b88590c4227e6ba5261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37da76ac5c232f9c2e61058b0d5f8aac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="residues_8c.html#a37da76ac5c232f9c2e61058b0d5f8aac">det_type</a> (int posi, char *<a class="el" href="structtype.html">type</a>)</td></tr>
+<tr class="separator:a37da76ac5c232f9c2e61058b0d5f8aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a94d5de64587ee65ec5a6a17d4bef89fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structresidue.html">residue</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a></td></tr>
+<tr class="separator:a94d5de64587ee65ec5a6a17d4bef89fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="aa2e4bed942e95a002d487e0757c4f39a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int det_posi </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>residi</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Given a pdb position, det_posi returns the effective position in the residues array </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">residi</td><td>the PDB position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the effective position in the residues array </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="residues_8c_source.html#l00012">12</a> du fichier <a class="el" href="residues_8c_source.html">residues.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af68020f900a4ab3f449ad4a5129ebfd5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int det_posi_chain </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>residi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define the effective position in the backbone array from a PDB position and a chain name </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">residi</td><td>the pdb position to search </td></tr>
+    <tr><td class="paramname">name</td><td>the chain name of the pdb position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the effective position in the residues array </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="residues_8c_source.html#l00029">29</a> du fichier <a class="el" href="residues_8c_source.html">residues.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a831093cde96c42d8b831b654bacef3dd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int det_posi_name </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define the effective position in the backbone array from a PDB name (1A ou 1::A) </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>the PDB name (1A ou 1::A) of the pdb position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the effective position in the residues array </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="residues_8c_source.html#l00043">43</a> du fichier <a class="el" href="residues_8c_source.html">residues.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7a794733677b3b88590c4227e6ba5261"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void det_rot </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>posi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>ptype</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>pid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Given a position and a index of a rotamer ,det_rot returns the rotamer id,its type and the local index </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">posi</td><td>the position number </td></tr>
+    <tr><td class="paramname">idx</td><td>the index of a rotamer </td></tr>
+    <tr><td class="paramname">ptype</td><td>the local type of the rotamer </td></tr>
+    <tr><td class="paramname">pid</td><td>the local index of the rotamer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="residues_8c_source.html#l00101">101</a> du fichier <a class="el" href="residues_8c_source.html">residues.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae112d856807b0b59d9998923361b5221"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int det_rot_idx </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>posi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Given a position, a type and a rotamer id, det_rot_idx returns the index of the rot in its residue </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">posi</td><td>the position number </td></tr>
+    <tr><td class="paramname">type</td><td>the type number </td></tr>
+    <tr><td class="paramname">id</td><td>the id number </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the index of the rot </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="residues_8c_source.html#l00088">88</a> du fichier <a class="el" href="residues_8c_source.html">residues.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a37da76ac5c232f9c2e61058b0d5f8aac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int det_type </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>posi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Given a position and a type,det_type returns the effective type index for this position </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">posi</td><td>the position number </td></tr>
+    <tr><td class="paramname">type</td><td>the type number in 3 letters </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the effective type index of the position </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="residues_8c_source.html#l00118">118</a> du fichier <a class="el" href="residues_8c_source.html">residues.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a89f77b08ed6926fe6c380d0454658401"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int posi_exists </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>posi</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Search if the number is a pdb position in residues </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">posi</td><td>the position to search </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>boolean true or false </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="residues_8c_source.html#l00074">74</a> du fichier <a class="el" href="residues_8c_source.html">residues.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3842dcbb882b66b29038a093a4951261"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int posi_exists_name </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>PDB_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Search if the name is a PDB name in residues </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">PDB_name</td><td>the PDB name of the position (6A or 6::A) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>boolean true or false </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="residues_8c_source.html#l00060">60</a> du fichier <a class="el" href="residues_8c_source.html">residues.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des variables</h2>
+<a class="anchor" id="a94d5de64587ee65ec5a6a17d4bef89fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structresidue.html">residue</a>* residues</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="residues_8c_source.html#l00009">9</a> du fichier <a class="el" href="residues_8c_source.html">residues.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi 27 Mai 2015 10:00:24 pour proteus par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

@@ -1,0 +1,3085 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>proteus: Référence du fichier /home/mignon/bioinfo/proteus/gitlab/proteus/proteus.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">proteus
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b75a2afd3124dc514e77c0f10e744ba9.html">proteus</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier proteus.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;signal.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;mcheck.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &lt;limits.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;dirent.h&gt;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &lt;gsl/gsl_rng.h&gt;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;float.h&gt;</code><br />
+<code>#include &lt;omp.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;inttypes.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="global_8h_source.html">global.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="utils_8h_source.html">utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="read__conf_8h_source.html">read_conf.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ener__cache_8h_source.html">ener_cache.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="read__ener_8h_source.html">read_ener.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de proteus.c:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="proteus_8c__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</div>
+<p><a href="proteus_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structconformation.html">conformation</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdesc__conf.html">desc_conf</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structins__modif.html">ins_modif</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structins__modifs.html">ins_modifs</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpossible__instances.html">possible_instances</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structneighbors.html">neighbors</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">posJ is a neighbor of posI if there are rotJ and rotI with ener[rotI][rotJ]&gt;= neighbor_threshold  <a href="structneighbors.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a5c71a5e59a53413cd6c270266d63b031"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a5c71a5e59a53413cd6c270266d63b031">R</a>&#160;&#160;&#160;0.001987</td></tr>
+<tr class="separator:a5c71a5e59a53413cd6c270266d63b031"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a691389aa8e7978a9a084ac9f0992cc00"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a691389aa8e7978a9a084ac9f0992cc00">FIRST_INS_COL</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a691389aa8e7978a9a084ac9f0992cc00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a0d20b69b0ad703df78459e1033d5c1d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a0d20b69b0ad703df78459e1033d5c1d4">printHelp</a> ()</td></tr>
+<tr class="separator:a0d20b69b0ad703df78459e1033d5c1d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af681462fc359907fa5af227855dca2d4"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#af681462fc359907fa5af227855dca2d4">open_output_file</a> (int tag_id, int suffix_id, const char *default_name)</td></tr>
+<tr class="separator:af681462fc359907fa5af227855dca2d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04c0f2c9c83f06a4b8de5b0cc3caabb6"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a04c0f2c9c83f06a4b8de5b0cc3caabb6">open_seq_input</a> ()</td></tr>
+<tr class="separator:a04c0f2c9c83f06a4b8de5b0cc3caabb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc7660c6f8c63bbab7fedc42a6fe3dee"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#afc7660c6f8c63bbab7fedc42a6fe3dee">get_seq_input</a> ()</td></tr>
+<tr class="separator:afc7660c6f8c63bbab7fedc42a6fe3dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27244f5c7cc2852b1e0d9be9ae0398c6"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a27244f5c7cc2852b1e0d9be9ae0398c6">init_seq_output</a> (int suffix_id)</td></tr>
+<tr class="separator:a27244f5c7cc2852b1e0d9be9ae0398c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec6e0d8148cdee200b06e4cdcfc9ba48"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#aec6e0d8148cdee200b06e4cdcfc9ba48">init_ener_output</a> (int suffix_id)</td></tr>
+<tr class="separator:aec6e0d8148cdee200b06e4cdcfc9ba48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6152a764a53f80617eb6ef74ca627ebf"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a6152a764a53f80617eb6ef74ca627ebf">open_efasta</a> ()</td></tr>
+<tr class="separator:a6152a764a53f80617eb6ef74ca627ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab8d489303aaf8d14fb48baeb0fef2d3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#aab8d489303aaf8d14fb48baeb0fef2d3">def_cycle_nb</a> ()</td></tr>
+<tr class="separator:aab8d489303aaf8d14fb48baeb0fef2d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61bd0fe013955ba289b43c86f897958e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a61bd0fe013955ba289b43c86f897958e">def_walker_nb</a> ()</td></tr>
+<tr class="separator:a61bd0fe013955ba289b43c86f897958e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacf741d8211a4deac3d0c1e7eb01f180"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#aacf741d8211a4deac3d0c1e7eb01f180">def_seq_pass_nb</a> ()</td></tr>
+<tr class="separator:aacf741d8211a4deac3d0c1e7eb01f180"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bde5604afb0738da014d65e82c51f8a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a1bde5604afb0738da014d65e82c51f8a">det_type_of_rot</a> (int rot, int ins_id)</td></tr>
+<tr class="separator:a1bde5604afb0738da014d65e82c51f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5f812689e4890d3b811a4b88f8042c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#ae5f812689e4890d3b811a4b88f8042c4">rand_int</a> (gsl_rng *rng, const int from_int, const int size)</td></tr>
+<tr class="separator:ae5f812689e4890d3b811a4b88f8042c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f685c8cbc950140f172106b0812d3af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a9f685c8cbc950140f172106b0812d3af">rand_type</a> (gsl_rng *rng, int ins)</td></tr>
+<tr class="separator:a9f685c8cbc950140f172106b0812d3af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa26efb523c367fcb66ebf726cb60a11"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#afa26efb523c367fcb66ebf726cb60a11">det_active</a> (int walker_id)</td></tr>
+<tr class="separator:afa26efb523c367fcb66ebf726cb60a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a827a592b2200bd99ba71d238d4cb2dd8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a827a592b2200bd99ba71d238d4cb2dd8">det_prev_active</a> (int walker_id)</td></tr>
+<tr class="separator:a827a592b2200bd99ba71d238d4cb2dd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9e5af9dd7bf454be1adc8716180a388"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#ad9e5af9dd7bf454be1adc8716180a388">def_swap_period</a> (int walker_nb)</td></tr>
+<tr class="separator:ad9e5af9dd7bf454be1adc8716180a388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae32201c8da7250658f1856e9a7ba01cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#ae32201c8da7250658f1856e9a7ba01cf">def_matrix_transition</a> ()</td></tr>
+<tr class="separator:ae32201c8da7250658f1856e9a7ba01cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d3e41bc13746a0ed305a244b6501481"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a7d3e41bc13746a0ed305a244b6501481">type_exists</a> (int i, char *<a class="el" href="structtype.html">type</a>)</td></tr>
+<tr class="separator:a7d3e41bc13746a0ed305a244b6501481"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a0f75985d8bc0028d966afbebdb6d4c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a6a0f75985d8bc0028d966afbebdb6d4c">rot_exists</a> (int i, int j, int rotam)</td></tr>
+<tr class="separator:a6a0f75985d8bc0028d966afbebdb6d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b909e6e8a856ef3e0409f2c0187d2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#ad8b909e6e8a856ef3e0409f2c0187d2b">build_residues</a> ()</td></tr>
+<tr class="separator:ad8b909e6e8a856ef3e0409f2c0187d2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea3c185eac36f6e7a0305fe08a1b0f25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structconformation.html">conformation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#aea3c185eac36f6e7a0305fe08a1b0f25">def_confo</a> ()</td></tr>
+<tr class="separator:aea3c185eac36f6e7a0305fe08a1b0f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaeb2f7ae94205f6bbd92b8be4d848fb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#aeaeb2f7ae94205f6bbd92b8be4d848fb">init_confo</a> (gsl_rng *rng, <a class="el" href="structconformation.html">conformation</a> c, int init_cpt, FILE *seq_input, int init_nb, float proba_bb, int walker_id)</td></tr>
+<tr class="separator:aeaeb2f7ae94205f6bbd92b8be4d848fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8be778b186760a7d8efaca0b068cb27"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#ab8be778b186760a7d8efaca0b068cb27">nextConfo</a> (<a class="el" href="structins__modifs.html">ins_modifs</a> modifs, const int <a class="el" href="structtype.html">type</a>)</td></tr>
+<tr class="separator:ab8be778b186760a7d8efaca0b068cb27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a079ccb20595247d3b0346b7297baa036"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a079ccb20595247d3b0346b7297baa036">computeFormula</a> (double grp_eners[], <a class="el" href="structopt__formula.html">opt_formula</a> *<a class="el" href="read__conf_8h.html#af2e12a68ed24f8ec049781947e8c41b6">formula</a>, int walker_id)</td></tr>
+<tr class="separator:a079ccb20595247d3b0346b7297baa036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b25e2f53ffa1b9978ac0c04e3c3b5f6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a7b25e2f53ffa1b9978ac0c04e3c3b5f6">def_bb_grp</a> (char *grp_name)</td></tr>
+<tr class="separator:a7b25e2f53ffa1b9978ac0c04e3c3b5f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a558ac7c2d8a8a59c86dae5801b59cc93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a558ac7c2d8a8a59c86dae5801b59cc93">compute_grp_eners</a> (<a class="el" href="structconformation.html">conformation</a> c, double grp_eners[], double best_grp_eners[], int walker_id)</td></tr>
+<tr class="separator:a558ac7c2d8a8a59c86dae5801b59cc93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fa955e7cc14fe012043d75254fac1de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a2fa955e7cc14fe012043d75254fac1de">update_grp_eners</a> (<a class="el" href="structconformation.html">conformation</a> c, <a class="el" href="structins__modifs.html">ins_modifs</a> modifs, double grp_eners[], int walker_id)</td></tr>
+<tr class="separator:a2fa955e7cc14fe012043d75254fac1de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dc0f5ecdbfeab4757d61fe8c224705e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgrp__pair.html">grp_pair</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a5dc0f5ecdbfeab4757d61fe8c224705e">def_id_grp</a> (int ins_id, <a class="el" href="structgrp__pair.html">grp_pair</a> tab)</td></tr>
+<tr class="separator:a5dc0f5ecdbfeab4757d61fe8c224705e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18fa04c69302e1a30480460f27fc2907"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a18fa04c69302e1a30480460f27fc2907">apply_modifs</a> (<a class="el" href="structconformation.html">conformation</a> c, <a class="el" href="structins__modifs.html">ins_modifs</a> modifs)</td></tr>
+<tr class="separator:a18fa04c69302e1a30480460f27fc2907"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8e35219a05e618d430b94a39be2f31e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#ac8e35219a05e618d430b94a39be2f31e">initMeanField</a> (long double E[], long double <a class="el" href="proteus_8c.html#a8526a54c363472a4f331ae9ca3cef5ab">P</a>[])</td></tr>
+<tr class="separator:ac8e35219a05e618d430b94a39be2f31e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabdf238899d33c4d71864b8059eb956b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#aabdf238899d33c4d71864b8059eb956b">printMeanField</a> (FILE *seq_output)</td></tr>
+<tr class="separator:aabdf238899d33c4d71864b8059eb956b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19480b2cfece84c7b05fb3511309ecf9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a19480b2cfece84c7b05fb3511309ecf9">computeMeanField</a> ()</td></tr>
+<tr class="separator:a19480b2cfece84c7b05fb3511309ecf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1daace82b4d6fb4b236574997dbcf22a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a1daace82b4d6fb4b236574997dbcf22a">print_result</a> (FILE *seq_output, FILE *ener_output, <a class="el" href="structconformation.html">conformation</a> c, double best_grp_eners[], double best_ener, int step, int print_id, float T, int walker_id, int cmpt)</td></tr>
+<tr class="separator:a1daace82b4d6fb4b236574997dbcf22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14b40b4baef2d124b76c72cde215486a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a14b40b4baef2d124b76c72cde215486a">print_stat</a> (int thread_id, clock_t start, int cycle, char *<a class="el" href="structtype.html">type</a>)</td></tr>
+<tr class="separator:a14b40b4baef2d124b76c72cde215486a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a423f1a78d7fd37c25663c6be24024e9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a423f1a78d7fd37c25663c6be24024e9c">free_confo</a> (<a class="el" href="structconformation.html">conformation</a> c)</td></tr>
+<tr class="separator:a423f1a78d7fd37c25663c6be24024e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60db393f5bed3c5fa71f903a3f9756a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a60db393f5bed3c5fa71f903a3f9756a5">free_grp_ener_walker</a> (<a class="el" href="structgrp__ener__walker.html">grp_ener_walker</a> *grp)</td></tr>
+<tr class="separator:a60db393f5bed3c5fa71f903a3f9756a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abae7f2399e89680f4b5e55ed63afd4af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#abae7f2399e89680f4b5e55ed63afd4af">is_Better</a> (double new_ener, double best_ener)</td></tr>
+<tr class="separator:abae7f2399e89680f4b5e55ed63afd4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b2e3ef0c7df7d15528c5e0aa6b79c12"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a3b2e3ef0c7df7d15528c5e0aa6b79c12">is_MCbetter</a> (gsl_rng *rng, double new_ener, double best_ener, float T, int t, int bb_change)</td></tr>
+<tr class="separator:a3b2e3ef0c7df7d15528c5e0aa6b79c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04223642d59299e0a5493d9a6dba8d13"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a04223642d59299e0a5493d9a6dba8d13">is_MCrel_better</a> (gsl_rng *rng, <a class="el" href="structdesc__conf.html">desc_conf</a> conf, double best_ener, float T)</td></tr>
+<tr class="separator:a04223642d59299e0a5493d9a6dba8d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81e39d86857d7436d5402939df985726"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a81e39d86857d7436d5402939df985726">is_swap_allowed</a> (gsl_rng *rng, float Ei, float Ej, float Ti, float Tj)</td></tr>
+<tr class="separator:a81e39d86857d7436d5402939df985726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaab1db88cbb74543d4af864e5582d3e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#aaab1db88cbb74543d4af864e5582d3e6">reset_modifs</a> (<a class="el" href="structins__modifs.html">ins_modifs</a> *pm)</td></tr>
+<tr class="separator:aaab1db88cbb74543d4af864e5582d3e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a799126fbcc36b54abef07e34b7b9974a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a799126fbcc36b54abef07e34b7b9974a">prepare_modifs</a> (<a class="el" href="structins__modifs.html">ins_modifs</a> *pm, <a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a> *ins)</td></tr>
+<tr class="separator:a799126fbcc36b54abef07e34b7b9974a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83b433767fad06351ce204ae0141edff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a83b433767fad06351ce204ae0141edff">computeHeuristic</a> ()</td></tr>
+<tr class="separator:a83b433767fad06351ce204ae0141edff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95053af503c7ca4f0cbef717fe4cd763"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a95053af503c7ca4f0cbef717fe4cd763">set_ins_proba</a> (<a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a> *ins, float proba, int code)</td></tr>
+<tr class="separator:a95053af503c7ca4f0cbef717fe4cd763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a814517d01c5859fea553eceb12a72a6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a814517d01c5859fea553eceb12a72a6e">read_proba_lines</a> (int code)</td></tr>
+<tr class="separator:a814517d01c5859fea553eceb12a72a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a193e774103ff1578b407f3486dcf46c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a193e774103ff1578b407f3486dcf46c8">get_ins_proba</a> (<a class="el" href="struct_proba.html">Proba</a> proba)</td></tr>
+<tr class="separator:a193e774103ff1578b407f3486dcf46c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac3cbd4d369d42c529e229842409d1de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#aac3cbd4d369d42c529e229842409d1de">init_possible_instances</a> (<a class="el" href="structpossible__instances.html">possible_instances</a> *pi, int ref_ins, <a class="el" href="structneighbors.html">neighbors</a> *neighborhoods)</td></tr>
+<tr class="separator:aac3cbd4d369d42c529e229842409d1de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e36c5704a548ac42289733874795534"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a7e36c5704a548ac42289733874795534">update_possible_instances</a> (int ins_id, <a class="el" href="structpossible__instances.html">possible_instances</a> *pi, <a class="el" href="structneighbors.html">neighbors</a> *neighborhoods)</td></tr>
+<tr class="separator:a7e36c5704a548ac42289733874795534"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4392d9f6c92f9e7d9cb937ee08f83ab0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a4392d9f6c92f9e7d9cb937ee08f83ab0">update_modifs</a> (<a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a> *ins, int <a class="el" href="structtype.html">type</a>, int rot, <a class="el" href="structins__modifs.html">ins_modifs</a> *pm)</td></tr>
+<tr class="separator:a4392d9f6c92f9e7d9cb937ee08f83ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ef2bf0bb77dda336bd2b7393efa7b53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a5ef2bf0bb77dda336bd2b7393efa7b53">modif_confo</a> (gsl_rng *rng, <a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a> *ins0, int <a class="el" href="structtype.html">type</a>, <a class="el" href="structins__modifs.html">ins_modifs</a> *pm, <a class="el" href="structpossible__instances.html">possible_instances</a> *pi, <a class="el" href="structneighbors.html">neighbors</a> *neighborhoods)</td></tr>
+<tr class="separator:a5ef2bf0bb77dda336bd2b7393efa7b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab12ee197aa24ced2d1ec48b32d2c01ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#ab12ee197aa24ced2d1ec48b32d2c01ec">rand_ins</a> (gsl_rng *rng, <a class="el" href="structpossible__instances.html">possible_instances</a> pi)</td></tr>
+<tr class="separator:ab12ee197aa24ced2d1ec48b32d2c01ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a3bc26e436f05c0cd81aa298cfa0f62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a7a3bc26e436f05c0cd81aa298cfa0f62">rand_ins_bb</a> (gsl_rng *rng, int *ne_bb)</td></tr>
+<tr class="separator:a7a3bc26e436f05c0cd81aa298cfa0f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85837744e96b8154f887e9f3e79d3c0e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a85837744e96b8154f887e9f3e79d3c0e">is_true_modif</a> (<a class="el" href="structconformation.html">conformation</a> c, <a class="el" href="structins__modifs.html">ins_modifs</a> *pm, int bb_change)</td></tr>
+<tr class="separator:a85837744e96b8154f887e9f3e79d3c0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91092e960d470534eb5840e636cc417c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a91092e960d470534eb5840e636cc417c">nextState</a> (gsl_rng *rng, <a class="el" href="structconformation.html">conformation</a> c, <a class="el" href="struct_proba.html">Proba</a> proba, float proba_bb, <a class="el" href="structins__modifs.html">ins_modifs</a> *pmodifs, <a class="el" href="structneighbors.html">neighbors</a> *neighborhoods, int *ne_bb, int bb_change, int walker_id)</td></tr>
+<tr class="separator:a91092e960d470534eb5840e636cc417c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad93dc3a8714d8665c5fc51d626c80679"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structneighbors.html">neighbors</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#ad93dc3a8714d8665c5fc51d626c80679">def_neighborhoods</a> ()</td></tr>
+<tr class="separator:ad93dc3a8714d8665c5fc51d626c80679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a810804ede89ae89a7d957c3bd58a125c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a810804ede89ae89a7d957c3bd58a125c">det_ins_bb</a> (int ins_id)</td></tr>
+<tr class="separator:a810804ede89ae89a7d957c3bd58a125c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a534600d441d254bb0e1785cdc38711b8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a534600d441d254bb0e1785cdc38711b8">ins_exist</a> (int *ne_bb, int ins_id, int length)</td></tr>
+<tr class="separator:a534600d441d254bb0e1785cdc38711b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87fdcf20651b0d8f00e4cf6535508ec4"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a87fdcf20651b0d8f00e4cf6535508ec4">def_neighborhoods_bb</a> (<a class="el" href="structneighbors.html">neighbors</a> *ne_prot)</td></tr>
+<tr class="separator:a87fdcf20651b0d8f00e4cf6535508ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03e5b721c407076699f7b652f631a710"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a03e5b721c407076699f7b652f631a710">cpy_grp_ener</a> (int walker_id)</td></tr>
+<tr class="separator:a03e5b721c407076699f7b652f631a710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac076fa2cbd91398c7a28569e807cca9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#aac076fa2cbd91398c7a28569e807cca9">cpy_best_grp_ener</a> (int walker_id)</td></tr>
+<tr class="separator:aac076fa2cbd91398c7a28569e807cca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfe3253f405122b701cdadb7ad52db6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#adfe3253f405122b701cdadb7ad52db6b">print_grp_ener</a> (double *tab, int length)</td></tr>
+<tr class="separator:adfe3253f405122b701cdadb7ad52db6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7697ee0f381590ca68871bf74a5368ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a7697ee0f381590ca68871bf74a5368ca">reset_bb</a> (int walker_id)</td></tr>
+<tr class="separator:a7697ee0f381590ca68871bf74a5368ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15554e16ba3e1993f099a63151a460d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structconformation.html">conformation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a15554e16ba3e1993f099a63151a460d7">cpy_conf</a> (<a class="el" href="structconformation.html">conformation</a> source, <a class="el" href="structconformation.html">conformation</a> dest)</td></tr>
+<tr class="separator:a15554e16ba3e1993f099a63151a460d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ecb37c91205b8d0fdc2af2a8a16210b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a8ecb37c91205b8d0fdc2af2a8a16210b">print_conf</a> (<a class="el" href="structconformation.html">conformation</a> c)</td></tr>
+<tr class="separator:a8ecb37c91205b8d0fdc2af2a8a16210b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abed9226baf88c835f446d8578a07a536"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#abed9226baf88c835f446d8578a07a536">update_grp_eners_prev</a> (double *grp_eners_prev, int walker_id)</td></tr>
+<tr class="separator:abed9226baf88c835f446d8578a07a536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a577db92217f385a4813d114ed0d4b689"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a577db92217f385a4813d114ed0d4b689">update_grp_eners_prev_back</a> (double *grp_eners_prev, int walker_id)</td></tr>
+<tr class="separator:a577db92217f385a4813d114ed0d4b689"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a901ff3e3d99a6dbdd22f750ad2409586"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdesc__conf.html">desc_conf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a901ff3e3d99a6dbdd22f750ad2409586">MC_relaxation</a> (<a class="el" href="structdesc__conf.html">desc_conf</a> conf_bb, <a class="el" href="structins__modifs.html">ins_modifs</a> modifs, gsl_rng *rng, <a class="el" href="structconformation.html">conformation</a> c, <a class="el" href="struct_proba.html">Proba</a> proba, float proba_bb, double new_eners, double best_eners, double *grp_eners, int step, float T, int *ne_bb, <a class="el" href="structneighbors.html">neighbors</a> *neighborhoods, int walker_id)</td></tr>
+<tr class="separator:a901ff3e3d99a6dbdd22f750ad2409586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a1b8d716bf7fa8022b4651d8116315f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structopt__formula.html">opt_formula</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a8a1b8d716bf7fa8022b4651d8116315f">dupl_formula</a> (<a class="el" href="structopt__formula.html">opt_formula</a> *<a class="el" href="read__conf_8h.html#af2e12a68ed24f8ec049781947e8c41b6">formula</a>, int walker_nb)</td></tr>
+<tr class="separator:a8a1b8d716bf7fa8022b4651d8116315f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6822e6360f81a25c434c22a987617242"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a6822e6360f81a25c434c22a987617242">dupl_matrix</a> (int walker_nb)</td></tr>
+<tr class="separator:a6822e6360f81a25c434c22a987617242"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afef7a68c2f30b42ac8d5a338164e14e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#afef7a68c2f30b42ac8d5a338164e14e4">dupl_grp_ener_walker</a> (int walker_nb)</td></tr>
+<tr class="separator:afef7a68c2f30b42ac8d5a338164e14e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6956cc5c54e3bc7e5619f8190b0e1a12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a6956cc5c54e3bc7e5619f8190b0e1a12">computeMonteCarlo</a> ()</td></tr>
+<tr class="separator:a6956cc5c54e3bc7e5619f8190b0e1a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25d788f29118274aad5b401c6f1851c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a25d788f29118274aad5b401c6f1851c2">build_efasta</a> (<a class="el" href="struct_proba.html">Proba</a> proba)</td></tr>
+<tr class="separator:a25d788f29118274aad5b401c6f1851c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2122242147f92a3b6f5bfe30693f774c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a2122242147f92a3b6f5bfe30693f774c">free_groups</a> ()</td></tr>
+<tr class="separator:a2122242147f92a3b6f5bfe30693f774c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b38d2b5e12519ab24bc6cc45fa83ed7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a7b38d2b5e12519ab24bc6cc45fa83ed7">free_residues</a> ()</td></tr>
+<tr class="separator:a7b38d2b5e12519ab24bc6cc45fa83ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ab3f078684998b83967d507d0f453f454"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#ab3f078684998b83967d507d0f453f454">verbose</a> =false</td></tr>
+<tr class="separator:ab3f078684998b83967d507d0f453f454"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4426f467d61ae456b95844d4d9c2dcd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#ae4426f467d61ae456b95844d4d9c2dcd">quiet</a> =false</td></tr>
+<tr class="separator:ae4426f467d61ae456b95844d4d9c2dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1551d8043c2aa4410fb7dbb1fe3be7b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#ab1551d8043c2aa4410fb7dbb1fe3be7b">alpha</a></td></tr>
+<tr class="separator:ab1551d8043c2aa4410fb7dbb1fe3be7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dceb63003a97fa431d06d1d07edc449"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a2dceb63003a97fa431d06d1d07edc449">epsilon</a></td></tr>
+<tr class="separator:a2dceb63003a97fa431d06d1d07edc449"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acac4a565486bad0b88b62387d8a5d891"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#acac4a565486bad0b88b62387d8a5d891">lambda</a></td></tr>
+<tr class="separator:acac4a565486bad0b88b62387d8a5d891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51a3838749893681c8816f3572d19b4f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a51a3838749893681c8816f3572d19b4f">enerdir</a></td></tr>
+<tr class="separator:a51a3838749893681c8816f3572d19b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82578da3962ce46ce29e2019b7904491"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a82578da3962ce46ce29e2019b7904491">rot_nb</a> =0</td></tr>
+<tr class="separator:a82578da3962ce46ce29e2019b7904491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a3346e48f134b69f8bab0c96cf780b7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a7a3346e48f134b69f8bab0c96cf780b7">nb_posi_total</a> =0</td></tr>
+<tr class="separator:a7a3346e48f134b69f8bab0c96cf780b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bea311882e7028639c0132838970aba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a4bea311882e7028639c0132838970aba">bb_nb</a> =0</td></tr>
+<tr class="separator:a4bea311882e7028639c0132838970aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a895aa28767af54e97bf83a28961c2299"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a895aa28767af54e97bf83a28961c2299">posi_nb</a> =0</td></tr>
+<tr class="memdesc:a895aa28767af54e97bf83a28961c2299"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of position in the *.bb file  <a href="#a895aa28767af54e97bf83a28961c2299">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a895aa28767af54e97bf83a28961c2299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ea5d0cb93f22f7d0fdf804bd68c3326"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a1ea5d0cb93f22f7d0fdf804bd68c3326">mode</a></td></tr>
+<tr class="separator:a1ea5d0cb93f22f7d0fdf804bd68c3326"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a201b60e51b49f9eae91168c6dd7d3cc2"><td class="memItemLeft" align="right" valign="top">DIR *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a201b60e51b49f9eae91168c6dd7d3cc2">ener_folder</a></td></tr>
+<tr class="separator:a201b60e51b49f9eae91168c6dd7d3cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8dc11ebaa96c7726e55b42412243b50"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#ae8dc11ebaa96c7726e55b42412243b50">config</a> [<a class="el" href="global_8h.html#a9b69fba98c1dfe5bf628cfa9e90aa9d7">TAG_NB</a>]</td></tr>
+<tr class="memdesc:ae8dc11ebaa96c7726e55b42412243b50"><td class="mdescLeft">&#160;</td><td class="mdescRight">store the info from the config file: tag number x lines by tag  <a href="#ae8dc11ebaa96c7726e55b42412243b50">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae8dc11ebaa96c7726e55b42412243b50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fe1d8c4466c04cbb4132fad3c88c5ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmatrix__transition.html">matrix_transition</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a4fe1d8c4466c04cbb4132fad3c88c5ca">matrix_trans</a></td></tr>
+<tr class="separator:a4fe1d8c4466c04cbb4132fad3c88c5ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f7317e6cb3ede7fd0e1cdada2ebb46d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgrp__pair.html">grp_pair</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a9f7317e6cb3ede7fd0e1cdada2ebb46d">grp_pairs</a></td></tr>
+<tr class="separator:a9f7317e6cb3ede7fd0e1cdada2ebb46d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a205145c2f6049d25c0993356584edabb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgrp__ener__walker.html">grp_ener_walker</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a205145c2f6049d25c0993356584edabb">grps_ener_walker</a></td></tr>
+<tr class="separator:a205145c2f6049d25c0993356584edabb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8526a54c363472a4f331ae9ca3cef5ab"><td class="memItemLeft" align="right" valign="top">long double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="proteus_8c.html#a8526a54c363472a4f331ae9ca3cef5ab">P</a></td></tr>
+<tr class="separator:a8526a54c363472a4f331ae9ca3cef5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des macros</h2>
+<a class="anchor" id="a691389aa8e7978a9a084ac9f0992cc00"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FIRST_INS_COL&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00051">51</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5c71a5e59a53413cd6c270266d63b031"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define R&#160;&#160;&#160;0.001987</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00050">50</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a18fa04c69302e1a30480460f27fc2907"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void apply_modifs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structconformation.html">conformation</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structins__modifs.html">ins_modifs</a>&#160;</td>
+          <td class="paramname"><em>modifs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Apply modifications in the conformation </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>the current conformation </td></tr>
+    <tr><td class="paramname">modifs</td><td>the modifs to apply </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01285">1285</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a25d788f29118274aad5b401c6f1851c2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void build_efasta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_proba.html">Proba</a>&#160;</td>
+          <td class="paramname"><em>proba</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Build the output file in FASTA format </p>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l03091">3091</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad8b909e6e8a856ef3e0409f2c0187d2b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void build_residues </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Read the backbone energy fail matrix.bb to build the residues and the bb_eners arraies </p>
+<p>si c'est fixe</p>
+<p>si la position existe</p>
+<p>mettu residues dans res</p>
+<p>sinon on met res à -1</p>
+<p>si c'est flexible</p>
+<p>si la position existe</p>
+<p>mettre id du residues dans res</p>
+<p>sinon on met res à -1</p>
+<p>change the references energies if the type3l is stored in the <a class="el" href="structref__ener.html" title="to change the reference energy of a type of residue ">ref_ener</a> structure </p>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00585">585</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a558ac7c2d8a8a59c86dae5801b59cc93"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void compute_grp_eners </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structconformation.html">conformation</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>grp_eners</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>best_grp_eners</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Compute the energy of groups (from the formula) </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>the current conformation </td></tr>
+    <tr><td class="paramname">grp_eners</td><td>the energy of the group </td></tr>
+    <tr><td class="paramname">best_grp_eners</td><td>the energy of the best group </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01077">1077</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a079ccb20595247d3b0346b7297baa036"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double computeFormula </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>grp_eners</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structopt__formula.html">opt_formula</a> *&#160;</td>
+          <td class="paramname"><em>formula</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Compute a formula </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grp_eners</td><td>the energy of the group in the formula </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the result of the formula computed </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01041">1041</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a83b433767fad06351ce204ae0141edff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void computeHeuristic </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01762">1762</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a19480b2cfece84c7b05fb3511309ecf9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void computeMeanField </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01438">1438</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6956cc5c54e3bc7e5619f8190b0e1a12"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void computeMonteCarlo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Compute the Monte Carlo algorithm </p>
+<p>Duplication of formula, formula_prev and matrix_trans if there is more than one walker in multibb</p>
+<p>conservation de la conformation </p>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02860">2860</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aac076fa2cbd91398c7a28569e807cca9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cpy_best_grp_ener </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02498">2498</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a15554e16ba3e1993f099a63151a460d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structconformation.html">conformation</a> cpy_conf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structconformation.html">conformation</a>&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structconformation.html">conformation</a>&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02611">2611</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a03e5b721c407076699f7b652f631a710"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cpy_grp_ener </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02485">2485</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7b25e2f53ffa1b9978ac0c04e3c3b5f6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int def_bb_grp </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>grp_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define the id of the group from the name of the backbone </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grp_name</td><td>the name of the backbone to find </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the id of the backbone if exists, or -1 else. </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01059">1059</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aea3c185eac36f6e7a0305fe08a1b0f25"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structconformation.html">conformation</a> def_confo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define the conformation of a protein </p><dl class="section return"><dt>Renvoie</dt><dd>the conformation defined </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00819">819</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aab8d489303aaf8d14fb48baeb0fef2d3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int def_cycle_nb </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00298">298</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5dc0f5ecdbfeab4757d61fe8c224705e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgrp__pair.html">grp_pair</a> def_id_grp </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ins_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgrp__pair.html">grp_pair</a>&#160;</td>
+          <td class="paramname"><em>tab</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01263">1263</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae32201c8da7250658f1856e9a7ba01cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void def_matrix_transition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Read the matrix transition from the file read in .conf </p>
+<p>reading the first line containing names of differents flexible groups</p>
+<p>reading all lines unless the first one: nb_grp for each column of 0 or1, +1 the label column</p>
+<p>number of group with who each group can exchange</p>
+<p>if groups can be exchange (1 in the matrix)</p>
+<p>put the index of the group which can exchange </p>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00465">465</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad93dc3a8714d8665c5fc51d626c80679"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structneighbors.html">neighbors</a>* def_neighborhoods </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define the neighborhood of each instance </p><dl class="section return"><dt>Renvoie</dt><dd>the neighbors structure </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02323">2323</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a87fdcf20651b0d8f00e4cf6535508ec4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* def_neighborhoods_bb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structneighbors.html">neighbors</a> *&#160;</td>
+          <td class="paramname"><em>ne_prot</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define the neighborhood for each instance of the backbone </p><dl class="section return"><dt>Renvoie</dt><dd>the neighbors structure of the backbone </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02420">2420</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aacf741d8211a4deac3d0c1e7eb01f180"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int def_seq_pass_nb </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00334">334</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad9e5af9dd7bf454be1adc8716180a388"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int def_swap_period </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_nb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00437">437</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a61bd0fe013955ba289b43c86f897958e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int def_walker_nb </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00316">316</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afa26efb523c367fcb66ebf726cb60a11"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int det_active </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>define which backbone is active in the list </p><dl class="section return"><dt>Renvoie</dt><dd>the index of the active backbone </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00408">408</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a810804ede89ae89a7d957c3bd58a125c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int det_ins_bb </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ins_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02388">2388</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a827a592b2200bd99ba71d238d4cb2dd8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int det_prev_active </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>define which backbone is active in the list </p><dl class="section return"><dt>Renvoie</dt><dd>the index of the active backbone </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00423">423</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1bde5604afb0738da014d65e82c51f8a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int det_type_of_rot </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ins_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define the effective type index (for this instance) </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rot</td><td>the effective position of the rotamer </td></tr>
+    <tr><td class="paramname">ins_id</td><td>the id of the instance </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the effective type index for this instance </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00360">360</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8a1b8d716bf7fa8022b4651d8116315f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structopt__formula.html">opt_formula</a>* dupl_formula </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structopt__formula.html">opt_formula</a> *&#160;</td>
+          <td class="paramname"><em>formula</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_nb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02769">2769</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afef7a68c2f30b42ac8d5a338164e14e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dupl_grp_ener_walker </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_nb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02832">2832</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6822e6360f81a25c434c22a987617242"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dupl_matrix </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_nb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02797">2797</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a423f1a78d7fd37c25663c6be24024e9c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free_confo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structconformation.html">conformation</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Free the conformation structure </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>the conformation to free </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01614">1614</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2122242147f92a3b6f5bfe30693f774c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free_groups </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Free groups structure </p>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l03153">3153</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a60db393f5bed3c5fa71f903a3f9756a5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free_grp_ener_walker </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrp__ener__walker.html">grp_ener_walker</a> *&#160;</td>
+          <td class="paramname"><em>grp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Free the <a class="el" href="structgrp__ener__walker.html">grp_ener_walker</a> structure </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grp_eners_walker</td><td>the structure to free </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01623">1623</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7b38d2b5e12519ab24bc6cc45fa83ed7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free_residues </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Free residues structure </p>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l03176">3176</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a193e774103ff1578b407f3486dcf46c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void get_ins_proba </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_proba.html">Proba</a>&#160;</td>
+          <td class="paramname"><em>proba</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01942">1942</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afc7660c6f8c63bbab7fedc42a6fe3dee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FILE* get_seq_input </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00198">198</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeaeb2f7ae94205f6bbd92b8be4d848fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int init_confo </td>
+          <td>(</td>
+          <td class="paramtype">gsl_rng *&#160;</td>
+          <td class="paramname"><em>rng</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structconformation.html">conformation</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>init_cpt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>seq_input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>init_nb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>proba_bb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize the conformation of a protein </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rng</td><td>pointer to an instance of a random number generator </td></tr>
+    <tr><td class="paramname">c</td><td>the conformation to initialize </td></tr>
+    <tr><td class="paramname">cpt</td><td>the counter used to check if its less than init_nb (used for a random initialization) </td></tr>
+    <tr><td class="paramname">seq_input</td><td>the input file containing the last conformation of a previous simulation </td></tr>
+    <tr><td class="paramname">init_nb</td><td>number of initialization to do (the max) </td></tr>
+    <tr><td class="paramname">proba</td><td>the probabilities to mutate </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the boolean true or false if the conformation was initialized </dd></dl>
+<p>apply modifs to backbone active/inactive</p>
+<p>changer le facteur de la formule </p>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00839">839</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aec6e0d8148cdee200b06e4cdcfc9ba48"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FILE* init_ener_output </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>suffix_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize the energies output file with the first information line </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suffix</td><td>the suffix of the file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the file </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00248">248</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aac3cbd4d369d42c529e229842409d1de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_possible_instances </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpossible__instances.html">possible_instances</a> *&#160;</td>
+          <td class="paramname"><em>pi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ref_ins</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structneighbors.html">neighbors</a> *&#160;</td>
+          <td class="paramname"><em>neighborhoods</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize the possible instances </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pi</td><td>the pointer to possible instances </td></tr>
+    <tr><td class="paramname">ref_ins</td><td>the reference of the instance </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01977">1977</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a27244f5c7cc2852b1e0d9be9ae0398c6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FILE* init_seq_output </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>suffix_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize the sequences output file with the first information line </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">suffix_id</td><td>the suffix of the file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the file </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00226">226</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac8e35219a05e618d430b94a39be2f31e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initMeanField </td>
+          <td>(</td>
+          <td class="paramtype">long double&#160;</td>
+          <td class="paramname"><em>E</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long double&#160;</td>
+          <td class="paramname"><em>P</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01295">1295</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a534600d441d254bb0e1785cdc38711b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ins_exist </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>ne_bb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ins_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02404">2404</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abae7f2399e89680f4b5e55ed63afd4af"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int is_Better </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>new_ener</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>best_ener</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Compare two energies and check if the new one is the best &mdash; NOT USED IN MONTE CARLO </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">new_eners</td><td>energies of the new conformation </td></tr>
+    <tr><td class="paramname">best_eners</td><td>energies of the current conformation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>boolean true or false </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01638">1638</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3b2e3ef0c7df7d15528c5e0aa6b79c12"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int is_MCbetter </td>
+          <td>(</td>
+          <td class="paramtype">gsl_rng *&#160;</td>
+          <td class="paramname"><em>rng</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>new_ener</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>best_ener</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bb_change</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The Monte Carlo test: Compare two energies and check if the new one is the best, else compare with the Metropolis criteria </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rng</td><td>pointer to an instance of a random number generator </td></tr>
+    <tr><td class="paramname">new_eners</td><td>energies of the new conformation </td></tr>
+    <tr><td class="paramname">best_eners</td><td>energies of the current conformation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>boolean true or false </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01660">1660</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a04223642d59299e0a5493d9a6dba8d13"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int is_MCrel_better </td>
+          <td>(</td>
+          <td class="paramtype">gsl_rng *&#160;</td>
+          <td class="paramname"><em>rng</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdesc__conf.html">desc_conf</a>&#160;</td>
+          <td class="paramname"><em>conf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>best_ener</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>T</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01689">1689</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a81e39d86857d7436d5402939df985726"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int is_swap_allowed </td>
+          <td>(</td>
+          <td class="paramtype">gsl_rng *&#160;</td>
+          <td class="paramname"><em>rng</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>Ei</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>Ej</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>Ti</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>Tj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01709">1709</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a85837744e96b8154f887e9f3e79d3c0e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int is_true_modif </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structconformation.html">conformation</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structins__modifs.html">ins_modifs</a> *&#160;</td>
+          <td class="paramname"><em>pm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bb_change</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Check if there is a modification between the current conformation and the modif to apply </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>the current conformation </td></tr>
+    <tr><td class="paramname">pm</td><td>the instances to modify </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>boolean true or false </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02135">2135</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A REVOR POUR TOUS LES MARCHEURS </p>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l03190">3190</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a901ff3e3d99a6dbdd22f750ad2409586"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdesc__conf.html">desc_conf</a> MC_relaxation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdesc__conf.html">desc_conf</a>&#160;</td>
+          <td class="paramname"><em>conf_bb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structins__modifs.html">ins_modifs</a>&#160;</td>
+          <td class="paramname"><em>modifs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gsl_rng *&#160;</td>
+          <td class="paramname"><em>rng</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structconformation.html">conformation</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_proba.html">Proba</a>&#160;</td>
+          <td class="paramname"><em>proba</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>proba_bb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>new_eners</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>best_eners</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>grp_eners</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>step</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>ne_bb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structneighbors.html">neighbors</a> *&#160;</td>
+          <td class="paramname"><em>neighborhoods</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>variables to calculate the acceptabilities</p>
+<p>initialization of data for previous and current backbone - used to calculate the acceptability of the previous backbone </p>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02658">2658</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5ef2bf0bb77dda336bd2b7393efa7b53"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void modif_confo </td>
+          <td>(</td>
+          <td class="paramtype">gsl_rng *&#160;</td>
+          <td class="paramname"><em>rng</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a> *&#160;</td>
+          <td class="paramname"><em>ins0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structins__modifs.html">ins_modifs</a> *&#160;</td>
+          <td class="paramname"><em>pm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structpossible__instances.html">possible_instances</a> *&#160;</td>
+          <td class="paramname"><em>pi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structneighbors.html">neighbors</a> *&#160;</td>
+          <td class="paramname"><em>neighborhoods</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Add a modification (a new random rotamer) of the current conformation at the given ins with the given type </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rng</td><td>pointer to an instance of a random number generator </td></tr>
+    <tr><td class="paramname">c</td><td>the current conformation </td></tr>
+    <tr><td class="paramname">ins0</td><td>the initial instance </td></tr>
+    <tr><td class="paramname">type</td><td>the type of the new rotamer to add </td></tr>
+    <tr><td class="paramname">pm</td><td>the instance modifs to modify </td></tr>
+    <tr><td class="paramname">pi</td><td>the possible instance to update </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>update the modif on all backbone</p>
+<p>define the id of the groups and possible instance</p>
+<p>define if the name of this group is in backbone </p>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02046">2046</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab8be778b186760a7d8efaca0b068cb27"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nextConfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structins__modifs.html">ins_modifs</a>&#160;</td>
+          <td class="paramname"><em>modifs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01017">1017</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a91092e960d470534eb5840e636cc417c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nextState </td>
+          <td>(</td>
+          <td class="paramtype">gsl_rng *&#160;</td>
+          <td class="paramname"><em>rng</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structconformation.html">conformation</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_proba.html">Proba</a>&#160;</td>
+          <td class="paramname"><em>proba</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>proba_bb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structins__modifs.html">ins_modifs</a> *&#160;</td>
+          <td class="paramname"><em>pmodifs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structneighbors.html">neighbors</a> *&#160;</td>
+          <td class="paramname"><em>neighborhoods</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>ne_bb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bb_change</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Define the next state of the conformation - use probabilty to change it </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rng</td><td>pointer to an instance of a random number generator </td></tr>
+    <tr><td class="paramname">c</td><td>the current conformation </td></tr>
+    <tr><td class="paramname">proba</td><td>the proba structure containing all probabilities </td></tr>
+    <tr><td class="paramname">pmodifs</td><td>the pointer of modifs chosen randomly </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>apply modifs to backbone active/inactive</p>
+<p>changer le facteur de la formule </p>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02157">2157</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6152a764a53f80617eb6ef74ca627ebf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FILE* open_efasta </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Open the output file in FASTA format (for postprocessing) </p><dl class="section return"><dt>Renvoie</dt><dd>the file opened </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00279">279</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af681462fc359907fa5af227855dca2d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FILE* open_output_file </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tag_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>suffix_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>default_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Open the sequences output file </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tag_id</td><td>the config tag for the file name </td></tr>
+    <tr><td class="paramname">suffix_id</td><td>a suffix of the file if thread number &gt; 1 </td></tr>
+    <tr><td class="paramname">default_name</td><td>the default file name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the file </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00154">154</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a04c0f2c9c83f06a4b8de5b0cc3caabb6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FILE* open_seq_input </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Open the sequences input file </p><dl class="section return"><dt>Renvoie</dt><dd>the file </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00181">181</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a799126fbcc36b54abef07e34b7b9974a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void prepare_modifs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structins__modifs.html">ins_modifs</a> *&#160;</td>
+          <td class="paramname"><em>pm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a> *&#160;</td>
+          <td class="paramname"><em>ins</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01739">1739</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8ecb37c91205b8d0fdc2af2a8a16210b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_conf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structconformation.html">conformation</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02623">2623</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adfe3253f405122b701cdadb7ad52db6b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_grp_ener </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>tab</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02511">2511</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1daace82b4d6fb4b236574997dbcf22a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_result </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>seq_output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>ener_output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structconformation.html">conformation</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>best_grp_eners</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>best_ener</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>step</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>print_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>T</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cmpt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Print result in the output file </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">seq_output</td><td>the output file containing sequences </td></tr>
+    <tr><td class="paramname">ener_output</td><td>the output file containing groups energies </td></tr>
+    <tr><td class="paramname">c</td><td>the current conformation </td></tr>
+    <tr><td class="paramname">best_grp_eners</td><td>the best group energies </td></tr>
+    <tr><td class="paramname">best_ener</td><td>the best energy </td></tr>
+    <tr><td class="paramname">step</td><td>the current step </td></tr>
+    <tr><td class="paramname">print_id</td><td>the id to print </td></tr>
+    <tr><td class="paramname">T</td><td>the temperature </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01539">1539</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a14b40b4baef2d124b76c72cde215486a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void print_stat </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>thread_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">clock_t&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cycle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Print the state of the simulation to the screen </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">thread_id</td><td>the thread id </td></tr>
+    <tr><td class="paramname">start</td><td>the time of completion </td></tr>
+    <tr><td class="paramname">cycle</td><td>the number of the cycle </td></tr>
+    <tr><td class="paramname">type</td><td>the type of simulation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01593">1593</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0d20b69b0ad703df78459e1033d5c1d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printHelp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00130">130</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aabdf238899d33c4d71864b8059eb956b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printMeanField </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>seq_output</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01364">1364</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab12ee197aa24ced2d1ec48b32d2c01ec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a>* rand_ins </td>
+          <td>(</td>
+          <td class="paramtype">gsl_rng *&#160;</td>
+          <td class="paramname"><em>rng</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structpossible__instances.html">possible_instances</a>&#160;</td>
+          <td class="paramname"><em>pi</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Search a random instance within the possible instance set and update the array of possible instances </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pi</td><td>the possible instance to set and update </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the random instance </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02094">2094</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7a3bc26e436f05c0cd81aa298cfa0f62"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a>* rand_ins_bb </td>
+          <td>(</td>
+          <td class="paramtype">gsl_rng *&#160;</td>
+          <td class="paramname"><em>rng</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>ne_bb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Search a random instance within the possible instance set and update the array of possible instances </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pi</td><td>the possible instance to set and update </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the random instance </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02117">2117</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae5f812689e4890d3b811a4b88f8042c4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rand_int </td>
+          <td>(</td>
+          <td class="paramtype">gsl_rng *&#160;</td>
+          <td class="paramname"><em>rng</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>from_int</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Define a random integer from from_int to from_int + size − 1 inclusive </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rng</td><td>pointer to an instance of a random number generator </td></tr>
+    <tr><td class="paramname">from_int</td><td>the first minimum of the selection </td></tr>
+    <tr><td class="paramname">size</td><td>the length of the range (max= from_int + size -1 included) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the int chosen in the range </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00382">382</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9f685c8cbc950140f172106b0812d3af"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rand_type </td>
+          <td>(</td>
+          <td class="paramtype">gsl_rng *&#160;</td>
+          <td class="paramname"><em>rng</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ins</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Choose randomly a type in its range </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>the duplicate instance of the type </td></tr>
+    <tr><td class="paramname">c</td><td>the conformation of the current protein (why? not used here...) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the type chosen in the range </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00398">398</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a814517d01c5859fea553eceb12a72a6e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void read_proba_lines </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01877">1877</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7697ee0f381590ca68871bf74a5368ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reset_bb </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Apply modifs to the backbone if not accepted - change current active backbone and factors of formula </p>
+<p>search which backbone was previously active</p>
+<p>change current and previous active backbone</p>
+<p>change factors in the formula for previous and current backbone </p>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02587">2587</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaab1db88cbb74543d4af864e5582d3e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reset_modifs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structins__modifs.html">ins_modifs</a> *&#160;</td>
+          <td class="paramname"><em>pm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Reset modifications </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pm</td><td>the pointer to the instances modifs to reset </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01730">1730</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6a0f75985d8bc0028d966afbebdb6d4c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rot_exists </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rotam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Search if the rot exists in residues.type.rot </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>the id of the residue </td></tr>
+    <tr><td class="paramname">j</td><td>the id of the type </td></tr>
+    <tr><td class="paramname">rotam</td><td>the rotam number to search </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>boolean true or false </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00566">566</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a95053af503c7ca4f0cbef717fe4cd763"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void set_ins_proba </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a> *&#160;</td>
+          <td class="paramname"><em>ins</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>proba</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>code</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01866">1866</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7d3e41bc13746a0ed305a244b6501481"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int type_exists </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Search if the type exists in residues.types </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>the id of the residue </td></tr>
+    <tr><td class="paramname">type</td><td>the type of the residue to search </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>boolean true or false </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00547">547</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2fa955e7cc14fe012043d75254fac1de"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void update_grp_eners </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structconformation.html">conformation</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structins__modifs.html">ins_modifs</a>&#160;</td>
+          <td class="paramname"><em>modifs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>grp_eners</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Update energies of the group </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>the current conformation </td></tr>
+    <tr><td class="paramname">modifs</td><td>the modifs to apply </td></tr>
+    <tr><td class="paramname">grp_eners</td><td>the energy of the group to update </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l01164">1164</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abed9226baf88c835f446d8578a07a536"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* update_grp_eners_prev </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>grp_eners_prev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02633">2633</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a577db92217f385a4813d114ed0d4b689"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* update_grp_eners_prev_back </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>grp_eners_prev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02645">2645</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4392d9f6c92f9e7d9cb937ee08f83ab0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void update_modifs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a> *&#160;</td>
+          <td class="paramname"><em>ins</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structins__modifs.html">ins_modifs</a> *&#160;</td>
+          <td class="paramname"><em>pm</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Update modification - adding a new modif to <a class="el" href="structins__modifs.html">ins_modifs</a> </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ins</td><td>the position instance to add </td></tr>
+    <tr><td class="paramname">type</td><td>the type to add </td></tr>
+    <tr><td class="paramname">rot</td><td>the rotamer to add </td></tr>
+    <tr><td class="paramname">pm</td><td>the pointer of modifs to update </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02024">2024</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7e36c5704a548ac42289733874795534"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void update_possible_instances </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ins_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structpossible__instances.html">possible_instances</a> *&#160;</td>
+          <td class="paramname"><em>pi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structneighbors.html">neighbors</a> *&#160;</td>
+          <td class="paramname"><em>neighborhoods</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Update the possible instances </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ins_id</td><td>the id of the instance to update </td></tr>
+    <tr><td class="paramname">pi</td><td>the pointer of the possible instance to updateIn the array of possible instances, we put the last value at the ins_id position, we decrease the possible instances nb Thus, there is no repetition in the return values of the function rand_ins. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l02004">2004</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des variables</h2>
+<a class="anchor" id="ab1551d8043c2aa4410fb7dbb1fe3be7b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float alpha</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00058">58</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4bea311882e7028639c0132838970aba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bb_nb =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00063">63</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae8dc11ebaa96c7726e55b42412243b50"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char** config[<a class="el" href="global_8h.html#a9b69fba98c1dfe5bf628cfa9e90aa9d7">TAG_NB</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>store the info from the config file: tag number x lines by tag </p>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00067">67</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a201b60e51b49f9eae91168c6dd7d3cc2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DIR* ener_folder</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00066">66</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a51a3838749893681c8816f3572d19b4f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* enerdir</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00059">59</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2dceb63003a97fa431d06d1d07edc449"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float epsilon</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00058">58</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9f7317e6cb3ede7fd0e1cdada2ebb46d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgrp__pair.html">grp_pair</a>* grp_pairs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00072">72</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a205145c2f6049d25c0993356584edabb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgrp__ener__walker.html">grp_ener_walker</a>* grps_ener_walker</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00073">73</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acac4a565486bad0b88b62387d8a5d891"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float lambda</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00058">58</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4fe1d8c4466c04cbb4132fad3c88c5ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmatrix__transition.html">matrix_transition</a>* matrix_trans</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00069">69</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1ea5d0cb93f22f7d0fdf804bd68c3326"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00065">65</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7a3346e48f134b69f8bab0c96cf780b7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nb_posi_total =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00061">61</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8526a54c363472a4f331ae9ca3cef5ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long double* P</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00075">75</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a895aa28767af54e97bf83a28961c2299"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int posi_nb =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>number of position in the *.bb file </p>
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00064">64</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae4426f467d61ae456b95844d4d9c2dcd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool quiet =false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00055">55</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a82578da3962ce46ce29e2019b7904491"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rot_nb =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00060">60</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab3f078684998b83967d507d0f453f454"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool verbose =false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="proteus_8c_source.html#l00054">54</a> du fichier <a class="el" href="proteus_8c_source.html">proteus.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi 27 Mai 2015 10:00:24 pour proteus par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

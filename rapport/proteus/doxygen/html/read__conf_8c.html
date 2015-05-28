@@ -1,0 +1,1124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>proteus: Référence du fichier /home/mignon/bioinfo/proteus/gitlab/proteus/read_conf.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">proteus
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b75a2afd3124dc514e77c0f10e744ba9.html">proteus</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier read_conf.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;float.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &lt;gsl/gsl_rng.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="global_8h_source.html">global.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="read__conf_8h_source.html">read_conf.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="utils_8h_source.html">utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ener__cache_8h_source.html">ener_cache.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="read__ener_8h_source.html">read_ener.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de read_conf.c:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="read__conf_8c__incl.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</div>
+<p><a href="read__conf_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:af7a49839738278ecca57c0b883450283"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#af7a49839738278ecca57c0b883450283">complete_grp_pairs</a> (<a class="el" href="structopt__formula.html">opt_formula</a> *form, <a class="el" href="structgrp__pair.html">grp_pair</a> *p[], char *name1, char *name2, int i_idx, int j_idx)</td></tr>
+<tr class="separator:af7a49839738278ecca57c0b883450283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c6a6154689187874c3cf046e9cb3b8c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a6c6a6154689187874c3cf046e9cb3b8c">split_str</a> (char *string, const char *delimiter, char ***ptab)</td></tr>
+<tr class="separator:a6c6a6154689187874c3cf046e9cb3b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6286527c8fedf0d55c0620d6a2d53778"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a6286527c8fedf0d55c0620d6a2d53778">free_array</a> (void ***array, const int ori, const int array_size)</td></tr>
+<tr class="separator:a6286527c8fedf0d55c0620d6a2d53778"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93be39a6399217f69d6a447835719d5f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a93be39a6399217f69d6a447835719d5f">det_grp</a> (char *grp_name)</td></tr>
+<tr class="separator:a93be39a6399217f69d6a447835719d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9debdfff60a59ebb52cd64f77af41d18"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a9debdfff60a59ebb52cd64f77af41d18">search_grp</a> (char *string)</td></tr>
+<tr class="separator:a9debdfff60a59ebb52cd64f77af41d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14280be1afbd848795c58bf3fa268022"><td class="memItemLeft" align="right" valign="top"><a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a14280be1afbd848795c58bf3fa268022">det_ins</a> (int grp, int posi)</td></tr>
+<tr class="separator:a14280be1afbd848795c58bf3fa268022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01b41c0f2bab1f8de712d86b42b5fcc0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a01b41c0f2bab1f8de712d86b42b5fcc0">get_grp_pair</a> (<a class="el" href="structgrp__pair.html">grp_pair</a> *p[], int i_idx, int j_idx)</td></tr>
+<tr class="separator:a01b41c0f2bab1f8de712d86b42b5fcc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab83144f4034d7c6de02eb446048379bb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#ab83144f4034d7c6de02eb446048379bb">is_dupl</a> (<a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a> *ins_i, <a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a> *ins_j)</td></tr>
+<tr class="separator:ab83144f4034d7c6de02eb446048379bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea72bd4febf557552057022672d4ceff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_proba.html">Proba</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#aea72bd4febf557552057022672d4ceff">readProba</a> ()</td></tr>
+<tr class="separator:aea72bd4febf557552057022672d4ceff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d2fd9efca4e50fd277e793f10e55a40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structref__ener.html">ref_ener</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a3d2fd9efca4e50fd277e793f10e55a40">read_Ref_eners</a> ()</td></tr>
+<tr class="separator:a3d2fd9efca4e50fd277e793f10e55a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08c9926f99d554e88c6424a343841d2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a08c9926f99d554e88c6424a343841d2a">get_reset_ener</a> ()</td></tr>
+<tr class="separator:a08c9926f99d554e88c6424a343841d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af06a338c6c612881bab63df24cdbbc72"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#af06a338c6c612881bab63df24cdbbc72">get_print_threshold</a> ()</td></tr>
+<tr class="separator:af06a338c6c612881bab63df24cdbbc72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51668fd7e1a2e74126e89bdb585df83b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a51668fd7e1a2e74126e89bdb585df83b">def_traj_length</a> ()</td></tr>
+<tr class="separator:a51668fd7e1a2e74126e89bdb585df83b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa719b14c5d3b6d9bcdbf740d01244cc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#afa719b14c5d3b6d9bcdbf740d01244cc">def_traj_nb</a> (int walker_nb)</td></tr>
+<tr class="separator:afa719b14c5d3b6d9bcdbf740d01244cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14c54e6d7a7780e3661249b1d1fe4140"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a14c54e6d7a7780e3661249b1d1fe4140">def_terms</a> (<a class="el" href="structopt__formula.html">opt_formula</a> *pf, <a class="el" href="structgrp__pair.html">grp_pair</a> *pgp[])</td></tr>
+<tr class="separator:a14c54e6d7a7780e3661249b1d1fe4140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e432d4309e4b088908ccd28f6f2b526"><td class="memItemLeft" align="right" valign="top">float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a2e432d4309e4b088908ccd28f6f2b526">getTemperatures</a> (int T_size)</td></tr>
+<tr class="separator:a2e432d4309e4b088908ccd28f6f2b526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0041075fb1cdc76d73e19228aab5223c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a0041075fb1cdc76d73e19228aab5223c">def_constraints</a> (<a class="el" href="structgroup.html">group</a> <a class="el" href="read__conf_8h.html#ae6501cc9c7c378077ab2ed8f7aafdde4">groups</a>[])</td></tr>
+<tr class="separator:a0041075fb1cdc76d73e19228aab5223c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a817c18574878dd96d959fc3fd5351eb6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgroup.html">group</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a817c18574878dd96d959fc3fd5351eb6">def_groups</a> ()</td></tr>
+<tr class="separator:a817c18574878dd96d959fc3fd5351eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae57789bd9b816848bdb50f6417c17b69"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#ae57789bd9b816848bdb50f6417c17b69">def_enerdir</a> ()</td></tr>
+<tr class="separator:ae57789bd9b816848bdb50f6417c17b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b4485b4af2f24e34590fd276e82c6cf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a8b4485b4af2f24e34590fd276e82c6cf">def_alpha</a> ()</td></tr>
+<tr class="separator:a8b4485b4af2f24e34590fd276e82c6cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad728e2ed40ca3013760fd856708cf2c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#aad728e2ed40ca3013760fd856708cf2c">def_epsilon</a> ()</td></tr>
+<tr class="separator:aad728e2ed40ca3013760fd856708cf2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af724c4fda3d621dbd10912f2dc4798b8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#af724c4fda3d621dbd10912f2dc4798b8">def_mode</a> ()</td></tr>
+<tr class="separator:af724c4fda3d621dbd10912f2dc4798b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae562c3e49e67c27ed8fc5d5be6fb0b3c"><td class="memItemLeft" align="right" valign="top">gsl_rng *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#ae562c3e49e67c27ed8fc5d5be6fb0b3c">defRandGenerator</a> (int thread_id)</td></tr>
+<tr class="separator:ae562c3e49e67c27ed8fc5d5be6fb0b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e114f31cac0bafa3337726a29b1f980"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a7e114f31cac0bafa3337726a29b1f980">prepareRandGenerator</a> ()</td></tr>
+<tr class="separator:a7e114f31cac0bafa3337726a29b1f980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4870662d81498da427e23e6c9f2349a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a4870662d81498da427e23e6c9f2349a9">getTagInfo</a> (const char *first_line, const char *tag, int code, char **<a class="el" href="proteus_8c.html#ae8dc11ebaa96c7726e55b42412243b50">config</a>[], FILE *config_file)</td></tr>
+<tr class="separator:a4870662d81498da427e23e6c9f2349a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12e8c4c0add90db4ef57acfa71d9c354"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a12e8c4c0add90db4ef57acfa71d9c354">get_config</a> (char **<a class="el" href="proteus_8c.html#ae8dc11ebaa96c7726e55b42412243b50">config</a>[])</td></tr>
+<tr class="separator:a12e8c4c0add90db4ef57acfa71d9c354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5fd155d9492c8628ccd496305b7954a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#ad5fd155d9492c8628ccd496305b7954a">read_formula</a> (<a class="el" href="structgrp__pair.html">grp_pair</a> *pgp[])</td></tr>
+<tr class="separator:ad5fd155d9492c8628ccd496305b7954a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:af2e12a68ed24f8ec049781947e8c41b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structopt__formula.html">opt_formula</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#af2e12a68ed24f8ec049781947e8c41b6">formula</a></td></tr>
+<tr class="memdesc:af2e12a68ed24f8ec049781947e8c41b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">the set of formula  <a href="#af2e12a68ed24f8ec049781947e8c41b6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af2e12a68ed24f8ec049781947e8c41b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f1e2e14840d175cec00fa22ab1d52cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structopt__formula.html">opt_formula</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a8f1e2e14840d175cec00fa22ab1d52cb">formula_prev</a></td></tr>
+<tr class="separator:a8f1e2e14840d175cec00fa22ab1d52cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83fcb9a2c03da4a1810f237ef1ba92cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structref__ener.html">ref_ener</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a83fcb9a2c03da4a1810f237ef1ba92cd">ref_eners</a></td></tr>
+<tr class="separator:a83fcb9a2c03da4a1810f237ef1ba92cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a145b137996f39d1bb6b4f743f8d53a4c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a145b137996f39d1bb6b4f743f8d53a4c">ref_eners_nb</a> =0</td></tr>
+<tr class="separator:a145b137996f39d1bb6b4f743f8d53a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6501cc9c7c378077ab2ed8f7aafdde4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgroup.html">group</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#ae6501cc9c7c378077ab2ed8f7aafdde4">groups</a></td></tr>
+<tr class="memdesc:ae6501cc9c7c378077ab2ed8f7aafdde4"><td class="mdescLeft">&#160;</td><td class="mdescRight">the group list  <a href="#ae6501cc9c7c378077ab2ed8f7aafdde4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae6501cc9c7c378077ab2ed8f7aafdde4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c58ad65fc393826034b7615e5003d26"><td class="memItemLeft" align="right" valign="top"><a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a6c58ad65fc393826034b7615e5003d26">ins_list</a></td></tr>
+<tr class="memdesc:a6c58ad65fc393826034b7615e5003d26"><td class="mdescLeft">&#160;</td><td class="mdescRight">1D matrix of all the instance pointers  <a href="#a6c58ad65fc393826034b7615e5003d26">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6c58ad65fc393826034b7615e5003d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43b9b0bde478ad2582edd58be5615357"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a43b9b0bde478ad2582edd58be5615357">grp_pair_nb</a> =0</td></tr>
+<tr class="separator:a43b9b0bde478ad2582edd58be5615357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d96ff6836114f50fefb70232bf5eb64"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#a0d96ff6836114f50fefb70232bf5eb64">TAGS</a> [<a class="el" href="global_8h.html#a9b69fba98c1dfe5bf628cfa9e90aa9d7">TAG_NB</a>][<a class="el" href="utils_8h.html#a82acb32225c05e9aa4c524c40bc5852a">MAX_CHAR</a>]</td></tr>
+<tr class="separator:a0d96ff6836114f50fefb70232bf5eb64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae812d9b8e495b3d30980e0aa1e50d20b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#ae812d9b8e495b3d30980e0aa1e50d20b">ins_nb</a> =0</td></tr>
+<tr class="memdesc:ae812d9b8e495b3d30980e0aa1e50d20b"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of position instance  <a href="#ae812d9b8e495b3d30980e0aa1e50d20b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae812d9b8e495b3d30980e0aa1e50d20b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdb7eeffc57954e75937777fb662ae94"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#acdb7eeffc57954e75937777fb662ae94">grp_nb</a> =0</td></tr>
+<tr class="memdesc:acdb7eeffc57954e75937777fb662ae94"><td class="mdescLeft">&#160;</td><td class="mdescRight">the group number  <a href="#acdb7eeffc57954e75937777fb662ae94">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acdb7eeffc57954e75937777fb662ae94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac123799e520741745e481e9424551bd5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="read__conf_8c.html#ac123799e520741745e481e9424551bd5">bb_ins_nb</a> =0</td></tr>
+<tr class="memdesc:ac123799e520741745e481e9424551bd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of position instance og backbone  <a href="#ac123799e520741745e481e9424551bd5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac123799e520741745e481e9424551bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="af7a49839738278ecca57c0b883450283"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void complete_grp_pairs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structopt__formula.html">opt_formula</a> *&#160;</td>
+          <td class="paramname"><em>form</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgrp__pair.html">grp_pair</a> *&#160;</td>
+          <td class="paramname"><em>p</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i_idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j_idx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Complete groups pair in reading the transition matrix </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">form</td><td>the formula structure to adding new terms </td></tr>
+    <tr><td class="paramname">p</td><td>the <a class="el" href="structgrp__pair.html">grp_pair</a> structure containing index number of different group pairs </td></tr>
+    <tr><td class="paramname">name1</td><td>the name of the first group to add </td></tr>
+    <tr><td class="paramname">name2</td><td>the name of the second group to add </td></tr>
+    <tr><td class="paramname">i_idx</td><td>the index number of the term name1 </td></tr>
+    <tr><td class="paramname">j_idx</td><td>the index number of the term name2 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>formula the structure modified containing new terms </dd></dl>
+<p>the flag = 1, if one of name1 or name2 is contained in the flexible backbone list</p>
+<p>name_used = is the fixed term</p>
+<p>name_to_change = is variable term (flexible backbone)</p>
+<p>checking if name1 is contained in the flexible backbone list</p>
+<p>checking if name2 is contained in the flexible backbone list</p>
+<p>if one of name1 or name2 is contained in the flexible backbone list</p>
+<p>searching the index number of the actual flexible backbone name</p>
+<p>for all others backbone name in the list</p>
+<p>save information about the grp_pair_idx, initialize to 0 the factor and save the index number of associated term (used to change factor term) </p>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00081">81</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8b4485b4af2f24e34590fd276e82c6cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float def_alpha </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define the alpha value read from the .conf </p><dl class="section return"><dt>Renvoie</dt><dd>the alpha value </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00839">839</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0041075fb1cdc76d73e19228aab5223c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void def_constraints </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgroup.html">group</a>&#160;</td>
+          <td class="paramname"><em>groups</em>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define constraints space of rotamer read from the .conf </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">groups</td><td>the group which contains residues to constraint </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00550">550</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae57789bd9b816848bdb50f6417c17b69"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* def_enerdir </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define the directory read from the .conf containing the matrix.bb and matrix.pw files </p><dl class="section return"><dt>Renvoie</dt><dd>the directory </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00820">820</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aad728e2ed40ca3013760fd856708cf2c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float def_epsilon </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define the psilon value read from the .conf </p><dl class="section return"><dt>Renvoie</dt><dd>the epsilon value </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00854">854</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a817c18574878dd96d959fc3fd5351eb6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgroup.html">group</a>* def_groups </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define the different groups read from the .conf file </p><dl class="section return"><dt>Renvoie</dt><dd>the group structure containing all groups of the simulation </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00710">710</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af724c4fda3d621dbd10912f2dc4798b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int def_mode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define the mode of simulation (MonteCarlo, Heuristic, MeanField or PostProcessing) </p><dl class="section return"><dt>Renvoie</dt><dd>the number associated to the mode </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00868">868</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a14c54e6d7a7780e3661249b1d1fe4140"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void def_terms </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structopt__formula.html">opt_formula</a> *&#160;</td>
+          <td class="paramname"><em>pf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgrp__pair.html">grp_pair</a> *&#160;</td>
+          <td class="paramname"><em>pgp</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define the terms of the optimization formule read from the .conf </p>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00413">413</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a51668fd7e1a2e74126e89bdb585df83b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int def_traj_length </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define the length of the trajectory read from the .conf </p><dl class="section return"><dt>Renvoie</dt><dd>the length of the trajectory </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00389">389</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afa719b14c5d3b6d9bcdbf740d01244cc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int def_traj_nb </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>walker_nb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00399">399</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae562c3e49e67c27ed8fc5d5be6fb0b3c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gsl_rng* defRandGenerator </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>thread_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define the Random Generator </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">thread_id</td><td>the id of the thread </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the random number </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00903">903</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a93be39a6399217f69d6a447835719d5f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int det_grp </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>grp_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check if the group name exists </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grp_name</td><td>the name of the group to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the number of the group name if existing. Else exit </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00179">179</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a14280be1afbd848795c58bf3fa268022"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a>* det_ins </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>grp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>posi</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Searching the instance number of a PDB position in a group </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grp</td><td>the group containing the PDB position </td></tr>
+    <tr><td class="paramname">posi</td><td>the PDB position to search in the group </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the instance of the position PDB given </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00214">214</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6286527c8fedf0d55c0620d6a2d53778"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free_array </td>
+          <td>(</td>
+          <td class="paramtype">void ***&#160;</td>
+          <td class="paramname"><em>array</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>ori</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>array_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Free memory of array </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>the array to free </td></tr>
+    <tr><td class="paramname">ori</td><td>the origine or beginning to free </td></tr>
+    <tr><td class="paramname">array_size</td><td>the size of the array </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00167">167</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a12e8c4c0add90db4ef57acfa71d9c354"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void get_config </td>
+          <td>(</td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>config</em>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Stock datas/parameters between two (beginning and final) tag lines in config read from the .conf </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>the table to fill with data/parameters </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l01027">1027</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a01b41c0f2bab1f8de712d86b42b5fcc0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_grp_pair </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrp__pair.html">grp_pair</a> *&#160;</td>
+          <td class="paramname"><em>p</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i_idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j_idx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the group pair </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>table containing the pair of group </td></tr>
+    <tr><td class="paramname">i_idx</td><td>index of i </td></tr>
+    <tr><td class="paramname">j_idx</td><td>index of j </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00227">227</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af06a338c6c612881bab63df24cdbbc72"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float get_print_threshold </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Read the print threshold from the .conf </p><dl class="section return"><dt>Renvoie</dt><dd>the threshold </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00373">373</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a08c9926f99d554e88c6424a343841d2a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_reset_ener </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize bit size value of energy </p><dl class="section return"><dt>Renvoie</dt><dd>the size (MAX_INT or 100) </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00360">360</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4870662d81498da427e23e6c9f2349a9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getTagInfo </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>first_line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>tag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>code</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>config</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>config_file</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Read tag lines of the .conf and complete the table config by size of tag </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first_line</td><td>the opening line tag </td></tr>
+    <tr><td class="paramname">tag</td><td>the tag concerning </td></tr>
+    <tr><td class="paramname">code</td><td>the code of the tag (defined values) </td></tr>
+    <tr><td class="paramname">config</td><td>the table containing the code and information about tag </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00976">976</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2e432d4309e4b088908ccd28f6f2b526"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float* getTemperatures </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>T_size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Read temperatures in the .conf file </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T_size</td><td>the size of the array to build </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the temperature array </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00516">516</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab83144f4034d7c6de02eb446048379bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_dupl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a> *&#160;</td>
+          <td class="paramname"><em>ins_i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a> *&#160;</td>
+          <td class="paramname"><em>ins_j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check if two instances are duplicates </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ins_i</td><td>instance i to compare </td></tr>
+    <tr><td class="paramname">ins_j</td><td>instance j to compare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true or false </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00244">244</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7e114f31cac0bafa3337726a29b1f980"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void prepareRandGenerator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Prepare Random Generator </p>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00922">922</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad5fd155d9492c8628ccd496305b7954a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void read_formula </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgrp__pair.html">grp_pair</a> *&#160;</td>
+          <td class="paramname"><em>pgp</em>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Read the optimization confiuration from the .conf </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pgp</td><td>the group pair </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l01083">1083</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3d2fd9efca4e50fd277e793f10e55a40"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structref__ener.html">ref_ener</a>* read_Ref_eners </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Read references energies put in the configuration file </p><dl class="section return"><dt>Renvoie</dt><dd>the <a class="el" href="structref__ener.html" title="to change the reference energy of a type of residue ">ref_ener</a> structure containing data </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00315">315</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aea72bd4febf557552057022672d4ceff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_proba.html">Proba</a> readProba </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Save all probabilities from the .conf file in the <a class="el" href="struct_proba.html" title="Monte Carlo probabilities for a cycle. ">Proba</a> structure </p><dl class="section return"><dt>Renvoie</dt><dd>the <a class="el" href="struct_proba.html" title="Monte Carlo probabilities for a cycle. ">Proba</a> structure containing all probabilities </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00270">270</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9debdfff60a59ebb52cd64f77af41d18"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int search_grp </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Search a group name in astring </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the string to study to find the group name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>the number of the group if found in the string </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00193">193</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6c6a6154689187874c3cf046e9cb3b8c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int split_str </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>delimiter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char ***&#160;</td>
+          <td class="paramname"><em>ptab</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Split a string </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the string to split </td></tr>
+    <tr><td class="paramname">delimiter</td><td>the delimiter used to split </td></tr>
+    <tr><td class="paramname">ptab</td><td>table containing parts of string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>number of parts of string = numbe rof delimiter + 1 </dd></dl>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00146">146</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des variables</h2>
+<a class="anchor" id="ac123799e520741745e481e9424551bd5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bb_ins_nb =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>number of position instance og backbone </p>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00069">69</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af2e12a68ed24f8ec049781947e8c41b6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structopt__formula.html">opt_formula</a>* formula</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>the set of formula </p>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00015">15</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8f1e2e14840d175cec00fa22ab1d52cb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structopt__formula.html">opt_formula</a>* formula_prev</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00016">16</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae6501cc9c7c378077ab2ed8f7aafdde4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgroup.html">group</a>* groups</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>the group list </p>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00021">21</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acdb7eeffc57954e75937777fb662ae94"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int grp_nb =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>the group number </p>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00068">68</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a43b9b0bde478ad2582edd58be5615357"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int grp_pair_nb =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00025">25</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6c58ad65fc393826034b7615e5003d26"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="read__conf_8h.html#ae233ac376b010d04519bd914edac5260">posi_instance</a>** ins_list</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>1D matrix of all the instance pointers </p>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00023">23</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae812d9b8e495b3d30980e0aa1e50d20b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ins_nb =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>number of position instance </p>
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00067">67</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a83fcb9a2c03da4a1810f237ef1ba92cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structref__ener.html">ref_ener</a>* ref_eners</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00018">18</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a145b137996f39d1bb6b4f743f8d53a4c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ref_eners_nb =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00019">19</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0d96ff6836114f50fefb70232bf5eb64"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char TAGS[<a class="el" href="global_8h.html#a9b69fba98c1dfe5bf628cfa9e90aa9d7">TAG_NB</a>][<a class="el" href="utils_8h.html#a82acb32225c05e9aa4c524c40bc5852a">MAX_CHAR</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="read__conf_8c_source.html#l00028">28</a> du fichier <a class="el" href="read__conf_8c_source.html">read_conf.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi 27 Mai 2015 10:00:24 pour proteus par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

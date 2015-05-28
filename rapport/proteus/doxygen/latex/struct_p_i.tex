@@ -1,0 +1,177 @@
+\hypertarget{struct_p_i}{\section{Référence de la structure P\+I}
+\label{struct_p_i}\index{P\+I@{P\+I}}
+}
+
+
+{\ttfamily \#include $<$read\+\_\+conf.\+h$>$}
+
+
+
+Graphe de collaboration de P\+I\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{struct_p_i__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Champs de données}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{struct_p_i_aeacab9a46c42d74eca7e1c74e56b8e8a}{id}
+\begin{DoxyCompactList}\small\item\em uniq id \end{DoxyCompactList}\item 
+int \hyperlink{struct_p_i_a9e85457e1a500295d0cb90343850477b}{posi}
+\begin{DoxyCompactList}\small\item\em position \end{DoxyCompactList}\item 
+int \hyperlink{struct_p_i_afd1d054c2fea5717dada3b2560b65018}{grp}
+\begin{DoxyCompactList}\small\item\em index of its group \end{DoxyCompactList}\item 
+int $\ast$$\ast$ \hyperlink{struct_p_i_a21eeeb2f51ed38c4a9eb79cdc4e2a4be}{space}
+\begin{DoxyCompactList}\small\item\em 2\+D matrix (types, rotamer indexes) it is the state space \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{struct_p_i_a1bc33fdfb4ad3f30c03e48d1410031ce}{rot\+\_\+nb}
+\begin{DoxyCompactList}\small\item\em 1\+D matrix for number of rotamers by type \end{DoxyCompactList}\item 
+int \hyperlink{struct_p_i_a954c178498f0744535e44aa722ee43ef}{type\+\_\+nb}
+\begin{DoxyCompactList}\small\item\em number of residue type in the space \end{DoxyCompactList}\item 
+int \hyperlink{struct_p_i_a484820c535c3c1c8f9fc4b6550b0d2fb}{tot\+\_\+rot\+\_\+nb}
+\begin{DoxyCompactList}\small\item\em number of rotamers over all residues types in the space \end{DoxyCompactList}\item 
+int \hyperlink{struct_p_i_aa6edf4498113227513f9d2aed0c493c4}{global\+\_\+idx}
+\begin{DoxyCompactList}\small\item\em number of rotamers over all residues types in the space \end{DoxyCompactList}\item 
+\hyperlink{structins___proba}{ins\+\_\+\+Proba} \hyperlink{struct_p_i_a74c23a2ec90e005366f6b1bda1b0cdb7}{proba}
+\begin{DoxyCompactList}\small\item\em the M\+C proba of changing the \hyperlink{struct_p_i}{P\+I} \end{DoxyCompactList}\item 
+struct \hyperlink{struct_p_i}{P\+I} $\ast$ \hyperlink{struct_p_i_a8588f7c65e7d4c8442a8440fd620e96a}{dupl}
+\begin{DoxyCompactList}\small\item\em the child instance \end{DoxyCompactList}\item 
+struct \hyperlink{struct_p_i}{P\+I} $\ast$ \hyperlink{struct_p_i_aee5b9d9ac837b1564d456d8966c9bf47}{dupl\+\_\+from}
+\begin{DoxyCompactList}\small\item\em the mother instance \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+
+
+Définition à la ligne 118 du fichier read\+\_\+conf.\+h.
+
+
+
+\subsection{Documentation des champs}
+\hypertarget{struct_p_i_a8588f7c65e7d4c8442a8440fd620e96a}{\index{P\+I@{P\+I}!dupl@{dupl}}
+\index{dupl@{dupl}!P\+I@{P\+I}}
+\subsubsection[{dupl}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf P\+I}$\ast$ P\+I\+::dupl}}\label{struct_p_i_a8588f7c65e7d4c8442a8440fd620e96a}
+
+
+the child instance 
+
+
+
+Définition à la ligne 138 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{struct_p_i_aee5b9d9ac837b1564d456d8966c9bf47}{\index{P\+I@{P\+I}!dupl\+\_\+from@{dupl\+\_\+from}}
+\index{dupl\+\_\+from@{dupl\+\_\+from}!P\+I@{P\+I}}
+\subsubsection[{dupl\+\_\+from}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf P\+I}$\ast$ P\+I\+::dupl\+\_\+from}}\label{struct_p_i_aee5b9d9ac837b1564d456d8966c9bf47}
+
+
+the mother instance 
+
+
+
+Définition à la ligne 140 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{struct_p_i_aa6edf4498113227513f9d2aed0c493c4}{\index{P\+I@{P\+I}!global\+\_\+idx@{global\+\_\+idx}}
+\index{global\+\_\+idx@{global\+\_\+idx}!P\+I@{P\+I}}
+\subsubsection[{global\+\_\+idx}]{\setlength{\rightskip}{0pt plus 5cm}int P\+I\+::global\+\_\+idx}}\label{struct_p_i_aa6edf4498113227513f9d2aed0c493c4}
+
+
+number of rotamers over all residues types in the space 
+
+
+
+Définition à la ligne 134 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{struct_p_i_afd1d054c2fea5717dada3b2560b65018}{\index{P\+I@{P\+I}!grp@{grp}}
+\index{grp@{grp}!P\+I@{P\+I}}
+\subsubsection[{grp}]{\setlength{\rightskip}{0pt plus 5cm}int P\+I\+::grp}}\label{struct_p_i_afd1d054c2fea5717dada3b2560b65018}
+
+
+index of its group 
+
+
+
+Définition à la ligne 124 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{struct_p_i_aeacab9a46c42d74eca7e1c74e56b8e8a}{\index{P\+I@{P\+I}!id@{id}}
+\index{id@{id}!P\+I@{P\+I}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}int P\+I\+::id}}\label{struct_p_i_aeacab9a46c42d74eca7e1c74e56b8e8a}
+
+
+uniq id 
+
+
+
+Définition à la ligne 120 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{struct_p_i_a9e85457e1a500295d0cb90343850477b}{\index{P\+I@{P\+I}!posi@{posi}}
+\index{posi@{posi}!P\+I@{P\+I}}
+\subsubsection[{posi}]{\setlength{\rightskip}{0pt plus 5cm}int P\+I\+::posi}}\label{struct_p_i_a9e85457e1a500295d0cb90343850477b}
+
+
+position 
+
+
+
+Définition à la ligne 122 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{struct_p_i_a74c23a2ec90e005366f6b1bda1b0cdb7}{\index{P\+I@{P\+I}!proba@{proba}}
+\index{proba@{proba}!P\+I@{P\+I}}
+\subsubsection[{proba}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ins\+\_\+\+Proba} P\+I\+::proba}}\label{struct_p_i_a74c23a2ec90e005366f6b1bda1b0cdb7}
+
+
+the M\+C proba of changing the \hyperlink{struct_p_i}{P\+I} 
+
+
+
+Définition à la ligne 136 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{struct_p_i_a1bc33fdfb4ad3f30c03e48d1410031ce}{\index{P\+I@{P\+I}!rot\+\_\+nb@{rot\+\_\+nb}}
+\index{rot\+\_\+nb@{rot\+\_\+nb}!P\+I@{P\+I}}
+\subsubsection[{rot\+\_\+nb}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ P\+I\+::rot\+\_\+nb}}\label{struct_p_i_a1bc33fdfb4ad3f30c03e48d1410031ce}
+
+
+1\+D matrix for number of rotamers by type 
+
+
+
+Définition à la ligne 128 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{struct_p_i_a21eeeb2f51ed38c4a9eb79cdc4e2a4be}{\index{P\+I@{P\+I}!space@{space}}
+\index{space@{space}!P\+I@{P\+I}}
+\subsubsection[{space}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$$\ast$ P\+I\+::space}}\label{struct_p_i_a21eeeb2f51ed38c4a9eb79cdc4e2a4be}
+
+
+2\+D matrix (types, rotamer indexes) it is the state space 
+
+
+
+Définition à la ligne 126 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{struct_p_i_a484820c535c3c1c8f9fc4b6550b0d2fb}{\index{P\+I@{P\+I}!tot\+\_\+rot\+\_\+nb@{tot\+\_\+rot\+\_\+nb}}
+\index{tot\+\_\+rot\+\_\+nb@{tot\+\_\+rot\+\_\+nb}!P\+I@{P\+I}}
+\subsubsection[{tot\+\_\+rot\+\_\+nb}]{\setlength{\rightskip}{0pt plus 5cm}int P\+I\+::tot\+\_\+rot\+\_\+nb}}\label{struct_p_i_a484820c535c3c1c8f9fc4b6550b0d2fb}
+
+
+number of rotamers over all residues types in the space 
+
+
+
+Définition à la ligne 132 du fichier read\+\_\+conf.\+h.
+
+\hypertarget{struct_p_i_a954c178498f0744535e44aa722ee43ef}{\index{P\+I@{P\+I}!type\+\_\+nb@{type\+\_\+nb}}
+\index{type\+\_\+nb@{type\+\_\+nb}!P\+I@{P\+I}}
+\subsubsection[{type\+\_\+nb}]{\setlength{\rightskip}{0pt plus 5cm}int P\+I\+::type\+\_\+nb}}\label{struct_p_i_a954c178498f0744535e44aa722ee43ef}
+
+
+number of residue type in the space 
+
+
+
+Définition à la ligne 130 du fichier read\+\_\+conf.\+h.
+
+
+
+La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+/home/mignon/bioinfo/proteus/gitlab/proteus/\hyperlink{read__conf_8h}{read\+\_\+conf.\+h}\end{DoxyCompactItemize}

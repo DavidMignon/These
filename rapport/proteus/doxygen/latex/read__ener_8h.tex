@@ -1,0 +1,111 @@
+\hypertarget{read__ener_8h}{\section{Référence du fichier /home/mignon/bioinfo/proteus/gitlab/proteus/read\+\_\+ener.h}
+\label{read__ener_8h}\index{/home/mignon/bioinfo/proteus/gitlab/proteus/read\+\_\+ener.\+h@{/home/mignon/bioinfo/proteus/gitlab/proteus/read\+\_\+ener.\+h}}
+}
+{\ttfamily \#include $<$dirent.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}global.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}backbone.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de read\+\_\+ener.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{read__ener_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{read__ener_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{read__ener_8h_a7d92af04288619c0e343a3a08be041cd}{get\+\_\+ener} (int posi1, int posi2, int rot1, int rot2, int backbone)
+\item 
+void \hyperlink{read__ener_8h_a972b1b2edc136c79965903e4833da460}{free\+\_\+\+P\+D\+B\+\_\+data} (\hyperlink{struct_p_d_b__data}{P\+D\+B\+\_\+data} P\+D\+B\+\_\+datas)
+\item 
+void \hyperlink{read__ener_8h_acc896b3724feae9693b816094b6685ef}{init\+\_\+ener} (D\+I\+R $\ast$\hyperlink{proteus_8c_a201b60e51b49f9eae91168c6dd7d3cc2}{ener\+\_\+folder}, char $\ast$\hyperlink{proteus_8c_a51a3838749893681c8816f3572d19b4f}{enerdir}, float \hyperlink{proteus_8c_a2dceb63003a97fa431d06d1d07edc449}{epsilon}, float \hyperlink{proteus_8c_ab1551d8043c2aa4410fb7dbb1fe3be7b}{alpha})
+\item 
+void \hyperlink{read__ener_8h_a50a9b4316d82b7deb306b2993a1aec49}{free\+\_\+eners} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{read__ener_8h_a50a9b4316d82b7deb306b2993a1aec49}{\index{read\+\_\+ener.\+h@{read\+\_\+ener.\+h}!free\+\_\+eners@{free\+\_\+eners}}
+\index{free\+\_\+eners@{free\+\_\+eners}!read\+\_\+ener.\+h@{read\+\_\+ener.\+h}}
+\subsubsection[{free\+\_\+eners}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+eners (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{read__ener_8h_a50a9b4316d82b7deb306b2993a1aec49}
+Free the ener table 
+
+Définition à la ligne 46 du fichier read\+\_\+ener.\+c.
+
+\hypertarget{read__ener_8h_a972b1b2edc136c79965903e4833da460}{\index{read\+\_\+ener.\+h@{read\+\_\+ener.\+h}!free\+\_\+\+P\+D\+B\+\_\+data@{free\+\_\+\+P\+D\+B\+\_\+data}}
+\index{free\+\_\+\+P\+D\+B\+\_\+data@{free\+\_\+\+P\+D\+B\+\_\+data}!read\+\_\+ener.\+h@{read\+\_\+ener.\+h}}
+\subsubsection[{free\+\_\+\+P\+D\+B\+\_\+data}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+\+P\+D\+B\+\_\+data (
+\begin{DoxyParamCaption}
+\item[{{\bf P\+D\+B\+\_\+data}}]{P\+D\+B\+\_\+datas}
+\end{DoxyParamCaption}
+)}}\label{read__ener_8h_a972b1b2edc136c79965903e4833da460}
+Free \hyperlink{struct_p_d_b__data}{P\+D\+B\+\_\+data} structure 
+
+Définition à la ligne 38 du fichier read\+\_\+ener.\+c.
+
+\hypertarget{read__ener_8h_a7d92af04288619c0e343a3a08be041cd}{\index{read\+\_\+ener.\+h@{read\+\_\+ener.\+h}!get\+\_\+ener@{get\+\_\+ener}}
+\index{get\+\_\+ener@{get\+\_\+ener}!read\+\_\+ener.\+h@{read\+\_\+ener.\+h}}
+\subsubsection[{get\+\_\+ener}]{\setlength{\rightskip}{0pt plus 5cm}double get\+\_\+ener (
+\begin{DoxyParamCaption}
+\item[{int}]{posi1, }
+\item[{int}]{posi2, }
+\item[{int}]{rot1, }
+\item[{int}]{rot2, }
+\item[{int}]{backbone}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{read__ener_8h_a7d92af04288619c0e343a3a08be041cd}
+Get energy of a residues pair in the energy matrix 
+\begin{DoxyParams}{Paramètres}
+{\em posi1} & the first position residue of the pair \\
+\hline
+{\em posi2} & the second position residue of the pair \\
+\hline
+{\em rot1} & the rotamer of the first residue \\
+\hline
+{\em rot2} & the rotamer of the second residue \\
+\hline
+{\em backbone} & the id of the current active backbone \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 17 du fichier read\+\_\+ener.\+c.
+
+\hypertarget{read__ener_8h_acc896b3724feae9693b816094b6685ef}{\index{read\+\_\+ener.\+h@{read\+\_\+ener.\+h}!init\+\_\+ener@{init\+\_\+ener}}
+\index{init\+\_\+ener@{init\+\_\+ener}!read\+\_\+ener.\+h@{read\+\_\+ener.\+h}}
+\subsubsection[{init\+\_\+ener}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+ener (
+\begin{DoxyParamCaption}
+\item[{D\+I\+R $\ast$}]{ener\+\_\+folder, }
+\item[{char $\ast$}]{enerdir, }
+\item[{float}]{epsilon, }
+\item[{float}]{alpha}
+\end{DoxyParamCaption}
+)}}\label{read__ener_8h_acc896b3724feae9693b816094b6685ef}
+Initialize the ener table 
+\begin{DoxyParams}{Paramètres}
+{\em ener\+\_\+folder} & the path directory containing matrix.\+bb and matrix.\+pw read in the .conf \\
+\hline
+{\em enerdir} & the actual pathway \\
+\hline
+{\em epsilon} & the value of epsilon \\
+\hline
+{\em alpha} & the valuee of alpha \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 64 du fichier read\+\_\+ener.\+c.
+

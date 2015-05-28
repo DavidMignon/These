@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>proteus:  Fichier source de /home/mignon/bioinfo/proteus/gitlab/proteus/read_ener.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">proteus
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b75a2afd3124dc514e77c0f10e744ba9.html">proteus</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">read_ener.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="read__ener_8c.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;sys/types.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="read__ener_8h.html">read_ener.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="global_8h.html">global.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8h.html">utils.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="read__conf_8h.html">read_conf.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">   14</a></span>&#160;<span class="keywordtype">float</span>**** <a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="read__ener_8h.html#a7d92af04288619c0e343a3a08be041cd">   17</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="read__ener_8c.html#a7d92af04288619c0e343a3a08be041cd">get_ener</a>(<span class="keywordtype">int</span> posi1,<span class="keywordtype">int</span> posi2,<span class="keywordtype">int</span> rot1,<span class="keywordtype">int</span> rot2, <span class="keywordtype">int</span> backbone) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordtype">double</span> result=0;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordtype">int</span> posi;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>[posi1][posi2]!=NULL ) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">if</span> (posi1==posi2) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      posi=<a class="code" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a>[posi1].<a class="code" href="structresidue.html#afa720c250e605c3ae15eaca9a424eca1">PDB_posi</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      posi=<a class="code" href="backbone_8c.html#a4d0088db3af31120e3d209e27a7636b4">det_posi_bb</a>(posi);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <span class="keywordflow">if</span>(<a class="code" href="backbone_8c.html#a82bfdf85feb95b552bf2a10f4aa96fc4">bb_eners</a>[backbone].<a class="code" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a>[posi].<a class="code" href="proteus_8c.html#a82578da3962ce46ce29e2019b7904491">rot_nb</a>&gt;0) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        result=<a class="code" href="backbone_8c.html#a82bfdf85feb95b552bf2a10f4aa96fc4">bb_eners</a>[backbone].<a class="code" href="structbb__ener.html#abc8f47b185def941f8f68fefd38eb628">residues</a>[posi].<a class="code" href="structresidue__ener.html#af19665d2d44e75b3cdce0354151bf40b">rots</a>[rot1].<a class="code" href="structrotamer.html#a41b54eb1e0ae5c1ad17d16a54b3c24b1">ener</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      result=<a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>[posi1][posi2][rot1][rot2];</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="comment">//printf(&quot;%i %i %i %i %i %f\n&quot;,posi1, posi2, rot1, rot2, backbone, result);</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="read__ener_8h.html#a972b1b2edc136c79965903e4833da460">   38</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="read__ener_8c.html#a972b1b2edc136c79965903e4833da460">free_PDB_data</a>(<a class="code" href="struct_p_d_b__data.html">PDB_data</a> PDB_datas) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="global_8h.html#ae8dc11ebaa96c7726e55b42412243b50">config</a>[<a class="code" href="read__conf_8h.html#af70b67011ec7358b19fc567fb22f1797">WEIGHT_EXCHANGE_FILE</a>]!=NULL) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    free(PDB_datas.<a class="code" href="struct_p_d_b__data.html#a5537d000cfa82823ec82990183c041a7">chain</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">//free(&amp;PDB_datas);</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="read__ener_8h.html#a50a9b4316d82b7deb306b2993a1aec49">   46</a></span>&#160;<span class="keywordtype">void</span>  <a class="code" href="read__ener_8c.html#a50a9b4316d82b7deb306b2993a1aec49">free_eners</a>() {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">int</span> i,j,k;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordflow">for</span> (i=0; i &lt; <a class="code" href="global_8h.html#a895aa28767af54e97bf83a28961c2299">posi_nb</a> ; ++i) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span> (j=0; j &lt; <a class="code" href="global_8h.html#a895aa28767af54e97bf83a28961c2299">posi_nb</a> ; ++j) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordflow">if</span>(<a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>[i][j]!=NULL) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">for</span> (k=0; k &lt; <a class="code" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a>[i].<a class="code" href="structresidue.html#add24ab42da2ac2437a1f177267ae1866">rot_nb</a> ; ++k) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;          free(<a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>[i][j][k]);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      free(<a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>[i][j]);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    free(<a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>[i]);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  free(<a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>=NULL;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="global_8h.html#a9f7317e6cb3ede7fd0e1cdada2ebb46d">grp_pairs</a>=NULL;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="read__ener_8h.html#acc896b3724feae9693b816094b6685ef">   64</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="read__ener_8c.html#acc896b3724feae9693b816094b6685ef">init_ener</a>(DIR *<a class="code" href="proteus_8c.html#a201b60e51b49f9eae91168c6dd7d3cc2">ener_folder</a>, <span class="keywordtype">char</span>* <a class="code" href="proteus_8c.html#a51a3838749893681c8816f3572d19b4f">enerdir</a>, <span class="keywordtype">float</span> <a class="code" href="proteus_8c.html#a2dceb63003a97fa431d06d1d07edc449">epsilon</a>, <span class="keywordtype">float</span> <a class="code" href="proteus_8c.html#ab1551d8043c2aa4410fb7dbb1fe3be7b">alpha</a>) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  FILE *ptr;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">char</span> *suffix,path[<a class="code" href="utils_8h.html#a82acb32225c05e9aa4c524c40bc5852a">MAX_CHAR</a>];</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">char</span> line[<a class="code" href="utils_8h.html#a82acb32225c05e9aa4c524c40bc5852a">MAX_CHAR</a>];</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">char</span> I_type_name[4],J_type_name[4];</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">float</span> vdw, elec,surf,pw;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">int</span> I=0,J=0,I_type=0,J_type=0,I_rot=0,J_rot=0,I_idx=0,J_idx=0;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">int</span> i,j,k,l;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="struct_p_d_b__data.html">PDB_data</a> I_PDB_datas;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="struct_p_d_b__data.html">PDB_data</a> J_PDB_datas;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">char</span> I_PDB_name[<a class="code" href="utils_8h.html#a82acb32225c05e9aa4c524c40bc5852a">MAX_CHAR</a>]=<span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">char</span> J_PDB_name[<a class="code" href="utils_8h.html#a82acb32225c05e9aa4c524c40bc5852a">MAX_CHAR</a>]=<span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">struct </span>dirent *file;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  printf(<span class="stringliteral">&quot;\n ========= Loading the energy matrix   ==========================\n\n&quot;</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  rewinddir(ener_folder);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="comment">//allocation and initialization of the matrix.</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a> = (<span class="keywordtype">float</span>****) <a class="code" href="utils_8c.html#ac71f567f38cd58e1cb6ddbf76d57f14f">alloc_clearmemory</a>(<a class="code" href="global_8h.html#a895aa28767af54e97bf83a28961c2299">posi_nb</a>,<span class="keyword">sizeof</span>(<span class="keywordtype">float</span>***));</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">for</span> (i=0; i&lt;<a class="code" href="global_8h.html#a895aa28767af54e97bf83a28961c2299">posi_nb</a>; i++) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>[i] = (<span class="keywordtype">float</span>***) <a class="code" href="utils_8c.html#ac71f567f38cd58e1cb6ddbf76d57f14f">alloc_clearmemory</a>(posi_nb,<span class="keyword">sizeof</span>(<span class="keywordtype">float</span>**));</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">for</span> (j=0; j&lt;<a class="code" href="global_8h.html#a895aa28767af54e97bf83a28961c2299">posi_nb</a>; j++) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>[i][j]=NULL;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>[i][i] = (<span class="keywordtype">float</span>**) <a class="code" href="utils_8c.html#ac71f567f38cd58e1cb6ddbf76d57f14f">alloc_clearmemory</a>(<a class="code" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a>[i].<a class="code" href="proteus_8c.html#a82578da3962ce46ce29e2019b7904491">rot_nb</a>,<span class="keyword">sizeof</span>(<span class="keywordtype">float</span>*));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    l=0;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">for</span> (j=0; j&lt;<a class="code" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a>[i].<a class="code" href="structresidue.html#abb7672d7abb08b7ad044fccd7964fcca">type_nb</a>; j++) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="keywordflow">for</span> (k=0; k&lt;<a class="code" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a>[i].<a class="code" href="structresidue.html#af53f6e2a6a5994935bada9ce0bcdbc82">types</a>[j].<a class="code" href="structtype.html#affc66df9e7fed7164c85d598352fbef7">rot_nb</a>; k++) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>[i][i][l] = (<span class="keywordtype">float</span>*) <a class="code" href="utils_8c.html#ac71f567f38cd58e1cb6ddbf76d57f14f">alloc_clearmemory</a>(<a class="code" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a>[i].rot_nb,<span class="keyword">sizeof</span>(<span class="keywordtype">float</span>));</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>[i][i][l][l]=<a class="code" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a>[i].<a class="code" href="structresidue.html#af53f6e2a6a5994935bada9ce0bcdbc82">types</a>[j].<a class="code" href="structtype.html#a57b235e8311e271142069e1267194adb">rots</a>[k].<a class="code" href="structrotamer.html#a41b54eb1e0ae5c1ad17d16a54b3c24b1">ener</a> ;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        l++;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordflow">while</span> ((file=readdir(ener_folder))!=NULL) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    suffix= strstr(file-&gt;d_name,<span class="stringliteral">&quot;.pw&quot;</span>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    sprintf(path,<span class="stringliteral">&quot;%s/%s&quot;</span>,enerdir,file-&gt;d_name);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">if</span>(suffix!=NULL &amp;&amp; strlen(suffix)==3)  {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      ptr=<a class="code" href="utils_8c.html#a5e0c5b53cbf0ff2602bb8d80384d1c65">open_file</a>(path,<span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      <span class="keywordflow">if</span>(!<a class="code" href="global_8h.html#ae4426f467d61ae456b95844d4d9c2dcd">quiet</a>) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        printf(<span class="stringliteral">&quot;loading %s/%s \n&quot;</span>,enerdir,file-&gt;d_name);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <span class="keywordflow">while</span>(fgets(line, <a class="code" href="utils_8h.html#a82acb32225c05e9aa4c524c40bc5852a">MAX_CHAR</a>, ptr) != NULL) {  <span class="comment">//reading the file</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="comment">/*__________getting the i and j informations__________*/</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">if</span> (sscanf(line, <span class="stringliteral">&quot;%s %3[A-Z] %s %3[A-Z]&quot;</span>,I_PDB_name,I_type_name,J_PDB_name,J_type_name)==4 ) {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;          I_PDB_datas=<a class="code" href="backbone_8c.html#a0d2051fc3ba1876a9162a59ed3657920">read_posi</a>(I_PDB_name,I_PDB_datas);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;          J_PDB_datas=<a class="code" href="backbone_8c.html#a0d2051fc3ba1876a9162a59ed3657920">read_posi</a>(J_PDB_name,J_PDB_datas);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;          <span class="keywordflow">if</span>(strlen(I_PDB_datas.<a class="code" href="struct_p_d_b__data.html#a5537d000cfa82823ec82990183c041a7">chain</a>)==0) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            I=<a class="code" href="residues_8c.html#aa2e4bed942e95a002d487e0757c4f39a">det_posi</a>(I_PDB_datas.<a class="code" href="struct_p_d_b__data.html#adc17445e0eb5d3c7e4834c530b0fb297">PDB_posi</a>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;          }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;          <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            I=<a class="code" href="residues_8c.html#af68020f900a4ab3f449ad4a5129ebfd5">det_posi_chain</a>(I_PDB_datas.<a class="code" href="struct_p_d_b__data.html#adc17445e0eb5d3c7e4834c530b0fb297">PDB_posi</a>,I_PDB_datas.<a class="code" href="struct_p_d_b__data.html#a5537d000cfa82823ec82990183c041a7">chain</a>);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;          }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;          <span class="keywordflow">if</span>(strlen(J_PDB_datas.<a class="code" href="struct_p_d_b__data.html#a5537d000cfa82823ec82990183c041a7">chain</a>)==0) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            J=<a class="code" href="residues_8c.html#aa2e4bed942e95a002d487e0757c4f39a">det_posi</a>(J_PDB_datas.<a class="code" href="struct_p_d_b__data.html#adc17445e0eb5d3c7e4834c530b0fb297">PDB_posi</a>);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;          }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;          <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            J=<a class="code" href="residues_8c.html#af68020f900a4ab3f449ad4a5129ebfd5">det_posi_chain</a>(J_PDB_datas.<a class="code" href="struct_p_d_b__data.html#adc17445e0eb5d3c7e4834c530b0fb297">PDB_posi</a>,J_PDB_datas.<a class="code" href="struct_p_d_b__data.html#a5537d000cfa82823ec82990183c041a7">chain</a>);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;          }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;          I_type=<a class="code" href="residues_8c.html#a37da76ac5c232f9c2e61058b0d5f8aac">det_type</a>(I,I_type_name);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;          J_type=<a class="code" href="residues_8c.html#a37da76ac5c232f9c2e61058b0d5f8aac">det_type</a>(J,J_type_name);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;          <span class="keywordflow">if</span>(<a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>[I][J]==NULL) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>[I][J]=(<span class="keywordtype">float</span>**)<a class="code" href="utils_8c.html#ac71f567f38cd58e1cb6ddbf76d57f14f">alloc_clearmemory</a>(<a class="code" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a>[I].<a class="code" href="proteus_8c.html#a82578da3962ce46ce29e2019b7904491">rot_nb</a>,<span class="keyword">sizeof</span>(<span class="keywordtype">float</span>*));</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordflow">for</span>(i=0; i&lt;<a class="code" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a>[I].<a class="code" href="structresidue.html#add24ab42da2ac2437a1f177267ae1866">rot_nb</a>; i++) {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;              <a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>[I][J][i]=(<span class="keywordtype">float</span>*)<a class="code" href="utils_8c.html#ac71f567f38cd58e1cb6ddbf76d57f14f">alloc_clearmemory</a>(<a class="code" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a>[J].rot_nb,<span class="keyword">sizeof</span>(<span class="keywordtype">float</span>));</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>[J][I]=(<span class="keywordtype">float</span>**)<a class="code" href="utils_8c.html#ac71f567f38cd58e1cb6ddbf76d57f14f">alloc_clearmemory</a>(<a class="code" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a>[J].rot_nb,<span class="keyword">sizeof</span>(<span class="keywordtype">float</span>*));</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="keywordflow">for</span>(j=0; j&lt;<a class="code" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a>[J].<a class="code" href="structresidue.html#add24ab42da2ac2437a1f177267ae1866">rot_nb</a>; j++) {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;              <a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>[J][I][j]=(<span class="keywordtype">float</span>*)<a class="code" href="utils_8c.html#ac71f567f38cd58e1cb6ddbf76d57f14f">alloc_clearmemory</a>(<a class="code" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a>[I].rot_nb,<span class="keyword">sizeof</span>(<span class="keywordtype">float</span>));</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;          }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;          <a class="code" href="read__ener_8c.html#a972b1b2edc136c79965903e4833da460">free_PDB_data</a>(I_PDB_datas);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;          <a class="code" href="read__ener_8c.html#a972b1b2edc136c79965903e4833da460">free_PDB_data</a>(J_PDB_datas);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;          <span class="comment">/*__________getting the PW energy informations__________*/</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sscanf(line,<span class="stringliteral">&quot;%d %d %f %f %f&quot;</span>,&amp;I_idx,&amp;J_idx,&amp;vdw, &amp;elec, &amp;surf)==5) {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;          <span class="comment">//if(vdw&gt;20.0) vdw=20.0;</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;          pw=vdw + elec/epsilon + alpha*surf ;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;          I_rot=<a class="code" href="residues_8c.html#ae112d856807b0b59d9998923361b5221">det_rot_idx</a>(I,I_type,I_idx);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;          J_rot=<a class="code" href="residues_8c.html#ae112d856807b0b59d9998923361b5221">det_rot_idx</a>(J,J_type,J_idx);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;          <a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>[I][J][I_rot][J_rot] = -pw;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;          <a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>[J][I][J_rot][I_rot] = -pw;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      } <span class="comment">//end loop over the file</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      fclose(ptr);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    } <span class="comment">//jump to the next file.</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="read__ener_8c.html#a51b311450abdf87b609b48d3561f8ea4">  165</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="read__ener_8c.html#a51b311450abdf87b609b48d3561f8ea4">optimize_ener</a>( <span class="keywordtype">float</span>**** <a class="code" href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a>) {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  ener2 = (<span class="keywordtype">float</span>**) <a class="code" href="utils_8c.html#ac71f567f38cd58e1cb6ddbf76d57f14f">alloc_clearmemory</a>(<a class="code" href="proteus_8c.html#a82578da3962ce46ce29e2019b7904491">rot_nb</a>,<span class="keyword">sizeof</span>(<span class="keywordtype">float</span>*));</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keywordflow">for</span> (i=0; i&lt;<a class="code" href="proteus_8c.html#a82578da3962ce46ce29e2019b7904491">rot_nb</a>; i++) {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    ener2[i] = (<span class="keywordtype">float</span>*) <a class="code" href="utils_8c.html#ac71f567f38cd58e1cb6ddbf76d57f14f">alloc_clearmemory</a>(<a class="code" href="global_8h.html#a895aa28767af54e97bf83a28961c2299">posi_nb</a>,<span class="keyword">sizeof</span>(<span class="keywordtype">float</span>));</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">for</span> (i=0; i&lt;<a class="code" href="global_8h.html#a895aa28767af54e97bf83a28961c2299">posi_nb</a>; i++) {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    l=0;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    m=0;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">for</span> (j=0; j&lt;<a class="code" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a>[i].<a class="code" href="structresidue.html#abb7672d7abb08b7ad044fccd7964fcca">type_nb</a>; j++) {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      <span class="keywordflow">for</span> (k=0; k&lt;<a class="code" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a>[i].<a class="code" href="structresidue.html#af53f6e2a6a5994935bada9ce0bcdbc82">types</a>[j].<a class="code" href="structtype.html#affc66df9e7fed7164c85d598352fbef7">rot_nb</a>; k++) {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        enerener[i][i][l] = (<span class="keywordtype">float</span>*) <a class="code" href="utils_8c.html#ac71f567f38cd58e1cb6ddbf76d57f14f">alloc_clearmemory</a>(<a class="code" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a>[i].rot_nb,<span class="keyword">sizeof</span>(<span class="keywordtype">float</span>));</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        ener[i][i][l][l]=<a class="code" href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a>[i].<a class="code" href="structresidue.html#af53f6e2a6a5994935bada9ce0bcdbc82">types</a>[j].<a class="code" href="structtype.html#a57b235e8311e271142069e1267194adb">rots</a>[k].<a class="code" href="structrotamer.html#a41b54eb1e0ae5c1ad17d16a54b3c24b1">ener</a> ;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        l++;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        m++;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
+<div class="ttc" id="utils_8c_html_ac71f567f38cd58e1cb6ddbf76d57f14f"><div class="ttname"><a href="utils_8c.html#ac71f567f38cd58e1cb6ddbf76d57f14f">alloc_clearmemory</a></div><div class="ttdeci">void * alloc_clearmemory(size_t nmemb, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="utils_8c_source.html#l00064">utils.c:64</a></div></div>
+<div class="ttc" id="read__ener_8c_html_a0d31758048a5ba5102041a8e1eadf3a7"><div class="ttname"><a href="read__ener_8c.html#a0d31758048a5ba5102041a8e1eadf3a7">ener</a></div><div class="ttdeci">float **** ener</div><div class="ttdoc">the energy matrix </div><div class="ttdef"><b>Definition:</b> <a href="read__ener_8c_source.html#l00014">read_ener.c:14</a></div></div>
+<div class="ttc" id="residues_8c_html_ae112d856807b0b59d9998923361b5221"><div class="ttname"><a href="residues_8c.html#ae112d856807b0b59d9998923361b5221">det_rot_idx</a></div><div class="ttdeci">int det_rot_idx(int posi, int type, int id)</div><div class="ttdef"><b>Definition:</b> <a href="residues_8c_source.html#l00088">residues.c:88</a></div></div>
+<div class="ttc" id="utils_8c_html_a5e0c5b53cbf0ff2602bb8d80384d1c65"><div class="ttname"><a href="utils_8c.html#a5e0c5b53cbf0ff2602bb8d80384d1c65">open_file</a></div><div class="ttdeci">FILE * open_file(const char *name, const char *m)</div><div class="ttdef"><b>Definition:</b> <a href="utils_8c_source.html#l00079">utils.c:79</a></div></div>
+<div class="ttc" id="structbb__ener_html_abc8f47b185def941f8f68fefd38eb628"><div class="ttname"><a href="structbb__ener.html#abc8f47b185def941f8f68fefd38eb628">bb_ener::residues</a></div><div class="ttdeci">residue_ener * residues</div><div class="ttdef"><b>Definition:</b> <a href="backbone_8h_source.html#l00026">backbone.h:26</a></div></div>
+<div class="ttc" id="global_8h_html_ae8dc11ebaa96c7726e55b42412243b50"><div class="ttname"><a href="global_8h.html#ae8dc11ebaa96c7726e55b42412243b50">config</a></div><div class="ttdeci">char ** config[TAG_NB]</div><div class="ttdoc">store the info from the config file: tag number x lines by tag </div><div class="ttdef"><b>Definition:</b> <a href="proteus_8c_source.html#l00067">proteus.c:67</a></div></div>
+<div class="ttc" id="residues_8c_html_a94d5de64587ee65ec5a6a17d4bef89fb"><div class="ttname"><a href="residues_8c.html#a94d5de64587ee65ec5a6a17d4bef89fb">residues</a></div><div class="ttdeci">residue * residues</div><div class="ttdef"><b>Definition:</b> <a href="residues_8c_source.html#l00009">residues.c:9</a></div></div>
+<div class="ttc" id="residues_8c_html_af68020f900a4ab3f449ad4a5129ebfd5"><div class="ttname"><a href="residues_8c.html#af68020f900a4ab3f449ad4a5129ebfd5">det_posi_chain</a></div><div class="ttdeci">int det_posi_chain(int residi, char *name)</div><div class="ttdef"><b>Definition:</b> <a href="residues_8c_source.html#l00029">residues.c:29</a></div></div>
+<div class="ttc" id="read__ener_8c_html_a50a9b4316d82b7deb306b2993a1aec49"><div class="ttname"><a href="read__ener_8c.html#a50a9b4316d82b7deb306b2993a1aec49">free_eners</a></div><div class="ttdeci">void free_eners()</div><div class="ttdef"><b>Definition:</b> <a href="read__ener_8c_source.html#l00046">read_ener.c:46</a></div></div>
+<div class="ttc" id="struct_p_d_b__data_html"><div class="ttname"><a href="struct_p_d_b__data.html">PDB_data</a></div><div class="ttdef"><b>Definition:</b> <a href="backbone_8h_source.html#l00006">backbone.h:6</a></div></div>
+<div class="ttc" id="structrotamer_html_a41b54eb1e0ae5c1ad17d16a54b3c24b1"><div class="ttname"><a href="structrotamer.html#a41b54eb1e0ae5c1ad17d16a54b3c24b1">rotamer::ener</a></div><div class="ttdeci">float ener</div><div class="ttdoc">energy value </div><div class="ttdef"><b>Definition:</b> <a href="residues_8h_source.html#l00007">residues.h:7</a></div></div>
+<div class="ttc" id="global_8h_html"><div class="ttname"><a href="global_8h.html">global.h</a></div></div>
+<div class="ttc" id="structresidue_html_add24ab42da2ac2437a1f177267ae1866"><div class="ttname"><a href="structresidue.html#add24ab42da2ac2437a1f177267ae1866">residue::rot_nb</a></div><div class="ttdeci">int rot_nb</div><div class="ttdoc">total number of rotamer for this residue </div><div class="ttdef"><b>Definition:</b> <a href="residues_8h_source.html#l00035">residues.h:35</a></div></div>
+<div class="ttc" id="struct_p_d_b__data_html_adc17445e0eb5d3c7e4834c530b0fb297"><div class="ttname"><a href="struct_p_d_b__data.html#adc17445e0eb5d3c7e4834c530b0fb297">PDB_data::PDB_posi</a></div><div class="ttdeci">int PDB_posi</div><div class="ttdef"><b>Definition:</b> <a href="backbone_8h_source.html#l00007">backbone.h:7</a></div></div>
+<div class="ttc" id="residues_8c_html_a37da76ac5c232f9c2e61058b0d5f8aac"><div class="ttname"><a href="residues_8c.html#a37da76ac5c232f9c2e61058b0d5f8aac">det_type</a></div><div class="ttdeci">int det_type(int posi, char *type)</div><div class="ttdef"><b>Definition:</b> <a href="residues_8c_source.html#l00118">residues.c:118</a></div></div>
+<div class="ttc" id="struct_p_d_b__data_html_a5537d000cfa82823ec82990183c041a7"><div class="ttname"><a href="struct_p_d_b__data.html#a5537d000cfa82823ec82990183c041a7">PDB_data::chain</a></div><div class="ttdeci">char * chain</div><div class="ttdoc">fix =1 , flex =0 </div><div class="ttdef"><b>Definition:</b> <a href="backbone_8h_source.html#l00009">backbone.h:9</a></div></div>
+<div class="ttc" id="utils_8h_html"><div class="ttname"><a href="utils_8h.html">utils.h</a></div></div>
+<div class="ttc" id="backbone_8c_html_a82bfdf85feb95b552bf2a10f4aa96fc4"><div class="ttname"><a href="backbone_8c.html#a82bfdf85feb95b552bf2a10f4aa96fc4">bb_eners</a></div><div class="ttdeci">bb_ener * bb_eners</div><div class="ttdef"><b>Definition:</b> <a href="backbone_8c_source.html#l00013">backbone.c:13</a></div></div>
+<div class="ttc" id="proteus_8c_html_ab1551d8043c2aa4410fb7dbb1fe3be7b"><div class="ttname"><a href="proteus_8c.html#ab1551d8043c2aa4410fb7dbb1fe3be7b">alpha</a></div><div class="ttdeci">float alpha</div><div class="ttdef"><b>Definition:</b> <a href="proteus_8c_source.html#l00058">proteus.c:58</a></div></div>
+<div class="ttc" id="structtype_html_affc66df9e7fed7164c85d598352fbef7"><div class="ttname"><a href="structtype.html#affc66df9e7fed7164c85d598352fbef7">type::rot_nb</a></div><div class="ttdeci">int rot_nb</div><div class="ttdoc">rot number for this type </div><div class="ttdef"><b>Definition:</b> <a href="residues_8h_source.html#l00017">residues.h:17</a></div></div>
+<div class="ttc" id="structtype_html_a57b235e8311e271142069e1267194adb"><div class="ttname"><a href="structtype.html#a57b235e8311e271142069e1267194adb">type::rots</a></div><div class="ttdeci">rotamer * rots</div><div class="ttdef"><b>Definition:</b> <a href="residues_8h_source.html#l00018">residues.h:18</a></div></div>
+<div class="ttc" id="structresidue_html_afa720c250e605c3ae15eaca9a424eca1"><div class="ttname"><a href="structresidue.html#afa720c250e605c3ae15eaca9a424eca1">residue::PDB_posi</a></div><div class="ttdeci">int PDB_posi</div><div class="ttdoc">pdb position </div><div class="ttdef"><b>Definition:</b> <a href="residues_8h_source.html#l00024">residues.h:24</a></div></div>
+<div class="ttc" id="global_8h_html_a9f7317e6cb3ede7fd0e1cdada2ebb46d"><div class="ttname"><a href="global_8h.html#a9f7317e6cb3ede7fd0e1cdada2ebb46d">grp_pairs</a></div><div class="ttdeci">grp_pair * grp_pairs</div><div class="ttdef"><b>Definition:</b> <a href="proteus_8c_source.html#l00072">proteus.c:72</a></div></div>
+<div class="ttc" id="global_8h_html_a895aa28767af54e97bf83a28961c2299"><div class="ttname"><a href="global_8h.html#a895aa28767af54e97bf83a28961c2299">posi_nb</a></div><div class="ttdeci">int posi_nb</div><div class="ttdoc">number of position in the *.bb file </div><div class="ttdef"><b>Definition:</b> <a href="proteus_8c_source.html#l00064">proteus.c:64</a></div></div>
+<div class="ttc" id="proteus_8c_html_a2dceb63003a97fa431d06d1d07edc449"><div class="ttname"><a href="proteus_8c.html#a2dceb63003a97fa431d06d1d07edc449">epsilon</a></div><div class="ttdeci">float epsilon</div><div class="ttdef"><b>Definition:</b> <a href="proteus_8c_source.html#l00058">proteus.c:58</a></div></div>
+<div class="ttc" id="structresidue_html_abb7672d7abb08b7ad044fccd7964fcca"><div class="ttname"><a href="structresidue.html#abb7672d7abb08b7ad044fccd7964fcca">residue::type_nb</a></div><div class="ttdeci">int type_nb</div><div class="ttdoc">number of type </div><div class="ttdef"><b>Definition:</b> <a href="residues_8h_source.html#l00029">residues.h:29</a></div></div>
+<div class="ttc" id="backbone_8c_html_a4d0088db3af31120e3d209e27a7636b4"><div class="ttname"><a href="backbone_8c.html#a4d0088db3af31120e3d209e27a7636b4">det_posi_bb</a></div><div class="ttdeci">int det_posi_bb(int residi)</div><div class="ttdef"><b>Definition:</b> <a href="backbone_8c_source.html#l00073">backbone.c:73</a></div></div>
+<div class="ttc" id="utils_8h_html_a82acb32225c05e9aa4c524c40bc5852a"><div class="ttname"><a href="utils_8h.html#a82acb32225c05e9aa4c524c40bc5852a">MAX_CHAR</a></div><div class="ttdeci">#define MAX_CHAR</div><div class="ttdef"><b>Definition:</b> <a href="utils_8h_source.html#l00002">utils.h:2</a></div></div>
+<div class="ttc" id="read__ener_8c_html_a972b1b2edc136c79965903e4833da460"><div class="ttname"><a href="read__ener_8c.html#a972b1b2edc136c79965903e4833da460">free_PDB_data</a></div><div class="ttdeci">void free_PDB_data(PDB_data PDB_datas)</div><div class="ttdef"><b>Definition:</b> <a href="read__ener_8c_source.html#l00038">read_ener.c:38</a></div></div>
+<div class="ttc" id="global_8h_html_ae4426f467d61ae456b95844d4d9c2dcd"><div class="ttname"><a href="global_8h.html#ae4426f467d61ae456b95844d4d9c2dcd">quiet</a></div><div class="ttdeci">bool quiet</div><div class="ttdef"><b>Definition:</b> <a href="proteus_8c_source.html#l00055">proteus.c:55</a></div></div>
+<div class="ttc" id="residues_8c_html_aa2e4bed942e95a002d487e0757c4f39a"><div class="ttname"><a href="residues_8c.html#aa2e4bed942e95a002d487e0757c4f39a">det_posi</a></div><div class="ttdeci">int det_posi(int residi)</div><div class="ttdef"><b>Definition:</b> <a href="residues_8c_source.html#l00012">residues.c:12</a></div></div>
+<div class="ttc" id="structresidue__ener_html_af19665d2d44e75b3cdce0354151bf40b"><div class="ttname"><a href="structresidue__ener.html#af19665d2d44e75b3cdce0354151bf40b">residue_ener::rots</a></div><div class="ttdeci">rotamer * rots</div><div class="ttdef"><b>Definition:</b> <a href="backbone_8h_source.html#l00018">backbone.h:18</a></div></div>
+<div class="ttc" id="read__ener_8h_html"><div class="ttname"><a href="read__ener_8h.html">read_ener.h</a></div></div>
+<div class="ttc" id="read__conf_8h_html_af70b67011ec7358b19fc567fb22f1797"><div class="ttname"><a href="read__conf_8h.html#af70b67011ec7358b19fc567fb22f1797">WEIGHT_EXCHANGE_FILE</a></div><div class="ttdeci">#define WEIGHT_EXCHANGE_FILE</div><div class="ttdef"><b>Definition:</b> <a href="read__conf_8h_source.html#l00039">read_conf.h:39</a></div></div>
+<div class="ttc" id="proteus_8c_html_a51a3838749893681c8816f3572d19b4f"><div class="ttname"><a href="proteus_8c.html#a51a3838749893681c8816f3572d19b4f">enerdir</a></div><div class="ttdeci">char * enerdir</div><div class="ttdef"><b>Definition:</b> <a href="proteus_8c_source.html#l00059">proteus.c:59</a></div></div>
+<div class="ttc" id="structresidue_html_af53f6e2a6a5994935bada9ce0bcdbc82"><div class="ttname"><a href="structresidue.html#af53f6e2a6a5994935bada9ce0bcdbc82">residue::types</a></div><div class="ttdeci">type * types</div><div class="ttdoc">type array </div><div class="ttdef"><b>Definition:</b> <a href="residues_8h_source.html#l00032">residues.h:32</a></div></div>
+<div class="ttc" id="backbone_8c_html_a0d2051fc3ba1876a9162a59ed3657920"><div class="ttname"><a href="backbone_8c.html#a0d2051fc3ba1876a9162a59ed3657920">read_posi</a></div><div class="ttdeci">PDB_data read_posi(char *PDB_posi, PDB_data info_posi)</div><div class="ttdef"><b>Definition:</b> <a href="backbone_8c_source.html#l00029">backbone.c:29</a></div></div>
+<div class="ttc" id="read__ener_8c_html_a7d92af04288619c0e343a3a08be041cd"><div class="ttname"><a href="read__ener_8c.html#a7d92af04288619c0e343a3a08be041cd">get_ener</a></div><div class="ttdeci">double get_ener(int posi1, int posi2, int rot1, int rot2, int backbone)</div><div class="ttdef"><b>Definition:</b> <a href="read__ener_8c_source.html#l00017">read_ener.c:17</a></div></div>
+<div class="ttc" id="read__conf_8h_html"><div class="ttname"><a href="read__conf_8h.html">read_conf.h</a></div></div>
+<div class="ttc" id="read__ener_8c_html_acc896b3724feae9693b816094b6685ef"><div class="ttname"><a href="read__ener_8c.html#acc896b3724feae9693b816094b6685ef">init_ener</a></div><div class="ttdeci">void init_ener(DIR *ener_folder, char *enerdir, float epsilon, float alpha)</div><div class="ttdef"><b>Definition:</b> <a href="read__ener_8c_source.html#l00064">read_ener.c:64</a></div></div>
+<div class="ttc" id="read__ener_8c_html_a51b311450abdf87b609b48d3561f8ea4"><div class="ttname"><a href="read__ener_8c.html#a51b311450abdf87b609b48d3561f8ea4">optimize_ener</a></div><div class="ttdeci">void optimize_ener(float ****ener)</div><div class="ttdef"><b>Definition:</b> <a href="read__ener_8c_source.html#l00165">read_ener.c:165</a></div></div>
+<div class="ttc" id="proteus_8c_html_a201b60e51b49f9eae91168c6dd7d3cc2"><div class="ttname"><a href="proteus_8c.html#a201b60e51b49f9eae91168c6dd7d3cc2">ener_folder</a></div><div class="ttdeci">DIR * ener_folder</div><div class="ttdef"><b>Definition:</b> <a href="proteus_8c_source.html#l00066">proteus.c:66</a></div></div>
+<div class="ttc" id="proteus_8c_html_a82578da3962ce46ce29e2019b7904491"><div class="ttname"><a href="proteus_8c.html#a82578da3962ce46ce29e2019b7904491">rot_nb</a></div><div class="ttdeci">int rot_nb</div><div class="ttdef"><b>Definition:</b> <a href="proteus_8c_source.html#l00060">proteus.c:60</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi 27 Mai 2015 10:00:24 pour proteus par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>

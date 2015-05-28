@@ -1,0 +1,186 @@
+\hypertarget{global_8h}{\section{Référence du fichier /home/mignon/bioinfo/proteus/gitlab/proteus/global.h}
+\label{global_8h}\index{/home/mignon/bioinfo/proteus/gitlab/proteus/global.\+h@{/home/mignon/bioinfo/proteus/gitlab/proteus/global.\+h}}
+}
+{\ttfamily \#include $<$limits.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$stdbool.\+h$>$}\\*
+Graphe des dépendances par inclusion de global.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{global_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{global_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structparam__t}{param\+\_\+t}
+\item 
+struct \hyperlink{structgrp__type__bb}{grp\+\_\+type\+\_\+bb}
+\item 
+struct \hyperlink{structgrp__ener__walker}{grp\+\_\+ener\+\_\+walker}
+\item 
+struct \hyperlink{structgrp__pair}{grp\+\_\+pair}
+\item 
+struct \hyperlink{structgrp__allowed}{grp\+\_\+allowed}
+\item 
+struct \hyperlink{structlist__term__id}{list\+\_\+term\+\_\+id}
+\item 
+struct \hyperlink{structexchange__grp}{exchange\+\_\+grp}
+\item 
+struct \hyperlink{structmatrix__transition}{matrix\+\_\+transition}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{global_8h_a9b69fba98c1dfe5bf628cfa9e90aa9d7}{T\+A\+G\+\_\+\+N\+B}~35
+\end{DoxyCompactItemize}
+\subsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef void $\ast$ \hyperlink{global_8h_a596407b6fb2365e332aae2fa812dadc7}{ener\+\_\+id\+\_\+t}
+\item 
+typedef uint16\+\_\+t \hyperlink{global_8h_ad291ff3eba2246a027eead869e223f9e}{pos\+\_\+t}
+\begin{DoxyCompactList}\small\item\em definition of a 16-\/bit unsigned type \end{DoxyCompactList}\item 
+typedef uint16\+\_\+t \hyperlink{global_8h_a76c30add544d614276109f911692cecc}{rot\+\_\+t}
+\begin{DoxyCompactList}\small\item\em definition of a 16-\/bit unsigned type \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{global_8h_ab3f078684998b83967d507d0f453f454}{verbose}
+\item 
+bool \hyperlink{global_8h_ae4426f467d61ae456b95844d4d9c2dcd}{quiet}
+\item 
+int \hyperlink{global_8h_a895aa28767af54e97bf83a28961c2299}{posi\+\_\+nb}
+\begin{DoxyCompactList}\small\item\em number of position in the $\ast$.bb file \end{DoxyCompactList}\item 
+char $\ast$$\ast$ \hyperlink{global_8h_ae8dc11ebaa96c7726e55b42412243b50}{config} \mbox{[}\hyperlink{global_8h_a9b69fba98c1dfe5bf628cfa9e90aa9d7}{T\+A\+G\+\_\+\+N\+B}\mbox{]}
+\begin{DoxyCompactList}\small\item\em store the info from the config file\+: tag number x lines by tag \end{DoxyCompactList}\item 
+int \hyperlink{global_8h_a4bea311882e7028639c0132838970aba}{bb\+\_\+nb}
+\item 
+\hyperlink{structgrp__pair}{grp\+\_\+pair} $\ast$ \hyperlink{global_8h_a9f7317e6cb3ede7fd0e1cdada2ebb46d}{grp\+\_\+pairs}
+\item 
+\hyperlink{structgrp__ener__walker}{grp\+\_\+ener\+\_\+walker} $\ast$ \hyperlink{global_8h_a205145c2f6049d25c0993356584edabb}{grps\+\_\+ener\+\_\+walker}
+\item 
+\hyperlink{structmatrix__transition}{matrix\+\_\+transition} $\ast$ \hyperlink{global_8h_a4fe1d8c4466c04cbb4132fad3c88c5ca}{matrix\+\_\+trans}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des macros}
+\hypertarget{global_8h_a9b69fba98c1dfe5bf628cfa9e90aa9d7}{\index{global.\+h@{global.\+h}!T\+A\+G\+\_\+\+N\+B@{T\+A\+G\+\_\+\+N\+B}}
+\index{T\+A\+G\+\_\+\+N\+B@{T\+A\+G\+\_\+\+N\+B}!global.\+h@{global.\+h}}
+\subsubsection[{T\+A\+G\+\_\+\+N\+B}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+A\+G\+\_\+\+N\+B~35}}\label{global_8h_a9b69fba98c1dfe5bf628cfa9e90aa9d7}
+
+
+Définition à la ligne 11 du fichier global.\+h.
+
+
+
+\subsection{Documentation des définitions de type}
+\hypertarget{global_8h_a596407b6fb2365e332aae2fa812dadc7}{\index{global.\+h@{global.\+h}!ener\+\_\+id\+\_\+t@{ener\+\_\+id\+\_\+t}}
+\index{ener\+\_\+id\+\_\+t@{ener\+\_\+id\+\_\+t}!global.\+h@{global.\+h}}
+\subsubsection[{ener\+\_\+id\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf ener\+\_\+id\+\_\+t}}}\label{global_8h_a596407b6fb2365e332aae2fa812dadc7}
+
+
+Définition à la ligne 23 du fichier global.\+h.
+
+\hypertarget{global_8h_ad291ff3eba2246a027eead869e223f9e}{\index{global.\+h@{global.\+h}!pos\+\_\+t@{pos\+\_\+t}}
+\index{pos\+\_\+t@{pos\+\_\+t}!global.\+h@{global.\+h}}
+\subsubsection[{pos\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint16\+\_\+t {\bf pos\+\_\+t}}}\label{global_8h_ad291ff3eba2246a027eead869e223f9e}
+
+
+definition of a 16-\/bit unsigned type 
+
+
+
+Définition à la ligne 26 du fichier global.\+h.
+
+\hypertarget{global_8h_a76c30add544d614276109f911692cecc}{\index{global.\+h@{global.\+h}!rot\+\_\+t@{rot\+\_\+t}}
+\index{rot\+\_\+t@{rot\+\_\+t}!global.\+h@{global.\+h}}
+\subsubsection[{rot\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint16\+\_\+t {\bf rot\+\_\+t}}}\label{global_8h_a76c30add544d614276109f911692cecc}
+
+
+definition of a 16-\/bit unsigned type 
+
+
+
+Définition à la ligne 28 du fichier global.\+h.
+
+
+
+\subsection{Documentation des variables}
+\hypertarget{global_8h_a4bea311882e7028639c0132838970aba}{\index{global.\+h@{global.\+h}!bb\+\_\+nb@{bb\+\_\+nb}}
+\index{bb\+\_\+nb@{bb\+\_\+nb}!global.\+h@{global.\+h}}
+\subsubsection[{bb\+\_\+nb}]{\setlength{\rightskip}{0pt plus 5cm}int bb\+\_\+nb}}\label{global_8h_a4bea311882e7028639c0132838970aba}
+
+
+Définition à la ligne 63 du fichier proteus.\+c.
+
+\hypertarget{global_8h_ae8dc11ebaa96c7726e55b42412243b50}{\index{global.\+h@{global.\+h}!config@{config}}
+\index{config@{config}!global.\+h@{global.\+h}}
+\subsubsection[{config}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ config\mbox{[}{\bf T\+A\+G\+\_\+\+N\+B}\mbox{]}}}\label{global_8h_ae8dc11ebaa96c7726e55b42412243b50}
+
+
+store the info from the config file\+: tag number x lines by tag 
+
+
+
+Définition à la ligne 67 du fichier proteus.\+c.
+
+\hypertarget{global_8h_a9f7317e6cb3ede7fd0e1cdada2ebb46d}{\index{global.\+h@{global.\+h}!grp\+\_\+pairs@{grp\+\_\+pairs}}
+\index{grp\+\_\+pairs@{grp\+\_\+pairs}!global.\+h@{global.\+h}}
+\subsubsection[{grp\+\_\+pairs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf grp\+\_\+pair}$\ast$ grp\+\_\+pairs}}\label{global_8h_a9f7317e6cb3ede7fd0e1cdada2ebb46d}
+
+
+Définition à la ligne 72 du fichier proteus.\+c.
+
+\hypertarget{global_8h_a205145c2f6049d25c0993356584edabb}{\index{global.\+h@{global.\+h}!grps\+\_\+ener\+\_\+walker@{grps\+\_\+ener\+\_\+walker}}
+\index{grps\+\_\+ener\+\_\+walker@{grps\+\_\+ener\+\_\+walker}!global.\+h@{global.\+h}}
+\subsubsection[{grps\+\_\+ener\+\_\+walker}]{\setlength{\rightskip}{0pt plus 5cm}{\bf grp\+\_\+ener\+\_\+walker}$\ast$ grps\+\_\+ener\+\_\+walker}}\label{global_8h_a205145c2f6049d25c0993356584edabb}
+
+
+Définition à la ligne 73 du fichier proteus.\+c.
+
+\hypertarget{global_8h_a4fe1d8c4466c04cbb4132fad3c88c5ca}{\index{global.\+h@{global.\+h}!matrix\+\_\+trans@{matrix\+\_\+trans}}
+\index{matrix\+\_\+trans@{matrix\+\_\+trans}!global.\+h@{global.\+h}}
+\subsubsection[{matrix\+\_\+trans}]{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix\+\_\+transition}$\ast$ matrix\+\_\+trans}}\label{global_8h_a4fe1d8c4466c04cbb4132fad3c88c5ca}
+
+
+Définition à la ligne 69 du fichier proteus.\+c.
+
+\hypertarget{global_8h_a895aa28767af54e97bf83a28961c2299}{\index{global.\+h@{global.\+h}!posi\+\_\+nb@{posi\+\_\+nb}}
+\index{posi\+\_\+nb@{posi\+\_\+nb}!global.\+h@{global.\+h}}
+\subsubsection[{posi\+\_\+nb}]{\setlength{\rightskip}{0pt plus 5cm}int posi\+\_\+nb}}\label{global_8h_a895aa28767af54e97bf83a28961c2299}
+
+
+number of position in the $\ast$.bb file 
+
+
+
+Définition à la ligne 64 du fichier proteus.\+c.
+
+\hypertarget{global_8h_ae4426f467d61ae456b95844d4d9c2dcd}{\index{global.\+h@{global.\+h}!quiet@{quiet}}
+\index{quiet@{quiet}!global.\+h@{global.\+h}}
+\subsubsection[{quiet}]{\setlength{\rightskip}{0pt plus 5cm}bool quiet}}\label{global_8h_ae4426f467d61ae456b95844d4d9c2dcd}
+
+
+Définition à la ligne 55 du fichier proteus.\+c.
+
+\hypertarget{global_8h_ab3f078684998b83967d507d0f453f454}{\index{global.\+h@{global.\+h}!verbose@{verbose}}
+\index{verbose@{verbose}!global.\+h@{global.\+h}}
+\subsubsection[{verbose}]{\setlength{\rightskip}{0pt plus 5cm}bool verbose}}\label{global_8h_ab3f078684998b83967d507d0f453f454}
+
+
+Définition à la ligne 54 du fichier proteus.\+c.
+

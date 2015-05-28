@@ -1,0 +1,197 @@
+\hypertarget{utils_8h}{\section{Référence du fichier /home/mignon/bioinfo/proteus/gitlab/proteus/utils.h}
+\label{utils_8h}\index{/home/mignon/bioinfo/proteus/gitlab/proteus/utils.\+h@{/home/mignon/bioinfo/proteus/gitlab/proteus/utils.\+h}}
+}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utils_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{utils_8h_a82acb32225c05e9aa4c524c40bc5852a}{M\+A\+X\+\_\+\+C\+H\+A\+R}~3000
+\item 
+\#define \hyperlink{utils_8h_a2456b90be2da265e627f227242c21129}{C\+O\+M\+M\+E\+N\+T\+\_\+\+S\+Y\+M\+B\+O\+L}~'\#'
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{utils_8h_aeefc02d8ec92d182da87d5156fab27fb}{str\+\_\+to\+\_\+int} (char $\ast$string, char $\ast$tag\+\_\+name)
+\item 
+float \hyperlink{utils_8h_a8d380d220c7ebf50c6b83f69744f3f74}{str\+\_\+to\+\_\+float} (char $\ast$string, char $\ast$tag\+\_\+name)
+\item 
+void $\ast$ \hyperlink{utils_8h_adaba77c4dac8918ec66acf2058b77084}{alloc\+\_\+memory} (size\+\_\+t size)
+\item 
+void $\ast$ \hyperlink{utils_8h_aa52bb4bcfcd4b291e2d50b0653121d6b}{realloc\+\_\+memory} (void $\ast$ptr, size\+\_\+t size)
+\item 
+void $\ast$ \hyperlink{utils_8h_ac71f567f38cd58e1cb6ddbf76d57f14f}{alloc\+\_\+clearmemory} (size\+\_\+t nmemb, size\+\_\+t size)
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{utils_8h_a5e0c5b53cbf0ff2602bb8d80384d1c65}{open\+\_\+file} (const char $\ast$name, const char $\ast$m)
+\item 
+char $\ast$ \hyperlink{utils_8h_a280cda7b10983f34d17289e255b990c4}{get\+\_\+line} (char $\ast$line, F\+I\+L\+E $\ast$file)
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des macros}
+\hypertarget{utils_8h_a2456b90be2da265e627f227242c21129}{\index{utils.\+h@{utils.\+h}!C\+O\+M\+M\+E\+N\+T\+\_\+\+S\+Y\+M\+B\+O\+L@{C\+O\+M\+M\+E\+N\+T\+\_\+\+S\+Y\+M\+B\+O\+L}}
+\index{C\+O\+M\+M\+E\+N\+T\+\_\+\+S\+Y\+M\+B\+O\+L@{C\+O\+M\+M\+E\+N\+T\+\_\+\+S\+Y\+M\+B\+O\+L}!utils.\+h@{utils.\+h}}
+\subsubsection[{C\+O\+M\+M\+E\+N\+T\+\_\+\+S\+Y\+M\+B\+O\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+M\+M\+E\+N\+T\+\_\+\+S\+Y\+M\+B\+O\+L~'\#'}}\label{utils_8h_a2456b90be2da265e627f227242c21129}
+
+
+Définition à la ligne 3 du fichier utils.\+h.
+
+\hypertarget{utils_8h_a82acb32225c05e9aa4c524c40bc5852a}{\index{utils.\+h@{utils.\+h}!M\+A\+X\+\_\+\+C\+H\+A\+R@{M\+A\+X\+\_\+\+C\+H\+A\+R}}
+\index{M\+A\+X\+\_\+\+C\+H\+A\+R@{M\+A\+X\+\_\+\+C\+H\+A\+R}!utils.\+h@{utils.\+h}}
+\subsubsection[{M\+A\+X\+\_\+\+C\+H\+A\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+C\+H\+A\+R~3000}}\label{utils_8h_a82acb32225c05e9aa4c524c40bc5852a}
+
+
+Définition à la ligne 2 du fichier utils.\+h.
+
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{utils_8h_ac71f567f38cd58e1cb6ddbf76d57f14f}{\index{utils.\+h@{utils.\+h}!alloc\+\_\+clearmemory@{alloc\+\_\+clearmemory}}
+\index{alloc\+\_\+clearmemory@{alloc\+\_\+clearmemory}!utils.\+h@{utils.\+h}}
+\subsubsection[{alloc\+\_\+clearmemory}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ alloc\+\_\+clearmemory (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{nmemb, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{utils_8h_ac71f567f38cd58e1cb6ddbf76d57f14f}
+Allocate clear memory (calloc function) 
+\begin{DoxyParams}{Paramètres}
+{\em ptr} & the pointer to allocate \\
+\hline
+{\em size} & the size to allocate \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 64 du fichier utils.\+c.
+
+\hypertarget{utils_8h_adaba77c4dac8918ec66acf2058b77084}{\index{utils.\+h@{utils.\+h}!alloc\+\_\+memory@{alloc\+\_\+memory}}
+\index{alloc\+\_\+memory@{alloc\+\_\+memory}!utils.\+h@{utils.\+h}}
+\subsubsection[{alloc\+\_\+memory}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ alloc\+\_\+memory (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{utils_8h_adaba77c4dac8918ec66acf2058b77084}
+Allocate memory 
+\begin{DoxyParams}{Paramètres}
+{\em size} & the size to allocate \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 39 du fichier utils.\+c.
+
+\hypertarget{utils_8h_a280cda7b10983f34d17289e255b990c4}{\index{utils.\+h@{utils.\+h}!get\+\_\+line@{get\+\_\+line}}
+\index{get\+\_\+line@{get\+\_\+line}!utils.\+h@{utils.\+h}}
+\subsubsection[{get\+\_\+line}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\+\_\+line (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{line, }
+\item[{F\+I\+L\+E $\ast$}]{file}
+\end{DoxyParamCaption}
+)}}\label{utils_8h_a280cda7b10983f34d17289e255b990c4}
+returns the first not commented line 
+\begin{DoxyParams}{Paramètres}
+{\em line} & the filename \\
+\hline
+{\em file} & r=read, w=write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+line 
+\end{DoxyReturn}
+
+
+Définition à la ligne 92 du fichier utils.\+c.
+
+\hypertarget{utils_8h_a5e0c5b53cbf0ff2602bb8d80384d1c65}{\index{utils.\+h@{utils.\+h}!open\+\_\+file@{open\+\_\+file}}
+\index{open\+\_\+file@{open\+\_\+file}!utils.\+h@{utils.\+h}}
+\subsubsection[{open\+\_\+file}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ open\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{const char $\ast$}]{m}
+\end{DoxyParamCaption}
+)}}\label{utils_8h_a5e0c5b53cbf0ff2602bb8d80384d1c65}
+Open file to read/write, giving error message if not possible 
+\begin{DoxyParams}{Paramètres}
+{\em name} & the filename \\
+\hline
+{\em char} & r=read, w=write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+file 
+\end{DoxyReturn}
+
+
+Définition à la ligne 79 du fichier utils.\+c.
+
+\hypertarget{utils_8h_aa52bb4bcfcd4b291e2d50b0653121d6b}{\index{utils.\+h@{utils.\+h}!realloc\+\_\+memory@{realloc\+\_\+memory}}
+\index{realloc\+\_\+memory@{realloc\+\_\+memory}!utils.\+h@{utils.\+h}}
+\subsubsection[{realloc\+\_\+memory}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ realloc\+\_\+memory (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{utils_8h_aa52bb4bcfcd4b291e2d50b0653121d6b}
+Rellocate memory 
+\begin{DoxyParams}{Paramètres}
+{\em ptr} & the pointer to reallocate \\
+\hline
+{\em size} & the size to allocate \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 52 du fichier utils.\+c.
+
+\hypertarget{utils_8h_a8d380d220c7ebf50c6b83f69744f3f74}{\index{utils.\+h@{utils.\+h}!str\+\_\+to\+\_\+float@{str\+\_\+to\+\_\+float}}
+\index{str\+\_\+to\+\_\+float@{str\+\_\+to\+\_\+float}!utils.\+h@{utils.\+h}}
+\subsubsection[{str\+\_\+to\+\_\+float}]{\setlength{\rightskip}{0pt plus 5cm}float str\+\_\+to\+\_\+float (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string, }
+\item[{char $\ast$}]{tag\+\_\+name}
+\end{DoxyParamCaption}
+)}}\label{utils_8h_a8d380d220c7ebf50c6b83f69744f3f74}
+Converts a string to a float 
+\begin{DoxyParams}{Paramètres}
+{\em string} & the string to convert \\
+\hline
+{\em tag\+\_\+name} & a name for error message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the float value of the string 
+\end{DoxyReturn}
+
+
+Définition à la ligne 24 du fichier utils.\+c.
+
+\hypertarget{utils_8h_aeefc02d8ec92d182da87d5156fab27fb}{\index{utils.\+h@{utils.\+h}!str\+\_\+to\+\_\+int@{str\+\_\+to\+\_\+int}}
+\index{str\+\_\+to\+\_\+int@{str\+\_\+to\+\_\+int}!utils.\+h@{utils.\+h}}
+\subsubsection[{str\+\_\+to\+\_\+int}]{\setlength{\rightskip}{0pt plus 5cm}int str\+\_\+to\+\_\+int (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string, }
+\item[{char $\ast$}]{tag\+\_\+name}
+\end{DoxyParamCaption}
+)}}\label{utils_8h_aeefc02d8ec92d182da87d5156fab27fb}
+Converts a string to an integer 
+\begin{DoxyParams}{Paramètres}
+{\em string} & the string to convert \\
+\hline
+{\em tag\+\_\+name} & a name for error message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the integer value of the string 
+\end{DoxyReturn}
+
+
+Définition à la ligne 9 du fichier utils.\+c.
+

@@ -1,0 +1,227 @@
+\hypertarget{residues_8h}{\section{Référence du fichier /home/mignon/bioinfo/proteus/gitlab/proteus/residues.h}
+\label{residues_8h}\index{/home/mignon/bioinfo/proteus/gitlab/proteus/residues.\+h@{/home/mignon/bioinfo/proteus/gitlab/proteus/residues.\+h}}
+}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{residues_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrotamer}{rotamer}
+\item 
+struct \hyperlink{structtype}{type}
+\item 
+struct \hyperlink{structresidue}{residue}
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{residues_8h_aa2e4bed942e95a002d487e0757c4f39a}{det\+\_\+posi} (int residi)
+\item 
+int \hyperlink{residues_8h_af68020f900a4ab3f449ad4a5129ebfd5}{det\+\_\+posi\+\_\+chain} (int residi, char $\ast$name)
+\item 
+int \hyperlink{residues_8h_a831093cde96c42d8b831b654bacef3dd}{det\+\_\+posi\+\_\+name} (char $\ast$name)
+\item 
+int \hyperlink{residues_8h_a3842dcbb882b66b29038a093a4951261}{posi\+\_\+exists\+\_\+name} (char $\ast$P\+D\+B\+\_\+name)
+\item 
+int \hyperlink{residues_8h_a89f77b08ed6926fe6c380d0454658401}{posi\+\_\+exists} (int posi)
+\item 
+int \hyperlink{residues_8h_ae112d856807b0b59d9998923361b5221}{det\+\_\+rot\+\_\+idx} (int posi, int \hyperlink{structtype}{type}, int id)
+\item 
+void \hyperlink{residues_8h_a7a794733677b3b88590c4227e6ba5261}{det\+\_\+rot} (int posi, int idx, int $\ast$ptype, int $\ast$pid)
+\item 
+int \hyperlink{residues_8h_a37da76ac5c232f9c2e61058b0d5f8aac}{det\+\_\+type} (int posi, char $\ast$\hyperlink{structtype}{type})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structresidue}{residue} $\ast$ \hyperlink{residues_8h_a94d5de64587ee65ec5a6a17d4bef89fb}{residues}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{residues_8h_aa2e4bed942e95a002d487e0757c4f39a}{\index{residues.\+h@{residues.\+h}!det\+\_\+posi@{det\+\_\+posi}}
+\index{det\+\_\+posi@{det\+\_\+posi}!residues.\+h@{residues.\+h}}
+\subsubsection[{det\+\_\+posi}]{\setlength{\rightskip}{0pt plus 5cm}int det\+\_\+posi (
+\begin{DoxyParamCaption}
+\item[{int}]{residi}
+\end{DoxyParamCaption}
+)}}\label{residues_8h_aa2e4bed942e95a002d487e0757c4f39a}
+Given a pdb position, det\+\_\+posi returns the effective position in the residues array 
+\begin{DoxyParams}{Paramètres}
+{\em residi} & the P\+D\+B position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the effective position in the residues array 
+\end{DoxyReturn}
+
+
+Définition à la ligne 12 du fichier residues.\+c.
+
+\hypertarget{residues_8h_af68020f900a4ab3f449ad4a5129ebfd5}{\index{residues.\+h@{residues.\+h}!det\+\_\+posi\+\_\+chain@{det\+\_\+posi\+\_\+chain}}
+\index{det\+\_\+posi\+\_\+chain@{det\+\_\+posi\+\_\+chain}!residues.\+h@{residues.\+h}}
+\subsubsection[{det\+\_\+posi\+\_\+chain}]{\setlength{\rightskip}{0pt plus 5cm}int det\+\_\+posi\+\_\+chain (
+\begin{DoxyParamCaption}
+\item[{int}]{residi, }
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{residues_8h_af68020f900a4ab3f449ad4a5129ebfd5}
+Define the effective position in the backbone array from a P\+D\+B position and a chain name 
+\begin{DoxyParams}{Paramètres}
+{\em residi} & the pdb position to search \\
+\hline
+{\em name} & the chain name of the pdb position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the effective position in the residues array 
+\end{DoxyReturn}
+
+
+Définition à la ligne 29 du fichier residues.\+c.
+
+\hypertarget{residues_8h_a831093cde96c42d8b831b654bacef3dd}{\index{residues.\+h@{residues.\+h}!det\+\_\+posi\+\_\+name@{det\+\_\+posi\+\_\+name}}
+\index{det\+\_\+posi\+\_\+name@{det\+\_\+posi\+\_\+name}!residues.\+h@{residues.\+h}}
+\subsubsection[{det\+\_\+posi\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}int det\+\_\+posi\+\_\+name (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{residues_8h_a831093cde96c42d8b831b654bacef3dd}
+Define the effective position in the backbone array from a P\+D\+B name (1\+A ou 1\+::\+A) 
+\begin{DoxyParams}{Paramètres}
+{\em name} & the P\+D\+B name (1\+A ou 1\+::\+A) of the pdb position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the effective position in the residues array 
+\end{DoxyReturn}
+
+
+Définition à la ligne 43 du fichier residues.\+c.
+
+\hypertarget{residues_8h_a7a794733677b3b88590c4227e6ba5261}{\index{residues.\+h@{residues.\+h}!det\+\_\+rot@{det\+\_\+rot}}
+\index{det\+\_\+rot@{det\+\_\+rot}!residues.\+h@{residues.\+h}}
+\subsubsection[{det\+\_\+rot}]{\setlength{\rightskip}{0pt plus 5cm}void det\+\_\+rot (
+\begin{DoxyParamCaption}
+\item[{int}]{posi, }
+\item[{int}]{idx, }
+\item[{int $\ast$}]{ptype, }
+\item[{int $\ast$}]{pid}
+\end{DoxyParamCaption}
+)}}\label{residues_8h_a7a794733677b3b88590c4227e6ba5261}
+Given a position and a index of a rotamer ,det\+\_\+rot returns the rotamer id,its type and the local index 
+\begin{DoxyParams}{Paramètres}
+{\em posi} & the position number \\
+\hline
+{\em idx} & the index of a rotamer \\
+\hline
+{\em ptype} & the local type of the rotamer \\
+\hline
+{\em pid} & the local index of the rotamer \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 101 du fichier residues.\+c.
+
+\hypertarget{residues_8h_ae112d856807b0b59d9998923361b5221}{\index{residues.\+h@{residues.\+h}!det\+\_\+rot\+\_\+idx@{det\+\_\+rot\+\_\+idx}}
+\index{det\+\_\+rot\+\_\+idx@{det\+\_\+rot\+\_\+idx}!residues.\+h@{residues.\+h}}
+\subsubsection[{det\+\_\+rot\+\_\+idx}]{\setlength{\rightskip}{0pt plus 5cm}int det\+\_\+rot\+\_\+idx (
+\begin{DoxyParamCaption}
+\item[{int}]{posi, }
+\item[{int}]{type, }
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{residues_8h_ae112d856807b0b59d9998923361b5221}
+Given a position, a type and a rotamer id, det\+\_\+rot\+\_\+idx returns the index of the rot in its residue 
+\begin{DoxyParams}{Paramètres}
+{\em posi} & the position number \\
+\hline
+{\em type} & the type number \\
+\hline
+{\em id} & the id number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the index of the rot 
+\end{DoxyReturn}
+
+
+Définition à la ligne 88 du fichier residues.\+c.
+
+\hypertarget{residues_8h_a37da76ac5c232f9c2e61058b0d5f8aac}{\index{residues.\+h@{residues.\+h}!det\+\_\+type@{det\+\_\+type}}
+\index{det\+\_\+type@{det\+\_\+type}!residues.\+h@{residues.\+h}}
+\subsubsection[{det\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}int det\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{int}]{posi, }
+\item[{char $\ast$}]{type}
+\end{DoxyParamCaption}
+)}}\label{residues_8h_a37da76ac5c232f9c2e61058b0d5f8aac}
+Given a position and a type,det\+\_\+type returns the effective type index for this position 
+\begin{DoxyParams}{Paramètres}
+{\em posi} & the position number \\
+\hline
+{\em type} & the type number in 3 letters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+the effective type index of the position 
+\end{DoxyReturn}
+
+
+Définition à la ligne 118 du fichier residues.\+c.
+
+\hypertarget{residues_8h_a89f77b08ed6926fe6c380d0454658401}{\index{residues.\+h@{residues.\+h}!posi\+\_\+exists@{posi\+\_\+exists}}
+\index{posi\+\_\+exists@{posi\+\_\+exists}!residues.\+h@{residues.\+h}}
+\subsubsection[{posi\+\_\+exists}]{\setlength{\rightskip}{0pt plus 5cm}int posi\+\_\+exists (
+\begin{DoxyParamCaption}
+\item[{int}]{posi}
+\end{DoxyParamCaption}
+)}}\label{residues_8h_a89f77b08ed6926fe6c380d0454658401}
+Search if the number is a pdb position in residues 
+\begin{DoxyParams}{Paramètres}
+{\em posi} & the position to search \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+boolean true or false 
+\end{DoxyReturn}
+
+
+Définition à la ligne 74 du fichier residues.\+c.
+
+\hypertarget{residues_8h_a3842dcbb882b66b29038a093a4951261}{\index{residues.\+h@{residues.\+h}!posi\+\_\+exists\+\_\+name@{posi\+\_\+exists\+\_\+name}}
+\index{posi\+\_\+exists\+\_\+name@{posi\+\_\+exists\+\_\+name}!residues.\+h@{residues.\+h}}
+\subsubsection[{posi\+\_\+exists\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}int posi\+\_\+exists\+\_\+name (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{P\+D\+B\+\_\+name}
+\end{DoxyParamCaption}
+)}}\label{residues_8h_a3842dcbb882b66b29038a093a4951261}
+Search if the name is a P\+D\+B name in residues 
+\begin{DoxyParams}{Paramètres}
+{\em P\+D\+B\+\_\+name} & the P\+D\+B name of the position (6\+A or 6\+::\+A) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+boolean true or false 
+\end{DoxyReturn}
+
+
+Définition à la ligne 60 du fichier residues.\+c.
+
+
+
+\subsection{Documentation des variables}
+\hypertarget{residues_8h_a94d5de64587ee65ec5a6a17d4bef89fb}{\index{residues.\+h@{residues.\+h}!residues@{residues}}
+\index{residues@{residues}!residues.\+h@{residues.\+h}}
+\subsubsection[{residues}]{\setlength{\rightskip}{0pt plus 5cm}{\bf residue}$\ast$ residues}}\label{residues_8h_a94d5de64587ee65ec5a6a17d4bef89fb}
+
+
+Définition à la ligne 9 du fichier residues.\+c.
+

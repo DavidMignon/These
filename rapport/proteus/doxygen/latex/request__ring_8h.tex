@@ -1,0 +1,178 @@
+\hypertarget{request__ring_8h}{\section{Référence du fichier /home/mignon/bioinfo/proteus/gitlab/proteus/request\+\_\+ring.h}
+\label{request__ring_8h}\index{/home/mignon/bioinfo/proteus/gitlab/proteus/request\+\_\+ring.\+h@{/home/mignon/bioinfo/proteus/gitlab/proteus/request\+\_\+ring.\+h}}
+}
+{\ttfamily \#include \char`\"{}global.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de request\+\_\+ring.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{request__ring_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{request__ring_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrequest__t}{request\+\_\+t}
+\item 
+struct \hyperlink{structrequest__ring}{request\+\_\+ring}
+\end{DoxyCompactItemize}
+\subsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structrequest__ring}{request\+\_\+ring} \hyperlink{request__ring_8h_a9c9048435d4933efbc2ca98b08610cdd}{request\+\_\+ring\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{request__ring_8h_a9572b15934a8039941e3fd758c2a477b}{ring\+\_\+init} (\hyperlink{request__ring_8h_a9c9048435d4933efbc2ca98b08610cdd}{request\+\_\+ring\+\_\+t} $\ast$ring, size\+\_\+t initial\+\_\+size)
+\item 
+void \hyperlink{request__ring_8h_a509146b3336903eb69e7d5c34301e610}{ring\+\_\+free} (\hyperlink{request__ring_8h_a9c9048435d4933efbc2ca98b08610cdd}{request\+\_\+ring\+\_\+t} $\ast$ring)
+\item 
+\hyperlink{global_8h_a596407b6fb2365e332aae2fa812dadc7}{ener\+\_\+id\+\_\+t} \hyperlink{request__ring_8h_a4c5c72f3096d0eb334d0e402aca578fb}{ring\+\_\+push\+\_\+value} (\hyperlink{request__ring_8h_a9c9048435d4933efbc2ca98b08610cdd}{request\+\_\+ring\+\_\+t} $\ast$ring, \hyperlink{structparam__t}{param\+\_\+t} key, double value)
+\item 
+\hyperlink{global_8h_a596407b6fb2365e332aae2fa812dadc7}{ener\+\_\+id\+\_\+t} \hyperlink{request__ring_8h_a4f3acb00dde12cec916a9c84ed3fbb7a}{ring\+\_\+push\+\_\+request} (\hyperlink{request__ring_8h_a9c9048435d4933efbc2ca98b08610cdd}{request\+\_\+ring\+\_\+t} $\ast$ring, \hyperlink{structparam__t}{param\+\_\+t} key, \hyperlink{global_8h_a596407b6fb2365e332aae2fa812dadc7}{ener\+\_\+id\+\_\+t} id)
+\item 
+\hyperlink{structrequest__t}{request\+\_\+t} $\ast$ \hyperlink{request__ring_8h_a91ce2fc6335082eb491da1b44fb36253}{ring\+\_\+get} (\hyperlink{request__ring_8h_a9c9048435d4933efbc2ca98b08610cdd}{request\+\_\+ring\+\_\+t} $\ast$ring, \hyperlink{global_8h_a596407b6fb2365e332aae2fa812dadc7}{ener\+\_\+id\+\_\+t} id)
+\item 
+void \hyperlink{request__ring_8h_aa521a8b7acdfbde71333d9d261fa70e1}{ring\+\_\+drop} (\hyperlink{request__ring_8h_a9c9048435d4933efbc2ca98b08610cdd}{request\+\_\+ring\+\_\+t} $\ast$ring, \hyperlink{structrequest__t}{request\+\_\+t} $\ast$request)
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentation des définitions de type}
+\hypertarget{request__ring_8h_a9c9048435d4933efbc2ca98b08610cdd}{\index{request\+\_\+ring.\+h@{request\+\_\+ring.\+h}!request\+\_\+ring\+\_\+t@{request\+\_\+ring\+\_\+t}}
+\index{request\+\_\+ring\+\_\+t@{request\+\_\+ring\+\_\+t}!request\+\_\+ring.\+h@{request\+\_\+ring.\+h}}
+\subsubsection[{request\+\_\+ring\+\_\+t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf request\+\_\+ring}  {\bf request\+\_\+ring\+\_\+t}}}\label{request__ring_8h_a9c9048435d4933efbc2ca98b08610cdd}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{request__ring_8h_aa521a8b7acdfbde71333d9d261fa70e1}{\index{request\+\_\+ring.\+h@{request\+\_\+ring.\+h}!ring\+\_\+drop@{ring\+\_\+drop}}
+\index{ring\+\_\+drop@{ring\+\_\+drop}!request\+\_\+ring.\+h@{request\+\_\+ring.\+h}}
+\subsubsection[{ring\+\_\+drop}]{\setlength{\rightskip}{0pt plus 5cm}void ring\+\_\+drop (
+\begin{DoxyParamCaption}
+\item[{{\bf request\+\_\+ring\+\_\+t} $\ast$}]{ring, }
+\item[{{\bf request\+\_\+t} $\ast$}]{request}
+\end{DoxyParamCaption}
+)}}\label{request__ring_8h_aa521a8b7acdfbde71333d9d261fa70e1}
+Removes a request from the ring 
+\begin{DoxyParams}{Paramètres}
+{\em ring} & the ring \\
+\hline
+{\em request} & the request to drop \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 74 du fichier request\+\_\+ring.\+c.
+
+\hypertarget{request__ring_8h_a509146b3336903eb69e7d5c34301e610}{\index{request\+\_\+ring.\+h@{request\+\_\+ring.\+h}!ring\+\_\+free@{ring\+\_\+free}}
+\index{ring\+\_\+free@{ring\+\_\+free}!request\+\_\+ring.\+h@{request\+\_\+ring.\+h}}
+\subsubsection[{ring\+\_\+free}]{\setlength{\rightskip}{0pt plus 5cm}void ring\+\_\+free (
+\begin{DoxyParamCaption}
+\item[{{\bf request\+\_\+ring\+\_\+t} $\ast$}]{ring}
+\end{DoxyParamCaption}
+)}}\label{request__ring_8h_a509146b3336903eb69e7d5c34301e610}
+Destroys a ring 
+\begin{DoxyParams}{Paramètres}
+{\em ring} & the ring \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 21 du fichier request\+\_\+ring.\+c.
+
+\hypertarget{request__ring_8h_a91ce2fc6335082eb491da1b44fb36253}{\index{request\+\_\+ring.\+h@{request\+\_\+ring.\+h}!ring\+\_\+get@{ring\+\_\+get}}
+\index{ring\+\_\+get@{ring\+\_\+get}!request\+\_\+ring.\+h@{request\+\_\+ring.\+h}}
+\subsubsection[{ring\+\_\+get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf request\+\_\+t}$\ast$ ring\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{{\bf request\+\_\+ring\+\_\+t} $\ast$}]{ring, }
+\item[{{\bf ener\+\_\+id\+\_\+t}}]{id}
+\end{DoxyParamCaption}
+)}}\label{request__ring_8h_a91ce2fc6335082eb491da1b44fb36253}
+Gets the request identified by a given identifier 
+\begin{DoxyParams}{Paramètres}
+{\em ring} & the ring \\
+\hline
+{\em id} & the request identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+a pointer to the request 
+\end{DoxyReturn}
+
+
+Définition à la ligne 67 du fichier request\+\_\+ring.\+c.
+
+\hypertarget{request__ring_8h_a9572b15934a8039941e3fd758c2a477b}{\index{request\+\_\+ring.\+h@{request\+\_\+ring.\+h}!ring\+\_\+init@{ring\+\_\+init}}
+\index{ring\+\_\+init@{ring\+\_\+init}!request\+\_\+ring.\+h@{request\+\_\+ring.\+h}}
+\subsubsection[{ring\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}void ring\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{{\bf request\+\_\+ring\+\_\+t} $\ast$}]{ring, }
+\item[{size\+\_\+t}]{initial\+\_\+size}
+\end{DoxyParamCaption}
+)}}\label{request__ring_8h_a9572b15934a8039941e3fd758c2a477b}
+Initializes a new ring 
+\begin{DoxyParams}{Paramètres}
+{\em ring} & the ring \\
+\hline
+{\em initial\+\_\+size} & the initial size of the ring \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne 8 du fichier request\+\_\+ring.\+c.
+
+\hypertarget{request__ring_8h_a4f3acb00dde12cec916a9c84ed3fbb7a}{\index{request\+\_\+ring.\+h@{request\+\_\+ring.\+h}!ring\+\_\+push\+\_\+request@{ring\+\_\+push\+\_\+request}}
+\index{ring\+\_\+push\+\_\+request@{ring\+\_\+push\+\_\+request}!request\+\_\+ring.\+h@{request\+\_\+ring.\+h}}
+\subsubsection[{ring\+\_\+push\+\_\+request}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ener\+\_\+id\+\_\+t} ring\+\_\+push\+\_\+request (
+\begin{DoxyParamCaption}
+\item[{{\bf request\+\_\+ring\+\_\+t} $\ast$}]{ring, }
+\item[{{\bf param\+\_\+t}}]{key, }
+\item[{{\bf ener\+\_\+id\+\_\+t}}]{id}
+\end{DoxyParamCaption}
+)}}\label{request__ring_8h_a4f3acb00dde12cec916a9c84ed3fbb7a}
+Insert the id of a forwarded request in the ring 
+\begin{DoxyParams}{Paramètres}
+{\em ring} & the ring \\
+\hline
+{\em id} & the id of the forwarded request \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+a pointer to the ringd request 
+\end{DoxyReturn}
+
+
+Définition à la ligne 57 du fichier request\+\_\+ring.\+c.
+
+\hypertarget{request__ring_8h_a4c5c72f3096d0eb334d0e402aca578fb}{\index{request\+\_\+ring.\+h@{request\+\_\+ring.\+h}!ring\+\_\+push\+\_\+value@{ring\+\_\+push\+\_\+value}}
+\index{ring\+\_\+push\+\_\+value@{ring\+\_\+push\+\_\+value}!request\+\_\+ring.\+h@{request\+\_\+ring.\+h}}
+\subsubsection[{ring\+\_\+push\+\_\+value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ener\+\_\+id\+\_\+t} ring\+\_\+push\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{{\bf request\+\_\+ring\+\_\+t} $\ast$}]{ring, }
+\item[{{\bf param\+\_\+t}}]{key, }
+\item[{double}]{value}
+\end{DoxyParamCaption}
+)}}\label{request__ring_8h_a4c5c72f3096d0eb334d0e402aca578fb}
+Insert a value in the ring 
+\begin{DoxyParams}{Paramètres}
+{\em ring} & the ring \\
+\hline
+{\em value} & the value to insert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+a pointer to the ringd request 
+\end{DoxyReturn}
+
+
+Définition à la ligne 47 du fichier request\+\_\+ring.\+c.
+
