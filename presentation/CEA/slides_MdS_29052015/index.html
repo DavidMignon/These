@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+	<html class="sl-root base export loaded">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Les structures de données dans proteus: Slides</title>
+		<meta name="description" content="Slides">
+
+		<link rel="stylesheet" type="text/css" href="lib/offline-v2.css">
+	</head>
+	<body class="reveal-viewport theme-font-montserrat theme-color-black-orange">
+		<div class="reveal">
+			<div class="slides">
+				<section data-id="3591a6b783061705299b42a42a6a2e6e">
+
+<div data-block-id="da8e349191f0b65bf34cb6c5b7c67006" style="min-width: 30px; min-height: 30px; width: 163.758px; height: 224px; left: 36px; top: 20px;" data-block-type="image" class="sl-block"><div style="z-index: 11;" class="sl-block-content"><img data-src="emberembeddedrecords-5/1344088-X_logo.jpg" data-natural-height="792" data-natural-width="579" style=""></div></div>
+<div data-block-id="b1baa785e3639efc65a7cd7c94806a54" style="min-width: 30px; min-height: 30px; width: 224px; height: 224px; left: 695px; top: 28px;" data-block-type="image" class="sl-block"><div style="z-index: 12;" class="sl-block-content"><img data-src="emberembeddedrecords-5/1344098-cnrs_logo.jpeg" data-natural-height="170" data-natural-width="170" style=""></div></div>
+<div data-block-id="58bb1230cbbb855ac8bf4e7a3376614c" style="min-width: 30px; min-height: 30px; width: 190px; height: 169.065px; left: 348px; top: 41px;" data-block-type="image" class="sl-block"><div style="z-index: 13;" class="sl-block-content"><img data-src="emberembeddedrecords-5/1344112-logoMdS.png" data-natural-height="533" data-natural-width="599" style=""></div></div>
+<div data-block-id="c462defb7cfd24b740670df7df0b446d" style="height: auto; min-width: 30px; min-height: 30px; width: 700px; left: 130px; top: 311px;" data-block-type="text" class="sl-block"><div style="z-index: 14;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p><span style="font-size:48px">Les structures de données de proteus</span></p>
+</div></div>
+<div data-block-id="821ea020ca6c6843fbd5b25e3578604a" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 200px; top: 591px;" data-block-type="text" class="sl-block"><div style="z-index: 15;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p>David Mignon 28/05/15</p>
+</div></div></section><section><div data-block-id="14696ed3e17309f84652b303d40f032b" class="sl-block" data-block-type="text" style="width: 800px; left: 65px; top: 0px; height: auto;"><div style="z-index: 10;" class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<p>Computational protein design (CPD)</p>
+
+<p> </p>
+
+<p>Objectif : modifier ou créer une protéine pour qu'elle réalise une fonction donnée.</p>
+
+<p> </p>
+</div></div>
+
+
+<div data-block-id="aad83c4181626606d549bd1bfe1bea5e" style="min-width: 30px; min-height: 30px; width: 360px; height: 509.169px; left: 351px; top: 183.916px;" data-block-type="image" class="sl-block"><div style="z-index: 11;" class="sl-block-content"><img data-src="emberembeddedrecords-5/1433603-CPD.svg" data-natural-height="1123" data-natural-width="794" style=""></div></div>
+<div data-block-id="701fa3cbff64a80791347b1ed9460ebe" style="min-width: 4px; min-height: 4px; width: 495px; height: 430px; left: 279px; top: 200px;" data-block-type="shape" class="sl-block"><div style="z-index: 0;" data-shape-stretch="false" data-shape-fill-color="rgb(255, 255, 255)" data-shape-type="rect" class="sl-block-content"><svg viewbox="0 0 430 430" preserveaspectratio="xMidYMid" height="100%" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect fill="rgb(255, 255, 255)" class="shape-element" height="430" width="430"></rect></svg></div></div></section><section><div data-block-id="ce69c140ef7cc9ddd996670a6da85b4b" class="sl-block" data-block-type="text" style="width: 800px; left: 67px; top: 22px; height: auto;"><div style="z-index: 12;" class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1><span style="font-size:48px">Notre fonction d'énergie se décompose en paires.</span></h1>
+</div></div>
+<div data-block-id="dcf87e09f3b780fd6d00646cbe18a9bc" style="min-width: 4px; min-height: 4px; width: 924px; height: 474px; left: 26px; top: 210px;" data-block-type="shape" class="sl-block"><div style="z-index: 11;" data-shape-stretch="true" data-shape-fill-color="rgb(255, 255, 255)" data-shape-type="rect" class="sl-block-content"><svg viewbox="0 0 924 474" preserveaspectratio="none" height="100%" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect fill="rgb(255, 255, 255)" class="shape-element" height="474" width="924"></rect></svg></div></div>
+<div data-block-id="317a37df9d31b04f542d89d6a955b77f" style="min-width: 4px; min-height: 4px; width: 332px; height: 283px; left: 458px; top: 227px;" data-block-type="shape" class="sl-block"><div style="z-index: 13;" data-shape-stretch="false" data-shape-fill-color="rgb(255, 255, 255)" data-shape-type="rect" class="sl-block-content"><svg viewbox="0 0 283 283" preserveaspectratio="xMidYMid" height="100%" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect fill="rgb(255, 255, 255)" class="shape-element" height="283" width="283"></rect></svg></div></div>
+<div data-block-id="e05ca7104ac29075301fb8dbf1120e34" style="min-width: 30px; min-height: 30px; width: 730px; height: 1032.2px; left: 93px; top: 217px;" data-block-type="image" class="sl-block"><div data-inline-svg="false" style="z-index: 14;" class="sl-block-content"><img data-src="emberembeddedrecords-5/1433634-matrix.svg" data-natural-height="1052" data-natural-width="744" style=""></div></div>
+<div data-block-id="96dbde7ef609c3d482ec4c9d30300604" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 331px;" data-block-type="text" class="sl-block"><div style="z-index: 15;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content"><p>Text</p></div></div>
+<div data-block-id="5b8eb7605aecf14ddeadca93eb240048" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 253px; top: 261px;" data-block-type="text" class="sl-block"><div style="z-index: 16; color: rgb(0, 0, 0);" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p>Stabilité</p>
+</div></div>
+<div data-block-id="5d0627f0ddda326fe5333419953e27dd" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 596px; top: 432px;" data-block-type="text" class="sl-block"><div style="z-index: 17; color: rgb(0, 0, 0);" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p>affinité</p>
+</div></div>
+<div data-block-id="8959ca861c230ad7fd6551382ead741c" style="min-width: 4px; min-height: 4px; width: 4px; height: 72px; left: 564px; top: 300px;" data-block-type="shape" class="sl-block"><div style="z-index: 18;" data-shape-stretch="true" data-shape-fill-color="#000000" data-shape-type="rect" class="sl-block-content"><svg viewbox="0 0 4 72" preserveaspectratio="none" height="100%" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect fill="#000000" class="shape-element" height="72" width="4"></rect></svg></div></div>
+<div data-block-id="79d82dd799cc1ef46287688b71808451" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 331px;" data-block-type="text" class="sl-block"><div style="z-index: 19;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content"><p>Text</p></div></div>
+<div data-block-id="c83129a0fe87ed6cc6d532bc44ce1518" style="min-width: 4px; min-height: 4px; width: 123px; height: 4px; left: 719px; top: 447px;" data-block-type="shape" class="sl-block"><div style="z-index: 20;" data-shape-stretch="true" data-shape-fill-color="#000000" data-shape-type="rect" class="sl-block-content"><svg viewbox="0 0 123 4" preserveaspectratio="none" height="100%" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect fill="#000000" class="shape-element" height="4" width="123"></rect></svg></div></div></section><section><div data-block-id="0bdb378b2dcaea0a45b1cc8ece5bef92" class="sl-block" data-block-type="text" style="width: 800px; left: 37px; top: 10px; height: auto;"><div style="z-index: 10;" class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1><span style="font-size:48px">Dans proteus</span></h1>
+</div></div>
+<div data-block-id="224bd2ddc06e9b6ec0d47b4c6ab93e20" style="height: auto; min-width: 30px; min-height: 30px; width: 923px; left: 19px; top: 129px;" data-block-type="text" class="sl-block"><div style="z-index: 12;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<ul>
+	<li>L'utilisateur doit définir une fonction d'optimisation F par une formule.</li>
+	<li>La syntaxe de la formule est composée:</li>
+</ul>
+
+<ol>
+	<li>d'énergies de groupes</li>
+	<li>d'affinités entre groupes</li>
+	<li>...</li>
+</ol>
+
+<p> </p>
+
+<p> </p>
+
+<p>Proteus parcourt un ensemble de "conformations".</p>
+
+<p> Une nouvelle conformation Cn est meilleur que la précédente Cp<br>
+Si           F(Cn) &gt;F(Cp).</p>
+</div></div></section><section><div data-block-id="063112843c99981c5881b67bfcd84307" class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 31px; height: auto;"><div style="z-index: 10;" class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h3>Strutures "modèle physique"</h3>
+</div></div>
+<div data-block-id="db5a0079ff83cb0030f2c807cf201f51" class="sl-block" data-block-type="image" style="width: 393.217px; height: 556px; left: 311px; top: 144px;"><div style="z-index: 11;" class="sl-block-content"><img data-src="emberembeddedrecords-5/1433715-structures_physique1.svg" data-natural-height="1052" data-natural-width="744" style=""></div></div>
+<div data-block-id="854de6c11be56d7647d09e3d1e62c922" style="min-width: 4px; min-height: 4px; width: 594px; height: 634px; left: 222px; top: 101px;" data-block-type="shape" class="sl-block"><div style="z-index: 0;" data-shape-stretch="true" data-shape-fill-color="rgb(255, 255, 255)" data-shape-type="rect" class="sl-block-content"><svg viewbox="0 0 594 634" preserveaspectratio="none" height="100%" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect fill="rgb(255, 255, 255)" class="shape-element" height="634" width="594"></rect></svg></div></div></section><section><div data-block-id="d7b32b25cd347d669e33569bc1936f63" class="sl-block" data-block-type="text" style="width: 800px; left: 79px; top: 50px; height: auto;"><div style="z-index: 10;" class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h3>Structures "modèle logique"</h3>
+</div></div>
+<div data-block-id="380e105acf1138b9ca286b60ad663ed1" class="sl-block" data-block-type="image" style="width: 494.35px; height: 699px; left: 287px; top: 141px;"><div style="z-index: 11;" class="sl-block-content"><img data-src="emberembeddedrecords-5/1433729-structures_modele_logique.svg" data-natural-height="1052" data-natural-width="744" style=""></div></div>
+<div data-block-id="b68ea68e282dbf983d7bfcef694928b2" style="min-width: 4px; min-height: 4px; width: 647px; height: 548px; left: 182px; top: 140px;" data-block-type="shape" class="sl-block"><div style="z-index: 0;" data-shape-stretch="true" data-shape-fill-color="rgb(255, 255, 255)" data-shape-type="rect" class="sl-block-content"><svg viewbox="0 0 647 548" preserveaspectratio="none" height="100%" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect fill="rgb(255, 255, 255)" class="shape-element" height="548" width="647"></rect></svg></div></div></section><section><div data-block-id="932d45de956e5f30809ba684e10e66e4" class="sl-block" data-block-type="text" style="width: 800px; left: 72px; top: 13px; height: auto;"><div style="z-index: 10;" class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h3>Structures "dynamiques"</h3>
+</div></div>
+<div data-block-id="44e64643ff82d3a990fc3805f2441e92" class="sl-block" data-block-type="image" style="width: 532px; height: 752.237px; left: 240px; top: 44px;"><div style="z-index: 11;" class="sl-block-content"><img data-src="emberembeddedrecords-5/1433741-structures_dynamiques.svg" data-natural-height="1052" data-natural-width="744" style=""></div></div>
+<div data-block-id="2e93a1de846a7133ff7637ce03ad1bc2" style="min-width: 4px; min-height: 4px; width: 578px; height: 643px; left: 194px; top: 94px;" data-block-type="shape" class="sl-block"><div style="z-index: 0;" data-shape-stretch="true" data-shape-fill-color="rgb(255, 255, 255)" data-shape-type="rect" class="sl-block-content"><svg viewbox="0 0 578 643" preserveaspectratio="none" height="100%" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect fill="rgb(255, 255, 255)" class="shape-element" height="643" width="578"></rect></svg></div></div></section>
+			</div>
+		</div>
+
+		<script>
+			var SLConfig = {"deck": {"id":426406,"slug":"emberembeddedrecords-5","title":"Les structures de données dans proteus","description":"    - Uses of embedded records     - How to use ember data with embedded records     - Show an example related to video games!","visibility":"all","published_at":"2015-05-28T22:28:32.638Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/secure/76053e/decks.jpg","view_count":1,"user":{"id":320629,"username":"davidmignon","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/422439ce19e607531ea5f89b07a69bd6?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","pro":true,"enterprise":false,"enterprise_manager":false,"settings":{"id":149707,"present_controls":true,"present_upsizing":true},"registered":true},"background_transition":"slide","transition":"none","theme_id":null,"theme_font":"montserrat","theme_color":"black-orange","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"should_loop":false,"rtl":false,"version":2,"notes":{"5fdc2d355a68b6515316690e8cac8611":"When I think about browser games. I think of games like this:","4d8358ebc6a452ed24b3a263718e53e8":"Focus on core gameplay mechanics\nGet the most succinct fun product on the market asap.","5ac481f0e1ac33f0417344ee7a3f64e6":"I love\nI especially \nMission to make it easy to play fun games with your friends\nTHAT,\nquick \n60 minutes \nplatform \nThis one.","adbaeeaa96a1a2dbc496c6a6b4f52a4e":"Where do we find magical platform\nHow many people have a xbox, \nps3 \nor a pc\nI want the platform to be on every device\n","24853fc69047b51f8e52ba5dc241d4d6":"We appreciate your time! Thank you for listening!\nFollow us on twitter at black tower games\nLet us know if your interested in playing the game\nWe appreciate internap.\nThank you","3591a6b783061705299b42a42a6a2e6e":"Thank internap\nMy name is Alexander Dines,\nPartners Doug, Mika\nWe are Black Tower\nWere going to:\nIntroduce the game\nDo a Demo\nReveal our plans for the future\nTalk about Engine","24169c82723808959b143db3d3d6b2e8":"Ridiculous!\n\nWhen I think about browser games. I think of games like this:","a7c03fe5025ac5e83b82f5ca0f211835":"This is the game we've been making and every day I'm amazing to me what's possible at the other end of a link.\n\nMany people dont know what they're browser can do and We'd like to change that.","66504a5260999780b54cede5bec88cf1":"This is why working in the browser is amazing","bd72ce24464f917f49586509c70a032a":"\nThis then gets committed and flows throughout the system. Now we've got our pipegun!","24bcea7596240168d4fcd6319abec505":"All of our game is embedded into the data and it then feeds into the system.\nLets see what it takes to add a new weapon to the system:","71933a5bdb29e23773f5b4b98be3a1ca":"This data represents the entire representation of a weapon.\nIncluding\nClient side rendering\nUnlock requirements\nFiring behavior","b06984f4aa230f421e2a31541837426d":"We use behavior composition:\nA game object is composed of its behaviors \nLets look at some Game Objects from Horde Mode","08728701660fb0af15590105c627400b":"The medic and the crate's components are listed here. \nBoth have model - visual\nBoth have collision - interact with the world\nMedic has life - allows her to live and die\nEach component boils down to JSON. Along with everyhting else in our system","6e91b9ad85e8060bd0b8907ef1aaae5f":"I hope this gives you an idea of how Horde Mode is being built if you have any questions:\nWe appreciate your time! Thank you for listening!\nFollow us on twitter at black tower games\nLet us know if your interested in playing the game\nWe appreciate internap.\nThank you","70c12605be768daae905210433e58bfa":"\nOur engine is entirely data driven for the purpose of satisfying rapid iteration. The faster ","cd2932c8efdda1d4c2f4640a72f24d83":"","c3d8df2b306738b4927100eff7ab916a":"When we make any changes to the game data the json is then published through the data server\nmade avaiable to\naccount - unlocks\nworld - execution\nclient - visualization","eceae757b1574108fa03116b1a6b5384":"Explicit\nPerformant\nVerbose","6a5f36727bc5190ca8e89144bc800cad":"Authoritative source: Server\nClients transmitting actions / receiving state","7e324363f8a56a68a9a2fa7a590a1c31":"Each realm can consist of up to 38 individual servers","5610cb66a4a50206c126103d53d86905":"My name is Alexander Dines, CEO of Black Tower Entertainment.\n\"It should be easier to play games with your friends\" \n\nWorking with game since early childhood\nFlowplay on Ourworld\n\nDigipen","95b22a4446459727eac330a567dbacf0":"Require a couple modules\n\nExpress handles statically serving the client for requests.\n\nHTTP server gets made with express as the main handler for requests.\n\nThe game then takes the server and adds add's its own handlers. We'll look at that in a second.\n\nFinally the server starts listening","14859cebaec8ac3f0b13f8133a3fcb83":"Wow\nThe state of this WOW character has to be saved / persisted and send to every other client who encounters this character\n\nEve online\nThe positions / headings of all of these ships has to be send to every client","5c95e82ab6e3ef582fe4bf5198a41960":"Authoritative server\nPublishing state changes to clients\nHandling logic\nServing the client code","7c51d52b5743b8567076fc4969672d02":"Client - Dumb terminal\nSimply transmits actions\nVisualizes game state","1c4786af6950844ac056b730644b9acf":"An ID Store","3c47295949f3567a3a17cb0312c99bfa":"Ember invents the wheel you use it to build cool stuff"}}};
+			SLConfig.current_user = {
+				name: "",
+				username: "davidmignon",
+				pro: true
+			};
+		</script>
+
+		<script src="lib/head.min.js"></script>
+		<script src="lib/reveal.min.js"></script>
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				mouseWheel: false,
+
+				autoSlide: SLConfig.deck.auto_slide_interval || 0,
+				autoSlideStoppable: true,
+
+				rolling_links: SLConfig.deck.rolling_links || true,
+				center: SLConfig.deck.center || false,
+				loop: SLConfig.deck.should_loop || false,
+				rtl: SLConfig.deck.rtl || false,
+
+				transition: SLConfig.deck.transition,
+				backgroundTransition: SLConfig.deck.background_transition,
+
+				dependencies: [
+					{ src: 'lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/highlight/highlight.js', async: true, callback: function() { hljs.initHighlighting(); hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+			// Make Slides speaker notes available in the reveal.js speaker view
+			if( SLConfig.deck.notes ) {
+				[].forEach.call( document.querySelectorAll( '.reveal .slides section' ), function( slide ) {
+
+					var value = SLConfig.deck.notes[ slide.getAttribute( 'data-id' ) ];
+					if( value && typeof value === 'string' ) {
+						slide.setAttribute( 'data-notes', value );
+					}
+
+				} );
+			}
+		</script>
+
+		
+
+	</body>
+</html>
