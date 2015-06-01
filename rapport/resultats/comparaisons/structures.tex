@@ -1,0 +1,97 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry}
+
+\usepackage[utf8]{inputenc}   % le fichier .tex est en UTF-8     
+\usepackage[francais]{babel}  %typo française                    
+\usepackage[T1]{fontenc}      % encodage des fonts latex         
+\usepackage{lmodern}                                             
+\usepackage{microtype}        % typo supplémentaires             
+
+
+\usepackage{multirow}  %  pour des tableaux multilignes/multicolonnes
+
+\usepackage{graphicx} %inclusion de graphiques
+
+\usepackage{hyperref} % liens dans le pdf
+\hypersetup{%
+  pdftitle={Title},
+  pdfauthor={Author1, Author2},
+  pdfkeywords={keywords}
+  pdfsubject={article},
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
+  citecolor=black
+}
+
+
+
+
+\begin{document}
+
+    \clearpage
+    
+    \begin{figure}[h]
+      \centering
+      \begin{tabular}{c} 
+        \includegraphics[width=14cm]{image/1M61_2_gmec_vs_ph.png} 
+      \end{tabular}
+      
+      \caption{test: 1M61 2, GMEC vs H}
+      \label{temps_CPU}
+    \end{figure}
+    
+    
+    
+    \begin{figure}[h]
+      \centering
+      \begin{tabular}{c} 
+        \includegraphics[width=14cm]{image/1M61_2_gmec_vs_RE.png} 
+      \end{tabular}
+      
+      \caption{test: 1M61 2, GMEC vs RE}
+      \label{temps_CPU}
+    \end{figure}
+    
+    
+    
+
+    \begin{figure}[h]
+      \centering
+      \begin{tabular}{c} 
+        \includegraphics[width=14cm]{image/1G9O_3_gmec_vs_ph.png} 
+      \end{tabular}
+      
+      \caption{test: 1G9O 3, GMEC vs H}
+      \label{temps_CPU}
+    \end{figure}
+    
+    
+    \begin{figure}[h]
+      \centering
+      \begin{tabular}{c} 
+        \includegraphics[width=14cm]{image/1G9O_5_gmec_vs_MC.png} 
+      \end{tabular}
+      
+      \caption{test: 1G9O 5, GMEC vs MC}
+      \label{temps_CPU}
+    \end{figure}
+    
+    \begin{figure}[h]
+      \centering
+      \begin{tabular}{c} 
+        \includegraphics[width=14cm]{image/1CKA_5_gmec_vs_ph.png} 
+      \end{tabular}
+      
+      \caption{test: 1CKA 5, GMEC vs H}
+      \label{temps_CPU}
+    \end{figure}
+    
+    
+
+    
+    \clearpage
+
+
+
+\end{document}
