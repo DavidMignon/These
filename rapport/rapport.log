@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.3.10)  22 MAY 2015 18:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.3.10)  3 JUN 2015 14:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -694,8 +694,8 @@ File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 54.
  (./rapport.aux
-(./merci.aux) (./intro.aux) (./contexte.aux) (./methodes_pratiques.aux)
-(./resultats2.aux) (./conc.aux) (./annexe1.aux) (./annexe2.aux) (./resume.aux))
+(./merci.aux) (./intro.aux) (./contexte.aux) (./resultats2.aux) (./conc.aux)
+(./annexe1.aux) (./annexe2.aux) (./resume.aux))
 \openout1 = `rapport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 242.
@@ -713,6 +713,7 @@ LaTeX Font Info:    ... okay on input line 242.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 242.
 LaTeX Font Info:    ... okay on input line 242.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 242.
+
 (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -910,13 +911,49 @@ LaTeX Warning: Reference `eq:label_equation' on page 1 undefined on input line
 
 Chapitre 4.
 
+LaTeX Warning: Reference `tab:label_table' on page 1 undefined on input line 39
+7.
+
+
 ! LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.400     \begin{table}[!htbp]
+l.399 \begin{table}[!htbp]
+                          
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.399 \begin{table}[!htbp]
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.399 \begin{table}[!htbp]
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+! LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.438     \begin{table}[!htbp]
                               
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -924,7 +961,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.400     \begin{table}[!htbp]
+l.438     \begin{table}[!htbp]
                               
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -935,7 +972,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.400     \begin{table}[!htbp]
+l.438     \begin{table}[!htbp]
                               
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -948,7 +985,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.423     \begin{table}[!htbp]
+l.461     \begin{table}[!htbp]
                               
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -956,7 +993,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.423     \begin{table}[!htbp]
+l.461     \begin{table}[!htbp]
                               
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -967,14 +1004,14 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.423     \begin{table}[!htbp]
+l.461     \begin{table}[!htbp]
                               
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-Overfull \hbox (178.81682pt too wide) in paragraph at lines 426--441
+Overfull \hbox (178.81682pt too wide) in paragraph at lines 464--479
  [][] 
  []
 
@@ -985,7 +1022,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.448     \begin{table}[!htbp]
+l.486     \begin{table}[!htbp]
                               
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -993,7 +1030,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.448     \begin{table}[!htbp]
+l.486     \begin{table}[!htbp]
                               
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1004,7 +1041,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.448     \begin{table}[!htbp]
+l.486     \begin{table}[!htbp]
                               
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1017,7 +1054,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.467     \begin{figure}[h]
+l.505     \begin{figure}[h]
                            
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1025,7 +1062,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.467     \begin{figure}[h]
+l.505     \begin{figure}[h]
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1036,7 +1073,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.467     \begin{figure}[h]
+l.505     \begin{figure}[h]
                            
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1049,10 +1086,10 @@ File: resultats/comparaisons/graphe/temps_de_calculs.png Graphic file (type png
 )
  <use resultats/comparaisons/graphe/temps_de_calculs.png>
 Package pdftex.def Info: resultats/comparaisons/graphe/temps_de_calculs.png use
-d on input line 470.
+d on input line 508.
 (pdftex.def)             Requested size: 341.43306pt x 256.07178pt.
 
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 469--472
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 507--510
  [][] 
  []
 
@@ -1063,7 +1100,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.485     \begin{table}[h]
+l.523     \begin{table}[h]
                           
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1071,7 +1108,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.485     \begin{table}[h]
+l.523     \begin{table}[h]
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1082,14 +1119,14 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.485     \begin{table}[h]
+l.523     \begin{table}[h]
                           
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-Overfull \hbox (44.85745pt too wide) in paragraph at lines 488--506
+Overfull \hbox (44.85745pt too wide) in paragraph at lines 526--544
  [][] 
  []
 
@@ -1100,7 +1137,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.511    \begin{figure}[t]
+l.549    \begin{figure}[t]
                           
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1108,7 +1145,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.511    \begin{figure}[t]
+l.549    \begin{figure}[t]
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1119,7 +1156,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.511    \begin{figure}[t]
+l.549    \begin{figure}[t]
                           
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1130,10 +1167,10 @@ File: resultats/comparaisons/graphe/1A81_casa-p8.png Graphic file (type png)
 
 <use resultats/comparaisons/graphe/1A81_casa-p8.png>
 Package pdftex.def Info: resultats/comparaisons/graphe/1A81_casa-p8.png used on
- input line 514.
+ input line 552.
 (pdftex.def)             Requested size: 341.43306pt x 256.07178pt.
 
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 513--516
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 551--554
  [][] 
  []
 
@@ -1144,7 +1181,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.522    \begin{figure}[t]
+l.560    \begin{figure}[t]
                           
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1152,7 +1189,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.522    \begin{figure}[t]
+l.560    \begin{figure}[t]
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1163,7 +1200,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.522    \begin{figure}[t]
+l.560    \begin{figure}[t]
                           
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1175,7 +1212,7 @@ File: resultats/comparaisons/graphe/1A81-RE1-T_traj.png Graphic file (type png)
 
 <use resultats/comparaisons/graphe/1A81-RE1-T_traj.png>
 Package pdftex.def Info: resultats/comparaisons/graphe/1A81-RE1-T_traj.png used
- on input line 525.
+ on input line 563.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
 <resultats/comparaisons/graphe/1A81-RE2-T_traj.png, id=15, 578.16pt x 433.62pt>
@@ -1183,7 +1220,7 @@ File: resultats/comparaisons/graphe/1A81-RE2-T_traj.png Graphic file (type png)
 
 <use resultats/comparaisons/graphe/1A81-RE2-T_traj.png>
 Package pdftex.def Info: resultats/comparaisons/graphe/1A81-RE2-T_traj.png used
- on input line 526.
+ on input line 564.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
 <resultats/comparaisons/graphe/1A81-RE4-T_traj.png, id=16, 578.16pt x 433.62pt>
@@ -1191,7 +1228,7 @@ File: resultats/comparaisons/graphe/1A81-RE4-T_traj.png Graphic file (type png)
 
 <use resultats/comparaisons/graphe/1A81-RE4-T_traj.png>
 Package pdftex.def Info: resultats/comparaisons/graphe/1A81-RE4-T_traj.png used
- on input line 527.
+ on input line 565.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
 <resultats/comparaisons/graphe/1A81-RE3-T_traj.png, id=17, 578.16pt x 433.62pt>
@@ -1199,10 +1236,10 @@ File: resultats/comparaisons/graphe/1A81-RE3-T_traj.png Graphic file (type png)
 
 <use resultats/comparaisons/graphe/1A81-RE3-T_traj.png>
 Package pdftex.def Info: resultats/comparaisons/graphe/1A81-RE3-T_traj.png used
- on input line 528.
+ on input line 566.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
-Overfull \hbox (163.4183pt too wide) in paragraph at lines 524--530
+Overfull \hbox (163.4183pt too wide) in paragraph at lines 562--568
  [][] 
  []
 
@@ -1213,7 +1250,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.536    \begin{figure}[t]
+l.574    \begin{figure}[t]
                           
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1221,7 +1258,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.536    \begin{figure}[t]
+l.574    \begin{figure}[t]
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1232,7 +1269,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.536    \begin{figure}[t]
+l.574    \begin{figure}[t]
                           
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1243,10 +1280,10 @@ File: resultats/comparaisons/graphe/best_all.png Graphic file (type png)
 
 <use resultats/comparaisons/graphe/best_all.png>
 Package pdftex.def Info: resultats/comparaisons/graphe/best_all.png used on inp
-ut line 539.
+ut line 577.
 (pdftex.def)             Requested size: 512.1496pt x 384.13412pt.
 
-Overfull \hbox (182.71652pt too wide) in paragraph at lines 538--541
+Overfull \hbox (182.71652pt too wide) in paragraph at lines 576--579
  [][] 
  []
 
@@ -1257,7 +1294,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.549    \begin{figure}[t]
+l.587    \begin{figure}[t]
                           
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1265,7 +1302,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.549    \begin{figure}[t]
+l.587    \begin{figure}[t]
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1276,7 +1313,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.549    \begin{figure}[t]
+l.587    \begin{figure}[t]
                           
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1287,7 +1324,7 @@ File: resultats/comparaisons/graphe/best_by_cat.png Graphic file (type png)
 
 <use resultats/comparaisons/graphe/best_by_cat.png>
 Package pdftex.def Info: resultats/comparaisons/graphe/best_by_cat.png used on 
-input line 552.
+input line 590.
 (pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
 
 <resultats/comparaisons/graphe/best_MC+H.png, id=20, 578.16pt x 433.62pt>
@@ -1295,7 +1332,7 @@ File: resultats/comparaisons/graphe/best_MC+H.png Graphic file (type png)
 
 <use resultats/comparaisons/graphe/best_MC+H.png>
 Package pdftex.def Info: resultats/comparaisons/graphe/best_MC+H.png used on in
-put line 553.
+put line 591.
 (pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
 
 <resultats/comparaisons/graphe/best_RE4.png, id=21, 578.16pt x 433.62pt>
@@ -1303,7 +1340,7 @@ File: resultats/comparaisons/graphe/best_RE4.png Graphic file (type png)
 
 <use resultats/comparaisons/graphe/best_RE4.png>
 Package pdftex.def Info: resultats/comparaisons/graphe/best_RE4.png used on inp
-ut line 554.
+ut line 592.
 (pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
 
 <resultats/comparaisons/graphe/best_RE8.png, id=22, 578.16pt x 433.62pt>
@@ -1311,10 +1348,10 @@ File: resultats/comparaisons/graphe/best_RE8.png Graphic file (type png)
 
 <use resultats/comparaisons/graphe/best_RE8.png>
 Package pdftex.def Info: resultats/comparaisons/graphe/best_RE8.png used on inp
-ut line 555.
+ut line 593.
 (pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
 
-Overfull \hbox (137.811pt too wide) in paragraph at lines 551--557
+Overfull \hbox (137.811pt too wide) in paragraph at lines 589--595
  [][] 
  []
 
@@ -1325,7 +1362,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.569     \begin{table}[h]
+l.607     \begin{table}[h]
                           
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1333,7 +1370,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.569     \begin{table}[h]
+l.607     \begin{table}[h]
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1344,7 +1381,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.569     \begin{table}[h]
+l.607     \begin{table}[h]
                           
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1357,7 +1394,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.598     \begin{table}[h]
+l.636     \begin{table}[h]
                           
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1365,7 +1402,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.598     \begin{table}[h]
+l.636     \begin{table}[h]
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1376,7 +1413,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.598     \begin{table}[h]
+l.636     \begin{table}[h]
                           
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1389,7 +1426,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.630     \begin{table}[h]
+l.668     \begin{table}[h]
                           
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1397,7 +1434,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.630     \begin{table}[h]
+l.668     \begin{table}[h]
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1408,7 +1445,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.630     \begin{table}[h]
+l.668     \begin{table}[h]
                           
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1421,7 +1458,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.701     \begin{table}[h]
+l.739     \begin{table}[h]
                           
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1429,7 +1466,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.701     \begin{table}[h]
+l.739     \begin{table}[h]
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1440,7 +1477,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.701     \begin{table}[h]
+l.739     \begin{table}[h]
                           
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1453,7 +1490,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.718     \begin{table}[h]
+l.756     \begin{table}[h]
                           
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1461,7 +1498,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.718     \begin{table}[h]
+l.756     \begin{table}[h]
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1472,7 +1509,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.718     \begin{table}[h]
+l.756     \begin{table}[h]
                           
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1485,7 +1522,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.737     \begin{table}[h]
+l.775     \begin{table}[h]
                           
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1493,7 +1530,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.737     \begin{table}[h]
+l.775     \begin{table}[h]
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1504,7 +1541,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.737     \begin{table}[h]
+l.775     \begin{table}[h]
                           
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1517,7 +1554,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.859     \begin{table}[h]
+l.897     \begin{table}[h]
                           
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1525,7 +1562,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.859     \begin{table}[h]
+l.897     \begin{table}[h]
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1536,7 +1573,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.859     \begin{table}[h]
+l.897     \begin{table}[h]
                           
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1549,7 +1586,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.885     \begin{table}[h]
+l.923     \begin{table}[h]
                           
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1557,7 +1594,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.885     \begin{table}[h]
+l.923     \begin{table}[h]
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1568,7 +1605,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.885     \begin{table}[h]
+l.923     \begin{table}[h]
                           
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1581,7 +1618,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.915     \begin{table}[h]
+l.953     \begin{table}[h]
                           
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1589,7 +1626,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.915     \begin{table}[h]
+l.953     \begin{table}[h]
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1600,7 +1637,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.915     \begin{table}[h]
+l.953     \begin{table}[h]
                           
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1613,39 +1650,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.985     \begin{table}[h]
-                          
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Undefined control sequence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.985     \begin{table}[h]
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \vbox 
-l.985     \begin{table}[h]
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1053     \begin{table}[h]
+l.1023     \begin{table}[h]
                            
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1653,7 +1658,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1053     \begin{table}[h]
+l.1023     \begin{table}[h]
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1664,14 +1669,46 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1053     \begin{table}[h]
+l.1023     \begin{table}[h]
                            
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-Overfull \hbox (165.00552pt too wide) in paragraph at lines 1056--1115
+! LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1091     \begin{table}[h]
+                           
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.1091     \begin{table}[h]
+                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.1091     \begin{table}[h]
+                           
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+Overfull \hbox (165.00552pt too wide) in paragraph at lines 1094--1153
  [][] 
  []
 
@@ -1682,7 +1719,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1124     \begin{table}[h]
+l.1162     \begin{table}[h]
                            
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1690,7 +1727,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1124     \begin{table}[h]
+l.1162     \begin{table}[h]
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1701,7 +1738,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1124     \begin{table}[h]
+l.1162     \begin{table}[h]
                            
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1714,7 +1751,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1152     \begin{figure}[h]
+l.1190     \begin{figure}[h]
                             
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1722,7 +1759,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1152     \begin{figure}[h]
+l.1190     \begin{figure}[h]
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1733,7 +1770,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1152     \begin{figure}[h]
+l.1190     \begin{figure}[h]
                             
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1746,10 +1783,10 @@ File: resultats/comparaisons/image/1M61_2_gmec_vs_ph.png Graphic file (type png
 )
  <use resultats/comparaisons/image/1M61_2_gmec_vs_ph.png>
 Package pdftex.def Info: resultats/comparaisons/image/1M61_2_gmec_vs_ph.png use
-d on input line 1155.
+d on input line 1193.
 (pdftex.def)             Requested size: 398.33858pt x 238.43636pt.
 
-Overfull \hbox (68.9055pt too wide) in paragraph at lines 1154--1157
+Overfull \hbox (68.9055pt too wide) in paragraph at lines 1192--1195
  [][] 
  []
 
@@ -1760,7 +1797,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1164     \begin{figure}[h]
+l.1202     \begin{figure}[h]
                             
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1768,7 +1805,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1164     \begin{figure}[h]
+l.1202     \begin{figure}[h]
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1779,7 +1816,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1164     \begin{figure}[h]
+l.1202     \begin{figure}[h]
                             
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1792,10 +1829,10 @@ File: resultats/comparaisons/image/1M61_2_gmec_vs_RE.png Graphic file (type png
 )
  <use resultats/comparaisons/image/1M61_2_gmec_vs_RE.png>
 Package pdftex.def Info: resultats/comparaisons/image/1M61_2_gmec_vs_RE.png use
-d on input line 1167.
+d on input line 1205.
 (pdftex.def)             Requested size: 398.33858pt x 248.25288pt.
 
-Overfull \hbox (68.9055pt too wide) in paragraph at lines 1166--1169
+Overfull \hbox (68.9055pt too wide) in paragraph at lines 1204--1207
  [][] 
  []
 
@@ -1806,7 +1843,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1177     \begin{figure}[h]
+l.1215     \begin{figure}[h]
                             
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1814,7 +1851,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1177     \begin{figure}[h]
+l.1215     \begin{figure}[h]
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1825,7 +1862,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1177     \begin{figure}[h]
+l.1215     \begin{figure}[h]
                             
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1838,10 +1875,10 @@ File: resultats/comparaisons/image/1G9O_3_gmec_vs_ph.png Graphic file (type png
 )
  <use resultats/comparaisons/image/1G9O_3_gmec_vs_ph.png>
 Package pdftex.def Info: resultats/comparaisons/image/1G9O_3_gmec_vs_ph.png use
-d on input line 1180.
+d on input line 1218.
 (pdftex.def)             Requested size: 398.33858pt x 239.01361pt.
 
-Overfull \hbox (68.9055pt too wide) in paragraph at lines 1179--1182
+Overfull \hbox (68.9055pt too wide) in paragraph at lines 1217--1220
  [][] 
  []
 
@@ -1852,7 +1889,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1188     \begin{figure}[h]
+l.1226     \begin{figure}[h]
                             
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1860,7 +1897,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1188     \begin{figure}[h]
+l.1226     \begin{figure}[h]
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1871,7 +1908,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1188     \begin{figure}[h]
+l.1226     \begin{figure}[h]
                             
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1884,10 +1921,10 @@ File: resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png Graphic file (type png
 )
  <use resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png>
 Package pdftex.def Info: resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png use
-d on input line 1191.
+d on input line 1229.
 (pdftex.def)             Requested size: 398.33858pt x 256.87811pt.
 
-Overfull \hbox (68.9055pt too wide) in paragraph at lines 1190--1193
+Overfull \hbox (68.9055pt too wide) in paragraph at lines 1228--1231
  [][] 
  []
 
@@ -1898,7 +1935,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1198     \begin{figure}[h]
+l.1236     \begin{figure}[h]
                             
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1906,7 +1943,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1198     \begin{figure}[h]
+l.1236     \begin{figure}[h]
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1917,7 +1954,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1198     \begin{figure}[h]
+l.1236     \begin{figure}[h]
                             
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1930,10 +1967,10 @@ File: resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png Graphic file (type png
 )
  <use resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png>
 Package pdftex.def Info: resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png use
-d on input line 1201.
+d on input line 1239.
 (pdftex.def)             Requested size: 398.33858pt x 291.54088pt.
 
-Overfull \hbox (68.9055pt too wide) in paragraph at lines 1200--1203
+Overfull \hbox (68.9055pt too wide) in paragraph at lines 1238--1241
  [][] 
  []
 
@@ -1944,7 +1981,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1210     \begin{figure}[h]
+l.1248     \begin{figure}[h]
                             
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1952,7 +1989,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1210     \begin{figure}[h]
+l.1248     \begin{figure}[h]
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1963,7 +2000,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1210     \begin{figure}[h]
+l.1248     \begin{figure}[h]
                             
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1976,10 +2013,10 @@ File: resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png Graphic file (type png
 )
  <use resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png>
 Package pdftex.def Info: resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png use
-d on input line 1213.
+d on input line 1251.
 (pdftex.def)             Requested size: 398.33858pt x 275.78119pt.
 
-Overfull \hbox (68.9055pt too wide) in paragraph at lines 1212--1215
+Overfull \hbox (68.9055pt too wide) in paragraph at lines 1250--1253
  [][] 
  []
 
@@ -1990,7 +2027,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1230     \begin{table}[h]
+l.1268     \begin{table}[h]
                            
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1998,7 +2035,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1230     \begin{table}[h]
+l.1268     \begin{table}[h]
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2009,14 +2046,14 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1230     \begin{table}[h]
+l.1268     \begin{table}[h]
                            
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-Overfull \hbox (193.49846pt too wide) in paragraph at lines 1233--1252
+Overfull \hbox (193.49846pt too wide) in paragraph at lines 1271--1290
  [][]
  []
 
@@ -2027,7 +2064,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1262     \begin{table}[h]
+l.1300     \begin{table}[h]
                            
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2035,7 +2072,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1262     \begin{table}[h]
+l.1300     \begin{table}[h]
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2046,7 +2083,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1262     \begin{table}[h]
+l.1300     \begin{table}[h]
                            
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -2059,7 +2096,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1289     \begin{table}[h]
+l.1327     \begin{table}[h]
                            
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2067,7 +2104,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1289     \begin{table}[h]
+l.1327     \begin{table}[h]
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2078,14 +2115,14 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1289     \begin{table}[h]
+l.1327     \begin{table}[h]
                            
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-Overfull \hbox (154.8388pt too wide) in paragraph at lines 1292--1313
+Overfull \hbox (154.8388pt too wide) in paragraph at lines 1330--1351
  [][] 
  []
 
@@ -2096,7 +2133,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1323     \begin{table}[h]
+l.1361     \begin{table}[h]
                            
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2104,7 +2141,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1323     \begin{table}[h]
+l.1361     \begin{table}[h]
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2115,7 +2152,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1323     \begin{table}[h]
+l.1361     \begin{table}[h]
                            
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -2128,7 +2165,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1353     \begin{figure}[h]
+l.1391     \begin{figure}[h]
                             
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2136,7 +2173,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1353     \begin{figure}[h]
+l.1391     \begin{figure}[h]
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2147,7 +2184,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1353     \begin{figure}[h]
+l.1391     \begin{figure}[h]
                             
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -2160,7 +2197,7 @@ File: resultats/comparaisons/graphe/histo1_aa_Tambiante.png Graphic file (type
 png)
  <use resultats/comparaisons/graphe/histo1_aa_Tambiante.png>
 Package pdftex.def Info: resultats/comparaisons/graphe/histo1_aa_Tambiante.png 
-used on input line 1356.
+used on input line 1394.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
 
 
@@ -2170,7 +2207,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1364     \begin{figure}[h]
+l.1402     \begin{figure}[h]
                             
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2178,7 +2215,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1364     \begin{figure}[h]
+l.1402     \begin{figure}[h]
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2189,7 +2226,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1364     \begin{figure}[h]
+l.1402     \begin{figure}[h]
                             
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -2202,7 +2239,7 @@ File: resultats/comparaisons/graphe/histo2_aa_Tambiante.png Graphic file (type
 png)
  <use resultats/comparaisons/graphe/histo2_aa_Tambiante.png>
 Package pdftex.def Info: resultats/comparaisons/graphe/histo2_aa_Tambiante.png 
-used on input line 1367.
+used on input line 1405.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
 \openout2 = `resultats2.aux'.
 
@@ -2649,12 +2686,12 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Extra \else.
 \@include ...ediate \closeout \@partaux \fi \else 
                                                   \deadcycles \z@ \@nameuse ...
-l.1411 \include{resume}
+l.1449 \include{resume}
                        
 I'm ignoring this; it doesn't match any \if.
 
 ! Use of \end doesn't match its definition.
-l.1413 \end{
+l.1451 \end{
             document}
 If you say, e.g., `\def\a1{...}', then you must always
 put `1' after `\a', since control sequence names are
@@ -2662,7 +2699,7 @@ made up of letters only. The macro here has not been
 followed by the required stuff, so I'm ignoring it.
 
 ! Extra }, or forgotten \endgroup.
-l.1413 \end{document}
+l.1451 \end{document}
                      
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -2678,10 +2715,10 @@ deleted material, e.g., by typing `I$}'.
 
  
 Here is how much of TeX's memory you used:
- 10642 strings out of 493105
- 160026 string characters out of 6137072
- 335515 words of memory out of 5000000
- 13797 multiletter control sequences out of 15000+600000
+ 10638 strings out of 493105
+ 159941 string characters out of 6137072
+ 335258 words of memory out of 5000000
+ 13796 multiletter control sequences out of 15000+600000
  79101 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,14n,43p,244b,554s stack positions out of 5000i,500n,10000p,200000b,80000s
