@@ -2,28 +2,6 @@
  (lambda ()
     (LaTeX-add-bibliographies
      "biblio")
-    (LaTeX-add-labels
-     "chap:methodes_theoriques"
-     "eq:label_equation"
-     "chap:methodes_pratiques"
-     "chap:resultats_comparaisons"
-     "tab:label_table"
-     "tab_protoMC"
-     "tab_protoRE"
-     "tab_protoH"
-     "temps_CPU"
-     "tab_best_ener_all"
-     "Distrib_E_RE3"
-     "TRAJ_T"
-     "tab_best_ener_no_active"
-     "tab_echec_1CKA_1"
-     "tab_echec1M61__1"
-     "tab_echec1O4C__1"
-     "tab_echec1R6J__1"
-     "tab_echec2BYG__1"
-     "tab_echec_10_20"
-     "tab_1"
-     "tab_2")
     (TeX-add-symbols
      "negspace"
      "clearemptydoublepage"
@@ -79,6 +57,9 @@
      "merci"
      "intro"
      "contexte"
+     "methodes_theoriques"
+     "methodes_pratiques"
+     "resultats/comparaisons/chapter"
      "resultats2"
      "conc"
      "annexe1"

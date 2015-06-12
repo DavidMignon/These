@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.3.10)  11 JUN 2015 10:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.3.10)  12 JUN 2015 18:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -699,7 +699,8 @@ File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 Package hyperref Info: Option `colorlinks' set `true' on input line 54.
 
 (./rapport_flymake.aux (./merci.aux) (./intro.aux) (./contexte.aux)
-(./resultats2.aux) (./conc.aux) (./annexe1.aux) (./annexe2.aux) (./resume.aux))
+(./methodes_theoriques.aux) (./methodes_pratiques.aux)
+(./resultats/comparaisons/chapter.aux))
 \openout1 = `rapport_flymake.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 242.
@@ -717,7 +718,7 @@ LaTeX Font Info:    ... okay on input line 242.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 242.
 LaTeX Font Info:    ... okay on input line 242.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 242.
-(/usr/share/texmf/tex/latex/lm/t1lmr.fd
+ (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 *geometry* driver: auto-detecting
@@ -911,232 +912,200 @@ Package natbib Warning: Citation `ref2' on page 1 undefined on input line 24.
 Package natbib Warning: Citation `ref3' on page 1 undefined on input line 26.
 
 )
+\openout2 = `methodes_theoriques.aux'.
+
+ (./methodes_theoriques.tex
 Chapitre 2.
 
-LaTeX Warning: Reference `eq:label_equation' on page 1 undefined on input line 
-335.
+./methodes_theoriques.tex:22: Package inputenc Error: Unicode char \u8:éfé not 
+set up for use with LaTeX.
 
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.22 Réfé
+         rence à une équation (Équation~\ref{eq:label_equation}).
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./methodes_theoriques.tex:22: Package inputenc Error: Unicode char \u8:àun not 
+set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.22 Référence à un
+                   e équation (Équation~\ref{eq:label_equation}).
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./methodes_theoriques.tex:22: Package inputenc Error: Unicode char \u8:équ not 
+set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.22 Référence à une équ
+                        ation (Équation~\ref{eq:label_equation}).
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./methodes_theoriques.tex:22: Package inputenc Error: Unicode char \u8:Éq not s
+et up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.22 Référence à une équation (Éq
+                                 uation~\ref{eq:label_equation}).
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+LaTeX Warning: Reference `eq:label_equation' on page 1 undefined on input line 
+22.
+
+)
+\openout2 = `methodes_pratiques.aux'.
+
+ (./methodes_pratiques.tex
 Chapitre 3.
 
 LaTeX Warning: Reference `eq:label_equation' on page 1 undefined on input line 
-377.
+22.
 
-Chapitre 4.
-
-LaTeX Warning: Reference `tab:label_table' on page 1 undefined on input line 39
-7.
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:399: LaTeX Error: Not in o
-uter par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.399 \begin{table}[!htbp]
-                          
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:399: Undefined control seq
-uence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.399 \begin{table}[!htbp]
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:399: Missing number, treat
-ed as zero.
-<to be read again> 
-                   \vbox 
-l.399 \begin{table}[!htbp]
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:438: LaTeX Error: Not in o
-uter par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.438     \begin{table}[!htbp]
-                              
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:438: Undefined control seq
-uence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.438     \begin{table}[!htbp]
-                              
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:438: Missing number, treat
-ed as zero.
-<to be read again> 
-                   \vbox 
-l.438     \begin{table}[!htbp]
-                              
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:461: LaTeX Error: Not in o
-uter par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.461     \begin{table}[!htbp]
-                              
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:461: Undefined control seq
-uence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.461     \begin{table}[!htbp]
-                              
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:461: Missing number, treat
-ed as zero.
-<to be read again> 
-                   \vbox 
-l.461     \begin{table}[!htbp]
-                              
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-Overfull \hbox (178.81682pt too wide) in paragraph at lines 464--479
- [][] 
- []
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:486: LaTeX Error: Not in o
-uter par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.486     \begin{table}[!htbp]
-                              
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:486: Undefined control seq
-uence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.486     \begin{table}[!htbp]
-                              
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:486: Missing number, treat
-ed as zero.
-<to be read again> 
-                   \vbox 
-l.486     \begin{table}[!htbp]
-                              
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:505: LaTeX Error: Not in o
-uter par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.505     \begin{figure}[h]
-                           
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:505: Undefined control seq
-uence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.505     \begin{figure}[h]
-                           
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:505: Missing number, treat
-ed as zero.
-<to be read again> 
-                   \vbox 
-l.505     \begin{figure}[h]
-                           
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-<resultats/comparaisons/graphe/temps_de_calculs.png, id=4, 578.16pt x 433.62pt>
-File: resultats/comparaisons/graphe/temps_de_calculs.png Graphic file (type png
 )
-<use resultats/comparaisons/graphe/temps_de_calculs.png>
-Package pdftex.def Info: resultats/comparaisons/graphe/temps_de_calculs.png use
-d on input line 508.
-(pdftex.def)             Requested size: 341.43306pt x 256.07178pt.
+\openout2 = `resultats/comparaisons/chapter.aux'.
 
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 507--510
+ (./resultats/comparaisons/chapter.tex
+
+./resultats/comparaisons/chapter.tex:15: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15     \begin{table}[!htbp]
+                             
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:15: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.15     \begin{table}[!htbp]
+                             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:15: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.15     \begin{table}[!htbp]
+                             
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+./resultats/comparaisons/chapter.tex:38: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.38     \begin{table}[!htbp]
+                             
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:38: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.38     \begin{table}[!htbp]
+                             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:38: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.38     \begin{table}[!htbp]
+                             
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+Overfull \hbox (178.81682pt too wide) in paragraph at lines 41--56
  [][] 
  []
 
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:523: LaTeX Error: Not in o
-uter par mode.
+./resultats/comparaisons/chapter.tex:63: LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.523     \begin{table}[h]
+l.63     \begin{table}[!htbp]
+                             
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:63: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.63     \begin{table}[!htbp]
+                             
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:63: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.63     \begin{table}[!htbp]
+                             
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+./resultats/comparaisons/chapter.tex:82: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.82     \begin{figure}[h]
                           
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:523: Undefined control seq
-uence.
+./resultats/comparaisons/chapter.tex:82: Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.523     \begin{table}[h]
+l.82     \begin{figure}[h]
                           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1144,998 +1113,901 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:523: Missing number, treat
-ed as zero.
+./resultats/comparaisons/chapter.tex:82: Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.523     \begin{table}[h]
+l.82     \begin{figure}[h]
                           
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-Overfull \hbox (44.85745pt too wide) in paragraph at lines 526--544
- [][] 
- []
+LaTeX Warning: File `graphe/temps_de_calculs.png' not found on input line 85.
 
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:549: LaTeX Error: Not in o
-uter par mode.
+./resultats/comparaisons/chapter.tex:85: Package pdftex.def Error: File `graphe
+/temps_de_calculs.png' not found.
 
-See the LaTeX manual or LaTeX Companion for explanation.
+See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.549    \begin{figure}[t]
-                          
-You've lost some text.  Try typing  <return>  to proceed.
+l.85 ...s[width=12cm]{graphe/temps_de_calculs.png}
+                                                   &
+Using draft setting for this image.
+Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:549: Undefined control seq
-uence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.549    \begin{figure}[t]
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:549: Missing number, treat
-ed as zero.
-<to be read again> 
-                   \vbox 
-l.549    \begin{figure}[t]
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-<resultats/comparaisons/graphe/1A81_casa-p8.png, id=6, 578.16pt x 433.62pt>
-File: resultats/comparaisons/graphe/1A81_casa-p8.png Graphic file (type png)
-
-<use resultats/comparaisons/graphe/1A81_casa-p8.png>
-Package pdftex.def Info: resultats/comparaisons/graphe/1A81_casa-p8.png used on
- input line 552.
-(pdftex.def)             Requested size: 341.43306pt x 256.07178pt.
-
-Overfull \hbox (23.99998pt too wide) in paragraph at lines 551--554
- [][] 
- []
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:560: LaTeX Error: Not in o
-uter par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.560    \begin{figure}[t]
-                          
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:560: Undefined control seq
-uence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.560    \begin{figure}[t]
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:560: Missing number, treat
-ed as zero.
-<to be read again> 
-                   \vbox 
-l.560    \begin{figure}[t]
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-<resultats/comparaisons/graphe/1A81-RE1-T_traj.png, id=7, 578.16pt x 433.62pt>
-File: resultats/comparaisons/graphe/1A81-RE1-T_traj.png Graphic file (type png)
-
-
-<use resultats/comparaisons/graphe/1A81-RE1-T_traj.png>
-Package pdftex.def Info: resultats/comparaisons/graphe/1A81-RE1-T_traj.png used
- on input line 563.
-(pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
-
-<resultats/comparaisons/graphe/1A81-RE2-T_traj.png, id=8, 578.16pt x 433.62pt>
-File: resultats/comparaisons/graphe/1A81-RE2-T_traj.png Graphic file (type png)
-
-
-<use resultats/comparaisons/graphe/1A81-RE2-T_traj.png>
-Package pdftex.def Info: resultats/comparaisons/graphe/1A81-RE2-T_traj.png used
- on input line 564.
-(pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
-
-<resultats/comparaisons/graphe/1A81-RE4-T_traj.png, id=9, 578.16pt x 433.62pt>
-File: resultats/comparaisons/graphe/1A81-RE4-T_traj.png Graphic file (type png)
-
-
-<use resultats/comparaisons/graphe/1A81-RE4-T_traj.png>
-Package pdftex.def Info: resultats/comparaisons/graphe/1A81-RE4-T_traj.png used
- on input line 565.
-(pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
-
-<resultats/comparaisons/graphe/1A81-RE3-T_traj.png, id=10, 578.16pt x 433.62pt>
-File: resultats/comparaisons/graphe/1A81-RE3-T_traj.png Graphic file (type png)
-
-<use resultats/comparaisons/graphe/1A81-RE3-T_traj.png>
-Package pdftex.def Info: resultats/comparaisons/graphe/1A81-RE3-T_traj.png used
- on input line 566.
-(pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
-
-Overfull \hbox (163.4183pt too wide) in paragraph at lines 562--568
- [][] 
- []
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:574: LaTeX Error: Not in o
-uter par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.574    \begin{figure}[t]
-                          
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:574: Undefined control seq
-uence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.574    \begin{figure}[t]
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:574: Missing number, treat
-ed as zero.
-<to be read again> 
-                   \vbox 
-l.574    \begin{figure}[t]
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-<resultats/comparaisons/graphe/best_all.png, id=11, 578.16pt x 433.62pt>
-File: resultats/comparaisons/graphe/best_all.png Graphic file (type png)
-
-<use resultats/comparaisons/graphe/best_all.png>
-Package pdftex.def Info: resultats/comparaisons/graphe/best_all.png used on inp
-ut line 577.
-(pdftex.def)             Requested size: 512.1496pt x 384.13412pt.
-
-Overfull \hbox (182.71652pt too wide) in paragraph at lines 576--579
- [][] 
- []
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:587: LaTeX Error: Not in o
-uter par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.587    \begin{figure}[t]
-                          
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:587: Undefined control seq
-uence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.587    \begin{figure}[t]
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:587: Missing number, treat
-ed as zero.
-<to be read again> 
-                   \vbox 
-l.587    \begin{figure}[t]
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-<resultats/comparaisons/graphe/best_by_cat.png, id=12, 578.16pt x 433.62pt>
-File: resultats/comparaisons/graphe/best_by_cat.png Graphic file (type png)
-
-<use resultats/comparaisons/graphe/best_by_cat.png>
-Package pdftex.def Info: resultats/comparaisons/graphe/best_by_cat.png used on 
-input line 590.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
-<resultats/comparaisons/graphe/best_MC+H.png, id=13, 578.16pt x 433.62pt>
-File: resultats/comparaisons/graphe/best_MC+H.png Graphic file (type png)
-
-<use resultats/comparaisons/graphe/best_MC+H.png>
-Package pdftex.def Info: resultats/comparaisons/graphe/best_MC+H.png used on in
-put line 591.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
-<resultats/comparaisons/graphe/best_RE4.png, id=14, 578.16pt x 433.62pt>
-File: resultats/comparaisons/graphe/best_RE4.png Graphic file (type png)
-
-<use resultats/comparaisons/graphe/best_RE4.png>
-Package pdftex.def Info: resultats/comparaisons/graphe/best_RE4.png used on inp
-ut line 592.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
-<resultats/comparaisons/graphe/best_RE8.png, id=15, 578.16pt x 433.62pt>
-File: resultats/comparaisons/graphe/best_RE8.png Graphic file (type png)
-
-<use resultats/comparaisons/graphe/best_RE8.png>
-Package pdftex.def Info: resultats/comparaisons/graphe/best_RE8.png used on inp
-ut line 593.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
-Overfull \hbox (137.811pt too wide) in paragraph at lines 589--595
- [][] 
- []
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:607: LaTeX Error: Not in o
-uter par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.607     \begin{table}[h]
-                          
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:607: Undefined control seq
-uence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.607     \begin{table}[h]
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:607: Missing number, treat
-ed as zero.
-<to be read again> 
-                   \vbox 
-l.607     \begin{table}[h]
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:636: LaTeX Error: Not in o
-uter par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.636     \begin{table}[h]
-                          
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:636: Undefined control seq
-uence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.636     \begin{table}[h]
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:636: Missing number, treat
-ed as zero.
-<to be read again> 
-                   \vbox 
-l.636     \begin{table}[h]
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:668: LaTeX Error: Not in o
-uter par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.668     \begin{table}[h]
-                          
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:668: Undefined control seq
-uence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.668     \begin{table}[h]
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:668: Missing number, treat
-ed as zero.
-<to be read again> 
-                   \vbox 
-l.668     \begin{table}[h]
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:739: LaTeX Error: Not in o
-uter par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.739     \begin{table}[h]
-                          
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:739: Undefined control seq
-uence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.739     \begin{table}[h]
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:739: Missing number, treat
-ed as zero.
-<to be read again> 
-                   \vbox 
-l.739     \begin{table}[h]
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:756: LaTeX Error: Not in o
-uter par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.756     \begin{table}[h]
-                          
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:756: Undefined control seq
-uence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.756     \begin{table}[h]
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:756: Missing number, treat
-ed as zero.
-<to be read again> 
-                   \vbox 
-l.756     \begin{table}[h]
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:775: LaTeX Error: Not in o
-uter par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.775     \begin{table}[h]
-                          
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:775: Undefined control seq
-uence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.775     \begin{table}[h]
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:775: Missing number, treat
-ed as zero.
-<to be read again> 
-                   \vbox 
-l.775     \begin{table}[h]
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:897: LaTeX Error: Not in o
-uter par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.897     \begin{table}[h]
-                          
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:897: Undefined control seq
-uence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.897     \begin{table}[h]
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:897: Missing number, treat
-ed as zero.
-<to be read again> 
-                   \vbox 
-l.897     \begin{table}[h]
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:923: LaTeX Error: Not in o
-uter par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.923     \begin{table}[h]
-                          
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:923: Undefined control seq
-uence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.923     \begin{table}[h]
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:923: Missing number, treat
-ed as zero.
-<to be read again> 
-                   \vbox 
-l.923     \begin{table}[h]
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:953: LaTeX Error: Not in o
-uter par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.953     \begin{table}[h]
-                          
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:953: Undefined control seq
-uence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.953     \begin{table}[h]
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:953: Missing number, treat
-ed as zero.
-<to be read again> 
-                   \vbox 
-l.953     \begin{table}[h]
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:1023: LaTeX Error: Not in 
-outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1023     \begin{table}[h]
-                           
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:1023: Undefined control se
-quence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.1023     \begin{table}[h]
-                           
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:1023: Missing number, trea
-ted as zero.
-<to be read again> 
-                   \vbox 
-l.1023     \begin{table}[h]
-                           
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:1091: LaTeX Error: Not in 
-outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1091     \begin{table}[h]
-                           
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:1091: Undefined control se
-quence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.1091     \begin{table}[h]
-                           
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:1091: Missing number, trea
-ted as zero.
-<to be read again> 
-                   \vbox 
-l.1091     \begin{table}[h]
-                           
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-Overfull \hbox (165.00552pt too wide) in paragraph at lines 1094--1153
- [][] 
- []
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:1162: LaTeX Error: Not in 
-outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1162     \begin{table}[h]
-                           
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:1162: Undefined control se
-quence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.1162     \begin{table}[h]
-                           
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:1162: Missing number, trea
-ted as zero.
-<to be read again> 
-                   \vbox 
-l.1162     \begin{table}[h]
-                           
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:1190: LaTeX Error: Not in 
-outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1190     \begin{figure}[h]
-                            
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:1190: Undefined control se
-quence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.1190     \begin{figure}[h]
-                            
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:1190: Missing number, trea
-ted as zero.
-<to be read again> 
-                   \vbox 
-l.1190     \begin{figure}[h]
-                            
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-<resultats/comparaisons/image/1M61_2_gmec_vs_ph.png, id=16, 1326.78293pt x 794.
-17583pt>
-File: resultats/comparaisons/image/1M61_2_gmec_vs_ph.png Graphic file (type png
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 85.
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
- <use resultats/comparaisons/image/1M61_2_gmec_vs_ph.png>
-Package pdftex.def Info: resultats/comparaisons/image/1M61_2_gmec_vs_ph.png use
-d on input line 1193.
-(pdftex.def)             Requested size: 398.33858pt x 238.43636pt.
+Package microtype Info: Loading generic settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 
-Overfull \hbox (68.9055pt too wide) in paragraph at lines 1192--1195
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 84--87
  [][] 
  []
 
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1202: LaTeX Error: Not in 
-outer par mode.
+./resultats/comparaisons/chapter.tex:100: LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1202     \begin{figure}[h]
-                            
+l.100     \begin{table}[h]
+                          
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1202: Undefined control se
-quence.
+./resultats/comparaisons/chapter.tex:100: Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1202     \begin{figure}[h]
-                            
+l.100     \begin{table}[h]
+                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1202: Missing number, trea
-ted as zero.
+./resultats/comparaisons/chapter.tex:100: Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1202     \begin{figure}[h]
-                            
+l.100     \begin{table}[h]
+                          
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-<resultats/comparaisons/image/1M61_2_gmec_vs_RE.png, id=17, 1261.58282pt x 786.
-23407pt>
-File: resultats/comparaisons/image/1M61_2_gmec_vs_RE.png Graphic file (type png
-)
- <use resultats/comparaisons/image/1M61_2_gmec_vs_RE.png>
-Package pdftex.def Info: resultats/comparaisons/image/1M61_2_gmec_vs_RE.png use
-d on input line 1205.
-(pdftex.def)             Requested size: 398.33858pt x 248.25288pt.
-
-Overfull \hbox (68.9055pt too wide) in paragraph at lines 1204--1207
+Overfull \hbox (44.85745pt too wide) in paragraph at lines 103--121
  [][] 
  []
 
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1215: LaTeX Error: Not in 
-outer par mode.
+./resultats/comparaisons/chapter.tex:126: LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1215     \begin{figure}[h]
-                            
+l.126    \begin{figure}[t]
+                          
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1215: Undefined control se
-quence.
+./resultats/comparaisons/chapter.tex:126: Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1215     \begin{figure}[h]
-                            
+l.126    \begin{figure}[t]
+                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1215: Missing number, trea
-ted as zero.
+./resultats/comparaisons/chapter.tex:126: Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1215     \begin{figure}[h]
-                            
+l.126    \begin{figure}[t]
+                          
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-<resultats/comparaisons/image/1G9O_3_gmec_vs_ph.png, id=18, 1331.4962pt x 798.9
-4087pt>
-File: resultats/comparaisons/image/1G9O_3_gmec_vs_ph.png Graphic file (type png
-)
- <use resultats/comparaisons/image/1G9O_3_gmec_vs_ph.png>
-Package pdftex.def Info: resultats/comparaisons/image/1G9O_3_gmec_vs_ph.png use
-d on input line 1218.
-(pdftex.def)             Requested size: 398.33858pt x 239.01361pt.
+LaTeX Warning: File `graphe/1A81_casa-p8.png' not found on input line 129.
 
-Overfull \hbox (68.9055pt too wide) in paragraph at lines 1217--1220
+
+./resultats/comparaisons/chapter.tex:129: Package pdftex.def Error: File `graph
+e/1A81_casa-p8.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.129 ...hics[width=12cm]{graphe/1A81_casa-p8.png}
+                                                   &
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 128--131
  [][] 
  []
 
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1226: LaTeX Error: Not in 
-outer par mode.
+./resultats/comparaisons/chapter.tex:137: LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1226     \begin{figure}[h]
-                            
+l.137    \begin{figure}[t]
+                          
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1226: Undefined control se
-quence.
+./resultats/comparaisons/chapter.tex:137: Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1226     \begin{figure}[h]
-                            
+l.137    \begin{figure}[t]
+                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1226: Missing number, trea
-ted as zero.
+./resultats/comparaisons/chapter.tex:137: Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1226     \begin{figure}[h]
-                            
+l.137    \begin{figure}[t]
+                          
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-<resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png, id=19, 1045.55836pt x 674.
-25528pt>
-File: resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png Graphic file (type png
-)
- <use resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png>
-Package pdftex.def Info: resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png use
-d on input line 1229.
-(pdftex.def)             Requested size: 398.33858pt x 256.87811pt.
+LaTeX Warning: File `graphe/1A81-RE1-T_traj.png' not found on input line 140.
 
-Overfull \hbox (68.9055pt too wide) in paragraph at lines 1228--1231
+
+./resultats/comparaisons/chapter.tex:140: Package pdftex.def Error: File `graph
+e/1A81-RE1-T_traj.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.140 ...width=8.45cm]{graphe/1A81-RE1-T_traj.png}
+                                                   &
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `graphe/1A81-RE2-T_traj.png' not found on input line 141.
+
+
+./resultats/comparaisons/chapter.tex:141: Package pdftex.def Error: File `graph
+e/1A81-RE2-T_traj.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.141 ...width=8.45cm]{graphe/1A81-RE2-T_traj.png}
+                                                   \\
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `graphe/1A81-RE4-T_traj.png' not found on input line 142.
+
+
+./resultats/comparaisons/chapter.tex:142: Package pdftex.def Error: File `graph
+e/1A81-RE4-T_traj.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.142 ...width=8.45cm]{graphe/1A81-RE4-T_traj.png}
+                                                   &
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `graphe/1A81-RE3-T_traj.png' not found on input line 143.
+
+
+./resultats/comparaisons/chapter.tex:143: Package pdftex.def Error: File `graph
+e/1A81-RE3-T_traj.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.143 ...width=8.45cm]{graphe/1A81-RE3-T_traj.png}
+                                                   \\
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (163.4183pt too wide) in paragraph at lines 139--145
  [][] 
  []
 
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1236: LaTeX Error: Not in 
-outer par mode.
+./resultats/comparaisons/chapter.tex:151: LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1236     \begin{figure}[h]
-                            
+l.151    \begin{figure}[t]
+                          
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1236: Undefined control se
-quence.
+./resultats/comparaisons/chapter.tex:151: Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1236     \begin{figure}[h]
-                            
+l.151    \begin{figure}[t]
+                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1236: Missing number, trea
-ted as zero.
+./resultats/comparaisons/chapter.tex:151: Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1236     \begin{figure}[h]
-                            
+l.151    \begin{figure}[t]
+                          
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-<resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png, id=20, 1092.69098pt x 799.
-73506pt>
-File: resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png Graphic file (type png
-)
- <use resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png>
-Package pdftex.def Info: resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png use
-d on input line 1239.
-(pdftex.def)             Requested size: 398.33858pt x 291.54088pt.
+LaTeX Warning: File `graphe/best_all.png' not found on input line 154.
 
-Overfull \hbox (68.9055pt too wide) in paragraph at lines 1238--1241
+
+./resultats/comparaisons/chapter.tex:154: Package pdftex.def Error: File `graph
+e/best_all.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.154 ...graphics[width=18cm]{graphe/best_all.png}
+                                                   \\
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (182.71652pt too wide) in paragraph at lines 153--156
  [][] 
  []
 
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1248: LaTeX Error: Not in 
-outer par mode.
+./resultats/comparaisons/chapter.tex:164: LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1248     \begin{figure}[h]
-                            
+l.164    \begin{figure}[t]
+                          
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1248: Undefined control se
-quence.
+./resultats/comparaisons/chapter.tex:164: Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1248     \begin{figure}[h]
-                            
+l.164    \begin{figure}[t]
+                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1248: Missing number, trea
-ted as zero.
+./resultats/comparaisons/chapter.tex:164: Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1248     \begin{figure}[h]
-                            
+l.164    \begin{figure}[t]
+                          
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-<resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png, id=21, 1153.96336pt x 798.
-94087pt>
-File: resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png Graphic file (type png
-)
- <use resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png>
-Package pdftex.def Info: resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png use
-d on input line 1251.
-(pdftex.def)             Requested size: 398.33858pt x 275.78119pt.
+LaTeX Warning: File `graphe/best_by_cat.png' not found on input line 167.
 
-Overfull \hbox (68.9055pt too wide) in paragraph at lines 1250--1253
+
+./resultats/comparaisons/chapter.tex:167: Package pdftex.def Error: File `graph
+e/best_by_cat.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.167 ...aphics[width=8cm]{graphe/best_by_cat.png}
+                                                   &
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `graphe/best_MC+H.png' not found on input line 168.
+
+
+./resultats/comparaisons/chapter.tex:168: Package pdftex.def Error: File `graph
+e/best_MC+H.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.168 ...graphics[width=8cm]{graphe/best_MC+H.png}
+                                                   \\
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `graphe/best_RE4.png' not found on input line 169.
+
+
+./resultats/comparaisons/chapter.tex:169: Package pdftex.def Error: File `graph
+e/best_RE4.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.169 ...egraphics[width=8cm]{graphe/best_RE4.png}
+                                                   &
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `graphe/best_RE8.png' not found on input line 170.
+
+
+./resultats/comparaisons/chapter.tex:170: Package pdftex.def Error: File `graph
+e/best_RE8.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.170 ...egraphics[width=8cm]{graphe/best_RE8.png}
+                                                   \\
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (137.811pt too wide) in paragraph at lines 166--172
  [][] 
  []
 
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1268: LaTeX Error: Not in 
-outer par mode.
+./resultats/comparaisons/chapter.tex:184: LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1268     \begin{table}[h]
+l.184     \begin{table}[h]
+                          
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:184: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.184     \begin{table}[h]
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:184: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.184     \begin{table}[h]
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+./resultats/comparaisons/chapter.tex:213: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.213     \begin{table}[h]
+                          
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:213: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.213     \begin{table}[h]
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:213: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.213     \begin{table}[h]
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+./resultats/comparaisons/chapter.tex:245: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.245     \begin{table}[h]
+                          
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:245: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.245     \begin{table}[h]
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:245: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.245     \begin{table}[h]
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+./resultats/comparaisons/chapter.tex:316: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.316     \begin{table}[h]
+                          
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:316: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.316     \begin{table}[h]
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:316: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.316     \begin{table}[h]
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+./resultats/comparaisons/chapter.tex:333: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.333     \begin{table}[h]
+                          
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:333: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.333     \begin{table}[h]
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:333: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.333     \begin{table}[h]
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+./resultats/comparaisons/chapter.tex:352: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.352     \begin{table}[h]
+                          
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:352: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.352     \begin{table}[h]
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:352: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.352     \begin{table}[h]
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+./resultats/comparaisons/chapter.tex:474: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.474     \begin{table}[h]
+                          
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:474: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.474     \begin{table}[h]
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:474: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.474     \begin{table}[h]
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+./resultats/comparaisons/chapter.tex:500: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.500     \begin{table}[h]
+                          
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:500: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.500     \begin{table}[h]
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:500: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.500     \begin{table}[h]
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+./resultats/comparaisons/chapter.tex:530: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.530     \begin{table}[h]
+                          
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:530: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.530     \begin{table}[h]
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:530: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.530     \begin{table}[h]
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+./resultats/comparaisons/chapter.tex:600: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.600     \begin{table}[h]
+                          
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:600: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.600     \begin{table}[h]
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:600: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.600     \begin{table}[h]
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+./resultats/comparaisons/chapter.tex:666: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.666     \begin{table}[h]
+                          
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:666: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.666     \begin{table}[h]
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:666: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.666     \begin{table}[h]
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+./resultats/comparaisons/chapter.tex:733: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.733     \begin{table}[h]
+                          
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:733: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.733     \begin{table}[h]
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:733: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.733     \begin{table}[h]
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+./resultats/comparaisons/chapter.tex:800: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.800 \begin{table}[h]
+                      
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:800: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.800 \begin{table}[h]
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:800: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.800 \begin{table}[h]
+                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+./resultats/comparaisons/chapter.tex:868: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.868     \begin{table}[h]
+                          
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:868: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.868     \begin{table}[h]
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:868: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.868     \begin{table}[h]
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+./resultats/comparaisons/chapter.tex:895: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.895     \begin{table}[h]
+                          
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:895: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.895     \begin{table}[h]
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:895: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.895     \begin{table}[h]
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+Overfull \hbox (154.8388pt too wide) in paragraph at lines 898--919
+ [][] 
+ []
+
+
+./resultats/comparaisons/chapter.tex:924: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.924     \begin{figure}[h]
                            
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1268: Undefined control se
-quence.
+./resultats/comparaisons/chapter.tex:924: Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1268     \begin{table}[h]
+l.924     \begin{figure}[h]
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2143,39 +2015,360 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1268: Missing number, trea
-ted as zero.
+./resultats/comparaisons/chapter.tex:924: Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1268     \begin{table}[h]
+l.924     \begin{figure}[h]
                            
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-Overfull \hbox (193.49846pt too wide) in paragraph at lines 1271--1290
+LaTeX Warning: File `image/1M61_2_gmec_vs_ph.png' not found on input line 927.
+
+
+./resultats/comparaisons/chapter.tex:927: Package pdftex.def Error: File `image
+/1M61_2_gmec_vs_ph.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.927 ...[width=14cm]{image/1M61_2_gmec_vs_ph.png}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (68.9055pt too wide) in paragraph at lines 926--929
+ [][] 
+ []
+
+
+./resultats/comparaisons/chapter.tex:936: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.936     \begin{figure}[h]
+                           
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:936: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.936     \begin{figure}[h]
+                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:936: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.936     \begin{figure}[h]
+                           
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+LaTeX Warning: File `image/1M61_2_gmec_vs_RE.png' not found on input line 939.
+
+
+./resultats/comparaisons/chapter.tex:939: Package pdftex.def Error: File `image
+/1M61_2_gmec_vs_RE.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.939 ...[width=14cm]{image/1M61_2_gmec_vs_RE.png}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (68.9055pt too wide) in paragraph at lines 938--941
+ [][] 
+ []
+
+
+./resultats/comparaisons/chapter.tex:949: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.949     \begin{figure}[h]
+                           
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:949: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.949     \begin{figure}[h]
+                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:949: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.949     \begin{figure}[h]
+                           
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+LaTeX Warning: File `image/1G9O_3_gmec_vs_ph.png' not found on input line 952.
+
+
+./resultats/comparaisons/chapter.tex:952: Package pdftex.def Error: File `image
+/1G9O_3_gmec_vs_ph.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.952 ...[width=14cm]{image/1G9O_3_gmec_vs_ph.png}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (68.9055pt too wide) in paragraph at lines 951--954
+ [][] 
+ []
+
+
+./resultats/comparaisons/chapter.tex:960: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.960     \begin{figure}[h]
+                           
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:960: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.960     \begin{figure}[h]
+                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:960: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.960     \begin{figure}[h]
+                           
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+LaTeX Warning: File `image/1G9O_5_gmec_vs_MC.png' not found on input line 963.
+
+
+./resultats/comparaisons/chapter.tex:963: Package pdftex.def Error: File `image
+/1G9O_5_gmec_vs_MC.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.963 ...[width=14cm]{image/1G9O_5_gmec_vs_MC.png}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (68.9055pt too wide) in paragraph at lines 962--965
+ [][] 
+ []
+
+
+./resultats/comparaisons/chapter.tex:970: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.970     \begin{figure}[h]
+                           
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:970: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.970     \begin{figure}[h]
+                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:970: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.970     \begin{figure}[h]
+                           
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+LaTeX Warning: File `image/1CKA_5_gmec_vs_ph.png' not found on input line 973.
+
+
+./resultats/comparaisons/chapter.tex:973: Package pdftex.def Error: File `image
+/1CKA_5_gmec_vs_ph.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.973 ...[width=14cm]{image/1CKA_5_gmec_vs_ph.png}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (68.9055pt too wide) in paragraph at lines 972--975
+ [][] 
+ []
+
+
+./resultats/comparaisons/chapter.tex:982: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.982     \begin{figure}[h]
+                           
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:982: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.982     \begin{figure}[h]
+                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:982: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.982     \begin{figure}[h]
+                           
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+LaTeX Warning: File `image/1CKA_5_gmec_vs_MC.png' not found on input line 985.
+
+
+./resultats/comparaisons/chapter.tex:985: Package pdftex.def Error: File `image
+/1CKA_5_gmec_vs_MC.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.985 ...[width=14cm]{image/1CKA_5_gmec_vs_MC.png}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (68.9055pt too wide) in paragraph at lines 984--987
+ [][] 
+ []
+
+
+./resultats/comparaisons/chapter.tex:1000: LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1000     \begin{table}[h]
+                           
+You've lost some text.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./resultats/comparaisons/chapter.tex:1000: Undefined control sequence.
+\latex@xfloat ...vf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.1000     \begin{table}[h]
+                           
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./resultats/comparaisons/chapter.tex:1000: Missing number, treated as zero.
+<to be read again> 
+                   \vbox 
+l.1000     \begin{table}[h]
+                           
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+Overfull \hbox (193.49846pt too wide) in paragraph at lines 1003--1022
  [][]
  []
 
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1300: LaTeX Error: Not in 
-outer par mode.
+./resultats/comparaisons/chapter.tex:1036: LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1300     \begin{table}[h]
+l.1036     \begin{table}[h]
                            
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1300: Undefined control se
-quence.
+./resultats/comparaisons/chapter.tex:1036: Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1300     \begin{table}[h]
+l.1036     \begin{table}[h]
                            
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2183,109 +2376,31 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1300: Missing number, trea
-ted as zero.
+./resultats/comparaisons/chapter.tex:1036: Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1300     \begin{table}[h]
+l.1036     \begin{table}[h]
                            
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1327: LaTeX Error: Not in 
-outer par mode.
+./resultats/comparaisons/chapter.tex:1066: LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1327     \begin{table}[h]
-                           
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:1327: Undefined control se
-quence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.1327     \begin{table}[h]
-                           
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:1327: Missing number, trea
-ted as zero.
-<to be read again> 
-                   \vbox 
-l.1327     \begin{table}[h]
-                           
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-Overfull \hbox (154.8388pt too wide) in paragraph at lines 1330--1351
- [][] 
- []
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:1361: LaTeX Error: Not in 
-outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1361     \begin{table}[h]
-                           
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:1361: Undefined control se
-quence.
-\latex@xfloat ...vf \fi \global \setbox \@currbox 
-                                                  \color@vbox \normalcolor \...
-l.1361     \begin{table}[h]
-                           
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:1361: Missing number, trea
-ted as zero.
-<to be read again> 
-                   \vbox 
-l.1361     \begin{table}[h]
-                           
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-/home/mignon/These/These/rapport/rapport_flymake.tex:1391: LaTeX Error: Not in 
-outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1391     \begin{figure}[h]
+l.1066     \begin{figure}[h]
                             
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1391: Undefined control se
-quence.
+./resultats/comparaisons/chapter.tex:1066: Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1391     \begin{figure}[h]
+l.1066     \begin{figure}[h]
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2293,44 +2408,49 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1391: Missing number, trea
-ted as zero.
+./resultats/comparaisons/chapter.tex:1066: Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1391     \begin{figure}[h]
+l.1066     \begin{figure}[h]
                             
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-<resultats/comparaisons/graphe/histo1_aa_Tambiante.png, id=22, 578.16pt x 433.6
-2pt>
-File: resultats/comparaisons/graphe/histo1_aa_Tambiante.png Graphic file (type 
-png)
- <use resultats/comparaisons/graphe/histo1_aa_Tambiante.png>
-Package pdftex.def Info: resultats/comparaisons/graphe/histo1_aa_Tambiante.png 
-used on input line 1394.
-(pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
+LaTeX Warning: File `graphe/histo1_aa_Tambiante.png' not found on input line 10
+69.
 
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1402: LaTeX Error: Not in 
-outer par mode.
+./resultats/comparaisons/chapter.tex:1069: Package pdftex.def Error: File `grap
+he/histo1_aa_Tambiante.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1069 ...th=10cm]{graphe/histo1_aa_Tambiante.png}
+                                                   &
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./resultats/comparaisons/chapter.tex:1077: LaTeX Error: Not in outer par mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1402     \begin{figure}[h]
+l.1077     \begin{figure}[h]
                             
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1402: Undefined control se
-quence.
+./resultats/comparaisons/chapter.tex:1077: Undefined control sequence.
 \latex@xfloat ...vf \fi \global \setbox \@currbox 
                                                   \color@vbox \normalcolor \...
-l.1402     \begin{figure}[h]
+l.1077     \begin{figure}[h]
                             
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2338,30 +2458,96 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1402: Missing number, trea
-ted as zero.
+./resultats/comparaisons/chapter.tex:1077: Missing number, treated as zero.
 <to be read again> 
                    \vbox 
-l.1402     \begin{figure}[h]
+l.1077     \begin{figure}[h]
                             
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 
-<resultats/comparaisons/graphe/histo2_aa_Tambiante.png, id=23, 578.16pt x 433.6
-2pt>
-File: resultats/comparaisons/graphe/histo2_aa_Tambiante.png Graphic file (type 
-png)
- <use resultats/comparaisons/graphe/histo2_aa_Tambiante.png>
-Package pdftex.def Info: resultats/comparaisons/graphe/histo2_aa_Tambiante.png 
-used on input line 1405.
-(pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
+LaTeX Warning: File `graphe/histo2_aa_Tambiante.png' not found on input line 10
+80.
+
+
+./resultats/comparaisons/chapter.tex:1080: Package pdftex.def Error: File `grap
+he/histo2_aa_Tambiante.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1080 ...th=10cm]{graphe/histo2_aa_Tambiante.png}
+                                                   &
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Package natbib Warning: There were undefined citations.
+
+
+./resultats/comparaisons/chapter.tex:1090: LaTeX Error: \begin{minipage} on inp
+ut line 247 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1090 \end{document}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1090.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1090.
+(./rapport_flymake.aux (./merci.aux) (./intro.aux) (./contexte.aux)
+(./methodes_theoriques.aux) (./methodes_pratiques.aux)
+(./resultats/comparaisons/chapter.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1090.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1090.
+
+Package rerunfilecheck Info: File `rapport_flymake.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1090.
+./resultats/comparaisons/chapter.tex:1090: You can't use `\end' in internal ver
+tical mode.
+\enddocument ...es \z@ \Call@AtVeryVeryEnd \@@end 
+                                                  
+l.1090 \end{document}
+                     
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+./resultats/comparaisons/chapter.tex:1090: LaTeX Error: \begin{minipage} on inp
+ut line 247 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1090 \end{document}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+)
+\@input{resultats2.aux}
 \openout2 = `resultats2.aux'.
 
-
 (./resultats2.tex
-Chapitre 5.
+Chapitre 4.
 
 ./resultats2.tex:1: Package inputenc Error: Unicode char \u8:ésu not set up for
  use with LaTeX.
@@ -2455,20 +2641,23 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 )
+\@input{conc.aux}
 \openout2 = `conc.aux'.
 
- (./conc.tex)
+(./conc.tex)
+\@input{annexe1.aux}
 \openout2 = `annexe1.aux'.
 
- (./annexe1.tex
-Annexe A.
-)
+(./annexe1.tex)
+\@input{annexe2.aux}
 \openout2 = `annexe2.aux'.
 
- (./annexe2.tex
-Annexe B.
+(./annexe2.tex
+Annexe A.
 )
+\bibdata{biblio}
 No file rapport_flymake.bbl.
+\@input{resume.aux}
 \openout2 = `resume.aux'.
 
 (./resume.tex
@@ -2802,26 +2991,26 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 )
-/home/mignon/These/These/rapport/rapport_flymake.tex:1449: Extra \else.
+/home/mignon/These/These/rapport/rapport_flymake.tex:356: Extra \else.
 \@include ...ediate \closeout \@partaux \fi \else 
                                                   \deadcycles \z@ \@nameuse ...
-l.1449 \include{resume}
-                       
+l.356 \include{resume}
+                      
 I'm ignoring this; it doesn't match any \if.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1451: Use of \end doesn't 
-match its definition.
-l.1451 \end{
-            document}
+/home/mignon/These/These/rapport/rapport_flymake.tex:358: Use of \end doesn't m
+atch its definition.
+l.358 \end{
+           document}
 If you say, e.g., `\def\a1{...}', then you must always
 put `1' after `\a', since control sequence names are
 made up of letters only. The macro here has not been
 followed by the required stuff, so I'm ignoring it.
 
-/home/mignon/These/These/rapport/rapport_flymake.tex:1451: Extra }, or forgotte
-n \endgroup.
-l.1451 \end{document}
-                     
+/home/mignon/These/These/rapport/rapport_flymake.tex:358: Extra }, or forgotten
+ \endgroup.
+l.358 \end{document}
+                    
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2836,11 +3025,11 @@ deleted material, e.g., by typing `I$}'.
 
  
 Here is how much of TeX's memory you used:
- 10601 strings out of 493105
- 159711 string characters out of 6137072
- 334129 words of memory out of 5000000
- 13775 multiletter control sequences out of 15000+600000
- 74361 words of font info for 71 fonts, out of 8000000 for 9000
+ 10589 strings out of 493105
+ 156842 string characters out of 6137072
+ 329388 words of memory out of 5000000
+ 13739 multiletter control sequences out of 15000+600000
+ 74679 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,14n,43p,278b,556s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,13n,43p,278b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!
