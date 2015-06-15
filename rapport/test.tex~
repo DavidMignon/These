@@ -21,10 +21,10 @@
 %%\usepackage[latin1]{inputenc}
 %%\usepackage[T1]{fontenc}
 %%\usepackage{lmodern}
-%%\usepackage[english,frenchb]{babel}
+%\usepackage[english,frenchb]{babel}
 
-%\usepackage{calc}
-%\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{calc}
+\usepackage{amsmath,amsfonts,amssymb}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{fancyhdr}
@@ -283,6 +283,31 @@ Examinateurs: & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 %\include{glossaire}
 
 
+\chapter*{Abréviations}
+\addcontentsline{toc}{chapter}{Abréviations}
+\markboth{Abréviations}{Abréviations}
+
+
+    \begin{table}
+      \begin{tabular}{lrrcc}
+
+        \toprule
+        Nom & Temp & Traj (mega)& seuil voisin  & Probi \\
+        \cmidrule{1-5}
+        MC0   & 0.01  &  6000 & 0 & 0; 1; 0.1; 0   \\  
+        MC0-  & 0.01  &   300 & 0 & 0; 1; 0.1; 0   \\  
+        MC4   & 0.2   &  6000 & 0 & 0; 1; 0.1; 0   \\          
+        MC4-  & 0.2   &   300 & 0 & 0; 1; 0.1; 0   \\ 
+        MC42  & 0.2   &  6000 & 0 & 1; 0; 0.1; 0   \\        
+        MC42- & 0.2   &   300 & 0 & 1; 0; 0.1; 0   \\   
+        \bottomrule                   
+
+       
+      \end{tabular}      
+      \caption{Les protocoles Monte-Carlo}
+\label{tab_protoMC}      
+
+     \end{table}
 
 
 
@@ -304,30 +329,30 @@ Examinateurs: & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 
 % Mainmatter
 \mainmatter
-%\include{intro}
+\include{intro}
 \clearplaindoublepage
-%\include{contexte}
+\include{contexte}
 \clearplaindoublepage
-%\include{methodes_theoriques}
+\include{methodes_theoriques}
 
 %_________________________________
 
 
 \clearplaindoublepage
-%\include{methodes_pratiques}
+\include{methodes_pratiques}
 
 
 %________________________________
 
 \clearplaindoublepage
-%\include{resultats/comparaisons/chapter}
+\include{resultats/comparaisons/chapter}
 
 %________________________________
 
 
 % ---------------------
 \clearplaindoublepage
-%\include{resultats2}
+\include{resultats2}
 \clearplaindoublepage
 \include{conc}
 \clearplaindoublepage

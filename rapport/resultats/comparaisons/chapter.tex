@@ -1,4 +1,3 @@
- 
 \chapter{Les comparaisons}
 \label{chap:resultats_comparaisons}
 
@@ -13,29 +12,29 @@
    \section{Les protocoles} 
 
 
-
    \subsection{Les protocoles Monte-Carlo} 
-    
-    \begin{table}[!htbp]
-      \centering
 
-      \begin{tabular}{|l|r|r|c|c|}
+    \begin{table}
+      \begin{tabular}{lrrcc}
 
-        \hline
-        Nom & Temp & Traj (mega)& seuil voisin  & Proba \\
-        \hline
+        \toprule
+        Nom & Temp & Traj (mega)& seuil voisin  & Probi \\
+        \cmidrule{1-5}
         MC0   & 0.01  &  6000 & 0 & 0; 1; 0.1; 0   \\  
         MC0-  & 0.01  &   300 & 0 & 0; 1; 0.1; 0   \\  
         MC4   & 0.2   &  6000 & 0 & 0; 1; 0.1; 0   \\          
         MC4-  & 0.2   &   300 & 0 & 0; 1; 0.1; 0   \\ 
         MC42  & 0.2   &  6000 & 0 & 1; 0; 0.1; 0   \\        
-        MC42- & 0.2   &   300 & 0 & 1; 0; 0.1; 0   \\   \hline                   
+        MC42- & 0.2   &   300 & 0 & 1; 0; 0.1; 0   \\   
+        \bottomrule                   
 
        
       \end{tabular}      
       \caption{Les protocoles Monte-Carlo}
-      \label{tab_protoMC}      
-    \end{table}
+\label{tab_protoMC}      
+
+     \end{table}
+
 
    \subsection{Les protocoles Replica Exchange} 
     
@@ -207,11 +206,11 @@
 
       \end{tabular}      
       \caption{L’énergie du GMEC et la différence avec les autres protocoles.Tous les résidus sont gelés}
-      \label{tab_best_ener_no_active}      
+\label{tab_best_ener_no_active}      
     \end{table}
 
 
-   \subsubsection{ Une position active}
+   \subsubsection{Une position active}
 
 
     \begin{table}[h]
@@ -528,7 +527,7 @@
     \end{table}
 
 
-   \subsubsection{ Cinq positions actives}
+   \subsubsection{Cinq positions actives}
 
 
     \begin{table}[h]
@@ -598,7 +597,7 @@
 \end{table}
 
 
-   \subsubsection{ Dix positions actives}
+   \subsubsection{Dix positions actives}
 
 
     \begin{table}[h]
@@ -664,7 +663,7 @@
  \label{tab_echec2BYG__1}      
 \end{table}
 
-   \subsubsection{ Dix positions actives}
+   \subsubsection{Dix positions actives}
 
 
     \begin{table}[h]
@@ -731,7 +730,7 @@
 
 
 
-   \subsubsection{ Vingt et trente positions actives}
+   \subsubsection{Vingt et trente positions actives}
 
 
     \begin{table}[h]
@@ -816,7 +815,7 @@
         1A81 2 & no & -2.5520    &    -570.2620 & -0.0578 & \\          
         1A81 3 & no & -43.5263   &    -562.9572 & -2.4996 & -1.2025 \\         
         1A81 4 & no & -5.1300    &    -559.6145 & -0.0305 & \\          
-        1A81 5 & ?  & -1459.5524 &   -553.1077 & -1.9586 & -0.5791\\         
+        1A81 5 & no & -3.2417    &    -553.1077 & -1.9586 & -0.5791\\         
         1ABO 1 & no & -44.5504   &    -296.5680 & 0. & \\                   
         1ABO 2 & no & -12.7303   &    -294.8500 & 0. & \\                   
         1ABO 3 & no & -9.3870    &    -295.2689 & -0.2630 & \\          
@@ -866,7 +865,7 @@
 \end{table}
 
 
-   \subsection{ Etude au voisinnage de GMECs}
+   \subsection{Etude au voisinnage de GMECs}
 
 
     \begin{table}[h]
@@ -998,7 +997,7 @@
 
 
 
-   \subsection{ Résultats Superfamily}
+   \subsection{Résultats Superfamily}
 
 
     \begin{table}[h]
@@ -1034,7 +1033,7 @@
 
 
 
-   \subsection{ Résultats Heuristic (protocoles longs)}
+   \subsection{Résultats Heuristic (protocoles longs)}
 
 
     \begin{table}[h]
@@ -1085,10 +1084,15 @@
       \end{tabular}
       
       \caption{.}
-      \label{temps_CPU}
+\label{temps_CPU}
     \end{figure}
 
     \clearpage
 
 
-\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../rapport"
+%%% End:

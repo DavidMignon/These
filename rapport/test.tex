@@ -21,10 +21,10 @@
 %%\usepackage[latin1]{inputenc}
 %%\usepackage[T1]{fontenc}
 %%\usepackage{lmodern}
-%%\usepackage[english,frenchb]{babel}
+%\usepackage[english,frenchb]{babel}
 
-%\usepackage{calc}
-%\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{calc}
+\usepackage{amsmath,amsfonts,amssymb}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{fancyhdr}
@@ -283,8 +283,9 @@ Examinateurs: & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 %\include{glossaire}
 
 
-
-
+\chapter*{Abréviations}
+\addcontentsline{toc}{chapter}{Abréviations}
+\markboth{Abréviations}{Abréviations}
 
 %\twocolumn
 \begin{multicols}{2}
@@ -304,30 +305,13 @@ Examinateurs: & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 
 % Mainmatter
 \mainmatter
-%\include{intro}
+\include{intro}
 \clearplaindoublepage
-%\include{contexte}
+\include{contexte}
 \clearplaindoublepage
-%\include{methodes_theoriques}
-
-%_________________________________
-
-
-\clearplaindoublepage
-%\include{methodes_pratiques}
-
-
-%________________________________
-
-\clearplaindoublepage
-%\include{resultats/comparaisons/chapter}
-
-%________________________________
-
-
 % ---------------------
 \clearplaindoublepage
-%\include{resultats2}
+\include{resultats2}
 \clearplaindoublepage
 \include{conc}
 \clearplaindoublepage
