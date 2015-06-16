@@ -13,7 +13,7 @@
 \usepackage[heightrounded,textheight=22.7658cm,vcentering,inner=3cm,outer=2cm]{geometry}
 %\usepackage[heightrounded,top=3cm,bottom=3cm,inner=3cm,outer=2cm,verbose]{geometry}
 \usepackage[utf8]{inputenc}   % le fichier .tex est en UTF-8
-\usepackage[francais]{babel}  %typo française                    
+%\usepackage[francais]{babel}  %typo française                    
 \usepackage[T1]{fontenc}      % encodage des fonts latex         
 \usepackage{lmodern}                                             
 \usepackage{microtype}        % typo supplémentaires             
@@ -21,17 +21,17 @@
 %%\usepackage[latin1]{inputenc}
 %%\usepackage[T1]{fontenc}
 %%\usepackage{lmodern}
-%%\usepackage[english,frenchb]{babel}
+\usepackage[english,frenchb]{babel}
 
-%\usepackage{calc}
-%\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{calc}
+\usepackage{amsmath,amsfonts,amssymb}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{fancyhdr}
 \usepackage{indentfirst}
 \frenchspacing
 \usepackage{setspace}
-\onehalfspacing
+\onehalfspacing{}
 \usepackage{float}
 \usepackage[authoryear,square,colon]{natbib}
 \bibpunct{[}{]}{\,;}{a}{}{,}
@@ -86,7 +86,7 @@
 \renewcommand*{\backreflastsep}{et~}
 
 % Pas d'espace après la virgule en mode mathématique
-\DecimalMathComma
+\DecimalMathComma{}
 
 \makeatletter
 % Custom titlepage
@@ -95,7 +95,7 @@
 \noindent
 \begin{minipage}[b]{0.2\textwidth}
 \begin{flushleft}
-\includegraphics[width=0.85\textwidth]{logo.pdf}
+\includegraphics[width=0.85\textwidth]{X_logo.jpg}
 \end{flushleft}
 \end{minipage}
 \hfill
@@ -106,8 +106,8 @@
 \hrule
 \vspace{1.5ex}
 {\footnotesize \bf \hfill École Doctorale de XXX}
-% \end{minipage}
-% \vfill
+\end{minipage}
+\vfill
 \begin{center}
 {\LARGE \bf \@title\\}
 \vfill
@@ -130,11 +130,11 @@
 {\bf Composition du jury}
 \begin{center}
 \begin{tabular}{lll}
-Rapporteurs:  & Dr. Prénom1 \bsc{Nom1} & Rapporteur externe\\
+Rapporteurs :  & Dr. Prénom1 \bsc{Nom1} & Rapporteur externe\\
                & Dr. Prénom2 \bsc{Nom2} & Rapporteur externe\\
                & Pr. Prénom3 \bsc{Nom3} & Rapporteur interne\\
                & &\\
-Examinateurs: & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
+Examinateurs : & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
                & Dr. Prénom5 \bsc{Nom5} & Directeur de thèse\\
                & Dr. Prénom6 \bsc{Nom6} & Directeur de thèse\\
 \end{tabular}
@@ -148,7 +148,7 @@ Examinateurs: & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 \end{center}
 \newpage
 \thispagestyle{empty}
-\null
+\null{}
 \addtolength{\textheight}{-3cm}
 \addtolength{\topmargin}{+1.5cm}
 \addtolength{\oddsidemargin}{+0.5cm}
@@ -198,7 +198,7 @@ Examinateurs: & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 % Pénalités pour les lignes isolées
 \widowpenalty=10000
 \clubpenalty=10000
-\raggedbottom
+\raggedbottom{}
 
 % Placement des flottants
 \renewcommand{\topfraction}{0.85} % 0.70
@@ -246,113 +246,92 @@ Examinateurs: & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 \pagenumbering{alph}
 \pdfbookmark[0]{Couverture}{cover}
 \maketitle 
-\clearemptydoublepage
+\clearemptydoublepage{}
 
 % Frontmatter
 \frontmatter
 \thispagestyle{plain}
 \pdfbookmark[0]{Remerciements}{acknowledgements}
 \include{merci}
-\clearplaindoublepage
+\clearplaindoublepage{}
 \thispagestyle{plain}
 \pdfbookmark[0]{Dédicace}{dedication}
-%\include{dedicace}
+\include{dedicace}
 
-\vspace*{\stretch{1}}
-
-\begin{flushright}
-{\Large\it À XXX.}
-\end{flushright}
-
-\vspace*{\stretch{4}}
-
-
-
-\clearplaindoublepage
+\clearplaindoublepage{}
 \pdfbookmark[0]{Table des matières}{contents}
 \tableofcontents
-\clearplaindoublepage
-\phantomsection
+\clearplaindoublepage{}
+\phantomsection{}
 \addcontentsline{toc}{chapter}{Liste des figures}
 \listoffigures
-\clearplaindoublepage
-\phantomsection
+\clearplaindoublepage{}
+\phantomsection{}
 \addcontentsline{toc}{chapter}{Liste des tables}
 \listoftables
-\clearplaindoublepage
-%\include{glossaire}
-
-
-
-
-
-%\twocolumn
-\begin{multicols}{2}
-
-\begin{description}
-\item[XXX]xxx
-\item[YYY]yyy
-\item[ZZZ]zzz
-\end{description}
-
-%\onecolumn
-\end{multicols}
+\clearplaindoublepage{}
+\include{glossaire}
 
 %------------------------
 
-\clearplaindoublepage
+\clearplaindoublepage{}
 
 % Mainmatter
-\mainmatter
-%\include{intro}
-\clearplaindoublepage
-%\include{contexte}
-\clearplaindoublepage
-%\include{methodes_theoriques}
+\mainmatter{}
+\include{intro}
+\clearplaindoublepage{}
+\include{contexte}
+\clearplaindoublepage{}
+\include{methodes_theoriques}
 
 %_________________________________
 
 
-\clearplaindoublepage
-%\include{methodes_pratiques}
+\clearplaindoublepage{}
+\include{methodes_pratiques}
 
 
 %________________________________
 
-\clearplaindoublepage
-%\include{resultats/comparaisons/chapter}
+\clearplaindoublepage{}
+%\newcommand{\chapterPath}{resultats/comparaisons}
+%\include{\chapterPath/chapter}
+
+\graphicspath{{./resultats/comparaisons/graphe/}{./resultats/comparaisons/image/}}
+
+\include{resultats/comparaisons/chapter}
 
 %________________________________
 
 
 % ---------------------
-\clearplaindoublepage
+\clearplaindoublepage{}
 %\include{resultats2}
-\clearplaindoublepage
+\clearplaindoublepage{}
 \include{conc}
-\clearplaindoublepage
+\clearplaindoublepage{}
 \appendix
-\include{annexe1}
-\clearplaindoublepage
-\include{annexe2}
-\clearplaindoublepage
-\phantomsection
+\include{annexe}
+\clearplaindoublepage{}
+%\include{annexe2}
+%\clearplaindoublepage{}
+\phantomsection{}
 \addcontentsline{toc}{chapter}{Bibliographie}
 \markboth{Bibliographie}{Bibliographie}
-%\selectlanguage{english}
+\selectlanguage{english}
 \renewcommand{\bibname}{Bibliographie}
-\singlespacing
+\singlespacing{}
 \bibliography{biblio}
-\onehalfspacing
-%\selectlanguage{frenchb}
-\clearplaindoublepage
+\onehalfspacing{}
+\selectlanguage{frenchb}
+\clearplaindoublepage{}
 
 % Backmatter
-\backmatter
+\backmatter{}
 \pagestyle{empty}
 \addtolength{\oddsidemargin}{-0.5cm}
 \addtolength{\evensidemargin}{+0.5cm}
-\singlespacing
+\singlespacing{}
 \include{resume}
 
 \end{document}

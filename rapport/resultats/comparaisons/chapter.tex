@@ -1,7 +1,6 @@
 \chapter{Les comparaisons}
 \label{chap:resultats_comparaisons}
 
- 
 \section{Les algorithmes} 
 
    \subsection{Toulbar2} 
@@ -18,7 +17,7 @@
       \begin{tabular}{lrrcc}
 
         \toprule
-        Nom & Temp & Traj (mega)& seuil voisin  & Probi \\
+        Nom & Temp & Traj (mega)& seuil voisin  & Proba \\
         \cmidrule{1-5}
         MC0   & 0.01  &  6000 & 0 & 0; 1; 0.1; 0   \\  
         MC0-  & 0.01  &   300 & 0 & 0; 1; 0.1; 0   \\  
@@ -31,7 +30,7 @@
        
       \end{tabular}      
       \caption{Les protocoles Monte-Carlo}
-\label{tab_protoMC}      
+\label{tab:protoMC}      
 
      \end{table}
 
@@ -41,11 +40,11 @@
     \begin{table}[!htbp]
       \centering
 
-      \begin{tabular}{|l|l|r|r|r|c|c|}
+      \begin{tabular}{llrrrcc}
 
-        \hline
+        \toprule
         Nom & marcheurs &Temp & Traj (mega)& seuil voisin  & Proba & swap period (mega)\\
-        \hline
+        \cmidrule{1-7}
         RE1   & 4 & 10<->0.01    &  1500 & 10 & 1; 0; 0.1; 0 &  7.5\\  
         RE2   & 4 & 1<->0.125    &  1500 & 10 & 1; 0; 0.1; 0 &  7.5\\  
         RE2-  & 4 & 1<->0.125    &  250  & 10 & 1; 0; 0.1; 0 &  2.5\\  
@@ -53,11 +52,12 @@
         RE3   & 8 & 3<->0.175    &  750  & 10 & 1; 0; 0.1; 0 &  7.5\\
         RE32  & 8 & 3<->0.175    &  750  & 10 & 0; 1; 0.1; 0 &  7.5\\
         RE4   & 8 & 10<->0.00316 &  750  & 10 & 1; 0; 0.1; 0 &  1\\  
-        RE42  & 8 & 10<->0.00316 &  750  &  0 & 1; 0; 0.1; 0 &  2.5\\  \hline
+        RE42  & 8 & 10<->0.00316 &  750  &  0 & 1; 0; 0.1; 0 &  2.5\\  
+        \bottomrule
 
       \end{tabular}      
       \caption{Les protocoles Replica Exchange}
-      \label{tab_protoRE}      
+\label{tab:protoRE}      
     \end{table}
 
 
@@ -66,17 +66,18 @@
     \begin{table}[!htbp]
       \centering
 
-      \begin{tabular}{|c|r|}
+      \begin{tabular}{cr}
 
-        \hline
+        \toprule
         Nom & nombre de cycles \\
-        \hline
+        \cmidrule{1-2}
         h   & 110000 \\  
-        h-  & 1100   \\  \hline
+        h-  & 1100   \\  
+        \bottomrule
 
       \end{tabular}      
       \caption{Les protocoles Heuristic}
-      \label{tab_protoH}      
+\label{tab:protoH}      
     \end{table}
 
     \clearpage
@@ -85,11 +86,11 @@
     \begin{figure}[h]
       \centering
       \begin{tabular}{cc}
-        \includegraphics[width=12cm]{graphe/temps_de_calculs.png} &
+        \includegraphics[width=12cm]{temps_de_calculs.png} &
       \end{tabular}
       
       \caption{Temps d'occupation du processeur selon le nombre de positions actives.}
-      \label{temps_CPU}
+\label{graph:temps_CPU}
     \end{figure}
     
     
@@ -103,11 +104,11 @@
     \begin{table}[h]
       \centering
 
-      \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+      \begin{tabular}{cccccccccc}
 
-        \hline
+        \toprule
         Protéine & h & MC3 & MC43 & RE1 & RE2 & RE5 & RE3 & RE32 & RE4 \\
-        \hline
+        \cmidrule{1-10}
         1A81 & -521 & -538 & -522 & -525 & -520 & -520 & -514 & -512 & -518 \\
         1ABO & -272 & -274 & -268 & -273 & -269 & -273 & -268 & -271 & -272 \\
         1BM2 & -484 & -500 & -486 & -488 & -481 & -489 & -478 & -476 & -486 \\
@@ -118,35 +119,35 @@
         1R6J & -407 & -419 & -414 & -415 & -409 & -411 & -409 & -408 & -414 \\
         2BYG & -457 & -469 & -454 & -461 & -456 & -460 & -456 & -454 & -462 \\
   
-        \hline
+        \bottomrule
 
       \end{tabular}      
       \caption{les meilleures énergies pour tous les résidus actifs}
-      \label{tab_best_ener_all}      
+\label{tab:best_ener_all_all}      
     \end{table}
 
 
    \begin{figure}[t]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=12cm]{graphe/1A81_casa-p8.png} &
+       \includegraphics[width=12cm]{1A81_casa-p8.png} &
      \end{tabular}
      
      \caption{Distribution des énergies selon la température (protocole RE3).}
-     \label{Distrib_E_RE3}
+\label{graph:Distrib_E_T}
    \end{figure}
 
 
    \begin{figure}[t]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=8.45cm]{graphe/1A81-RE1-T_traj.png} &
-       \includegraphics[width=8.45cm]{graphe/1A81-RE2-T_traj.png} \\
-       \includegraphics[width=8.45cm]{graphe/1A81-RE4-T_traj.png} &
-       \includegraphics[width=8.45cm]{graphe/1A81-RE3-T_traj.png} \\
+       \includegraphics[width=8.45cm]{1A81-RE1-T_traj.png} &
+       \includegraphics[width=8.45cm]{1A81-RE2-T_traj.png} \\
+       \includegraphics[width=8.45cm]{1A81-RE4-T_traj.png} &
+       \includegraphics[width=8.45cm]{1A81-RE3-T_traj.png} \\
      \end{tabular}
      \caption{Variation de la température au court de la trajectoire de chaque marcheur (protocole RE1).}
-     \label{TRAJ_T}
+\label{graph:TRAJ_T}
    \end{figure}
 
     \clearpage
@@ -154,10 +155,10 @@
    \begin{figure}[t]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=18cm]{graphe/best_all.png} \\
+       \includegraphics[width=18cm]{best_all.png} \\
      \end{tabular}
      \caption{Tous les protocoles.}
-     \label{TRAJ_T}
+\label{graph:best_ener_all_all}
    \end{figure}
 
 
@@ -167,13 +168,13 @@
    \begin{figure}[t]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=8cm]{graphe/best_by_cat.png} &
-       \includegraphics[width=8cm]{graphe/best_MC+H.png} \\
-       \includegraphics[width=8cm]{graphe/best_RE4.png} &
-       \includegraphics[width=8cm]{graphe/best_RE8.png} \\
+       \includegraphics[width=8cm]{best_by_cat.png} &
+       \includegraphics[width=8cm]{best_MC+H.png} \\
+       \includegraphics[width=8cm]{best_RE4.png} &
+       \includegraphics[width=8cm]{best_RE8.png} \\
      \end{tabular}
      \caption{Variation de la température au court de la trajectoire de chaque marcheur (protocole RE1).}
-     \label{TRAJ_T}
+\label{graph:best_ener_by_algo}
    \end{figure}
 
 
@@ -187,11 +188,11 @@
     \begin{table}[h]
       \centering
 
-      \begin{tabular}{|c|c|c|c|c|c|c|}
+      \begin{tabular}{ccccccc}
 
-        \hline
+        \toprule
         Protéine & GMEC & H- & MC0 & MC4- \\
-        \hline
+        \cmidrule{1-5}
         1A81 & -585.1365 & 0 & -0.2547 & 0 \\
         1ABO & -320.1798 & 0 & 0 & 0 \\
         1BM2 & -553.5532 & 0 & -0.0564 & -0.0121 \\
@@ -201,12 +202,12 @@
         1O4C & -591.2115 & 0 & 0 & -0.1250 \\
         1R6J & -454.9340 & 0 & 0 & 0 \\
         2BYG & -507.0165 & 0 & 0 & 0 \\        
-        \hline
+        \bottomrule
 
 
       \end{tabular}      
-      \caption{L’énergie du GMEC et la différence avec les autres protocoles.Tous les résidus sont gelés}
-\label{tab_best_ener_no_active}      
+      \caption{L’énergie du GMEC et la différence avec les autres protocoles. Tous les résidus inactifs ()}
+\label{tab:result_no_active}      
     \end{table}
 
 
@@ -216,12 +217,12 @@
     \begin{table}[h]
       \centering
 
-      \begin{tabular}{|c|c|c|}
+      \begin{tabular}{ccc}
 
 
-        \hline
+        \toprule
         Position & GMEC & MC4- \\
-        \hline
+        \cmidrule{1-3}
         14 & -584.4693 & -0.0405 \\
         39 & -584.7378 & -0.0111 \\
         55 & -584.0477 & -0.0012 \\
@@ -236,24 +237,23 @@
         105 & -583.0197 & -0.0248 \\
         107 & -582.2241 & -0.0248 \\
 
-        \hline
-
+        \bottomrule
 
       \end{tabular}      
       \caption{Liste des échecs pour 1A81}
-      \label{tab_best_ener_no_active}      
+\label{tab:result_1_active_1A81}      
     \end{table}
 
 
     \begin{table}[h]
       \centering
 
-      \begin{tabular}{|c|c|c|}
+      \begin{tabular}{ccc}
 
 
-        \hline
+        \toprule
         Position & GMEC & MC4- \\
-        \hline
+        \cmidrule{1-3}
         2 & -553.3134 & -0.0040 \\
         3 & -553.5532 & -0.0121 \\
         5 & -553.0932 & -0.0179 \\
@@ -305,12 +305,11 @@
         93 & -553.2772 & -0.0148 \\
         94 & -553.3207 & -0.0251 \\
         96 & -553.5532 & -0.0121 \\
-        \hline
-
+        \bottomrule
 
       \end{tabular}      
       \caption{Liste des échecs pour 1BM2}
-      \label{tab_best_ener_no_active}      
+\label{tab:result_1_active_1BM2}      
     \end{table}
 
 
@@ -319,50 +318,44 @@
     \begin{table}[h]
       \centering
 
-      \begin{tabular}{|c|c|c|}
+      \begin{tabular}{ccc}
 
 
-        \hline
+        \toprule
         Position & GMEC & MC4- \\
-        \hline
+        \cmidrule{1-3}
         17 & -316.1693 & -0.0109 \\
 
-\hline
+        \bottomrule
       \end{tabular}      
       \caption{Liste des échecs pour 1CKA}
-      \label{tab_echec_1CKA_1}      
+\label{tab:result_1_active_1CKA}      
     \end{table}
 
     \begin{table}[h]
       \centering
 
-      \begin{tabular}{|c|c|c|}
+      \begin{tabular}{ccc}
 
-        \hline
-        \hline
+        \toprule
         Position & GMEC & MC4 \\
-        \hline
+        \cmidrule{1-3}
         58 & -561.9469 & -0.0138 \\
-        
-        \hline
-
+       \bottomrule        
       \end{tabular}      
       \caption{Liste des échecs pour 1M61}
-      \label{tab_echec1M61__1}      
+\label{tab:result_1_active_1M61}      
     \end{table}
     
 
     \begin{table}[h]
       \centering
       
-      \begin{tabular}{|c|c|c|}
+      \begin{tabular}{ccc}
         
-
-
-
-        \hline
+        \toprule
         Position & GMEC & MC4- \\
-        \hline
+        \cmidrule{1-3}
         1 & -591.2115 & -0.1380 \\
         2 & -591.2115 & -0.1250 \\
         3 & -591.2115 & -0.1250 \\
@@ -465,24 +458,24 @@
         102 & -591.2115 & -0.2572 \\
         103 & -595.4168 & -0.1277 \\
         104 & -589.9208 & -0.3581 \\
-        
-        \hline
+        \bottomrule
+       
 
 
       \end{tabular}      
       \caption{Liste des échecs pour 1O4C}
-      \label{tab_echec1O4C__1}      
+\label{tab:result_1_active_1O4C}
     \end{table}
 
     \begin{table}[h]
       \centering
 
-      \begin{tabular}{|c|c|c|}
+      \begin{tabular}{ccc}
 
 
-        \hline
+        \toprule
         Position & GMEC & MC4- \\
-        \hline
+        \cmidrule{1-3}
          4 & -453.4484 & -0.0155  \\
         20 & -452.6464 & -0.0114 \\
         32 & -454.9340 & -0.0092 \\
@@ -490,24 +483,20 @@
         73 & -454.7809 & -0.0155 \\
         77 & -454.1344 & -0.0155 \\
         79 & -453.4729 & -0.0155 \\
-        
-        \hline
-
-
+        \bottomrule
       \end{tabular}      
       \caption{Liste des échecs pour 1R6J }
-      \label{tab_echec1R6J__1}      
+\label{tab:result_1_active_1R6J}
     \end{table}
-
 
     \begin{table}[h]
       \centering
 
-      \begin{tabular}{|c|c|c|}
+      \begin{tabular}{ccc}
 
-        \hline
+        \toprule
         Position & GMEC & MC4- \\
-        \hline
+        \cmidrule{1-3}
         1 & -505.2910 & -0.0132 \\
         3 & -506.7960 & -0.0254 \\
         4 & -505.5800 & -0.0023 \\
@@ -517,13 +506,10 @@
         85 & -506.6217 & -0.0101 \\
         88 & -505.2286 & -0.0097 \\
         95 & -506.3195 & -0.0131 \\
-
-        \hline
-
-
+        \bottomrule
       \end{tabular}      
       \caption{Liste des échecs pour 2BYG }
-      \label{tab_echec2BYG__1}      
+\label{tab:result_1_active_2BYG}
     \end{table}
 
 
@@ -533,13 +519,13 @@
     \begin{table}[h]
       \centering
 
-      \begin{tabular}{|c|c|c|c|c|}
+      \begin{tabular}{ccccc}
 
 
-        \hline
-        \hline
+        
+        \toprule
         Protéine & GMEC & H & MC4 & RE3 \\
-        \hline
+        \cmidrule{1-5}
         1A81 1 & -579.3989 & 0 & 0 &  \\
         1A81 2 & -575.2254 & 0 & 0 &  \\
         1A81 3 & -582.7452 & 0 & 0 &  \\
@@ -585,17 +571,11 @@
         2BYG 3 & -506.8744 & 0 & -0.0131 &  \\
         2BYG 4 & -504.5135 & 0 & 0 &  \\
         2BYG 5 & -506.0052 & 0 & 0 &  \\
-
-        \hline
-
-
-
-
- \end{tabular}      
+        \bottomrule
+      \end{tabular}      
  \caption{Résultats 5 position actives}
- \label{tab_echec2BYG__1}      
+\label{tab:result_5_actives}
 \end{table}
-
 
    \subsubsection{Dix positions actives}
 
@@ -603,12 +583,12 @@
     \begin{table}[h]
       \centering
 
-      \begin{tabular}{|c|c|c|c|c|c|}
+      \begin{tabular}{cccccc}
 
 
-        \hline
-        Protéine & GMEC & toulbar2 & H & MC4 & RE32 \\
-        \hline
+        \toprule
+        Protéine & GMEC & toulbar2 & H & MC & RE \\
+        \cmidrule{1-6}
         1A81 1 & yes & -583.9354 & 0. & 0. & \\
         1A81 2 & yes & -581.7802 & 0. & 0. & \\
         1A81 3 & yes & -587.4392 & -0.0001 & -0.1595 & \\
@@ -655,26 +635,25 @@
         2BYG 4 & yes & -504.3466 & 0. & -0.2149 & \\
         2BYG 5 & yes & -491.6095 & 0. & 0. & \\
         
-        \hline
+        \bottomrule
 
 
  \end{tabular}      
  \caption{Résultats 10 positions actives }
- \label{tab_echec2BYG__1}      
+\label{tab:result_10_actives}
 \end{table}
 
-   \subsubsection{Dix positions actives}
+   \subsubsection{Dix positions actives, mutations}
 
 
     \begin{table}[h]
       \centering
 
-      \begin{tabular}{|c|c|c|}
+      \begin{tabular}{ccc}
 
-
-        \hline
+        \toprule
         Protéine & H mut nb & MC mut nb \\
-        \hline
+        \cmidrule{1-3}
         1A81 1 & 0  & 0 \\    
         1A81 2 & 0  & 0 \\
         1A81 3 & 0  & 2 \\
@@ -719,16 +698,13 @@
         2BYG 2 & 0  & 0 \\
         2BYG 3 & 0  & 1 \\
         2BYG 4 & 1  & 3 \\
-        2BYG 5 & 0  & 0 \\
-        
-        \hline
+        2BYG 5 & 0  & 0 \\        
+        \bottomrule
 
  \end{tabular}      
  \caption{Mutations 10 positions actives }
- \label{tab_echec2BYG__1}      
+\label{tab:mutations_10_actives}
 \end{table}
-
-
 
    \subsubsection{Vingt et trente positions actives}
 
@@ -736,14 +712,12 @@
     \begin{table}[h]
       \centering
 
-      \begin{tabular}{|c|c|c|c|c|c|}
+      \begin{tabular}{cccccc}
 
 
-        \hline
-        \multicolumn{6}{|c|}{20 positions actives} \\
-        \hline
+        \toprule
         Protéine & GMEC & toulbar2 & H & MC & RE \\
-        \hline
+        \cmidrule{1-6}
         1A81 1 & yes  &  -566.9106 & 0. & -0.3275 & -0.3851 \\         
         1A81 2 & yes  &  -564.6618 & -0.1705 & -2.4355 & -1.0069 \\   
         1A81 3 & yes  &  -572.7774 & 0. & -0.4640 & -0.6186 \\         
@@ -789,28 +763,23 @@
         2BYG 3 & yes  & -494.4390 &  0. & -1.3564 & -0.0826 \\        
         2BYG 4 & yes  & -495.9213 &  0. & -0.1968 & -0.6022 \\        
         2BYG 5 & no   &  -1.8604   & -497.5123 & -0.0933 & -0.0386 \\   
-    
-    \hline
+       \bottomrule
 
 
- \end{tabular}      
- \label{tab_echec_20}      
+ \end{tabular}   
+\label{tab:result_20_actives}   
 \end{table}
-
-
 
 
 \begin{table}[h]
       \centering
 
-      \begin{tabular}{|c|c|c|c|c|c|}
+      \begin{tabular}{cccccc}
 
 
-        \hline
-        \multicolumn{6}{|c|}{30 positions actives} \\
-        \hline
+        \toprule
         Protéine & GMEC & toulbar2 & H & MC & RE \\
-        \hline
+        \cmidrule{1-6}
         1A81 1 & no & -1.2074    &    -562.9572 & -0.6353 &  \\          
         1A81 2 & no & -2.5520    &    -570.2620 & -0.0578 & \\          
         1A81 3 & no & -43.5263   &    -562.9572 & -2.4996 & -1.2025 \\         
@@ -856,14 +825,12 @@
         2BYG 3 & no & -0.1442    &    -492.6879 & -0.1593 & \\          
         2BYG 4 & no & -492.6821 &    -0.0958 & -0.0050 & \\          
         2BYG 5 & no & -0.5003    &   -492.1595 & -0.6876 & \\           
-    
-    \hline
+       \bottomrule
 
 
  \end{tabular}      
- \label{tab_echec_30}      
+\label{tab:result_echec_30}      
 \end{table}
-
 
    \subsection{Etude au voisinnage de GMECs}
 
@@ -871,12 +838,12 @@
     \begin{table}[h]
       \centering
 
-      \begin{tabular}{|c|c|c|c|c|}
+      \begin{tabular}{ccccc}
 
 
-        \hline
+        \toprule
         Protein & GMEC & H & MC & RE \\
-        \hline
+        \cmidrule{1-5}
         1CKA 3 & -304.6618 & 0 & 0 & \\
         1CKA 4 & -302.4894 & 0 & 0 & \\
         1CKA 5 & -299.2329 & -0.2859 & -3.2525 & 0 \\
@@ -886,24 +853,21 @@
         1M61 1 & -550.0699 & 0 & -0.0776 & \\
         1M61 2 & -538.6026 & -3.5105 & -4.5062 & 0.3215 \\
         1M61 5 & -553.6559 & 0 & -0.0432 & \\
-        
-        \hline
-
-
- \end{tabular}      
- \label{tab_1}      
-\end{table}
+        \bottomrule       
+      \end{tabular}      
+\label{tab:voisinnage_rappel}      
+    \end{table}
 
 
     \begin{table}[h]
       \centering
 
-      \begin{tabular}{|c|c|c|c|c|c|c|}
+      \begin{tabular}{ccccccc}
 
 
-        \hline
+        \toprule
         Protein & seq-rot nb gmec+1 & H rank  & MC rank  & seq nb gmec+1 & H mut nb & MC mut nb \\
-        \hline
+        \cmidrule{1-7}
         1CKA 3 & 67669 & 1 & 1 & 227 & 0 & 0 \\
         1CKA 4 & 4649 & 1 & 1 & 498 & 0 & 0 \\
         1CKA 5 & 1388 & 78 & ? & 77 & 0 & 2 \\
@@ -913,12 +877,9 @@
         1M61 1 & 11199153 & ? & ? & 21 & 3 & 7 \\
         1M61 2 & 11199153 & 1 & 1 & 88 & 0 & 0 \\
         1M61 5 & 16417604 & 1 & 1 & 83 & 0 & 0 \\
-        
-        \hline
-
-
- \end{tabular}      
- \label{tab_2}      
+        \bottomrule
+      \end{tabular} 
+\label{tab:etude_au_voisinnage}           
 \end{table}
 
 
@@ -927,73 +888,79 @@
     \begin{figure}[h]
       \centering
       \begin{tabular}{c} 
-        \includegraphics[width=14cm]{image/1M61_2_gmec_vs_ph.png} 
+        \includegraphics[width=14cm]{1M61_2_gmec_vs_ph.png} 
       \end{tabular}
       
       \caption{test: 1M61 2, GMEC vs H}
-      \label{temps_CPU}
+\label{image:1M61_2_GMEC_vs_H}
     \end{figure}
     
-    
-    
+        
     \begin{figure}[h]
       \centering
       \begin{tabular}{c} 
-        \includegraphics[width=14cm]{image/1M61_2_gmec_vs_RE.png} 
+        \includegraphics[width=14cm]{1M61_2_gmec_vs_RE.png} 
       \end{tabular}
       
       \caption{test: 1M61 2, GMEC vs RE}
-      \label{temps_CPU}
+\label{image:1M61_2_GMEC_vs_RE}
     \end{figure}
     
-    
-    
-
+        
     \begin{figure}[h]
       \centering
       \begin{tabular}{c} 
-        \includegraphics[width=14cm]{image/1G9O_3_gmec_vs_ph.png} 
+        \includegraphics[width=14cm]{1G9O_3_gmec_vs_ph.png} 
       \end{tabular}
       
       \caption{test: 1G9O 3, GMEC vs H}
-      \label{temps_CPU}
+\label{image:1G9O_3_GMEC_vs_H}
     \end{figure}
     
     
     \begin{figure}[h]
       \centering
       \begin{tabular}{c} 
-        \includegraphics[width=14cm]{image/1G9O_5_gmec_vs_MC.png} 
+        \includegraphics[width=14cm]{1G9O_5_gmec_vs_MC.png} 
       \end{tabular}
       
       \caption{test: 1G9O 5, GMEC vs MC}
-      \label{temps_CPU}
+\label{image:1G9O_5_GMEC_vs_MC}
     \end{figure}
     
     \begin{figure}[h]
       \centering
       \begin{tabular}{c} 
-        \includegraphics[width=14cm]{image/1CKA_5_gmec_vs_ph.png} 
+        \includegraphics[width=14cm]{1CKA_5_gmec_vs_ph.png} 
       \end{tabular}
       
       \caption{test: 1CKA 5, GMEC vs H}
-      \label{temps_CPU}
+\label{image:1CKA_5_GMEC_vs_H}
     \end{figure}
-    
-    
 
     \begin{figure}[h]
       \centering
       \begin{tabular}{c} 
-        \includegraphics[width=14cm]{image/1CKA_5_gmec_vs_MC.png} 
+        \includegraphics[width=14cm]{1CKA_5_gmec_vs_MC.png} 
       \end{tabular}
       
       \caption{test: 1CKA 5, GMEC vs MC}
-      \label{temps_CPU}
+\label{image:1CKA_5_GMEC_vs_MC}
     \end{figure}
     
-    
     \clearpage
+
+
+    \begin{figure}[h]
+      \centering
+      \begin{tabular}{c} 
+        \includegraphics[width=14cm]{align_1CKA.png} 
+      \end{tabular}
+      
+      \caption{Aligmenent du voisinnage: 1CKA 5}
+\label{image:Align_Suboptimal}
+    \end{figure}
+
 
 
 
@@ -1001,13 +968,13 @@
 
 
     \begin{table}[h]
-           \raggedleft
+           \raggedleft{}
 
-      \begin{tabular}{|c|c|c|c|c|c|}
+      \begin{tabular}{cccccc}
 
-        \hline
+        \toprule
         Protein & Match/seq size & Superfamily Evalue & superfamily success & Family Evalue & family success\\
-        \hline
+        \cmidrule{1-6}
         1A81 & no & & & & \\
         1ABO & 51/58 & 4.4e-4 & 100\% & 2.8e-3 & 100\% \\
         1BM2 & 78/98 & 4.2e-5 & 100\% & 2.6e-3 & 100\% \\
@@ -1017,17 +984,11 @@
         1O4C & 95/104 & 2.1e-4 & 100\% & 4.5e-3 &  100\% \\
         1R6J & 74/82 & 9.8e-6 & 100\% & 4.6e-3 &  100\% \\
         2BYG & 59/97 & 1.4e-5 & 100\% & 7.1e-3 &  100\% \\
+        \bottomrule        
+      \end{tabular}      
 
-        \hline
-
-
- \end{tabular}      
-
-
- \label{tab_echec2BYG__1}       
+\label{tab:superfamily_bestRE}       
 \end{table}
-
-
 
     \clearpage
 
@@ -1039,52 +1000,47 @@
     \begin{table}[h]
       \centering
 
-      \begin{tabular}{|c|c|c|c|c|}
+      \begin{tabular}{ccccc}
 
-        \hline
+        \toprule
         Proteins & GMEC & H & H+ & H++ \\
-        \hline
+        \cmidrule{1-5}
         1ABO 1 & -309.1670 & -0.0675 & -0.0675 & 0 \\
         1CKA 5 & -299.2329 & -0.2859 & -0.0640 & 0 \\
         1G9O 3 & -477.2503 & -0.1366 & 0 & 0 \\
         1M61 2 & -538.6026 & -3.5105 & -2.1673 & -0.0188 \\
-        \hline
+        \toprule
 
 
  \end{tabular}      
- \caption{Résultats pour 3 fois (resp 9 fois ) plus de cycles heuristiques protocole H+ (resp H++)}
- \label{tab_echec2BYG__1}       
+ \caption{Résultats pour 3 fois (resp 9 fois)plus de cycles heuristiques protocole H+ (resp H++)}
+\label{tab:H+_H++}       
 \end{table}
 
-
-
-    \clearpage
 
     \clearpage
 
    \subsection{densité en séquences }
 
-
-
     \begin{figure}[h]
       \centering
       \begin{tabular}{cc} 
-        \includegraphics[width=10cm]{graphe/histo1_aa_Tambiante.png} &
+        \includegraphics[width=10cm]{histo1_aa_Tambiante.png} &
       \end{tabular}
       
       \caption{.}
-      \label{temps_CPU}
+\label{graph:densité_en_séquences1}
     \end{figure}
 
 
     \begin{figure}[h]
       \centering
       \begin{tabular}{cc} 
-        \includegraphics[width=10cm]{graphe/histo2_aa_Tambiante.png} &
+        \includegraphics[width=10cm]{histo2_aa_Tambiante.png} &
       \end{tabular}
       
       \caption{.}
-\label{temps_CPU}
+\label{graph:densité_en_séquences2}
     \end{figure}
 
     \clearpage
