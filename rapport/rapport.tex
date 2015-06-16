@@ -13,7 +13,7 @@
 \usepackage[heightrounded,textheight=22.7658cm,vcentering,inner=3cm,outer=2cm]{geometry}
 %\usepackage[heightrounded,top=3cm,bottom=3cm,inner=3cm,outer=2cm,verbose]{geometry}
 \usepackage[utf8]{inputenc}   % le fichier .tex est en UTF-8
-\usepackage[francais]{babel}  %typo française                    
+%\usepackage[francais]{babel}  %typo française                    
 \usepackage[T1]{fontenc}      % encodage des fonts latex         
 \usepackage{lmodern}                                             
 \usepackage{microtype}        % typo supplémentaires             
@@ -21,7 +21,7 @@
 %%\usepackage[latin1]{inputenc}
 %%\usepackage[T1]{fontenc}
 %%\usepackage{lmodern}
-%%\usepackage[english,frenchb]{babel}
+\usepackage[english,francais]{babel}
 
 %\usepackage{calc}
 %\usepackage{amsmath,amsfonts,amssymb}
@@ -95,7 +95,7 @@
 \noindent
 \begin{minipage}[b]{0.2\textwidth}
 \begin{flushleft}
-\includegraphics[width=0.85\textwidth]{logo.pdf}
+%%\includegraphics[width=0.85\textwidth]{logo.pdf}
 \end{flushleft}
 \end{minipage}
 \hfill
@@ -106,7 +106,7 @@
 \hrule
 \vspace{1.5ex}
 {\footnotesize \bf \hfill École Doctorale de XXX}
-% \end{minipage}
+\end{minipage}
 % \vfill
 \begin{center}
 {\LARGE \bf \@title\\}
@@ -329,12 +329,12 @@ Examinateurs: & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 \clearplaindoublepage
 %\include{resultats2}
 \clearplaindoublepage
-\include{conc}
+%\include{conc}
 \clearplaindoublepage
 \appendix
-\include{annexe1}
+%\include{annexe1}
 \clearplaindoublepage
-\include{annexe2}
+%\include{annexe2}
 \clearplaindoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{Bibliographie}
