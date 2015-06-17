@@ -1,17 +1,155 @@
-\chapter{Les comparaisons}
+\chapter{Les comparaisons d'algorithmes}
 \label{chap:resultats_comparaisons}
 
-\section{Les algorithmes} 
 
-   \subsection{Toulbar2} 
-   \subsection{l'heuristique} 
-   \subsection{Le Monte-Carlo}
-   \subsection{Le Replica Exchange}
+\section{Les méthodes pratiques} 
+
+Nous cherchons maintenant à déterminer les performances et les qualités des différents algorithmes de proteus.
+Pour évaluer les qualités des différents algorithmes de proteus, nous effectuons un ensemble de tests. 
+Plusieurs questions se présentent alors,premièrement grâce au algorithme de type toulbar2 il est possible d'obtenir la séquence/conformation qui possède l'énergie de dépliement la plus haute. Cela constitue pour nous une information précieuse mais le facteur temps pose un gros problème. Et il apparaît d'emblée illusoire d'espérer voir toulbar2 converger dans toute les situations qui nous intéressent dans un temps raisonnable, en particulier pour une situation où  toutes les positions du  backbone sont autorisé à muter et pour chaque type d'acide aminé la chaîne latérale peut prendre toutes les positions précédemment calculées dans la matrice. 
+
+
+Dans la suite on appelle position active, une position pour laquelle, lors de la recherche par proteus, tous les type d'acide aminés sont autorisés et tous les rotamères de chaque type d'acide aminé sont autorisés.
+
+
+\subsubsection{les protéines}
  
-   \section{Les protocoles} 
+Les tests sont effectués sur neuf protéines choisis pour avoir des longueurs de backbone variés , plusieurs familles SCOP(?) representés mais aussi plusieurs structures pour chaque famille présente. Ainsi l'ensemble se décompose en deux protéines SH3 de 56 et 57 résidus, de trois protéines PDZ de longueur comprise entre 82 et 97 résidus  et enfin de trois protéines SH2  longues de 105 ou 109 résidus (Table~\ref{tab:protéines}).  
 
 
-   \subsection{Les protocoles Monte-Carlo} 
+    \begin{table}[!htbp]
+      \centering
+
+      \begin{tabular}{cccc}
+
+        \toprule
+        Code PDB & residus & nombre de positions & famille\\
+        \cmidrule{1-4}
+        1ABO & 	64-119	 & 	56	 & SH3 \\
+        1CKA & 	134-190	 & 	57	 & SH3 \\
+        1R6J & 	192-273	 & 	82	 & PDZ \\
+        1G9O & 	9-99	 & 	91	 & PDZ \\
+        2BYG & 	186-282	 & 	97	 & PDZ \\
+        1BM2 & 	55-152	 & 	98	 & SH2 \\
+        1O4C & 	1-105	 & 	105	 & SH2 \\
+        1M61 & 	4-112	 & 	109	 & SH2 \\
+        1A81 & 	9-117	 & 	109	 & SH2 \\
+        \bottomrule
+
+      \end{tabular}      
+      \caption{Les protéines}
+\label{tab:protéines}      
+    \end{table}
+
+\subsubsection{Description des tests}
+
+
+Les tests vont donc être organisé en deux ensembles:
+\begin{enumerate}
+\item un ensemble de tests où toutes les positions du backbone sont actives (cela correspond aux situations de redesign complet de protéines) 
+\item un ensemble de tests où le nombre de positions actives est gardé sous contrôle .De façon à maîtriser la taille de l'espace d'exploration
+\end{enumerate}
+
+
+\paragraph{L'ensemble 'Tout actif'}
+
+Pour le premier ensemble de test,La totalité de la matrice d'énergie est exploitée et pour chaque position l'espace d'exploration correspond à l'espace d'état déclaré dans le fichier .bb.
+Comme l'espace des séquences/confirmations à explorer est gigantesque, nous ne faisons pas de tentative de recherche du GMEC  par recheche exacte. 
+
+Nous effectuons des recherches avec les algorithmes suivants:
+
+\begin{itemize}
+\item heuristique  (noté H par la suite) ;
+\item Monte-Carlo (noté MC);
+\item ``'Replica Exchange'' (RE);
+\end{itemize}
+
+
+\paragraph{L'ensemble 'Nombre d'actifs limité'}
+
+L'ensemble ``Nombre d'actifs limité''' est composé de six groupes de tests avec un nombre de positions actives fixe:  
+
+
+\begin{enumerate}
+\item aucun position active
+\item une position active 
+\item cinq positions 
+\item dix  positions 
+\item vingt positions 
+\item trente positions 
+\end{enumerate}
+
+Lorsqu'une position n'est pas active, on fixe l'acide aminé de la position en utilisant l'acide aminé de la séquence native.
+
+Le groupe `aucune position active ` est constitué d'un test par algorithme pour chaque protéine. Il y a donc neuf tests par algorithme.
+Ce sont les tests pendant lesquels  la séquence d'acides aminés est fixe et correspond à la séquence native de la protéine.
+
+Pour les tests avec une seule position actives, comme des temps de calculs le permettent, nous décidons d'être exhaustif:
+Toutes les positions sont testés, Il y a alors huit cent quatre tests par algorithme.
+Pour tous les autres groupes de tests (5,10,20 et 30 positions actives) cinq tests sont effectués par protéine, c'est à dire quarante cinq tests par algorithme.
+
+\subparagraph{le choix des positions actives}
+
+Pour définir complètement les tests ,il reste maintenant à décrire comment le choix des positions actives pour les groupes numéro trois à numéro six a été effectué.
+Il y a peu d'intérêt à tester des situations avec position active sans interactions avec les autres positions actives. 
+En effet s'il existe une position active P dont chaque résidu est sans interaction avec tous les résidus possibles des autres positions actives, déterminer le meilleur état pour P est proche du test du groupe 2 avec P comme position active. Notons qu'en même que cela n'est pas exactement la même question parce que les positions actives différentes de P peuvent influencer la position de la chaîne latérale de positions inactives qui à leur tour peuvent influencer l'état de P.
+Ainsi le choix des positions actives se fait non pas pas tirage aléatoire car le risque d'avoir les positions peu en inter action est trop grand. Mais il se fait sont contrainte d'interactions.
+    
+
+  \subsection{La construction du jeu de tests}
+    \subsubsection{le choix des séquences/conformations}
+  
+   \subsection{Les protocoles l'heuristique} 
+
+    \begin{table}[!htbp]
+      \centering
+
+      \begin{tabular}{cr}
+
+        \toprule
+        Nom & nombre de cycles \\
+        \cmidrule{1-2}
+        h   & 110000 \\  
+        h-  & 1100   \\  
+        \bottomrule
+
+      \end{tabular}      
+      \caption{Les protocoles Heuristic}
+\label{tab:protoH}      
+    \end{table}
+
+
+   \subsection{Les protocoles Monte-Carlo}
+   \subsection{Les protocoles Replica Exchange}
+   \subsection{Les protocoles Toulbar2} 
+
+    \begin{table}[!htbp]
+      \centering
+
+      \begin{tabular}{llrrcc}
+
+        \toprule
+        Nom & Temp & Traj & Cycles  & Voisin & Proba \\
+        \cmidrule{1-6}
+        p1   & 0.001 &  3000000  &  1000  & 10 & 0; 1; 0.1; 0   \\      
+        p2   & 0.1   &  3000000  &  1000  & 10 & 0; 1; 0.1; 0   \\  
+        p3   & 0.2   &  3000000  &  1000  & 10 & 0; 1; 0.1; 0   \\ 
+        p4   & 0.3   &  3000000  &  1000  & 10 & 0; 1; 0.1; 0   \\               
+        p5   & 0.5   &  3000000  &  1000  & 10 & 0; 1; 0.1; 0   \\  
+        p6   & 0.7   &  3000000  &  1000  & 10 & 0; 1; 0.1; 0   \\  
+        p22  & 0.1   &  6000000  &  1000  & 10 & 1; 1;   1; 1   \\  
+        p32  & 0.2   &  6000000  &  1000  & 10 & 0; 1; 0.1; 0   \\      
+        p33  & 0.2   &  3000000  & 10000  & 10 & 0; 1; 0.1; 0   \\   
+        p52  & 0.5   & 10000000  &   100  & 20 & 0; 1;   0; 1   \\  
+        \bottomrule   
+
+        
+      \end{tabular}      
+      \caption{Les protocoles}
+\label{tab_protoMC1}      
+    \end{table}
+
+
 
     \begin{table}
       \begin{tabular}{lrrcc}
@@ -30,7 +168,7 @@
        
       \end{tabular}      
       \caption{Les protocoles Monte-Carlo}
-\label{tab:protoMC}      
+\label{tab:protoMC2}      
 
      \end{table}
 
@@ -63,25 +201,9 @@
 
    \subsection{Les protocoles Heuristic} 
     
-    \begin{table}[!htbp]
-      \centering
-
-      \begin{tabular}{cr}
-
-        \toprule
-        Nom & nombre de cycles \\
-        \cmidrule{1-2}
-        h   & 110000 \\  
-        h-  & 1100   \\  
-        \bottomrule
-
-      \end{tabular}      
-      \caption{Les protocoles Heuristic}
-\label{tab:protoH}      
-    \end{table}
 
     \clearpage
-    \subsection{Les temps de calcul} 
+    \subsection{Les temps de calculs} 
     
     \begin{figure}[h]
       \centering
@@ -96,7 +218,7 @@
     
     \clearpage
     \section{Les tests} 
-   \subsection{Tous les résidus actif} 
+   \subsection{Tous les résidus actifs} 
 
 
    \subsubsection{Les meilleures énergies} 
@@ -180,7 +302,7 @@
 
     \clearpage
 
-   \subsection{Avec des résidus gelés}
+   \subsection{Tous les résidus inactifs}
  
    \subsubsection{Séquence native}
 
