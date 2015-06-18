@@ -91,10 +91,24 @@ Pour tous les autres groupes de tests (5,10,20 et 30 positions actives) cinq tes
 \subparagraph{le choix des positions actives}
 
 Pour définir complètement les tests ,il reste maintenant à décrire comment le choix des positions actives pour les groupes numéro trois à numéro six a été effectué.
-Il y a peu d'intérêt à tester des situations avec position active sans interactions avec les autres positions actives. 
+Il y a peu d'intérêt à tester des situations avec position active sans interaction avec les autres positions actives. 
 En effet s'il existe une position active P dont chaque résidu est sans interaction avec tous les résidus possibles des autres positions actives, déterminer le meilleur état pour P est proche du test du groupe 2 avec P comme position active. Notons qu'en même que cela n'est pas exactement la même question parce que les positions actives différentes de P peuvent influencer la position de la chaîne latérale de positions inactives qui à leur tour peuvent influencer l'état de P.
-Ainsi le choix des positions actives se fait non pas pas tirage aléatoire car le risque d'avoir les positions peu en inter action est trop grand. Mais il se fait sont contrainte d'interactions.
-    
+Ainsi le choix des positions actives se fait non pas pas tirage aléatoire car le risque d'avoir les positions peu en inter action est trop grand. Il se fait sous contrainte d'interaction.
+
+\subparagraph{positions en interactions}
+Pour cela nous utilisons la notion de voisinage incluse dans proteus: 
+Deux positions P et Q sont en interaction s'il existe un rotamère $r_P$ de P et un rotamère $r_Q$ de Q tels que:
+\begin{displaymath}
+ | E(r_P,r_Q) | > S_{Vois}
+\end{displaymath} 
+avec $S_{Vois}$ un seuil donné par utilisateur à la configuration de proteus (voir chap. ?? pour les détails).
+
+Définissons maintenant la notion de tuple en interaction par la donnée de t positions avec $t \in \{5,10,20,30\}$ et d'un seuil  $S_{Vois}$  tels que pour toute paire de position (P,Q) du tuple, P et Q sont en interaction.
+
+
+
+
+
 
   \subsection{La construction du jeu de tests}
     \subsubsection{le choix des séquences/conformations}
