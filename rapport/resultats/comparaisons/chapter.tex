@@ -6,7 +6,7 @@
 
 Nous cherchons maintenant à déterminer les performances et les qualités des différents algorithmes de proteus.
 Pour évaluer les qualités des différents algorithmes de proteus, nous effectuons un ensemble de tests. 
-Plusieurs questions se présentent alors,premièrement grâce au algorithme de type toulbar2 il est possible d'obtenir la séquence/conformation qui possède l'énergie de dépliement la plus haute. Cela constitue pour nous une information précieuse mais le facteur temps pose un gros problème. Et il apparaît d'emblée illusoire d'espérer voir toulbar2 converger dans toute les situations qui nous intéressent dans un temps raisonnable, en particulier pour une situation où  toutes les positions du  backbone sont autorisé à muter et pour chaque type d'acide aminé la chaîne latérale peut prendre toutes les positions précédemment calculées dans la matrice. 
+Plusieurs questions se présentent alors,premièrement grâce au algorithme de type toulbar2 il est possible d'obtenir la séquence/conformation qui possède l'énergie de dépliement la plus haute. Cela constitue une information important qui va nous servir de point de comparaison. Mais le facteur temps pose problème, nous ne savons pas à l'avance quand toulbar2 termine. Et il apparaît d'emblée illusoire d'espérer voir toulbar2 converger dans toute les situations qui nous intéressent dans un temps raisonnable, en particulier pour une situation où  toutes les positions du  backbone sont autorisé à muter et pour chaque type d'acide aminé la chaîne latérale peut prendre toutes les positions précédemment calculées dans la matrice. 
 
 
 Dans la suite on appelle position active, une position pour laquelle, lors de la recherche par proteus, tous les type d'acide aminés sont autorisés et tous les rotamères de chaque type d'acide aminé sont autorisés.
@@ -103,39 +103,66 @@ Deux positions P et Q sont en interaction s'il existe un rotamère $r_P$ de P et
 \end{displaymath} 
 avec $S_{Vois}$ un seuil donné par utilisateur à la configuration de proteus (voir chap. ?? pour les détails).
 
-Définissons maintenant la notion de tuple en interaction par la donnée de t positions avec $t \in \{5,10,20,30\}$ et d'un seuil  $S_{Vois}$  tels que pour toute paire de position (P,Q) du tuple, P et Q sont en interaction.
+Définissons maintenant la notion de n-uplet en interaction par la donnée de n positions avec $n \in \{5,10,20,30\}$ et d'un seuil  $S_{Vois}$  tels que pour toute paire de position (P,Q) du n-uplet, P et Q sont en interaction.
+\paragraph{}
+Pour déterminer les positions actives,nous exécutons proteus en mode verbeux sans effectué d'optimisation.
+Il existe plusieurs façon de procéder ,ici nous utilisons le mode MonteCarlo avec une trajectoire de zéro pas. Ces exécutions produisent en sortie standard la liste des voisins pour chaque position au seuil donnée en paramètre.
+Pour chaque protéine, nous exécutons proteus avec  $S_{Vois}$ égal à 10 , 5 , 1 et $0.1$ à tour de rôle. Nous obtenons quatre listes de voisins. 
+Ensuite, nous cherchons dans les listes, par un script dédié, les n-uplets en interaction en partant de la liste de voisins au sens le plus fort, c'est à dire 10, vers la liste de voisins au sens le plus faible ($0.1$).La recherche s'arrête si cinq n-uplets sont trouvés.
+
+\subsubsection{Définition de protocole comparable}
+
+Nous voulons comparer les algorithmes très différents. Un algorithme peut garantir l'obtention du minimum global en énergie (GMEC) s'il termine mais ne garantie pas qu'il termine, un autre permet un contrôle très fin du temps d'exécution sans garantie du GMEC, et d'autres enfin ont des objectifs plus ambitieux  qu'uniquement l'obtention du GMEC.
+Mais le GMEC reste le meilleur point de commun. Nous allons donc y concentré les comparaisons.
+
+Nous devons noter également que l'obtention du GMEC est théorique, en pratique nous n'avons pas de preuve que le code de l'algorithme exacte que nous utilisons soit sans bogue. Cependant,nous mettons de côté cette éventualité et dans toute la suite GMEC désigne aussi bien le minimum global en énergie que le résultat de toulbar2 lorsqu'il termine.  
+\subparagraph{}
+Le Monte-Carlo et le ``'Replica exchange'' possèdent de nombreux paramètres de configuration, ce qui rend l'ensemble des protocoles possibles très grand. Ce pose alors la question de l'optimisation du protocole. L'objectif que nous nous fixons ici,n'est pas de recherche un protocole optimum pour chacun des tests, mais de tester un protocole optimisé par algorithme.
+Nous allons alors dans un premier temps , recherche les meilleurs protocoles Monte-Carlo et les meilleurs protocoles ``'Replica Exchange'' sur l'ensemble de tests ``tout actifs''
+Puis, sur la base des résultats obtenue nous ferons l'ensemble des test à positions actives limitées avec les meilleurs protocoles.
+Le programme toulbar2 possède aussi de nombreuse options. Deux paramétrages différents seront utilisés.
 
 
+Pour rendre les protocoles comparables, le temps d'exécution maximum est fixé à vingt-quatre heures, sauf mention contraire.
+Toulbar2 donne sa meilleur séquence/conformation en dernier, il n'y a donc de pas post-traitement nécessaire.
+C'est également le cas pour le MC à condition de configurer l'impression de la trajectoire avec la balise $Print\_Threshold=0$. dans le fichier de configuration.
+Pour le RE et l'Heuristique, un tri des séquences selon l'énergie est nécessaire. Mais il n'y a pas beaucoup de séquences: 
+\begin{enumerate}
+\item L' Heuristique fourni une séquence/conformation à chaque cycle.
+\item Le RE avec $Print\_Threshold=0$ produit autant de fichier de séquences/rotamères que de marcheurs.Chacun ne contenant pas plus de quelques dizaines de séquences/rotamères. 
+\end{enumerate}
+
+Nous pouvons donc négliger la durée du tri dans le temps total d'exécution.    
 
 
+\subsubsection{Protocole Heuristique}
 
+Pour l'algorithme Heuristique, il n'y a dans notre situation qu'un seul paramètre à renseigner: le nombre de cycle à effectuer. Quelques essais préliminaires sur la plus grosse protéine (Table~\ref{tab:protéines}) dans le cas où tout actif , montre que la version utilisée de proteus peut effectuer jusqu'à environ 110000 cycles sur nos machines de calculs en l'espace de vingt-quatre heures. Ainsi le protocole H est défini comme le protocole qui utilise le mode heuristique de proteus et qui effectue cent dix milles cycles. Nous définissons également les variantes H- , H+ et H++ comme des protocoles plus court ou plus longs à facteur entier près (Table~\ref{tab:protoH}). Par ailleurs certains comparaisons de l'heuristique avec le MC ont été fait avec une version précédente de proteus notons h ce protocole. il diffère  aussi de H par le fait que les options d'optimisation du compilateur intel -O2 contre -O3 pour H.    
 
-  \subsection{La construction du jeu de tests}
-    \subsubsection{le choix des séquences/conformations}
-  
-   \subsection{Les protocoles l'heuristique} 
 
     \begin{table}[!htbp]
       \centering
 
-      \begin{tabular}{cr}
+      \begin{tabular}{lr}
 
         \toprule
         Nom & nombre de cycles \\
         \cmidrule{1-2}
-        h   & 110000 \\  
-        h-  & 1100   \\  
+        H   & 110000 \\  
+        H-  & 1100   \\  
+        H+  & 330000 \\  
+        H++ & 990000 \\  
+        h   & 100000 \\  
         \bottomrule
 
       \end{tabular}      
-      \caption{Les protocoles Heuristic}
+      \caption{Les protocoles Heuristique}
 \label{tab:protoH}      
     \end{table}
 
-
    \subsection{Les protocoles Monte-Carlo}
-   \subsection{Les protocoles Replica Exchange}
-   \subsection{Les protocoles Toulbar2} 
+
+Il faut distingué deux groupes de protocoles, Le premier de mon mc..  correspond à l'utilisation de la version précedente de proteus ...
 
     \begin{table}[!htbp]
       \centering
@@ -143,25 +170,37 @@ Définissons maintenant la notion de tuple en interaction par la donnée de t po
       \begin{tabular}{llrrcc}
 
         \toprule
-        Nom & Temp & Traj & Cycles  & Voisin & Proba \\
+        Nom & Temp & Longueur de trajectoire(mega) & Nombre de trajectoires  & Voisin & Proba \\
         \cmidrule{1-6}
-        p1   & 0.001 &  3000000  &  1000  & 10 & 0; 1; 0.1; 0   \\      
-        p2   & 0.1   &  3000000  &  1000  & 10 & 0; 1; 0.1; 0   \\  
-        p3   & 0.2   &  3000000  &  1000  & 10 & 0; 1; 0.1; 0   \\ 
-        p4   & 0.3   &  3000000  &  1000  & 10 & 0; 1; 0.1; 0   \\               
-        p5   & 0.5   &  3000000  &  1000  & 10 & 0; 1; 0.1; 0   \\  
-        p6   & 0.7   &  3000000  &  1000  & 10 & 0; 1; 0.1; 0   \\  
-        p22  & 0.1   &  6000000  &  1000  & 10 & 1; 1;   1; 1   \\  
-        p32  & 0.2   &  6000000  &  1000  & 10 & 0; 1; 0.1; 0   \\      
-        p33  & 0.2   &  3000000  & 10000  & 10 & 0; 1; 0.1; 0   \\   
-        p52  & 0.5   & 10000000  &   100  & 20 & 0; 1;   0; 1   \\  
+        mc0   & 0.001 &  3  &  1000  & 10 & 0; 1; 0.1; 0   \\      
+        mc1   & 0.1   &  3  &  1000  & 10 & 0; 1; 0.1; 0   \\  
+        mc2   & 0.2   &  3  &  1000  & 10 & 0; 1; 0.1; 0   \\ 
+        mc3   & 0.3   &  3  &  1000  & 10 & 0; 1; 0.1; 0   \\               
+        mc4   & 0.5   &  3  &  1000  & 10 & 0; 1; 0.1; 0   \\  
+        mc5   & 0.7   &  3  &  1000  & 10 & 0; 1; 0.1; 0   \\  
+        mc1b  & 0.1   &  6  &  1000  & 10 & 1; 1;   1; 1   \\  
+        mc2b  & 0.2   &  6  &  1000  & 10 & 0; 1; 0.1; 0   \\      
+        mc2c  & 0.2   &  3  & 10000  & 10 & 0; 1; 0.1; 0   \\   
+        mc4b  & 0.5   & 10  &   100  & 20 & 0; 1;   0; 1   \\
+        \cmidrule{1-6}  
+        MC2b2 & 0.2   &  6000  &  1  & 10 & 0; 1; 0.1; 0   \\      
+        MC2b3 & 0.2   &  6000  &  1  & 10 & 0; 1; 0.1; 0   \\   
+
         \bottomrule   
 
         
       \end{tabular}      
-      \caption{Les protocoles}
-\label{tab_protoMC1}      
+      \caption{Les protocoles Monte-Carlo}
+\label{tab:protoMC}      
     \end{table}
+
+
+
+
+
+
+   \subsection{Les protocoles Replica Exchange}
+   \subsection{Les protocoles Toulbar2} 
 
 
 
