@@ -160,9 +160,42 @@ Pour l'algorithme Heuristique, il n'y a dans notre situation qu'un seul paramèt
 \label{tab:protoH}      
     \end{table}
 
-   \subsection{Les protocoles Monte-Carlo}
+   \subsection{Protocoles Monte-Carlo}
+\label{sec:MC}
+On distingue deux ensembles de protocoles, Le premier où les noms  sont de la forme mc*, rassemble les protocoles utilisés pendant l'optimisation du Monte-Carlo.Le second est constitué du protocole retenue comme optimisé , plus une variante.     
 
-Il faut distingué deux groupes de protocoles, Le premier de nom mc*  correspond à l'utilisation de la version précédente de proteus ...
+\subsubsection{Optimisation}
+
+Les éléments à paramétrer pour l'algorithme Monte-Carlo sont les suivants:
+
+\begin{enumerate}
+\item la température
+\item le nombre de pas (avec le nombre de trajectoires et la longueur de trajectoire )
+\item Le seuil de voisinage
+\item Les probabilités de changements de la séquences/rotamère
+\end{enumerate}
+
+Ce qui représente un ensemble de protocoles trop grand pour une approche exhaustive. Nous allons faire varier les paramètres un par un.
+
+La température est le paramètre principale du Monte-carlo, c'est lui qui contrôle le taux d'acceptation du critère de Metropolis.Alors la première étape de cette optimisation va consisté à faire variés la température , entre 0.001 et 0.5 , en conservant les autres paramètres fixés (protocoles de mc0 à mc5).Le nombre de pas total effectué est le produit de deux paramètres, le nombre de trajectoires et la longueur de trajectoire. les protocoles mc1b et mc2b testent l'effet d'une augmentation du nombre de pas. Tandis que mc2d teste l'effet de variation du rapport nombre de trajectoire sur la longueur.
+Le protocole mc2e s'intéresse aux probabilités de changement de la trajectoire. Il y a cinq balises dans proteus qui contrôle ces changements:
+
+\begin{description}
+\item[<Prot>] donne la probabilités de modifications de  rotamère à une postions.
+\item[<Prot\_Prot>] donne la probabilités de modifications de  rotamère à deux positions.
+\item[<Mut>] donne la probabilités de modifications de type de résidu à une position.
+\item[<Mut\_Prot>] donne la probabilités de modifications de  rotamères à deux positions.
+\item[<Mut\_Mut>] donne la probabilités de modifications de type de résidu à deux positions.
+\end{description}
+
+La table~\ref{tab:protoMC} donne les probabilités utilisées par ces cinq paramètres dans l'ordre de la liste précédente. 
+
+ Enfin mc4b se distingue des autres par un seuil de voisinage plus grand ((Table~\ref{tab:protoMC})).
+
+
+\paragraph{}
+Pour l'étape suivante, qui consiste à la comparaison avec les autres algorithmes, deux protocoles sont utilisés MC2d2 et MC2e2 ils inspirent de mc2d et mc2e , en étant adapté à la contrainte du temps de calculs de la comparaison d'algorithmes et un utilisant la nouvelle version de proteus. 
+  
 
     \begin{table}[!htbp]
       \centering
@@ -170,21 +203,23 @@ Il faut distingué deux groupes de protocoles, Le premier de nom mc*  correspond
       \begin{tabular}{llrrcc}
 
         \toprule
-        Nom & Temp & Longueur de trajectoire(mega) & Nombre de trajectoires  & Voisin & Proba \\
+        Nom & Temp & Long. de trajectoire(mega) & Nb de trajectoires  & Voisin & Proba \\
         \cmidrule{1-6}
-        mc0   & 0.001 &  3  &  1000  & 10 & 0; 1; 0.1; 0   \\      
-        mc1   & 0.1   &  3  &  1000  & 10 & 0; 1; 0.1; 0   \\  
-        mc2   & 0.2   &  3  &  1000  & 10 & 0; 1; 0.1; 0   \\ 
-        mc3   & 0.3   &  3  &  1000  & 10 & 0; 1; 0.1; 0   \\               
-        mc4   & 0.5   &  3  &  1000  & 10 & 0; 1; 0.1; 0   \\  
-        mc5   & 0.7   &  3  &  1000  & 10 & 0; 1; 0.1; 0   \\  
-        mc1b  & 0.1   &  6  &  1000  & 10 & 1; 1;   1; 1   \\  
-        mc2b  & 0.2   &  6  &  1000  & 10 & 0; 1; 0.1; 0   \\      
-        mc2c  & 0.2   &  3  & 10000  & 10 & 0; 1; 0.1; 0   \\   
-        mc4b  & 0.5   & 10  &   100  & 20 & 0; 1;   0; 1   \\
-        \cmidrule{1-6}  
-        MC2b2 & 0.2   &  6000  &  1  & 10 & 0; 1; 0.1; 0   \\      
-        MC2b3 & 0.2   &  6000  &  1  & 10 & 0; 1; 0.1; 0   \\   
+        mc0   & 0.001 &  3  &  1000  & 10 & 0; 1; 0.1; 0 ;0 \\      
+        mc1   & 0.1   &  3  &  1000  & 10 & 0; 1; 0.1; 0 ;0 \\  
+        mc2   & 0.2   &  3  &  1000  & 10 & 0; 1; 0.1; 0 ;0 \\ 
+        mc3   & 0.3   &  3  &  1000  & 10 & 0; 1; 0.1; 0 ;0 \\               
+        mc4   & 0.5   &  3  &  1000  & 10 & 0; 1; 0.1; 0 ;0 \\  
+        mc5   & 0.7   &  3  &  1000  & 10 & 0; 1; 0.1; 0 ;0 \\  
+        mc1b  & 0.1   &  6  &  1000  & 10 & 1; 1;   1; 1 ;0 \\  
+        mc2b  & 0.2   &  6  &  1000  & 10 & 0; 1; 0.1; 0 ;0 \\      
+        mc2c  & 0.2   &  3  & 10000  & 10 & 0; 1; 0.1; 0 ;0 \\   
+        mc2d  & 0.2   &  3000  &  1 & 10  & 0; 1; 0.1; 0 ;0 \\ 
+        mc2e  & 0.2   &  3  &  1000  & 10 & 1; 0; 0.1; 0 ;0 \\     
+        mc4b  & 0.5   & 10  &   100  & 20 & 0; 1;   0; 1 ;0 \\
+        \cmidrule{1-6}         
+        MC2d2 & 0.2   &  6000  &  1  & 10 & 0; 1; 0.1; 0 ;0 \\      
+        MC2e2 & 0.2   &  6000  &  1  & 10 & 1; 0; 0.1; 0 ;0 \\   
 
         \bottomrule   
 
@@ -194,39 +229,37 @@ Il faut distingué deux groupes de protocoles, Le premier de nom mc*  correspond
 \label{tab:protoMC}      
     \end{table}
 
-
-
-
-
-
-   \subsection{Les protocoles Replica Exchange}
-   \subsection{Les protocoles Toulbar2} 
-
-
-
-    \begin{table}
-      \begin{tabular}{lrrcc}
-
-        \toprule
-        Nom & Temp & Traj (mega)& seuil voisin  & Proba \\
-        \cmidrule{1-5}
-        MC0   & 0.01  &  6000 & 0 & 0; 1; 0.1; 0   \\  
-        MC0-  & 0.01  &   300 & 0 & 0; 1; 0.1; 0   \\  
-        MC4   & 0.2   &  6000 & 0 & 0; 1; 0.1; 0   \\          
-        MC4-  & 0.2   &   300 & 0 & 0; 1; 0.1; 0   \\ 
-        MC42  & 0.2   &  6000 & 0 & 1; 0; 0.1; 0   \\        
-        MC42- & 0.2   &   300 & 0 & 1; 0; 0.1; 0   \\   
-        \bottomrule                   
-
-       
-      \end{tabular}      
-      \caption{Les protocoles Monte-Carlo}
-\label{tab:protoMC2}      
-
-     \end{table}
-
-
    \subsection{Les protocoles Replica Exchange} 
+
+L'algorithme ``Replica Exchange'' (RE) est une extension du Monte-Carlo , Les paramètres d'un protocole RE sont ceux d'un protocole Monte-Carlo plus d'autres paramètres:
+
+\begin{itemize}
+\item le nombre de marcheurs
+\item la température pour chaque marcheur
+\item la période de ``swap'', c'est-à-dire la période  (en nombre de pas) à  laquelle le test de Hasting sur l'échange de température et éventuellement l'échange ,sont effectués.
+\end{itemize}
+Pour avoir des exécutions en parallèle sans plusieurs marcheurs  par coeur du processeur, nous limiter nos tests à quatre ou huit marcheurs.
+La distribution des températures est un éléments déterminant dans le comportement des marcheurs, car c'est elle qui pilote en grande partie le taux d'acceptation des échanges de températures. Nous suivant l'idée proposée par Kofke de lui faire suivre une progression géométrique ( $ \frac{T_i}{T_{i+1}}=C $ , avec C une constante)~\citep{ref1,ref2,ref3}. Ceci garantie alors que le taux d'acceptation d'échange entre $T_i et T_{i+1}$ soit égale pour tout nos i.De plus nous souhaitons centrer à peu près, nos distributions sur la température ambiante.
+
+Voici les températures pour le RE quatre marcheurs:
+
+\begin{itemize} 
+\item 10, 1, 0.1 et 0.01
+\item 2, 1, 0.5 et 0.25 
+\item 1, 0.5, 0.25 et 0.125
+\end{itemize} 
+
+,et celles pour le RE huit marcheurs:
+
+\begin{itemize} 
+\item 3 , 2 , 1.333 , 0.888 , 0.592 , 0.395 , 0.263 et 0.175 
+\item 10 , 3.16 , 1 , 0.316 , 0.1 , 0.0316 , 0.01 et 0.00316
+\end{itemize} 
+
+Ici les protocoles ne se font qu'avec une seule trajectoire par marcheur. Et la contrainte du temps de calculs se comprends comme vingt-quatre heures de calculs cumulées sur tous les marcheurs.
+Ainsi les longueurs de trajectoire sont définit pour le RE quatre marcheurs comme le quart d'une trajectoire MC, pour le RE huit marcheurs comme le huitième.
+
+La table~\ref{tab:protoRE} donne les probabilités utilisées par les cinq balises qui contrôlent les modifications de la séquence/conformation à chaque pas, dans l'ordre de la liste de la section~\ref{sec:MC}. 
     
     \begin{table}[!htbp]
       \centering
@@ -236,14 +269,14 @@ Il faut distingué deux groupes de protocoles, Le premier de nom mc*  correspond
         \toprule
         Nom & marcheurs &Temp & Traj (mega)& seuil voisin  & Proba & swap period (mega)\\
         \cmidrule{1-7}
-        RE1   & 4 & 10<->0.01    &  1500 & 10 & 1; 0; 0.1; 0 &  7.5\\  
-        RE2   & 4 & 1<->0.125    &  1500 & 10 & 1; 0; 0.1; 0 &  7.5\\  
-        RE2-  & 4 & 1<->0.125    &  250  & 10 & 1; 0; 0.1; 0 &  2.5\\  
-        RE22  & 4 & 2<->0.25     &  1500 & 10 & 1; 0; 0.1; 0 &  7.5\\  
-        RE3   & 8 & 3<->0.175    &  750  & 10 & 1; 0; 0.1; 0 &  7.5\\
-        RE32  & 8 & 3<->0.175    &  750  & 10 & 0; 1; 0.1; 0 &  7.5\\
-        RE4   & 8 & 10<->0.00316 &  750  & 10 & 1; 0; 0.1; 0 &  1\\  
-        RE42  & 8 & 10<->0.00316 &  750  &  0 & 1; 0; 0.1; 0 &  2.5\\  
+        RE4a   & 4 & 10<->0.01    &  1500 & 10 & 1; 0; 0.1; 0 ;0 &  7.5\\  
+        RE4b   & 4 & 1<->0.125    &  1500 & 10 & 1; 0; 0.1; 0 ;0 &  7.5\\  
+        RE4c   & 4 & 2<->0.25     &  1500 & 10 & 1; 0; 0.1; 0 ;0 &  7.5\\  
+        RE8a1  & 8 & 10<->0.00316 &  750  & 10 & 1; 0; 0.1; 0 ;0 &  1\\  
+        RE8a2  & 8 & 10<->0.00316 &  750  &  0 & 1; 0; 0.1; 0 ;0 &  2.5\\  
+        RE8b1  & 8 & 3<->0.175    &  750  & 10 & 1; 0; 0.1; 0 ;0 &  7.5\\
+        RE8b2  & 8 & 3<->0.175    &  750  & 10 & 0; 1; 0.1; 0 ;0 &  7.5\\
+        RE8b3  & 8 & 3<->0.175    &  750  & 10 & 0; 1; 0.1; 0 ;0 &  1\\
         \bottomrule
 
       \end{tabular}      
@@ -251,9 +284,20 @@ Il faut distingué deux groupes de protocoles, Le premier de nom mc*  correspond
 \label{tab:protoRE}      
     \end{table}
 
+   \subsection{Les protocoles Toulbar2} 
 
-   \subsection{Les protocoles Heuristic} 
-    
+
+
+
+Les paramétrages utilisés pour le programme toulbar2.
+
+Premier protocole toulbar2 version : 0.9.7.0 avec les options suivantes  -l=3 -m -d: -s, ce qui correspond au paramètrage conseillé dans la documentation CPD. 
+
+Après disc
+
+Le second protocole utilise la version : 0.9.6.0 du programme.
+
+toulbar2 MATRIX.wcsp -l=1 -dee=1 -m -d: -s 
 
     \clearpage
     \subsection{Les temps de calculs} 
