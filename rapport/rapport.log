@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.3.10)  24 JUN 2015 18:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.3.10)  25 JUN 2015 18:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -723,8 +723,11 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 55.
  (./rapport.aux
 (./merci.aux) (./dedicace.aux) (./glossaire.aux) (./intro.aux) (./contexte.aux)
 (./methodes_theoriques.aux) (./methodes_pratiques.aux)
-(./resultats/comparaisons/chapter.aux) (./conc.aux) (./annexe.aux)
-(./resume.aux))
+(./resultats/comparaisons/chapter.aux
+
+LaTeX Warning: Label `tab:ident_mc' multiply defined.
+
+) (./conc.aux) (./annexe.aux) (./resume.aux))
 \openout1 = `rapport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 243.
@@ -742,7 +745,8 @@ LaTeX Font Info:    ... okay on input line 243.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 243.
 LaTeX Font Info:    ... okay on input line 243.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 243.
- (/usr/share/texmf/tex/latex/lm/t1lmr.fd
+
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 *geometry* driver: auto-detecting
@@ -846,7 +850,7 @@ LaTeX Info: Redefining \nameref on input line 243.
 \@outlinefile=\write3
 \openout3 = `rapport.out'.
 
- <X_logo.jpg, id=132, 435.87843pt x 596.2275pt>
+ <X_logo.jpg, id=136, 435.87843pt x 596.2275pt>
 File: X_logo.jpg Graphic file (type jpg)
 
 <use X_logo.jpg>
@@ -944,18 +948,17 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ] [8
 
-] (./rapport.lot)
+] (./rapport.lot [9
+
+])
 \tf@lot=\write6
 \openout6 = `rapport.lot'.
 
- [9
-
-] [10
-
-]
+ [10]
 \openout2 = `glossaire.aux'.
 
  (./glossaire.tex) [11
+
 
 
 ] [12
@@ -1021,121 +1024,131 @@ Overfull \hbox (79.4315pt too wide) in paragraph at lines 269--285
  [][] 
  []
 
+
+Package natbib Warning: Citation `refSuperfamily' on page 16 undefined on input
+ line 301.
+
 [16]
 
-LaTeX Warning: Reference `tab_ener_mc' on page 17 undefined on input line 309.
+Package natbib Warning: Citation `refSam' on page 17 undefined on input line 30
+8.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Package natbib Warning: Citation `refHmmer' on page 17 undefined on input line 
+308.
 
+[17]
 
-<./resultats/comparaisons/graphe/1A81_casa-p8.png, id=451, 578.16pt x 433.62pt>
+LaTeX Warning: Reference `tab_ener_mc' on page 18 undefined on input line 321.
+
+[18
+
+]
+<./resultats/comparaisons/graphe/1A81_casa-p8.png, id=470, 578.16pt x 433.62pt>
 File: ./resultats/comparaisons/graphe/1A81_casa-p8.png Graphic file (type png)
 <use ./resultats/comparaisons/graphe/1A81_casa-p8.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/1A81_casa-p8.png used 
-on input line 398.
+on input line 441.
 (pdftex.def)             Requested size: 341.43306pt x 256.07178pt.
 
-<./resultats/comparaisons/graphe/1A81-RE1-T_traj.png, id=453, 578.16pt x 433.62
+<./resultats/comparaisons/graphe/1A81-RE1-T_traj.png, id=472, 578.16pt x 433.62
 pt>
 File: ./resultats/comparaisons/graphe/1A81-RE1-T_traj.png Graphic file (type pn
 g)
  <use ./resultats/comparaisons/graphe/1A81-RE1-T_traj.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/1A81-RE1-T_traj.png us
-ed on input line 409.
+ed on input line 452.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
-<./resultats/comparaisons/graphe/1A81-RE2-T_traj.png, id=454, 578.16pt x 433.62
+<./resultats/comparaisons/graphe/1A81-RE2-T_traj.png, id=473, 578.16pt x 433.62
 pt>
 File: ./resultats/comparaisons/graphe/1A81-RE2-T_traj.png Graphic file (type pn
 g)
  <use ./resultats/comparaisons/graphe/1A81-RE2-T_traj.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/1A81-RE2-T_traj.png us
-ed on input line 410.
+ed on input line 453.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
-<./resultats/comparaisons/graphe/1A81-RE4-T_traj.png, id=455, 578.16pt x 433.62
+<./resultats/comparaisons/graphe/1A81-RE4-T_traj.png, id=474, 578.16pt x 433.62
 pt>
 File: ./resultats/comparaisons/graphe/1A81-RE4-T_traj.png Graphic file (type pn
 g)
  <use ./resultats/comparaisons/graphe/1A81-RE4-T_traj.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/1A81-RE4-T_traj.png us
-ed on input line 411.
+ed on input line 454.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
-<./resultats/comparaisons/graphe/1A81-RE3-T_traj.png, id=456, 578.16pt x 433.62
+<./resultats/comparaisons/graphe/1A81-RE3-T_traj.png, id=475, 578.16pt x 433.62
 pt>
 File: ./resultats/comparaisons/graphe/1A81-RE3-T_traj.png Graphic file (type pn
 g)
  <use ./resultats/comparaisons/graphe/1A81-RE3-T_traj.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/1A81-RE3-T_traj.png us
-ed on input line 412.
+ed on input line 455.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
-Overfull \hbox (49.60727pt too wide) in paragraph at lines 408--414
+Overfull \hbox (49.60727pt too wide) in paragraph at lines 451--457
  [][] 
  []
 
-[17
-
-] [18] [19 <./resultats/comparaisons/graphe/1A81_casa-p8.png>] [20 <./resultats
-/comparaisons/graphe/1A81-RE1-T_traj.png> <./resultats/comparaisons/graphe/1A81
--RE2-T_traj.png> <./resultats/comparaisons/graphe/1A81-RE4-T_traj.png> <./resul
-tats/comparaisons/graphe/1A81-RE3-T_traj.png>]
-<./resultats/comparaisons/graphe/best_all.png, id=481, 578.16pt x 433.62pt>
+[19] [20 <./resultats/comparaisons/graphe/1A81_casa-p8.png>] [21 <./resultats/c
+omparaisons/graphe/1A81-RE1-T_traj.png> <./resultats/comparaisons/graphe/1A81-R
+E2-T_traj.png> <./resultats/comparaisons/graphe/1A81-RE4-T_traj.png> <./resulta
+ts/comparaisons/graphe/1A81-RE3-T_traj.png>]
+<./resultats/comparaisons/graphe/best_all.png, id=494, 578.16pt x 433.62pt>
 File: ./resultats/comparaisons/graphe/best_all.png Graphic file (type png)
 
 <use ./resultats/comparaisons/graphe/best_all.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/best_all.png used on i
-nput line 423.
+nput line 466.
 (pdftex.def)             Requested size: 512.1496pt x 384.13412pt.
 
-Overfull \hbox (68.90549pt too wide) in paragraph at lines 422--425
+Overfull \hbox (68.90549pt too wide) in paragraph at lines 465--468
  [][] 
  []
 
-[21 <./resultats/comparaisons/graphe/best_all.png>]
-<./resultats/comparaisons/graphe/best_by_cat.png, id=487, 578.16pt x 433.62pt>
+[22 <./resultats/comparaisons/graphe/best_all.png>]
+<./resultats/comparaisons/graphe/best_by_cat.png, id=500, 578.16pt x 433.62pt>
 File: ./resultats/comparaisons/graphe/best_by_cat.png Graphic file (type png)
 
 <use ./resultats/comparaisons/graphe/best_by_cat.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/best_by_cat.png used o
-n input line 436.
+n input line 479.
 (pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
 
-<./resultats/comparaisons/graphe/best_MC+H.png, id=488, 578.16pt x 433.62pt>
+<./resultats/comparaisons/graphe/best_MC+H.png, id=501, 578.16pt x 433.62pt>
 File: ./resultats/comparaisons/graphe/best_MC+H.png Graphic file (type png)
 
 <use ./resultats/comparaisons/graphe/best_MC+H.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/best_MC+H.png used on 
-input line 437.
+input line 480.
 (pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
 
-<./resultats/comparaisons/graphe/best_RE4.png, id=489, 578.16pt x 433.62pt>
+<./resultats/comparaisons/graphe/best_RE4.png, id=502, 578.16pt x 433.62pt>
 File: ./resultats/comparaisons/graphe/best_RE4.png Graphic file (type png)
 
 <use ./resultats/comparaisons/graphe/best_RE4.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/best_RE4.png used on i
-nput line 438.
+nput line 481.
 (pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
 
-<./resultats/comparaisons/graphe/best_RE8.png, id=490, 578.16pt x 433.62pt>
+<./resultats/comparaisons/graphe/best_RE8.png, id=503, 578.16pt x 433.62pt>
 File: ./resultats/comparaisons/graphe/best_RE8.png Graphic file (type png)
 
 <use ./resultats/comparaisons/graphe/best_RE8.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/best_RE8.png used on i
-nput line 439.
+nput line 482.
 (pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
 
-Overfull \hbox (23.99997pt too wide) in paragraph at lines 435--441
+Overfull \hbox (23.99997pt too wide) in paragraph at lines 478--484
  [][] 
  []
 
-[22 <./resultats/comparaisons/graphe/best_by_cat.png> <./resultats/comparaisons
+[23 <./resultats/comparaisons/graphe/best_by_cat.png> <./resultats/comparaisons
 /graphe/best_MC+H.png> <./resultats/comparaisons/graphe/best_RE4.png> <./result
 ats/comparaisons/graphe/best_RE8.png>]
 
-LaTeX Warning: Float too large for page by 138.67813pt on input line 578.
+LaTeX Warning: Float too large for page by 138.67813pt on input line 621.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1147,7 +1160,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Float too large for page by 878.17735pt on input line 733.
+LaTeX Warning: Float too large for page by 878.17735pt on input line 776.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1159,21 +1172,21 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Float too large for page by 51.67822pt on input line 843.
+LaTeX Warning: Float too large for page by 51.67822pt on input line 886.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Float too large for page by 51.67822pt on input line 909.
+LaTeX Warning: Float too large for page by 51.67822pt on input line 952.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Float too large for page by 51.67822pt on input line 972.
+LaTeX Warning: Float too large for page by 51.67822pt on input line 1015.
 
-[23
+[24
 
 
 
@@ -1182,164 +1195,165 @@ LaTeX Warning: Float too large for page by 51.67822pt on input line 972.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Float too large for page by 30.07843pt on input line 1036.
+LaTeX Warning: Float too large for page by 30.07843pt on input line 1079.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Float too large for page by 30.07843pt on input line 1098.
+LaTeX Warning: Float too large for page by 30.07843pt on input line 1141.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<./resultats/comparaisons/graphe/temps_de_calculs.png, id=506, 578.16pt x 433.6
+<./resultats/comparaisons/graphe/temps_de_calculs.png, id=519, 578.16pt x 433.6
 2pt>
 File: ./resultats/comparaisons/graphe/temps_de_calculs.png Graphic file (type p
 ng)
  <use ./resultats/comparaisons/graphe/temps_de_calculs.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/temps_de_calculs.png u
-sed on input line 1105.
+sed on input line 1148.
 (pdftex.def)             Requested size: 341.43306pt x 256.07178pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (37.82782pt too wide) in paragraph at lines 1143--1161
+Overfull \hbox (37.82782pt too wide) in paragraph at lines 1186--1204
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[24 <./resultats/comparaisons/graphe/temps_de_calculs.png>] [25] [26] [27]
-[28] [29] [30] [31] [32] [33] [34]
-<./resultats/comparaisons/image/1M61_2_gmec_vs_ph.png, id=557, 1326.78293pt x 7
+[25 <./resultats/comparaisons/graphe/temps_de_calculs.png>] [26] [27] [28]
+[29] [30] [31] [32] [33] [34] [35]
+<./resultats/comparaisons/image/1M61_2_gmec_vs_ph.png, id=572, 1326.78293pt x 7
 94.17583pt>
 File: ./resultats/comparaisons/image/1M61_2_gmec_vs_ph.png Graphic file (type p
 ng)
  <use ./resultats/comparaisons/image/1M61_2_gmec_vs_ph.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/1M61_2_gmec_vs_ph.png u
-sed on input line 1169.
+sed on input line 1212.
 (pdftex.def)             Requested size: 398.33858pt x 238.43636pt.
 
-<./resultats/comparaisons/image/1M61_2_gmec_vs_RE.png, id=558, 1261.58282pt x 7
+<./resultats/comparaisons/image/1M61_2_gmec_vs_RE.png, id=573, 1261.58282pt x 7
 86.23407pt>
 File: ./resultats/comparaisons/image/1M61_2_gmec_vs_RE.png Graphic file (type p
 ng)
  <use ./resultats/comparaisons/image/1M61_2_gmec_vs_RE.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/1M61_2_gmec_vs_RE.png u
-sed on input line 1180.
+sed on input line 1223.
 (pdftex.def)             Requested size: 398.33858pt x 248.25288pt.
 
-<./resultats/comparaisons/image/1G9O_3_gmec_vs_ph.png, id=559, 1331.4962pt x 79
+<./resultats/comparaisons/image/1G9O_3_gmec_vs_ph.png, id=574, 1331.4962pt x 79
 8.94087pt>
 File: ./resultats/comparaisons/image/1G9O_3_gmec_vs_ph.png Graphic file (type p
 ng)
  <use ./resultats/comparaisons/image/1G9O_3_gmec_vs_ph.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/1G9O_3_gmec_vs_ph.png u
-sed on input line 1191.
+sed on input line 1234.
 (pdftex.def)             Requested size: 398.33858pt x 239.01361pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<./resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png, id=560, 1045.55836pt x 6
+<./resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png, id=575, 1045.55836pt x 6
 74.25528pt>
 File: ./resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png Graphic file (type p
 ng)
  <use ./resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png u
-sed on input line 1202.
+sed on input line 1245.
 (pdftex.def)             Requested size: 398.33858pt x 256.87811pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png, id=561, 1092.69098pt x 7
+<./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png, id=576, 1092.69098pt x 7
 99.73506pt>
 File: ./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png Graphic file (type p
 ng)
  <use ./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png u
-sed on input line 1212.
+sed on input line 1255.
 (pdftex.def)             Requested size: 398.33858pt x 291.54088pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<./resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png, id=562, 1153.96336pt x 7
+<./resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png, id=577, 1153.96336pt x 7
 98.94087pt>
 File: ./resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png Graphic file (type p
 ng)
  <use ./resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png u
-sed on input line 1222.
+sed on input line 1265.
 (pdftex.def)             Requested size: 398.33858pt x 275.78119pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[35
+[36
 
  <./resultats/comparaisons/image/1M61_2_gmec_vs_ph.png> <./resultats/comparaiso
-ns/image/1M61_2_gmec_vs_RE.png>] [36 <./resultats/comparaisons/image/1G9O_3_gme
+ns/image/1M61_2_gmec_vs_RE.png>] [37 <./resultats/comparaisons/image/1G9O_3_gme
 c_vs_ph.png> <./resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png>]
-[37 <./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png> <./resultats/compara
+[38 <./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png> <./resultats/compara
 isons/image/1CKA_5_gmec_vs_MC.png>]
-<./resultats/comparaisons/image/align_1CKA.png, id=577, 1438.33011pt x 698.0805
+<./resultats/comparaisons/image/align_1CKA.png, id=590, 1438.33011pt x 698.0805
 5pt>
 File: ./resultats/comparaisons/image/align_1CKA.png Graphic file (type png)
  <use ./resultats/comparaisons/image/align_1CKA.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/align_1CKA.png used on 
-input line 1235.
+input line 1278.
 (pdftex.def)             Requested size: 398.33858pt x 193.33084pt.
 
-Overfull \hbox (76.88747pt too wide) in paragraph at lines 1251--1267
+Overfull \hbox (76.88747pt too wide) in paragraph at lines 1294--1310
  [][]
  []
 
-[38
+[39
 
- <./resultats/comparaisons/image/align_1CKA.png>] [39
+ <./resultats/comparaisons/image/align_1CKA.png>] [40
 
 ]
-<./resultats/comparaisons/graphe/histo1_aa_Tambiante.png, id=587, 578.16pt x 43
+<./resultats/comparaisons/graphe/histo1_aa_Tambiante.png, id=600, 578.16pt x 43
 3.62pt>
 File: ./resultats/comparaisons/graphe/histo1_aa_Tambiante.png Graphic file (typ
 e png)
  <use ./resultats/comparaisons/graphe/histo1_aa_Tambiante.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/histo1_aa_Tambiante.pn
-g used on input line 1306.
+g used on input line 1349.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
 
-<./resultats/comparaisons/graphe/histo2_aa_Tambiante.png, id=588, 578.16pt x 43
+<./resultats/comparaisons/graphe/histo2_aa_Tambiante.png, id=601, 578.16pt x 43
 3.62pt>
 File: ./resultats/comparaisons/graphe/histo2_aa_Tambiante.png Graphic file (typ
 e png)
  <use ./resultats/comparaisons/graphe/histo2_aa_Tambiante.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/histo2_aa_Tambiante.pn
-g used on input line 1317.
+g used on input line 1360.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
- [40
+ [41
 
  <./resultats/comparaisons/graphe/histo1_aa_Tambiante.png> <./resultats/compara
-isons/graphe/histo2_aa_Tambiante.png>])
+isons/graphe/histo2_aa_Tambiante.png>]) [42
+
+
+
+]
 \openout2 = `conc.aux'.
 
- (./conc.tex) [41
+ (./conc.tex) [43
 
 
 
-
-
-
-] [42
+] [44
 
 
 ]
@@ -1355,69 +1369,82 @@ Overfull \hbox (34.69362pt too wide) in paragraph at lines 253--254
  [][] 
  []
 
-) [43
+) [45
 
 
-] [44] [45] [46] [47] [48
+] [46] [47] [48] [49] [50
 
 
 ] (./rapport.bbl (./rapport.brf)
 \tf@brf=\write7
 \openout7 = `rapport.brf'.
 
-) [49
+) [51
 
-] [50
+] [52
 
 ]
 \openout2 = `resume.aux'.
 
 
-(./resume.tex) [51
+(./resume.tex) [53
 
 
 ]
+
+Package natbib Warning: There were undefined citations.
+
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 335.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 335.
- (./rapport.aux (./merci.aux) (./dedicace.aux)
-(./glossaire.aux) (./intro.aux) (./contexte.aux) (./methodes_theoriques.aux)
-(./methodes_pratiques.aux) (./resultats/comparaisons/chapter.aux) (./conc.aux)
-(./annexe.aux) (./resume.aux))
+(./rapport.aux (./merci.aux) (./dedicace.aux) (./glossaire.aux) (./intro.aux)
+(./contexte.aux) (./methodes_theoriques.aux) (./methodes_pratiques.aux)
+(./resultats/comparaisons/chapter.aux) (./conc.aux) (./annexe.aux)
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+(./resume.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 335.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 335.
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 116AC0F202C7A18C51E572620A540BDE;2018.
+(rerunfilecheck)             Checksum: B9AAEEBDEF96074F00A64101853B7CFF;2088.
 Package rerunfilecheck Info: File `rapport.brf' has not changed.
 (rerunfilecheck)             Checksum: 517243DE78C26C1F5B58627A9FD6C7F6;390.
 
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 335.
  ) 
 Here is how much of TeX's memory you used:
- 11126 strings out of 493105
- 166737 string characters out of 6137072
- 384945 words of memory out of 5000000
- 13983 multiletter control sequences out of 15000+600000
- 90613 words of font info for 107 fonts, out of 8000000 for 9000
+ 11163 strings out of 493105
+ 167216 string characters out of 6137072
+ 385040 words of memory out of 5000000
+ 14004 multiletter control sequences out of 15000+600000
+ 91015 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,46p,1027b,573s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share
-/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm
-/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmbxo10.pfb></usr/share/texmf/fonts/type1/public/lm/lmc
-sc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pf
-b></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/typ
-e1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on rapport.pdf (65 pages, 4335676 bytes).
+ 41i,12n,48p,1027b,589s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{cite.reftoulbar2} has been referenced but does no
+t exist, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvip
+s/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/t
+exmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/l
+mbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmbxo10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc
+10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fon
+ts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb>
+</usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1
+/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
+Output written on rapport.pdf (67 pages, 4339368 bytes).
 PDF statistics:
- 745 PDF objects out of 1000 (max. 8388607)
- 623 compressed objects within 7 object streams
- 192 named destinations out of 1000 (max. 500000)
- 26986 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 767 PDF objects out of 1000 (max. 8388607)
+ 643 compressed objects within 7 object streams
+ 200 named destinations out of 1000 (max. 500000)
+ 26994 words of extra memory for PDF output out of 29859 (max. 10000000)
 

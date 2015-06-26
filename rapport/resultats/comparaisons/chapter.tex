@@ -296,6 +296,18 @@ Le binaire toulbar2 de version 0.9.7.0 est lancé avec les options -l=3 -m -d: -
 Toulbar2 est également capable de fournir la listes des séquences/conformations dont l'énergie est comprise entre celle du GMEC, $E_{GMEC}$ et une autre $E_{upper\_bound}$ donnée en paramètre. Pour cette fonctionnalité nous utilisons le paramétrage:  -d: -a -s -ub=$E_{upper\_bound}$.
 
 
+   \subsection{Superfamily/SCOP} 
+
+Superfamily est un ensemble avec d'une base de données composée de modèle de Markov cachés~\citep{refSuperfamily}
+
+\begin{itemize}
+\item Une base de données de modèles de Markov cachés, où chaque modèle représente une structure 3D d'un domaine de la classification SCOP.
+\item une série de script qui annote une séquence de protéine donnée en entrée à partir des informations de la base. Ici nous utilisons uniquement l'association au modèle 3D le plus vraisemblable. 
+\end{itemize}
+
+Nous travaillons avec la base de données à la version 1.75, et en conjonction, nous utilisons SAM (version 3.5)~\citep{refSam} et HMMER (version 3.0)~\citep{refHmmer} recommandée par l'équipe de Superfamily. Le paramétrage utilisé est celui par défaut.
+
+
     
     \clearpage
     \section{Résultats} 
@@ -333,14 +345,14 @@ Nous utilisons les protocoles de mc0 à mc5, voir table~\ref{tab:ener_mc} pour �
       \caption{Meilleur énergie selon la température,($^a$ le protocole mc0,$^b$ mc1,$^c$  mc2,$^d$ mc3,$^e$ mc4,$^f$ mc5 )}    
       \label{tab:ener_mc}
     \end{table}
-
+ 
    \subsubsection{Identité de séquences} 
 
-Nous poursuivons la comparaison des protocole mc0-mc5 en regardant le taux d'identité entre les séquences d'acides aminés et la séquence native. Il apparaît (table~\ref{tab:ident_mc}) 
+Nous poursuivons la comparaison des protocole mc0-mc5 en regardant le taux d'identité entre les séquences d'acides aminés et la séquence native. Les résultats sont présentés table~\ref{tab:ident_mc}.Nous obtenons des taux d'identités globalement compris entre 20 et 40\% , avec le plus suivant des valeurs proches de 30\%. Les résultats à température 0.2 et 0.3, sont aussi bon que ceux à température 0.1 et légèrement meilleurs que pour 0.001. Ici aussi il y a une dégradation aux température les plus hautes, faible à 0.5, plus nette à 0.7.
 
     \begin{table}[!htbp]
       \centering
-      
+
       \begin{tabular}{ccccccc}
       
         \toprule
@@ -361,6 +373,37 @@ Nous poursuivons la comparaison des protocole mc0-mc5 en regardant le taux d'ide
       \caption{Pourcentage d'identité de séquences selon la température,($^a$ le protocole mc0,$^b$ mc1,$^c$  mc2,$^d$ mc3,$^e$ mc4,$^f$ mc5 )}      
       \label{tab:ident_mc}
     \end{table}
+
+
+
+   \subsubsection{Résultats Superfamily} 
+
+
+    \begin{table}[!htbp]
+      \centering
+      
+      \begin{tabular}{crrrrrr}      
+        \toprule
+         test & 0.001$^a$ & 0.1$^b$ & 0.2$^c$  & 0.3$^d$ & 0.5$^e$ & 0.7$^f$  \\
+        \cmidrule{1-7}
+        1ABO & 7382  & 8374 & 6764 & 5033 & 2576  & 1255  \\      
+        1CKA & 8045  & 8497 & 9139 & 9534 & 8060  & 2490  \\  
+        1BM2 & 8073  & 8002 & 6861 & 7869 & 4458  & 2821  \\  
+        1M61 & 9489  & 9662 & 9825 & 9777 & 9822  & 8744  \\  
+        1O4C & 7124  & 7702 & 6909 & 7849 & 7623  & 4847  \\  
+        1G9O & 10000 & 10000 & 10000 & 10000 & 10000  & 9942 \\  
+        1R6J & 9878  & 9871 & 9796 & 8794 & 5387 & 3787 \\  
+
+        \bottomrule
+        
+      \end{tabular}
+      
+
+      \caption{Résultats Superfamily pour les dix mille séquences de meilleur énergie selon la température,($^a$ le protocole mc0,$^b$ mc1,$^c$  mc2,$^d$ mc3,$^e$ mc4,$^f$ mc5 )}      
+      \label{tab:ident_mc}
+    \end{table}
+
+
 
 
 
