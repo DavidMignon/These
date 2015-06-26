@@ -317,7 +317,7 @@ Nous travaillons avec la base de données à la version 1.75, et en conjonction,
 L'optimisation des paramètres Monte-Carlo est faite par des test sur nos neufs protéines avec toutes les positions actives.
 
 
-   \subsubsection{Les meilleures énergies} 
+   \subsubsection{Température et meilleures énergies} 
 Nous utilisons les protocoles de mc0 à mc5, voir table~\ref{tab:ener_mc} pour évaluer d'effet du paramètre température dans la recherche de séquences/rotamères de meilleurs énergies.La table~\ref{tab_ener_mc} présente les résultats obtenus arrondis à la Kcal/mol inférieure. L'énergie proteus est l'énergie de dépliement c'est-à-dire l'énergie qu'il faut fournir à la protéine pour la déplier.Donc les meilleurs dans la table (et dans toutes les autres tables ) sont les énergies les plus grandes. Les tests aux températures les plus froides (0.001 et 0.1) donnent les meilleurs résultats  pour la majorité des protéines. Cependant la dégradation des performances est lente avec l'augmentation des températures. Et les résultats pour les températures intermédiaires (0.2 et 0.3) sont souvent très proches des meilleurs résultats.    
 
     \begin{table}[!htbp]
@@ -346,9 +346,9 @@ Nous utilisons les protocoles de mc0 à mc5, voir table~\ref{tab:ener_mc} pour �
       \label{tab:ener_mc}
     \end{table}
  
-   \subsubsection{Identité de séquences} 
-
-Nous poursuivons la comparaison des protocole mc0-mc5 en regardant le taux d'identité entre les séquences d'acides aminés et la séquence native. Les résultats sont présentés table~\ref{tab:ident_mc}.Nous obtenons des taux d'identités globalement compris entre 20 et 40\% , avec le plus suivant des valeurs proches de 30\%. Les résultats à température 0.2 et 0.3, sont aussi bon que ceux à température 0.1 et légèrement meilleurs que pour 0.001. Ici aussi il y a une dégradation aux température les plus hautes, faible à 0.5, plus nette à 0.7.
+   \subsubsection{Température et Identité de séquences} 
+\label{sec:T_et_I}
+Nous poursuivons la comparaison des protocole mc0-mc5 en regardant le taux d'identité entre les séquences d'acides aminés et la séquence native. Pour cela, nous reprenons les séquences/conformations obtenues et triées selon l'énergie décroissante. Nous sélectionnons dans cette liste, les dix mille premières séquence pour chaque test. Les résultats sont présentés table~\ref{tab:ident_mc}.Nous obtenons des taux d'identités globalement compris entre 20 et 40\% , avec le plus suivant des valeurs proches de 30\%. Les résultats à température 0.2 et 0.3, sont aussi bon que ceux à température 0.1 et légèrement meilleurs que pour 0.001. Ici aussi il y a une dégradation aux température les plus hautes, faible à 0.5, plus nette à 0.7.
 
     \begin{table}[!htbp]
       \centering
@@ -376,15 +376,15 @@ Nous poursuivons la comparaison des protocole mc0-mc5 en regardant le taux d'ide
 
 
 
-   \subsubsection{Résultats Superfamily} 
+   \subsubsection{Température et résultats Superfamily} 
 
-
+Nous évaluons maintenant, la similarité que peuvent avoir nos séquences putatives avec la structure 3D du domaine de la protéine. Nous lancer Superfamily sur chaque ensemble de dix milles séquences (voir \ref{sec:T_et_I}). Le tableau \ref{tab:SF_mc} présente le nombre de séquences attribuées au domaine de la séquence native par cet outil. Les résultats sont bons, sauf pour les températures les plus chaudes, la grande majorité des séquences sont attribuées au domaine natif respectif (les domaines sur en Table~\ref{tab:protéines}).Ici, les deux températures intermédiaires font quasiment jeu égal avec les deux températures les plus froides.
     \begin{table}[!htbp]
       \centering
       
       \begin{tabular}{crrrrrr}      
         \toprule
-         test & 0.001$^a$ & 0.1$^b$ & 0.2$^c$  & 0.3$^d$ & 0.5$^e$ & 0.7$^f$  \\
+         Protéine & 0.001$^a$ & 0.1$^b$ & 0.2$^c$  & 0.3$^d$ & 0.5$^e$ & 0.7$^f$  \\
         \cmidrule{1-7}
         1ABO & 7382  & 8374 & 6764 & 5033 & 2576  & 1255  \\      
         1CKA & 8045  & 8497 & 9139 & 9534 & 8060  & 2490  \\  
@@ -400,8 +400,210 @@ Nous poursuivons la comparaison des protocole mc0-mc5 en regardant le taux d'ide
       
 
       \caption{Résultats Superfamily pour les dix mille séquences de meilleur énergie selon la température,($^a$ le protocole mc0,$^b$ mc1,$^c$  mc2,$^d$ mc3,$^e$ mc4,$^f$ mc5 )}      
-      \label{tab:ident_mc}
+      \label{tab:SF_mc}
     \end{table}
+
+
+
+   \subsubsection{Température et entropie} 
+
+Il apparaît assez clair, de part le principe du test de metropolis-Hasting, que le Monte-Carlo à basse température explore une partie de l'espace plus petite qu'au haute température. Il est alors légitime de mesurer cet effet sur les ensembles de dix milles séquences obtenues. Nous utilisons l'entropie pour un alphabet A (voir table \ref{tab:Alphabet}) réduit par position de séquences , c'est-à-dire:
+Pour i une position dans la séquence, notons $f_{i}(a)$ la fréquence en i, de la lettre a de notre alphabet A . Alors l'entropie en i vaut:
+ $H_i=  - \sum_{a \in A} f_{i}(a) * log( f_{i}(a) ) $  
+
+Puis, nous calculons la moyenne sur les postions des $exp(H_i)$ pour nos tests. Les résultats sont sur le tableau \ref{tab:Entro_mc}.
+
+
+    \begin{table}[!htbp]
+      \centering
+      
+      \begin{tabular}{ll}
+        \toprule
+        acide aminé & alphabet réduit \\
+        \cmidrule{1-2}     
+        L & 1 \\
+        V & 1 \\
+        I & 1 \\
+        M & 1 \\
+        C & 1 \\
+        F & 2 \\
+        Y & 2 \\
+        W & 2 \\
+        G & 3 \\
+        A & 4 \\
+        S & 4 \\
+        T & 4 \\
+        P & 4 \\
+        E & 5 \\
+        D & 5 \\
+        N & 5 \\
+        Q & 5 \\
+        K & 6 \\
+        R & 6 \\
+        H & 6 \\
+        \bottomrule                
+      \end{tabular}
+      \caption{Alphabet réduit}      
+      \label{tab:Alphabet}
+
+    \end{table}
+
+Nous observons la diminution systématique de l'entropie avec cette de la température. Cela représente une moindre diversité dans les séquences obtenues pour les températures des plus froides.
+
+    \begin{table}[!htbp]
+      \centering
+      
+      \begin{tabular}{lllll}
+        \toprule
+         Protéine & 0.001$^a$ & 0.1$^b$ & 0.2$^c$  & 0.3$^d$ \\
+        \cmidrule{1-5}      
+        1ABO & 1.68 & 1.80 & 1.84 & 2.14  \\  
+        1CKA & 1.85 & 2.06 & 2.09 & 2.13  \\ 
+        1BM2 & 1.88 & 1.94 & 1.96 & 2.11  \\ 
+        1M61 & 1.53 & 1.60 & 1.62 & 1.79  \\ 
+        1O4C & 2.18 & 2.21 & 2.23 & 2.3   \\ 
+        1G9O & 1.64 & 1.68 & 1.84 & 2.07  \\ 
+        1R6J & 1.75 & 1.79 & 1.94 & 2.20  \\ 
+        \bottomrule               
+      \end{tabular}
+      \caption{Moyennes sur les positions des exp(entropies) pour les dix mille séquences de meilleur énergie,($^a$ le protocole mc0,$^b$ mc1,$^c$  mc2,$^d$ mc3)}      
+      \label{tab:Entro_mc}
+    \end{table}
+
+   \subsubsection{Trajectoire et pourcentage d' identité} 
+
+Le nombre de pas effectués dans les protocoles Monte-Carlo est le produit du nombre de trajectoires par le longueur de trajectoire. Nous comparons le pourcentage d'identité de séquences par rapport à la séquence native pour des protocoles ne variant que par le nombre de trajectoires ou la longueur de la trajectoire. Deux ensembles sont traités, mc1 et mc1b ( mc1 mais avec des trajectoires deux fois plus grandes) d'une part et mc2, mc2b , mc2c et mc2d d'autre part, avec mc2b ayant des trajectoire deux fois plus grandes de mc2, mc2c dix fois plus de trajectoire que mc2 et mc2d le même nombre de pas que mc2 mais une seule trajectoire.
+Les résultats sont visibles à la table \ref{tab:Traj_ident}.L'effet du doublement de la longueur de la trajectoire existe mais est très faible. De même l'augmentation du nombre de trajectoires, pourtant drastique, n'apporte quasiment rien. Élément intéressant, à nombre de pas identique, il n'y pas de différence notable entre le protocole mille trajectoire et celui à une seule.  
+
+    \begin{table}[!htbp]
+      \centering
+      
+      \begin{tabular}{ccccccc}
+
+        \toprule
+        Protéine & mc1 & mc1b & mc2  & mc2b & mc2c & mc2d  \\
+        \cmidrule{1-7}      
+        1ABO & 33 & 33 & 33 & 33 & 33  & 33 \\      
+        1CKA & 24 & 25 & 25 & 26 & 25  & 25 \\  
+        1BM2 & 26 & 27 & 27 & 27 & 27  & 27 \\  
+        1M61 & 40 & 40 & 41 & 42 & 41  & 41 \\  
+        1O4C & 21 & 21 & 21 & 21 & 21  & 21 \\  
+        1G9O & 35 & 35 & 36 & 36 & 36  & 36 \\  
+        1R6J & 33 & 33 & 32 & 32 & 33  & 33 \\  
+        \bottomrule
+      \end{tabular}
+      
+
+      \caption{Pourcentage d'identité en variant la longueur et le nombre de trajectoires.}      
+      \label{tab:Traj_ident}
+    \end{table}
+
+
+    \begin{table}[!htbp]
+      \centering
+      
+      \begin{tabular}{|c|c|c|}      
+          \hline
+          & p5 & p52 \\
+          \hline
+          
+          1ABO & 33 & 30 \\      
+          1CKA & 25 & 24 \\
+          1BM2 & 27 & 22 \\
+          1M61 & 41 & 35 \\
+          1O4C & 21 & 18 \\
+          1G9O & 35 & 31 \\
+          1R6J & 33 & 27 \\ \hline
+          
+        \end{tabular}
+        
+        \caption{Pourcentage d'identité pour deux modes de mutations. }      
+        \label{tab_mut}        
+        \end{table}
+
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[trim=0cm 8cm 0cm 6cm,clip,width=8.5cm]{1ABO_simil_bypos.pdf} &
+       \includegraphics[trim=0cm 8cm 0cm 6cm,clip,width=8.5cm]{1BM2_simil_bypos.pdf} \\
+       \includegraphics[trim=0cm 8cm 0cm 6cm,clip,width=8.5cm]{1CKA_simil_bypos.pdf} &
+       \includegraphics[trim=0cm 8cm 0cm 6cm,clip,width=8.5cm]{1G9O_simil_bypos.pdf} \\
+       \includegraphics[trim=0cm 8cm 0cm 6cm,clip,width=8.5cm]{1M61_simil_bypos.pdf} &
+       \includegraphics[trim=0cm 8cm 0cm 6cm,clip,width=8.5cm]{1O4C_simil_bypos.pdf} \\
+       \includegraphics[trim=0cm 8cm 0cm 6cm,clip,width=8.5cm]{1R6J_simil_bypos.pdf} \\
+     \end{tabular}
+     
+     \caption{Séquence logo et exponentiel de l'entropie pour une température de 0,3}
+     \label{fig-seqlogo-T=03}
+   \end{figure}
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=8.45cm]{1ABO_p3_similarity_bypos.pdf} &
+       \includegraphics[width=8.45cm]{1BM2_p3_similarity_bypos.pdf} \\
+       \includegraphics[width=8.45cm]{1CKA_p3_similarity_bypos.pdf} &
+       \includegraphics[width=8.45cm]{1G9O_p3_similarity_bypos.pdf} \\
+       \includegraphics[width=8.45cm]{1M61_p3_similarity_bypos.pdf} &
+       \includegraphics[width=8.45cm]{1O4C_p3_similarity_bypos.pdf} \\
+       \includegraphics[width=8.45cm]{1R6J_p3_similarity_bypos.pdf} \\
+     \end{tabular}
+     
+     \caption{Similarité par position pour le protocole p3.}
+     \label{Sim_pos_byp3}
+   \end{figure}
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=8.45cm]{1ABO_p4_similarity_bypos.pdf} &
+       \includegraphics[width=8.45cm]{1BM2_p4_similarity_bypos.pdf} \\
+       \includegraphics[width=8.45cm]{1CKA_p4_similarity_bypos.pdf} &
+       \includegraphics[width=8.45cm]{1G9O_p4_similarity_bypos.pdf} \\
+       \includegraphics[width=8.45cm]{1M61_p4_similarity_bypos.pdf} &
+       \includegraphics[width=8.45cm]{1O4C_p4_similarity_bypos.pdf} \\
+       \includegraphics[width=8.45cm]{1R6J_p4_similarity_bypos.pdf} \\
+     \end{tabular}
+     
+     \caption{Similarité par position pour le protocole p4.}
+     \label{Sim_pos_byp4}
+   \end{figure}
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=8.45cm]{1ABO_ph_similarity_bypos.pdf} &
+       \includegraphics[width=8.45cm]{1BM2_ph_similarity_bypos.pdf} \\
+       \includegraphics[width=8.45cm]{1CKA_ph_similarity_bypos.pdf} &
+       \includegraphics[width=8.45cm]{1G9O_ph_similarity_bypos.pdf} \\
+       \includegraphics[width=8.45cm]{1M61_ph_similarity_bypos.pdf} &
+       \includegraphics[width=8.45cm]{1O4C_ph_similarity_bypos.pdf} \\
+       \includegraphics[width=8.45cm]{1R6J_ph_similarity_bypos.pdf} \\
+     \end{tabular}
+     
+     \caption{Similarité par position pour le protocole ph.}
+     \label{Sim_pos_byph}
+   \end{figure}
+
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=8.45cm]{1ABO_centiles.png} &
+       \includegraphics[width=8.45cm]{1BM2_centiles.png} \\
+       \includegraphics[width=8.45cm]{1CKA_centiles.png} &
+       \includegraphics[width=8.45cm]{1G9O_centiles.png} \\
+       \includegraphics[width=8.45cm]{1M61_centiles.png} &
+       \includegraphics[width=8.45cm]{1O4C_centiles.png} \\
+       \includegraphics[width=8.45cm]{1R6J_centiles.png} \\
+     \end{tabular}
+     
+     \caption{Distribution des 100000 meilleurs séquences selon l'energie.}
+     \label{fig-seqlogo-T=03}
+   \end{figure}
+
+
 
 
 
