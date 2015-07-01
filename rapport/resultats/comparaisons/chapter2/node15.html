@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>.</TITLE>
+<META NAME="description" CONTENT=".">
+<META NAME="keywords" CONTENT="chapter2">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="chapter2.css">
+
+<LINK REL="previous" HREF="node14.html">
+<LINK REL="up" HREF="node14.html">
+<LINK REL="next" HREF="node16.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html278"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html276"
+  HREF="node14.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html272"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html279"
+  HREF="node16.html">Les protocoles Replica Exchange</A>
+<B> Up:</B> <A NAME="tex2html277"
+  HREF="node14.html">Optimisation</A>
+<B> Previous:</B> <A NAME="tex2html273"
+  HREF="node14.html">Optimisation</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H4><A NAME="SECTION00111110000000000000">.</A>
+
+</H4>
+Pour l'étape suivante, qui consiste à la comparaison avec les autres algorithmes, deux protocoles sont utilisés MC2d2 et MC2e2 ils inspirent de mc2d et mc2e , en étant adapté à la contrainte du temps de calculs de la comparaison d'algorithmes et un utilisant la nouvelle version de proteus. 
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="65"></A>
+<TABLE>
+<CAPTION><STRONG>Table:</STRONG>
+Les protocoles Monte-Carlo</CAPTION>
+<TR><TD>      <DIV ALIGN="CENTER">
+
+</DIV>
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">Nom</TD>
+<TD ALIGN="LEFT">Temp</TD>
+<TD ALIGN="RIGHT">Long. de trajectoire(mega)</TD>
+<TD ALIGN="RIGHT">Nb de trajectoires</TD>
+<TD ALIGN="CENTER">Voisin</TD>
+<TD ALIGN="CENTER">Proba</TD>
+</TR>
+<TR><TD ALIGN="LEFT">1-6
+        mc0</TD>
+<TD ALIGN="LEFT">0.001</TD>
+<TD ALIGN="RIGHT">3</TD>
+<TD ALIGN="RIGHT">1000</TD>
+<TD ALIGN="CENTER">10</TD>
+<TD ALIGN="CENTER">0; 1; 0.1; 0 ;0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">mc1</TD>
+<TD ALIGN="LEFT">0.1</TD>
+<TD ALIGN="RIGHT">3</TD>
+<TD ALIGN="RIGHT">1000</TD>
+<TD ALIGN="CENTER">10</TD>
+<TD ALIGN="CENTER">0; 1; 0.1; 0 ;0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">mc2</TD>
+<TD ALIGN="LEFT">0.2</TD>
+<TD ALIGN="RIGHT">3</TD>
+<TD ALIGN="RIGHT">1000</TD>
+<TD ALIGN="CENTER">10</TD>
+<TD ALIGN="CENTER">0; 1; 0.1; 0 ;0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">mc3</TD>
+<TD ALIGN="LEFT">0.3</TD>
+<TD ALIGN="RIGHT">3</TD>
+<TD ALIGN="RIGHT">1000</TD>
+<TD ALIGN="CENTER">10</TD>
+<TD ALIGN="CENTER">0; 1; 0.1; 0 ;0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">mc4</TD>
+<TD ALIGN="LEFT">0.5</TD>
+<TD ALIGN="RIGHT">3</TD>
+<TD ALIGN="RIGHT">1000</TD>
+<TD ALIGN="CENTER">10</TD>
+<TD ALIGN="CENTER">0; 1; 0.1; 0 ;0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">mc5</TD>
+<TD ALIGN="LEFT">0.7</TD>
+<TD ALIGN="RIGHT">3</TD>
+<TD ALIGN="RIGHT">1000</TD>
+<TD ALIGN="CENTER">10</TD>
+<TD ALIGN="CENTER">0; 1; 0.1; 0 ;0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">mc1b</TD>
+<TD ALIGN="LEFT">0.1</TD>
+<TD ALIGN="RIGHT">6</TD>
+<TD ALIGN="RIGHT">1000</TD>
+<TD ALIGN="CENTER">10</TD>
+<TD ALIGN="CENTER">1; 1;   1; 1 ;0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">mc2b</TD>
+<TD ALIGN="LEFT">0.2</TD>
+<TD ALIGN="RIGHT">6</TD>
+<TD ALIGN="RIGHT">1000</TD>
+<TD ALIGN="CENTER">10</TD>
+<TD ALIGN="CENTER">0; 1; 0.1; 0 ;0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">mc2c</TD>
+<TD ALIGN="LEFT">0.2</TD>
+<TD ALIGN="RIGHT">3</TD>
+<TD ALIGN="RIGHT">10000</TD>
+<TD ALIGN="CENTER">10</TD>
+<TD ALIGN="CENTER">0; 1; 0.1; 0 ;0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">mc2d</TD>
+<TD ALIGN="LEFT">0.2</TD>
+<TD ALIGN="RIGHT">3000</TD>
+<TD ALIGN="RIGHT">1</TD>
+<TD ALIGN="CENTER">10</TD>
+<TD ALIGN="CENTER">0; 1; 0.1; 0 ;0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">mc2e</TD>
+<TD ALIGN="LEFT">0.2</TD>
+<TD ALIGN="RIGHT">3</TD>
+<TD ALIGN="RIGHT">1000</TD>
+<TD ALIGN="CENTER">10</TD>
+<TD ALIGN="CENTER">1; 0; 0.1; 0 ;0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">mc4b</TD>
+<TD ALIGN="LEFT">0.5</TD>
+<TD ALIGN="RIGHT">10</TD>
+<TD ALIGN="RIGHT">100</TD>
+<TD ALIGN="CENTER">10</TD>
+<TD ALIGN="CENTER">0; 1;   0; 1 ;0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">1-6         
+        MC2d2</TD>
+<TD ALIGN="LEFT">0.2</TD>
+<TD ALIGN="RIGHT">6000</TD>
+<TD ALIGN="RIGHT">1</TD>
+<TD ALIGN="CENTER">10</TD>
+<TD ALIGN="CENTER">0; 1; 0.1; 0 ;0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">MC2e2</TD>
+<TD ALIGN="LEFT">0.2</TD>
+<TD ALIGN="RIGHT">6000</TD>
+<TD ALIGN="RIGHT">1</TD>
+<TD ALIGN="CENTER">10</TD>
+<TD ALIGN="CENTER">1; 0; 0.1; 0 ;0</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><P></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+</TR>
+</TABLE>      
+      
+<A NAME="tab:protoMC"></A>      
+    </TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html278"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html276"
+  HREF="node14.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html272"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html279"
+  HREF="node16.html">Les protocoles Replica Exchange</A>
+<B> Up:</B> <A NAME="tex2html277"
+  HREF="node14.html">Optimisation</A>
+<B> Previous:</B> <A NAME="tex2html273"
+  HREF="node14.html">Optimisation</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+mignon
+2015-06-29
+</ADDRESS>
+</BODY>
+</HTML>

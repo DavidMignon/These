@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Température et entropie</TITLE>
+<META NAME="description" CONTENT="Température et entropie">
+<META NAME="keywords" CONTENT="chapter2">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="chapter2.css">
+
+<LINK REL="next" HREF="node25.html">
+<LINK REL="previous" HREF="node23.html">
+<LINK REL="up" HREF="node20.html">
+<LINK REL="next" HREF="node25.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html387"
+  HREF="node25.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html385"
+  HREF="node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html379"
+  HREF="node23.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html388"
+  HREF="node25.html">Trajectoire et pourcentage d'</A>
+<B> Up:</B> <A NAME="tex2html386"
+  HREF="node20.html">Optimisation du protocole Monte-Carlo</A>
+<B> Previous:</B> <A NAME="tex2html380"
+  HREF="node23.html">Température et résultats Superfamily</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00121400000000000000">
+Température et entropie</A>
+</H3> 
+
+<P>
+Il apparaît assez clair, de part le principe du test de metropolis-Hasting, que le Monte-Carlo à basse température explore une partie de l'espace plus petite qu'au haute température. Il est alors légitime de mesurer cet effet sur les ensembles de dix milles séquences obtenues. Nous utilisons l'entropie pour un alphabet A (voir table <A HREF="#tab:Alphabet"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="/usr/share/latex2html/icons/crossref.png"></A>) réduit par position de séquences , c'est-à-dire:
+Pour i une position dans la séquence, notons <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="18" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$f_{i}(a)$"></SPAN> la fréquence en i, de la lettre a de notre alphabet A . Alors l'entropie en i vaut:
+ <!-- MATH
+ $H_i=  - \sum_{a \in A} f_{i}(a) * log( f_{i}(a) )$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="35" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$H_i= - \sum_{a \in A} f_{i}(a) * log( f_{i}(a) ) $"></SPAN> 
+
+<P>
+Puis, nous calculons la moyenne sur les postions des <SPAN CLASS="MATH"><IMG
+ WIDTH="218" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.png"
+ ALT="$exp(H_i)$"></SPAN> pour nos tests. Les résultats sont sur le tableau <A HREF="#tab:Entro_mc"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="/usr/share/latex2html/icons/crossref.png"></A>.
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="148"></A>
+<TABLE>
+<CAPTION><STRONG>Table:</STRONG>
+Alphabet réduit</CAPTION>
+<TR><TD>      <DIV ALIGN="CENTER">
+
+</DIV>
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">acide aminé</TD>
+<TD ALIGN="LEFT">alphabet réduit</TD>
+</TR>
+<TR><TD ALIGN="LEFT">1-2     
+        L</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR><TD ALIGN="LEFT">V</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR><TD ALIGN="LEFT">I</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR><TD ALIGN="LEFT">M</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR><TD ALIGN="LEFT">C</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR><TD ALIGN="LEFT">F</TD>
+<TD ALIGN="LEFT">2</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Y</TD>
+<TD ALIGN="LEFT">2</TD>
+</TR>
+<TR><TD ALIGN="LEFT">W</TD>
+<TD ALIGN="LEFT">2</TD>
+</TR>
+<TR><TD ALIGN="LEFT">G</TD>
+<TD ALIGN="LEFT">3</TD>
+</TR>
+<TR><TD ALIGN="LEFT">A</TD>
+<TD ALIGN="LEFT">4</TD>
+</TR>
+<TR><TD ALIGN="LEFT">S</TD>
+<TD ALIGN="LEFT">4</TD>
+</TR>
+<TR><TD ALIGN="LEFT">T</TD>
+<TD ALIGN="LEFT">4</TD>
+</TR>
+<TR><TD ALIGN="LEFT">P</TD>
+<TD ALIGN="LEFT">4</TD>
+</TR>
+<TR><TD ALIGN="LEFT">E</TD>
+<TD ALIGN="LEFT">5</TD>
+</TR>
+<TR><TD ALIGN="LEFT">D</TD>
+<TD ALIGN="LEFT">5</TD>
+</TR>
+<TR><TD ALIGN="LEFT">N</TD>
+<TD ALIGN="LEFT">5</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Q</TD>
+<TD ALIGN="LEFT">5</TD>
+</TR>
+<TR><TD ALIGN="LEFT">K</TD>
+<TD ALIGN="LEFT">6</TD>
+</TR>
+<TR><TD ALIGN="LEFT">R</TD>
+<TD ALIGN="LEFT">6</TD>
+</TR>
+<TR><TD ALIGN="LEFT">H</TD>
+<TD ALIGN="LEFT">6</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+            
+      <A NAME="tab:Alphabet"></A>
+<P>
+</TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+Nous observons la diminution systématique de l'entropie avec cette de la température. Cela représente une moindre diversité dans les séquences obtenues pour les températures des plus froides.
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="156"></A>
+<TABLE>
+<CAPTION><STRONG>Table:</STRONG>
+Moyennes sur les positions des exp(entropies) pour les dix mille séquences de meilleur énergie,(<SPAN CLASS="MATH"><IMG
+ WIDTH="81" HEIGHT="26" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.png"
+ ALT="$^a$"></SPAN> le protocole mc0,<SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$^b$"></SPAN> mc1,<SPAN CLASS="MATH"><IMG
+ WIDTH="8" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="$^c$"></SPAN> mc2,<SPAN CLASS="MATH"><IMG
+ WIDTH="8" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$^d$"></SPAN> mc3)</CAPTION>
+<TR><TD>      <DIV ALIGN="CENTER">
+
+</DIV>
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">Protéine</TD>
+<TD ALIGN="LEFT">0.001<SPAN CLASS="MATH"><IMG
+ WIDTH="81" HEIGHT="26" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.png"
+ ALT="$^a$"></SPAN></TD>
+<TD ALIGN="LEFT">0.1<SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$^b$"></SPAN></TD>
+<TD ALIGN="LEFT">0.2<SPAN CLASS="MATH"><IMG
+ WIDTH="8" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="$^c$"></SPAN></TD>
+<TD ALIGN="LEFT">0.3<SPAN CLASS="MATH"><IMG
+ WIDTH="8" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$^d$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="LEFT">1-5      
+        1ABO</TD>
+<TD ALIGN="LEFT">1.68</TD>
+<TD ALIGN="LEFT">1.80</TD>
+<TD ALIGN="LEFT">1.84</TD>
+<TD ALIGN="LEFT">2.14</TD>
+</TR>
+<TR><TD ALIGN="LEFT">1CKA</TD>
+<TD ALIGN="LEFT">1.85</TD>
+<TD ALIGN="LEFT">2.06</TD>
+<TD ALIGN="LEFT">2.09</TD>
+<TD ALIGN="LEFT">2.13</TD>
+</TR>
+<TR><TD ALIGN="LEFT">1BM2</TD>
+<TD ALIGN="LEFT">1.88</TD>
+<TD ALIGN="LEFT">1.94</TD>
+<TD ALIGN="LEFT">1.96</TD>
+<TD ALIGN="LEFT">2.11</TD>
+</TR>
+<TR><TD ALIGN="LEFT">1M61</TD>
+<TD ALIGN="LEFT">1.53</TD>
+<TD ALIGN="LEFT">1.60</TD>
+<TD ALIGN="LEFT">1.62</TD>
+<TD ALIGN="LEFT">1.79</TD>
+</TR>
+<TR><TD ALIGN="LEFT">1O4C</TD>
+<TD ALIGN="LEFT">2.18</TD>
+<TD ALIGN="LEFT">2.21</TD>
+<TD ALIGN="LEFT">2.23</TD>
+<TD ALIGN="LEFT">2.3</TD>
+</TR>
+<TR><TD ALIGN="LEFT">1G9O</TD>
+<TD ALIGN="LEFT">1.64</TD>
+<TD ALIGN="LEFT">1.68</TD>
+<TD ALIGN="LEFT">1.84</TD>
+<TD ALIGN="LEFT">2.07</TD>
+</TR>
+<TR><TD ALIGN="LEFT">1R6J</TD>
+<TD ALIGN="LEFT">1.75</TD>
+<TD ALIGN="LEFT">1.79</TD>
+<TD ALIGN="LEFT">1.94</TD>
+<TD ALIGN="LEFT">2.20</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+            
+      <A NAME="tab:Entro_mc"></A>    </TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html387"
+  HREF="node25.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html385"
+  HREF="node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html379"
+  HREF="node23.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html388"
+  HREF="node25.html">Trajectoire et pourcentage d'</A>
+<B> Up:</B> <A NAME="tex2html386"
+  HREF="node20.html">Optimisation du protocole Monte-Carlo</A>
+<B> Previous:</B> <A NAME="tex2html380"
+  HREF="node23.html">Température et résultats Superfamily</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+mignon
+2015-06-29
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>.</TITLE>
+<META NAME="description" CONTENT=".">
+<META NAME="keywords" CONTENT="chapter2">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="chapter2.css">
+
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="node4.html">
+<LINK REL="next" HREF="node10.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html222"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html220"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html216"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html223"
+  HREF="node10.html">Définition de protocole comparable</A>
+<B> Up:</B> <A NAME="tex2html221"
+  HREF="node4.html">Description des tests</A>
+<B> Previous:</B> <A NAME="tex2html217"
+  HREF="node8.html">positions en interactions</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H4><A NAME="SECTION00110230000000000000">.</A>
+
+</H4>
+Pour déterminer les positions actives,nous exécutons proteus en mode verbeux sans effectué d'optimisation.
+Il existe plusieurs façons de procéder ,ici nous utilisons le mode Monte-Carlo avec une trajectoire de zéro pas. Ces exécutions produisent en sortie standard la liste des voisins pour chaque position au seuil donnée en paramètre.
+Pour chaque protéine, nous exécutons proteus avec  <SPAN CLASS="MATH"><IMG
+ WIDTH="133" HEIGHT="18" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$S_{Vois}$"></SPAN> égal à dix , cinq et un à tour de rôle. Nous obtenons quatre listes de voisins. 
+Ensuite, nous cherchons dans les listes, par un script dédié, les n-uplets en interaction en partant de la liste de voisins au sens le plus fort, c'est-à-dire 10, vers la liste de voisins au sens le plus faible (<SPAN CLASS="MATH"><IMG
+ WIDTH="123" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.png"
+ ALT="$0.1$"></SPAN>).La recherche s'arrête si cinq n-uplets sont trouvés.
+
+<P>
+Nous obtenons quarante cinq n-uplets pour le groupe à cinq (respectivement dix, vingt et trente ) positions actives pour un <SPAN CLASS="MATH"><IMG
+ WIDTH="133" HEIGHT="18" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$S_{Vois}$"></SPAN> égale à dix (respectivement dix, un et un) (voir le détails en annexe&nbsp;<A HREF="#chap:annexe"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="/usr/share/latex2html/icons/crossref.png"></A>). Chaque n-uplet nous créons un fichier de configuration de proteus dans lequel la balise &lt;Space_Constraints&gt; fixe les positions restantes au type d'acide aminé présent dans la séquence native. 
+
+<P>
+<BR><HR>
+<ADDRESS>
+mignon
+2015-06-29
+</ADDRESS>
+</BODY>
+</HTML>

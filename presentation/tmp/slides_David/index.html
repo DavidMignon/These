@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+	<html class="sl-root base export loaded">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Présentation Comparaison d&#39;algorithmes du 11/05/15: Slides</title>
+		<meta name="description" content="Slides">
+
+		<link rel="stylesheet" type="text/css" href="lib/offline-v2.css">
+	</head>
+	<body class="reveal-viewport theme-font-montserrat theme-color-black-orange">
+		<div class="reveal">
+			<div class="slides">
+				<section data-id="3591a6b783061705299b42a42a6a2e6e">
+
+<div data-block-id="da8e349191f0b65bf34cb6c5b7c67006" style="min-width: 30px; min-height: 30px; width: 163.758px; height: 224px; left: 36px; top: 20px;" data-block-type="image" class="sl-block"><div style="z-index: 11;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1344088-X_logo.jpg" data-natural-height="792" data-natural-width="579" style=""></div></div>
+<div data-block-id="b1baa785e3639efc65a7cd7c94806a54" style="min-width: 30px; min-height: 30px; width: 224px; height: 224px; left: 695px; top: 28px;" data-block-type="image" class="sl-block"><div style="z-index: 12;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1344098-cnrs_logo.jpeg" data-natural-height="170" data-natural-width="170" style=""></div></div>
+<div data-block-id="58bb1230cbbb855ac8bf4e7a3376614c" style="min-width: 30px; min-height: 30px; width: 190px; height: 169.065px; left: 348px; top: 41px;" data-block-type="image" class="sl-block"><div style="z-index: 13;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1344112-logoMdS.png" data-natural-height="533" data-natural-width="599" style=""></div></div>
+<div data-block-id="c462defb7cfd24b740670df7df0b446d" style="height: auto; min-width: 30px; min-height: 30px; width: 700px; left: 118px; top: 268px;" data-block-type="text" class="sl-block"><div style="z-index: 14;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p><span style="font-size:48px">Proteus</span></p>
+
+<p><span style="font-size:48px">Exploration  de l' espace séquence-rotamère</span></p>
+
+<p><span style="font-size:48px">Comparaison d'algorithmes</span></p>
+</div></div>
+<div data-block-id="821ea020ca6c6843fbd5b25e3578604a" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 168px; top: 573px;" data-block-type="text" class="sl-block"><div style="z-index: 15;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p>David Mignon 30/06/15</p>
+</div></div></section><section><div data-block-id="e929f0080eea40a43eb69c9713cb358d" style="min-width: 30px; min-height: 30px; width: 832.809px; height: 625px; left: 41px; top: 27px;" data-block-type="image" class="sl-block"><div data-inline-svg="false" style="z-index: 13;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1356829-slide_CPD1.svg" data-natural-height="794" data-natural-width="1058" style=""></div></div>
+<div data-block-id="3a4c1ba0fd594968a50faa5873736069" style="min-width: 4px; min-height: 4px; width: 883px; height: 603px; left: 41px; top: 27px;" data-block-type="shape" class="sl-block"><div style="z-index: 10;" data-shape-stretch="true" data-shape-fill-color="rgb(255, 255, 255)" data-shape-type="rect" class="sl-block-content"><svg viewbox="0 0 883 603" preserveaspectratio="none" height="100%" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect fill="rgb(255, 255, 255)" class="shape-element" height="603" width="883"></rect></svg></div></div>
+<div data-block-id="e81f553f22238e198126f80106b51235" style="min-width: 4px; min-height: 4px; width: 240px; height: 300px; left: 640px; top: 200px;" data-block-type="shape" class="sl-block"><div style="z-index: 12;" data-shape-stretch="false" data-shape-fill-color="rgb(255, 255, 255)" data-shape-type="rect" class="sl-block-content"><svg viewbox="0 0 240 240" preserveaspectratio="xMidYMid" height="100%" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect fill="rgb(255, 255, 255)" class="shape-element" height="240" width="240"></rect></svg></div></div></section><section><div data-block-id="dfe4e06b8ca7f2451a6a0c50757fd57d" style="min-width: 30px; min-height: 30px; width: 812.821px; height: 610px; left: 54px; top: 38px;" data-block-type="image" class="sl-block"><div data-inline-svg="false" style="z-index: 10;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1356833-slide_CPD2.svg" data-natural-height="794" data-natural-width="1058" style=""></div></div>
+<div data-block-id="80bec208e53702792e6c65f386e7995a" style="min-width: 4px; min-height: 4px; width: 885px; height: 606px; left: 37px; top: 24px;" data-block-type="shape" class="sl-block"><div style="z-index: 0;" data-shape-stretch="true" data-shape-fill-color="rgb(255, 255, 255)" data-shape-type="rect" class="sl-block-content"><svg viewbox="0 0 885 606" preserveaspectratio="none" height="100%" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect fill="rgb(255, 255, 255)" class="shape-element" height="606" width="885"></rect></svg></div></div></section><section><div data-block-id="14696ed3e17309f84652b303d40f032b" class="sl-block" data-block-type="text" style="width: 800px; left: 65px; top: 0px; height: auto;"><div style="z-index: 11;" class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2><span style="font-size:32px">Comparaison de méthodes d'exploration des séquences</span></h2>
+</div></div>
+<div data-block-id="97f0e9fc0ec29554320fc9b3f160c19a" class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 171px; height: auto;"><div style="z-index: 12;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p style="text-align:justify"><span style="font-size:32px">A. Présentation des algorithmes</span></p>
+
+<ul>
+	<li>Algorithme de recherche exacte: Toulbar2</li>
+	<li>Une heuristique spécifique à la structure de l'espace</li>
+	<li>méthodes probabilistes</li>
+</ul>
+
+<ol>
+	<li>Monte-Carlo</li>
+	<li>Replica Exchange</li>
+</ol>
+</div></div>
+<div data-block-id="0b12da7d38830c9b543d0c0d670f64e0" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 80px; top: 459px;" data-block-type="text" class="sl-block"><div style="z-index: 13;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p style="text-align:justify">B. Ensemble des tests</p>
+</div></div>
+<div data-block-id="bb2e2996821b87da29b20650b0eb0956" style="height: auto; min-width: 30px; min-height: 30px; width: 286px; left: 47px; top: 523px;" data-block-type="text" class="sl-block"><div style="z-index: 14;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<ul>
+	<li>méthodes</li>
+	<li>résultats</li>
+	<li>analyses</li>
+</ul>
+</div></div></section><section class="stack"><section><div data-block-id="a82d9fea9032f09ec0205976dea36452" class="sl-block" data-block-type="text" style="width: 800px; left: 37px; top: 9px; height: auto;"><div style="z-index: 10;" class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2><span style="font-size:32px">Une méthode exacte par optimisation combinatoire</span></h2>
+</div></div>
+<div data-block-id="e8ffa80560e45240797eb458c4e4e2b1" class="sl-block" data-block-type="text" style="width: 538px; left: 22px; top: 328px; height: auto;"><div dir="ui" style="z-index: 11;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p> </p>
+
+<p style="text-align:left"><span style="font-size:16px">      Le logiciel toulbar2 (D. Allouche,S. de Givry, Schiex)</span></p>
+
+<ol>
+	<li><span style="font-size:16px">Un ensemble de transformations qui préservent l'équivalence des problèmes est appliqué sur le réseau.</span></li>
+	<li><span style="font-size:16px">Un minorant m et un majorant M du minimum global d'énergie sont mis à jour après transformation.</span></li>
+	<li><span style="font-size:16px">Un arbre d'états est "élagué" à partir de m et M.</span></li>
+	<li><span style="font-size:16px">retour en 1.</span></li>
+</ol>
+</div></div>
+
+
+
+
+
+<div data-block-id="482f84f52c7d3e2d9f1f2b9e480d2aa4" style="height: auto; min-width: 30px; min-height: 30px; width: 835px; left: 22px; top: 147px;" data-block-type="text" class="sl-block"><div style="z-index: 12;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p><span style="font-size:16px">La décomposition par paire de notre fonction d'énergie permet une représentation des énergies sous forme d' "un réseau de fonctions de coûts".</span></p>
+
+<p><span style="font-size:16px"><span style="font-size:16px"> interaction entre acides aminés &lt;=&gt; une arête dans le réseau</span></span></p>
+
+<p><span style="font-size:16px">          une énergie d'un rotamère &lt;=&gt; un nœud dans le réseau</span></p>
+</div></div>
+<div data-block-id="864720c73a638642f95348b700ca2561" style="min-width: 30px; min-height: 30px; width: 360px; height: 288.211px; left: 573px; top: 346px;" data-block-type="image" class="sl-block"><div style="z-index: 13; opacity: 0.97;" data-inline-svg="false" class="sl-block-content"><img data-src="emberembeddedrecords-6/1352978-toulbar2_0.svg" data-natural-height="273" data-natural-width="341" style=""></div></div>
+<div data-block-id="74343c9f877e146f7ce0c1e2c8f29561" style="min-width: 4px; min-height: 4px; width: 410px; height: 357px; left: 548px; top: 328px;" data-block-type="shape" class="sl-block"><div style="z-index: 0;" data-shape-stretch="false" data-shape-fill-color="rgb(255, 255, 255)" data-shape-type="rect" class="sl-block-content"><svg viewbox="0 0 357 357" preserveaspectratio="xMidYMid" height="100%" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect fill="rgb(255, 255, 255)" class="shape-element" height="357" width="357"></rect></svg></div></div></section><section><div data-block-id="6b907f6fccc44727c8d8799cfb0ee409" class="sl-block" data-block-type="text" style="width: 800px; left: 37px; top: 9px; height: auto;"><div style="z-index: 12;" class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2><span style="font-size:32px">Une méthode exacte par optimisation combinatoire</span></h2>
+</div></div>
+<div data-block-id="7d7d3a322035d01d8ce548184c4299ca" class="sl-block" data-block-type="text" style="width: 538px; left: 22px; top: 328px; height: auto;"><div dir="ui" style="z-index: 13;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p> </p>
+
+<p style="text-align:left"><span style="font-size:16px">      Le logiciel toulbar2 (D. Allouche,S. de Givry, Schiex)</span></p>
+
+<ol>
+	<li><span style="font-size:16px">Un ensemble de transformations qui préservent l'équivalence des problèmes est appliqué sur le réseau.</span></li>
+	<li><span style="font-size:16px">Un minorant m et un majorant M de minimum global d'énergie sont mis à jour après transformation.</span></li>
+	<li><span style="font-size:16px">Un arbre d'états est "élagué" à partir de m et M.</span></li>
+</ol>
+</div></div>
+
+
+
+
+
+<div data-block-id="e5249b65b0e355c85569a31ec3fa47a7" style="height: auto; width: 835px; left: 22px; top: 147px;" data-block-type="text" class="sl-block"><div style="z-index: 14;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p><span style="font-size:16px">La décomposition par paire de notre fonction d'énergie permet une représentation des énergies sous forme d' "un réseau de fonctions de coûts".</span></p>
+
+<p><span style="font-size:16px"><span style="font-size:16px"> interaction entre acides aminés &lt;=&gt; une arête dans le réseau</span></span></p>
+
+<p><span style="font-size:16px">          une énergie d'un rotamère &lt;=&gt; un nœud dans le réseau</span></p>
+</div></div>
+
+<div data-block-id="3920f6a263e4411f7be588cb21b8fb78" style="width: 410px; height: 357px; left: 548px; top: 328px;" data-block-type="shape" class="sl-block"><div style="z-index: 11;" data-shape-stretch="false" data-shape-fill-color="rgb(255, 255, 255)" data-shape-type="rect" class="sl-block-content"><svg viewbox="0 0 357 357" preserveaspectratio="xMidYMid" height="100%" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect fill="rgb(255, 255, 255)" class="shape-element" height="357" width="357"></rect></svg></div></div>
+<div data-block-id="d0888b47cb6119aae6c5a463902344d3" style="min-width: 30px; min-height: 30px; width: 360px; height: 288.211px; left: 573px; top: 346px;" data-block-type="image" class="sl-block"><div style="z-index: 15;" data-inline-svg="false" class="sl-block-content"><img data-src="emberembeddedrecords-6/1353006-toulbar2_1.svg" data-natural-height="273" data-natural-width="341" style=""></div></div></section><section><div data-block-id="beb605cde6ac63ee71d21d712bbfd49d" class="sl-block" data-block-type="text" style="width: 800px; left: 37px; top: 9px; height: auto;"><div style="z-index: 12;" class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2><span style="font-size:32px">Une méthode exacte par optimisation combinatoire</span></h2>
+</div></div>
+<div data-block-id="91193ce7d06c49e67971a3a6a55e8e62" class="sl-block" data-block-type="text" style="width: 538px; left: 22px; top: 328px; height: auto;"><div dir="ui" style="z-index: 13;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p> </p>
+
+<p style="text-align:left"><span style="font-size:16px">      Le logiciel toulbar2 (D. Allouche,S. de Givry, Schiex)</span></p>
+
+<ol>
+	<li><span style="font-size:16px">Un ensemble de transformations qui préservent l'équivalence des problèmes est appliqué sur le réseau.</span></li>
+	<li><span style="font-size:16px">Un minorant m et un majorant M de minimum global d'énergie sont mis à jour après transformation.</span></li>
+	<li><span style="font-size:16px">Un arbre d'états est "élagué" à partir de m et M.</span></li>
+</ol>
+</div></div>
+
+
+
+
+
+<div data-block-id="0a27d5252db0953d203fcdae5e79745f" style="height: auto; width: 835px; left: 22px; top: 147px;" data-block-type="text" class="sl-block"><div style="z-index: 14;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p><span style="font-size:16px">La décomposition par paire de notre fonction d'énergie permet une représentation des énergies sous forme d' "un réseau de fonctions de coûts".</span></p>
+
+<p><span style="font-size:16px"><span style="font-size:16px"> interaction entre acides aminés &lt;=&gt; une arête dans le réseau</span></span></p>
+
+<p><span style="font-size:16px">          une énergie d'un rotamère &lt;=&gt; un nœud dans le réseau</span></p>
+</div></div>
+
+<div data-block-id="6e07e95b0c8abae29bde0dc1aac25482" style="width: 410px; height: 357px; left: 548px; top: 328px;" data-block-type="shape" class="sl-block"><div style="z-index: 11;" data-shape-stretch="false" data-shape-fill-color="rgb(255, 255, 255)" data-shape-type="rect" class="sl-block-content"><svg viewbox="0 0 357 357" preserveaspectratio="xMidYMid" height="100%" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect fill="rgb(255, 255, 255)" class="shape-element" height="357" width="357"></rect></svg></div></div>
+<div data-block-id="0ebe36cf93b7145cbb474e74a35c758f" style="min-width: 30px; min-height: 30px; width: 360px; height: 288.211px; left: 573px; top: 346px;" data-block-type="image" class="sl-block"><div style="z-index: 15;" data-inline-svg="false" class="sl-block-content"><img data-src="emberembeddedrecords-6/1353013-toulbar2_2.svg" data-natural-height="273" data-natural-width="341" style=""></div></div></section></section><section><div data-block-id="38aae647e87e1eeaa1f7518a82adfccc" class="sl-block" data-block-type="text" style="width: 800px; left: 60px; top: 0px; height: auto;"><div style="z-index: 12;" class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2><span style="font-size:32px">Une méthode heuristique spéficique à la structure de l'espace (Wernisch,Wodak)</span></h2>
+</div></div>
+<div data-block-id="1221a08c78bf400fdd742069fee99579" style="height: auto; min-width: 30px; min-height: 30px; width: 722px; left: 119px; top: 157px;" data-block-type="text" class="sl-block"><div style="z-index: 13;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p><span style="font-size:24px">Le but est d'obtenir un ensemble de séquences-rotamères qui approchent le minimum globale.</span></p>
+</div></div>
+<div data-block-id="b4a7ce20f949f429f02c76125f3bbc90" style="min-width: 4px; min-height: 4px; width: 807px; height: 354px; left: 82px; top: 330px;" data-block-type="shape" class="sl-block"><div data-shape-stroke-width="1" data-shape-stroke-color="#000000" style="z-index: 11; opacity: 0.85;" data-shape-stretch="true" data-shape-fill-color="rgb(255, 255, 255)" data-shape-type="rect" class="sl-block-content"><svg viewbox="0 0 807 354" preserveaspectratio="none" height="100%" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><clippath id="shape-mask-1-1435652913041"><rect height="354" width="807"></rect></clippath></defs><rect stroke-width="2" stroke="#000000" fill="rgb(255, 255, 255)" class="shape-element" clip-path="url(#shape-mask-1-1435652913041)" height="354" width="807"></rect></svg></div></div>
+<div data-block-id="a1f45ba537c4003970a50e157c17dea0" style="height: auto; min-width: 30px; min-height: 30px; width: 678px; left: 141px; top: 253px;" data-block-type="text" class="sl-block"><div style="z-index: 14;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p><span style="font-size:24px">L'algorithme effectue une optimisation à chaque position:</span></p>
+</div></div>
+<div data-block-id="f66793f0f359a7be9e61a07fabac4498" style="min-width: 30px; min-height: 30px; width: 742.641px; height: 369px; left: 109px; top: 315px;" data-block-type="image" class="sl-block"><div style="z-index: 15;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1357828-AlgoH.png" data-natural-height="795" data-natural-width="1600" style=""></div></div></section><section><div data-block-id="dad9ac6666fc4ba336bf2e91021e27a5" class="sl-block" data-block-type="text" style="width: 800px; left: 46px; top: 0px; height: auto;"><div style="z-index: 11;" class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2><span style="font-size:48px">Le Monte-Carlo</span></h2>
+
+<p>algorithme Metropolis-Hastings</p>
+</div></div>
+<div data-block-id="094a3ef823cb7aaff402fd4992fd16c9" style="height: auto; min-width: 30px; min-height: 30px; width: 876px; left: 30px; top: 154px;" data-block-type="text" class="sl-block"><div style="z-index: 12;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p>Le but est de générer une collection d'état échantillonné selon la distribution de Boltz<span style="font-size:32px">m</span>ann.</p>
+
+<p> </p>
+
+<p> </p>
+
+<p>L'algorithme définit une chaîne de Markov pour  laquelle:</p>
+
+<p>1- La distribution de probabilité des états est stationnaire.</p>
+
+<p> </p>
+
+<p> </p>
+
+<p style="text-align: left;">     2- Il n'y a qu'une seule distribution stationnaire.</p>
+
+<p> </p>
+</div></div>
+<div data-block-id="d5f4b7312e506c17e2b3d73460b7cd2f" style="height: auto; min-width: 30px; min-height: 30px; width: 534px; left: 266px; top: 439px;" data-block-type="text" class="sl-block"><div style="z-index: 13; color: rgb(241, 194, 50);" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p>C'est garantie par la balance détaillée.</p>
+</div></div>
+<div data-block-id="39bd393c93bae71007393b8e5b1af275" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 252px; top: 575px;" data-block-type="text" class="sl-block"><div style="z-index: 14; color: rgb(241, 194, 50);" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p>C'est garantie par le caractère ergodique de la chaine.</p>
+</div></div>
+<div data-block-id="5135155788bf9f4fe1ce1f801a856b6b" style="min-width: 30px; min-height: 30px; width: 324.366px; height: 70px; left: 311px; top: 235px;" data-block-type="image" class="sl-block"><div style="z-index: 15;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1358369-MC.png" data-natural-height="71" data-natural-width="329" style=""></div></div></section><section><div data-block-id="f0ba792e24b308a4740e09023189121f" class="sl-block" data-block-type="text" style="width: 800px; left: 46px; top: 8px; height: auto;"><div style="z-index: 11;" class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2><span style="font-size:48px">Le Monte-Carlo</span></h2>
+
+<p>algorithme Metropolis-Hastings</p>
+</div></div>
+
+
+
+<div data-block-id="a351f445df3181f79e53567ddc69801f" style="min-width: 30px; min-height: 30px; width: 656.18px; height: 315px; left: 131px; top: 156px;" data-block-type="image" class="sl-block"><div style="z-index: 12;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1362697-AlgoMC.jpg" data-natural-height="373" data-natural-width="777" style=""></div></div>
+<div data-block-id="be6cf917832bfe4d79b01c01272fd7de" style="height: auto; min-width: 30px; min-height: 30px; width: 846px; left: 57px; top: 490px;" data-block-type="text" class="sl-block"><div style="z-index: 13;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p style="text-align:justify"><span style="font-size:24px">Dans proteus select(S',S) est une combinaison de changements de rotamères et/ou de mutations.</span></p>
+
+<p style="text-align:justify"><span style="font-size:24px">C'est une fonction symétrique!</span></p>
+</div></div></section><section><div data-block-id="46b6854138c896fab4ac2bfdb86fdb64" class="sl-block" data-block-type="text" style="width: 800px; left: 46px; top: 0px; height: auto;"><div style="z-index: 11;" class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2><span style="font-size:48px">Le Monte-Carlo</span></h2>
+
+<p>algorithme Metropolis-Hastings</p>
+</div></div>
+
+
+<div data-block-id="70343dc8e7c6d4be2ba940a79756562a" style="height: auto; min-width: 30px; min-height: 30px; width: 448px; left: 10px; top: 134px;" data-block-type="text" class="sl-block"><div style="z-index: 12;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p>Avantages:</p>
+
+<ul>
+	<li>ensemble</li>
+	<li>propriétés physique de la trajectoire</li>
+</ul>
+</div></div>
+<div data-block-id="4679c6113548507861edfb5cc6eb4869" style="height: auto; min-width: 30px; min-height: 30px; width: 464px; left: 496px; top: 134px;" data-block-type="text" class="sl-block"><div style="z-index: 13;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p>inconvénients:</p>
+
+<ul>
+	<li>Non exacte / stochastique</li>
+	<li>exploration peut être inefficace</li>
+</ul>
+</div></div>
+<div data-block-id="697e3afbd5cee70948d385c93d83e964" style="min-width: 30px; min-height: 30px; width: 623.049px; height: 414px; left: 195px; top: 286px;" data-block-type="image" class="sl-block"><div style="z-index: 14;" data-inline-svg="false" class="sl-block-content"><img data-src="emberembeddedrecords-6/1360091-RE0.svg" data-natural-height="505" data-natural-width="760" style=""></div></div></section><section data-id="b0f8d132152def22064386504cb73684">
+
+<div data-block-id="7885c2870adca3ceaa1dd2154df6ac91" style="height: auto; min-width: 30px; min-height: 30px; width: 740px; left: 106px; top: 112px;" data-block-type="text" class="sl-block"><div style="z-index: 11;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p><span style="font-size:24px">Objectif: améliorer le Monte-Carlo pour</span></p>
+
+<p><span style="font-size:24px">pouvoir franchir plus souvent les barrières énergétiques tout en conversant les qualités de l'échantillon.</span></p>
+</div></div>
+
+<div data-block-id="745240cfb62b71aeddbd902cb8a234c9" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 144px; top: 21px;" data-block-type="text" class="sl-block"><div style="z-index: 12;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p><strong><span style="font-size:48px">Replica Exchange</span></strong></p>
+</div></div>
+<div data-block-id="e7d9d38b52f8c829a343f19eedb071f7" style="min-width: 30px; min-height: 30px; width: 660px; height: 356.876px; left: 168px; top: 254px;" data-block-type="image" class="sl-block"><div style="z-index: 13;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1536122-algoRE.png" data-natural-height="405" data-natural-width="749" style=""></div></div></section><section>
+
+<div data-block-id="aa3bd67ccf18f9048b7a6e72bdb121b9" style="height: auto; width: 600px; left: 160px; top: 101px;" data-block-type="text" class="sl-block"><div style="z-index: 11;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p>Comportement de l'algorithme</p>
+</div></div>
+<div data-block-id="549176a28b89deb044e94bbcd7ec2252" style="min-width: 30px; min-height: 30px; width: 719px; height: 539.25px; left: 121px; top: 151px;" data-block-type="image" class="sl-block"><div style="z-index: 12;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1358466-1A81_casa-p8.png" data-natural-height="480" data-natural-width="640" style=""></div></div>
+<div data-block-id="e1b874f37c6925f2ad9f76f7961db894" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 331px;" data-block-type="text" class="sl-block"><div style="z-index: 13;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content"><p>Text</p></div></div>
+<div data-block-id="fec43ce80c28f43ddb823baebfd37191" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 145px; top: 19px;" data-block-type="text" class="sl-block"><div style="z-index: 14;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p><strong><span style="font-size:48px">Replica Exchange</span></strong></p>
+</div></div></section><section>
+
+<div data-block-id="c80450ff369286431188cb985e37399f" style="height: auto; width: 600px; left: 160px; top: 101px;" data-block-type="text" class="sl-block"><div style="z-index: 11;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p>Comportement de l'algorithme</p>
+</div></div>
+<div data-block-id="623f64a60b64d92081fa42aa33782bdc" style="min-width: 30px; min-height: 30px; width: 725.333px; height: 544px; left: 118px; top: 156px;" data-block-type="image" class="sl-block"><div style="z-index: 12;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1358477-1A81-RE3-T_traj.png" data-natural-height="600" data-natural-width="800" style=""></div></div>
+<div data-block-id="14d65e8bace956eed9639efa8084f278" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 145px; top: 20px;" data-block-type="text" class="sl-block"><div style="z-index: 13;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p><strong><span style="font-size:48px">Replica Exchange</span></strong></p>
+</div></div></section><section><div data-block-id="81e4c0728aa611a8bd3ff5c9488c119f" class="sl-block" data-block-type="text" style="width: 472px; left: 480px; top: 9px; height: auto;"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
+<h2><span style="font-size:48px">Ensemble de tests</span></h2>
+</div></div>
+<div data-block-id="016969f1bb55f10b79ec5e40dafd0cdf" class="sl-block" data-block-type="text" style="width: 904px; left: 9px; top: 64px; height: auto;"><div dir="ui" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p style="text-align:justify"><span style="font-size:20px">1.  8 protéines de 57 jusqu'à 109 résidus:</span></p>
+
+<p style="text-align:justify"><span style="font-size:20px"> 1A81(58),1ABO(98),1BM2(57),1CKA(57),1G90(91),1M61(109),104C(104),1R6J(82),2BYG(97)</span></p>
+
+<p style="text-align:justify"><span style="font-size:20px">2. Méthodes</span></p>
+
+<p style="text-align:justify"><span style="font-size:20px">     - Toulbar2: temps d'exécution max 24h, en cas d'échec relance avec une deuxième configuration  </span></p>
+
+<p style="text-align:justify"><span style="font-size:20px">     - Heuristique: 110 000 cycles (environ  24h de calculs pour le plus long test)</span></p>
+
+<p style="text-align:justify"><span style="font-size:20px">     - Monte-Carlo:  6 milliards de pas (environ 24h de calculs pour  le plus long test) </span></p>
+
+<p style="text-align:justify"><span style="font-size:20px">               . à chaque pas,  2 modifications de rotamères et 1 mutation en moyenne tous les 10 pas </span></p>
+
+<p style="text-align:justify"><span style="font-size:20px">               . température: 0.2 </span></p>
+
+<p style="text-align:justify"><span style="font-size:20px">     - Replica Exchange: 6 milliards de pas cumulés sur tous les marcheurs</span></p>
+
+<p style="text-align:justify"><span style="font-size:20px">             . 4  marcheurs -&gt; températures 10&lt;-&gt;0.01 ou  2&lt;-&gt;0.25</span></p>
+
+<p style="text-align:justify"><span style="font-size:20px">              . 8 marcheurs -&gt; températures:10&lt;-&gt;0.003 ou 3&lt;-&gt;0.175, swap tests:  100 ou 750,... </span></p>
+
+<p style="text-align:justify"><span style="font-size:20px">3. types de tests: séquences fixés,mutation 1 position,mutation multi-positions,tous actifs.</span></p>
+
+<p style="text-align:justify"><span style="font-size:20px">4. Analyses: atteinte du minimum global, étude au voisinage, structures</span></p>
+</div></div></section><section><div data-block-id="00587d1eb660ef123d7b324a6f2c1206" class="sl-block" data-block-type="text" style="width: 800px; left: 87px; top: 271px; height: auto;">
+    <div style="z-index: 11;" class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1><span style="font-size:32px">Résultats</span></h1>
+</div>
+</div>
+<div data-block-id="35ac7f88cae544857b13101bc6fa6f7f" style="min-width: 30px; min-height: 30px; width: 339.791px; height: 611px; left: 33.1046px; top: 14px;" data-block-type="image" class="sl-block"><div style="z-index: 12;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1535320-10_actives.png" data-natural-height="784" data-natural-width="436" style=""></div></div>
+<div data-block-id="c003c49f92213eba167526aa5201e74a" style="min-width: 30px; min-height: 30px; width: 339px; height: 621.369px; left: 593px; top: 14px;" data-block-type="image" class="sl-block"><div style="z-index: 13;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1535321-20_actives.png" data-natural-height="790" data-natural-width="431" style=""></div></div>
+<div data-block-id="5982ef243ce5eab67a217b7117347393" style="height: auto; min-width: 30px; min-height: 30px; width: 288px; left: 59px; top: 635px;" data-block-type="text" class="sl-block"><div style="z-index: 14;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p>10 positions actives</p>
+</div></div>
+<div data-block-id="6c5d68cac3de7a1f01cbeb908e0c6f49" style="height: auto; min-width: 30px; min-height: 30px; width: 289px; left: 618px; top: 641px;" data-block-type="text" class="sl-block"><div style="z-index: 15;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p>20 positions actives</p>
+</div></div></section><section><div data-block-id="af740d94e1e9a9ecb7b2d23ebd0d2bf7" class="sl-block" data-block-type="text" style="width: 800px; left: 96px; top: -6px; height: auto;"><div style="z-index: 10;" class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1><span style="font-size:32px">0,1,5,10,20 et 30 positions actives</span></h1>
+</div></div>
+<div data-block-id="85be34de6c2f53ab42ee3bbd7c8fa139" style="min-width: 30px; min-height: 30px; width: 789px; height: 591.75px; left: 107px; top: 82px;" data-block-type="image" class="sl-block"><div style="z-index: 12;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1358739-all.png" data-natural-height="600" data-natural-width="800" style=""></div></div></section><section><div data-block-id="a382054d36d55e543714058a2ee9e317" class="sl-block" data-block-type="text" style="width: 800px; left: 55px; top: 13px; height: auto;"><div style="z-index: 11;" class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1><span style="font-size:32px">Toutes les positions actives</span></h1>
+</div></div>
+<div data-block-id="230556a9d76635b44d0c03195c6deffd" style="min-width: 30px; min-height: 30px; width: 701px; height: 525.75px; left: 115px; top: 151px;" data-block-type="image" class="sl-block"><div style="z-index: 12;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1358765-best_all.png" data-natural-height="600" data-natural-width="800" style=""></div></div></section><section><div data-block-id="a3ad70a92c686b6b5c84d2e6b223bfa9" class="sl-block" data-block-type="text" style="width: 800px; left: 46px; top: 14px; height: auto;"><div style="z-index: 11;" class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1><span style="font-size:48px">Résultats Superfamily</span></h1>
+</div></div>
+<div data-block-id="fe4efc2464dc4bc65a9ea421f56b75b9" style="min-width: 30px; min-height: 30px; width: 949.14px; height: 285px; left: 0px; top: 217px;" data-block-type="image" class="sl-block"><div style="z-index: 12;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1359930-superfamily1.png" data-natural-height="221" data-natural-width="736" style=""></div></div>
+<div data-block-id="2a146be7bda8598f0c5f3b088d83e087" style="height: auto; min-width: 30px; min-height: 30px; width: 824px; left: 80px; top: 535px;" data-block-type="text" class="sl-block"><div style="z-index: 13;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p>Moyenne sur les 10000 séquences-rotamères de meilleurs énergies</p>
+</div></div>
+<div data-block-id="3f74102abc1ebffaa5c515b8d25c71ef" style="height: auto; min-width: 30px; min-height: 30px; width: 703px; left: 86px; top: 112px;" data-block-type="text" class="sl-block"><div style="z-index: 14;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p>Pour protocole le RE 8 b 2</p>
+</div></div></section><section><div data-block-id="a4128b5b0b48b333c428ab4b4856f94b" class="sl-block" data-block-type="text" style="width: 800px; left: 42px; top: 6px; height: auto;"><div style="z-index: 10;" class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1><span style="font-size:32px">Comparaison des temps de calculs</span></h1>
+</div></div>
+<div data-block-id="0f3515eab34d57384e8e0ed612730864" style="min-width: 30px; min-height: 30px; width: 732px; height: 549px; left: 110px; top: 119px;" data-block-type="image" class="sl-block"><div style="z-index: 12;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1360079-temps_de_calculs.png" data-natural-height="600" data-natural-width="800" style=""></div></div></section><section><div data-block-id="a7c36c3b1095b261c90024de84817dc4" style="min-width: 30px; min-height: 30px; width: 438.562px; height: 287px; left: 28px; top: 22px;" data-block-type="image" class="sl-block"><div style="z-index: 11;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1360247-focus1.png" data-natural-height="445" data-natural-width="680" style=""></div></div>
+<div data-block-id="7677f7ef451fceffaa42aed7b058cf89" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 432px; top: 60px;" data-block-type="text" class="sl-block"><div style="z-index: 12;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p>Retour sur quelques tests</p>
+</div></div>
+<div data-block-id="c78adf9c20937ecb3d2a740b3ce0f2b5" style="min-width: 30px; min-height: 30px; width: 625px; height: 370.066px; left: 294px; top: 318px;" data-block-type="image" class="sl-block"><div style="z-index: 13;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1535088-1M61_2_gmec_vs_ph.png" data-natural-height="900" data-natural-width="1520" style=""></div></div></section><section>
+<div data-block-id="ca7e971da54f20a1ec72c77f8d310f63" style="height: auto; width: 600px; left: 147px; top: 19px;" data-block-type="text" class="sl-block"><div style="z-index: 10;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p>Retour sur quelques tests</p>
+</div></div>
+<div data-block-id="7f082f58e84fe9e293c8f2f1851c9fd7" style="min-width: 30px; min-height: 30px; width: 524.746px; height: 523px; left: 195px; top: 140px;" data-block-type="image" class="sl-block"><div style="z-index: 11;" class="sl-block-content"><img data-src="emberembeddedrecords-6/1361454-align_1CKA2.png" data-natural-height="599" data-natural-width="601" style=""></div></div>
+<div data-block-id="003ad6743fbc4e97a3677f5c3d2a7d71" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 147px; top: 84px;" data-block-type="text" class="sl-block"><div style="z-index: 12;" data-placeholder-text="Text" data-placeholder-tag="p" class="sl-block-content">
+<p><span style="font-size:24px">Séquences au voisinage du minimum global</span></p>
+</div></div>
+<div data-block-id="ab6fea8625941860c0a00f48d7c13462" style="min-width: 4px; min-height: 4px; width: 682px; height: 560px; left: 118px; top: 140px;" data-block-type="shape" class="sl-block"><div style="z-index: 0;" data-shape-stretch="false" data-shape-fill-color="rgb(255, 255, 255)" data-shape-type="rect" class="sl-block-content"><svg viewbox="0 0 560 560" preserveaspectratio="xMidYMid" height="100%" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect fill="rgb(255, 255, 255)" class="shape-element" height="560" width="560"></rect></svg></div></div></section><section><div data-block-id="a1ecb5323a33504552abf587fc39f82c" class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 270px; height: auto;"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text">
+<h1>merci</h1>
+</div></div></section>
+			</div>
+		</div>
+
+		<script>
+			var SLConfig = {"deck": {"id":447727,"slug":"emberembeddedrecords-6","title":"Présentation Comparaison d'algorithmes du 11/05/15","description":"","visibility":"all","published_at":"2015-06-29T14:06:49.093Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/secure/618f7b/decks.jpg","view_count":1,"user":{"id":320629,"username":"davidmignon","name":null,"description":null,"thumbnail_url":"https://www.gravatar.com/avatar/422439ce19e607531ea5f89b07a69bd6?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","pro":true,"enterprise":false,"enterprise_manager":false,"settings":{"id":149707,"present_controls":true,"present_upsizing":true},"registered":true},"background_transition":"slide","transition":"none","theme_id":null,"theme_font":"montserrat","theme_color":"black-orange","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"should_loop":false,"rtl":false,"version":2,"notes":{"5fdc2d355a68b6515316690e8cac8611":"When I think about browser games. I think of games like this:","4d8358ebc6a452ed24b3a263718e53e8":"Focus on core gameplay mechanics\nGet the most succinct fun product on the market asap.","5ac481f0e1ac33f0417344ee7a3f64e6":"I love\nI especially \nMission to make it easy to play fun games with your friends\nTHAT,\nquick \n60 minutes \nplatform \nThis one.","adbaeeaa96a1a2dbc496c6a6b4f52a4e":"Where do we find magical platform\nHow many people have a xbox, \nps3 \nor a pc\nI want the platform to be on every device\n","24853fc69047b51f8e52ba5dc241d4d6":"We appreciate your time! Thank you for listening!\nFollow us on twitter at black tower games\nLet us know if your interested in playing the game\nWe appreciate internap.\nThank you","3591a6b783061705299b42a42a6a2e6e":"Thank internap\nMy name is Alexander Dines,\nPartners Doug, Mika\nWe are Black Tower\nWere going to:\nIntroduce the game\nDo a Demo\nReveal our plans for the future\nTalk about Engine","24169c82723808959b143db3d3d6b2e8":"Ridiculous!\n\nWhen I think about browser games. I think of games like this:","a7c03fe5025ac5e83b82f5ca0f211835":"This is the game we've been making and every day I'm amazing to me what's possible at the other end of a link.\n\nMany people dont know what they're browser can do and We'd like to change that.","66504a5260999780b54cede5bec88cf1":"This is why working in the browser is amazing","bd72ce24464f917f49586509c70a032a":"\nThis then gets committed and flows throughout the system. Now we've got our pipegun!","24bcea7596240168d4fcd6319abec505":"All of our game is embedded into the data and it then feeds into the system.\nLets see what it takes to add a new weapon to the system:","71933a5bdb29e23773f5b4b98be3a1ca":"This data represents the entire representation of a weapon.\nIncluding\nClient side rendering\nUnlock requirements\nFiring behavior","b06984f4aa230f421e2a31541837426d":"We use behavior composition:\nA game object is composed of its behaviors \nLets look at some Game Objects from Horde Mode","08728701660fb0af15590105c627400b":"The medic and the crate's components are listed here. \nBoth have model - visual\nBoth have collision - interact with the world\nMedic has life - allows her to live and die\nEach component boils down to JSON. Along with everyhting else in our system","6e91b9ad85e8060bd0b8907ef1aaae5f":"I hope this gives you an idea of how Horde Mode is being built if you have any questions:\nWe appreciate your time! Thank you for listening!\nFollow us on twitter at black tower games\nLet us know if your interested in playing the game\nWe appreciate internap.\nThank you","70c12605be768daae905210433e58bfa":"\nOur engine is entirely data driven for the purpose of satisfying rapid iteration. The faster ","cd2932c8efdda1d4c2f4640a72f24d83":"","c3d8df2b306738b4927100eff7ab916a":"When we make any changes to the game data the json is then published through the data server\nmade avaiable to\naccount - unlocks\nworld - execution\nclient - visualization","eceae757b1574108fa03116b1a6b5384":"Explicit\nPerformant\nVerbose","6a5f36727bc5190ca8e89144bc800cad":"Authoritative source: Server\nClients transmitting actions / receiving state","7e324363f8a56a68a9a2fa7a590a1c31":"Each realm can consist of up to 38 individual servers","5610cb66a4a50206c126103d53d86905":"My name is Alexander Dines, CEO of Black Tower Entertainment.\n\"It should be easier to play games with your friends\" \n\nWorking with game since early childhood\nFlowplay on Ourworld\n\nDigipen","95b22a4446459727eac330a567dbacf0":"Require a couple modules\n\nExpress handles statically serving the client for requests.\n\nHTTP server gets made with express as the main handler for requests.\n\nThe game then takes the server and adds add's its own handlers. We'll look at that in a second.\n\nFinally the server starts listening","14859cebaec8ac3f0b13f8133a3fcb83":"Wow\nThe state of this WOW character has to be saved / persisted and send to every other client who encounters this character\n\nEve online\nThe positions / headings of all of these ships has to be send to every client","5c95e82ab6e3ef582fe4bf5198a41960":"Authoritative server\nPublishing state changes to clients\nHandling logic\nServing the client code","7c51d52b5743b8567076fc4969672d02":"Client - Dumb terminal\nSimply transmits actions\nVisualizes game state","1c4786af6950844ac056b730644b9acf":"An ID Store","3c47295949f3567a3a17cb0312c99bfa":"Ember invents the wheel you use it to build cool stuff"}}};
+			SLConfig.current_user = {
+				name: "",
+				username: "davidmignon",
+				pro: true
+			};
+		</script>
+
+		<script src="lib/head.min.js"></script>
+		<script src="lib/reveal.min.js"></script>
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				mouseWheel: false,
+
+				autoSlide: SLConfig.deck.auto_slide_interval || 0,
+				autoSlideStoppable: true,
+
+				rolling_links: SLConfig.deck.rolling_links || true,
+				center: SLConfig.deck.center || false,
+				loop: SLConfig.deck.should_loop || false,
+				rtl: SLConfig.deck.rtl || false,
+
+				transition: SLConfig.deck.transition,
+				backgroundTransition: SLConfig.deck.background_transition,
+
+				dependencies: [
+					{ src: 'lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/highlight/highlight.js', async: true, callback: function() { hljs.initHighlighting(); hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+			// Make Slides speaker notes available in the reveal.js speaker view
+			if( SLConfig.deck.notes ) {
+				[].forEach.call( document.querySelectorAll( '.reveal .slides section' ), function( slide ) {
+
+					var value = SLConfig.deck.notes[ slide.getAttribute( 'data-id' ) ];
+					if( value && typeof value === 'string' ) {
+						slide.setAttribute( 'data-notes', value );
+					}
+
+				} );
+			}
+		</script>
+
+		
+
+	</body>
+</html>
