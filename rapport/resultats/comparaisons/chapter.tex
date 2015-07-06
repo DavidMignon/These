@@ -408,9 +408,11 @@ Nous évaluons maintenant, la similarité que peuvent avoir nos séquences putat
 
    \subsubsection{Température et entropie} 
 
-Il apparaît assez clair, de part le principe du test de metropolis-Hasting, que le Monte-Carlo à basse température explore une partie de l'espace plus petite qu'au haute température. Il est alors légitime de mesurer cet effet sur les ensembles de dix milles séquences obtenues. Nous utilisons l'entropie pour un alphabet A (voir table \ref{tab:Alphabet}) réduit par position de séquences , c'est-à-dire:
-Pour i une position dans la séquence, notons $f_{i}(a)$ la fréquence en i, de la lettre a de notre alphabet A . Alors l'entropie en i vaut:
- $H_i=  - \sum_{a \in A} f_{i}(a) * log( f_{i}(a) ) $  
+Il apparaît assez clairement, de part le principe du test de metropolis-Hasting, que le Monte-Carlo à basse température explore une partie de l'espace plus petite qu'au haute température. Il est alors légitime de mesurer cet effet sur les ensembles de dix milles séquences obtenues. Nous utilisons un alphabet A (voir table \ref{tab:Alphabet}) réduit à six classes d'acides aminés comme proposée dans~\citep{refAlphabet} qui permet de se focaliser sur les différences physico-chimiques des acides aminés.  
+
+L'entropie par position $H_i$ est alors définit de la façon suivante.
+Pour i une position dans la séquence, notons $f_{i}(a)$ la fréquence en i, de la lettre a de l'alphabet A . Alors 
+$H_i=  - \sum_{a \in A} f_{i}(a) * log( f_{i}(a) ) $  
 
 Puis, nous calculons la moyenne sur les postions des $exp(H_i)$ pour nos tests. Les résultats sont sur le tableau \ref{tab:Entro_mc}.
 
@@ -418,30 +420,20 @@ Puis, nous calculons la moyenne sur les postions des $exp(H_i)$ pour nos tests. 
     \begin{table}[!htbp]
       \centering
       
-      \begin{tabular}{ll}
+      \begin{tabular}{ccccc}
         \toprule
-        acide aminé & alphabet réduit \\
-        \cmidrule{1-2}     
-        L & 1 \\
-        V & 1 \\
-        I & 1 \\
-        M & 1 \\
-        C & 1 \\
-        F & 2 \\
-        Y & 2 \\
-        W & 2 \\
-        G & 3 \\
-        A & 4 \\
-        S & 4 \\
-        T & 4 \\
-        P & 4 \\
-        E & 5 \\
-        D & 5 \\
-        N & 5 \\
-        Q & 5 \\
-        K & 6 \\
-        R & 6 \\
-        H & 6 \\
+        acide aminé & alphabet & & acide aminé & alphabet \\
+        \cmidrule(r){1-2}   \cmidrule(r){4-5}     
+        L & 1 & & S & 4 \\
+        V & 1 & & T & 4 \\
+        I & 1 & & P & 4 \\
+        M & 1 & & E & 5 \\
+        C & 1 & & D & 5 \\
+        F & 2 & & N & 5 \\
+        Y & 2 & & Q & 5 \\
+        W & 2 & & K & 6 \\
+        G & 3 & & R & 6 \\
+        A & 4 & & H & 6 \\
         \bottomrule                
       \end{tabular}
       \caption{Alphabet réduit}      
@@ -498,6 +490,10 @@ Les résultats sont visibles à la table \ref{tab:Traj_ident}.L'effet du doublem
       \caption{Pourcentage d'identité en variant la longueur et le nombre de trajectoires.}      
       \label{tab:Traj_ident}
     \end{table}
+
+
+   \subsubsection{Mutations et pourcentage d' identité} 
+Jusqu'à présent nous avons utilisé le même mode de modification de la séquence/conformation entre chaque pas Monte-Carlo pour tous les protocoles. Il s'agît du mode qui utilise les balises <Prot\_Prot> avec une valeur à 1 et <Mut> avec une valeur à 0.1. Cela veut dire qu'à chaque pas deux rotamères sont modifiés sans changement du type de résidu et qu'une troisième position change d'acide aminé avec une probabilité de 0.1. Nous allons comparer ce mode de modification (avec les protocoles mc1 et mc2 ) avec un mode où seulement  le rotamère est changé à une position sans changement de type et une seconde position change d'acide aminé la même probabilité que précédemment, 0.1 (avec les protocoles mc1b et mc2e). Les résultats sont visibles à la table ((Table~\ref{tab:mut_ident})). Nous voyons que le en ce qui concerne le premier couple de protocole, il n'y a un déclin pour tous les tests. Pour le second il y a également une dégradation des performances globales mais elle n'est pas systématique, il y a même une amélioration pour la protéine 1R6J.  
 
 
     \begin{table}[!htbp]

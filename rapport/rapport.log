@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.3.10)  1 JUL 2015 11:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.3.10)  6 JUL 2015 11:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -723,20 +723,7 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 55.
  (./rapport.aux
 (./merci.aux) (./dedicace.aux) (./glossaire.aux) (./intro.aux) (./contexte.aux)
 (./methodes_theoriques.aux) (./methodes_pratiques.aux)
-(./resultats/comparaisons/chapter.aux
-
-LaTeX Warning: Label `Sim_pos_byp3' multiply defined.
-
-
-LaTeX Warning: Label `Sim_pos_byp4' multiply defined.
-
-
-LaTeX Warning: Label `Sim_pos_byph' multiply defined.
-
-
-LaTeX Warning: Label `fig-seqlogo-T=03' multiply defined.
-
-) (./conc.aux) (./annexe.aux) (./resume.aux))
+(./resultats/comparaisons/chapter.aux))
 \openout1 = `rapport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 243.
@@ -754,8 +741,7 @@ LaTeX Font Info:    ... okay on input line 243.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 243.
 LaTeX Font Info:    ... okay on input line 243.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 243.
-
-(/usr/share/texmf/tex/latex/lm/t1lmr.fd
+ (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 *geometry* driver: auto-detecting
@@ -859,7 +845,7 @@ LaTeX Info: Redefining \nameref on input line 243.
 \@outlinefile=\write3
 \openout3 = `rapport.out'.
 
- <X_logo.jpg, id=136, 435.87843pt x 596.2275pt>
+ <X_logo.jpg, id=100, 435.87843pt x 596.2275pt>
 File: X_logo.jpg Graphic file (type jpg)
 
 <use X_logo.jpg>
@@ -938,36 +924,35 @@ Package microtype Info: Character `029' is missing
 ] [4
 
 
-] (./rapport.toc
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 6.
- [5
-
-])
+] (./rapport.toc)
 \tf@toc=\write4
 \openout4 = `rapport.toc'.
 
- [6] (./rapport.lof)
+ [5
+
+] [6
+
+] (./rapport.lof)
 \tf@lof=\write5
 \openout5 = `rapport.lof'.
 
 
 [7
 
-
 ] [8
 
-] (./rapport.lot [9
-
-])
+] (./rapport.lot)
 \tf@lot=\write6
 \openout6 = `rapport.lot'.
 
- [10]
+ [9
+
+] [10
+
+]
 \openout2 = `glossaire.aux'.
 
  (./glossaire.tex) [11
-
 
 
 ] [12
@@ -987,7 +972,19 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ]
 \openout2 = `contexte.aux'.
 
- (./contexte.tex) [3
+ (./contexte.tex
+
+Package natbib Warning: Citation `refRE1' on page 3 undefined on input line 24.
+
+
+
+Package natbib Warning: Citation `refRE2' on page 3 undefined on input line 24.
+
+
+
+Package natbib Warning: Citation `ref4' on page 3 undefined on input line 26.
+
+) [3
 
 
 ] [4
@@ -998,6 +995,8 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
  (./methodes_theoriques.tex
 Chapitre 1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 1.
 ) [5
 
 
@@ -1023,21 +1022,54 @@ Chapitre 3.
 [9
 
 
-] [10] [11] [12] [13]
+] [10] [11]
+
+LaTeX Warning: Reference `chap:annexe' on page 12 undefined on input line 112.
+
+[12] [13]
 Overfull \hbox (15.55559pt too wide) in paragraph at lines 205--230
  [][] 
  []
 
-[14] [15]
+[14]
+
+Package natbib Warning: Citation `refRE1' on page 15 undefined on input line 24
+4.
+
+
+Package natbib Warning: Citation `refRE2' on page 15 undefined on input line 24
+4.
+
+
+Package natbib Warning: Citation `refRE3' on page 15 undefined on input line 24
+4.
+
+[15]
 Overfull \hbox (79.4315pt too wide) in paragraph at lines 269--285
  [][] 
  []
 
 
+Package natbib Warning: Citation `reftoulbar1' on page 16 undefined on input li
+ne 294.
+
+
 Package natbib Warning: Citation `reftoulbar2' on page 16 undefined on input li
 ne 294.
 
+
+Package natbib Warning: Citation `refSuperfamily' on page 16 undefined on input
+ line 301.
+
 [16]
+
+Package natbib Warning: Citation `refSam' on page 17 undefined on input line 30
+8.
+
+
+Package natbib Warning: Citation `refHmmer' on page 17 undefined on input line 
+308.
+
 
 Package natbib Warning: Citation `refPfam' on page 17 undefined on input line 3
 11.
@@ -1052,278 +1084,307 @@ LaTeX Warning: Reference `tab_ener_mc' on page 18 undefined on input line 322.
 
 [18
 
-] [19] [20]
-<./resultats/comparaisons/image/mc/1ABO_simil_bypos.pdf, id=524, 614.295pt x 79
+]
+
+LaTeX Warning: Reference `tab:Alphabet' on page 19 undefined on input line 411.
+
+
+
+Package natbib Warning: Citation `refAlphabet' on page 19 undefined on input li
+ne 411.
+
+[19]
+
+LaTeX Warning: Reference `tab:Entro_mc' on page 20 undefined on input line 417.
+
+
+
+LaTeX Warning: Reference `tab:Traj_ident' on page 20 undefined on input line 46
+9.
+
+[20]
+
+LaTeX Warning: Reference `tab:mut_ident' on page 21 undefined on input line 496
+.
+
+
+Overfull \hbox (24.46378pt too wide) in paragraph at lines 496--497
+[]\T1/lmr/m/n/12 (-20) Jusqu'à pré-sent nous avons uti-lisé le même mode de mo-
+di-fi-ca-tion de la sé-quence/conformation
+ []
+
+[21]
+<./resultats/comparaisons/image/mc/1ABO_simil_bypos.pdf, id=334, 614.295pt x 79
 4.97pt>
 File: ./resultats/comparaisons/image/mc/1ABO_simil_bypos.pdf Graphic file (type
  pdf)
  <use ./resultats/comparaisons/image/mc/1ABO_simil_bypos.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1ABO_simil_bypos.pdf
- used on input line 530.
+ used on input line 526.
 (pdftex.def)             Requested size: 241.84842pt x 156.1563pt.
 
-<./resultats/comparaisons/image/mc/1BM2_simil_bypos.pdf, id=526, 614.295pt x 79
+<./resultats/comparaisons/image/mc/1BM2_simil_bypos.pdf, id=336, 614.295pt x 79
 4.97pt>
 File: ./resultats/comparaisons/image/mc/1BM2_simil_bypos.pdf Graphic file (type
  pdf)
  <use ./resultats/comparaisons/image/mc/1BM2_simil_bypos.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1BM2_simil_bypos.pdf
- used on input line 531.
+ used on input line 527.
 (pdftex.def)             Requested size: 241.84842pt x 156.1563pt.
 
-<./resultats/comparaisons/image/mc/1CKA_simil_bypos.pdf, id=528, 614.295pt x 79
+<./resultats/comparaisons/image/mc/1CKA_simil_bypos.pdf, id=338, 614.295pt x 79
 4.97pt>
 File: ./resultats/comparaisons/image/mc/1CKA_simil_bypos.pdf Graphic file (type
  pdf)
  <use ./resultats/comparaisons/image/mc/1CKA_simil_bypos.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1CKA_simil_bypos.pdf
- used on input line 532.
+ used on input line 528.
 (pdftex.def)             Requested size: 241.84842pt x 156.1563pt.
 
-<./resultats/comparaisons/image/mc/1G9O_simil_bypos.pdf, id=530, 614.295pt x 79
+<./resultats/comparaisons/image/mc/1G9O_simil_bypos.pdf, id=340, 614.295pt x 79
 4.97pt>
 File: ./resultats/comparaisons/image/mc/1G9O_simil_bypos.pdf Graphic file (type
  pdf)
  <use ./resultats/comparaisons/image/mc/1G9O_simil_bypos.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1G9O_simil_bypos.pdf
- used on input line 533.
+ used on input line 529.
 (pdftex.def)             Requested size: 241.84842pt x 156.1563pt.
 
-<./resultats/comparaisons/image/mc/1M61_simil_bypos.pdf, id=532, 614.295pt x 79
+<./resultats/comparaisons/image/mc/1M61_simil_bypos.pdf, id=342, 614.295pt x 79
 4.97pt>
 File: ./resultats/comparaisons/image/mc/1M61_simil_bypos.pdf Graphic file (type
  pdf)
  <use ./resultats/comparaisons/image/mc/1M61_simil_bypos.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1M61_simil_bypos.pdf
- used on input line 534.
+ used on input line 530.
 (pdftex.def)             Requested size: 241.84842pt x 156.1563pt.
 
-<./resultats/comparaisons/image/mc/1O4C_simil_bypos.pdf, id=534, 614.295pt x 79
+<./resultats/comparaisons/image/mc/1O4C_simil_bypos.pdf, id=344, 614.295pt x 79
 4.97pt>
 File: ./resultats/comparaisons/image/mc/1O4C_simil_bypos.pdf Graphic file (type
  pdf)
  <use ./resultats/comparaisons/image/mc/1O4C_simil_bypos.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1O4C_simil_bypos.pdf
- used on input line 535.
+ used on input line 531.
 (pdftex.def)             Requested size: 241.84842pt x 156.1563pt.
 
-<./resultats/comparaisons/image/mc/1R6J_simil_bypos.pdf, id=536, 614.295pt x 79
+<./resultats/comparaisons/image/mc/1R6J_simil_bypos.pdf, id=346, 614.295pt x 79
 4.97pt>
 File: ./resultats/comparaisons/image/mc/1R6J_simil_bypos.pdf Graphic file (type
  pdf)
  <use ./resultats/comparaisons/image/mc/1R6J_simil_bypos.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1R6J_simil_bypos.pdf
- used on input line 536.
+ used on input line 532.
 (pdftex.def)             Requested size: 241.84842pt x 156.1563pt.
 
-Overfull \hbox (52.45273pt too wide) in paragraph at lines 529--538
+Overfull \hbox (52.45273pt too wide) in paragraph at lines 525--534
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 13.62512pt on input line 541.
+LaTeX Warning: Float too large for page by 13.62512pt on input line 537.
 
 
-<./resultats/comparaisons/image/mc/1ABO_p3_simil_bypos.jpg, id=538, 361.35pt x 
+<./resultats/comparaisons/image/mc/1ABO_p3_simil_bypos.jpg, id=348, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1ABO_p3_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1ABO_p3_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1ABO_p3_simil_bypos.
-jpg used on input line 546.
+jpg used on input line 542.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-<./resultats/comparaisons/image/mc/1BM2_p3_simil_bypos.jpg, id=539, 361.35pt x 
+<./resultats/comparaisons/image/mc/1BM2_p3_simil_bypos.jpg, id=349, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1BM2_p3_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1BM2_p3_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1BM2_p3_simil_bypos.
-jpg used on input line 547.
+jpg used on input line 543.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-<./resultats/comparaisons/image/mc/1CKA_p3_simil_bypos.jpg, id=540, 361.35pt x 
+<./resultats/comparaisons/image/mc/1CKA_p3_simil_bypos.jpg, id=350, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1CKA_p3_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1CKA_p3_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1CKA_p3_simil_bypos.
-jpg used on input line 548.
+jpg used on input line 544.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-<./resultats/comparaisons/image/mc/1G9O_p3_simil_bypos.jpg, id=541, 361.35pt x 
+<./resultats/comparaisons/image/mc/1G9O_p3_simil_bypos.jpg, id=351, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1G9O_p3_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1G9O_p3_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1G9O_p3_simil_bypos.
-jpg used on input line 549.
+jpg used on input line 545.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-<./resultats/comparaisons/image/mc/1M61_p3_simil_bypos.jpg, id=542, 361.35pt x 
+<./resultats/comparaisons/image/mc/1M61_p3_simil_bypos.jpg, id=352, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1M61_p3_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1M61_p3_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1M61_p3_simil_bypos.
-jpg used on input line 550.
+jpg used on input line 546.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-<./resultats/comparaisons/image/mc/1O4C_p3_simil_bypos.jpg, id=543, 361.35pt x 
+<./resultats/comparaisons/image/mc/1O4C_p3_simil_bypos.jpg, id=353, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1O4C_p3_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1O4C_p3_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1O4C_p3_simil_bypos.
-jpg used on input line 551.
+jpg used on input line 547.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-<./resultats/comparaisons/image/mc/1R6J_p3_simil_bypos.jpg, id=544, 361.35pt x 
+<./resultats/comparaisons/image/mc/1R6J_p3_simil_bypos.jpg, id=354, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1R6J_p3_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1R6J_p3_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1R6J_p3_simil_bypos.
-jpg used on input line 552.
+jpg used on input line 548.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-Overfull \hbox (49.60727pt too wide) in paragraph at lines 545--554
+Overfull \hbox (49.60727pt too wide) in paragraph at lines 541--550
  [][] 
  []
 
 
-<./resultats/comparaisons/image/mc/1ABO_p4_simil_bypos.jpg, id=545, 361.35pt x 
+<./resultats/comparaisons/image/mc/1ABO_p4_simil_bypos.jpg, id=355, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1ABO_p4_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1ABO_p4_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1ABO_p4_simil_bypos.
-jpg used on input line 561.
+jpg used on input line 557.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-<./resultats/comparaisons/image/mc/1BM2_p4_simil_bypos.jpg, id=546, 361.35pt x 
+<./resultats/comparaisons/image/mc/1BM2_p4_simil_bypos.jpg, id=356, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1BM2_p4_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1BM2_p4_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1BM2_p4_simil_bypos.
-jpg used on input line 562.
+jpg used on input line 558.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-<./resultats/comparaisons/image/mc/1CKA_p4_simil_bypos.jpg, id=547, 361.35pt x 
+<./resultats/comparaisons/image/mc/1CKA_p4_simil_bypos.jpg, id=357, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1CKA_p4_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1CKA_p4_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1CKA_p4_simil_bypos.
-jpg used on input line 563.
+jpg used on input line 559.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-<./resultats/comparaisons/image/mc/1G9O_p4_simil_bypos.jpg, id=548, 361.35pt x 
+<./resultats/comparaisons/image/mc/1G9O_p4_simil_bypos.jpg, id=358, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1G9O_p4_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1G9O_p4_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1G9O_p4_simil_bypos.
-jpg used on input line 564.
+jpg used on input line 560.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-<./resultats/comparaisons/image/mc/1M61_p4_simil_bypos.jpg, id=549, 361.35pt x 
+<./resultats/comparaisons/image/mc/1M61_p4_simil_bypos.jpg, id=359, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1M61_p4_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1M61_p4_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1M61_p4_simil_bypos.
-jpg used on input line 565.
+jpg used on input line 561.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-<./resultats/comparaisons/image/mc/1O4C_p4_simil_bypos.jpg, id=550, 361.35pt x 
+<./resultats/comparaisons/image/mc/1O4C_p4_simil_bypos.jpg, id=360, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1O4C_p4_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1O4C_p4_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1O4C_p4_simil_bypos.
-jpg used on input line 566.
+jpg used on input line 562.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-<./resultats/comparaisons/image/mc/1R6J_p4_simil_bypos.jpg, id=551, 361.35pt x 
+<./resultats/comparaisons/image/mc/1R6J_p4_simil_bypos.jpg, id=361, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1R6J_p4_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1R6J_p4_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1R6J_p4_simil_bypos.
-jpg used on input line 567.
+jpg used on input line 563.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-Overfull \hbox (49.60727pt too wide) in paragraph at lines 560--569
+Overfull \hbox (49.60727pt too wide) in paragraph at lines 556--565
  [][] 
  []
 
 
-<./resultats/comparaisons/image/mc/1ABO_ph_simil_bypos.jpg, id=552, 361.35pt x 
+<./resultats/comparaisons/image/mc/1ABO_ph_simil_bypos.jpg, id=362, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1ABO_ph_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1ABO_ph_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1ABO_ph_simil_bypos.
-jpg used on input line 576.
+jpg used on input line 572.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-<./resultats/comparaisons/image/mc/1BM2_ph_simil_bypos.jpg, id=553, 361.35pt x 
+<./resultats/comparaisons/image/mc/1BM2_ph_simil_bypos.jpg, id=363, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1BM2_ph_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1BM2_ph_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1BM2_ph_simil_bypos.
-jpg used on input line 577.
+jpg used on input line 573.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-<./resultats/comparaisons/image/mc/1CKA_ph_simil_bypos.jpg, id=554, 361.35pt x 
+<./resultats/comparaisons/image/mc/1CKA_ph_simil_bypos.jpg, id=364, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1CKA_ph_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1CKA_ph_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1CKA_ph_simil_bypos.
-jpg used on input line 578.
+jpg used on input line 574.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-<./resultats/comparaisons/image/mc/1G9O_ph_simil_bypos.jpg, id=555, 361.35pt x 
+<./resultats/comparaisons/image/mc/1G9O_ph_simil_bypos.jpg, id=365, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1G9O_ph_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1G9O_ph_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1G9O_ph_simil_bypos.
-jpg used on input line 579.
+jpg used on input line 575.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-<./resultats/comparaisons/image/mc/1M61_ph_simil_bypos.jpg, id=556, 361.35pt x 
+<./resultats/comparaisons/image/mc/1M61_ph_simil_bypos.jpg, id=366, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1M61_ph_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1M61_ph_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1M61_ph_simil_bypos.
-jpg used on input line 580.
+jpg used on input line 576.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-<./resultats/comparaisons/image/mc/1O4C_ph_simil_bypos.jpg, id=557, 361.35pt x 
+<./resultats/comparaisons/image/mc/1O4C_ph_simil_bypos.jpg, id=367, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1O4C_ph_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1O4C_ph_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1O4C_ph_simil_bypos.
-jpg used on input line 581.
+jpg used on input line 577.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-<./resultats/comparaisons/image/mc/1R6J_ph_simil_bypos.jpg, id=558, 361.35pt x 
+<./resultats/comparaisons/image/mc/1R6J_ph_simil_bypos.jpg, id=368, 361.35pt x 
 216.81pt>
 File: ./resultats/comparaisons/image/mc/1R6J_ph_simil_bypos.jpg Graphic file (t
 ype jpg)
  <use ./resultats/comparaisons/image/mc/1R6J_ph_simil_bypos.jpg>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1R6J_ph_simil_bypos.
-jpg used on input line 582.
+jpg used on input line 578.
 (pdftex.def)             Requested size: 240.42569pt x 144.25623pt.
 
-Overfull \hbox (49.60727pt too wide) in paragraph at lines 575--584
+Overfull \hbox (49.60727pt too wide) in paragraph at lines 571--580
  [][] 
  []
 
@@ -1338,18 +1399,18 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1ABO_p3_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1ABO_p3_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 594.
+(epstopdf)             \includegraphics on input line 590.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1ABO_p3_simil_byseq_frequency-eps-converted-
-to.pdf, id=559, 362.35374pt x 217.81375pt>
+to.pdf, id=369, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1ABO_p3_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1ABO_p3_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1ABO_p3_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 594.
+frequency-eps-converted-to.pdf used on input line 590.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 Package epstopdf Info: Source file: <./resultats/comparaisons/image/mc/1BM2_p3_
 simil_byseq_frequency.eps>
@@ -1362,18 +1423,18 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1BM2_p3_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1BM2_p3_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 595.
+(epstopdf)             \includegraphics on input line 591.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1BM2_p3_simil_byseq_frequency-eps-converted-
-to.pdf, id=560, 362.35374pt x 217.81375pt>
+to.pdf, id=370, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1BM2_p3_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1BM2_p3_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1BM2_p3_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 595.
+frequency-eps-converted-to.pdf used on input line 591.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 Package epstopdf Info: Source file: <./resultats/comparaisons/image/mc/1CKA_p3_
 simil_byseq_frequency.eps>
@@ -1386,18 +1447,18 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1CKA_p3_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1CKA_p3_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 596.
+(epstopdf)             \includegraphics on input line 592.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1CKA_p3_simil_byseq_frequency-eps-converted-
-to.pdf, id=561, 362.35374pt x 217.81375pt>
+to.pdf, id=371, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1CKA_p3_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1CKA_p3_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1CKA_p3_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 596.
+frequency-eps-converted-to.pdf used on input line 592.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 Package epstopdf Info: Source file: <./resultats/comparaisons/image/mc/1G9O_p3_
 simil_byseq_frequency.eps>
@@ -1410,18 +1471,18 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1G9O_p3_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1G9O_p3_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 597.
+(epstopdf)             \includegraphics on input line 593.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1G9O_p3_simil_byseq_frequency-eps-converted-
-to.pdf, id=562, 362.35374pt x 217.81375pt>
+to.pdf, id=372, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1G9O_p3_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1G9O_p3_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1G9O_p3_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 597.
+frequency-eps-converted-to.pdf used on input line 593.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 Package epstopdf Info: Source file: <./resultats/comparaisons/image/mc/1M61_p3_
 simil_byseq_frequency.eps>
@@ -1434,18 +1495,18 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1M61_p3_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1M61_p3_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 598.
+(epstopdf)             \includegraphics on input line 594.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1M61_p3_simil_byseq_frequency-eps-converted-
-to.pdf, id=563, 362.35374pt x 217.81375pt>
+to.pdf, id=373, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1M61_p3_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1M61_p3_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1M61_p3_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 598.
+frequency-eps-converted-to.pdf used on input line 594.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 Package epstopdf Info: Source file: <./resultats/comparaisons/image/mc/1O4C_p3_
 simil_byseq_frequency.eps>
@@ -1458,18 +1519,18 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1O4C_p3_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1O4C_p3_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 599.
+(epstopdf)             \includegraphics on input line 595.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1O4C_p3_simil_byseq_frequency-eps-converted-
-to.pdf, id=564, 362.35374pt x 217.81375pt>
+to.pdf, id=374, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1O4C_p3_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1O4C_p3_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1O4C_p3_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 599.
+frequency-eps-converted-to.pdf used on input line 595.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 Package epstopdf Info: Source file: <./resultats/comparaisons/image/mc/1R6J_p3_
 simil_byseq_frequency.eps>
@@ -1482,21 +1543,21 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1R6J_p3_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1R6J_p3_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 600.
+(epstopdf)             \includegraphics on input line 596.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1R6J_p3_simil_byseq_frequency-eps-converted-
-to.pdf, id=565, 362.35374pt x 217.81375pt>
+to.pdf, id=375, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1R6J_p3_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1R6J_p3_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1R6J_p3_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 600.
+frequency-eps-converted-to.pdf used on input line 596.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 
-Overfull \hbox (49.60727pt too wide) in paragraph at lines 593--602
+Overfull \hbox (49.60727pt too wide) in paragraph at lines 589--598
  [][] 
  []
 
@@ -1511,18 +1572,18 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1ABO_p4_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1ABO_p4_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 609.
+(epstopdf)             \includegraphics on input line 605.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1ABO_p4_simil_byseq_frequency-eps-converted-
-to.pdf, id=566, 362.35374pt x 217.81375pt>
+to.pdf, id=376, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1ABO_p4_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1ABO_p4_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1ABO_p4_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 609.
+frequency-eps-converted-to.pdf used on input line 605.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 Package epstopdf Info: Source file: <./resultats/comparaisons/image/mc/1BM2_p4_
 simil_byseq_frequency.eps>
@@ -1535,18 +1596,18 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1BM2_p4_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1BM2_p4_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 610.
+(epstopdf)             \includegraphics on input line 606.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1BM2_p4_simil_byseq_frequency-eps-converted-
-to.pdf, id=567, 362.35374pt x 217.81375pt>
+to.pdf, id=377, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1BM2_p4_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1BM2_p4_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1BM2_p4_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 610.
+frequency-eps-converted-to.pdf used on input line 606.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 Package epstopdf Info: Source file: <./resultats/comparaisons/image/mc/1CKA_p4_
 simil_byseq_frequency.eps>
@@ -1559,18 +1620,18 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1CKA_p4_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1CKA_p4_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 611.
+(epstopdf)             \includegraphics on input line 607.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1CKA_p4_simil_byseq_frequency-eps-converted-
-to.pdf, id=568, 362.35374pt x 217.81375pt>
+to.pdf, id=378, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1CKA_p4_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1CKA_p4_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1CKA_p4_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 611.
+frequency-eps-converted-to.pdf used on input line 607.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 Package epstopdf Info: Source file: <./resultats/comparaisons/image/mc/1G9O_p4_
 simil_byseq_frequency.eps>
@@ -1583,18 +1644,18 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1G9O_p4_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1G9O_p4_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 612.
+(epstopdf)             \includegraphics on input line 608.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1G9O_p4_simil_byseq_frequency-eps-converted-
-to.pdf, id=569, 362.35374pt x 217.81375pt>
+to.pdf, id=379, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1G9O_p4_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1G9O_p4_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1G9O_p4_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 612.
+frequency-eps-converted-to.pdf used on input line 608.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 Package epstopdf Info: Source file: <./resultats/comparaisons/image/mc/1M61_p4_
 simil_byseq_frequency.eps>
@@ -1607,18 +1668,18 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1M61_p4_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1M61_p4_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 613.
+(epstopdf)             \includegraphics on input line 609.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1M61_p4_simil_byseq_frequency-eps-converted-
-to.pdf, id=570, 362.35374pt x 217.81375pt>
+to.pdf, id=380, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1M61_p4_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1M61_p4_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1M61_p4_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 613.
+frequency-eps-converted-to.pdf used on input line 609.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 Package epstopdf Info: Source file: <./resultats/comparaisons/image/mc/1O4C_p4_
 simil_byseq_frequency.eps>
@@ -1631,18 +1692,18 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1O4C_p4_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1O4C_p4_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 614.
+(epstopdf)             \includegraphics on input line 610.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1O4C_p4_simil_byseq_frequency-eps-converted-
-to.pdf, id=571, 362.35374pt x 217.81375pt>
+to.pdf, id=381, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1O4C_p4_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1O4C_p4_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1O4C_p4_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 614.
+frequency-eps-converted-to.pdf used on input line 610.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 Package epstopdf Info: Source file: <./resultats/comparaisons/image/mc/1R6J_p4_
 simil_byseq_frequency.eps>
@@ -1655,21 +1716,21 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1R6J_p4_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1R6J_p4_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 615.
+(epstopdf)             \includegraphics on input line 611.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1R6J_p4_simil_byseq_frequency-eps-converted-
-to.pdf, id=572, 362.35374pt x 217.81375pt>
+to.pdf, id=382, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1R6J_p4_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1R6J_p4_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1R6J_p4_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 615.
+frequency-eps-converted-to.pdf used on input line 611.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 
-Overfull \hbox (49.60727pt too wide) in paragraph at lines 608--617
+Overfull \hbox (49.60727pt too wide) in paragraph at lines 604--613
  [][] 
  []
 
@@ -1684,18 +1745,18 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1ABO_ph_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1ABO_ph_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 624.
+(epstopdf)             \includegraphics on input line 620.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1ABO_ph_simil_byseq_frequency-eps-converted-
-to.pdf, id=573, 362.35374pt x 217.81375pt>
+to.pdf, id=383, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1ABO_ph_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1ABO_ph_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1ABO_ph_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 624.
+frequency-eps-converted-to.pdf used on input line 620.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 Package epstopdf Info: Source file: <./resultats/comparaisons/image/mc/1BM2_ph_
 simil_byseq_frequency.eps>
@@ -1708,18 +1769,18 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1BM2_ph_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1BM2_ph_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 625.
+(epstopdf)             \includegraphics on input line 621.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1BM2_ph_simil_byseq_frequency-eps-converted-
-to.pdf, id=574, 362.35374pt x 217.81375pt>
+to.pdf, id=384, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1BM2_ph_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1BM2_ph_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1BM2_ph_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 625.
+frequency-eps-converted-to.pdf used on input line 621.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 Package epstopdf Info: Source file: <./resultats/comparaisons/image/mc/1CKA_ph_
 simil_byseq_frequency.eps>
@@ -1732,18 +1793,18 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1CKA_ph_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1CKA_ph_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 626.
+(epstopdf)             \includegraphics on input line 622.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1CKA_ph_simil_byseq_frequency-eps-converted-
-to.pdf, id=575, 362.35374pt x 217.81375pt>
+to.pdf, id=385, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1CKA_ph_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1CKA_ph_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1CKA_ph_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 626.
+frequency-eps-converted-to.pdf used on input line 622.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 Package epstopdf Info: Source file: <./resultats/comparaisons/image/mc/1G9O_ph_
 simil_byseq_frequency.eps>
@@ -1756,18 +1817,18 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1G9O_ph_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1G9O_ph_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 627.
+(epstopdf)             \includegraphics on input line 623.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1G9O_ph_simil_byseq_frequency-eps-converted-
-to.pdf, id=576, 362.35374pt x 217.81375pt>
+to.pdf, id=386, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1G9O_ph_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1G9O_ph_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1G9O_ph_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 627.
+frequency-eps-converted-to.pdf used on input line 623.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 Package epstopdf Info: Source file: <./resultats/comparaisons/image/mc/1M61_ph_
 simil_byseq_frequency.eps>
@@ -1780,18 +1841,18 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1M61_ph_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1M61_ph_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 628.
+(epstopdf)             \includegraphics on input line 624.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1M61_ph_simil_byseq_frequency-eps-converted-
-to.pdf, id=577, 362.35374pt x 217.81375pt>
+to.pdf, id=387, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1M61_ph_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1M61_ph_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1M61_ph_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 628.
+frequency-eps-converted-to.pdf used on input line 624.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 Package epstopdf Info: Source file: <./resultats/comparaisons/image/mc/1O4C_ph_
 simil_byseq_frequency.eps>
@@ -1804,18 +1865,18 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1O4C_ph_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1O4C_ph_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 629.
+(epstopdf)             \includegraphics on input line 625.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1O4C_ph_simil_byseq_frequency-eps-converted-
-to.pdf, id=578, 362.35374pt x 217.81375pt>
+to.pdf, id=388, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1O4C_ph_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1O4C_ph_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1O4C_ph_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 629.
+frequency-eps-converted-to.pdf used on input line 625.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 Package epstopdf Info: Source file: <./resultats/comparaisons/image/mc/1R6J_ph_
 simil_byseq_frequency.eps>
@@ -1828,162 +1889,159 @@ simil_byseq_frequency-eps-converted-to.pdf>
 (epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/i
 mage/mc/1R6J_ph_simil_byseq_frequency-eps-converted-to.pdf ./resultats/comparai
 sons/image/mc/1R6J_ph_simil_byseq_frequency.eps>
-(epstopdf)             \includegraphics on input line 630.
+(epstopdf)             \includegraphics on input line 626.
 Package epstopdf Info: Output file is already uptodate.
 
 <./resultats/comparaisons/image/mc/1R6J_ph_simil_byseq_frequency-eps-converted-
-to.pdf, id=579, 362.35374pt x 217.81375pt>
+to.pdf, id=389, 362.35374pt x 217.81375pt>
 File: ./resultats/comparaisons/image/mc/1R6J_ph_simil_byseq_frequency-eps-conve
 rted-to.pdf Graphic file (type pdf)
 
 <use ./resultats/comparaisons/image/mc/1R6J_ph_simil_byseq_frequency-eps-conver
 ted-to.pdf>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1R6J_ph_simil_byseq_
-frequency-eps-converted-to.pdf used on input line 630.
+frequency-eps-converted-to.pdf used on input line 626.
 (pdftex.def)             Requested size: 240.42569pt x 144.52525pt.
 
-Overfull \hbox (49.60727pt too wide) in paragraph at lines 623--632
+Overfull \hbox (49.60727pt too wide) in paragraph at lines 619--628
  [][] 
  []
 
 
-<./resultats/comparaisons/image/mc/1ABO_centiles.png, id=580, 578.16pt x 433.62
+<./resultats/comparaisons/image/mc/1ABO_centiles.png, id=390, 578.16pt x 433.62
 pt>
 File: ./resultats/comparaisons/image/mc/1ABO_centiles.png Graphic file (type pn
 g)
  <use ./resultats/comparaisons/image/mc/1ABO_centiles.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1ABO_centiles.png us
-ed on input line 644.
+ed on input line 640.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
-<./resultats/comparaisons/image/mc/1BM2_centiles.png, id=582, 578.16pt x 433.62
+<./resultats/comparaisons/image/mc/1BM2_centiles.png, id=392, 578.16pt x 433.62
 pt>
 File: ./resultats/comparaisons/image/mc/1BM2_centiles.png Graphic file (type pn
 g)
  <use ./resultats/comparaisons/image/mc/1BM2_centiles.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1BM2_centiles.png us
-ed on input line 645.
+ed on input line 641.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
-<./resultats/comparaisons/image/mc/1CKA_centiles.png, id=583, 578.16pt x 433.62
+<./resultats/comparaisons/image/mc/1CKA_centiles.png, id=393, 578.16pt x 433.62
 pt>
 File: ./resultats/comparaisons/image/mc/1CKA_centiles.png Graphic file (type pn
 g)
  <use ./resultats/comparaisons/image/mc/1CKA_centiles.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1CKA_centiles.png us
-ed on input line 646.
+ed on input line 642.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
-<./resultats/comparaisons/image/mc/1G9O_centiles.png, id=584, 578.16pt x 433.62
+<./resultats/comparaisons/image/mc/1G9O_centiles.png, id=394, 578.16pt x 433.62
 pt>
 File: ./resultats/comparaisons/image/mc/1G9O_centiles.png Graphic file (type pn
 g)
  <use ./resultats/comparaisons/image/mc/1G9O_centiles.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1G9O_centiles.png us
-ed on input line 647.
+ed on input line 643.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
-<./resultats/comparaisons/image/mc/1M61_centiles.png, id=585, 578.16pt x 433.62
+<./resultats/comparaisons/image/mc/1M61_centiles.png, id=395, 578.16pt x 433.62
 pt>
 File: ./resultats/comparaisons/image/mc/1M61_centiles.png Graphic file (type pn
 g)
  <use ./resultats/comparaisons/image/mc/1M61_centiles.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1M61_centiles.png us
-ed on input line 648.
+ed on input line 644.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
-<./resultats/comparaisons/image/mc/1O4C_centiles.png, id=586, 578.16pt x 433.62
+<./resultats/comparaisons/image/mc/1O4C_centiles.png, id=396, 578.16pt x 433.62
 pt>
 File: ./resultats/comparaisons/image/mc/1O4C_centiles.png Graphic file (type pn
 g)
  <use ./resultats/comparaisons/image/mc/1O4C_centiles.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1O4C_centiles.png us
-ed on input line 649.
+ed on input line 645.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
-<./resultats/comparaisons/image/mc/1R6J_centiles.png, id=587, 578.16pt x 433.62
+<./resultats/comparaisons/image/mc/1R6J_centiles.png, id=397, 578.16pt x 433.62
 pt>
 File: ./resultats/comparaisons/image/mc/1R6J_centiles.png Graphic file (type pn
 g)
  <use ./resultats/comparaisons/image/mc/1R6J_centiles.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/mc/1R6J_centiles.png us
-ed on input line 650.
+ed on input line 646.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
-Overfull \hbox (49.60727pt too wide) in paragraph at lines 643--652
+Overfull \hbox (49.60727pt too wide) in paragraph at lines 639--648
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 110.27783pt on input line 655.
+LaTeX Warning: Float too large for page by 110.27783pt on input line 651.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-<./resultats/comparaisons/graphe/1A81_casa-p8.png, id=588, 578.16pt x 433.62pt>
+<./resultats/comparaisons/graphe/1A81_casa-p8.png, id=398, 578.16pt x 433.62pt>
 File: ./resultats/comparaisons/graphe/1A81_casa-p8.png Graphic file (type png)
 <use ./resultats/comparaisons/graphe/1A81_casa-p8.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/1A81_casa-p8.png used 
-on input line 688.
+on input line 684.
 (pdftex.def)             Requested size: 341.43306pt x 256.07178pt.
 
-<./resultats/comparaisons/graphe/1A81-RE1-T_traj.png, id=589, 578.16pt x 433.62
+<./resultats/comparaisons/graphe/1A81-RE1-T_traj.png, id=399, 578.16pt x 433.62
 pt>
 File: ./resultats/comparaisons/graphe/1A81-RE1-T_traj.png Graphic file (type pn
 g)
  <use ./resultats/comparaisons/graphe/1A81-RE1-T_traj.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/1A81-RE1-T_traj.png us
-ed on input line 699.
+ed on input line 695.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
-<./resultats/comparaisons/graphe/1A81-RE2-T_traj.png, id=590, 578.16pt x 433.62
+<./resultats/comparaisons/graphe/1A81-RE2-T_traj.png, id=400, 578.16pt x 433.62
 pt>
 File: ./resultats/comparaisons/graphe/1A81-RE2-T_traj.png Graphic file (type pn
 g)
  <use ./resultats/comparaisons/graphe/1A81-RE2-T_traj.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/1A81-RE2-T_traj.png us
-ed on input line 700.
+ed on input line 696.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
-<./resultats/comparaisons/graphe/1A81-RE4-T_traj.png, id=591, 578.16pt x 433.62
+<./resultats/comparaisons/graphe/1A81-RE4-T_traj.png, id=401, 578.16pt x 433.62
 pt>
 File: ./resultats/comparaisons/graphe/1A81-RE4-T_traj.png Graphic file (type pn
 g)
  <use ./resultats/comparaisons/graphe/1A81-RE4-T_traj.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/1A81-RE4-T_traj.png us
-ed on input line 701.
+ed on input line 697.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
-<./resultats/comparaisons/graphe/1A81-RE3-T_traj.png, id=592, 578.16pt x 433.62
+<./resultats/comparaisons/graphe/1A81-RE3-T_traj.png, id=402, 578.16pt x 433.62
 pt>
 File: ./resultats/comparaisons/graphe/1A81-RE3-T_traj.png Graphic file (type pn
 g)
  <use ./resultats/comparaisons/graphe/1A81-RE3-T_traj.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/1A81-RE3-T_traj.png us
-ed on input line 702.
+ed on input line 698.
 (pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
 
-Overfull \hbox (49.60727pt too wide) in paragraph at lines 698--704
+Overfull \hbox (49.60727pt too wide) in paragraph at lines 694--700
  [][] 
  []
 
-[21] [22] [23 <./resultats/comparaisons/image/mc/1ABO_simil_bypos.pdf> <./resul
-tats/comparaisons/image/mc/1BM2_simil_bypos.pdf> <./resultats/comparaisons/imag
-e/mc/1CKA_simil_bypos.pdf> <./resultats/comparaisons/image/mc/1G9O_simil_bypos.
-pdf> <./resultats/comparaisons/image/mc/1M61_simil_bypos.pdf> <./resultats/comp
-araisons/image/mc/1O4C_simil_bypos.pdf> <./resultats/comparaisons/image/mc/1R6J
-_simil_bypos.pdf>] [24 <./resultats/comparaisons/image/mc/1ABO_p3_simil_bypos.j
-pg> <./resultats/comparaisons/image/mc/1BM2_p3_simil_bypos.jpg> <./resultats/co
-mparaisons/image/mc/1CKA_p3_simil_bypos.jpg> <./resultats/comparaisons/image/mc
-/1G9O_p3_simil_bypos.jpg> <./resultats/comparaisons/image/mc/1M61_p3_simil_bypo
-s.jpg> <./resultats/comparaisons/image/mc/1O4C_p3_simil_bypos.jpg> <./resultats
-/comparaisons/image/mc/1R6J_p3_simil_bypos.jpg>] [25 <./resultats/comparaisons/
-image/mc/1ABO_p4_simil_bypos.jpg> <./resultats/comparaisons/image/mc/1BM2_p4_si
-mil_bypos.jpg> <./resultats/comparaisons/image/mc/1CKA_p4_simil_bypos.jpg> <./r
-esultats/comparaisons/image/mc/1G9O_p4_simil_bypos.jpg> <./resultats/comparaiso
-ns/image/mc/1M61_p4_simil_bypos.jpg> <./resultats/comparaisons/image/mc/1O4C_p4
-_simil_bypos.jpg> <./resultats/comparaisons/image/mc/1R6J_p4_simil_bypos.jpg>]
+[22] [23 <./resultats/comparaisons/image/mc/1ABO_simil_bypos.pdf> <./resultats/
+comparaisons/image/mc/1BM2_simil_bypos.pdf> <./resultats/comparaisons/image/mc/
+1CKA_simil_bypos.pdf> <./resultats/comparaisons/image/mc/1G9O_simil_bypos.pdf> 
+<./resultats/comparaisons/image/mc/1M61_simil_bypos.pdf> <./resultats/comparais
+ons/image/mc/1O4C_simil_bypos.pdf> <./resultats/comparaisons/image/mc/1R6J_simi
+l_bypos.pdf>] [24 <./resultats/comparaisons/image/mc/1ABO_p3_simil_bypos.jpg> <
+./resultats/comparaisons/image/mc/1BM2_p3_simil_bypos.jpg> <./resultats/compara
+isons/image/mc/1CKA_p3_simil_bypos.jpg> <./resultats/comparaisons/image/mc/1G9O
+_p3_simil_bypos.jpg> <./resultats/comparaisons/image/mc/1M61_p3_simil_bypos.jpg
+> <./resultats/comparaisons/image/mc/1O4C_p3_simil_bypos.jpg> <./resultats/comp
+araisons/image/mc/1R6J_p3_simil_bypos.jpg>] [25 <./resultats/comparaisons/image
+/mc/1ABO_p4_simil_bypos.jpg> <./resultats/comparaisons/image/mc/1BM2_p4_simil_b
+ypos.jpg> <./resultats/comparaisons/image/mc/1CKA_p4_simil_bypos.jpg> <./result
+ats/comparaisons/image/mc/1G9O_p4_simil_bypos.jpg> <./resultats/comparaisons/im
+age/mc/1M61_p4_simil_bypos.jpg> <./resultats/comparaisons/image/mc/1O4C_p4_simi
+l_bypos.jpg> <./resultats/comparaisons/image/mc/1R6J_p4_simil_bypos.jpg>]
 [26 <./resultats/comparaisons/image/mc/1ABO_ph_simil_bypos.jpg> <./resultats/co
 mparaisons/image/mc/1BM2_ph_simil_bypos.jpg> <./resultats/comparaisons/image/mc
 /1CKA_ph_simil_bypos.jpg> <./resultats/comparaisons/image/mc/1G9O_ph_simil_bypo
@@ -2022,52 +2080,52 @@ graphe/1A81_casa-p8.png>] [32 <./resultats/comparaisons/graphe/1A81-RE1-T_traj.
 png> <./resultats/comparaisons/graphe/1A81-RE2-T_traj.png> <./resultats/compara
 isons/graphe/1A81-RE4-T_traj.png> <./resultats/comparaisons/graphe/1A81-RE3-T_t
 raj.png>]
-<./resultats/comparaisons/graphe/best_all.png, id=740, 578.16pt x 433.62pt>
+<./resultats/comparaisons/graphe/best_all.png, id=558, 578.16pt x 433.62pt>
 File: ./resultats/comparaisons/graphe/best_all.png Graphic file (type png)
 
 <use ./resultats/comparaisons/graphe/best_all.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/best_all.png used on i
-nput line 713.
+nput line 709.
 (pdftex.def)             Requested size: 512.1496pt x 384.13412pt.
 
-Overfull \hbox (68.90549pt too wide) in paragraph at lines 712--715
+Overfull \hbox (68.90549pt too wide) in paragraph at lines 708--711
  [][] 
  []
 
 [33 <./resultats/comparaisons/graphe/best_all.png>]
-<./resultats/comparaisons/graphe/best_by_cat.png, id=746, 578.16pt x 433.62pt>
+<./resultats/comparaisons/graphe/best_by_cat.png, id=565, 578.16pt x 433.62pt>
 File: ./resultats/comparaisons/graphe/best_by_cat.png Graphic file (type png)
 
 <use ./resultats/comparaisons/graphe/best_by_cat.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/best_by_cat.png used o
-n input line 726.
+n input line 722.
 (pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
 
-<./resultats/comparaisons/graphe/best_MC+H.png, id=747, 578.16pt x 433.62pt>
+<./resultats/comparaisons/graphe/best_MC+H.png, id=566, 578.16pt x 433.62pt>
 File: ./resultats/comparaisons/graphe/best_MC+H.png Graphic file (type png)
 
 <use ./resultats/comparaisons/graphe/best_MC+H.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/best_MC+H.png used on 
-input line 727.
+input line 723.
 (pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
 
-<./resultats/comparaisons/graphe/best_RE4.png, id=748, 578.16pt x 433.62pt>
+<./resultats/comparaisons/graphe/best_RE4.png, id=567, 578.16pt x 433.62pt>
 File: ./resultats/comparaisons/graphe/best_RE4.png Graphic file (type png)
 
 <use ./resultats/comparaisons/graphe/best_RE4.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/best_RE4.png used on i
-nput line 728.
+nput line 724.
 (pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
 
-<./resultats/comparaisons/graphe/best_RE8.png, id=749, 578.16pt x 433.62pt>
+<./resultats/comparaisons/graphe/best_RE8.png, id=568, 578.16pt x 433.62pt>
 File: ./resultats/comparaisons/graphe/best_RE8.png Graphic file (type png)
 
 <use ./resultats/comparaisons/graphe/best_RE8.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/best_RE8.png used on i
-nput line 729.
+nput line 725.
 (pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
 
-Overfull \hbox (23.99997pt too wide) in paragraph at lines 725--731
+Overfull \hbox (23.99997pt too wide) in paragraph at lines 721--727
  [][] 
  []
 
@@ -2075,7 +2133,7 @@ Overfull \hbox (23.99997pt too wide) in paragraph at lines 725--731
 /graphe/best_MC+H.png> <./resultats/comparaisons/graphe/best_RE4.png> <./result
 ats/comparaisons/graphe/best_RE8.png>]
 
-LaTeX Warning: Float too large for page by 138.67813pt on input line 868.
+LaTeX Warning: Float too large for page by 138.67813pt on input line 864.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -2087,7 +2145,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Float too large for page by 878.17735pt on input line 1023.
+LaTeX Warning: Float too large for page by 878.17735pt on input line 1019.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -2099,19 +2157,19 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Float too large for page by 51.67822pt on input line 1133.
+LaTeX Warning: Float too large for page by 51.67822pt on input line 1129.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Float too large for page by 51.67822pt on input line 1199.
+LaTeX Warning: Float too large for page by 51.67822pt on input line 1195.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Float too large for page by 51.67822pt on input line 1262.
+LaTeX Warning: Float too large for page by 51.67822pt on input line 1258.
 
 [35
 
@@ -2122,32 +2180,32 @@ LaTeX Warning: Float too large for page by 51.67822pt on input line 1262.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Float too large for page by 51.67822pt on input line 1327.
+LaTeX Warning: Float too large for page by 51.67822pt on input line 1323.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Float too large for page by 30.07843pt on input line 1389.
+LaTeX Warning: Float too large for page by 30.07843pt on input line 1385.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<./resultats/comparaisons/graphe/temps_de_calculs.png, id=765, 578.16pt x 433.6
+<./resultats/comparaisons/graphe/temps_de_calculs.png, id=588, 578.16pt x 433.6
 2pt>
 File: ./resultats/comparaisons/graphe/temps_de_calculs.png Graphic file (type p
 ng)
  <use ./resultats/comparaisons/graphe/temps_de_calculs.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/temps_de_calculs.png u
-sed on input line 1396.
+sed on input line 1392.
 (pdftex.def)             Requested size: 341.43306pt x 256.07178pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (37.82782pt too wide) in paragraph at lines 1434--1452
+Overfull \hbox (37.82782pt too wide) in paragraph at lines 1430--1448
  [][] 
  []
 
@@ -2156,70 +2214,70 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [36 <./resultats/comparaisons/graphe/temps_de_calculs.png>] [37] [38] [39]
 [40] [41] [42] [43] [44] [45] [46]
-<./resultats/comparaisons/image/1M61_2_gmec_vs_ph.png, id=817, 1326.78293pt x 7
+<./resultats/comparaisons/image/1M61_2_gmec_vs_ph.png, id=653, 1326.78293pt x 7
 94.17583pt>
 File: ./resultats/comparaisons/image/1M61_2_gmec_vs_ph.png Graphic file (type p
 ng)
  <use ./resultats/comparaisons/image/1M61_2_gmec_vs_ph.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/1M61_2_gmec_vs_ph.png u
-sed on input line 1460.
+sed on input line 1456.
 (pdftex.def)             Requested size: 398.33858pt x 238.43636pt.
 
-<./resultats/comparaisons/image/1M61_2_gmec_vs_RE.png, id=818, 1261.58282pt x 7
+<./resultats/comparaisons/image/1M61_2_gmec_vs_RE.png, id=654, 1261.58282pt x 7
 86.23407pt>
 File: ./resultats/comparaisons/image/1M61_2_gmec_vs_RE.png Graphic file (type p
 ng)
  <use ./resultats/comparaisons/image/1M61_2_gmec_vs_RE.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/1M61_2_gmec_vs_RE.png u
-sed on input line 1471.
+sed on input line 1467.
 (pdftex.def)             Requested size: 398.33858pt x 248.25288pt.
 
-<./resultats/comparaisons/image/1G9O_3_gmec_vs_ph.png, id=819, 1331.4962pt x 79
+<./resultats/comparaisons/image/1G9O_3_gmec_vs_ph.png, id=655, 1331.4962pt x 79
 8.94087pt>
 File: ./resultats/comparaisons/image/1G9O_3_gmec_vs_ph.png Graphic file (type p
 ng)
  <use ./resultats/comparaisons/image/1G9O_3_gmec_vs_ph.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/1G9O_3_gmec_vs_ph.png u
-sed on input line 1482.
+sed on input line 1478.
 (pdftex.def)             Requested size: 398.33858pt x 239.01361pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<./resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png, id=820, 1045.55836pt x 6
+<./resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png, id=656, 1045.55836pt x 6
 74.25528pt>
 File: ./resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png Graphic file (type p
 ng)
  <use ./resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png u
-sed on input line 1493.
+sed on input line 1489.
 (pdftex.def)             Requested size: 398.33858pt x 256.87811pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png, id=821, 1092.69098pt x 7
+<./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png, id=657, 1092.69098pt x 7
 99.73506pt>
 File: ./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png Graphic file (type p
 ng)
  <use ./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png u
-sed on input line 1503.
+sed on input line 1499.
 (pdftex.def)             Requested size: 398.33858pt x 291.54088pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<./resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png, id=822, 1153.96336pt x 7
+<./resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png, id=658, 1153.96336pt x 7
 98.94087pt>
 File: ./resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png Graphic file (type p
 ng)
  <use ./resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png u
-sed on input line 1513.
+sed on input line 1509.
 (pdftex.def)             Requested size: 398.33858pt x 275.78119pt.
 
 
@@ -2232,15 +2290,15 @@ ns/image/1M61_2_gmec_vs_RE.png>] [48 <./resultats/comparaisons/image/1G9O_3_gme
 c_vs_ph.png> <./resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png>]
 [49 <./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png> <./resultats/compara
 isons/image/1CKA_5_gmec_vs_MC.png>]
-<./resultats/comparaisons/image/align_1CKA.png, id=836, 1438.33011pt x 698.0805
+<./resultats/comparaisons/image/align_1CKA.png, id=678, 1438.33011pt x 698.0805
 5pt>
 File: ./resultats/comparaisons/image/align_1CKA.png Graphic file (type png)
  <use ./resultats/comparaisons/image/align_1CKA.png>
 Package pdftex.def Info: ./resultats/comparaisons/image/align_1CKA.png used on 
-input line 1526.
+input line 1522.
 (pdftex.def)             Requested size: 398.33858pt x 193.33084pt.
 
-Overfull \hbox (76.88747pt too wide) in paragraph at lines 1542--1558
+Overfull \hbox (76.88747pt too wide) in paragraph at lines 1538--1554
  [][]
  []
 
@@ -2249,22 +2307,22 @@ Overfull \hbox (76.88747pt too wide) in paragraph at lines 1542--1558
  <./resultats/comparaisons/image/align_1CKA.png>] [51
 
 ]
-<./resultats/comparaisons/graphe/histo1_aa_Tambiante.png, id=846, 578.16pt x 43
+<./resultats/comparaisons/graphe/histo1_aa_Tambiante.png, id=692, 578.16pt x 43
 3.62pt>
 File: ./resultats/comparaisons/graphe/histo1_aa_Tambiante.png Graphic file (typ
 e png)
  <use ./resultats/comparaisons/graphe/histo1_aa_Tambiante.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/histo1_aa_Tambiante.pn
-g used on input line 1597.
+g used on input line 1593.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
 
-<./resultats/comparaisons/graphe/histo2_aa_Tambiante.png, id=847, 578.16pt x 43
+<./resultats/comparaisons/graphe/histo2_aa_Tambiante.png, id=693, 578.16pt x 43
 3.62pt>
 File: ./resultats/comparaisons/graphe/histo2_aa_Tambiante.png Graphic file (typ
 e png)
  <use ./resultats/comparaisons/graphe/histo2_aa_Tambiante.png>
 Package pdftex.def Info: ./resultats/comparaisons/graphe/histo2_aa_Tambiante.pn
-g used on input line 1608.
+g used on input line 1604.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
  [52
 
@@ -2325,6 +2383,10 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 335.
 (./rapport.aux (./merci.aux) (./dedicace.aux) (./glossaire.aux) (./intro.aux)
 (./contexte.aux) (./methodes_theoriques.aux) (./methodes_pratiques.aux)
 (./resultats/comparaisons/chapter.aux) (./conc.aux) (./annexe.aux)
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
 (./resume.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 335.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 335.
@@ -2335,26 +2397,31 @@ Package rerunfilecheck Warning: File `rapport.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `rapport.out':
-(rerunfilecheck)             Before: 42AF02B267C43598B26E999E916C9FC8;2088
-(rerunfilecheck)             After:  AC920302468FCEDD7AEC9ACE49D2DC8F;2158.
-Package rerunfilecheck Info: File `rapport.brf' has not changed.
-(rerunfilecheck)             Checksum: 644229FD91EC8F0BE8E0BFCB36D16271;495.
+(rerunfilecheck)             Before: 0F2C4646276402C37E9CBCFC16B342E5;1479
+(rerunfilecheck)             After:  E598782B1A44BD6E0740A6F127CE0225;2158.
+
+Package rerunfilecheck Warning: File `rapport.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `rapport.brf':
+(rerunfilecheck)             Before: 8DD768C59B18E206ABB5169BE51086FF;647
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 335.
  ) 
 Here is how much of TeX's memory you used:
- 11481 strings out of 493105
- 184899 string characters out of 6137072
- 390075 words of memory out of 5000000
- 14237 multiletter control sequences out of 15000+600000
- 91106 words of font info for 112 fonts, out of 8000000 for 9000
+ 11486 strings out of 493105
+ 184969 string characters out of 6137072
+ 383404 words of memory out of 5000000
+ 14239 multiletter control sequences out of 15000+600000
+ 91417 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,48p,1027b,589s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,13n,43p,1176b,499s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/s
 hare/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
@@ -2368,10 +2435,10 @@ r/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lm
 sy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on rapport.pdf (77 pages, 7308868 bytes).
+Output written on rapport.pdf (77 pages, 7303475 bytes).
 PDF statistics:
- 1023 PDF objects out of 1200 (max. 8388607)
- 795 compressed objects within 8 object streams
- 225 named destinations out of 1000 (max. 500000)
- 27316 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 893 PDF objects out of 1000 (max. 8388607)
+ 666 compressed objects within 7 object streams
+ 228 named destinations out of 1000 (max. 500000)
+ 27244 words of extra memory for PDF output out of 29859 (max. 10000000)
 
