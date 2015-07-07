@@ -12,7 +12,7 @@ Plusieurs questions se présentent alors,premièrement grâce à l' algorithme d
 Dans la suite on appelle position active, une position pour laquelle, lors de la recherche par proteus, tous les types d'acides aminés sont autorisés et tous les rotamères de chaque type d'acide aminé sont autorisés.
 
 
-\subsubsection{les protéines}
+\subsection{les protéines}
  
 Les tests sont effectués sur neuf protéines choisies pour avoir des longueurs de backbone variés , plusieurs familles SCOP(?) représentées, mais aussi plusieurs structures pour chaque famille présente. Ainsi l'ensemble se décompose en deux protéines SH3 de 56 et 57 résidus, de trois protéines PDZ de longueur comprise entre 82 et 97 résidus  et enfin de trois protéines SH2  longues de 105 ou 109 résidus (Table~\ref{tab:protéines}).  
 
@@ -41,7 +41,7 @@ Les tests sont effectués sur neuf protéines choisies pour avoir des longueurs 
 \label{tab:protéines}      
     \end{table}
 
-\subsubsection{Description des tests}
+\subsection{Description des tests}
 
 Les tests sont réparties en deux ensembles:
 \begin{enumerate}
@@ -87,14 +87,14 @@ Pour les tests avec une seule position active, comme des temps de calcul le perm
 Toutes les positions sont testées, Il y a alors huit cent quatre tests par algorithme.
 Pour tous les autres groupes de tests (5,10,20 et 30 positions actives) cinq tests sont effectués par protéine, c'est-à-dire quarante-cinq tests par algorithme.
 
-\subparagraph{le choix des positions actives}
+\paragraph{le choix des positions actives}
 
 Pour définir complètement les tests ,il reste maintenant à décrire comment le choix des positions actives pour les groupes numéro trois à numéro six a été effectué.
 Il y a peu d'intérêt à tester des situations avec position active sans interaction avec les autres positions actives. 
 En effet s'il existe une position active P dont chaque résidu est sans interaction avec tous les résidus possibles des autres positions actives, déterminer le meilleur état pour P est proche du test du groupe 2 avec P comme position active. Notons qu'en même que cela n'est pas exactement la même question parce que les positions actives différentes de P peuvent influencer la position de la chaîne latérale de positions inactives qui à leur tour peuvent influencer l'état de P.
 Ainsi le choix des positions actives se fait non pas pas tirage aléatoire, car le risque d'avoir les positions peu en inter action est trop grand. Il se fait sous contrainte d'interaction.
 
-\subparagraph{positions en interactions}
+\paragraph{positions en interactions}
 Pour cela nous utilisons la notion de voisinage incluse dans proteus: 
 Deux positions P et Q sont en interaction s'il existe un rotamère $r_P$ de P et un rotamère $r_Q$ de Q tels que:
 \begin{displaymath}
@@ -137,7 +137,7 @@ Pour le RE et l'Heuristique, un tri des séquences selon l'énergie est nécessa
 Nous pouvons donc négliger la durée du tri dans le temps total d'exécution.    
 
 
-\subsubsection{Protocole Heuristique}
+\subsection{Protocole Heuristique}
 
 Pour l'algorithme Heuristique, il n'y a dans notre situation qu'un seul paramètre à renseigner: le nombre de cycles à effectuer. Quelques essais préliminaires sur la plus grosse protéine (Table~\ref{tab:protéines}) dans le cas où tout actif , montre que la version utilisée de proteus peut effectuer jusqu'à environ 110000 cycles sur nos machines de calculs en l'espace de vingt-quatre heures. Ainsi le protocole H est défini comme le protocole qui utilise le mode heuristique de proteus et qui effectue cent dix mille cycles. Nous définissons également les variantes H- , H+ et H++ comme des protocoles plus courts ou plus longs à facteur entier près (Table~\ref{tab:protoH}). Par ailleurs certains comparaisons de l'heuristique avec la MC ont été faites avec une version précédente de proteus notons h ce protocole. il diffère  aussi de H par le fait que les options d'optimisation du compilateur Intel -O2 contre -O3 pour H.    
 
@@ -295,8 +295,7 @@ Le binaire toulbar2 de version 0.9.7.0 est lancé avec les options -l=3 -m -d: -
 
 Toulbar2 est également capable de fournir la listes des séquences/conformations dont l'énergie est comprise entre celle du GMEC, $E_{GMEC}$ et une autre $E_{upper\_bound}$ donnée en paramètre. Pour cette fonctionnalité nous utilisons le paramétrage:  -d: -a -s -ub=$E_{upper\_bound}$.
 
-
-   \subsection{Superfamily/SCOP} 
+   \subsubsection{Superfamily/SCOP} 
 
 Superfamily est un ensemble avec d'une base de données composée de modèle de Markov cachés~\citep{refSuperfamily}
 
@@ -307,8 +306,36 @@ Superfamily est un ensemble avec d'une base de données composée de modèle de 
 
 Nous travaillons avec la base de données à la version 1.75, et en conjonction, nous utilisons SAM (version 3.5)~\citep{refSam} et HMMER (version 3.0)~\citep{refHmmer} recommandée par l'équipe de Superfamily. Le paramétrage utilisé est celui par défaut.
 
-   \subsection{Alignements Pfam} 
+\subsection{Similarité par position et par séquence}
+   \subsubsection{Alignements Pfam} 
 La base de données Pfam (Protein families database)~\citep{refPfam} regroupe les domaines protéiques connus en famille. Chaque famille  étant représentées des alignements multiples de séquences et des profiles de modèles de Markov cachés~\citep{refPfam}. Dans la suite nous n'utiliserons que l'alignement dit ``seed'' qui ne contient q'un petit ensemble de membres représentatifs de famille. Cela correspond pour nous aux familles PF00017 (domaine SH2), PF00018  (domaine SH3) et PF00595 (domaine PDZ).
+
+
+\subsection{Taux d'identité}
+
+
+
+
+L'entropie par position $H_i$ est alors définit de la façon suivante.
+Pour i une position dans la séquence, notons $f_{i}(a)$ la fréquence en i, de la lettre a de l'alphabet A . Alors 
+$H_i=  - \sum_{a \in A} f_{i}(a) * log( f_{i}(a) ) $  
+
+Soient S et N deux séquences d'acides aminés de même longueur l.
+
+Le Taux d'identité $Id(S,N)$ de S par rapport N est égal au pourcentage de position où l'acide aminé est identique dans S et N. C'est-à-dire
+
+  $ Id(S,N) =\sum_{1<i<l} \mathds{1}(s_i,n_i)$ 
+
+avec $s_i$ et $n_i$ l'acide animé en i de S et de N respectivement, et $\mathds{1}(x,y)$ la fonction qui vaut 1 lorsque x=y et 0 sinon. 
+
+
+Le score d’identité est simplement le taux d’identité en terme d’acide aminé. On peut
+noter plus rigoureusement :
+
+où xi est l’acide aminé (ou gap) à la position i de la séquence concernée, et yi l’acide
+aminé (ou gap) à la position i de la séquence comparée. On définit s(xi;yi) = 1 si les deux
+séquences ont le même acide aminé en position i. Sinon s(xi;yi) = 0.
+
 
     \clearpage
     \section{Résultats} 
@@ -347,7 +374,7 @@ Nous utilisons les protocoles de mc0 à mc5, voir table~\ref{tab:ener_mc} pour �
       \label{tab:ener_mc}
     \end{table}
  
-   \subsubsection{Température et Identité de séquences} 
+   \subsubsection{Température et taux d'identité de séquences} 
 \label{sec:T_et_I}
 Nous poursuivons la comparaison des protocole mc0-mc5 en regardant le taux d'identité entre les séquences d'acides aminés et la séquence native. Pour cela, nous reprenons les séquences/conformations obtenues et triées selon l'énergie décroissante. Nous sélectionnons dans cette liste, les dix mille premières séquence pour chaque test. Les résultats sont présentés table~\ref{tab:ident_mc}.Nous obtenons des taux d'identités globalement compris entre 20 et 40\% , avec le plus suivant des valeurs proches de 30\%. Les résultats à température 0.2 et 0.3, sont aussi bon que ceux à température 0.1 et légèrement meilleurs que pour 0.001. Ici aussi il y a une dégradation aux température les plus hautes, faible à 0.5, plus nette à 0.7.
 
@@ -493,7 +520,7 @@ Les résultats sont visibles à la table \ref{tab:Traj_ident}.L'effet du doublem
 
 
    \subsubsection{Mutations et pourcentage d' identité} 
-Jusqu'à présent nous avons utilisé le même mode de modification de la séquence/conformation entre chaque pas Monte-Carlo pour tous les protocoles. Il s'agît du mode qui utilise les balises <Prot\_Prot> avec une valeur à 1 et <Mut> avec une valeur à 0.1. Cela veut dire qu'à chaque pas deux rotamères sont modifiés sans changement du type de résidu et qu'une troisième position change d'acide aminé avec une probabilité de 0.1. Nous allons comparer ce mode de modification (avec les protocoles mc1 et mc2 ) avec un mode où seulement  le rotamère est changé à une position sans changement de type et une seconde position change d'acide aminé la même probabilité que précédemment, 0.1 (avec les protocoles mc1b et mc2e). Les résultats sont visibles à la table ((Table~\ref{tab:mut_ident})). Nous voyons que le en ce qui concerne le premier couple de protocole, il n'y a un déclin pour tous les tests. Pour le second il y a également une dégradation des performances globales mais elle n'est pas systématique, il y a même une amélioration pour la protéine 1R6J.  
+Jusqu'à présent nous avons utilisé le même mode de modification de la séquence/conformation entre chaque pas Monte-Carlo pour tous les protocoles. Il s'agît du mode qui utilise les balises <Prot\_Prot> avec une valeur à 1 et <Mut> avec une valeur à 0.1. Cela veut dire qu'à chaque pas deux rotamères sont modifiés sans changement du type de résidu et qu'une troisième position change d'acide aminé avec une probabilité de 0.1. Nous allons comparer ce mode de modification (avec les protocoles mc1 et mc2 ) avec un mode où seulement  le rotamère est changé à une position sans changement de type et une seconde position change d'acide aminé la même probabilité que précédemment, 0.1 (avec les protocoles mc1b et mc2e). Les résultats sont visibles à la table ((Table~\ref{tab:mut_ident})). Nous voyons que le en ce qui concerne le premier couple de protocole, il n'y a un déclin pour tous les tests. Pour le second il y a également une dégradation des performances globales mais elle n'est pas systématique. Il y a même une amélioration pour la protéine 1R6J.  
 
 
     \begin{table}[!htbp]
@@ -516,138 +543,234 @@ Jusqu'à présent nous avons utilisé le même mode de modification de la séque
         \end{tabular}
         
         \caption{Pourcentage d'identité pour deux modes de mutations. }      
-        \label{tab:mut_ident}        
+\label{tab:mut_ident}        
         \end{table}
 
 
-   \begin{figure}[t]
+    \subsection{Comparaison protocole Monte-Carlo contre heuristique}
+
+
+
+
+\captionsetup[subfigure]{font=scriptsize}
+
+   \begin{figure}
+   \begin{subfigure}[b]{\linewidth}
      \centering
-     \begin{tabular}{cc}
-       \includegraphics[trim=0cm 8cm 0cm 6cm,clip,width=8.5cm]{1ABO_simil_bypos.pdf} &
-       \includegraphics[trim=0cm 8cm 0cm 6cm,clip,width=8.5cm]{1BM2_simil_bypos.pdf} \\
-       \includegraphics[trim=0cm 8cm 0cm 6cm,clip,width=8.5cm]{1CKA_simil_bypos.pdf} &
-       \includegraphics[trim=0cm 8cm 0cm 6cm,clip,width=8.5cm]{1G9O_simil_bypos.pdf} \\
-       \includegraphics[trim=0cm 8cm 0cm 6cm,clip,width=8.5cm]{1M61_simil_bypos.pdf} &
-       \includegraphics[trim=0cm 8cm 0cm 6cm,clip,width=8.5cm]{1O4C_simil_bypos.pdf} \\
-       \includegraphics[trim=0cm 8cm 0cm 6cm,clip,width=8.5cm]{1R6J_simil_bypos.pdf} \\
-     \end{tabular}
-     
-     \caption{Séquence logo et exponentiel de l'entropie pour une température de 0,3}
-     \label{fig-seqlogo-T=03}
+          \includegraphics[width=8.45cm]{simil_bypos_1ABO_h.png}~
+          \includegraphics[width=8.45cm]{simil_byseq_1ABO_h.png} 
+     \caption{protocole h}
+   \end{subfigure}
+
+   \begin{subfigure}[b]{\linewidth}
+     \centering
+          \includegraphics[width=8.45cm]{simil_bypos_1ABO_mc2.png}~ 
+          \includegraphics[width=8.45cm]{simil_byseq_1ABO_mc2.png} 
+     \caption{protocole mc2}
+   \end{subfigure}
+
+   \begin{subfigure}[b]{\linewidth}
+     \centering
+          \includegraphics[width=8.45cm]{simil_bypos_1ABO_mc3.png}~  
+          \includegraphics[width=8.45cm]{simil_byseq_1ABO_mc3.png} 
+     \caption{protocole mc3}
+   \end{subfigure}
+
+     \caption{Similarité par position et par séquence pour 1ABO}
+\label{grah:simil_1ABO}
    \end{figure}
 
-   \begin{figure}[t]
+   \begin{figure}
+   \begin{subfigure}[b]{\linewidth}
      \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=8.45cm]{1ABO_p3_simil_bypos.jpg}  &
-       \includegraphics[width=8.45cm]{1BM2_p3_simil_bypos.jpg} \\
-       \includegraphics[width=8.45cm]{1CKA_p3_simil_bypos.jpg} &
-       \includegraphics[width=8.45cm]{1G9O_p3_simil_bypos.jpg} \\
-       \includegraphics[width=8.45cm]{1M61_p3_simil_bypos.jpg} &
-       \includegraphics[width=8.45cm]{1O4C_p3_simil_bypos.jpg} \\
-       \includegraphics[width=8.45cm]{1R6J_p3_simil_bypos.jpg} \\
-     \end{tabular}
-     
-     \caption{Similarité par position pour le protocole p3.}
-     \label{Sim_pos_byp3}
-   \end{figure}
-   \begin{figure}[t]
+          \includegraphics[width=8.45cm]{simil_bypos_1CKA_h.png}~
+          \includegraphics[width=8.45cm]{simil_byseq_1CKA_h.png} 
+     \caption{protocole h}
+   \end{subfigure}
+
+   \begin{subfigure}[b]{\linewidth}
      \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=8.45cm]{1ABO_p4_simil_bypos.jpg} &
-       \includegraphics[width=8.45cm]{1BM2_p4_simil_bypos.jpg} \\
-       \includegraphics[width=8.45cm]{1CKA_p4_simil_bypos.jpg} &
-       \includegraphics[width=8.45cm]{1G9O_p4_simil_bypos.jpg} \\
-       \includegraphics[width=8.45cm]{1M61_p4_simil_bypos.jpg} &
-       \includegraphics[width=8.45cm]{1O4C_p4_simil_bypos.jpg} \\
-       \includegraphics[width=8.45cm]{1R6J_p4_simil_bypos.jpg} \\
-     \end{tabular}
-     
-     \caption{Similarité par position pour le protocole p4.}
-     \label{Sim_pos_byp4}
-   \end{figure}
-   \begin{figure}[t]
+          \includegraphics[width=8.45cm]{simil_bypos_1CKA_mc2.png}~ 
+          \includegraphics[width=8.45cm]{simil_byseq_1CKA_mc2.png} 
+     \caption{protocole mc2}
+   \end{subfigure}
+
+   \begin{subfigure}[b]{\linewidth}
      \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=8.45cm]{1ABO_ph_simil_bypos.jpg} &
-       \includegraphics[width=8.45cm]{1BM2_ph_simil_bypos.jpg} \\
-       \includegraphics[width=8.45cm]{1CKA_ph_simil_bypos.jpg} &
-       \includegraphics[width=8.45cm]{1G9O_ph_simil_bypos.jpg} \\
-       \includegraphics[width=8.45cm]{1M61_ph_simil_bypos.jpg} &
-       \includegraphics[width=8.45cm]{1O4C_ph_simil_bypos.jpg} \\
-       \includegraphics[width=8.45cm]{1R6J_ph_simil_bypos.jpg} \\
-     \end{tabular}
-     
-     \caption{Similarité par position pour le protocole ph.}
-     \label{Sim_pos_byph}
+          \includegraphics[width=8.45cm]{simil_bypos_1CKA_mc3.png}~  
+          \includegraphics[width=8.45cm]{simil_byseq_1CKA_mc3.png} 
+     \caption{protocole mc3}
+   \end{subfigure}
+
+     \caption{Similarité par position et par séquence pour 1CKA}
+\label{grah:simil_1CKA}
    \end{figure}
 
+   \begin{figure}
+   \begin{subfigure}[b]{\linewidth}
+     \centering
+          \includegraphics[width=8.45cm]{simil_bypos_1BM2_h.png}~
+          \includegraphics[width=8.45cm]{simil_byseq_1BM2_h.png} 
+     \caption{protocole h}
+   \end{subfigure}
 
+   \begin{subfigure}[b]{\linewidth}
+     \centering
+          \includegraphics[width=8.45cm]{simil_bypos_1BM2_mc2.png}~ 
+          \includegraphics[width=8.45cm]{simil_byseq_1BM2_mc2.png} 
+     \caption{protocole mc2}
+   \end{subfigure}
 
-   \begin{figure}[t]
+   \begin{subfigure}[b]{\linewidth}
      \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=8.45cm]{1ABO_p3_simil_byseq_frequency.eps} &
-       \includegraphics[width=8.45cm]{1BM2_p3_simil_byseq_frequency.eps} \\
-       \includegraphics[width=8.45cm]{1CKA_p3_simil_byseq_frequency.eps} &
-       \includegraphics[width=8.45cm]{1G9O_p3_simil_byseq_frequency.eps} \\
-       \includegraphics[width=8.45cm]{1M61_p3_simil_byseq_frequency.eps} &
-       \includegraphics[width=8.45cm]{1O4C_p3_simil_byseq_frequency.eps} \\
-       \includegraphics[width=8.45cm]{1R6J_p3_simil_byseq_frequency.eps} \\
-     \end{tabular}
-     
-     \caption{Similarité par position pour le protocole p3.}
-     \label{Sim_pos_byp3}
-   \end{figure}
-   \begin{figure}[t]
-     \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=8.45cm]{1ABO_p4_simil_byseq_frequency.eps} &
-       \includegraphics[width=8.45cm]{1BM2_p4_simil_byseq_frequency.eps} \\
-       \includegraphics[width=8.45cm]{1CKA_p4_simil_byseq_frequency.eps} &
-       \includegraphics[width=8.45cm]{1G9O_p4_simil_byseq_frequency.eps} \\
-       \includegraphics[width=8.45cm]{1M61_p4_simil_byseq_frequency.eps} &
-       \includegraphics[width=8.45cm]{1O4C_p4_simil_byseq_frequency.eps} \\
-       \includegraphics[width=8.45cm]{1R6J_p4_simil_byseq_frequency.eps} \\
-     \end{tabular}
-     
-     \caption{Similarité par position pour le protocole p4.}
-     \label{Sim_pos_byp4}
-   \end{figure}
-   \begin{figure}[t]
-     \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=8.45cm]{1ABO_ph_simil_byseq_frequency.eps} &
-       \includegraphics[width=8.45cm]{1BM2_ph_simil_byseq_frequency.eps} \\
-       \includegraphics[width=8.45cm]{1CKA_ph_simil_byseq_frequency.eps} &
-       \includegraphics[width=8.45cm]{1G9O_ph_simil_byseq_frequency.eps} \\
-       \includegraphics[width=8.45cm]{1M61_ph_simil_byseq_frequency.eps} &
-       \includegraphics[width=8.45cm]{1O4C_ph_simil_byseq_frequency.eps} \\
-       \includegraphics[width=8.45cm]{1R6J_ph_simil_byseq_frequency.eps} \\
-     \end{tabular}
-     
-     \caption{Similarité par position pour le protocole ph.}
-     \label{Sim_pos_byph}
+          \includegraphics[width=8.45cm]{simil_bypos_1BM2_mc3.png}~  
+          \includegraphics[width=8.45cm]{simil_byseq_1BM2_mc3.png} 
+     \caption{protocole mc3}
+   \end{subfigure}
+
+     \caption{Similarité par position et par séquence pour 1BM2}
+\label{grah:simil_1BM2}
    \end{figure}
 
+   \begin{figure}
+   \begin{subfigure}[b]{\linewidth}
+     \centering
+          \includegraphics[width=8.45cm]{simil_bypos_1M61_h.png}~
+          \includegraphics[width=8.45cm]{simil_byseq_1M61_h.png} 
+     \caption{protocole h}
+   \end{subfigure}
 
+   \begin{subfigure}[b]{\linewidth}
+     \centering
+          \includegraphics[width=8.45cm]{simil_bypos_1M61_mc2.png}~ 
+          \includegraphics[width=8.45cm]{simil_byseq_1M61_mc2.png} 
+     \caption{protocole mc2}
+   \end{subfigure}
+
+   \begin{subfigure}[b]{\linewidth}
+     \centering
+          \includegraphics[width=8.45cm]{simil_bypos_1M61_mc3.png}~  
+          \includegraphics[width=8.45cm]{simil_byseq_1M61_mc3.png} 
+     \caption{protocole mc3}
+   \end{subfigure}
+
+     \caption{Similarité par position et par séquence pour 1M61}
+\label{grah:simil_1M61}
+   \end{figure}
+
+   \begin{figure}
+   \begin{subfigure}[b]{\linewidth}
+     \centering
+          \includegraphics[width=8.45cm]{simil_bypos_1O4C_h.png}~
+          \includegraphics[width=8.45cm]{simil_byseq_1O4C_h.png} 
+     \caption{protocole h}
+   \end{subfigure}
+
+   \begin{subfigure}[b]{\linewidth}
+     \centering
+          \includegraphics[width=8.45cm]{simil_bypos_1O4C_mc2.png}~ 
+          \includegraphics[width=8.45cm]{simil_byseq_1O4C_mc2.png} 
+     \caption{protocole mc2}
+   \end{subfigure}
+
+   \begin{subfigure}[b]{\linewidth}
+     \centering
+          \includegraphics[width=8.45cm]{simil_bypos_1O4C_mc3.png}~  
+          \includegraphics[width=8.45cm]{simil_byseq_1O4C_mc3.png} 
+     \caption{protocole mc3}
+   \end{subfigure}
+
+     \caption{Similarité par position et par séquence pour 1O4C}
+\label{grah:simil_1O4C}
+   \end{figure}
+
+   \begin{figure}
+   \begin{subfigure}[b]{\linewidth}
+     \centering
+          \includegraphics[width=8.45cm]{simil_bypos_1G9O_h.png}~
+          \includegraphics[width=8.45cm]{simil_byseq_1G9O_h.png} 
+     \caption{protocole h}
+   \end{subfigure}
+
+   \begin{subfigure}[b]{\linewidth}
+     \centering
+          \includegraphics[width=8.45cm]{simil_bypos_1G9O_mc2.png}~ 
+          \includegraphics[width=8.45cm]{simil_byseq_1G9O_mc2.png} 
+     \caption{protocole mc2}
+   \end{subfigure}
+
+   \begin{subfigure}[b]{\linewidth}
+     \centering
+          \includegraphics[width=8.45cm]{simil_bypos_1G9O_mc3.png}~  
+          \includegraphics[width=8.45cm]{simil_byseq_1G9O_mc3.png} 
+     \caption{protocole mc3}
+   \end{subfigure}
+
+     \caption{Similarité par position et par séquence pour 1G9O}
+\label{grah:simil_1G9O}
+   \end{figure}
+
+   \begin{figure}
+   \begin{subfigure}[b]{\linewidth}
+     \centering
+          \includegraphics[width=8.45cm]{simil_bypos_1R6J_h.png}~
+          \includegraphics[width=8.45cm]{simil_byseq_1R6J_h.png} 
+     \caption{protocole h}
+   \end{subfigure}
+
+   \begin{subfigure}[b]{\linewidth}
+     \centering
+          \includegraphics[width=8.45cm]{simil_bypos_1R6J_mc2.png}~ 
+          \includegraphics[width=8.45cm]{simil_byseq_1R6J_mc2.png} 
+     \caption{protocole mc2}
+   \end{subfigure}
+
+   \begin{subfigure}[b]{\linewidth}
+     \centering
+          \includegraphics[width=8.45cm]{simil_bypos_1R6J_mc3.png}~  
+          \includegraphics[width=8.45cm]{simil_byseq_1R6J_mc3.png} 
+     \caption{protocole mc3}
+   \end{subfigure}
+
+     \caption{Similarité par position et par séquence pour 1R6J}
+\label{grah:simil_1R6J}
+   \end{figure}
 
 
 
    \begin{figure}[t]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=8.45cm]{1ABO_centiles.png} &
-       \includegraphics[width=8.45cm]{1BM2_centiles.png} \\
-       \includegraphics[width=8.45cm]{1CKA_centiles.png} &
-       \includegraphics[width=8.45cm]{1G9O_centiles.png} \\
-       \includegraphics[width=8.45cm]{1M61_centiles.png} &
-       \includegraphics[width=8.45cm]{1O4C_centiles.png} \\
-       \includegraphics[width=8.45cm]{1R6J_centiles.png} \\
+       \includegraphics[width=8.45cm]{simil_vs_ener_1ABO.png} &
+       \includegraphics[width=8.45cm]{simil_vs_ener_1BM2.png} \\
+       \includegraphics[width=8.45cm]{simil_vs_ener_1CKA.png} &
+       \includegraphics[width=8.45cm]{simil_vs_ener_1G9O.png} \\
+       \includegraphics[width=8.45cm]{simil_vs_ener_1M61.png} &
+       \includegraphics[width=8.45cm]{simil_vs_ener_1O4C.png} \\
+       \includegraphics[width=8.45cm]{simil_vs_ener_1R6J.png} \\
      \end{tabular}
      
-     \caption{Distribution des 100000 meilleurs séquences selon l'energie.}
-     \label{fig-seqlogo-T=03}
+     \caption{}
+\label{grah:simil_vs_ener}
+   \end{figure}
+ 
+
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=8.45cm]{centiles_1ABO.png} &
+       \includegraphics[width=8.45cm]{centiles_1BM2.png} \\
+       \includegraphics[width=8.45cm]{centiles_1CKA.png} &
+       \includegraphics[width=8.45cm]{centiles_1G9O.png} \\
+       \includegraphics[width=8.45cm]{centiles_1M61.png} &
+       \includegraphics[width=8.45cm]{centiles_1O4C.png} \\
+       \includegraphics[width=8.45cm]{centiles_1R6J.png} \\
+     \end{tabular}
+     
+     \caption{Distribution des 100000 meilleurs séquences selon l'énergie.}
+\label{grah:centiles}
    \end{figure}
  
 
