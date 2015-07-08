@@ -306,38 +306,52 @@ Superfamily est un ensemble avec d'une base de données composée de modèle de 
 
 Nous travaillons avec la base de données à la version 1.75, et en conjonction, nous utilisons SAM (version 3.5)~\citep{refSam} et HMMER (version 3.0)~\citep{refHmmer} recommandée par l'équipe de Superfamily. Le paramétrage utilisé est celui par défaut.
 
-\subsection{Similarité par position et par séquence}
-   \subsubsection{Alignements Pfam} 
-La base de données Pfam (Protein families database)~\citep{refPfam} regroupe les domaines protéiques connus en famille. Chaque famille  étant représentées des alignements multiples de séquences et des profiles de modèles de Markov cachés~\citep{refPfam}. Dans la suite nous n'utiliserons que l'alignement dit ``seed'' qui ne contient q'un petit ensemble de membres représentatifs de famille. Cela correspond pour nous aux familles PF00017 (domaine SH2), PF00018  (domaine SH3) et PF00595 (domaine PDZ).
-
+\subsection{identité par position et par séquence}
 
 \subsection{Taux d'identité}
 
 
-
-
-L'entropie par position $H_i$ est alors définit de la façon suivante.
-Pour i une position dans la séquence, notons $f_{i}(a)$ la fréquence en i, de la lettre a de l'alphabet A . Alors 
-$H_i=  - \sum_{a \in A} f_{i}(a) * log( f_{i}(a) ) $  
+\subsubsection{Taux d'identité de séquences}
 
 Soient S et N deux séquences d'acides aminés de même longueur l.
 
 Le Taux d'identité $Id(S,N)$ de S par rapport N est égal au pourcentage de position où l'acide aminé est identique dans S et N. C'est-à-dire
 
-  $ Id(S,N) =\sum_{1<i<l} \mathds{1}(s_i,n_i)$ 
+  $ Id(S,N) =\frac{\sum_{1<i<l} \mathds{1}(s_i,n_i)}{l} \times 100$ 
 
 avec $s_i$ et $n_i$ l'acide animé en i de S et de N respectivement, et $\mathds{1}(x,y)$ la fonction qui vaut 1 lorsque x=y et 0 sinon. 
 
+\subsubsection{Taux d'identité par position}
 
-Le score d’identité est simplement le taux d’identité en terme d’acide aminé. On peut
-noter plus rigoureusement :
+Nous définissons également un taux d'identité d'un alignement $A_S$  à la position i par rapport à une séquence N de même longueur comme:
 
-où xi est l’acide aminé (ou gap) à la position i de la séquence concernée, et yi l’acide
-aminé (ou gap) à la position i de la séquence comparée. On définit s(xi;yi) = 1 si les deux
-séquences ont le même acide aminé en position i. Sinon s(xi;yi) = 0.
+$Id(A_{S},i) = \frac{\sum_{1<j<m} \mathds{1}(s_i^j,n_i)}{m} \times 100$ , avec m le nombre de séquences de $A_S$.
 
+\subsection{Similarité}
 
-    \clearpage
+Les taux d'identités qui viennent d'être présentés nous permettre de mesurer une ressemblance d'un séquence ou d'un ensemble de nos séquences produites par rapport à la séquence native. Mais cela n'est pas notre principale objectif.Et nous devons évaluer nos séquences par rapport à l'ensemble des séquences du domaine protéique de la séquence native.  
+
+   \subsubsection{Alignements Pfam} 
+La base de données Pfam (Protein families database)~\citep{refPfam} regroupe les domaines protéiques connus en famille. Chaque famille  étant représentées des alignements multiples de séquences et des profiles de modèles de Markov cachés~\citep{refPfam}. Dans la suite nous n'utiliserons l'alignement dit ``seed'' qui ne contient q'un petit ensemble de membres représentatifs de famille et l'alignement ``full'' qui est généré par modèle de Markov caché à partir de l'aligement ``seed''. Les alignements correspondent pour nous aux familles PF00017 (domaine SH2), PF00018  (domaine SH3) et PF00595 (domaine PDZ).
+
+ \subsubsection{Score BLOSUM}
+
+Pour tenir compte des ressemblances et des différences entre les acides aminés lors d'une substitution, nous avons besoin d'une matrice de coût.Nous utilisons la matrice BLOSUM62 (BLOcks SUbstitution Matrix)~\citep{refBLOSUM} qui est construite à partir de blocs l'alignement très conservées (ici plus de 62\% d'identités).Les fréquences des mutations y sont calculées.Le score BLOSUM d'une substitution est alors le logarithme de la fréquence de la mutation correspondante.À cela est ajouté un scrore de pénalités pour l'insertion d'un gap (c'est-à-dire un saut dans l'alignemnet).
+
+On définit alors simplement un score de similarité de deux séquences de même longueur comme la somme des scores BLOSUM62 sur toutes les positions. De même le score de similarité d'un alignement par rapport à une séquence sera définit comme la moyenne des score de similarité sur ensemble des séquences de l'alignement. Et enfin une score de similarité de deux ensembles de séquences alignés entre eux comme la moyenne des scores de similarité du premier ensemble par rapport aux séquences du second.  
+
+\subsection{similarité d'un ensemble à une famille Pfam}
+
+Afin de calculer un score de similarité d'un ensemble de nos séquences par rapport à une famille Pfam, il faut commencer par aligner nos séquences avec l'alignement de la famille.Pour cela nous utilisons le programme d'alignement BLAST~\citep{refBLAST}.Il implémente une heuristique qui recherche puis étend les meilleurs alignement locaux. Nous procédons comme suit:
+\begin{enumerate}
+\item La commande blastpgp est utilisée avec comme database (paramètre -d ) l'alignement Pfam et comme séquence en entrée ( paramètre -i ) la séquence native. 
+\item Dans la sortie blast, la séquence qui produit l'alignement le plus significatif avec la native est collectée, notons la $S_0$. 
+\item L'alignement blast est alors utilisé pour positionner la native par rapport à $S_0$ et les gaps nécessaires pour aligner la native à $S_0$ sont ajoutés.
+\item  Le positionnement et les gaps sont alors appliqués tels quels à la liste de nos séquences.
+
+\end{enumerate}
+\clearpage
+
     \section{Résultats} 
 
     \subsection{Optimisation du protocole Monte-Carlo}
@@ -547,8 +561,9 @@ Jusqu'à présent nous avons utilisé le même mode de modification de la séque
         \end{table}
 
 
-    \subsection{Comparaison protocole Monte-Carlo contre heuristique}
-
+        \subsection{Comparaison protocole Monte-Carlo contre heuristique}
+        \subsubsection{comparaison score de similarités}
+Nous examinons maintenant plus en détail les résultats de trois protocoles: h, mc2 et mc3.Tout d'abord nous calculons le score de similarité par position et par séquence de nos dix milles meilleurs  séquences d'acide aminés par rapport aux alignements Pfam \og seed\fg et \og full\fg . Pour avoir un point de comparaisons les scores séquence native contre pfam \og seed\fg et \og full\fg   sont aussi representés. Les résultats sont présentés sous forme de graphiques, une page par protéine. Pour chaque protocole, deux graphiques à gauche  représentent les similarités par position par rapport à l'alignement pfam \og seed\fg et respectivement pfam \og full\fg. Un troisième graphique représente les similarités par séquence.  Pour plusieurs protéines les scores de similarités par séquence  des séquences putatives sont nettement inférieurs que ceux de la native. Cependant les écarts sont relativement bien repartie selon les positions voir graphiques à gauche, ce qui donne en réalité des scores à chaque position assez comparables entre la native et les putatives en particulier pour   1G9O  1R6J 1M61,et 1CKA. Ces écarts sont plus importants pour 1ABO 1BM2 et 1O4C. On peut noter que pour 1G9O la séquence native n'est pas très similaire à l'alignement \og seed\fg et qu'il y a des séquences putatives meilleurs que la native sur ce plan.Ces résultats ne révèle pas de différence notable entre les trois protocoles.
 
 
 
@@ -557,22 +572,22 @@ Jusqu'à présent nous avons utilisé le même mode de modification de la séque
    \begin{figure}
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1ABO_h.png}~
-          \includegraphics[width=8.45cm]{simil_byseq_1ABO_h.png} 
+          \includegraphics[width=8cm]{simil_bypos_1ABO_h.png}~
+          \includegraphics[width=8cm]{simil_byseq_1ABO_h.png} 
      \caption{protocole h}
    \end{subfigure}
 
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1ABO_mc2.png}~ 
-          \includegraphics[width=8.45cm]{simil_byseq_1ABO_mc2.png} 
+          \includegraphics[width=8cm]{simil_bypos_1ABO_mc2.png}~ 
+          \includegraphics[width=8cm]{simil_byseq_1ABO_mc2.png} 
      \caption{protocole mc2}
    \end{subfigure}
 
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1ABO_mc3.png}~  
-          \includegraphics[width=8.45cm]{simil_byseq_1ABO_mc3.png} 
+          \includegraphics[width=8cm]{simil_bypos_1ABO_mc3.png}~  
+          \includegraphics[width=8cm]{simil_byseq_1ABO_mc3.png} 
      \caption{protocole mc3}
    \end{subfigure}
 
@@ -583,22 +598,22 @@ Jusqu'à présent nous avons utilisé le même mode de modification de la séque
    \begin{figure}
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1CKA_h.png}~
-          \includegraphics[width=8.45cm]{simil_byseq_1CKA_h.png} 
+          \includegraphics[width=8cm]{simil_bypos_1CKA_h.png}~
+          \includegraphics[width=8cm]{simil_byseq_1CKA_h.png} 
      \caption{protocole h}
    \end{subfigure}
 
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1CKA_mc2.png}~ 
-          \includegraphics[width=8.45cm]{simil_byseq_1CKA_mc2.png} 
+          \includegraphics[width=8cm]{simil_bypos_1CKA_mc2.png}~ 
+          \includegraphics[width=8cm]{simil_byseq_1CKA_mc2.png} 
      \caption{protocole mc2}
    \end{subfigure}
 
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1CKA_mc3.png}~  
-          \includegraphics[width=8.45cm]{simil_byseq_1CKA_mc3.png} 
+          \includegraphics[width=8cm]{simil_bypos_1CKA_mc3.png}~  
+          \includegraphics[width=8cm]{simil_byseq_1CKA_mc3.png} 
      \caption{protocole mc3}
    \end{subfigure}
 
@@ -609,22 +624,22 @@ Jusqu'à présent nous avons utilisé le même mode de modification de la séque
    \begin{figure}
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1BM2_h.png}~
-          \includegraphics[width=8.45cm]{simil_byseq_1BM2_h.png} 
+          \includegraphics[width=8cm]{simil_bypos_1BM2_h.png}~
+          \includegraphics[width=8cm]{simil_byseq_1BM2_h.png} 
      \caption{protocole h}
    \end{subfigure}
 
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1BM2_mc2.png}~ 
-          \includegraphics[width=8.45cm]{simil_byseq_1BM2_mc2.png} 
+          \includegraphics[width=8cm]{simil_bypos_1BM2_mc2.png}~ 
+          \includegraphics[width=8cm]{simil_byseq_1BM2_mc2.png} 
      \caption{protocole mc2}
    \end{subfigure}
 
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1BM2_mc3.png}~  
-          \includegraphics[width=8.45cm]{simil_byseq_1BM2_mc3.png} 
+          \includegraphics[width=8cm]{simil_bypos_1BM2_mc3.png}~  
+          \includegraphics[width=8cm]{simil_byseq_1BM2_mc3.png} 
      \caption{protocole mc3}
    \end{subfigure}
 
@@ -635,22 +650,22 @@ Jusqu'à présent nous avons utilisé le même mode de modification de la séque
    \begin{figure}
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1M61_h.png}~
-          \includegraphics[width=8.45cm]{simil_byseq_1M61_h.png} 
+          \includegraphics[width=8cm]{simil_bypos_1M61_h.png}~
+          \includegraphics[width=8cm]{simil_byseq_1M61_h.png} 
      \caption{protocole h}
    \end{subfigure}
 
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1M61_mc2.png}~ 
-          \includegraphics[width=8.45cm]{simil_byseq_1M61_mc2.png} 
+          \includegraphics[width=8cm]{simil_bypos_1M61_mc2.png}~ 
+          \includegraphics[width=8cm]{simil_byseq_1M61_mc2.png} 
      \caption{protocole mc2}
    \end{subfigure}
 
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1M61_mc3.png}~  
-          \includegraphics[width=8.45cm]{simil_byseq_1M61_mc3.png} 
+          \includegraphics[width=8cm]{simil_bypos_1M61_mc3.png}~  
+          \includegraphics[width=8cm]{simil_byseq_1M61_mc3.png} 
      \caption{protocole mc3}
    \end{subfigure}
 
@@ -661,22 +676,22 @@ Jusqu'à présent nous avons utilisé le même mode de modification de la séque
    \begin{figure}
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1O4C_h.png}~
-          \includegraphics[width=8.45cm]{simil_byseq_1O4C_h.png} 
+          \includegraphics[width=8cm]{simil_bypos_1O4C_h.png}~
+          \includegraphics[width=8cm]{simil_byseq_1O4C_h.png} 
      \caption{protocole h}
    \end{subfigure}
 
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1O4C_mc2.png}~ 
-          \includegraphics[width=8.45cm]{simil_byseq_1O4C_mc2.png} 
+          \includegraphics[width=8cm]{simil_bypos_1O4C_mc2.png}~ 
+          \includegraphics[width=8cm]{simil_byseq_1O4C_mc2.png} 
      \caption{protocole mc2}
    \end{subfigure}
 
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1O4C_mc3.png}~  
-          \includegraphics[width=8.45cm]{simil_byseq_1O4C_mc3.png} 
+          \includegraphics[width=8cm]{simil_bypos_1O4C_mc3.png}~  
+          \includegraphics[width=8cm]{simil_byseq_1O4C_mc3.png} 
      \caption{protocole mc3}
    \end{subfigure}
 
@@ -687,22 +702,22 @@ Jusqu'à présent nous avons utilisé le même mode de modification de la séque
    \begin{figure}
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1G9O_h.png}~
-          \includegraphics[width=8.45cm]{simil_byseq_1G9O_h.png} 
+          \includegraphics[width=8cm]{simil_bypos_1G9O_h.png}~
+          \includegraphics[width=8cm]{simil_byseq_1G9O_h.png} 
      \caption{protocole h}
    \end{subfigure}
 
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1G9O_mc2.png}~ 
-          \includegraphics[width=8.45cm]{simil_byseq_1G9O_mc2.png} 
+          \includegraphics[width=8cm]{simil_bypos_1G9O_mc2.png}~ 
+          \includegraphics[width=8cm]{simil_byseq_1G9O_mc2.png} 
      \caption{protocole mc2}
    \end{subfigure}
 
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1G9O_mc3.png}~  
-          \includegraphics[width=8.45cm]{simil_byseq_1G9O_mc3.png} 
+          \includegraphics[width=8cm]{simil_bypos_1G9O_mc3.png}~  
+          \includegraphics[width=8cm]{simil_byseq_1G9O_mc3.png} 
      \caption{protocole mc3}
    \end{subfigure}
 
@@ -713,22 +728,22 @@ Jusqu'à présent nous avons utilisé le même mode de modification de la séque
    \begin{figure}
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1R6J_h.png}~
-          \includegraphics[width=8.45cm]{simil_byseq_1R6J_h.png} 
+          \includegraphics[width=8cm]{simil_bypos_1R6J_h.png}~
+          \includegraphics[width=8cm]{simil_byseq_1R6J_h.png} 
      \caption{protocole h}
    \end{subfigure}
 
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1R6J_mc2.png}~ 
-          \includegraphics[width=8.45cm]{simil_byseq_1R6J_mc2.png} 
+          \includegraphics[width=8cm]{simil_bypos_1R6J_mc2.png}~ 
+          \includegraphics[width=8cm]{simil_byseq_1R6J_mc2.png} 
      \caption{protocole mc2}
    \end{subfigure}
 
    \begin{subfigure}[b]{\linewidth}
      \centering
-          \includegraphics[width=8.45cm]{simil_bypos_1R6J_mc3.png}~  
-          \includegraphics[width=8.45cm]{simil_byseq_1R6J_mc3.png} 
+          \includegraphics[width=8cm]{simil_bypos_1R6J_mc3.png}~  
+          \includegraphics[width=8cm]{simil_byseq_1R6J_mc3.png} 
      \caption{protocole mc3}
    \end{subfigure}
 
@@ -736,22 +751,22 @@ Jusqu'à présent nous avons utilisé le même mode de modification de la séque
 \label{grah:simil_1R6J}
    \end{figure}
 
-
-
+        \subsubsection{rapport entre énergies et  similarités}
+Pour faire le lien entre les comparaisons basées sur les meilleurs énergies et les comparaisons basées sur les scores de similarités, nous représentons les énergies des dix milles meilleurs séquences en fonction de leur similarité à l'alignement Pfam \og seed\fg. Comme une séquence peut apparaître plusieurs fois dans l'ensemble des séquences/conformations obtenus toutes les énergies trouvées de la séquence sont représentées voir les graphiques \ref{graph:simil_vs_ener}. La corrélation entre les deux critères semble très faible.Pour 1CKA malgré des énergies pour l'heuristique moins bonnes, la similarité est meilleurs. 
    \begin{figure}[t]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=8.45cm]{simil_vs_ener_1ABO.png} &
-       \includegraphics[width=8.45cm]{simil_vs_ener_1BM2.png} \\
-       \includegraphics[width=8.45cm]{simil_vs_ener_1CKA.png} &
-       \includegraphics[width=8.45cm]{simil_vs_ener_1G9O.png} \\
-       \includegraphics[width=8.45cm]{simil_vs_ener_1M61.png} &
-       \includegraphics[width=8.45cm]{simil_vs_ener_1O4C.png} \\
-       \includegraphics[width=8.45cm]{simil_vs_ener_1R6J.png} \\
+       \includegraphics[width=7cm]{simil_vs_ener_1ABO.png} &
+       \includegraphics[width=7cm]{simil_vs_ener_1BM2.png} \\
+       \includegraphics[width=7cm]{simil_vs_ener_1CKA.png} &
+       \includegraphics[width=7cm]{simil_vs_ener_1G9O.png} \\
+       \includegraphics[width=7cm]{simil_vs_ener_1M61.png} &
+       \includegraphics[width=7cm]{simil_vs_ener_1O4C.png} \\
+       \includegraphics[width=8cm]{simil_vs_ener_1R6J.png} \\
      \end{tabular}
      
      \caption{}
-\label{grah:simil_vs_ener}
+\label{graph:simil_vs_ener}
    \end{figure}
  
 
@@ -760,13 +775,13 @@ Jusqu'à présent nous avons utilisé le même mode de modification de la séque
    \begin{figure}[t]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=8.45cm]{centiles_1ABO.png} &
-       \includegraphics[width=8.45cm]{centiles_1BM2.png} \\
-       \includegraphics[width=8.45cm]{centiles_1CKA.png} &
-       \includegraphics[width=8.45cm]{centiles_1G9O.png} \\
-       \includegraphics[width=8.45cm]{centiles_1M61.png} &
-       \includegraphics[width=8.45cm]{centiles_1O4C.png} \\
-       \includegraphics[width=8.45cm]{centiles_1R6J.png} \\
+       \includegraphics[width=8cm]{centiles_1ABO.png} &
+       \includegraphics[width=8cm]{centiles_1BM2.png} \\
+       \includegraphics[width=8cm]{centiles_1CKA.png} &
+       \includegraphics[width=8cm]{centiles_1G9O.png} \\
+       \includegraphics[width=8cm]{centiles_1M61.png} &
+       \includegraphics[width=8cm]{centiles_1O4C.png} \\
+       \includegraphics[width=8cm]{centiles_1R6J.png} \\
      \end{tabular}
      
      \caption{Distribution des 100000 meilleurs séquences selon l'énergie.}
