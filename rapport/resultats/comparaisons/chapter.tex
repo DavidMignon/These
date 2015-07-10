@@ -50,10 +50,10 @@ Les tests sont réparties en deux ensembles:
 \end{enumerate}
 
 
-\paragraph{L'ensemble 'Tout actif'}
-
-Pour le premier ensemble de tests,La totalité de la matrice d'énergie est exploitée et pour chaque position l'espace d'exploration correspond à l'espace d'état déclaré dans le fichier .bb.
-Comme l'espace des séquences/confirmations à explorer est gigantesque, nous ne faisons pas de tentative de recherche du GMEC  par recheche exacte. 
+\paragraph{Ensemble 'Tout actif'}
+\label{methode_TTactif}
+Pour le premier ensemble de tests,La totalité de la matrice d'énergie est exploitée et pour chaque position l'espace d'exploration correspond à l'espace d'état déclaré dans le fichier .bb.C'est-à-dire que tous les types de résidu et tout les rotamères sont possibles à chaque position.
+Comme l'espace des séquences/confirmations à explorer est gigantesque, nous ne faisons pas de tentative de recherche du GMEC  par méthode exacte. 
 
 Nous effectuons des recherches avec les algorithmes suivants:
 
@@ -195,8 +195,8 @@ La table~\ref{tab:protoMC} donne les probabilités utilisées par ces cinq param
  Enfin mc4b se distingue des autres par un seuil de voisinage plus grand ((Table~\ref{tab:protoMC})).
 
 
-\paragraph{}
-Pour l'étape suivante, qui consiste à la comparaison avec les autres algorithmes, deux protocoles sont utilisés MC2d2 et MC2e2 ils inspirent de mc2d et mc2e , en étant adapté à la contrainte du temps de calculs de la comparaison d'algorithmes et un utilisant la nouvelle version de proteus. 
+\paragraph{Second version de proteus}
+Pour l'étape suivante, qui consiste à la comparaison avec les autres algorithmes, deux protocoles sont utilisés MCa et MCb ils s'inspirent fortement de mc2d et mc2e , en étant adapté à la contrainte du temps de calculs de la comparaison d'algorithmes et un utilisant la nouvelle version de proteus (les lettres capitales dans le nom des protocoles signifie l'utilisation de la dernière version de proteus,ceci dans toute la suite). 
   
 
     \begin{table}[!htbp]
@@ -220,8 +220,9 @@ Pour l'étape suivante, qui consiste à la comparaison avec les autres algorithm
         mc2e  & 0.2   &  3  &  1000  & 10 & 1; 0; 0.1; 0 ;0 \\     
         mc4b  & 0.5   & 10  &   100  & 10 & 0; 1;   0; 1 ;0 \\
         \cmidrule{1-6}         
-        MC2d2 & 0.2   &  6000  &  1  & 10 & 0; 1; 0.1; 0 ;0 \\      
-        MC2e2 & 0.2   &  6000  &  1  & 10 & 1; 0; 0.1; 0 ;0 \\   
+        MCa   & 0.2   &  6000  &  1  & 10 & 1; 0; 0.1; 0 ;0 \\   
+        MCb   & 0.2   &  6000  &  1  & 10 & 0; 1; 0.1; 0 ;0 \\      
+
 
         \bottomrule   
 
@@ -274,11 +275,11 @@ La table~\ref{tab:protoRE} donne les probabilités utilisées par les cinq balis
         RE4a   & 4 & 10<->0.01    &  1500 & 10 & 1; 0; 0.1; 0 ;0 &  7.5\\  
         RE4b   & 4 & 1<->0.125    &  1500 & 10 & 1; 0; 0.1; 0 ;0 &  7.5\\  
         RE4c   & 4 & 2<->0.25     &  1500 & 10 & 1; 0; 0.1; 0 ;0 &  7.5\\  
-        RE8a1  & 8 & 10<->0.00316 &  750  & 10 & 1; 0; 0.1; 0 ;0 &  1\\  
-        RE8a2  & 8 & 10<->0.00316 &  750  &  0 & 1; 0; 0.1; 0 ;0 &  2.5\\  
-        RE8b1  & 8 & 3<->0.175    &  750  & 10 & 1; 0; 0.1; 0 ;0 &  7.5\\
-        RE8b2  & 8 & 3<->0.175    &  750  & 10 & 0; 1; 0.1; 0 ;0 &  7.5\\
-        RE8b3  & 8 & 3<->0.175    &  750  & 10 & 0; 1; 0.1; 0 ;0 &  1\\
+        RE8a1  & 8 & 10<->0.00316 &  750  & 0  & 1; 0; 0.1; 0 ;0 &  2.5\\  
+        RE8a2  & 8 & 10<->0.00316 &  750  & 10 & 1; 0; 0.1; 0 ;0 &  2.5\\  
+        RE8b1  & 8 & 3<->0.175    &  750  & 10 & 0; 1; 0.1; 0 ;0 &  7.5\\
+        RE8b2  & 8 & 3<->0.175    &  750  & 10 & 1; 0; 0.1; 0 ;0 &  7.5\\
+        RE8b3  & 8 & 3<->0.175    &  750  & 10 & 1; 0; 0.1; 0 ;0 &  1\\
         \bottomrule
 
       \end{tabular}      
@@ -350,6 +351,19 @@ Afin de calculer un score de similarité d'un ensemble de nos séquences par rap
 \item  Le positionnement et les gaps sont alors appliqués tels quels à la liste de nos séquences.
 
 \end{enumerate}
+
+
+\subsection{Réparition de l'energie selon les centiles }
+
+Pour comparer différentes distributions d'ensemble de séquences/conformations selon l'énergie,nous déterminons les centiles de la façon suivante: 
+
+\begin{enumerate}
+\item l'ensemble de séquences/conformations est trié selon l'énergie.
+\item L'intervalle entre la meilleur énergie et la moins bonne est divisé en cent intervalles consécutifs contenant le même nombre de séquences/conformations (un centième du cardinal de l'ensemble).
+\item les quatre-vingts dix neufs valeurs d'energie obtenues par ce découpage sont les centiles.   
+\end{enumerate}
+
+
 \clearpage
 
     \section{Résultats} 
@@ -751,8 +765,9 @@ Nous examinons maintenant plus en détail les résultats de trois protocoles: h,
 \label{grah:simil_1R6J}
    \end{figure}
 
-        \subsubsection{rapport entre énergies et  similarités}
-Pour faire le lien entre les comparaisons basées sur les meilleurs énergies et les comparaisons basées sur les scores de similarités, nous représentons les énergies des dix milles meilleurs séquences en fonction de leur similarité à l'alignement Pfam \og seed\fg. Comme une séquence peut apparaître plusieurs fois dans l'ensemble des séquences/conformations obtenus toutes les énergies trouvées de la séquence sont représentées voir les graphiques \ref{graph:simil_vs_ener}. La corrélation entre les deux critères semble très faible.Pour 1CKA malgré des énergies pour l'heuristique moins bonnes, la similarité est meilleurs. 
+         \subsubsection{rapport entre énergies et  similarités}
+Pour faire le lien entre les comparaisons basées sur les meilleurs énergies et les comparaisons basées sur les scores de similarités, nous représentons les énergies des dix milles meilleurs séquences en fonction de leur similarité à l'alignement Pfam \og seed\fg. Comme une séquence peut apparaître plusieurs fois dans l'ensemble des séquences/conformations obtenus toutes les énergies trouvées de la séquence sont représentées voir les graphiques \ref{graph:simil_vs_ener}. La corrélation entre les deux critères semble très faible.Pour 1CKA malgré des énergies pour l'heuristique moins bonnes, la similarité est meilleur.Bien que les énergies obtenues avec le protocole mc2 soient meilleurs que celles avec le protocole mc3, il n'y a pas de différences significatives sur les scores de similarités obtenus.
+
    \begin{figure}[t]
      \centering
      \begin{tabular}{cc}
@@ -768,6 +783,16 @@ Pour faire le lien entre les comparaisons basées sur les meilleurs énergies et
      \caption{}
 \label{graph:simil_vs_ener}
    \end{figure}
+ 
+
+         \subsubsection{Comparaisons des distributions selon l'énergie}
+
+Ici nous nous intéressons aux ensembles de cent mille séquences/conformations de meilleurs énergies.Nous calculons les centiles d'énergie pour chaque protéine et pour chacun des trois protocoles h , mc2, mc3.  
+
+Les figures~\ref{graph:centiles} représentent la répartition des énergies selon les centiles, ceci pour les trois protocoles h, mc2, mc3. Pour le premier centile  ( c'est-à-dire l'énergie au dessus de la quelle il y a les milles meilleurs séquences/conformations) le protocole mc2 domine sauf pour la protéine 1R6J où h est meilleur jusqu'au vingtième centile .Pour 1ABO, alors que mc2 et mc3 font quasiment jeu égal pour la meilleur énergie, le premier centile de mc2 est nettement plus haut que celui de mc3.Mais en général, L'allure des courtes des deux protolcoles Monte-carlo est très proche et les écarts entre  les meilleurs énergies de mc2 et mc3 sont globalement conservés le long des centiles.Ce n'est pas le cas entre h et les protocoles Monte-Carlo, où l'on voit un déclin plus rapide le long des centiles.Ce qui montre une densité plus faible des séquences/conformations de bonne énergie pour l'heuristique. 
+
+
+
  
 
 
@@ -788,58 +813,40 @@ Pour faire le lien entre les comparaisons basées sur les meilleurs énergies et
 \label{grah:centiles}
    \end{figure}
  
+\clearpage
 
+        \subsection{Comparaison des protocoles Monte-Carlo , Replica Exchange et heuristique}
+        \subsubsection{Résultats tout actif}
+
+Passons maintenant, aux résultats obtenus avec la seconde version de proteus~\ref{qqchose}.Cette version intègre notamment l'algorithme \og Replica Exchange\fg. Nous pouvons donc faire des comparaisons entre les trois algorithmes du programme.Tous les protocoles utilisés sont décrits dans les tableaux~\ref{tab:protoMC} ou \ref{tab:protoRE}.Commençons par la recherche de la séquence/conformation de meilleur énergie pour toutes les positions actives. Les tests sont décrits au paragraphe~\ref{methode_TTactif}. Les résultats sont présentés sous forme de tableau en~\ref{tab:best_ener_all_all} qui contient la meilleur énergie arrondie à la kcal/mol inférieure et aussi sous forme de graphique en~\ref{graph:best_ener_all_all} où sont représenter les différences par rapport à la meilleur énergie pour tous les cas. Il n'y pas de protocoles qui domine les autres sur toutes les protéines. Le meilleur résultat est obtenu avec le protocole REb2 pour 2BYG , 1BM2 et 1A81, le protocole RE8a2 pour 1CKA, 1O4C et 1M61 , le protocole quatre marcheurs RE4b pour 1G9O , le protocole MCb pour 1ABO et finalement H pour 1R6J.  Ces résultats sont également représentent sous forme de trois graphiques qui regroupent les protocoles utilisant les protocoles non parallèles, les protocoles quatre marcheurs et les protocoles huit marcheurs. Un quatrième graphique regroupe le meilleur protocoles de chaque algorithme. Là encore seul les différences par rapport au meilleur protocole sont représentées. Le protocole H fait jeu égale avec le meilleur protocole Monte-Carlo. Le second Monte-Carlo , qui utilise en mode de mutation moins agressif~\ref{sec:MC}, est nettement plus mauvais avec presque toujours des écarts de plus de cinq Kcal/mol avec les deux autres protocoles non parallèle.Pour le groupe de protocoles avec quatre marcheurs le RE4b ,qui se différencie dans deux autres par une plage de températures la plus resserrée ,est meilleur pour cinq des sept protéines mais pour les deux protéines restantes la différences se limite à deux Kcal/mol.RE4a, le protocole avec la plage de température la large est moins bon que les autres.En ce qui conserve les protocoles huit marcheurs , deux d'entre-eux se démarquent RE8a2 et RE8b2. RE8a2 obtient des résultats assez irrégulier selon les protéines du meilleur jusqu'à s'écarter de huit Kcal/mol de la plus haute énergie.RE8b2 qui poccéde une plage de temprature resserré, une grande periode de swap et un mode de mutation peu agressif, soit donne les meilleurs résultats, soit   
 
     \begin{table}[h]
       \centering
 
-      \begin{tabular}{cccccccccc}
+      \begin{tabular}{cccccccccccc}
+
 
         \toprule
-        Protéine & h & MC3 & MC43 & RE1 & RE2 & RE5 & RE3 & RE32 & RE4 \\
-        \cmidrule{1-10}
-        1A81 & -521 & -538 & -522 & -525 & -520 & -520 & -514 & -512 & -518 \\
-        1ABO & -272 & -274 & -268 & -273 & -269 & -273 & -268 & -271 & -272 \\
-        1BM2 & -484 & -500 & -486 & -488 & -481 & -489 & -478 & -476 & -486 \\
-        1CKA & -252 & -258 & -249 & -259 & -251 & -251 & -247 & -246 & -249 \\
-        1G9O & -428 & -435 & -428 & -429 & -421 & -430 & -428 & -425 & -428 \\
-        1M61 & -480 & -493 & -479 & -483 & -480 & -481 & -480 & -480 & -480 \\
-        1O4C & -535 & -545 & -531 & -536 & -529 & -536 & -527 & -524 & -532 \\
-        1R6J & -407 & -419 & -414 & -415 & -409 & -411 & -409 & -408 & -414 \\
-        2BYG & -457 & -469 & -454 & -461 & -456 & -460 & -456 & -454 & -462 \\
-  
+        Protéine & H & MCa & MCb & RE4a & RE4b & RE4c & RE8a1 & RE8a2 & RE8b1 & RE8b2 & RE8b3 \\
+        \cmidrule{1-12}
+        1A81 & -521 & -538 & -522 & -525 & -520 & -518 & -520 & -520 & -514 & -512 & -512 \\
+        1ABO & -272 & -274 & -268 & -273 & -269 & -272 & -273 & -273 & -268 & -271 & -271 \\
+        1BM2 & -484 & -500 & -486 & -488 & -481 & -486 & -489 & -489 & -478 & -476 & -480 \\
+        1CKA & -252 & -258 & -249 & -259 & -251 & -249 & -251 & -251 & -247 & -248 & -252 \\
+        1G9O & -428 & -435 & -428 & -429 & -421 & -428 & -430 & -430 & -428 & -425 & -426 \\
+        1M61 & -480 & -493 & -479 & -483 & -480 & -480 & -481 & -481 & -480 & -480 & -480 \\
+        1O4C & -535 & -545 & -531 & -536 & -529 & -532 & -536 & -536 & -527 & -524 & -525 \\
+        1R6J & -407 & -419 & -414 & -415 & -409 & -414 & -411 & -411 & -409 & -408 & -409 \\
+        2BYG & -457 & -469 & -454 & -461 & -456 & -462 & -460 & -460 & -456 & -454 & -454 \\
+        
         \bottomrule
+
 
       \end{tabular}      
       \caption{les meilleures énergies pour tous les résidus actifs}
 \label{tab:best_ener_all_all}      
     \end{table}
 
-
-   \begin{figure}[t]
-     \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=12cm]{1A81_casa-p8.png} &
-     \end{tabular}
-     
-     \caption{Distribution des énergies selon la température (protocole RE3).}
-\label{graph:Distrib_E_T}
-   \end{figure}
-
-
-   \begin{figure}[t]
-     \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=8.45cm]{1A81-RE1-T_traj.png} &
-       \includegraphics[width=8.45cm]{1A81-RE2-T_traj.png} \\
-       \includegraphics[width=8.45cm]{1A81-RE4-T_traj.png} &
-       \includegraphics[width=8.45cm]{1A81-RE3-T_traj.png} \\
-     \end{tabular}
-     \caption{Variation de la température au court de la trajectoire de chaque marcheur (protocole RE1).}
-\label{graph:TRAJ_T}
-   \end{figure}
-
-    \clearpage
 
    \begin{figure}[t]
      \centering
@@ -864,6 +871,33 @@ Pour faire le lien entre les comparaisons basées sur les meilleurs énergies et
      \end{tabular}
      \caption{Variation de la température au court de la trajectoire de chaque marcheur (protocole RE1).}
 \label{graph:best_ener_by_algo}
+   \end{figure}
+
+
+
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=12cm]{1A81_casa-p8.png} &
+     \end{tabular}
+     
+     \caption{Distribution des énergies selon la température (protocole RE3).}
+\label{graph:Distrib_E_T}
+   \end{figure}
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=8.45cm]{1A81-RE1-T_traj.png} &
+       \includegraphics[width=8.45cm]{1A81-RE2-T_traj.png} \\
+       \includegraphics[width=8.45cm]{1A81-RE4-T_traj.png} &
+       \includegraphics[width=8.45cm]{1A81-RE3-T_traj.png} \\
+     \end{tabular}
+     \caption{Variation de la température au court de la trajectoire de chaque marcheur (protocole RE1).}
+\label{graph:TRAJ_T}
    \end{figure}
 
 

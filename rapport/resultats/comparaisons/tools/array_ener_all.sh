@@ -10,7 +10,7 @@ declare -a L
 
 L=(Protéine)  
 
-algo_list="ph  p3  p4  p5  p6  p7  p8  p82 p83 p9 p11"
+algo_list="ph  p3  p4  p5  p6  p9 p7  p11 p8  p82 p83"
 
 
 for p in $algo_list

@@ -50,14 +50,14 @@ H,MCa,MCb,RE4a,RE4b,RE4c,RE8a1,RE8a2,RE8b1,RE8b2,RE8b3 = np.loadtxt(result_file,
 ax.plot(proteins,H,color='red',marker='o',label="H")
 ax.plot(proteins,MCa,color='blue',marker='^',label="MC a")
 ax.plot(proteins,MCb,color='green',marker='^',label="MC b")
-#ax.plot(proteins,RE4a,color='cyan',marker='s',label="RE 4 a")
-#ax.plot(proteins,RE4b,color='magenta',marker='s',label="RE 4 b")
-#ax.plot(proteins,RE4c,color='yellow',marker='s',label="RE 4 c")
-#ax.plot(proteins,RE8a1,color='cyan',marker='*',label="RE 8 a 1")
-#ax.plot(proteins,RE8a2,color='blue',marker='*',label="RE 8 a 2")
-#ax.plot(proteins,RE8b1,color='0.8',marker='*',label="RE 8 b 1")
-#ax.plot(proteins,RE8b2,color='black',marker='*',label="RE 8 b 2")
-#ax.plot(proteins,RE8b3,color='burlywood',marker='*',label="RE 8 b 3")
+ax.plot(proteins,RE4a,color='cyan',marker='s',label="RE 4 a")
+ax.plot(proteins,RE4b,color='magenta',marker='s',label="RE 4 b")
+ax.plot(proteins,RE4c,color='yellow',marker='s',label="RE 4 c")
+ax.plot(proteins,RE8a1,color='cyan',marker='*',label="RE 8 a 1")
+ax.plot(proteins,RE8a2,color='blue',marker='*',label="RE 8 a 2")
+ax.plot(proteins,RE8b1,color='0.8',marker='*',label="RE 8 b 1")
+ax.plot(proteins,RE8b2,color='black',marker='*',label="RE 8 b 2")
+ax.plot(proteins,RE8b3,color='burlywood',marker='*',label="RE 8 b 3")
 
 
 
