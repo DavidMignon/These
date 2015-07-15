@@ -47,26 +47,24 @@ proteins = np.genfromtxt(result_file,usecols=(1),dtype=None)
 
 H,MCa,MCb,RE4a,RE4b,RE4c,RE8a1,RE8a2,RE8b1,RE8b2,RE8b3 = np.loadtxt(result_file,usecols=[2,3,4,5,6,7,8,9,10,11,12],unpack=True)
 
-ax.plot(proteins,H,color='red',marker='o',label="H")
-ax.plot(proteins,MCa,color='blue',marker='^',label="MC a")
-ax.plot(proteins,MCb,color='green',marker='^',label="MC b")
-ax.plot(proteins,RE4a,color='cyan',marker='s',label="RE 4 a")
-ax.plot(proteins,RE4b,color='magenta',marker='s',label="RE 4 b")
-ax.plot(proteins,RE4c,color='yellow',marker='s',label="RE 4 c")
+#ax.plot(proteins,H,color='red',marker='o',label="H")
+#ax.plot(proteins,MCa,color='blue',marker='^',label="MC a")
+#ax.plot(proteins,MCb,color='green',marker='^',label="MC b")
+#ax.plot(proteins,RE4a,color='cyan',marker='s',label="RE 4 a")
+#ax.plot(proteins,RE4b,color='magenta',marker='s',label="RE 4 b")
+#ax.plot(proteins,RE4c,color='yellow',marker='s',label="RE 4 c")
 ax.plot(proteins,RE8a1,color='cyan',marker='*',label="RE 8 a 1")
 ax.plot(proteins,RE8a2,color='blue',marker='*',label="RE 8 a 2")
 ax.plot(proteins,RE8b1,color='0.8',marker='*',label="RE 8 b 1")
-ax.plot(proteins,RE8b2,color='black',marker='*',label="RE 8 b 2")
 ax.plot(proteins,RE8b3,color='burlywood',marker='*',label="RE 8 b 3")
-
-
+ax.plot(proteins,RE8b2,color='black',marker='*',label="RE 8 b 2")
 
 
 ax.xaxis.set_ticks([1,2,3,4,5,6,7,8,9])
 ax.xaxis.set_major_formatter(formatter)
 ax.set_xlim(0, 10)
-ax.set_ylim(-2, 28)
-ax.yaxis.set_ticks([0.,4.,8.,12.,16,20,24])
+ax.set_ylim(-2, 16)
+ax.yaxis.set_ticks([0.,4.,8.,12.])
 
 ax.grid(False)
 
@@ -79,10 +77,6 @@ ax.set_xlabel("Proteins", fontsize=11)
 # Shrink current axis by 10%
 box = ax.get_position()
 ax.set_position([box.x0, box.y0, box.width * 0.95, box.height])
-
-#red_patch = mpatches.Patch(color='red', label='H test')
-#blue_patch = mpatches.Patch(color='blue', label='MC test')
-#green_patch = mpatches.Patch(color='green', label='RE test')
 
 
 # Put a legend to the right of the current axis

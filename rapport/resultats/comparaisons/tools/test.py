@@ -1,28 +1,39 @@
 #!/usr/bin/env python
 
-
-
+import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
 
+#plt.subplots_adjust(hspace=0.4)
+t = np.arange(0.01, 20.0, 0.01)
 
-x = [1, 2, 3, 4]
-y = [1, 4, 9, 6]
+# log y axis
+plt.subplot(221)
+plt.semilogy(t, np.exp(-t/5.0))
+plt.title('semilogy')
+plt.grid(True)
 
-z = [5, 1, 1, 1]
-labels = ['Frogs', 'Hogs', 'Bogs', 'Slogs']
+# log x axis
+plt.subplot(222)
+plt.semilogx(t, np.sin(2*np.pi*t))
+plt.title('semilogx')
+plt.grid(True)
 
-plt.plot(x, y, 'ro')
-plt.plot(x, z, 'bo')
-# You can specify a rotation for the tick labels in degrees or with keywords.
-plt.xticks(x, labels, rotation='vertical')
-# Pad margins so that markers don't get clipped by the axes
-plt.margins(0.2)
-# Tweak spacing to prevent clipping of tick-labels
-plt.subplots_adjust(bottom=0.15)
+# log x and y axis
+plt.subplot(223)
+plt.loglog(t, 20*np.exp(-t/10.0), basex=2)
+plt.grid(True)
+plt.title('loglog base 4 on x')
 
+# with errorbars: clip non-positive values
+ax = plt.subplot(224)
+ax.set_xscale("log", nonposx='clip')
+ax.set_yscale("log", nonposy='clip')
 
-red_patch = mpatches.Patch(color='red', label='The red data')
-plt.legend(handles=[red_patch])
+x = 10.0**np.linspace(0.0, 2.0, 20)
+y = x**2.0
+plt.errorbar(x, y, xerr=0.1*x, yerr=5.0+0.75*y)
+ax.set_ylim(ymin=0.1)
+ax.set_title('Errorbars go negative')
+
 
 plt.show()

@@ -818,7 +818,9 @@ Les figures~\ref{graph:centiles} représentent la répartition des énergies sel
         \subsection{Comparaison des protocoles Monte-Carlo , Replica Exchange et heuristique}
         \subsubsection{Résultats tout actif}
 
-Passons maintenant, aux résultats obtenus avec la seconde version de proteus~\ref{qqchose}.Cette version intègre notamment l'algorithme \og Replica Exchange\fg. Nous pouvons donc faire des comparaisons entre les trois algorithmes du programme.Tous les protocoles utilisés sont décrits dans les tableaux~\ref{tab:protoMC} ou \ref{tab:protoRE}.Commençons par la recherche de la séquence/conformation de meilleur énergie pour toutes les positions actives. Les tests sont décrits au paragraphe~\ref{methode_TTactif}. Les résultats sont présentés sous forme de tableau en~\ref{tab:best_ener_all_all} qui contient la meilleur énergie arrondie à la kcal/mol inférieure et aussi sous forme de graphique en~\ref{graph:best_ener_all_all} où sont représenter les différences par rapport à la meilleur énergie pour tous les cas. Il n'y pas de protocoles qui domine les autres sur toutes les protéines. Le meilleur résultat est obtenu avec le protocole REb2 pour 2BYG , 1BM2 et 1A81, le protocole RE8a2 pour 1CKA, 1O4C et 1M61 , le protocole quatre marcheurs RE4b pour 1G9O , le protocole MCb pour 1ABO et finalement H pour 1R6J.  Ces résultats sont également représentent sous forme de trois graphiques qui regroupent les protocoles utilisant les protocoles non parallèles, les protocoles quatre marcheurs et les protocoles huit marcheurs. Un quatrième graphique regroupe le meilleur protocoles de chaque algorithme. Là encore seul les différences par rapport au meilleur protocole sont représentées. Le protocole H fait jeu égale avec le meilleur protocole Monte-Carlo. Le second Monte-Carlo , qui utilise en mode de mutation moins agressif~\ref{sec:MC}, est nettement plus mauvais avec presque toujours des écarts de plus de cinq Kcal/mol avec les deux autres protocoles non parallèle.Pour le groupe de protocoles avec quatre marcheurs le RE4b ,qui se différencie dans deux autres par une plage de températures la plus resserrée ,est meilleur pour cinq des sept protéines mais pour les deux protéines restantes la différences se limite à deux Kcal/mol.RE4a, le protocole avec la plage de température la large est moins bon que les autres.En ce qui conserve les protocoles huit marcheurs , deux d'entre-eux se démarquent RE8a2 et RE8b2. RE8a2 obtient des résultats assez irrégulier selon les protéines du meilleur jusqu'à s'écarter de huit Kcal/mol de la plus haute énergie.RE8b2 qui poccéde une plage de temprature resserré, une grande periode de swap et un mode de mutation peu agressif, soit donne les meilleurs résultats, soit   
+Passons maintenant, aux résultats obtenus avec la seconde version de proteus~\ref{qqchose}.Cette version intègre notamment l'algorithme \og Replica Exchange\fg. Nous pouvons donc faire des comparaisons entre les trois algorithmes du programme.Tous les protocoles utilisés sont décrits dans les tableaux~\ref{tab:protoMC} ou \ref{tab:protoRE}.Commençons par la recherche de la séquence/conformation de meilleur énergie pour toutes les positions actives. Les tests sont décrits au paragraphe~\ref{methode_TTactif}. Les résultats sont présentés sous forme de tableau en~\ref{tab:best_ener_all_all} qui contient la meilleur énergie arrondie à la kcal/mol inférieure et aussi sous forme de graphique en~\ref{graph:best_ener_all_all} où sont représenter les différences par rapport à la meilleur énergie pour tous les cas. 
+\subparagraph
+Il n'y pas de protocoles qui domine les autres sur toutes les protéines. Le meilleur résultat est obtenu avec le protocole huit marcheurs RE8b2 pour 2BYG , 1BM2, 1O4C et 1A81, le protocole RE8b1 pour 1CKA et 1ABO, le protocole quatre marcheurs RE4b pour 1G9O , les protocoles mono-marcheur MCb pour 1M61 et H pour 1R6J.  Ces résultats sont également représentent sous forme de trois graphiques qui regroupent les protocoles utilisant les protocoles non parallèles, les protocoles quatre marcheurs et les protocoles huit marcheurs. Un quatrième graphique regroupe le meilleur protocoles de chaque algorithme. Là encore seul les différences par rapport au meilleur protocole sont représentées. Le protocole H fait jeu égale avec le meilleur protocole Monte-Carlo. Le second Monte-Carlo , qui utilise en mode de mutation moins agressif~\ref{sec:MC}, est nettement plus mauvais avec presque toujours des écarts de plus de cinq Kcal/mol avec les deux autres protocoles non parallèle.Pour le groupe de protocoles avec quatre marcheurs le RE4b ,qui se différencie des deux autres par une plage de températures la plus resserrée ,est meilleur pour cinq des sept protéines mais pour les deux protéines restantes la différences se limite à deux Kcal/mol.RE4a, le protocole avec la plage de température la large est moins bon que les autres. En ce qui conserve les protocoles huit marcheurs , deux d'entre-eux se démarquent RE8b1 et RE8b2 (plage de température resserré,grande période de swap et mode de mutation agressif pour le premier , plus conservateur pour le second). RE8b1 obtient des résultats assez irrégulier selon les protéines du meilleur pour 1CKA et 1ABO jusqu'à s'écarter de près de huit Kcal/mol de la plus haute énergie.RE8b2, soit donne les meilleurs résultats (dans cinquante pourcent des cas), soit s'écarte d'au plus quatre Kcal/mol des meilleurs résultats.  
 
     \begin{table}[h]
       \centering
@@ -853,7 +855,7 @@ Passons maintenant, aux résultats obtenus avec la seconde version de proteus~\r
      \begin{tabular}{cc}
        \includegraphics[width=18cm]{best_all.png} \\
      \end{tabular}
-     \caption{Tous les protocoles.}
+     \caption{Les différences entre les meilleurs énergie de chaque protocoles.}
 \label{graph:best_ener_all_all}
    \end{figure}
 
@@ -865,25 +867,26 @@ Passons maintenant, aux résultats obtenus avec la seconde version de proteus~\r
      \centering
      \begin{tabular}{cc}
        \includegraphics[width=8cm]{best_by_cat.png} &
-       \includegraphics[width=8cm]{best_MC+H.png} \\
+       \includegraphics[width=8cm]{monoM.png} \\
        \includegraphics[width=8cm]{best_RE4.png} &
        \includegraphics[width=8cm]{best_RE8.png} \\
      \end{tabular}
-     \caption{Variation de la température au court de la trajectoire de chaque marcheur (protocole RE1).}
+     \caption{.Les différences entre les meilleurs énergie par groupe de protocoles}
 \label{graph:best_ener_by_algo}
    \end{figure}
 
 
+\paragraph}{les trajectoires selon la température}
 
-
+Regardons plus en détail le comportement du programme pour l'algorithme Replica Exchange. Notre implémentation de cette algorithme consiste à modifier la température de certains marcheurs à certains moments voir~\ref{???}.Pour examiner la trajectoire à une température donnée t ( c'est à dire le graphe dans l'espace les séquences/conformations selon les pas du marcheurs lorsqu'ils sont à la température t), nous découpons les trajectoires des marcheurs  selon la température. Puis nous collons les segments de trajectoires de même température en respectant l'ordre des pas.Comme les changements de températures se font de façon synchrone , id est c'est un échange ente deux marcheurs, nous obtenons autant de trajectoire selon la température qu'il y a de marcheurs et ces nouvelles trajectoires sont de même longueur que les trajectoires obtenues par proteus. La figure~\ref{graph:Distrib_E_T} représente la distribution en énergie des trajectoires selon la température. 
 
    \begin{figure}[t]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=12cm]{1A81_casa-p8.png} &
+       \includegraphics[width=12cm]{1A81_RE8b1.png} &
      \end{tabular}
      
-     \caption{Distribution des énergies selon la température (protocole RE3).}
+     \caption{Distribution des énergies selon la température (1A81 protocole RE8b1).}
 \label{graph:Distrib_E_T}
    \end{figure}
 
@@ -891,12 +894,12 @@ Passons maintenant, aux résultats obtenus avec la seconde version de proteus~\r
    \begin{figure}[t]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=8.45cm]{1A81-RE1-T_traj.png} &
-       \includegraphics[width=8.45cm]{1A81-RE2-T_traj.png} \\
-       \includegraphics[width=8.45cm]{1A81-RE4-T_traj.png} &
-       \includegraphics[width=8.45cm]{1A81-RE3-T_traj.png} \\
+       \includegraphics[width=8.45cm]{1A81-RE4a-T_traj.png} &
+       \includegraphics[width=8.45cm]{1A81-RE4b-T_traj.png} \\
+       \includegraphics[width=8.45cm]{1A81-RE8a2-T_traj.png} &
+       \includegraphics[width=8.45cm]{1A81-RE8b1-T_traj.png} \\
      \end{tabular}
-     \caption{Variation de la température au court de la trajectoire de chaque marcheur (protocole RE1).}
+     \caption{Variation de la température pendant la trajectoire de chaque marcheur (cas exemple de protocoles).}
 \label{graph:TRAJ_T}
    \end{figure}
 
