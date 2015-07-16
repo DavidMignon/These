@@ -3,7 +3,7 @@
 
 
 \section{Les méthodes pratiques} 
-
+\label{sec:methodes_pratiques}
 Nous cherchons maintenant à déterminer les performances et les qualités des différents algorithmes de proteus.
 Pour évaluer les qualités des différents algorithmes de proteus, nous effectuons un ensemble de tests. 
 Plusieurs questions se présentent alors,premièrement grâce à l' algorithme de type toulbar2 il est possible d'obtenir la séquence/conformation qui possède l'énergie de dépliement la plus haute. Cela constitue une information important qui va nous servir de point de comparaison. Mais le facteur temps pose problème, nous ne savons pas à l'avance quand toulbar2 termine. Et il apparaît d'emblée illusoire d'espérer voir toulbar2 converger dans toutes les situations qui nous intéressent dans un temps raisonnable, en particulier pour une situation où  toutes les positions du  backbone sont autorisé à muter et pour chaque type d'acide aminé la chaîne latérale peut prendre toutes les positions précédemment calculées dans la matrice. 
@@ -166,7 +166,7 @@ Pour l'algorithme Heuristique, il n'y a dans notre situation qu'un seul paramèt
 \label{sec:MC}
 On distingue deux ensembles de protocoles, Le premier où les noms  sont de la forme mc*, rassemble les protocoles utilisés pendant l'optimisation du Monte-Carlo.Le second est constitué du protocole retenue comme optimisé , plus une variante.     
 
-\subsubsection{Optimisation}
+\subsubsection{Paramétrage}
 
 Les éléments à paramétrer pour l'algorithme Monte-Carlo sont les suivants:
 
@@ -368,9 +368,9 @@ Pour comparer différentes distributions d'ensemble de séquences/conformations 
 
     \section{Résultats} 
 
-    \subsection{Optimisation du protocole Monte-Carlo}
+    \subsection{Paramétrage du protocole Monte-Carlo}
 
-L'optimisation des paramètres Monte-Carlo est faite par des test sur nos neufs protéines avec toutes les positions actives.
+Le choix des paramètres du protocole Monte-Carlo est décidé sur des tests sur les sept protéines avec toutes les positions actives.
 
 
    \subsubsection{Température et meilleures énergies} 
@@ -815,8 +815,7 @@ Les figures~\ref{graph:centiles} représentent la répartition des énergies sel
  
 \clearpage
 
-        \subsection{Comparaison des protocoles Monte-Carlo , Replica Exchange et heuristique}
-        \subsubsection{Résultats tout actif}
+        \subsection{Comparaison avec toutes les positions actives}
 
 Passons maintenant, aux résultats obtenus avec la seconde version de proteus~\ref{qqchose}.Cette version intègre notamment l'algorithme \og Replica Exchange\fg. Nous pouvons donc faire des comparaisons entre les trois algorithmes du programme.Tous les protocoles utilisés sont décrits dans les tableaux~\ref{tab:protoMC} ou \ref{tab:protoRE}.Commençons par la recherche de la séquence/conformation de meilleur énergie pour toutes les positions actives. Les tests sont décrits au paragraphe~\ref{methode_TTactif}. Les résultats sont présentés sous forme de tableau en~\ref{tab:best_ener_all_all} qui contient la meilleur énergie arrondie à la kcal/mol inférieure et aussi sous forme de graphique en~\ref{graph:best_ener_all_all} où sont représenter les différences par rapport à la meilleur énergie pour tous les cas. 
 \subparagraph
@@ -876,9 +875,12 @@ Il n'y pas de protocoles qui domine les autres sur toutes les protéines. Le mei
    \end{figure}
 
 
-\paragraph}{les trajectoires selon la température}
+\paragraph{Distribution des énergies en fonction des températures}
 
-Regardons plus en détail le comportement du programme pour l'algorithme Replica Exchange. Notre implémentation de cette algorithme consiste à modifier la température de certains marcheurs à certains moments voir~\ref{???}.Pour examiner la trajectoire à une température donnée t ( c'est à dire le graphe dans l'espace les séquences/conformations selon les pas du marcheurs lorsqu'ils sont à la température t), nous découpons les trajectoires des marcheurs  selon la température. Puis nous collons les segments de trajectoires de même température en respectant l'ordre des pas.Comme les changements de températures se font de façon synchrone , id est c'est un échange ente deux marcheurs, nous obtenons autant de trajectoire selon la température qu'il y a de marcheurs et ces nouvelles trajectoires sont de même longueur que les trajectoires obtenues par proteus. La figure~\ref{graph:Distrib_E_T} représente la distribution en énergie des trajectoires selon la température. 
+Regardons plus en détail le comportement du programme pour l'algorithme Replica Exchange. Notre implémentation de cette algorithme consiste à modifier la température de certains marcheurs à certains moments voir~\ref{???}.Pour examiner la trajectoire à une température donnée t ( c'est à dire le graphe dans l'espace les séquences/conformations selon les pas du marcheurs lorsqu'ils sont à la température t), nous découpons les trajectoires des marcheurs  selon la température. Puis nous collons les segments de trajectoires de même température en respectant l'ordre des pas.Comme les changements de températures se font de façon synchrone , id est c'est un échange ente deux marcheurs, nous obtenons autant de trajectoire selon la température qu'il y a de marcheurs et ces nouvelles trajectoires sont de même longueur que les trajectoires obtenues par proteus. La figure~\ref{graph:Distrib_E_T} représente la distribution en énergie des trajectoires selon la température sur le test utilisant le protocole RE8b1 sur la protéine 1A81. Nous observons une courbe en cloche pour chaque température, retrouvant ainsi l'allure d'une distribution de Boltzman.  L'espace de recouvrement entre deux courbes consécutives, représente la partie de la distribution dans laquelle les échanges de température vont être se concentrer, parce que cette zone recouvre les situations où la température peut augmente sans dégradation de l'énergie. En effet le critère de Metropolis-Hasting peut accepter un réchauffement de marcheur (respectivement un refroidissement) si son énergie diminue  (respectivement augmente) , mais uniquement avec une probabilité qui décroît exponentiellement en fonction de la différence d'énergie.Le graphique nous confirme que le choix  À l'inverse si les recouvrements des distributions consécutives est trop important le marcheur peut difficilement s'éloigner de la plage d'énergie d'une température.Le graphique nous confirme que le choix d'une plage de température entre 3.0 et 0.175 pour les protocoles huit marcheurs rend possible les échanges de températures et permet également l'exploration d'une vaste zone d'énergie.   
+
+
+
 
    \begin{figure}[t]
      \centering
@@ -889,6 +891,10 @@ Regardons plus en détail le comportement du programme pour l'algorithme Replica
      \caption{Distribution des énergies selon la température (1A81 protocole RE8b1).}
 \label{graph:Distrib_E_T}
    \end{figure}
+
+\subparagraph{Trajectoires dans l'ensemble des températures}
+
+Un critère de performance souvent utilisé est la proportion de changements de températures effectivement acceptés. Pour examiner ces changements nous représentons la trajectoire dans l'espace des températures pour quatre tests sur la protéine 1A81. Il s'agit des tests effectués avec deux protocoles quatre marcheurs RE4a et RE4b et deux protocoles huit marcheurs RE8a2 et REb1, voir figure~\ref{graph:TRAJ_T}.Les deux graphiques quatre marcheurs représentent seulement la moitié des trajectoires de 1,5 millions de pas , tandis que les graphiques huit marcheurs représentent la totalité de trajectoires de 750 millions de pas.Comme prévu le protocole RE4a , qui possède des températures plus écartés , brasse assez mal les températures. En particulier, le marcheur w4 ne quitte presque pas la température la plus froide, et ce malgré une période de swap assez faible et un nombre d'échange assez important. On voit que pour RE4b, protocole avec les températures plus proches , la répartition des échanges est nettement plus uniforme. Le fait de double le nombre de température pour le même intervalle que RE4a ne suffit pas à résoudre le problème et les trois marcheurs les plus froids en début de trajectoire pour le RE8a2 restent froids. Les bons résultats obtenus pour RE4b sont confirmés pour RE8b1 qui utilise également des températures proches.     
 
 
    \begin{figure}[t]
@@ -906,10 +912,12 @@ Regardons plus en détail le comportement du programme pour l'algorithme Replica
 
     \clearpage
 
-   \subsection{Tous les résidus inactifs}
+   \subsection{comparaison sur un espace réduit}
  
-   \subsubsection{Séquence native}
+Le programme proteus permet de recherche des séquences/conformations avec des contraintes. En particulier, il est possible de fixer le type de résidu à une position dans la chaîne, en laissant alors comme degré de liberté le choix du rotamère. Nous utilisons cette fonctionnalité pour réduite l'espace d'exploration et ainsi nous permettre des comparaisons avec les résultats de Toulbar2, un programme de recherche exacte, voir ~\ref{sec:methodes_pratiques}.   
 
+   \subsubsection{Séquence native}
+Les tests les plus simples consistent à fixer toutes les positions de la chaîne polypeptidique avec le résidu de la séquence native.Nous effetons ce test pour nos neuf protéines.  
  
     \begin{table}[h]
       \centering
@@ -937,7 +945,7 @@ Regardons plus en détail le comportement du programme pour l'algorithme Replica
     \end{table}
 
 
-   \subsubsection{Une position active}
+   \subsubsection{Une seule position active}
 
 
     \begin{table}[h]
