@@ -14,7 +14,8 @@ Dans la suite, on appelle "position active", une position pour laquelle, lors de
 
 \subsection{les protéines}
  
-Les tests sont effectués sur neuf protéines choisies pour avoir des longueurs de backbone variées , plusieurs familles SCOP(?) représentées, mais aussi plusieurs structures pour chaque famille présente. Ainsi l'ensemble se décompose en deux protéines SH3 de 56 et 57 résidus, de trois protéines PDZ de longueur comprise entre 82 et 97 résidus  et enfin de trois protéines SH2  longues de 105 ou 109 résidus (Table~\ref{tab:protéines}).  
+Les tests sont effectués sur neuf protéines choisies pour avoir des longueurs de backbone variées , plusieurs domaines représentées, mais aussi plusieurs structures pour chaque famille présente. Ainsi l'ensemble se décompose en deux protéines SH3 de 56 et 57 résidus, de trois protéines PDZ de longueur comprise entre 82 et 97 résidus  et enfin de trois protéines SH2  longues de 105 ou 109 résidus (Table~\ref{tab:protéines}).L'ensemble a une moyenne, arrondie à l'unité inférieure, de quatre-vingts-neuf positions. 
+  
 
 
     \begin{table}[!htbp]
@@ -23,7 +24,7 @@ Les tests sont effectués sur neuf protéines choisies pour avoir des longueurs 
       \begin{tabular}{cccc}
 
         \toprule
-        Code PDB & résidus & nombre de positions & famille\\
+        Code PDB & résidus & nombre de positions & domaine\\
         \cmidrule{1-4}
         1ABO & 	64-119	 & 	56	 & SH3 \\
         1CKA & 	134-190	 & 	57	 & SH3 \\
@@ -88,7 +89,7 @@ Toutes les positions sont testées, il y a alors huit cent quatre tests par algo
 Pour tous les autres groupes de tests (5,10,20 et 30 positions actives), cinq tests sont effectués par protéine, c'est-à-dire quarante-cinq tests par algorithme.
 
 \paragraph{le choix des positions actives}
-
+\label{para:choix_posi}
 Pour définir complètement les tests ,il reste maintenant à décrire comment le choix des positions actives pour les groupes numéro trois à numéro six a été effectué.
 Il y a peu d'intérêt à tester des situations avec position active sans interaction avec les autres positions actives. 
 En effet s'il existe une position active P dont chaque résidu est sans interaction avec tous les résidus possibles les autres positions actives, déterminer le meilleur état pour P est proche du test du groupe 2 avec P comme position active. Toutefois cela n'est pas exactement la même question parce que les positions actives différentes de P peuvent influencer la position de la chaîne latérale de positions inactives qui à leur tour peuvent influencer l'état de P.
@@ -335,7 +336,7 @@ $Id(A_{S},i) = \frac{\sum_{1<j<m} \mathds{1}(s_i^j,n_i)}{m} \times 100$ , avec m
 Les taux d'identités qui viennent d'être présentés nous permettent de mesurer une ressemblance d'une séquence ou d'un ensemble de nos séquences produites par rapport à la séquence native. Mais cela n'est pas notre principal objectif.Et nous devons évaluer nos séquences par rapport à l'ensemble des séquences du domaine protéique de la séquence native.  
 
    \subsubsection{Alignements Pfam} 
-La base de données Pfam (Protein families database)~\citep{refPfam} regroupe les domaines protéiques connus en famille. Chaque famille  étant représentées des alignements multiples de séquences et des profiles de modèles de Markov cachés~\citep{refPfam}. Dans la suite, nous n'utiliserons l'alignement dit ``seed'' qui ne contient qu'un petit ensemble de membres représentatifs de famille et l'alignement ``full'' qui est généré par modèle de Markov caché à partir de l'alignement ``seed''. Les alignements correspondent pour nous aux familles PF00017 (domaine SH2), PF00018  (domaine SH3) et PF00595 (domaine PDZ).
+La base de données Pfam (Protein families database)~\citep{refPfam} regroupe les domaines protéiques connus en famille. Chaque famille  étant représentées des alignements multiples de séquences et des profiles de modèles de Markov cachés~\citep{refPfam}. Dans la suite, nous n'utiliserons l'alignement dit « seed» qui ne contient qu'un petit ensemble de membres représentatifs de famille et l'alignement « full» qui est généré par modèle de Markov caché à partir de l'alignement « seed». Les alignements correspondent pour nous aux familles PF00017 (domaine SH2), PF00018  (domaine SH3) et PF00595 (domaine PDZ).
 
  \subsubsection{Score BLOSUM}
 
@@ -579,7 +580,7 @@ Jusqu'à présent, nous avons utilisé le même mode de modification de la séqu
 
         \subsection{Comparaison protocole Monte-Carlo contre heuristique}
         \subsubsection{comparaison score de similarités}
-Nous examinons maintenant plus en détail les résultats de trois protocoles: h, mc2 et mc3.Tout d'abord, nous calculons le score de similarité par position et par séquence de nos dix milles meilleurs  séquences d'acides aminés par rapport aux alignements Pfam \og seed\fg et \og full\fg . Pour avoir un point de comparaisons, les scores  de la séquence native contre Pfam \og seed\f g et \og full\fg   sont aussi représentés. Les résultats sont présentés sous forme de graphiques, une page par protéine. Pour chaque protocole, deux graphiques à gauche  représentent les similarités par position par rapport à l'alignement Pfam \og seed\fg et respectivement Pfam \og full\fg. Un troisième graphique représente les similarités par séquence.  Pour plusieurs protéines les scores de similarités par séquence  des séquences putatives sont nettement inférieurs que ceux de la native. Cependant, les écarts sont relativement bien repartis selon les positions voir graphiques à gauche, ce qui donne en réalité des scores à chaque position assez comparables entre la native et les putatives en particulier pour   1G9O  1R6J 1M61,et 1CKA. Ces écarts sont plus importants pour 1ABO 1BM2 et 1O4C. On peut noter que pour 1G9O la séquence native n'est pas très similaire à l'alignement \og seed\fg et qu'il y a des séquences putatives meilleures que la native sur ce plan.Ces résultats ne révèlent pas de différence notable entre les trois protocoles.
+Nous examinons maintenant plus en détail les résultats de trois protocoles: h, mc2 et mc3.Tout d'abord, nous calculons le score de similarité par position et par séquence de nos dix milles meilleurs  séquences d'acides aminés par rapport aux alignements Pfam «seed» et «full» . Pour avoir un point de comparaisons, les scores  de la séquence native contre Pfam «seed» et «full»  sont aussi représentés. Les résultats sont présentés sous forme de graphiques, une page par protéine. Pour chaque protocole, deux graphiques à gauche  représentent les similarités par position par rapport à l'alignement Pfam «seed» et respectivement Pfam «full». Un troisième graphique représente les similarités par séquence.  Pour plusieurs protéines les scores de similarités par séquence  des séquences putatives sont nettement inférieurs que ceux de la native. Cependant, les écarts sont relativement bien repartis selon les positions voir graphiques à gauche, ce qui donne en réalité des scores à chaque position assez comparables entre la native et les putatives en particulier pour   1G9O  1R6J 1M61,et 1CKA. Ces écarts sont plus importants pour 1ABO 1BM2 et 1O4C. On peut noter que pour 1G9O la séquence native n'est pas très similaire à l'alignement «seed» et qu'il y a des séquences putatives meilleures que la native sur ce plan.Ces résultats ne révèlent pas de différence notable entre les trois protocoles.
 
 
 
@@ -768,7 +769,7 @@ Nous examinons maintenant plus en détail les résultats de trois protocoles: h,
    \end{figure}
 
          \subsubsection{rapport entre énergies et  similarités}
-Pour faire le lien entre les comparaisons basées sur les meilleures énergies et les comparaisons basées sur les scores de similarités, nous représentons les énergies des dix mille meilleures séquences en fonction de leur similarité à l'alignement Pfam \og seed\fg. Une séquence peut apparaître plusieurs fois dans l'ensemble des séquences/conformations obtenues.Alors toutes les énergies trouvées de la séquence sont représentées voir les graphiques \ref{graph:simil_vs_ener}. La corrélation entre les deux critères semble très faible.Pour 1CKA malgré des énergies pour l'heuristique moins bonnes, la similarité est meilleure.Bien que les énergies obtenues avec le protocole mc2 soient meilleures que celles avec le protocole mc3, il n'y a pas de différence significative sur les scores de similarités obtenus.
+Pour faire le lien entre les comparaisons basées sur les meilleures énergies et les comparaisons basées sur les scores de similarités, nous représentons les énergies des dix mille meilleures séquences en fonction de leur similarité à l'alignement Pfam « seed». Une séquence peut apparaître plusieurs fois dans l'ensemble des séquences/conformations obtenues.Alors toutes les énergies trouvées de la séquence sont représentées voir les graphiques \ref{graph:simil_vs_ener}. La corrélation entre les deux critères semble très faible.Pour 1CKA malgré des énergies pour l'heuristique moins bonnes, la similarité est meilleure.Bien que les énergies obtenues avec le protocole mc2 soient meilleures que celles avec le protocole mc3, il n'y a pas de différence significative sur les scores de similarités obtenus.
 
    \begin{figure}[t]
      \centering
@@ -819,7 +820,7 @@ Les figures~\ref{graph:centiles} représentent la répartition des énergies sel
 
         \subsection{Comparaison avec toutes les positions actives}
 
-Passons maintenant, aux résultats obtenus avec la seconde version de proteus~\ref{qqchose}.Cette version intègre notamment l'algorithme \og Replica Exchange\fg. Nous pouvons donc faire des comparaisons entre les trois algorithmes du programme.Tous les protocoles utilisés sont décrits dans les tableaux~\ref{tab:protoMC} ou \ref{tab:protoRE}.Commençons par la recherche de la séquence/conformation de meilleure énergie pour toutes les positions actives. Les tests sont décrits au paragraphe~\ref{methode_TTactif}. Les résultats sont présentés sous forme de tableau en~\ref{tab:best_ener_all_all} qui contient la meilleure énergie arrondie à la kcal/mol inférieure et aussi sous forme de graphique en~\ref{graph:best_ener_all_all} où sont représenter les différences par rapport à la meilleure énergie pour tous les cas. 
+Passons maintenant, aux résultats obtenus avec la seconde version de proteus~\ref{qqchose}.Cette version intègre notamment l'algorithme « Replica Exchange». Nous pouvons donc faire des comparaisons entre les trois algorithmes du programme.Tous les protocoles utilisés sont décrits dans les tableaux~\ref{tab:protoMC} ou \ref{tab:protoRE}.Commençons par la recherche de la séquence/conformation de meilleure énergie pour toutes les positions actives. Les tests sont décrits au paragraphe~\ref{methode_TTactif}. Les résultats sont présentés sous forme de tableau en~\ref{tab:best_ener_all_all} qui contient la meilleure énergie arrondie à la kcal/mol inférieure et aussi sous forme de graphique en~\ref{graph:best_ener_all_all} où sont représenter les différences par rapport à la meilleure énergie pour tous les cas. 
 \subparagraph
 Il n'y pas de protocole qui domine les autres sur toutes les protéines. Le meilleur résultat est obtenu avec le protocole huit marcheurs RE8b2 pour 2BYG , 1BM2, 1O4C et 1A81, le protocole RE8b1 pour 1CKA et 1ABO, le protocole quatre marcheurs RE4b pour 1G9O , les protocoles mono marcheurs MCb pour 1M61 et H pour 1R6J.  Ces résultats sont également représentés sous forme de trois graphiques qui regroupent les protocoles utilisant les protocoles non parallèles, les protocoles quatre marcheurs et les protocoles huit marcheurs. Un quatrième graphique regroupe le meilleur protocole de chaque algorithme. Là encore, seules les différences par rapport au meilleur protocole sont représentées. Le protocole H fait jeu égal avec le meilleur protocole Monte-Carlo. Le second Monte-Carlo , qui utilise en mode de mutation moins agressif~\ref{sec:MC}, est nettement plus mauvais avec presque toujours des écarts de plus de cinq Kcal/mol avec les deux autres protocoles non parallèles.Pour le groupe de protocoles avec quatre marcheurs, le RE4b qui se différencie des deux autres par une plage de températures la plus resserrée ,est meilleur pour cinq des sept protéines. Mais pour les deux protéines restantes la différence se limite à deux Kcal/mol.RE4a, le protocole avec la plage de température la large est moins bon que les autres. En ce qui conserve les protocoles huit marcheurs , deux d'entre eux se démarquent RE8b1 et RE8b2 (plage de température resserrée,grande période de swap et mode de modification agressif pour le premier , plus conservateur pour le second). RE8b1 obtient des résultats assez irréguliers selon les protéines du meilleur pour 1CKA et 1ABO jusqu'à s'écarter de près de huit Kcal/mol de la plus haute énergie.RE8b2, soit donne les meilleurs résultats (dans cinquante pour cent des cas), soit s'écarte d'au plus quatre Kcal/mol des meilleurs résultats.  
 
@@ -919,7 +920,7 @@ Un critère de performance souvent utilisé est la proportion de changements de 
 Le programme proteus permet de recherche des séquences/conformations avec des contraintes. En particulier, il est possible de fixer le type de résidu à une position dans la chaîne, en laissant alors comme degré de liberté le choix du rotamère. Nous utilisons cette fonctionnalité afin de réduite l'espace d'exploration et ainsi nous permettre des comparaisons avec les résultats de Toulbar2, un programme de recherche exacte, voir ~\ref{sec:methodes_pratiques}. Les tests sont faits sur nos neuf protéines,voir~\ref{sec:description_tests}
 
    \subsubsection{Séquence native}
-Les tests les plus simples consistent à fixer toutes les positions de la chaîne polypeptidique avec le résidu de la séquence native.C'est réduire la recherche  CPD à une recherche de conformation pour la séquence native.Comme l'espace de recherche est particulièrement petit, il apparaît rapidement que les protocoles comparables sur vingt-quatre heures de calculs sont disproportionnés. Nous utilisons alors des versions plus courtes des protocoles, c'est-à-dire H- pour l'heuristique,MCb- et MC0 pour le Monte-Carlo. De la même façon, les protocoles parallèles ne sont pas utilisés. Les résultats sont présentés dans le tableau~\ref{tab:result_no_active}. La colonne \og GMEC\fg indique si toulbar2 est parvenu à trouver le minimum global. Les autres colonnes contiennent l'énergie obtenue si c'est la meilleure des quatre protocoles utilisés, ou la différence entre énergies obtenues et la meilleure, de façon à ce que la meilleure énergie apparaisse une seule fois par ligne.Ce type de tableau est conservé dans toute la suite.  
+Les tests les plus simples consistent à fixer toutes les positions de la chaîne polypeptidique avec le résidu de la séquence native.C'est réduire la recherche  CPD à une recherche de conformation pour la séquence native.Comme l'espace de recherche est particulièrement petit, il apparaît rapidement que les protocoles comparables sur vingt-quatre heures de calculs sont disproportionnés. Nous utilisons alors des versions plus courtes des protocoles, c'est-à-dire H- pour l'heuristique,MCb- et MC0 pour le Monte-Carlo. De la même façon, les protocoles parallèles ne sont pas utilisés. Les résultats sont présentés dans le tableau~\ref{tab:result_no_active}. La colonne «GMEC» indique si toulbar2 est parvenu à trouver le minimum global. Les autres colonnes contiennent l'énergie obtenue si c'est la meilleure des quatre protocoles utilisés, ou la différence entre énergies obtenues et la meilleure, de façon à ce que la meilleure énergie apparaisse une seule fois par ligne.Ce type de tableau est conservé dans toute la suite.  
 Toulbar2  trouve rapidement le GMEC dans tous les cas (les temps de calcul seront examinés plus loin~\ref{??}), tout comme H-. Le protocole très froid MC0 donne également de bons résultats sans toutefois atteindre le GMEC pour trois des protéines (1A81,1BM2 et 1G9O), les écarts étant très faibles. Lorsque la capacité du Monte-Carlo à baisser l'énergie du marcheur est rétablie avec le protocole MCb-, les résultats sont globalement légèrement améliorés. Mais les écarts ne se situent pas forcément sur les mêmes protéines.
     \begin{table}[h]
       \centering
@@ -942,7 +943,7 @@ Toulbar2  trouve rapidement le GMEC dans tous les cas (les temps de calcul seron
 
 
       \end{tabular}      
-      \caption{La meilleure énergie et la différence avec les autres protocoles lorsque la séquence des protéines est fixée}
+      \caption{La meilleure énergie et l'écart avec les autres protocoles lorsque la séquence des protéines est fixée}
 \label{tab:result_no_active}      
     \end{table}
 
@@ -988,8 +989,8 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
         \bottomrule
 
       \end{tabular}      
-      \caption{Liste des cas avec différences entre protocoles pour 1A81, une position active.}
-\label{tab:result_1_active_1A81}      
+      \caption{Liste des écarts entre protocoles et meilleure énergie pour 1A81, une position active.
+        \label{tab:result_1_active_1A81}}      
     \end{table}
 
 
@@ -1056,7 +1057,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
         \bottomrule
 
       \end{tabular}      
-      \caption{Liste des cas avec différences entre protocoles pour 1BM2, une position active.}
+      \caption{Liste des écarts entre protocoles et meilleure énergie pour 1BM2, une position active.}
 \label{tab:result_1_active_1BM2}      
     \end{table}
 
@@ -1076,7 +1077,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
 
         \bottomrule
       \end{tabular}      
-      \caption{Liste des cas avec différences entre protocoles pour 1CKA, une position active.}
+      \caption{Liste des écarts entre protocoles et meilleure énergie pour 1CKA, une position active.}
 \label{tab:result_1_active_1CKA}      
     \end{table}
 
@@ -1091,7 +1092,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
         58 & yes & -561.9469 & 0. & -0.0138 \\
        \bottomrule        
       \end{tabular}      
-      \caption{Liste des cas avec différences entre protocoles pour 1M61, une position active.}
+      \caption{Liste des écarts entre protocoles et meilleure énergie pour 1M61, une position active.}
 \label{tab:result_1_active_1M61}      
     \end{table}
     
@@ -1210,7 +1211,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
        
 
       \end{tabular}      
-      \caption{Liste des cas avec différences entre protocoles pour 1O4C, une position active.}
+      \caption{Liste des écarts entre protocoles et meilleure énergie pour 1O4C, une position active.}
 \label{tab:result_1_active_1O4C}
     \end{table}
 
@@ -1221,7 +1222,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
 
 
         \toprule
-        Position & GMEC & toulbar2 & H- & MC4- \\
+        Position & GMEC & toulbar2 & H- & MCb- \\
         \cmidrule{1-5}
          4 & yes & -453.4484 & 0. & -0.0155  \\
         20 & yes & -452.6464 & 0. & -0.0114 \\
@@ -1232,36 +1233,36 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
         79 & yes & -453.4729 & 0. & -0.0155 \\
         \bottomrule
       \end{tabular}      
-      \caption{Liste des cas avec différences entre protocoles pour 1R6J, une position active.}
+      \caption{Liste des écarts entre protocoles et meilleure énergie pour 1R6J, une position active.}
 \label{tab:result_1_active_1R6J}
     \end{table}
 
     \begin{table}[h]
       \centering
 
-      \begin{tabular}{ccc}
+      \begin{tabular}{ccccc}
 
         \toprule
-        Position & GMEC & MC4- \\
-        \cmidrule{1-3}
-        1 & -505.2910 & -0.0132 \\
-        3 & -506.7960 & -0.0254 \\
-        4 & -505.5800 & -0.0023 \\
-        5 & -506.8732 & -0.0948 \\
-        49 & -505.5183 & -0.0135 \\
-        59 & -507.0165 & -0.0100 \\
-        85 & -506.6217 & -0.0101 \\
-        88 & -505.2286 & -0.0097 \\
-        95 & -506.3195 & -0.0131 \\
+        Position & GMEC & toulbar2 & H- & MCb- \\
+        \cmidrule{1-5}
+        1  & yes &  -505.2910 & 0. & -0.0132 \\
+        3  & yes &  -506.7960 & 0. & -0.0254 \\
+        4  & yes &  -505.5800 & 0. & -0.0023 \\
+        5  & yes &  -506.8732 & 0. & -0.0948 \\
+        49 & yes &  -505.5183 & 0. & -0.0135 \\
+        59 & yes &  -507.0165 & 0. & -0.0100 \\
+        85 & yes &  -506.6217 & 0. & -0.0101 \\
+        88 & yes &  -505.2286 & 0. & -0.0097 \\
+        95 & yes &  -506.3195 & 0. & -0.0131 \\
         \bottomrule
       \end{tabular}      
-      \caption{Liste des cas avec différences entre protocoles pour 2BYG, une position active.}
+      \caption{Liste des écarts entre protocoles et meilleure énergie pour 2BYG, une position active.}
 \label{tab:result_1_active_2BYG}
     \end{table}
 
 
    \subsubsection{Cinq positions actives}
-
+Passons maintenant aux tests où cinq positions sont actives. La taille de d'espace d'états augmente de façon significative.Il y a cinq tests par protéines numérotés de un à cinq dans le tableau~\ref{tab:result_5_actives}. Le choix des positions est fait aléatoirement sur un certain voisinage énergitique, voir~\ref{para:choix_posi}, et la description complète des tests est en~\ref{tab:test5}.Les protocoles utilisés systématiquement sont toulbar2,H et MCb. De plus, pour les tests où les résultats du Monte-Carlo ne sont pas complètement satisfaisant, le protocole RE8b2 est lancé.Le protocole H et toulbar2 parviennent au GMEC dans tous les cas.Le MCb trouve également le GMEC dans trente-cinq cas sur quarante-cinq.Dans huit cas, le marcheur passe à moins de deux dixièmes du GMEC.IL reste un cas où l'écart est net à presque une kcal/mol et un franchement mauvais à plus de cinq.Pour ces deux derniers cas le protocole multi-marcheurs atteint le GMEC.
 
     \begin{table}[h]
       \centering
@@ -1272,51 +1273,51 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
         \toprule
         Protéine & GMEC & toubar2 & H & MCb & RE8b2 \\
         \cmidrule{1-6}
-        1A81 1 & -579.3989 & 0 & 0 &  \\
-        1A81 2 & -575.2254 & 0 & 0 &  \\
-        1A81 3 & -582.7452 & 0 & 0 &  \\
-        1A81 4 & -569.9383 & 0 & -5.3443 & 0 \\
-        1A81 5 & -591.8143 & 0 & 0 &  \\
-        1ABO 1 & -315.4497 & 0 & 0 &  \\
-        1ABO 2 & -316.6637 & 0 & 0 &  \\
-        1ABO 3 & -307.4824 & 0 & 0 &  \\
-        1ABO 4 & -313.7710 & 0 & 0 &  \\
-        1ABO 5 & -313.5695 & 0 & 0 &  \\
-        1BM2 1 & -548.2341 & 0 & 0 &  \\
-        1BM2 2 & -554.8135 & 0 & 0 &  \\
-        1BM2 3 & -557.8629 & 0 & 0 &  \\
-        1BM2 4 & -544.9791 & 0 & 0 &  \\
-        1BM2 5 & -550.2956 & 0 & -0.0121 &  \\
-        1CKA 1 & -315.0859 & 0 & 0 &  \\
-        1CKA 2 & -309.7692 & 0 & 0 &  \\
-        1CKA 3 & -317.3820 & 0 & 0 &  \\
-        1CKA 4 & -314.8550 & 0 & 0 &  \\
-        1CKA 5 & -312.0405 & -0.0001 & -0.0001 &  \\
-        1G9O 1 & -469.9540 & 0 & 0 &  \\
-        1G9O 2 & -476.4094 & 0 & 0 &  \\
-        1G9O 3 & -479.7190 & 0 & 0 &  \\
-        1G9O 4 & -478.9513 & 0 & 0 &  \\
-        1G9O 5 & -480.7260 & 0 & 0 &  \\
-        1M61 1 & -557.6647 & 0 & 0 &  \\
-        1M61 2 & -546.9587 & 0 & 0 &  \\
-        1M61 3 & -553.0731 & 0 & 0 &  \\
-        1M61 4 & -555.0885 & 0 & 0 &  \\
-        1M61 5 & -554.6356 & 0 & 0 &  \\
-        1O4C 1 & -584.4267 & 0 & -0.0655 &  \\
-        1O4C 2 & -584.8989 & 0 & -0.1437 &  \\
-        1O4C 3 & -588.4971 & 0 & -0.1164 &  \\
-        1O4C 4 & -587.7129 & 0 & -0.1400 &  \\
-        1O4C 5 & -587.6514 & 0 & -0.1168 &  \\
-        1R6J 1 & -444.5018 & 0 & 0 &  \\
-        1R6J 2 & -449.3043 & 0 & -0.9421 & 0 \\
-        1R6J 3 & -453.1139 & 0 & 0 &  \\
-        1R6J 4 & -453.1139 & 0 & 0 &  \\
-        1R6J 5 & -454.9340 & 0 & 0 &  \\
-        2BYG 1 & -500.7946 & 0 & -0.0150 &  \\
-        2BYG 2 & -506.2319 & 0 & 0 &  \\
-        2BYG 3 & -506.8744 & 0 & -0.0131 &  \\
-        2BYG 4 & -504.5135 & 0 & 0 &  \\
-        2BYG 5 & -506.0052 & 0 & 0 &  \\
+        1A81 1 & yes &  -579.3989 & 0. & 0. &  \\
+        1A81 2 & yes &  -575.2254 & 0. & 0. &  \\
+        1A81 3 & yes &  -582.7452 & 0. & 0. &  \\
+        1A81 4 & yes &  -569.9383 & 0. & -5.3443 & 0. \\
+        1A81 5 & yes &  -591.8143 & 0. & 0. &  \\
+        1ABO 1 & yes &  -315.4497 & 0. & 0. &  \\
+        1ABO 2 & yes &  -316.6637 & 0. & 0. &  \\
+        1ABO 3 & yes &  -307.4824 & 0. & 0. &  \\
+        1ABO 4 & yes &  -313.7710 & 0. & 0. &  \\
+        1ABO 5 & yes &  -313.5695 & 0. & 0. &  \\
+        1BM2 1 & yes &  -548.2341 & 0. & 0. &  \\
+        1BM2 2 & yes &  -554.8135 & 0. & 0. &  \\
+        1BM2 3 & yes &  -557.8629 & 0. & 0. &  \\
+        1BM2 4 & yes &  -544.9791 & 0. & 0. &  \\
+        1BM2 5 & yes &  -550.2956 & 0. & -0.0121 &  \\
+        1CKA 1 & yes &  -315.0859 & 0. & 0. &  \\
+        1CKA 2 & yes &  -309.7692 & 0. & 0. &  \\
+        1CKA 3 & yes &  -317.3820 & 0. & 0. &  \\
+        1CKA 4 & yes &  -314.8550 & 0. & 0. &  \\
+        1CKA 5 & yes &  -312.0405 & -0.0001 & -0.0001 &  \\
+        1G9O 1 & yes &  -469.9540 & 0. & 0. &  \\
+        1G9O 2 & yes &  -476.4094 & 0. & 0. &  \\
+        1G9O 3 & yes &  -479.7190 & 0. & 0. &  \\
+        1G9O 4 & yes &  -478.9513 & 0. & 0. &  \\
+        1G9O 5 & yes &  -480.7260 & 0. & 0. &  \\
+        1M61 1 & yes &  -557.6647 & 0. & 0. &  \\
+        1M61 2 & yes &  -546.9587 & 0. & 0. &  \\
+        1M61 3 & yes &  -553.0731 & 0. & 0. &  \\
+        1M61 4 & yes &  -555.0885 & 0. & 0. &  \\
+        1M61 5 & yes &  -554.6356 & 0. & 0. &  \\
+        1O4C 1 & yes &  -584.4267 & 0. & -0.0655 &  \\
+        1O4C 2 & yes &  -584.8989 & 0. & -0.1437 &  \\
+        1O4C 3 & yes &  -588.4971 & 0. & -0.1164 &  \\
+        1O4C 4 & yes &  -587.7129 & 0. & -0.1400 &  \\
+        1O4C 5 & yes &  -587.6514 & 0. & -0.1168 &  \\
+        1R6J 1 & yes &  -444.5018 & 0. & 0. &  \\
+        1R6J 2 & yes &  -449.3043 & 0. & -0.9421 & 0. \\
+        1R6J 3 & yes &  -453.1139 & 0. & 0. &  \\
+        1R6J 4 & yes &  -453.1139 & 0. & 0. &  \\
+        1R6J 5 & yes &  -454.9340 & 0. & 0. &  \\
+        2BYG 1 & yes &  -500.7946 & 0. & -0.0150 &  \\
+        2BYG 2 & yes &  -506.2319 & 0. & 0. &  \\
+        2BYG 3 & yes &  -506.8744 & 0. & -0.0131 &  \\
+        2BYG 4 & yes &  -504.5135 & 0. & 0. &  \\
+        2BYG 5 & yes &  -506.0052 & 0. & 0. &  \\
         \bottomrule
       \end{tabular}      
  \caption{Résultats pour cinq positions actives}
@@ -1324,7 +1325,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
 \end{table}
 
    \subsubsection{Dix positions actives}
-
+Il n'y a également quarante-cinq tests de recherche avec dix positions actives.Ici, le choix des positions comme dans toute la suite se fait comme décrit en~\ref{para:choix_posi}. Le détail des tests est en~\ref{tab:test10}.Les mêmes protocoles que précédemment sont utilisés (toulbar2, H, MCb et éventuellement RE8b2). Toulbar2 aboutit au GMEC pour quarante-quatre tests. Sur ce sous-ensemble, H trouve le GMEC pour quarante tests et MCb dans vingt cas. Les écarts pour l'heuristique sont très faible sauf pour un cas, le «1M61 2» que nous étudions plus en détail dans la suite.MCb trouve le GMEC dans vingt-sept cas sur quarante-quatre. Six écarts sont autour de 1 ou plus. Pour ces tests, Le RE8b2 fait mieux. Il trouve le  GMEC dans deux pas , mais n'améliore la performance du Monte-carlo que légèrement pour «1ABO 1». Pour le test où toulbar2 échoue , le «2BYG 2» , H donne la meilleure énergie et MCb en est proche. La dernière solution proposée par toulbar2 en est loin, voir~\ref{tab:result_10_actives}. 
 
     \begin{table}[h]
       \centering
@@ -1340,7 +1341,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
         1A81 3 & yes & -587.4392 & -0.0001 & -0.1595 & \\
         1A81 4 & yes & -589.1322 & 0. & -0.0317 & \\
         1A81 5 & yes & -578.2558 & 0. & -0.0563 & \\
-        1ABO 1 & yes & -309.1670 & -0.0675 & -0.9054 & \\
+        1ABO 1 & yes & -309.1670 & -0.0675 & -0.9054 & -0.8042\\
         1ABO 2 & yes & -308.8387 & 0. & 0. & \\
         1ABO 3 & yes & -303.8520 & 0. & 0. & \\
         1ABO 4 & yes & -310.0087 & 0. & -0.0128 & \\
@@ -1371,7 +1372,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
         1O4C 4 & yes & -587.1548 & 0. & -0.1545 & \\
         1O4C 5 & yes & -590.2650 & 0. & -0.1753 & \\
         1R6J 1 & yes & -448.8351 & 0. & -2.4022 & -0.3986 \\
-        1R6J 2 & yes & -448.4631 & 0. & -1.0398 & \\
+        1R6J 2 & yes & -448.4631 & 0. & -1.0398 & -0.3049 \\
         1R6J 3 & yes & -450.3950 & 0. & -0.0106 & \\
         1R6J 4 & yes & -451.7211 & 0. & 0. & \\
         1R6J 5 & yes & -450.9943 & 0. & -0.0162 & \\
@@ -1391,6 +1392,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
 
    \subsubsection{Dix positions actives, mutations}
 
+Regardons ces tests avec dix positions actives sous l'angle des séquences d'acides aminés. Nous comparons la séquence de meilleure énergie de chaque protocole. Le tableau~\ref{tab:mutations_10_actives} présente le nombre de positions où l'acide aminé de la séquence du GMEC est différent de la séquence de H, respectivement de MCb.
 
     \begin{table}[h]
       \centering
@@ -1398,28 +1400,28 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
       \begin{tabular}{ccc}
 
         \toprule
-        Protéine & H mut nb & MC mut nb \\
+        Protéine & H mut nb & MCb mut nb \\
         \cmidrule{1-3}
         1A81 1 & 0  & 0 \\    
         1A81 2 & 0  & 0 \\
-        1A81 3 & 0  & 2 \\
-        1A81 4 & 0  & 0 \\
-        1A81 5 & 0  & 0 \\
-        1ABO 1 & 0  & 4 \\ 
+        1A81 3 & 0  & 0 \\
+        1A81 4 & 0  & 2 \\
+        1A81 5 & 0  & 2 \\
+        1ABO 1 & 0  & 3 \\ 
         1ABO 2 & 0  & 0 \\
-        1ABO 3 & 0  & 1 \\
-        1ABO 4 & 2  & 2 \\
+        1ABO 3 & 0  & 0 \\
+        1ABO 4 & 0  & 2 \\
         1ABO 5 & 0  & 0 \\
         1BM2 1 & 0  & 2 \\
         1BM2 2 & 0  & 0 \\
         1BM2 3 & 0  & 0 \\
-        1BM2 4 & 0  & 1 \\
-        1BM2 5 & 0  & 2 \\
+        1BM2 4 & 0  & 0 \\
+        1BM2 5 & 0  & 3 \\
         1CKA 1 & 0  & 0 \\
-        1CKA 2 & 0  & 1 \\
+        1CKA 2 & 0  & 0 \\
         1CKA 3 & 0  & 0 \\
         1CKA 4 & 0  & 0 \\
-        1CKA 5 & 5  & 3 \\
+        1CKA 5 & 0  & 2 \\
         1G9O 1 & 0  & 0 \\
         1G9O 2 & 0  & 0 \\
         1G9O 3 & 0  & 0 \\
@@ -1434,7 +1436,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
         1O4C 2 & 0  & 0 \\
         1O4C 3 & 0  & 0 \\
         1O4C 4 & 0  & 0 \\
-        1O4C 5 & 0  & 3 \\
+        1O4C 5 & 0  & 1 \\
         1R6J 1 & 0  & 3 \\
         1R6J 2 & 0  & 2 \\
         1R6J 3 & 0  & 0 \\
@@ -1442,13 +1444,13 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
         1R6J 5 & 0  & 0 \\
         2BYG 1 & no & no \\ 
         2BYG 2 & 0  & 0 \\
-        2BYG 3 & 0  & 1 \\
-        2BYG 4 & 1  & 3 \\
+        2BYG 3 & 0  & 0 \\
+        2BYG 4 & 0  & 3 \\
         2BYG 5 & 0  & 0 \\        
         \bottomrule
 
  \end{tabular}      
- \caption{Mutations 10 positions actives }
+ \caption{Mutations dix positions actives }
 \label{tab:mutations_10_actives}
 \end{table}
 
@@ -1585,7 +1587,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
         \includegraphics[width=18cm]{all_result.png} 
       \end{tabular}
       
-      \caption{Tous les tests pour 0 1 5 10 20 30 positions actives}
+      \caption{Tous les tests pour 0. 1 5 10 20 30 positions actives}
 \label{graph:all_result}
     \end{figure}
 
@@ -1617,15 +1619,15 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
         \toprule
         Protein & GMEC & H & MC & RE \\
         \cmidrule{1-5}
-        1CKA 3 & -304.6618 & 0 & 0 & \\
-        1CKA 4 & -302.4894 & 0 & 0 & \\
-        1CKA 5 & -299.2329 & -0.2859 & -3.2525 & 0 \\
-        1G9O 3 & -477.2503 & -0.1366 & 0 & \\
-        1G9O 4 & -470.6458 & 0 & 0 & \\
-        1G9O 5 & -464.8659 & 0 & -3.9599 &  0 \\
-        1M61 1 & -550.0699 & 0 & -0.0776 & \\
+        1CKA 3 & -304.6618 & 0. & 0. & \\
+        1CKA 4 & -302.4894 & 0. & 0. & \\
+        1CKA 5 & -299.2329 & -0.2859 & -3.2525 & 0. \\
+        1G9O 3 & -477.2503 & -0.1366 & 0. & \\
+        1G9O 4 & -470.6458 & 0. & 0. & \\
+        1G9O 5 & -464.8659 & 0. & -3.9599 &  0. \\
+        1M61 1 & -550.0699 & 0. & -0.0776 & \\
         1M61 2 & -538.6026 & -3.5105 & -4.5062 & 0.3215 \\
-        1M61 5 & -553.6559 & 0 & -0.0432 & \\
+        1M61 5 & -553.6559 & 0. & -0.0432 & \\
         \bottomrule       
       \end{tabular}      
 \label{tab:voisinnage_rappel}      
@@ -1641,15 +1643,15 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
         \toprule
         Protein & seq-rot nb gmec+1 & H rank  & MC rank  & seq nb gmec+1 & H mut nb & MC mut nb \\
         \cmidrule{1-7}
-        1CKA 3 & 67669 & 1 & 1 & 227 & 0 & 0 \\
-        1CKA 4 & 4649 & 1 & 1 & 498 & 0 & 0 \\
-        1CKA 5 & 1388 & 78 & ? & 77 & 0 & 2 \\
-        1G9O 3 & 354559 & 23 & 1 & 63 & 1 & 0 \\
-        1G9O 4 & 22639 & 1 & 1 & 381 & 0 & 0 \\
-        1G9O 5 & 8658395 & 1 & ? &  11 & 0 & 3 \\
+        1CKA 3 & 67669 & 1 & 1 & 227 & 0. & 0. \\
+        1CKA 4 & 4649 & 1 & 1 & 498 & 0. & 0. \\
+        1CKA 5 & 1388 & 78 & ? & 77 & 0. & 2 \\
+        1G9O 3 & 354559 & 23 & 1 & 63 & 1 & 0. \\
+        1G9O 4 & 22639 & 1 & 1 & 381 & 0. & 0. \\
+        1G9O 5 & 8658395 & 1 & ? &  11 & 0. & 3 \\
         1M61 1 & 11199153 & ? & ? & 21 & 3 & 7 \\
-        1M61 2 & 11199153 & 1 & 1 & 88 & 0 & 0 \\
-        1M61 5 & 16417604 & 1 & 1 & 83 & 0 & 0 \\
+        1M61 2 & 11199153 & 1 & 1 & 88 & 0. & 0. \\
+        1M61 5 & 16417604 & 1 & 1 & 83 & 0. & 0. \\
         \bottomrule
       \end{tabular} 
 \label{tab:etude_au_voisinnage}           
@@ -1778,9 +1780,9 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
         \toprule
         Proteins & GMEC & H & H+ & H++ \\
         \cmidrule{1-5}
-        1ABO 1 & -309.1670 & -0.0675 & -0.0675 & 0 \\
-        1CKA 5 & -299.2329 & -0.2859 & -0.0640 & 0 \\
-        1G9O 3 & -477.2503 & -0.1366 & 0 & 0 \\
+        1ABO 1 & -309.1670 & -0.0675 & -0.0675 & 0. \\
+        1CKA 5 & -299.2329 & -0.2859 & -0.0640 & 0. \\
+        1G9O 3 & -477.2503 & -0.1366 & 0. & 0. \\
         1M61 2 & -538.6026 & -3.5105 & -2.1673 & -0.0188 \\
         \toprule
 
