@@ -6,15 +6,15 @@
 \label{sec:methodes_pratiques}
 Nous cherchons maintenant à déterminer les performances et les qualités des différents algorithmes de proteus.
 Pour évaluer les qualités des différents algorithmes de proteus, nous effectuons un ensemble de tests. 
-Plusieurs questions se présentent alors,premièrement grâce à l' algorithme de type toulbar2 il est possible d'obtenir la séquence/conformation qui possède l'énergie de dépliement la plus haute. Cela constitue une information important qui va nous servir de point de comparaison. Mais le facteur temps pose problème, nous ne savons pas à l'avance quand toulbar2 termine. Et il apparaît d'emblée illusoire d'espérer voir toulbar2 converger dans toutes les situations qui nous intéressent dans un temps raisonnable, en particulier pour une situation où  toutes les positions du  backbone sont autorisé à muter et pour chaque type d'acide aminé la chaîne latérale peut prendre toutes les positions précédemment calculées dans la matrice. 
+Plusieurs questions se présentent alors,premièrement grâce à l' algorithme de type toulbar2 il est possible d'obtenir la séquence/conformation qui possède l'énergie de dépliement la plus haute. Cela constitue une information important qui va nous servir de point de comparaison. Mais le facteur temps pose problème, nous ne savons pas à l'avance quand toulbar2 termine. Et il apparaît d'emblée illusoire d'espérer voir toulbar2 converger dans toutes les situations qui nous intéressent dans un temps raisonnable en particulier pour une situation où  toutes les positions du  backbone sont autorisé à muter et pour chaque type d'acide aminé la chaîne latérale peut prendre toutes les positions précédemment calculées dans la matrice. 
 
 
-Dans la suite on appelle position active, une position pour laquelle, lors de la recherche par proteus, tous les types d'acides aminés sont autorisés et tous les rotamères de chaque type d'acide aminé sont autorisés.
+Dans la suite, on appelle "position active", une position pour laquelle, lors de la recherche par proteus, tous les types d'acides et tous les rotamères de chaque type d'acide aminé sont autorisés, pendant la recherche de proteus. 
 
 
 \subsection{les protéines}
  
-Les tests sont effectués sur neuf protéines choisies pour avoir des longueurs de backbone variés , plusieurs familles SCOP(?) représentées, mais aussi plusieurs structures pour chaque famille présente. Ainsi l'ensemble se décompose en deux protéines SH3 de 56 et 57 résidus, de trois protéines PDZ de longueur comprise entre 82 et 97 résidus  et enfin de trois protéines SH2  longues de 105 ou 109 résidus (Table~\ref{tab:protéines}).  
+Les tests sont effectués sur neuf protéines choisies pour avoir des longueurs de backbone variées , plusieurs familles SCOP(?) représentées, mais aussi plusieurs structures pour chaque famille présente. Ainsi l'ensemble se décompose en deux protéines SH3 de 56 et 57 résidus, de trois protéines PDZ de longueur comprise entre 82 et 97 résidus  et enfin de trois protéines SH2  longues de 105 ou 109 résidus (Table~\ref{tab:protéines}).  
 
 
     \begin{table}[!htbp]
@@ -43,7 +43,7 @@ Les tests sont effectués sur neuf protéines choisies pour avoir des longueurs 
 
 \subsection{Description des tests}
 \label{sec:description_tests}
-Les tests sont réparties en deux ensembles:
+Les tests sont répartis en deux ensembles:
 \begin{enumerate}
 \item un ensemble de tests où toutes les positions du backbone sont actives (cela correspond aux situations de design complet de protéines) 
 \item un ensemble de tests où le nombre de positions actives est gardé sous contrôle .De façon à maîtriser la taille de l'espace d'exploration
@@ -52,21 +52,21 @@ Les tests sont réparties en deux ensembles:
 
 \paragraph{Ensemble 'Tout actif'}
 \label{methode_TTactif}
-Pour le premier ensemble de tests,La totalité de la matrice d'énergie est exploitée et pour chaque position l'espace d'exploration correspond à l'espace d'état déclaré dans le fichier .bb.C'est-à-dire que tous les types de résidu et tout les rotamères sont possibles à chaque position.
-Comme l'espace des séquences/confirmations à explorer est gigantesque, nous ne faisons pas de tentative de recherche du GMEC  par méthode exacte. 
+Pour le premier ensemble de tests,la totalité de la matrice d'énergie est exploitée et pour chaque position l'espace d'exploration correspond à l'espace d'état déclaré dans le fichier ".bb".C'est-à-dire que tous les types de résidu et tous les rotamères sont possibles à chaque position.
+Comme l'espace des séquences/confirmations à explorer est gigantesque, nous ne faisons pas de tentatives de recherche du GMEC  par méthode exacte. 
 
 Nous effectuons des recherches avec les algorithmes suivants:
 
 \begin{itemize}
-\item heuristique  (noté H par la suite) ;
-\item Monte-Carlo (noté MC);
-\item ``'Replica Exchange'' (RE);
+\item heuristique, noté H par la suite;
+\item Monte-Carlo, noté MC;
+\item ``'Replica Exchange'' ,noté RE);
 \end{itemize}
 
 
 \paragraph{L'ensemble 'Nombre d'actifs limité'}
 
-L'ensemble ``Nombre d'actifs limité''' est composé de six groupes de tests avec un nombre de positions actives fixe:  
+L'ensemble ``Nombre d'actifs limité'' est composé de six groupes de tests avec un nombre de positions actives fixe:  
 
 
 \begin{enumerate}
@@ -80,66 +80,66 @@ L'ensemble ``Nombre d'actifs limité''' est composé de six groupes de tests ave
 
 Lorsqu'une position n'est pas active, on fixe l'acide aminé de la position en utilisant l'acide aminé de la séquence native.
 
-Le groupe `aucune position active ` est constitué d'un test par algorithme pour chaque protéine. Il y a donc neuf tests par algorithme.
+Le groupe "aucune position active" n'est constitué que d'un test par algorithme pour chaque protéine. Il y a donc neuf tests par algorithme.
 Ce sont les tests pendant lesquels  la séquence d'acides aminés est fixe et correspond à la séquence native de la protéine.
 
-Pour les tests avec une seule position active, comme des temps de calcul le permettent, nous décidons d'être exhaustif:
-Toutes les positions sont testées, Il y a alors huit cent quatre tests par algorithme.
-Pour tous les autres groupes de tests (5,10,20 et 30 positions actives) cinq tests sont effectués par protéine, c'est-à-dire quarante-cinq tests par algorithme.
+Pour les tests avec une seule position active, comme des temps de calcul le permettent, nous décidons d'être exhaustifs:
+Toutes les positions sont testées, il y a alors huit cent quatre tests par algorithme.
+Pour tous les autres groupes de tests (5,10,20 et 30 positions actives), cinq tests sont effectués par protéine, c'est-à-dire quarante-cinq tests par algorithme.
 
 \paragraph{le choix des positions actives}
 
 Pour définir complètement les tests ,il reste maintenant à décrire comment le choix des positions actives pour les groupes numéro trois à numéro six a été effectué.
 Il y a peu d'intérêt à tester des situations avec position active sans interaction avec les autres positions actives. 
-En effet s'il existe une position active P dont chaque résidu est sans interaction avec tous les résidus possibles des autres positions actives, déterminer le meilleur état pour P est proche du test du groupe 2 avec P comme position active. Notons qu'en même que cela n'est pas exactement la même question parce que les positions actives différentes de P peuvent influencer la position de la chaîne latérale de positions inactives qui à leur tour peuvent influencer l'état de P.
-Ainsi le choix des positions actives se fait non pas pas tirage aléatoire, car le risque d'avoir les positions peu en inter action est trop grand. Il se fait sous contrainte d'interaction.
+En effet s'il existe une position active P dont chaque résidu est sans interaction avec tous les résidus possibles les autres positions actives, déterminer le meilleur état pour P est proche du test du groupe 2 avec P comme position active. Toutefois cela n'est pas exactement la même question parce que les positions actives différentes de P peuvent influencer la position de la chaîne latérale de positions inactives qui à leur tour peuvent influencer l'état de P.
+Ainsi, le choix des positions actives se fait non pas pas tirage aléatoire, car le risque d'avoir les positions peu en interaction est trop grand. Il se fait sous contrainte d'interaction.
 
 \paragraph{positions en interactions}
-Pour cela nous utilisons la notion de voisinage incluse dans proteus: 
+Pour cela nous utilisons la notion de voisinage de proteus.Elle se définit de la façon suivante:  
 Deux positions P et Q sont en interaction s'il existe un rotamère $r_P$ de P et un rotamère $r_Q$ de Q tels que:
 \begin{displaymath}
  | E(r_P,r_Q) | > S_{Vois}
 \end{displaymath} 
-avec $S_{Vois}$ un seuil donné par utilisateur à la configuration de proteus (voir chap. ?? pour les détails).
+avec $S_{Vois}$ un seuil donné par l'utilisateur à la configuration de proteus (voir chap. ?? pour les détails).
 
 Définissons maintenant la notion de n-uplet en interaction par la donnée de n positions avec $n \in \{5,10,20,30\}$ et d'un seuil  $S_{Vois}$  tels que pour toute paire de positions (P,Q) du n-uplet, P et Q sont en interaction.
 \paragraph{}
-Pour déterminer les positions actives,nous exécutons proteus en mode verbeux sans effectué d'optimisation.
+Pour déterminer les positions actives,nous exécutons proteus en mode verbeux, sans effectuer d'optimisation.
 Il existe plusieurs façons de procéder ,ici nous utilisons le mode Monte-Carlo avec une trajectoire de zéro pas. Ces exécutions produisent en sortie standard la liste des voisins pour chaque position au seuil donnée en paramètre.
 Pour chaque protéine, nous exécutons proteus avec  $S_{Vois}$ égal à dix , cinq et un à tour de rôle. Nous obtenons quatre listes de voisins. 
-Ensuite, nous cherchons dans les listes, par un script dédié, les n-uplets en interaction en partant de la liste de voisins au sens le plus fort, c'est-à-dire 10, vers la liste de voisins au sens le plus faible ($0.1$).La recherche s'arrête si cinq n-uplets sont trouvés.
+Ensuite, nous cherchons dans les listes, par un script dédié, les n-uplets en interaction en partant de la liste de voisins au sens le plus fort, c'est-à-dire dix, vers la liste de voisins au sens le plus faible ($0.1$).La recherche s'arrête si cinq n-uplets sont trouvés.
 
-Nous obtenons quarante cinq n-uplets pour le groupe à cinq (respectivement dix, vingt et trente ) positions actives pour un $S_{Vois}$ égale à dix (respectivement dix, un et un) (voir le détails en annexe~\ref{chap:annexe}). Chaque n-uplet nous créons un fichier de configuration de proteus dans lequel la balise <Space\_Constraints> fixe les positions restantes au type d'acide aminé présent dans la séquence native. 
+Nous obtenons quarante-cinq n-uplets pour le groupe à cinq (respectivement dix, vingt et trente ) positions actives pour un $S_{Vois}$ égale à dix (respectivement dix, un et un) (voir les détails en annexe~\ref{chap:annexe}). Chaque n-uplet nous créons un fichier de configuration de proteus dans lequel la balise <Space\_Constraints> fixe les positions restantes au type d'acide aminé présent dans la séquence native. 
 
 
 \subsubsection{Définition de protocole comparable}
 
-Nous voulons comparer les algorithmes très différents. Un algorithme peut garantir l'obtention du minimum global en énergie (GMEC) s'il termine, mais ne garantit pas qu'il termine, un autre permet un contrôle très fin du temps d'exécution sans garantie du GMEC, et d'autres enfin ont des objectifs plus ambitieux  qu'uniquement l'obtention du GMEC.
+Nous voulons comparer les algorithmes très différents. Un algorithme peut garantir l'obtention du minimum global en énergie (GMEC) s'il l'exécution se termine, mais ne garantit pas qu'elle se termine, un autre permet un contrôle très fin du temps d'exécution sans garantie du GMEC, et d'autres enfin ont des objectifs plus ambitieux  qu'uniquement l'obtention du GMEC.
 Mais le GMEC reste le meilleur point de commun. Nous allons donc y concentrer les comparaisons.
 
-Nous devons noter également que l'obtention du GMEC est théorique, en pratique nous n'avons pas de preuve que le code de l'algorithme exact que nous utilisons soit sans bogue. Cependant,nous mettons de côté cette éventualité et dans toute la suite GMEC désigne aussi bien le minimum global en énergie que le résultat de toulbar2 lorsqu'il termine.  
+Nous devons noter également que l'obtention du GMEC est théorique, en pratique nous n'avons pas de preuve que le code de l'algorithme exact que nous utilisons n'a pas de bogue. Cependant,nous mettons de côté cette éventualité et dans toute la suite GMEC désigne aussi bien le minimum global en énergie que le résultat de toulbar2 lorsqu'il se termine.  
 \subparagraph{}
-Le Monte-Carlo et le ``'Replica exchange'' possèdent de nombreux paramètres de configuration, ce qui rend l'ensemble des protocoles possibles très grand. Se pose alors la question de l'optimisation du protocole. L'objectif que nous nous fixons ici,n'est pas de recherche un protocole optimum pour chacun des tests, mais de tester un protocole optimisé par algorithme.
-Nous allons alors dans un premier temps , recherche les meilleurs protocoles Monte-Carlo et les meilleurs protocoles ``'Replica Exchange'' sur l'ensemble de tests ``tout actifs''
-Puis, sur la base des résultats obtenue, nous ferons l'ensemble des tests à positions actives limitées avec les meilleurs protocoles.
+Le Monte-Carlo et le ``'Replica exchange'' possèdent de nombreux paramètres de configuration, ce qui rend l'ensemble des protocoles possibles très grand. Se pose alors la question de l'optimisation du protocole. L'objectif fixé ici,n'est pas la recherche d'un protocole optimal pour chacun des tests, mais d'évaluer un protocole optimisé par algorithme.
+Nous allons alors dans un premier temps , recherche les meilleurs paramétrages pour le Monte-Carlo et le ``'Replica Exchange'' sur l'ensemble de tests ``tout actifs'.'
+Puis, sur la base des résultats obtenus, nous ferons l'ensemble des tests à positions actives limitées avec les meilleurs protocoles.
 Le programme toulbar2 possède aussi de nombreuses options. Deux paramétrages différents seront utilisés.
 
 
 Pour rendre les protocoles comparables, le temps d'exécution maximum est fixé à vingt-quatre heures, sauf mention contraire.
 Toulbar2 donne sa meilleure séquence/conformation en dernier, il n'y a donc pas post-traitement nécessaire.
-C'est également le cas pour le MC à condition de configurer l'impression de la trajectoire avec la balise $Print\_Threshold=0$. dans le fichier de configuration.
-Pour le RE et l'Heuristique, un tri des séquences selon l'énergie est nécessaire. Mais il n'y a pas beaucoup de séquences: 
+C'est également le cas pour le Monte-Carlo à condition de configurer l'impression de la trajectoire avec la balise $Print\_Threshold=0$. dans le fichier de configuration.
+Pour le "Replica Exchange" et l'heuristique, un tri des séquences selon l'énergie est nécessaire. Mais il n'y a pas beaucoup de séquences: 
 \begin{enumerate}
 \item L' Heuristique fournit une séquence/conformation à chaque cycle.
-\item Le RE avec $Print\_Threshold=0$ produit autant de fichiers de séquences/rotamères que de marcheurs.Chacun ne contenant pas plus de quelques dizaines de séquences/rotamères. 
+\item Le "Replica Exchange avec $Print\_Threshold=0$ produit autant de fichiers de séquences/rotamères que de marcheurs.Chacun ne contenant pas plus de quelques dizaines de séquences/rotamères. 
 \end{enumerate}
 
 Nous pouvons donc négliger la durée du tri dans le temps total d'exécution.    
 
 
-\subsection{Protocole Heuristique}
+\subsection{Protocole heuristique}
 
-Pour l'algorithme Heuristique, il n'y a dans notre situation qu'un seul paramètre à renseigner: le nombre de cycles à effectuer. Quelques essais préliminaires sur la plus grosse protéine (Table~\ref{tab:protéines}) dans le cas où tout actif , montre que la version utilisée de proteus peut effectuer jusqu'à environ 110000 cycles sur nos machines de calculs en l'espace de vingt-quatre heures. Ainsi le protocole H est défini comme le protocole qui utilise le mode heuristique de proteus et qui effectue cent dix mille cycles. Nous définissons également les variantes H- , H+ et H++ comme des protocoles plus courts ou plus longs à facteur entier près (Table~\ref{tab:protoH}). Par ailleurs certains comparaisons de l'heuristique avec la MC ont été faites avec une version précédente de proteus notons h ce protocole. il diffère  aussi de H par le fait que les options d'optimisation du compilateur Intel -O2 contre -O3 pour H.    
+Pour l'algorithme heuristique, il n'y a dans notre situation qu'un seul paramètre à renseigner: le nombre de cycles à effectuer. Quelques essais préliminaires sur la plus grosse protéine (Table~\ref{tab:protéines}) dans le cas tout actif , montre que la version utilisée de proteus peut effectuer jusqu'à environ 110000 cycles sur nos machines de calculs en l'espace de vingt-quatre heures. Ainsi le protocole H est défini comme le protocole qui utilise le mode heuristique de proteus et qui effectue cent dix mille cycles. Nous définissons également les variantes H- , H+ et H++ comme des protocoles plus courts ou plus longs à facteur entier près (Table~\ref{tab:protoH}). Par ailleurs, certaines comparaisons de l'heuristique avec la MC ont été faites avec une version précédente de proteus.Notons h, ce protocole. il diffère  aussi de H par le fait que les options d'optimisation du compilateur Intel -O2 contre -O3 pour H.    
 
 
     \begin{table}[!htbp]
@@ -158,13 +158,13 @@ Pour l'algorithme Heuristique, il n'y a dans notre situation qu'un seul paramèt
         \bottomrule
 
       \end{tabular}      
-      \caption{Les protocoles Heuristique}
+      \caption{Les protocoles heuristiques}
 \label{tab:protoH}      
     \end{table}
 
    \subsection{Protocoles Monte-Carlo}
 \label{sec:MC}
-On distingue deux ensembles de protocoles, Le premier où les noms  sont de la forme mc*, rassemble les protocoles utilisés pendant l'optimisation du Monte-Carlo.Le second est constitué du protocole retenue comme optimisé , plus une variante.     
+On distingue deux ensembles de protocoles.Dans le premier, les noms  sont de la forme "mc*". Il rassemble les protocoles utilisés pour le paramétrage du Monte-Carlo.Le second est constitué des protocoles utilisés lors des comparaisons.     
 
 \subsubsection{Paramétrage}
 
@@ -174,29 +174,29 @@ Les éléments à paramétrer pour l'algorithme Monte-Carlo sont les suivants:
 \item la température
 \item le nombre de pas (avec le nombre de trajectoires et la longueur de trajectoire )
 \item Le seuil de voisinage
-\item Les probabilités de changements de la séquences/rotamère
+\item Les probabilités de changements de la séquence/rotamère
 \end{enumerate}
 
 Ce qui représente un ensemble de protocoles trop grand pour une approche exhaustive. Nous allons faire varier les paramètres un par un.
 
-La température est le paramètre principale du Monte-carlo, c'est lui qui contrôle le taux d'acceptation du critère de Metropolis.Alors la première étape de cette optimisation va consisté à faire variés la température , entre 0.001 et 0.5 , en conservant les autres paramètres fixés (protocoles de mc0 à mc5).Le nombre de pas total effectué est le produit de deux paramètres, le nombre de trajectoires et la longueur de trajectoire. les protocoles mc1b et mc2b testent l'effet d'une augmentation du nombre de pas. Tandis que mc2d teste l'effet de variation du rapport nombre de trajectoire sur la longueur.
+La température est le paramètre principal du Monte-Carlo, c'est lui qui contrôle le taux d'acceptation du critère de Metropolis.Alors,la première étape de cette optimisation va consister à faire varier la température , entre 0.001 et 0.5 , en conservant les autres paramètres fixés (protocoles de mc0 à mc5).Le nombre de pas total effectué est le produit de deux paramètres, le nombre de trajectoires et la longueur de trajectoire. Les protocoles mc1b et mc2b testent l'effet d'une augmentation du nombre de pas. Tandis que mc2d teste l'effet de la variation du nombre de trajectoires par rapport à la longueur.
 Le protocole mc2e s'intéresse aux probabilités de changement de la trajectoire. Il y a cinq balises dans proteus qui contrôle ces changements:
 
 \begin{description}
-\item[<Prot>] donne la probabilités de modifications de  rotamère à une postions.
-\item[<Prot\_Prot>] donne la probabilités de modifications de  rotamère à deux positions.
-\item[<Mut>] donne la probabilités de modifications de type de résidu à une position.
-\item[<Mut\_Prot>] donne la probabilités de modifications de  rotamères à deux positions.
-\item[<Mut\_Mut>] donne la probabilités de modifications de type de résidu à deux positions.
+\item[<Prot>] donne la probabilité de modifications de  rotamère à une position.
+\item[<Prot\_Prot>] donne la probabilité de modifications de  rotamère à deux positions.
+\item[<Mut>] donne la probabilité de modifications de type de résidu à une position.
+\item[<Mut\_Prot>] donne la probabilité de modifications de  rotamères à deux positions.
+\item[<Mut\_Mut>] donne la probabilité de modifications de type de résidu à deux positions.
 \end{description}
 
 La table~\ref{tab:protoMC} donne les probabilités utilisées par ces cinq paramètres dans l'ordre de la liste précédente. 
 
- Enfin mc4b se distingue des autres par un seuil de voisinage plus grand ((Table~\ref{tab:protoMC})).
+ Enfin, mc4b se distingue des autres par un seuil de voisinage plus grand ((Table~\ref{tab:protoMC})).
 
 
-\paragraph{Second version de proteus}
-Pour l'étape suivante, qui consiste à la comparaison avec les autres algorithmes, quatre protocoles sont utilisés. Les protocole MCa et MCb s'inspirent fortement de mc2d et mc2e , en étant adapté à la contrainte du temps de calculs de la comparaison d'algorithmes et un utilisant la nouvelle version de proteus (les lettres capitales dans le nom des protocoles signifie l'utilisation de la dernière version de proteus,ceci dans toute la suite). MCa- est une de MCa avec une trajectoire six fois plus courte.Enfin, MC0 s'inspire de mc0 dans le sens où la température est suffisamment froide pour que nous puissions considérer qu'il n'y a pas de baisse de l'énergie au court d'une trajectoire.
+\paragraph{Seconde version de proteus}
+Pour l'étape suivante, la comparaison avec les autres algorithmes, quatre protocoles sont utilisés. Les protocoles MCa et MCb s'inspirent fortement de mc2d et mc2e , en étant adapté à la contrainte du temps de calcul de la comparaison d'algorithmes et un utilisant la nouvelle version de proteus (les lettres capitales dans le nom des protocoles signifient l'utilisation de la dernière version de proteus,ceci dans toute la suite). MCa- est une variante de MCa avec une trajectoire six fois plus courte.Enfin, MC0 s'inspire de mc0 dans le sens où la température est suffisamment froide pour que nous puissions considérer qu'il n'y a pas de baisse de l'énergie au cours d'une trajectoire.
   
 
     \begin{table}[!htbp]
@@ -234,17 +234,17 @@ Pour l'étape suivante, qui consiste à la comparaison avec les autres algorithm
 \label{tab:protoMC}      
     \end{table}
 
-   \subsection{Les protocoles Replica Exchange} 
+   \subsection{Les protocoles "Replica Exchange"} 
 
-L'algorithme ``Replica Exchange'' (RE) est une extension du Monte-Carlo , Les paramètres d'un protocole RE sont ceux d'un protocole Monte-Carlo plus d'autres paramètres:
+L'algorithme ``Replica Exchange'' (RE) est une extension du Monte-Carlo. Les paramètres d'un protocole RE sont ceux d'un protocole Monte-Carlo plus d'autres paramètres:
 
 \begin{itemize}
 \item le nombre de marcheurs
 \item la température pour chaque marcheur
-\item la période de ``swap'', c'est-à-dire la période  (en nombre de pas) à  laquelle le test de Hasting sur l'échange de température et éventuellement l'échange ,sont effectués.
+\item la période de ``swap'', c'est-à-dire la période  (en nombre de pas) à  laquelle le test de Hasting sur l'échange de température et éventuellement l'échange ,est effectuée.
 \end{itemize}
-Pour avoir des exécutions en parallèle sans plusieurs marcheurs  par coeur du processeur, nous limiter nos tests à quatre ou huit marcheurs.
-La distribution des températures est un éléments déterminant dans le comportement des marcheurs, car c'est elle qui pilote en grande partie le taux d'acceptation des échanges de températures. Nous suivant l'idée proposée par Kofke de lui faire suivre une progression géométrique ( $ \frac{T_i}{T_{i+1}}=C $ , avec C une constante)~\citep{refRE1,refRE2,refRE3}. Ceci garantie alors que le taux d'acceptation d'échange entre $T_i et T_{i+1}$ soit égale pour tout nos i.De plus nous souhaitons centrer à peu près, nos distributions sur la température ambiante.
+Pour avoir des exécutions en parallèle avec au plus un marcheur par coeur du processeur, nous limiter nos tests à quatre ou huit marcheurs.
+La distribution des températures est un élément déterminant dans le comportement des marcheurs, car c'est elle qui pilote en grande partie le taux d'acceptation des échanges de températures. Nous suivons l'idée proposée par Kofke de lui faire suivre une progression géométrique ( $ \frac{T_i}{T_{i+1}}=C $ , avec C une constante)~\citep{refRE1,refRE2,refRE3}. Ceci garantie alors que le taux d'acceptation d'échange entre $T_i et T_{i+1}$ soit égale pour tout nos i.De plus, nous souhaitons centrer à peu près, nos distributions sur la température ambiante.
 
 Voici les températures pour le RE quatre marcheurs:
 
@@ -261,8 +261,8 @@ Voici les températures pour le RE quatre marcheurs:
 \item 10 , 3.16 , 1 , 0.316 , 0.1 , 0.0316 , 0.01 et 0.00316
 \end{itemize} 
 
-Ici les protocoles ne se font qu'avec une seule trajectoire par marcheur. Et la contrainte du temps de calculs se comprends comme vingt-quatre heures de calculs cumulées sur tous les marcheurs.
-Ainsi les longueurs de trajectoire sont définit pour le RE quatre marcheurs comme le quart d'une trajectoire MC, pour le RE huit marcheurs comme le huitième.
+Ici les protocoles ne se font qu'avec une seule trajectoire par marcheur. Et la contrainte du temps de calcul se comprend comme vingt-quatre heures de calculs cumulées sur tous les marcheurs.
+Ainsi les longueurs de trajectoire sont définit pour le RE à quatre marcheurs comme le quart d'une trajectoire MC, pour le RE à huit marcheurs comme le huitième.
 
 La table~\ref{tab:protoRE} donne les probabilités utilisées par les cinq balises qui contrôlent les modifications de la séquence/conformation à chaque pas, dans l'ordre de la liste de la section~\ref{sec:MC}. 
     
@@ -285,26 +285,26 @@ La table~\ref{tab:protoRE} donne les probabilités utilisées par les cinq balis
         \bottomrule
 
       \end{tabular}      
-      \caption{Les protocoles Replica Exchange}
+      \caption{Les protocoles "Replica Exchange"}
 \label{tab:protoRE}      
     \end{table}
 
    \subsection{Les protocoles Toulbar2} 
 
 
-Après avoir convertit nos matrices au format wcsp grâce à un script dédié,nous pouvons utiliser toulbar2.
+Après avoir converti nos matrices au format "wcsp" grâce à un script dédié,nous pouvons utiliser toulbar2.
 Le protocole toulbar2 de recherche du GMEC est le suivant:
-Le binaire toulbar2 de version 0.9.7.0 est lancé avec les options -l=3 -m -d: -s, ce qui correspond au paramétrage conseillé dans la documentation CDP~\citep{reftoulbar1,reftoulbar2}. Si au bout de vingt-quatre heures l'exécution est terminée, le protocole est achevé. Sinon le programme est arrêté et une seconde version (la 0.9.6.0) est lancé avec les options -l=1 -dee=1 -m -d: -s. Au bout de vingt-quatre heures si le programme n'est pas terminée, il est arrêté. La dernière séquence/conformation imprimer en sortie est collectée. Le choix de la seconde version et du paramétrage fait suite à une discussion avec monsieur Seydou Traoré.  
+L'exécutable toulbar2 de version 0.9.7.0 est lancé avec les options" -l=3 -m -d: -s", ce qui correspond au paramétrage conseillé dans la documentation CDP~\citep{reftoulbar1,reftoulbar2}. Si au bout de vingt-quatre heures l'exécution est terminée, le protocole est achevé. Sinon le programme est arrêté et une seconde version (la 0.9.6.0) est lancée avec les options "-l=1 -dee=1 -m -d: -s". Au bout de vingt-quatre heures si le programme n'est pas terminé, il est arrêté. La dernière séquence/conformation imprimée en sortie est collectée. Le choix de la seconde version et du paramétrage fait suite à une discussion avec monsieur Seydou Traoré.  
 
-Toulbar2 est également capable de fournir la listes des séquences/conformations dont l'énergie est comprise entre celle du GMEC, $E_{GMEC}$ et une autre $E_{upper\_bound}$ donnée en paramètre. Pour cette fonctionnalité nous utilisons le paramétrage:  -d: -a -s -ub=$E_{upper\_bound}$.
+Toulbar2 est également capable de fournir la liste des séquences/conformations dont l'énergie est comprise entre celle du GMEC, $E_{GMEC}$ et une autre $E_{upper\_bound}$ donnée en paramètre. Pour cette fonctionnalité nous utilisons le paramétrage:  "-d: -a -s -ub=$""E_{upper\_bound}$.
 
    \subsubsection{Superfamily/SCOP} 
 
-Superfamily est un ensemble avec d'une base de données composée de modèle de Markov cachés~\citep{refSuperfamily}
+Superfamily est un ensemble avec d'une base de données composée de modèles de Markov cachés~\citep{refSuperfamily}
 
 \begin{itemize}
 \item Une base de données de modèles de Markov cachés, où chaque modèle représente une structure 3D d'un domaine de la classification SCOP.
-\item une série de script qui annote une séquence de protéine donnée en entrée à partir des informations de la base. Ici nous utilisons uniquement l'association au modèle 3D le plus vraisemblable. 
+\item une série de scripts qui annote une séquence de protéine donnée en entrée à partir des informations de la base. Ici nous utilisons uniquement l'association au modèle 3D le plus vraisemblable. 
 \end{itemize}
 
 Nous travaillons avec la base de données à la version 1.75, et en conjonction, nous utilisons SAM (version 3.5)~\citep{refSam} et HMMER (version 3.0)~\citep{refHmmer} recommandée par l'équipe de Superfamily. Le paramétrage utilisé est celui par défaut.
@@ -332,37 +332,37 @@ $Id(A_{S},i) = \frac{\sum_{1<j<m} \mathds{1}(s_i^j,n_i)}{m} \times 100$ , avec m
 
 \subsection{Similarité}
 
-Les taux d'identités qui viennent d'être présentés nous permettre de mesurer une ressemblance d'un séquence ou d'un ensemble de nos séquences produites par rapport à la séquence native. Mais cela n'est pas notre principale objectif.Et nous devons évaluer nos séquences par rapport à l'ensemble des séquences du domaine protéique de la séquence native.  
+Les taux d'identités qui viennent d'être présentés nous permettent de mesurer une ressemblance d'une séquence ou d'un ensemble de nos séquences produites par rapport à la séquence native. Mais cela n'est pas notre principal objectif.Et nous devons évaluer nos séquences par rapport à l'ensemble des séquences du domaine protéique de la séquence native.  
 
    \subsubsection{Alignements Pfam} 
-La base de données Pfam (Protein families database)~\citep{refPfam} regroupe les domaines protéiques connus en famille. Chaque famille  étant représentées des alignements multiples de séquences et des profiles de modèles de Markov cachés~\citep{refPfam}. Dans la suite nous n'utiliserons l'alignement dit ``seed'' qui ne contient q'un petit ensemble de membres représentatifs de famille et l'alignement ``full'' qui est généré par modèle de Markov caché à partir de l'aligement ``seed''. Les alignements correspondent pour nous aux familles PF00017 (domaine SH2), PF00018  (domaine SH3) et PF00595 (domaine PDZ).
+La base de données Pfam (Protein families database)~\citep{refPfam} regroupe les domaines protéiques connus en famille. Chaque famille  étant représentées des alignements multiples de séquences et des profiles de modèles de Markov cachés~\citep{refPfam}. Dans la suite, nous n'utiliserons l'alignement dit ``seed'' qui ne contient qu'un petit ensemble de membres représentatifs de famille et l'alignement ``full'' qui est généré par modèle de Markov caché à partir de l'alignement ``seed''. Les alignements correspondent pour nous aux familles PF00017 (domaine SH2), PF00018  (domaine SH3) et PF00595 (domaine PDZ).
 
  \subsubsection{Score BLOSUM}
 
-Pour tenir compte des ressemblances et des différences entre les acides aminés lors d'une substitution, nous avons besoin d'une matrice de coût.Nous utilisons la matrice BLOSUM62 (BLOcks SUbstitution Matrix)~\citep{refBLOSUM} qui est construite à partir de blocs l'alignement très conservées (ici plus de 62\% d'identités).Les fréquences des mutations y sont calculées.Le score BLOSUM d'une substitution est alors le logarithme de la fréquence de la mutation correspondante.À cela est ajouté un scrore de pénalités pour l'insertion d'un gap (c'est-à-dire un saut dans l'alignemnet).
+Pour tenir compte des ressemblances et des différences entre les acides aminés lors d'une substitution, nous avons besoin d'une matrice de coût.Nous utilisons la matrice BLOSUM62 (BLOcks SUbstitution Matrix)~\citep{refBLOSUM} qui est construite à partir de blocs d'alignement très conservés (ici plus de 62\% d'identités).Les fréquences des mutations y sont calculées.Le score BLOSUM d'une substitution est alors le logarithme de la fréquence de la mutation correspondante.À cela est ajouté un score de pénalités pour l'insertion d'un gap (c'est-à-dire un saut dans l'alignement).
 
-On définit alors simplement un score de similarité de deux séquences de même longueur comme la somme des scores BLOSUM62 sur toutes les positions. De même le score de similarité d'un alignement par rapport à une séquence sera définit comme la moyenne des score de similarité sur ensemble des séquences de l'alignement. Et enfin une score de similarité de deux ensembles de séquences alignés entre eux comme la moyenne des scores de similarité du premier ensemble par rapport aux séquences du second.  
+On définit alors simplement un score de similarité de deux séquences de même longueur comme la somme des scores BLOSUM62 sur toutes les positions. De même le score de similarité d'un alignement par rapport à une séquence sera défini comme la moyenne des scores de similarité sur ensemble des séquences de l'alignement. Et enfin un score de similarité de deux ensembles de séquences alignés entre eux comme la moyenne des scores de similarité du premier ensemble par rapport aux séquences du second.  
 
 \subsection{similarité d'un ensemble à une famille Pfam}
 
-Afin de calculer un score de similarité d'un ensemble de nos séquences par rapport à une famille Pfam, il faut commencer par aligner nos séquences avec l'alignement de la famille.Pour cela nous utilisons le programme d'alignement BLAST~\citep{refBLAST}.Il implémente une heuristique qui recherche puis étend les meilleurs alignement locaux. Nous procédons comme suit:
+Afin de calculer un score de similarité d'un ensemble de nos séquences par rapport à une famille Pfam, il faut commencer par aligner nos séquences avec l'alignement de la famille.Pour cela nous utilisons le programme d'alignement BLAST~\citep{refBLAST}.Il implémente une heuristique qui recherche puis étend les meilleurs alignements locaux. Nous procédons comme suit:
 \begin{enumerate}
 \item La commande blastpgp est utilisée avec comme database (paramètre -d ) l'alignement Pfam et comme séquence en entrée ( paramètre -i ) la séquence native. 
-\item Dans la sortie blast, la séquence qui produit l'alignement le plus significatif avec la native est collectée, notons la $S_0$. 
+\item Dans la sortie blast, la séquence qui produit l'alignement le plus significatif avec la native est collectée, notons-la $S_0$. 
 \item L'alignement blast est alors utilisé pour positionner la native par rapport à $S_0$ et les gaps nécessaires pour aligner la native à $S_0$ sont ajoutés.
 \item  Le positionnement et les gaps sont alors appliqués tels quels à la liste de nos séquences.
 
 \end{enumerate}
 
 
-\subsection{Réparition de l'energie selon les centiles }
+\subsection{Répartition de l'énergie selon les centiles }
 
 Pour comparer différentes distributions d'ensemble de séquences/conformations selon l'énergie,nous déterminons les centiles de la façon suivante: 
 
 \begin{enumerate}
 \item l'ensemble de séquences/conformations est trié selon l'énergie.
-\item L'intervalle entre la meilleur énergie et la moins bonne est divisé en cent intervalles consécutifs contenant le même nombre de séquences/conformations (un centième du cardinal de l'ensemble).
-\item les quatre-vingts dix neufs valeurs d'energie obtenues par ce découpage sont les centiles.   
+\item L'intervalle entre la meilleure énergie et la moins bonne est divisé en cent intervalles consécutifs contenant le même nombre de séquences/conformations (un centième du cardinal de l'ensemble).
+\item les quatre-vingt-dix-neuf valeurs d'énergie obtenues par ce découpage sont les centiles.   
 \end{enumerate}
 
 
@@ -376,7 +376,7 @@ Le choix des paramètres du protocole Monte-Carlo est décidé sur des tests sur
 
 
    \subsubsection{Température et meilleures énergies} 
-Nous utilisons les protocoles de mc0 à mc5, voir table~\ref{tab:ener_mc} pour évaluer d'effet du paramètre température dans la recherche de séquences/rotamères de meilleurs énergies.La table~\ref{tab_ener_mc} présente les résultats obtenus arrondis à la Kcal/mol inférieure. L'énergie proteus est l'énergie de dépliement c'est-à-dire l'énergie qu'il faut fournir à la protéine pour la déplier.Donc les meilleurs dans la table (et dans toutes les autres tables ) sont les énergies les plus grandes. Les tests aux températures les plus froides (0.001 et 0.1) donnent les meilleurs résultats  pour la majorité des protéines. Cependant la dégradation des performances est lente avec l'augmentation des températures. Et les résultats pour les températures intermédiaires (0.2 et 0.3) sont souvent très proches des meilleurs résultats.    
+Nous utilisons les protocoles de mc0 à mc5, voir table~\ref{tab:ener_mc} pour évaluer d'effet du paramètre température dans la recherche de séquences/conformations de meilleures énergies.La table~\ref{tab_ener_mc} présente les résultats obtenus arrondis à la kcal/mol inférieure. L'énergie proteus est l'énergie de dépliement c'est-à-dire l'énergie qu'il faut fournir à la protéine pour la déplier.Donc les meilleurs dans la table (et dans toutes les autres tables ) sont les énergies les plus grandes. Les tests aux températures les plus froides (0.001 et 0.1) donnent les meilleurs résultats  pour la majorité des protéines. Cependant la dégradation des performances est lente avec l'augmentation des températures. Et les résultats pour les températures intermédiaires (0.2 et 0.3) sont souvent très proches des meilleurs résultats.    
 
     \begin{table}[!htbp]
       \centering
@@ -400,13 +400,13 @@ Nous utilisons les protocoles de mc0 à mc5, voir table~\ref{tab:ener_mc} pour �
       \end{tabular}
       
 
-      \caption{Meilleur énergie selon la température,($^a$ le protocole mc0,$^b$ mc1,$^c$  mc2,$^d$ mc3,$^e$ mc4,$^f$ mc5 )}    
+      \caption{Meilleure énergie selon la température,($^a$ le protocole mc0,$^b$ mc1,$^c$  mc2,$^d$ mc3,$^e$ mc4,$^f$ mc5 )}    
       \label{tab:ener_mc}
     \end{table}
  
    \subsubsection{Température et taux d'identité de séquences} 
 \label{sec:T_et_I}
-Nous poursuivons la comparaison des protocole mc0-mc5 en regardant le taux d'identité entre les séquences d'acides aminés et la séquence native. Pour cela, nous reprenons les séquences/conformations obtenues et triées selon l'énergie décroissante. Nous sélectionnons dans cette liste, les dix mille premières séquence pour chaque test. Les résultats sont présentés table~\ref{tab:ident_mc}.Nous obtenons des taux d'identités globalement compris entre 20 et 40\% , avec le plus suivant des valeurs proches de 30\%. Les résultats à température 0.2 et 0.3, sont aussi bon que ceux à température 0.1 et légèrement meilleurs que pour 0.001. Ici aussi il y a une dégradation aux température les plus hautes, faible à 0.5, plus nette à 0.7.
+Nous poursuivons la comparaison des protocoles mc0-mc5 en regardant le taux d'identité entre les séquences d'acides aminés et la séquence native. Pour cela, nous reprenons les séquences/conformations obtenues et triées selon l'énergie décroissante. Nous sélectionnons dans cette liste, les dix mille premières séquences pour chaque test. Les résultats sont présentés table~\ref{tab:ident_mc}.Nous obtenons des taux d'identités globalement compris entre 20 et 40\% , avec le plus suivant des valeurs proches de 30\%. Les résultats aux températures 0.2 et 0.3 sont aussi bons que ceux à la température 0.1 et légèrement meilleurs que pour 0.001. Ici aussi, il y a une dégradation aux températures les plus hautes, faible à 0.5, plus nette à 0.7.
 
     \begin{table}[!htbp]
       \centering
@@ -436,7 +436,7 @@ Nous poursuivons la comparaison des protocole mc0-mc5 en regardant le taux d'ide
 
    \subsubsection{Température et résultats Superfamily} 
 
-Nous évaluons maintenant, la similarité que peuvent avoir nos séquences putatives avec la structure 3D du domaine de la protéine. Nous lancer Superfamily sur chaque ensemble de dix milles séquences (voir \ref{sec:T_et_I}). Le tableau \ref{tab:SF_mc} présente le nombre de séquences attribuées au domaine de la séquence native par cet outil. Les résultats sont bons, sauf pour les températures les plus chaudes, la grande majorité des séquences sont attribuées au domaine natif respectif (les domaines sur en Table~\ref{tab:protéines}).Ici, les deux températures intermédiaires font quasiment jeu égal avec les deux températures les plus froides.
+Nous évaluons maintenant, la similarité que peuvent avoir nos séquences putatives avec la structure 3D du domaine de la protéine. Nous lancer Superfamily sur chaque ensemble de dix mille séquences (voir \ref{sec:T_et_I}). Le tableau \ref{tab:SF_mc} présente le nombre de séquences attribuées au domaine de la séquence native par cet outil. Les résultats sont bons, sauf pour les températures les plus chaudes, la grande majorité des séquences sont attribuées au domaine natif respectif (les domaines sur en Table~\ref{tab:protéines}).Ici, les deux températures intermédiaires font quasiment jeu égal avec les deux températures les plus froides.
     \begin{table}[!htbp]
       \centering
       
@@ -457,7 +457,7 @@ Nous évaluons maintenant, la similarité que peuvent avoir nos séquences putat
       \end{tabular}
       
 
-      \caption{Résultats Superfamily pour les dix mille séquences de meilleur énergie selon la température,($^a$ le protocole mc0,$^b$ mc1,$^c$  mc2,$^d$ mc3,$^e$ mc4,$^f$ mc5 )}      
+      \caption{Résultats Superfamily pour les dix mille séquences de meilleure énergie selon la température($^a$ le protocole mc0,$^b$ mc1,$^c$  mc2,$^d$ mc3,$^e$ mc4,$^f$ mc5 )}      
       \label{tab:SF_mc}
     \end{table}
 
@@ -465,13 +465,13 @@ Nous évaluons maintenant, la similarité que peuvent avoir nos séquences putat
 
    \subsubsection{Température et entropie} 
 
-Il apparaît assez clairement, de part le principe du test de metropolis-Hasting, que le Monte-Carlo à basse température explore une partie de l'espace plus petite qu'au haute température. Il est alors légitime de mesurer cet effet sur les ensembles de dix milles séquences obtenues. Nous utilisons un alphabet A (voir table \ref{tab:Alphabet}) réduit à six classes d'acides aminés comme proposée dans~\citep{refAlphabet} qui permet de se focaliser sur les différences physico-chimiques des acides aminés.  
+Il apparaît assez clairement, par le principe du test de Metropolis-Hasting, que le Monte-Carlo à basse température explore une partie de l'espace plus petite qu'à haute température. Il est alors légitime de mesurer cet effet sur les ensembles de dix mille séquences obtenues. Nous utilisons un alphabet A (voir table \ref{tab:Alphabet}) réduit à six classes d'acides aminés, comme proposé dans~\citep{refAlphabet} qui permet de se focaliser sur les différences physico-chimiques des acides aminés.  
 
-L'entropie par position $H_i$ est alors définit de la façon suivante.
+L'entropie par position $H_i$ est alors définie de la façon suivante.
 Pour i une position dans la séquence, notons $f_{i}(a)$ la fréquence en i, de la lettre a de l'alphabet A . Alors 
 $H_i=  - \sum_{a \in A} f_{i}(a) * log( f_{i}(a) ) $  
 
-Puis, nous calculons la moyenne sur les postions des $exp(H_i)$ pour nos tests. Les résultats sont sur le tableau \ref{tab:Entro_mc}.
+Puis, nous calculons la moyenne sur les positions des $exp(H_i)$ pour nos tests. Les résultats sont sur le tableau \ref{tab:Entro_mc}.
 
 
     \begin{table}[!htbp]
@@ -498,7 +498,7 @@ Puis, nous calculons la moyenne sur les postions des $exp(H_i)$ pour nos tests. 
 
     \end{table}
 
-Nous observons la diminution systématique de l'entropie avec cette de la température. Cela représente une moindre diversité dans les séquences obtenues pour les températures des plus froides.
+Nous observons une diminution systématique de l'entropie avec cette de la température. Cela représente une moindre diversité dans les séquences obtenues pour les températures des plus froides.
 
     \begin{table}[!htbp]
       \centering
@@ -516,14 +516,14 @@ Nous observons la diminution systématique de l'entropie avec cette de la tempé
         1R6J & 1.75 & 1.79 & 1.94 & 2.20  \\ 
         \bottomrule               
       \end{tabular}
-      \caption{Moyennes sur les positions des exp(entropies) pour les dix mille séquences de meilleur énergie,($^a$ le protocole mc0,$^b$ mc1,$^c$  mc2,$^d$ mc3)}      
+      \caption{Moyennes sur les positions des exp(entropies) pour les dix mille séquences de meilleure énergie,($^a$ le protocole mc0,$^b$ mc1,$^c$  mc2,$^d$ mc3)}      
       \label{tab:Entro_mc}
     \end{table}
 
    \subsubsection{Trajectoire et pourcentage d' identité} 
 
-Le nombre de pas effectués dans les protocoles Monte-Carlo est le produit du nombre de trajectoires par le longueur de trajectoire. Nous comparons le pourcentage d'identité de séquences par rapport à la séquence native pour des protocoles ne variant que par le nombre de trajectoires ou la longueur de la trajectoire. Deux ensembles sont traités, mc1 et mc1b ( mc1 mais avec des trajectoires deux fois plus grandes) d'une part et mc2, mc2b , mc2c et mc2d d'autre part, avec mc2b ayant des trajectoire deux fois plus grandes de mc2, mc2c dix fois plus de trajectoire que mc2 et le même nombre de pas mais une seule trajectoire pour mc2d par rapport mc2.
-Les résultats sont visibles à la table \ref{tab:Traj_ident}.L'effet du doublement de la longueur de la trajectoire existe mais est très faible. De même l'augmentation du nombre de trajectoires, pourtant drastique, n'apporte quasiment rien. Élément intéressant, à nombre de pas identique, il n'y pas de différence notable entre le protocole mille trajectoires et celui à une seule.  
+Le nombre de pas effectués dans les protocoles Monte-Carlo est le produit du nombre de trajectoires par la longueur de trajectoire. Nous comparons le pourcentage d'identité de séquences par rapport à la séquence native pour des protocoles ne variant que par le nombre de trajectoires ou la longueur de la trajectoire. Deux ensembles sont traités, mc1 et mc1b (variante de mc1 avec des trajectoires deux fois plus grandes) d'une part et mc2, mc2b , mc2c et mc2d d'autre part, mc2b ayant des trajectoires deux fois plus grandes de mc2, mc2c dix fois plus de trajectoires que mc2 et le même nombre de pas, mais une seule trajectoire pour mc2d par rapport mc2.
+Les résultats sont visibles à la table \ref{tab:Traj_ident}.L'effet du doublement de la longueur de la trajectoire existe, mais est très faible. De même, l'augmentation du nombre de trajectoires, pourtant drastique, n'apporte quasiment rien. Élément intéressant, à nombre de pas identique, il n'y pas de différence notable entre le protocole mille trajectoires et celui à une seule.  
 
     \begin{table}[!htbp]
       \centering
@@ -550,7 +550,7 @@ Les résultats sont visibles à la table \ref{tab:Traj_ident}.L'effet du doublem
 
 
    \subsubsection{Mutations et pourcentage d' identité} 
-Jusqu'à présent nous avons utilisé le même mode de modification de la séquence/conformation entre chaque pas Monte-Carlo pour tous les protocoles. Il s'agît du mode qui utilise les balises <Prot\_Prot> avec une valeur à 1 et <Mut> avec une valeur à 0.1. Cela veut dire qu'à chaque pas deux rotamères sont modifiés sans changement du type de résidu et qu'une troisième position change d'acide aminé avec une probabilité de 0.1. Nous allons comparer ce mode de modification (avec les protocoles mc1 et mc2 ) avec un mode où seulement  le rotamère est changé à une position sans changement de type et une seconde position change d'acide aminé la même probabilité que précédemment, 0.1 (avec les protocoles mc1b et mc2e). Les résultats sont visibles à la table ((Table~\ref{tab:mut_ident})). Nous voyons que le en ce qui concerne le premier couple de protocole, il n'y a un déclin pour tous les tests. Pour le second il y a également une dégradation des performances globales mais elle n'est pas systématique. Il y a même une amélioration pour la protéine 1R6J.  
+Jusqu'à présent, nous avons utilisé le même mode de modification de la séquence/conformation entre chaque pas Monte-Carlo pour tous les protocoles. Il s'agit du mode qui utilise les balises <Prot\_Prot> avec une valeur à 1 et <Mut> avec une valeur à 0.1. Cela veut dire qu'à chaque pas deux rotamères sont modifiés sans changement du type de résidu et qu'une troisième position change d'acide aminé avec une probabilité de 0.1. Nous allons comparer ce mode de modification (avec les protocoles mc1 et mc2 ) avec un mode où seulement  le rotamère est changé à une position sans changement de type et une seconde position change d'acide aminé la même probabilité que précédemment, 0.1 (avec les protocoles mc1b et mc2e). Les résultats sont visibles à la table ((Table~\ref{tab:mut_ident})). Nous voyons que le en ce qui concerne le premier couple de protocoles, il n'y a un déclin pour tous les tests. Pour le second, il y a également une dégradation des performances globales, mais elle n'est pas systématique. Il y a même une amélioration pour la protéine 1R6J.  
 
 
     \begin{table}[!htbp]
@@ -579,7 +579,7 @@ Jusqu'à présent nous avons utilisé le même mode de modification de la séque
 
         \subsection{Comparaison protocole Monte-Carlo contre heuristique}
         \subsubsection{comparaison score de similarités}
-Nous examinons maintenant plus en détail les résultats de trois protocoles: h, mc2 et mc3.Tout d'abord nous calculons le score de similarité par position et par séquence de nos dix milles meilleurs  séquences d'acide aminés par rapport aux alignements Pfam \og seed\fg et \og full\fg . Pour avoir un point de comparaisons les scores séquence native contre pfam \og seed\fg et \og full\fg   sont aussi representés. Les résultats sont présentés sous forme de graphiques, une page par protéine. Pour chaque protocole, deux graphiques à gauche  représentent les similarités par position par rapport à l'alignement pfam \og seed\fg et respectivement pfam \og full\fg. Un troisième graphique représente les similarités par séquence.  Pour plusieurs protéines les scores de similarités par séquence  des séquences putatives sont nettement inférieurs que ceux de la native. Cependant les écarts sont relativement bien repartie selon les positions voir graphiques à gauche, ce qui donne en réalité des scores à chaque position assez comparables entre la native et les putatives en particulier pour   1G9O  1R6J 1M61,et 1CKA. Ces écarts sont plus importants pour 1ABO 1BM2 et 1O4C. On peut noter que pour 1G9O la séquence native n'est pas très similaire à l'alignement \og seed\fg et qu'il y a des séquences putatives meilleurs que la native sur ce plan.Ces résultats ne révèle pas de différence notable entre les trois protocoles.
+Nous examinons maintenant plus en détail les résultats de trois protocoles: h, mc2 et mc3.Tout d'abord, nous calculons le score de similarité par position et par séquence de nos dix milles meilleurs  séquences d'acides aminés par rapport aux alignements Pfam \og seed\fg et \og full\fg . Pour avoir un point de comparaisons, les scores  de la séquence native contre Pfam \og seed\f g et \og full\fg   sont aussi représentés. Les résultats sont présentés sous forme de graphiques, une page par protéine. Pour chaque protocole, deux graphiques à gauche  représentent les similarités par position par rapport à l'alignement Pfam \og seed\fg et respectivement Pfam \og full\fg. Un troisième graphique représente les similarités par séquence.  Pour plusieurs protéines les scores de similarités par séquence  des séquences putatives sont nettement inférieurs que ceux de la native. Cependant, les écarts sont relativement bien repartis selon les positions voir graphiques à gauche, ce qui donne en réalité des scores à chaque position assez comparables entre la native et les putatives en particulier pour   1G9O  1R6J 1M61,et 1CKA. Ces écarts sont plus importants pour 1ABO 1BM2 et 1O4C. On peut noter que pour 1G9O la séquence native n'est pas très similaire à l'alignement \og seed\fg et qu'il y a des séquences putatives meilleures que la native sur ce plan.Ces résultats ne révèlent pas de différence notable entre les trois protocoles.
 
 
 
@@ -768,7 +768,7 @@ Nous examinons maintenant plus en détail les résultats de trois protocoles: h,
    \end{figure}
 
          \subsubsection{rapport entre énergies et  similarités}
-Pour faire le lien entre les comparaisons basées sur les meilleurs énergies et les comparaisons basées sur les scores de similarités, nous représentons les énergies des dix milles meilleurs séquences en fonction de leur similarité à l'alignement Pfam \og seed\fg. Comme une séquence peut apparaître plusieurs fois dans l'ensemble des séquences/conformations obtenus toutes les énergies trouvées de la séquence sont représentées voir les graphiques \ref{graph:simil_vs_ener}. La corrélation entre les deux critères semble très faible.Pour 1CKA malgré des énergies pour l'heuristique moins bonnes, la similarité est meilleur.Bien que les énergies obtenues avec le protocole mc2 soient meilleurs que celles avec le protocole mc3, il n'y a pas de différences significatives sur les scores de similarités obtenus.
+Pour faire le lien entre les comparaisons basées sur les meilleures énergies et les comparaisons basées sur les scores de similarités, nous représentons les énergies des dix mille meilleures séquences en fonction de leur similarité à l'alignement Pfam \og seed\fg. Une séquence peut apparaître plusieurs fois dans l'ensemble des séquences/conformations obtenues.Alors toutes les énergies trouvées de la séquence sont représentées voir les graphiques \ref{graph:simil_vs_ener}. La corrélation entre les deux critères semble très faible.Pour 1CKA malgré des énergies pour l'heuristique moins bonnes, la similarité est meilleure.Bien que les énergies obtenues avec le protocole mc2 soient meilleures que celles avec le protocole mc3, il n'y a pas de différence significative sur les scores de similarités obtenus.
 
    \begin{figure}[t]
      \centering
@@ -789,9 +789,9 @@ Pour faire le lien entre les comparaisons basées sur les meilleurs énergies et
 
          \subsubsection{Comparaisons des distributions selon l'énergie}
 
-Ici nous nous intéressons aux ensembles de cent mille séquences/conformations de meilleurs énergies.Nous calculons les centiles d'énergie pour chaque protéine et pour chacun des trois protocoles h , mc2, mc3.  
+Ici nous nous intéressons aux ensembles de cent mille séquences/conformations de meilleures énergies.Nous calculons les centiles d'énergie pour chaque protéine et pour chacun des trois protocoles h , mc2, mc3.  
 
-Les figures~\ref{graph:centiles} représentent la répartition des énergies selon les centiles, ceci pour les trois protocoles h, mc2, mc3. Pour le premier centile  ( c'est-à-dire l'énergie au dessus de la quelle il y a les milles meilleurs séquences/conformations) le protocole mc2 domine sauf pour la protéine 1R6J où h est meilleur jusqu'au vingtième centile .Pour 1ABO, alors que mc2 et mc3 font quasiment jeu égal pour la meilleur énergie, le premier centile de mc2 est nettement plus haut que celui de mc3.Mais en général, L'allure des courtes des deux protolcoles Monte-carlo est très proche et les écarts entre  les meilleurs énergies de mc2 et mc3 sont globalement conservés le long des centiles.Ce n'est pas le cas entre h et les protocoles Monte-Carlo, où l'on voit un déclin plus rapide le long des centiles.Ce qui montre une densité plus faible des séquences/conformations de bonne énergie pour l'heuristique. 
+Les figures~\ref{graph:centiles} représentent la répartition des énergies selon les centiles, ceci pour les trois protocoles h, mc2, mc3. Pour le premier centile  ( c'est-à-dire l'énergie au-dessus de laquelle il y a les mille meilleures séquences/conformations) le protocole mc2 domine sauf pour la protéine 1R6J où h est meilleur jusqu'au vingtième centile .Pour 1ABO, alors que mc2 et mc3 font quasiment jeu égal pour la meilleure énergie, le premier centile de mc2 est nettement plus haut que celui de mc3.Mais en général, l'allure des courbes des deux protocoles Monte-Carlo est très proche.Et les écarts entre  les meilleures énergies de mc2 et mc3 sont globalement conservés le long des centiles.Ce n'est pas le cas entre h et les protocoles Monte-Carlo, où l'on voit un déclin plus rapide le long des centiles.Ce qui montre une densité plus faible des séquences/conformations de bonne énergie pour l'heuristique. 
 
 
 
@@ -811,7 +811,7 @@ Les figures~\ref{graph:centiles} représentent la répartition des énergies sel
        \includegraphics[width=8cm]{centiles_1R6J.png} \\
      \end{tabular}
      
-     \caption{Distribution des 100000 meilleurs séquences selon l'énergie.}
+     \caption{Distribution des 100000 meilleures séquences selon l'énergie.}
 \label{grah:centiles}
    \end{figure}
  
@@ -819,9 +819,9 @@ Les figures~\ref{graph:centiles} représentent la répartition des énergies sel
 
         \subsection{Comparaison avec toutes les positions actives}
 
-Passons maintenant, aux résultats obtenus avec la seconde version de proteus~\ref{qqchose}.Cette version intègre notamment l'algorithme \og Replica Exchange\fg. Nous pouvons donc faire des comparaisons entre les trois algorithmes du programme.Tous les protocoles utilisés sont décrits dans les tableaux~\ref{tab:protoMC} ou \ref{tab:protoRE}.Commençons par la recherche de la séquence/conformation de meilleur énergie pour toutes les positions actives. Les tests sont décrits au paragraphe~\ref{methode_TTactif}. Les résultats sont présentés sous forme de tableau en~\ref{tab:best_ener_all_all} qui contient la meilleur énergie arrondie à la kcal/mol inférieure et aussi sous forme de graphique en~\ref{graph:best_ener_all_all} où sont représenter les différences par rapport à la meilleur énergie pour tous les cas. 
+Passons maintenant, aux résultats obtenus avec la seconde version de proteus~\ref{qqchose}.Cette version intègre notamment l'algorithme \og Replica Exchange\fg. Nous pouvons donc faire des comparaisons entre les trois algorithmes du programme.Tous les protocoles utilisés sont décrits dans les tableaux~\ref{tab:protoMC} ou \ref{tab:protoRE}.Commençons par la recherche de la séquence/conformation de meilleure énergie pour toutes les positions actives. Les tests sont décrits au paragraphe~\ref{methode_TTactif}. Les résultats sont présentés sous forme de tableau en~\ref{tab:best_ener_all_all} qui contient la meilleure énergie arrondie à la kcal/mol inférieure et aussi sous forme de graphique en~\ref{graph:best_ener_all_all} où sont représenter les différences par rapport à la meilleure énergie pour tous les cas. 
 \subparagraph
-Il n'y pas de protocoles qui domine les autres sur toutes les protéines. Le meilleur résultat est obtenu avec le protocole huit marcheurs RE8b2 pour 2BYG , 1BM2, 1O4C et 1A81, le protocole RE8b1 pour 1CKA et 1ABO, le protocole quatre marcheurs RE4b pour 1G9O , les protocoles mono-marcheur MCb pour 1M61 et H pour 1R6J.  Ces résultats sont également représentent sous forme de trois graphiques qui regroupent les protocoles utilisant les protocoles non parallèles, les protocoles quatre marcheurs et les protocoles huit marcheurs. Un quatrième graphique regroupe le meilleur protocoles de chaque algorithme. Là encore seul les différences par rapport au meilleur protocole sont représentées. Le protocole H fait jeu égale avec le meilleur protocole Monte-Carlo. Le second Monte-Carlo , qui utilise en mode de mutation moins agressif~\ref{sec:MC}, est nettement plus mauvais avec presque toujours des écarts de plus de cinq Kcal/mol avec les deux autres protocoles non parallèle.Pour le groupe de protocoles avec quatre marcheurs le RE4b ,qui se différencie des deux autres par une plage de températures la plus resserrée ,est meilleur pour cinq des sept protéines mais pour les deux protéines restantes la différences se limite à deux Kcal/mol.RE4a, le protocole avec la plage de température la large est moins bon que les autres. En ce qui conserve les protocoles huit marcheurs , deux d'entre-eux se démarquent RE8b1 et RE8b2 (plage de température resserré,grande période de swap et mode de mutation agressif pour le premier , plus conservateur pour le second). RE8b1 obtient des résultats assez irrégulier selon les protéines du meilleur pour 1CKA et 1ABO jusqu'à s'écarter de près de huit Kcal/mol de la plus haute énergie.RE8b2, soit donne les meilleurs résultats (dans cinquante pourcent des cas), soit s'écarte d'au plus quatre Kcal/mol des meilleurs résultats.  
+Il n'y pas de protocole qui domine les autres sur toutes les protéines. Le meilleur résultat est obtenu avec le protocole huit marcheurs RE8b2 pour 2BYG , 1BM2, 1O4C et 1A81, le protocole RE8b1 pour 1CKA et 1ABO, le protocole quatre marcheurs RE4b pour 1G9O , les protocoles mono marcheurs MCb pour 1M61 et H pour 1R6J.  Ces résultats sont également représentés sous forme de trois graphiques qui regroupent les protocoles utilisant les protocoles non parallèles, les protocoles quatre marcheurs et les protocoles huit marcheurs. Un quatrième graphique regroupe le meilleur protocole de chaque algorithme. Là encore, seules les différences par rapport au meilleur protocole sont représentées. Le protocole H fait jeu égal avec le meilleur protocole Monte-Carlo. Le second Monte-Carlo , qui utilise en mode de mutation moins agressif~\ref{sec:MC}, est nettement plus mauvais avec presque toujours des écarts de plus de cinq Kcal/mol avec les deux autres protocoles non parallèles.Pour le groupe de protocoles avec quatre marcheurs, le RE4b qui se différencie des deux autres par une plage de températures la plus resserrée ,est meilleur pour cinq des sept protéines. Mais pour les deux protéines restantes la différence se limite à deux Kcal/mol.RE4a, le protocole avec la plage de température la large est moins bon que les autres. En ce qui conserve les protocoles huit marcheurs , deux d'entre eux se démarquent RE8b1 et RE8b2 (plage de température resserrée,grande période de swap et mode de modification agressif pour le premier , plus conservateur pour le second). RE8b1 obtient des résultats assez irréguliers selon les protéines du meilleur pour 1CKA et 1ABO jusqu'à s'écarter de près de huit Kcal/mol de la plus haute énergie.RE8b2, soit donne les meilleurs résultats (dans cinquante pour cent des cas), soit s'écarte d'au plus quatre Kcal/mol des meilleurs résultats.  
 
     \begin{table}[h]
       \centering
@@ -856,7 +856,7 @@ Il n'y pas de protocoles qui domine les autres sur toutes les protéines. Le mei
      \begin{tabular}{cc}
        \includegraphics[width=18cm]{best_all.png} \\
      \end{tabular}
-     \caption{Les différences entre les meilleurs énergie de chaque protocoles.}
+     \caption{Les différences entre les meilleures énergies de chaque protocole.}
 \label{graph:best_ener_all_all}
    \end{figure}
 
@@ -872,14 +872,14 @@ Il n'y pas de protocoles qui domine les autres sur toutes les protéines. Le mei
        \includegraphics[width=8cm]{best_RE4.png} &
        \includegraphics[width=8cm]{best_RE8.png} \\
      \end{tabular}
-     \caption{.Les différences entre les meilleurs énergie par groupe de protocoles}
+     \caption{.Les différences entre les meilleures énergies par groupe de protocoles}
 \label{graph:best_ener_by_algo}
    \end{figure}
 
 
 \paragraph{Distribution des énergies en fonction des températures}
 
-Regardons plus en détail le comportement du programme pour l'algorithme Replica Exchange. Notre implémentation de cette algorithme consiste à modifier la température de certains marcheurs à certains moments voir~\ref{???}.Pour examiner la trajectoire à une température donnée t ( c'est à dire le graphe dans l'espace les séquences/conformations selon les pas du marcheurs lorsqu'ils sont à la température t), nous découpons les trajectoires des marcheurs  selon la température. Puis nous collons les segments de trajectoires de même température en respectant l'ordre des pas.Comme les changements de températures se font de façon synchrone , id est c'est un échange ente deux marcheurs, nous obtenons autant de trajectoire selon la température qu'il y a de marcheurs et ces nouvelles trajectoires sont de même longueur que les trajectoires obtenues par proteus. La figure~\ref{graph:Distrib_E_T} représente la distribution en énergie des trajectoires selon la température sur le test utilisant le protocole RE8b1 sur la protéine 1A81. Nous observons une courbe en cloche pour chaque température, retrouvant ainsi l'allure d'une distribution de Boltzman.  L'espace de recouvrement entre deux courbes consécutives, représente la partie de la distribution dans laquelle les échanges de température vont être se concentrer, parce que cette zone recouvre les situations où la température peut augmente sans dégradation de l'énergie. En effet le critère de Metropolis-Hasting peut accepter un réchauffement de marcheur (respectivement un refroidissement) si son énergie diminue  (respectivement augmente) , mais uniquement avec une probabilité qui décroît exponentiellement en fonction de la différence d'énergie.Le graphique nous confirme que le choix  À l'inverse si les recouvrements des distributions consécutives est trop important le marcheur peut difficilement s'éloigner de la plage d'énergie d'une température.Le graphique nous confirme que le choix d'une plage de température entre 3.0 et 0.175 pour les protocoles huit marcheurs rend possible les échanges de températures et permet également l'exploration d'une vaste zone d'énergie.   
+Regardons plus en détail le comportement du programme pour l'algorithme "Replica Exchange". Notre implémentation de cet algorithme consiste à modifier la température de certains marcheurs à certains moments voir~\ref{???}.Pour examiner la trajectoire à une température donnée t ( c'est à dire le graphe dans l'espace les séquences/conformations selon les pas du marcheur lorsqu'ils sont à la température t), nous découpons les trajectoires des marcheurs  selon la température. Puis nous collons les segments de trajectoires de même température en respectant l'ordre des pas.Comme les changements de températures se font de façon synchrone , c’est-à-dire un échange entre deux marcheurs, nous obtenons autant de trajectoires selon la température qu'il y a de marcheurs et ces nouvelles trajectoires sont de mêmes longueurs que les trajectoires obtenues par proteus. La figure~\ref{graph:Distrib_E_T} représente la distribution en énergie des trajectoires selon la température sur le test utilisant le protocole RE8b1 sur la protéine 1A81. Nous observons une courbe en cloche pour chaque température, retrouvant ainsi l'allure d'une distribution de Boltzman.  L'espace de recouvrement entre deux courbes consécutives, représente la partie de la distribution dans laquelle les échanges de température vont être se concentrer, parce que cette zone recouvre les situations où la température peut augmente sans dégradation de l'énergie. En effet, le critère de Metropolis-Hasting peut accepter un réchauffement de marcheur (respectivement un refroidissement) si son énergie diminue  (respectivement, augmente) , mais uniquement avec une probabilité qui décroît exponentiellement en fonction de la différence d'énergie.À l'inverse si les recouvrements des distributions consécutives sont trop importants le marcheur peut difficilement s'éloigner de la plage d'énergie d'une température.Le graphique nous confirme que le choix d'une plage de température entre 3.0 et 0.175 pour les protocoles huit marcheurs rend possibles les échanges de températures et permet également l'exploration d'une vaste zone d'énergie.   
 
 
 
@@ -896,7 +896,7 @@ Regardons plus en détail le comportement du programme pour l'algorithme Replica
 
 \subparagraph{Trajectoires dans l'ensemble des températures}
 
-Un critère de performance souvent utilisé est la proportion de changements de températures effectivement acceptés. Pour examiner ces changements nous représentons la trajectoire dans l'espace des températures pour quatre tests sur la protéine 1A81. Il s'agit des tests effectués avec deux protocoles quatre marcheurs RE4a et RE4b et deux protocoles huit marcheurs RE8a2 et REb1, voir figure~\ref{graph:TRAJ_T}.Les deux graphiques quatre marcheurs représentent seulement la moitié des trajectoires de 1,5 millions de pas , tandis que les graphiques huit marcheurs représentent la totalité de trajectoires de 750 millions de pas.Comme prévu le protocole RE4a , qui possède des températures plus écartés , brasse assez mal les températures. En particulier, le marcheur w4 ne quitte presque pas la température la plus froide, et ce malgré une période de swap assez faible et un nombre d'échange assez important. On voit que pour RE4b, protocole avec les températures plus proches , la répartition des échanges est nettement plus uniforme. Le fait de double le nombre de température pour le même intervalle que RE4a ne suffit pas à résoudre le problème et les trois marcheurs les plus froids en début de trajectoire pour le RE8a2 restent froids. Les bons résultats obtenus pour RE4b sont confirmés pour RE8b1 qui utilise également des températures proches.     
+Un critère de performance souvent utilisé est la proportion de changements de températures effectivement acceptés. Pour examiner ces changements nous représentons la trajectoire dans l'espace des températures pour quatre tests sur la protéine 1A81. Il s'agit des tests effectués avec deux protocoles à quatre marcheurs, le RE4a et le RE4b et deux protocoles à huit marcheurs, le RE8a2 et le REb1, voir figure~\ref{graph:TRAJ_T}.Les deux graphiques quatre marcheurs représentent seulement la moitié des trajectoires de 1,5 million de pas , tandis que les graphiques huit marcheurs représentent la totalité de trajectoires de 750 millions de pas.Comme prévu, le protocole RE4a , qui possède des températures plus écartées , brasse assez mal les températures. En particulier, le marcheur w4 ne quitte presque pas la température la plus froide, et ce malgré une période de swap assez faible et un nombre d'échanges effectifs assez important. On voit que pour RE4b, protocole avec les températures plus proches , la répartition des échanges est nettement plus uniforme. Le fait de double le nombre de températures pour le même intervalle que RE4a ne suffit pas à résoudre le problème et les trois marcheurs les plus froids en début de trajectoire pour le RE8a2 restent froids. Les bons résultats obtenus pour RE4b sont confirmés pour RE8b1 qui utilise également des températures proches.     
 
 
    \begin{figure}[t]
@@ -916,11 +916,11 @@ Un critère de performance souvent utilisé est la proportion de changements de 
 
    \subsection{comparaison sur un espace réduit}
  
-Le programme proteus permet de recherche des séquences/conformations avec des contraintes. En particulier, il est possible de fixer le type de résidu à une position dans la chaîne, en laissant alors comme degré de liberté le choix du rotamère. Nous utilisons cette fonctionnalité pour réduite l'espace d'exploration et ainsi nous permettre des comparaisons avec les résultats de Toulbar2, un programme de recherche exacte, voir ~\ref{sec:methodes_pratiques}. Les tests sont fait sur nos neuf protéines,voir~\ref{sec:description_tests}
+Le programme proteus permet de recherche des séquences/conformations avec des contraintes. En particulier, il est possible de fixer le type de résidu à une position dans la chaîne, en laissant alors comme degré de liberté le choix du rotamère. Nous utilisons cette fonctionnalité afin de réduite l'espace d'exploration et ainsi nous permettre des comparaisons avec les résultats de Toulbar2, un programme de recherche exacte, voir ~\ref{sec:methodes_pratiques}. Les tests sont faits sur nos neuf protéines,voir~\ref{sec:description_tests}
 
    \subsubsection{Séquence native}
-Les tests les plus simples consistent à fixer toutes les positions de la chaîne polypeptidique avec le résidu de la séquence native.C'est ramener la recherche  CPD à une recherche de conformation pour la séquence native.Comme l'espace de recherche est particulièrement petit, il apparaît rapidement que les protocoles comparables sur vingt-quatre heures de calculs sont disproportionnés. Nous utilisons alors des versions plus courtes des protocoles, c'est-à-dire H- pour l'heuristique,MCb- et MC0 pour le Monte-Carlo. De la même façon les protocoles parallèles ne sont pas utilisés. Les résultats sont présentés dans le tableau~\ref{tab:result_no_active}. La colonne \og GMEC\fg indique si toulbar2 est parvenu à trouver le minimum global. Les autres colonnes contiennent l'énergie obtenue si c'est la meilleure des quatres protocoles utilisés, ou la différence entre énergie obtenue et la meilleure, de façon à ce que la meilleur énergie n'apparaisse qu'une seule fois par ligne.Ce type de tableau est conservé dans toute la suite.  
-Toulbar2  trouve rapidement le GMEC dans tous les cas (les temps de calculs seront examinés plus loin~\ref{??}), tout comme H-. Le protocole très froid MC0 donne également de bon résultats sans toutefois atteindre le GMEC pour trois des protéines (1A81,1BM2 et 1G9O), les écarts étant très faibles. Lorsque la capacité du Monte-carlo à baisser en énergie est rétablie avec le protocole MCb-, les résultats sont globalement légèrement améliorés. Mais les écarts ne se situent pas forcement sur les mêmes protéines.
+Les tests les plus simples consistent à fixer toutes les positions de la chaîne polypeptidique avec le résidu de la séquence native.C'est réduire la recherche  CPD à une recherche de conformation pour la séquence native.Comme l'espace de recherche est particulièrement petit, il apparaît rapidement que les protocoles comparables sur vingt-quatre heures de calculs sont disproportionnés. Nous utilisons alors des versions plus courtes des protocoles, c'est-à-dire H- pour l'heuristique,MCb- et MC0 pour le Monte-Carlo. De la même façon, les protocoles parallèles ne sont pas utilisés. Les résultats sont présentés dans le tableau~\ref{tab:result_no_active}. La colonne \og GMEC\fg indique si toulbar2 est parvenu à trouver le minimum global. Les autres colonnes contiennent l'énergie obtenue si c'est la meilleure des quatre protocoles utilisés, ou la différence entre énergies obtenues et la meilleure, de façon à ce que la meilleure énergie apparaisse une seule fois par ligne.Ce type de tableau est conservé dans toute la suite.  
+Toulbar2  trouve rapidement le GMEC dans tous les cas (les temps de calcul seront examinés plus loin~\ref{??}), tout comme H-. Le protocole très froid MC0 donne également de bons résultats sans toutefois atteindre le GMEC pour trois des protéines (1A81,1BM2 et 1G9O), les écarts étant très faibles. Lorsque la capacité du Monte-Carlo à baisser l'énergie du marcheur est rétablie avec le protocole MCb-, les résultats sont globalement légèrement améliorés. Mais les écarts ne se situent pas forcément sur les mêmes protéines.
     \begin{table}[h]
       \centering
 
@@ -942,22 +942,22 @@ Toulbar2  trouve rapidement le GMEC dans tous les cas (les temps de calculs sero
 
 
       \end{tabular}      
-      \caption{La meilleur énergie et la différence avec les autres protocoles lorsque la séquence des protéine est fixée}
+      \caption{La meilleure énergie et la différence avec les autres protocoles lorsque la séquence des protéines est fixée}
 \label{tab:result_no_active}      
     \end{table}
 
    \subsubsection{Une position active}
 
-Maintenant,nous augmentons légèrement la taille de l'espace des séquences/conformations en autorisant une seule position à changer de type de résidu.Nous faisons ce type de test pour toutes les positions cela représente un ensemble de huit cents quatre cas à tester. Les protocoles utilisés sont toulbar2, H- et MCb-. Les résultats sont largement satisfaisant pour tous les protocoles. Toulbar2 trouve le GMEC dans tous les cas et H- aussi sauf dans un seul cas où l'écart est de moins d'un centième de Kcal/mol. Le protocole MCb- touche le GMEC dans environ 80 pourcents des cas. Sinon, il s'approche toujours de très près de lui, à moins de quatre dixième de Kcal/mol.Cela dépend beaucoup de la protéine. Les cas sont réparti de la façon suivante:  
+Maintenant,nous augmentons légèrement la taille de l'espace des séquences/conformations en autorisant une seule position à changer de type de résidu.Nous faisons ce type de test pour toutes les positions cela représente un ensemble de huit cent quatre cas à tester. Les protocoles utilisés sont toulbar2, H- et MCb-. Les résultats sont largement satisfaisants pour tous les protocoles. Toulbar2 trouve le GMEC dans tous les cas et H- aussi sauf dans un seul cas où l'écart est de moins d'un centième de kcal/mol. Le protocole MCb- touche le GMEC dans environ quatre-vingts pour cent des cas. Sinon, il s'approche toujours de très près de lui.Cela dépend beaucoup de la protéine. Les cas sont répartis de la façon suivante:  
 
 \begin{itemize}
 \item Pour 1ABO, 1G9O et 2BYG le GMEC est trouvé dans tous les cas.
-\item Pour 1A81, dans treize cas sur cent neuf le GMEC est seulement frollé à moins de cinq centièmes de Kcal/mol,voir~\ref{tab:result_1_active_1A81}.
-\item Pour 1BM2,  c'est cinquante deux sur quatre-vingt dix huit, avec des écarts du même ordre,voir~\ref{tab:result_1_active_1BM2}.
+\item Pour 1A81, dans treize cas sur cent neuf le GMEC est seulement frôlé à moins de cinq centièmes de kcal/mol,voir~\ref{tab:result_1_active_1A81}.
+\item Pour 1BM2,  c'est cinquante-deux sur quatre-vingt-dix-huit, avec des écarts du même ordre,voir~\ref{tab:result_1_active_1BM2}.
 \item Pour 1CKA, un seul cas sur cinquante-sept est éloigné du GMEC, d'à peu près un centième,voir~\ref{tab:result_1_active_1CKA}.
-\item Pour 1R6J, c'est sept cas sur quatre-vingt deux.Les écarts sont inférieur à deux centièmes.
+\item Pour 1R6J, c'est sept cas sur quatre-vingt-deux.Les écarts sont inférieurs à deux centièmes.
 \item De même pour 1M61, un cas sur cent neuf,voir~\ref{tab:result_1_active_1M61}.
-\item Pour 1O4C, seulement quatre tests sur cent cinq atteignent le GMEC.Ici, les écarts sont légèrement plus grands que pour les autres protéines, avec des valeurs le plus souvent entre un dixième et trois dixièmes,voir~\ref{tab:result_1_active_1O4C}. 
+\item Pour 1O4C, seulement quatre tests sur cent cinq atteignent le GMEC.Ici, les écarts sont légèrement plus grands que pour les autres protéines, avec des valeurs le plus souvent entre un et trois dixièmes,voir~\ref{tab:result_1_active_1O4C}. 
 \end{itemize}
 
 Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des familles PDZ et SH3 que pour celles de la famille SH2 (1BM2,1O4C, 1M61 et 1A81).
@@ -1319,7 +1319,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
         2BYG 5 & -506.0052 & 0 & 0 &  \\
         \bottomrule
       \end{tabular}      
- \caption{Résultats 5 position actives}
+ \caption{Résultats pour cinq positions actives}
 \label{tab:result_5_actives}
 \end{table}
 
@@ -1385,7 +1385,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
 
 
  \end{tabular}      
- \caption{Résultats 10 positions actives }
+ \caption{Résultats avec dix positions actives }
 \label{tab:result_10_actives}
 \end{table}
 
@@ -1513,7 +1513,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
 
 
  \end{tabular}   
- \caption{Résultats 20 positions actives }
+ \caption{Résultats  avec vingt positions actives }
 \label{tab:result_20_actives}   
 \end{table}
 
@@ -1605,7 +1605,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
     \end{figure}
 
 
-   \subsection{Etude au voisinnage de GMECs}
+   \subsection{Etude au voisinage de GMECs}
 
 
     \begin{table}[h]
@@ -1730,7 +1730,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
         \includegraphics[width=14cm]{align_1CKA.png} 
       \end{tabular}
       
-      \caption{Aligmenent du voisinnage: 1CKA 5}
+      \caption{Aligmenent du voisinage: 1CKA 5}
 \label{image:Align_Suboptimal}
     \end{figure}
 
