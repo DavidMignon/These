@@ -1266,7 +1266,7 @@ Passons maintenant aux tests où cinq positions sont actives. La taille de d'esp
 
     \begin{table}[h]
       \centering
-
+\scalebox{0.85}{
       \begin{tabular}{cccccc}
 
         
@@ -1320,15 +1320,18 @@ Passons maintenant aux tests où cinq positions sont actives. La taille de d'esp
         2BYG 5 & yes &  -506.0052 & 0. & 0. &  \\
         \bottomrule
       \end{tabular}      
+}
  \caption{Résultats pour cinq positions actives}
 \label{tab:result_5_actives}
 \end{table}
 
    \subsubsection{Dix positions actives}
-Il n'y a également quarante-cinq tests de recherche avec dix positions actives.Ici, le choix des positions comme dans toute la suite se fait comme décrit en~\ref{para:choix_posi}. Le détail des tests est en~\ref{tab:test10}.Les mêmes protocoles que précédemment sont utilisés (toulbar2, H, MCb et éventuellement RE8b2). Toulbar2 aboutit au GMEC pour quarante-quatre tests. Sur ce sous-ensemble, H trouve le GMEC pour quarante tests et MCb dans vingt cas. Les écarts pour l'heuristique sont très faible sauf pour un cas, le «1M61 2» que nous étudions plus en détail dans la suite.MCb trouve le GMEC dans vingt-sept cas sur quarante-quatre. Six écarts sont autour de 1 ou plus. Pour ces tests, Le RE8b2 fait mieux. Il trouve le  GMEC dans deux pas , mais n'améliore la performance du Monte-carlo que légèrement pour «1ABO 1». Pour le test où toulbar2 échoue , le «2BYG 2» , H donne la meilleure énergie et MCb en est proche. La dernière solution proposée par toulbar2 en est loin, voir~\ref{tab:result_10_actives}. 
+Il n'y a également quarante-cinq tests de recherche avec dix positions actives.Ici, le choix des positions comme dans toute la suite se fait comme décrit en~\ref{para:choix_posi}. Le détail des tests est en~\ref{tab:test10}.Les mêmes protocoles que précédemment sont utilisés (toulbar2, H, MCb et éventuellement RE8b2). Toulbar2 aboutit au GMEC pour quarante-quatre tests. Sur ce sous-ensemble, H trouve le GMEC pour quarante tests et MCb dans vingt cas. Les écarts pour l'heuristique sont très faible sauf pour un cas, le «1M61 2» que nous étudions plus en détail dans la suite.MCb trouve le GMEC dans vingt-sept cas sur quarante-quatre. Six écarts sont autour de 1 ou plus. Pour ces tests, Le RE8b2 fait mieux. Il trouve le  GMEC dans deux pas , mais n'améliore la performance du Monte-carlo que légèrement pour «1ABO 1». Pour le test où toulbar2 échoue , le «2BYG 2» , H donne la meilleure énergie et MCb en est proche. La dernière solution proposée par toulbar2 en est loin, voir~\ref{tab:result_10_actives}.  
 
     \begin{table}[h]
       \centering
+
+\scalebox{0.85}{
 
       \begin{tabular}{cccccc}
 
@@ -1385,18 +1388,20 @@ Il n'y a également quarante-cinq tests de recherche avec dix positions actives.
         \bottomrule
 
 
- \end{tabular}      
+ \end{tabular}  
+}    
  \caption{Résultats avec dix positions actives }
 \label{tab:result_10_actives}
 \end{table}
 
    \subsubsection{Dix positions actives, mutations}
 
-Regardons ces tests avec dix positions actives sous l'angle des séquences d'acides aminés. Nous comparons la séquence de meilleure énergie de chaque protocole. Le tableau~\ref{tab:mutations_10_actives} présente le nombre de positions où l'acide aminé de la séquence du GMEC est différent de la séquence de H, respectivement de MCb.
+Regardons les tests avec dix positions actives sous l'angle des séquences d'acides aminés. Nous comparons la séquence de meilleure énergie de chaque protocole. Le tableau~\ref{tab:mutations_10_actives} présente le nombre de positions où l'acide aminé de la séquence du GMEC est différent de la séquence de H, respectivement de MCb.Il n'y a qu'un seul cas où  la séquence de H est différente de cette du GMEC.
+Il y en a quatorze pour le Monte-Carlo avec un nombre de positions différente allant jusqu'à sept.
 
     \begin{table}[h]
       \centering
-
+\scalebox{0.85}{
       \begin{tabular}{ccc}
 
         \toprule
@@ -1450,111 +1455,120 @@ Regardons ces tests avec dix positions actives sous l'angle des séquences d'aci
         \bottomrule
 
  \end{tabular}      
+}
  \caption{Mutations dix positions actives }
 \label{tab:mutations_10_actives}
 \end{table}
 
-   \subsubsection{Vingt et trente positions actives}
+   \subsubsection{Vingt positions actives }
 
+Pour les  tests avec vingt positions actives,Les mêmes quatre protocoles dans utilisés, mais le vérifier qu'il n'y a pas de perte entre le protocole mono-marcheur et le multi-marcheurs, nous utilisons cette fois systématiquement le RE8b2, voir~\ref{tab:result_20_actives}.Toulbar2 aboutit dans vingt-huit cas.Sur ces vingt-huit cas, L'heuristique trouve le GMEC dans vingt-trois cas, sinon l'écart est toujours très faible puisqu'il ne dépasse pas quatre dixièmes de kcal/mol. Les protocoles MCb et RE8b2 trouvent également le GMEC dans huit cas. Dans les situations où nous n'avons pas le GMEC, H est le meilleur sauf dans un cas,«1O4C 1», où la dernière solution proposé par toulbar2 domine.Dans l'ensemble, les écarts du RE8b2 sont presque toujours meilleurs que ceux de MCb et ne dépasse légèrement un que dans deux cas.Dans trois cas où toulbar2 est moins bon,l'heuristique et le «Replica Exchange» donne le même résultats au dix millième près, et dans deux de ces cas le Monte-Carlo donne aussi le résultat.  
 
     \begin{table}[h]
       \centering
 
+\scalebox{0.85}{
       \begin{tabular}{cccccc}
 
 
         \toprule
-        Test & GMEC & toulbar2 & H & MC & RE \\
+        Test & GMEC & toulbar2 & H & MCb & RE8b2 \\
         \cmidrule{1-6}
-        1A81 1 & yes  &  -566.9106 & 0. & -0.3275 & -0.3851 \\         
-        1A81 2 & yes  &  -564.6618 & -0.1705 & -2.4355 & -1.0069 \\   
-        1A81 3 & yes  &  -572.7774 & 0. & -0.4640 & -0.6186 \\         
-        1A81 4 & yes  &  -572.9780 & -0.3878 & -0.5748 & -0.6991 \\    
-        1A81 5 & yes  &  -572.7410 & -0.0068 & -0.5088 & -0.1541 \\    
-        1ABO 1 & yes  &  -299.6592 & -0.1205 & -1.1159 & -0.2153 \\   
-        1ABO 2 & no   &  -13.8563  & -298.3854 & 0. & 0. \\               
-        1ABO 3 & no   &  -1.2190   & -298.3854 & 0. & 0. \\                 
-        1ABO 4 & no   &  -1.9940   & -297.8545 & -0.0076 & 0. \\            
-        1ABO 5 & no   &  -3.5418   & -297.8009 & -0.9483 & -0.9483 \\       
-        1BM2 1 & yes  &  -526.0936 & 0. & -0.0619 & -0.1584 \\         
-        1BM2 2 & no   &  -7.5304   & -525.3588 & -0.0725 & -0.0143 \\     
-        1BM2 3 & yes  &  -534.3861 & -0.0229 & -0.4762 & -0.2897 \\    
-        1BM2 4 & no   &  -0.1186   & -526.8307 & -2.5883 & -0.0789 \\     
-        1BM2 5 & yes  &  -535.3334 & -0.2396 & -0.3746 & -0.3746 \\    
-        1CKA 1 & yes  & -295.8571  & 0.& 0. & 0. \\                   
-        1CKA 2 & yes  & -295.3571  & 0. & 0. & 0. \\                   
-        1CKA 3 & yes  & -293.8687  & 0. & 0. & 0.\\                   
-        1CKA 4 & no   &  -4.3122   & -293.8687 & 0. & 0. \\               
-        1CKA 5 & no   &  -4.2849   & -293.4203 & 0. & 0. \\           
-        1G9O 1 & no   &  -2.0574   & -451.4604 & -1.2525 & -1.2525 \\ 
-        1G9O 2 & no   &  -3.2106   & -453.2474 & -0.2177 & -0.1915 \\ 
-        1G9O 3 & no   &  -1.9008   & -453.7856 & -0.4417 & -0.1019 \\ 
-        1G9O 4 & no   &  -0.5030   & -456.7331 & -0.3855 & -0.1455 \\ 
-        1G9O 5 & no   &  -0.4298   & -456.9981 & -0.1495 & -0.5114 \\ 
-        1M61 1 & yes  & -528.0700 & 0. & 0. & 0. \\               
-        1M61 2 & yes  & -528.7653 & 0. & 0. & 0. \\               
-        1M61 3 & yes  & -530.0684 & 0. & 0. & 0. \\               
-        1M61 4 & yes  & -534.5248 & 0. & 0. & 0.\\               
-        1M61 5 & yes  & -548.0096 & 0. & -0.2521 & -0.1345 \\     
-        1O4C 1 & no   &  -574.0047 & -0.3465 & -0.0690 & -0.0587 \\    
-        1O4C 2 & no   &  -6.4214   & -574.8584 & -0.1963 & -0.3175 \\         
-        1O4C 3 & yes  & -573.6314 &  0. & -0.3461 & -0.0997 \\             
-        1O4C 4 & yes  & -575.8667 &  0. & -0.3640 & -0.1382 \\             
-        1O4C 5 & no   & -573.3479 &  0. & -0.1131 & -0.2206 \\      
-        1R6J 1 & yes  & -440.7417 &  0. & -0.2604 & -0.2002 \\        
-        1R6J 2 & yes  & -437.2537 &  0. & -0.0071 & -0.0183 \\        
-        1R6J 3 & yes  & -439.4335 &  0. & -0.0537 & -0.0732 \\       
-        1R6J 4 & yes  & -439.5988 &  0. & -0.0639 & -0.0601 \\        
-        1R6J 5 & yes  & -438.0222 &  0. & -0.0735 & -0.0244 \\        
-        2BYG 1 & yes  & -496.2991 &  0. & -3.1878 & -0.0257 \\        
-        2BYG 2 & yes  & -494.8723 &  0. & -0.0524 & -0.0831 \\        
-        2BYG 3 & yes  & -494.4390 &  0. & -1.3564 & -0.0826 \\        
-        2BYG 4 & yes  & -495.9213 &  0. & -0.1968 & -0.6022 \\        
-        2BYG 5 & no   &  -1.8604   & -497.5123 & -0.0933 & -0.0386 \\   
+        1A81 1 & yes  &  -566.9106 & 0.         & -0.3275 & -0.3851 \\         
+        1A81 2 & yes  &  -564.6618 & -0.1705    & -2.4355 & -1.0069 \\   
+        1A81 3 & yes  &  -572.7774 & 0.         & -0.4640 & -0.6186 \\         
+        1A81 4 & yes  &  -572.9780 & -0.3878    & -0.5748 & -0.6991 \\    
+        1A81 5 & yes  &  -572.7410 & -0.0068    & -0.5088 & -0.1541 \\    
+        1ABO 1 & yes  &  -299.6592 & -0.1205    & -1.1159 & -0.2153 \\   
+        1ABO 2 & no   &  -13.8563  & -298.3854  & 0.      & 0. \\               
+        1ABO 3 & no   &  -1.2190   & -298.9674  & 0.      & 0. \\                 
+        1ABO 4 & no   &  -1.9940   & -297.8545  & -0.0076 & 0. \\            
+        1ABO 5 & no   &  -3.5418   & -297.8009  & -0.9483 & -0.9483 \\       
+        1BM2 1 & yes  &  -526.0936 & 0.         & -0.0619 & -0.1584 \\         
+        1BM2 2 & no   &  -7.5304   & -525.3588  & -0.0725 & -0.0143 \\     
+        1BM2 3 & yes  &  -534.3861 & -0.0229    & -0.4762 & -0.2897 \\    
+        1BM2 4 & no   &  -0.1186   & -526.8307  & -2.5883 & -0.0789 \\     
+        1BM2 5 & yes  &  -535.3334 & -0.2396    & -0.3746 & -0.3746 \\    
+        1CKA 1 & yes  & -295.8571  & 0.         & 0.      & 0. \\                   
+        1CKA 2 & yes  & -295.3571  & 0.         & 0.      & 0. \\                   
+        1CKA 3 & yes  & -293.8687  & 0.         & 0.      & 0.\\                   
+        1CKA 4 & no   &  -4.3122   & -293.8687  & 0.      & 0. \\               
+        1CKA 5 & no   &  -4.2849   & -293.4203  & 0.      & 0. \\           
+        1G9O 1 & no   &  -2.0574   & -451.4604  & -1.2525 & -1.2525 \\ 
+        1G9O 2 & no   &  -3.2106   & -453.2474  & -0.2177 & -0.1915 \\ 
+        1G9O 3 & no   &  -1.9008   & -453.7856  & -0.4417 & -0.1019 \\ 
+        1G9O 4 & no   &  -0.5030   & -456.7331  & -0.3855 & -0.1455 \\ 
+        1G9O 5 & no   &  -0.4298   & -456.9981  & -0.1495 & -0.5114 \\ 
+        1M61 1 & yes  & -528.0700 & 0.          & 0.      & 0. \\               
+        1M61 2 & yes  & -528.7653 & 0.          & 0.      & 0. \\               
+        1M61 3 & yes  & -530.0684 & 0.           & 0.      & 0. \\               
+        1M61 4 & yes  & -534.5248 & 0.           & 0.     & 0.\\               
+        1M61 5 & yes  & -548.0096 & 0.           & -0.2521 & -0.1345 \\     
+        1O4C 1 & no   &  -574.0047 & -0.3465     & -0.0690 & -0.0587 \\    
+        1O4C 2 & no   &  -6.4214   & -574.8584   & -0.1963 & -0.3175 \\         
+        1O4C 3 & yes  & -573.6314 &  0.          & -0.3461 & -0.0997 \\             
+        1O4C 4 & yes  & -575.8667 &  0.          & -0.3640 & -0.1382 \\             
+        1O4C 5 & no   & -573.3479 &  0.          & -0.1131 & -0.2206 \\      
+        1R6J 1 & yes  & -440.7417 &  0.          & -0.2604 & -0.2002 \\        
+        1R6J 2 & yes  & -437.2537 &  0.          & -0.0071 & -0.0183 \\        
+        1R6J 3 & yes  & -439.4335 &  0.          & -0.0537 & -0.0732 \\       
+        1R6J 4 & yes  & -439.5988 &  0.          & -0.0639 & -0.0601 \\        
+        1R6J 5 & yes  & -438.0222 &  0.          & -0.0735 & -0.0244 \\        
+        2BYG 1 & yes  & -496.2991 &  0.          & -3.1878 & -0.0257 \\        
+        2BYG 2 & yes  & -494.8723 &  0.          & -0.0524 & -0.0831 \\        
+        2BYG 3 & yes  & -494.4390 &  0.          & -1.3564 & -0.0826 \\        
+        2BYG 4 & yes  & -495.9213 &  0.          & -0.1968 & -0.6022 \\        
+        2BYG 5 & no   &  -1.8604   & -497.5123   & -0.0933 & -0.0386 \\   
        \bottomrule
 
 
- \end{tabular}   
+ \end{tabular}
+}   
  \caption{Résultats  avec vingt positions actives }
 \label{tab:result_20_actives}   
 \end{table}
 
 
+   \subsubsection{Trente positions actives}
+Ici, toulbar2 ne parvient au GMEC que dans un seul cas, qui d'ailleurs est également obtenu par l'heuristique et le Monte-Carlo à moins de trois centièmes, voir~\ref{tab:result_30_actives}.Par ailleurs, dans treize cas, deux protocoles parmis H,MCb et RE8b2 obtiennent exactement le même résultat.Dans presque tous les cas, l'heuristique domine. Les écarts avec le multi-marcheur se dégradent légèrement, mais restent bons, ne dépassant que de peu les deux kcal/mol. Lorsque le toulbar2 ne termine pas, les  dernières solutions obtenues sont les meilleurs dans deux cas, mais sont généralement assez fortement écartées de l'heuristique.     
+
+
 \begin{table}[h]
       \centering
 
+\scalebox{0.85}{
       \begin{tabular}{cccccc}
 
 
         \toprule
-        Protéine & GMEC & toulbar2 & H & MC & RE \\
+        Protéine & GMEC & toulbar2 & H & MCb & RE8b2 \\
         \cmidrule{1-6}
         1A81 1 & no & -1.2074    &    -562.9572 & -0.6353 &  \\          
         1A81 2 & no & -2.5520    &    -570.2620 & -0.0578 & \\          
         1A81 3 & no & -43.5263   &    -562.9572 & -2.4996 & -1.2025 \\         
         1A81 4 & no & -5.1300    &    -559.6145 & -0.0305 & \\          
         1A81 5 & no & -3.2417    &    -553.1077 & -1.9586 & -0.5791\\         
-        1ABO 1 & no & -44.5504   &    -296.5680 & 0. & \\                   
-        1ABO 2 & no & -12.7303   &    -294.8500 & 0. & \\                   
+        1ABO 1 & no & -44.5504   &    -296.5680 & 0.      & \\                   
+        1ABO 2 & no & -12.7303   &    -294.8500 & 0.      & \\                   
         1ABO 3 & no & -9.3870    &    -295.2689 & -0.2630 & \\          
-        1ABO 4 & no & -10.7691   &    -296.5680 & 0. & \\                   
-        1ABO 5 & no & -4.3907    &    -296.5680 & 0. & \\                    
+        1ABO 4 & no & -10.7691   &    -296.5680 & 0.      & \\                   
+        1ABO 5 & no & -4.3907    &    -296.5680 & 0.      & \\                    
         1BM2 1 & no & -22.5876   &    -556.1168 & -1.7290 & -1.6013 \\         
         1BM2 2 & no & -22.1386   &    -556.7539 & -1.9856 & -1.5876 \\     
         1BM2 3 & no & -22.5410   &    -556.1168 & -1.9990 & -1.1541 \\
         1BM2 4 & no & -15.2639   &    -556.8507 & -2.2127 & -2.3854 \\         
-        1BM2 5 & no & -15.9890   &    -556.3240 & -2.83542 & -1.1937 \\        
-        1CKA 1 & no & -6.2700    &    -293.4203 & 0. & \\                    
-        1CKA 2 & no & -2.0995    &    -293.4203 & 0. & \\                    
-        1CKA 3 & no & -47.0217   &    -291.9243 & 0. & \\                   
-        1CKA 4 & no & -44.0830   &    -293.4203 & 0. & \\                   
-        1CKA 5 & no & -8.8608    &    -293.2709 & 0. & \\                    
+        1BM2 5 & no & -15.9890   &    -556.3240 & -2.8354 & -1.1937 \\        
+        1CKA 1 & no & -6.2700    &    -293.4203 & 0.      & \\                    
+        1CKA 2 & no & -2.0995    &    -293.4203 & 0.      & \\                    
+        1CKA 3 & no & -47.0217   &    -291.9243 & 0.      & \\                   
+        1CKA 4 & no & -44.0830   &    -293.4203 & 0.      & \\                   
+        1CKA 5 & no & -8.8608    &    -293.2709 & 0.      & \\                    
         1G9O 1 & no & -2.0816    &    -449.0890 & -1.5942 & 0. \\               
         1G9O 2 & no & -0.3270    &    -452.6676 & -0.3126 & \\          
         1G9O 3 & no & -17.7150   &    -450.0341 & -1.5667 & -1.5667 \\         
         1G9O 4 & no & -2.9758    &    -453.9682 & -1.4284 & -1.6202 \\          
-        1G9O 5 & no & -445.8910  &    -1.6890 & -7.6985 & -2.3857 \\          
-        1M61 1 & no & -14.4935   &    -0.0097 & -523.9321 & 0. \\            
+        1G9O 5 & no & -445.8910  &    -1.6890   & -7.6985   & -2.3857 \\          
+        1M61 1 & no & -14.4935   &    -0.0097   & -523.9321 & 0. \\            
         1M61 2 & no & -5.0899    &    -531.3717 & -1.8749 & -0.0083 \\         
         1M61 3 & no & -3.5795    &    -527.2659 & -0.0154 & \\           
         1M61 4 & no & -16.1511   &    -530.2666 & 0. & \\              
@@ -1564,30 +1578,36 @@ Regardons ces tests avec dix positions actives sous l'angle des séquences d'aci
         1O4C 3 & no & -9.9221    &    -569.9777 & -0.1789 & \\          
         1O4C 4 & no & -5.7790    &    -568.9839 & -0.0423 & \\          
         1O4C 5 & no & -9.9221    &    -569.9777 & -0.1789 & \\          
-        1R6J 1 & yes& -435.4258  &     0.0 & -0.0246 & \\               
+        1R6J 1 & yes& -435.4258  &     0.0      & -0.0246 & \\               
         1R6J 2 & no & -14.9800   &    -435.0087 & -0.0957 & \\         
         1R6J 3 & no & -439.8187  &    -439.8187 & -0.0440 & \\               
-        1R6J 4 & no &  -435.0087  &    -0.0 & -0.0957 & \\               
-        1R6J 5 & no & -435.0970  &    -0.7036 & -1.8823 & -0.0781 \\          
+        1R6J 4 & no &  -435.0087  &    -0.0     & -0.0957 & \\               
+        1R6J 5 & no & -435.0970  &    -0.7036   & -1.8823 & -0.0781 \\          
         2BYG 1 & no & -17.9752   &    -492.6879 & -0.1592 & \\         
         2BYG 2 & no & -0.3832    &    -492.3568 & -0.1502 & \\          
         2BYG 3 & no & -0.1442    &    -492.6879 & -0.1593 & \\          
-        2BYG 4 & no & -492.6821 &    -0.0958 & -0.0050 & \\          
-        2BYG 5 & no & -0.5003    &   -492.1595 & -0.6876 & \\           
+        2BYG 4 & no & -492.6821 &    -0.0958    & -0.0050 & \\          
+        2BYG 5 & no & -0.5003    &   -492.1595  & -0.6876 & \\           
        \bottomrule
 
 
- \end{tabular}      
-\label{tab:result_echec_30}      
+ \end{tabular}  
+}    
+\label{tab:result_30_actives}      
 \end{table}
  
+   \subsubsection{vue l'ensemble}
+
+Le graphique~\ref{graph:all_result} figure une vision d'ensemble des tests réalisés sur un espace d'états réduit pour les protocoles H ou H- , MCb ou MCb- et RE8b2.Les tests sont regroupés par leur nombre de positions actives.À chaque groupe correspond une bande grise dans le graphique.Comme dans les tableaux précédents, le résultat d'un protocole est présenté sous forme de différence avec le meilleur résultat obtenu sur tous les protocoles,toulbar2 compris.Cette différence est en ordonnée.La couleur d'un point représente et la forme représente le protocole qui donne le meilleur résultat.
+
+
     \begin{figure}[h]
       \centering
       \begin{tabular}{cc}
         \includegraphics[width=18cm]{all_result.png} 
       \end{tabular}
       
-      \caption{Tous les tests pour 0. 1 5 10 20 30 positions actives}
+      \caption{Tous les tests pour 0 1 5 10 20 et 30 positions actives}
 \label{graph:all_result}
     \end{figure}
 
