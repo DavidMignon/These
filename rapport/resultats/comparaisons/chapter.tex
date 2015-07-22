@@ -114,7 +114,7 @@ Nous obtenons quarante-cinq n-uplets pour le groupe à cinq (respectivement dix,
 
 
 \subsubsection{Définition de protocole comparable}
-
+\label{sec:proto_compa}
 Nous voulons comparer les algorithmes très différents. Un algorithme peut garantir l'obtention du minimum global en énergie (GMEC) s'il l'exécution se termine, mais ne garantit pas qu'elle se termine, un autre permet un contrôle très fin du temps d'exécution sans garantie du GMEC, et d'autres enfin ont des objectifs plus ambitieux  qu'uniquement l'obtention du GMEC.
 Mais le GMEC reste le meilleur point de commun. Nous allons donc y concentrer les comparaisons.
 
@@ -291,13 +291,13 @@ La table~\ref{tab:protoRE} donne les probabilités utilisées par les cinq balis
     \end{table}
 
    \subsection{Les protocoles Toulbar2} 
-
+\label{proto_toulbar2}
 
 Après avoir converti nos matrices au format "wcsp" grâce à un script dédié,nous pouvons utiliser toulbar2.
 Le protocole toulbar2 de recherche du GMEC est le suivant:
 L'exécutable toulbar2 de version 0.9.7.0 est lancé avec les options" -l=3 -m -d: -s", ce qui correspond au paramétrage conseillé dans la documentation CDP~\citep{reftoulbar1,reftoulbar2}. Si au bout de vingt-quatre heures l'exécution est terminée, le protocole est achevé. Sinon le programme est arrêté et une seconde version (la 0.9.6.0) est lancée avec les options "-l=1 -dee=1 -m -d: -s". Au bout de vingt-quatre heures si le programme n'est pas terminé, il est arrêté. La dernière séquence/conformation imprimée en sortie est collectée. Le choix de la seconde version et du paramétrage fait suite à une discussion avec monsieur Seydou Traoré.  
 
-Toulbar2 est également capable de fournir la liste des séquences/conformations dont l'énergie est comprise entre celle du GMEC, $E_{GMEC}$ et une autre $E_{upper\_bound}$ donnée en paramètre. Pour cette fonctionnalité nous utilisons le paramétrage:  "-d: -a -s -ub=$""E_{upper\_bound}$.
+Toulbar2 est également capable de fournir la liste des séquences/conformations dont l'énergie est comprise entre celle du GMEC, $E_{GMEC}$ et une autre $E_{upper\_bound}$ donnée en paramètre. Pour utiliser cette fonctionnalité nous utilisons le paramétrage:  "-d: -a -s -ub=$""E_{upper\_bound}$.
 
    \subsubsection{Superfamily/SCOP} 
 
@@ -965,6 +965,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
 
     \begin{table}[h]
       \centering
+\scalebox{0.8}{
 
       \begin{tabular}{ccccc}
 
@@ -988,7 +989,8 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
 
         \bottomrule
 
-      \end{tabular}      
+      \end{tabular}
+}      
       \caption{Liste des écarts entre protocoles et meilleure énergie pour 1A81, une position active.
         \label{tab:result_1_active_1A81}}      
     \end{table}
@@ -996,7 +998,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
 
     \begin{table}[h]
       \centering
-
+\scalebox{0.8}{
       \begin{tabular}{ccccc}
 
 
@@ -1056,7 +1058,8 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
         96 & yes &  -553.5532 &  0. & -0.0121 \\
         \bottomrule
 
-      \end{tabular}      
+      \end{tabular}
+}      
       \caption{Liste des écarts entre protocoles et meilleure énergie pour 1BM2, une position active.}
 \label{tab:result_1_active_1BM2}      
     \end{table}
@@ -1099,7 +1102,7 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
 
     \begin{table}[h]
       \centering
-      
+\scalebox{0.8}{      
       \begin{tabular}{ccccc}
         
         \toprule
@@ -1209,8 +1212,8 @@ Donc, la proportion de GMEC trouvé est plus forte  pour les protéines des fami
        104 & yes &  -589.9208 & 0. &  -0.3581 \\
         \bottomrule
        
-
-      \end{tabular}      
+      \end{tabular}
+}      
       \caption{Liste des écarts entre protocoles et meilleure énergie pour 1O4C, une position active.}
 \label{tab:result_1_active_1O4C}
     \end{table}
@@ -1266,7 +1269,7 @@ Passons maintenant aux tests où cinq positions sont actives. La taille de d'esp
 
     \begin{table}[h]
       \centering
-\scalebox{0.85}{
+\scalebox{0.8}{
       \begin{tabular}{cccccc}
 
         
@@ -1331,7 +1334,7 @@ Il n'y a également quarante-cinq tests de recherche avec dix positions actives.
     \begin{table}[h]
       \centering
 
-\scalebox{0.85}{
+\scalebox{0.8}{
 
       \begin{tabular}{cccccc}
 
@@ -1401,7 +1404,7 @@ Il y en a quatorze pour le Monte-Carlo avec un nombre de positions différente a
 
     \begin{table}[h]
       \centering
-\scalebox{0.85}{
+\scalebox{0.8}{
       \begin{tabular}{ccc}
 
         \toprule
@@ -1467,7 +1470,7 @@ Pour les  tests avec vingt positions actives,Les mêmes quatre protocoles dans u
     \begin{table}[h]
       \centering
 
-\scalebox{0.85}{
+\scalebox{0.8}{
       \begin{tabular}{cccccc}
 
 
@@ -1536,7 +1539,7 @@ Ici, toulbar2 ne parvient au GMEC que dans un seul cas, qui d'ailleurs est égal
 \begin{table}[h]
       \centering
 
-\scalebox{0.85}{
+\scalebox{0.8}{
       \begin{tabular}{cccccc}
 
 
@@ -1598,7 +1601,7 @@ Ici, toulbar2 ne parvient au GMEC que dans un seul cas, qui d'ailleurs est égal
  
    \subsubsection{vue l'ensemble}
 
-Le graphique~\ref{graph:all_result} figure une vision d'ensemble des tests réalisés sur un espace d'états réduit pour les protocoles H ou H- , MCb ou MCb- et RE8b2.Les tests sont regroupés par leur nombre de positions actives.À chaque groupe correspond une bande grise dans le graphique.Comme dans les tableaux précédents, le résultat d'un protocole est présenté sous forme de différence avec le meilleur résultat obtenu sur tous les protocoles,toulbar2 compris.Cette différence est en ordonnée.La couleur d'un point représente et la forme représente le protocole qui donne le meilleur résultat.
+Le graphique~\ref{graph:all_result} figure une vision d'ensemble des tests réalisés sur un espace d'états réduit pour les protocoles H ou H- , MCb ou MCb- et RE8b2.Les tests sont regroupés par leur nombre de positions actives.À chaque groupe correspond une bande grise dans le graphique.Comme dans les tableaux précédents, le résultat d'un protocole est présent sous forme de différence avec le meilleur résultat obtenu sur tous les protocoles,toulbar2 compris.Cette différence est en ordonnée.La couleur d'un point représente le protocole et la forme représente le protocole qui donne le meilleur résultat.
 
 
     \begin{figure}[h]
@@ -1612,9 +1615,10 @@ Le graphique~\ref{graph:all_result} figure une vision d'ensemble des tests réal
     \end{figure}
 
 
+    \subsubsection{Les temps de calculs} 
 
+La définition des protocoles s'est faite sous une contrainte de temps,un test ne peut s'exécuter pendant plus de vingt-quatre heures. Mais nos protocoles sont dimensionnés une fois pour toute et la contrainte revient à calibrer les protocoles pour que le pire des cas dure moins vingt-quatre heure,voir~\ref{sec:proto_compa} pour les détails.Donc les résultats qui viennent presentés sont à évaluer en fonction du temps de calcul effectif.Le graphique~\ref{graph:temps_CPU} donne les moyennes sur les groupes de tests des temps d'exécution pour les quatre types de protocoles.Ici, «Heuristic» designe aussi bien H que H-, de même «Monte-Carlo» désigne MCb ou MCb- selon de groupes de tests.De plus, les tests «tout actif» sont présents sur le graphique à la moyenne du nombre de positions des neuf protéines.Les temps présentés sont les temps d'occupation du processeur et non pas le cumul sur les coeurs du processeur.On note la très bonne performance de toulbar2 pour les tests à cinq positions actives et moins, mais les tests à dix et vingt positions actives rélèvent le caractère exponentiel de ce type d'algorithme. Tous les algorithmes font jeu égal lorsque dix positions sont actives. L'heuristique demande un nombre de calculs élémentaires qui augmente linéairement en fonction du nombre d'actifs, cela apparaît ici clairement.Le Monte-Carlo et le «Replica Exchange» demandent un nombre constant de calculs élémentaires, mais d'autres facteurs comme l'utilisation de la mémoire et les accès au disque.Ce qui explique que les temps de soient linéaires mais avec une pente plus douce que l'heuristique,beaucoup plus douce pour le «Replica Exchange». On observe une dégradation des performances en temps cumulés sur les huit marcheurs de l'algorithme parallèle, parce que à nombre de pas identique le programme n'est pas huit fois plus rapide. Cela peut s'expliquer notamment par les phases d'attentes imposées aux marcheurs lors des tests de changements de température et les accès concurrents en lecture et en écriture des informations communes.      
 
-    \subsection{Les temps de calculs} 
     
     \begin{figure}[h]
       \centering
@@ -1626,9 +1630,29 @@ Le graphique~\ref{graph:all_result} figure une vision d'ensemble des tests réal
 \label{graph:temps_CPU}
     \end{figure}
 
+\clearpage
+   \subsection{Études au voisinage du GMEC}
 
-   \subsection{Etude au voisinage de GMECs}
+Maintenant, regardons sur quelques tests pour lesquels le GMEC est trouvé, à quoi peut correspondre les écarts d'énergies observés plus haut.Pour cela reprenons les tests «1CKA 5»,«1G9O 3»,«1G9O 5» et «1M61 2» du groupe de tests à dix positions actives.Ces tests donnent des écarts les plus importants. Pour avoir un point de comparaison nous y ajoutons deux tests sur 1CKA et 1M61 et un test sur 1G9O.Les résultats sont rappelés en~\ref{tab:voisinnage_GMEC}. Comme le GMEC est connu, nous pouvons, en théorie , utilisé toulbar2 pour obtenir l'ensemble complet des séquences/conformations dont l'énergie est comprise entre le GMEC et un seuil. Les détails sont en~\ref{proto_toulbar2}.Cependant, il n'a pas était possible d'obtenir un seuil tel que l'ensemble inclus le résultat de H ou de MCb lorsque l'écart d'énergie est plus grand que trois . Les trente-deux GOs de mémoire disponible sur la machine utilisée n'ont pas suffit. Alors nous utilisons le seuil égale au GMEC plus un pour examiner le voisinage de la fonction d'énergie autour de la meilleure séquence/conformation.Le nombre de séquence/conformation dans l'intervalle varie pour 1CKA de 4649 à 67669, c'est peu. Le nombre de séquences/conformations qui diffère de la séquence/conformations du GMEC par une seule position  est égale environ à:
 
+$10 (positions actives) * 200 (rotamères possibles) * 47 (position non-actives de 1CKA) * 10 (nombre moyen de rotamères par résidu)=940000 $
+
+Il y a au plus $7%$ de ces 940000 qui sont à moins de 1 du GMEC.Cela signifie que le voisinage de la fonction d'énergie n'est pas du tout convexe.
+
+
+De même pour 1G9O le nombre d'éléments dans intervalle GMEC , GMEC-1 varie entre 22639 et 435992.
+
+
+$10 (positions actives) * 200 (rotamères possibles) * 81 (position non-actives de 1CKA) * 10 (nombre moyen de rotamères par résidu)=1620000 $
+Il y a au maximum $26%$ de ces 1620000 dans le voisinage.
+
+Pour 1M61:
+
+$10 (positions actives) * 200 (rotamères possibles) * 99 (position non-actives de 1CKA) * 10 (nombre moyen de rotamères par résidu)=1980000 $
+
+Le nombre d'éléments dans l'intervalle est beaucoup plus important que 1980000. Ce qui montre que des séquences qui différent à plusieurs positions sont présentes dans le voisinage.
+
+Après post-traitement par proteus, nous obtenons l'ensemble des séquences d'acides animés dans le voisinnage.
 
     \begin{table}[h]
       \centering
@@ -1637,7 +1661,7 @@ Le graphique~\ref{graph:all_result} figure une vision d'ensemble des tests réal
 
 
         \toprule
-        Protein & GMEC & H & MC & RE \\
+        Protein & GMEC & H & MCb & RE8b2 \\
         \cmidrule{1-5}
         1CKA 3 & -304.6618 & 0. & 0. & \\
         1CKA 4 & -302.4894 & 0. & 0. & \\
@@ -1650,7 +1674,7 @@ Le graphique~\ref{graph:all_result} figure une vision d'ensemble des tests réal
         1M61 5 & -553.6559 & 0. & -0.0432 & \\
         \bottomrule       
       \end{tabular}      
-\label{tab:voisinnage_rappel}      
+\label{tab:voisinnage_GMEC}      
     \end{table}
 
 
@@ -1661,17 +1685,17 @@ Le graphique~\ref{graph:all_result} figure une vision d'ensemble des tests réal
 
 
         \toprule
-        Protein & seq-rot nb gmec+1 & H rank  & MC rank  & seq nb gmec+1 & H mut nb & MC mut nb \\
+        Protein & seq/Confo nb GMEC-1 & H rank  & MC rank  & seq nb GMEC-1 & H mut nb & MC mut nb \\
         \cmidrule{1-7}
-        1CKA 3 & 67669 & 1 & 1 & 227 & 0. & 0. \\
-        1CKA 4 & 4649 & 1 & 1 & 498 & 0. & 0. \\
-        1CKA 5 & 1388 & 78 & ? & 77 & 0. & 2 \\
-        1G9O 3 & 354559 & 23 & 1 & 63 & 1 & 0. \\
-        1G9O 4 & 22639 & 1 & 1 & 381 & 0. & 0. \\
-        1G9O 5 & 8658395 & 1 & ? &  11 & 0. & 3 \\
-        1M61 1 & 11199153 & ? & ? & 21 & 3 & 7 \\
-        1M61 2 & 11199153 & 1 & 1 & 88 & 0. & 0. \\
-        1M61 5 & 16417604 & 1 & 1 & 83 & 0. & 0. \\
+        1CKA 3 & 67669    & 1  & 1 & 227  & 0 & 0 \\
+        1CKA 4 & 4649     & 1  & 1 & 498  & 0 & 0 \\
+        1CKA 5 & 13888    & 78 & ? & 77   & 0 & 2 \\
+        1G9O 3 & 435992   & 23 & 1 & 63   & 0 & 0 \\
+        1G9O 4 & 354559   & 1  & 1 & 381  & 0 & 0 \\
+        1G9O 5 & 22639    & 1  & ? &  11  & 0 & 3 \\
+        1M61 1 & 8658395  & ?  & ? & 21   & 3 & 7 \\
+        1M61 2 & 11199153 & 1  & 1 & 88   & 0 & 0 \\
+        1M61 5 & 16417604 & 1  & 1 & 83   & 0 & 0 \\
         \bottomrule
       \end{tabular} 
 \label{tab:etude_au_voisinnage}           
