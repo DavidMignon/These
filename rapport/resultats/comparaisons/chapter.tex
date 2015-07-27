@@ -1572,11 +1572,12 @@ Ici, toulbar2 ne parvient au GMEC que dans un seul cas, qui d'ailleurs est égal
 
 
  \end{tabular}  
-}    
+}
+ \caption{Résultats  avec trente positions actives }    
 \label{tab:result_30_actives}      
 \end{table}
  
-   \subsubsection{vu l'ensemble}
+   \subsubsection{Vue l'ensemble}
 
 Le graphique~\ref{graph:all_result} figure une vision d'ensemble des tests réalisés sur un espace d'états réduit pour les protocoles H ou H- , MCb ou MCb- et RE8b2.Les tests sont regroupés par leur nombre de positions actives.À chaque groupe correspond une bande grise dans le graphique.Comme dans les tableaux précédents, le résultat d'un protocole est présent sous forme de différence avec le meilleur résultat obtenu sur tous les protocoles,toulbar2 compris.Cette différence est en ordonnée.La couleur d'un point représente le protocole et la forme représente le protocole qui donne le meilleur résultat.
 
@@ -1630,7 +1631,8 @@ Pour 1M61:
 $10 (positions actives) \times 200 (rotamères possibles) \times 99 (position non-actives de 1CKA) \times 10 (nombre moyen de rotamères par résidu)=1980000 $
 
 Le nombre d'éléments dans l'intervalle est beaucoup plus important que 1980000. Ce qui montre qu'il y a des séquences qui diffèrent les une des autres à plusieurs positions.
-
+\subparagraph{}
+\label{para:vois_MCb}
 Après post-traitement par proteus, nous obtenons l'ensemble des séquences d'acides animés que contient chaque voisinage. Si on le compare avec les cas témoins, le nombre de séquences est particulièrement faible dans les mauvais cas Monte-Carlo,voir la table~\ref{voisinage_GMEC}.Celà peut expliquer les difficultés du mono marcheur MCb à entrer dans l'ensemble.En effet, il est probablement incapable de passer d'une séquence $S_a$ à une séquence $S_b$ différente en plus de deux positions s'il n'existe pas une suite de séquences menant de $S_a$ à $S_b$ avec au plus une mutation par pas et sans trop dégrader l'énergie. Dans l'alignement de la figure~\ref{image:Align_Suboptimal} , les vingt-et-une séquences du voisinage de «1M61 2» sont représentées dans l'ordre des séquences/conformations triées selon l'énergie. Nous voyons que si un marcheur MCb se trouve à la séquence numéro 3 il ne peut passer en 1 que très probablement en passant par 13 ce qui suppose qu'une dégradation importante de l'énergie soit acceptée.   
 
     \begin{table}[h]
@@ -1653,36 +1655,10 @@ Après post-traitement par proteus, nous obtenons l'ensemble des séquences d'ac
         1M61 5 & -553.6559 & 0. & -0.0432 \\
         \bottomrule       
       \end{tabular}      
+ \caption{Sélection de cas pour l'étude de voisinages}
 \label{tab:voisinage_GMEC}      
     \end{table}
 
-Avec le cas «1M61 2» pour le protocole H, nous examinons le voisinage du GMEC, mais cette fois-ci avec uniquement trois positions actives. Ce sont les positions pour lesquels H donne des acides aminés différents de toulbar2, c'est-à-dire les positions numéro 37, 39 et 47, le reste de la séquence/conformation étant fixé et identique à celle du GMEC.Le mode «suboptimal» de toulbar2 est utilisé avec un seuil de quatre.Le tableau~\ref{tab:voisinage_3actives} liste les différentes séquences existantes dans le voisinage et le rang de la meilleure conformation de chaque séquence. Le rang de la séquence de H est ici de vingt-trois, cela implique une forte dépendance des chaînes latérales aux trois positions actives pour les vingt-deux meilleurs séquences/conformations.Il existe vingt-et une configuration favorable sur quarante dix milles possibles pour le couple de position (39,47). Ce qui laisse espérer sur les cent mille cycles de H environ cinquante séquences/conformations initiales qui permettraient la leucine en position 37.Donc les interactions de ces trois positions n'expliquent probablement pas à elles seules la moindre performance de H.Alors, nous étendons les positions actives à l'ensemble {37,39,40,41,47}.La même analyse donne un rang pour la meilleure conformation de la séquence de H à  16963.Cela suggère l'implication de l'ensemble {40, 41}, bien que moins marquée, dans la détermination de la position 37.
-
-
-    \begin{table}[h]
-      \centering
-
-      \begin{tabular}{cc}
-
-        \toprule
-        rank & sequence\\
-        \cmidrule{1-2}
- 1   & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{L}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
- 3   & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{E}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
- 6   & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{D}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
- 7   & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{Q}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
- 9   & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{N}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
- 11  & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{M}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
- 19  & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{R}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
- 20  & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{d}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
- 22  & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{K}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
- 23  & AALFFYSISDAEAWELKLAMADLFLL\textbf{I}Q\textbf{E}TRSLY\textbf{N}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
- 24  & AALFFYSISDAEAWELKLAMADLFLL\textbf{D}Q\textbf{E}TRSLY\textbf{R}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\ 
- 25  & AALFFYSISDAEAWELKLAMADLFLL\textbf{I}Q\textbf{L}TRSLY\textbf{D}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
-     \bottomrule       
-      \end{tabular}      
-\label{tab:voisinage_3actives}      
-    \end{table}
 
 
 
@@ -1707,6 +1683,7 @@ Avec le cas «1M61 2» pour le protocole H, nous examinons le voisinage du GMEC,
         1M61 5 & 16417604 & 1  & 1 & 83   & 0 & 0 \\
         \bottomrule
       \end{tabular} 
+ \caption{Cardinaux  des voisinages du GMEC à 1 Kcal/mol,rang les meilleures séquences et conformations pour H et MCb}
 \label{tab:etude_au_voisinnage}           
 \end{table}
 
@@ -1716,13 +1693,48 @@ Avec le cas «1M61 2» pour le protocole H, nous examinons le voisinage du GMEC,
         \includegraphics[width=18cm]{align_1M61.png} 
       \end{tabular}
       
-      \caption{Aligmenent du voisinage: 1M61 2}
+      \caption{Aligmenent du voisinage: «1M61 2»}
 \label{image:Align_Suboptimal}
     \end{figure}
 
 
+Avec le cas «1M61 2» pour le protocole H, nous examinons le voisinage du GMEC, mais cette fois-ci avec uniquement trois positions actives. Ce sont les positions pour lesquels H donne des acides aminés différents de toulbar2, c'est-à-dire les positions numéro 37, 39 et 47, le reste de la séquence/conformation étant fixé et identique à celle du GMEC.Le mode «suboptimal» de toulbar2 est utilisé avec un seuil de quatre.Le tableau~\ref{tab:voisinage_3actives} liste les différentes séquences existantes dans le voisinage et le rang de la meilleure conformation de chaque séquence. Le rang de la séquence de H est ici de vingt-trois, cela implique une forte dépendance des chaînes latérales aux trois positions actives pour les vingt-deux meilleurs séquences/conformations.Il existe vingt-et une configuration favorable sur quarante dix milles possibles pour le couple de position (39,47). Ce qui laisse espérer sur les cent mille cycles de H environ cinquante séquences/conformations initiales qui permettraient la leucine en position 37.Donc les interactions de ces trois positions n'expliquent probablement pas à elles seules la moindre performance de H.Alors, nous étendons les positions actives à l'ensemble {37,39,40,41,47}.La même analyse donne un rang pour la meilleure conformation de la séquence de H à 7961.Cela suggère une implication de l'ensemble \{40, 41\}, bien que moins marquée, dans la détermination de la position 37.
+
+
+    \begin{table}[h]
+      \centering
+\scalebox{0.6}{
+      \begin{tabular}{cl}
+
+        \toprule
+        rank & sequence\\
+        \cmidrule{1-2}
+ 1   & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{L}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 3   & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{E}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 6   & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{D}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 7   & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{Q}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 9   & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{N}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 11  & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{M}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 19  & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{R}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 20  & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{d}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 22  & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{K}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 23  & AALFFYSISDAEAWELKLAMADLFLL\textbf{I}Q\textbf{E}TRSLY\textbf{N}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 24  & AALFFYSISDAEAWELKLAMADLFLL\textbf{D}Q\textbf{E}TRSLY\textbf{R}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\ 
+ 25  & AALFFYSISDAEAWELKLAMADLFLL\textbf{I}Q\textbf{L}TRSLY\textbf{D}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+     \bottomrule       
+      \end{tabular}      
+}
+ \caption{Les séquences présentes dans le voisinage à 4 Kcal/mol du GMEC pour le cas «1M61 2» simplifié à 3 positions actives}
+\label{tab:voisinage_3actives}
+      
+    \end{table}
+
+
     \clearpage
-   \subsection{Comparaison des structures}
+   \subsection{Comparaison des structures 3D}
+
+La représentation des structures tri-dimensionelles superposées de H et de toulbar2 pour le cas de test «1M61 2» à 10 positions actives confirme l'interaction des positions 37,39 et 47, voir la figure~\ref{image:1CKA_5_GMEC_vs_H}. Où l'on peut constater l'influence réciproque des chaînes latérales des leucines aux positions 37 et 39.
+
     
     \begin{figure}[h]
       \centering
@@ -1734,28 +1746,8 @@ Avec le cas «1M61 2» pour le protocole H, nous examinons le voisinage du GMEC,
 \label{image:1M61_2_GMEC_vs_H}
     \end{figure}
     
-                
-    \begin{figure}[h]
-      \centering
-      \begin{tabular}{c} 
-        \includegraphics[width=14cm]{1G9O_3_gmec_vs_ph.png} 
-      \end{tabular}
-      
-      \caption{test: 1G9O 3, GMEC vs H}
-\label{image:1G9O_3_GMEC_vs_H}
-    \end{figure}
-    
-    
-    \begin{figure}[h]
-      \centering
-      \begin{tabular}{c} 
-        \includegraphics[width=14cm]{1G9O_5_gmec_vs_MC.png} 
-      \end{tabular}
-      
-      \caption{test: 1G9O 5, GMEC vs MC}
-\label{image:1G9O_5_GMEC_vs_MC}
-    \end{figure}
-    
+La figure~\ref{image:1G9O_5_GMEC_vs_MC} représente le deuxième plus mauvais résultats de H avec un écart de près  0,3.Les différences de structures sont uniquement les positionnements de trois chaînes latérales à la surface de la protéine.
+
     \begin{figure}[h]
       \centering
       \begin{tabular}{c} 
@@ -1765,6 +1757,11 @@ Avec le cas «1M61 2» pour le protocole H, nous examinons le voisinage du GMEC,
       \caption{test: 1CKA 5, GMEC vs H}
 \label{image:1CKA_5_GMEC_vs_H}
     \end{figure}
+
+Les figures~\ref{image:1CKA_5_GMEC_vs_MC} et~\ref{image:1G9O_5_GMEC_vs_MC} montrent la superposition des structures GMEC et MCb pour «1CKA 5» et «1G9O 5». Dans les deux cas le Monte-Carlo est à plus de 3 du GMEC et les différences sont situées à la surface de la structure.
+La structure GMEC de 1G9O possède une liaison entre une lysine et un tryptophane aux positions 71 et 73 respectivement. Tandis que MCb possède un tryptophane en 71 et une asparthate en 73 visiblement toutes les deux en interaction avec le solvant. Les difficultés de déplacements du marcheur MCb,qui effectue au plus une mutation par pas, décrites au paragraphe~\ref{para:vois_MCb} se retrouvent ici.En effet, le Monte-Carlo,dans une séquence avec des résidus hydrophiles en 71 et 73,doit accepter une perte d'énergie pour tester un basculement de la position 71 vers un résidu hydrophobe. Et si la dégradation est toujours importante, la mutation n'est probablement jamais acceptée.     
+De façon assez similaire, la structure GMEC de 1CKA possède une liaison entre les chaînes latérales de deux résidus à la surface dont un à la position 179 est hydrophobe.
+
 
     \begin{figure}[h]
       \centering
@@ -1777,8 +1774,21 @@ Avec le cas «1M61 2» pour le protocole H, nous examinons le voisinage du GMEC,
     \end{figure}
     
 
-   \subsection{Résultats Heuristic (protocoles longs)}
+    \begin{figure}[h]
+      \centering
+      \begin{tabular}{c} 
+        \includegraphics[width=14cm]{1G9O_5_gmec_vs_MC.png} 
+      \end{tabular}
+      
+      \caption{test: 1G9O 5, GMEC vs MC}
+\label{image:1G9O_5_GMEC_vs_MC}
+    \end{figure}
+    
+    \clearpage
 
+   \subsection{Résultats Heuristique (protocoles longs)}
+
+Nous mesurons maintenant,l'effet de l'augmentation du nombre de cycle heuristique sur les tests où le protocole H (110~000 cycles ) n'est pas parvenu aux résultats parfaits.Pour cela nous utilisons les protocoles H+ et H++, qui effectuent respectivement 330~000 et 990~000 cycles(voir~\ref{tab:protoH}), sur les quatre tests à dix positions actives où l'écart avec le GMEC est non nul.H+ fait mieux que H pour trois des quatre cas testés, trouvant le GMEC pour l'un d'entre-eux, voir~\ref{tab:H+_H++}.H++ atteint le GMEC pour trois cas et l'approche à moins de deux centièmes de kcal/mol pour dernier cas.Les protocoles H+ et H++ sortent du cadre définit pour comparer les algorithmes. Pour autant, les calculs effectués sur un processeur Xeon E5-2630  ont tous duré moins de sept heures.  
 
     \begin{table}[h]
       \centering
