@@ -844,8 +844,6 @@ Il n'y pas de protocole qui domine les autres sur toutes les protéines. Le meil
         2BYG & -457 & -469 & -454 & -461 & -456 & -462 & -460 & -460 & -456 & -454 & -454 \\
         
         \bottomrule
-
-
       \end{tabular}      
       \caption{les meilleures énergies pour tous les résidus actifs}
 \label{tab:best_ener_all_all}      
@@ -912,6 +910,34 @@ Un critère de performance souvent utilisé est la proportion de changements de 
 \label{graph:TRAJ_T}
    \end{figure}
 
+
+    \clearpage
+   \subsection{Résultats Superfamily}
+Le protocole RE8b2 obtient globalement les meilleurs résultats en terme d'énergie. Alors, regardons la similarité des séquences obtenues grâce à lui avec la struture 3D du domaine de chacunes des neuf domaines.Les dix milles séquences/conformations de meilleurs énergies sont sélectionnées, puis les séquences d'acides aminés uniques dans ces ensembles sont extraites.Nous obtenons des ensembles d'en moyenne six cent quarante troix séquences d'acides aminés. Superfamily est lancé sur ces séquences.Les résultats sont dans le tableau~\ref{tab:superfamily_bestRE};les colones «Superfamily Evalue » et «Family Evalue» contiennent la moyenne des evalues sur l'ensemble.Ils sont très bons avec cent pour cent des séquences attibuées à la strutures 3D de la superfamille et de la famille de la séquence native, pour huit des neuf domaines. Seules les séquences de 1A81  ne sont similaires aux familles SCOP.On peut également noter que  bien qu'il existe des écarts de trois et quatre kcal/mol entre les meilleurs séquences de RE8b2 et d'autres protocoles pour 1ABO et 1G9O, celà n'effecte en rien la similarité en sens de Superfamily.
+
+    \begin{table}[h]
+           \raggedleft{}
+
+      \begin{tabular}{ccccccc}
+
+        \toprule
+        Protein & seq  & Match/seq & Superfamily & superfamily & Family & family \\
+        Protein & number & size & Evalue & success & Evalue &  success\\
+        \cmidrule{1-7}
+        1A81 & 708 & no & & & & \\
+        1ABO & 406 & 51/58  & 4.4e-4 & 100\% & 2.8e-3 & 100\% \\
+        1BM2 & 418 & 78/98  & 4.2e-5 & 100\% & 2.6e-3 & 100\% \\
+        1CKA & 832 & 40/57  & 1.1e-5 & 100\% & 3.4e-3 & 100\% \\
+        1G9O & 676 & 79/91  & 7.0e-7 & 100\% & 2.5e-3 & 100\%  \\
+        1M61 & 810 & 97/109 & 7.2e-7 & 100\% & 2.6e-4 &  100\% \\
+        1O4C & 548 & 95/104 & 2.1e-4 & 100\% & 4.5e-3 &  100\% \\
+        1R6J & 540 & 74/82  & 9.8e-6 & 100\% & 4.6e-3 &  100\% \\
+        2BYG & 852 & 59/97  & 1.4e-5 & 100\% & 7.1e-3 &  100\% \\
+        \bottomrule        
+      \end{tabular}   
+     \caption{Résultats Superfamily pour le protocole RE8b2}   
+\label{tab:superfamily_bestRE}       
+\end{table}
 
     \clearpage
 
@@ -1630,6 +1656,35 @@ Après post-traitement par proteus, nous obtenons l'ensemble des séquences d'ac
 \label{tab:voisinage_GMEC}      
     \end{table}
 
+Avec le cas «1M61 2» pour le protocole H, nous examinons le voisinage du GMEC mais cette fois-çi avec uniquement trois positions actives. Ce sont les positions pour lesquels H donne des acides aminés différents de toulbar2, c'est-à-dire les positions numéro 37, 39 et 47, le reste de la séquence/conformation étant fixé et identique à celle du GMEC.Le mode «suboptimal» de toulbar2 est utilisé avec un seuil de quatre.Le tableau~\ref{tab:voisinage_3actives} liste les différentes séquences existantes dans le voisinage et le rang de la meilleur conformation de chaque séquence. Le rang de la séquence de H est ici de vingt-trois, cela implique une forte dépendance des chaînes latérales aux trois positions actives pour les vingt-deux meilleurs séquences/conformations.Il existe vintg-et-une configuration favorable sur quarante dix milles possibles pour le couple de position (39,47). Ce qui laisse esperer sur les cent milles cycles de H environ cinquante séquences/conformations initiales qui permetteraient la leucine en position 37.Donc les interactions de ces trois positions n'expliquent probablement pas à elles seules la moindre performance de H.Alors, nous etendons les positions actives à l'ensemble {37,39,40,41,47}.La même analyse donne un rang pour la meilleur conformation de la séquence de H à  16963.Cela montre l'implication de l'ensemble {40, 41}, bien que moins marquées, dans la determination de la position 37.
+
+
+    \begin{table}[h]
+      \centering
+
+      \begin{tabular}{cc}
+
+        \toprule
+        rank & sequence\\
+        \cmidrule{1-2}
+ 1   & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{L}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 3   & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{E}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 6   & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{D}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 7   & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{Q}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 9   & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{N}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 11  & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{M}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 19  & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{R}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 20  & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{d}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 22  & AALFFYSISDAEAWELKLAMADLFLL\textbf{L}Q\textbf{K}TRSLY\textbf{d}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 23  & AALFFYSISDAEAWELKLAMADLFLL\textbf{I}Q\textbf{E}TRSLY\textbf{N}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+ 24  & AALFFYSISDAEAWELKLAMADLFLL\textbf{D}Q\textbf{E}TRSLY\textbf{R}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\ 
+ 25  & AALFFYSISDAEAWELKLAMADLFLL\textbf{I}Q\textbf{L}TRSLY\textbf{D}LQLVDVRFKFIERQLNTYAIAKACAELCEFYSRDDLCNLRKCNRSLEQ \\
+     \bottomrule       
+      \end{tabular}      
+\label{tab:voisinage_3actives}      
+    \end{table}
+
+
 
     \begin{table}[h]
       \centering
@@ -1721,36 +1776,6 @@ Après post-traitement par proteus, nous obtenons l'ensemble des séquences d'ac
 \label{image:1CKA_5_GMEC_vs_MC}
     \end{figure}
     
-
-   \subsection{Résultats Superfamily}
-
-
-    \begin{table}[h]
-           \raggedleft{}
-
-      \begin{tabular}{cccccc}
-
-        \toprule
-        Protein & Match/seq size & Superfamily Evalue & superfamily success & Family Evalue & family success\\
-        \cmidrule{1-6}
-        1A81 & no & & & & \\
-        1ABO & 51/58 & 4.4e-4 & 100\% & 2.8e-3 & 100\% \\
-        1BM2 & 78/98 & 4.2e-5 & 100\% & 2.6e-3 & 100\% \\
-        1CKA & 40/57 & 1.1e-5 & 100\% & 3.4e-3 & 100\% \\
-        1G9O & 79/91 & 7.0e-7 & 100\% & 2.5e-3 & 100\%  \\
-        1M61 & 97/109 & 7.2e-7 & 100\% & 2.6e-4 &  100\% \\
-        1O4C & 95/104 & 2.1e-4 & 100\% & 4.5e-3 &  100\% \\
-        1R6J & 74/82 & 9.8e-6 & 100\% & 4.6e-3 &  100\% \\
-        2BYG & 59/97 & 1.4e-5 & 100\% & 7.1e-3 &  100\% \\
-        \bottomrule        
-      \end{tabular}      
-
-\label{tab:superfamily_bestRE}       
-\end{table}
-
-    \clearpage
-
-
 
    \subsection{Résultats Heuristic (protocoles longs)}
 
