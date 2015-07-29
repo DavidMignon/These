@@ -19,8 +19,8 @@ except:
     sys.exit(2)
 
 ener_avg      = np.loadtxt(analyse_file,usecols=[2])
-ener_max      = np.loadtxt(analyse_file,usecols=[3])
-ener_min      = np.loadtxt(analyse_file,usecols=[4])
+ener_min      = np.loadtxt(analyse_file,usecols=[3])
+ener_max      = np.loadtxt(analyse_file,usecols=[4])
 ener_weights   = np.loadtxt(analyse_file,usecols=[1])
 
 fig = plt.figure()

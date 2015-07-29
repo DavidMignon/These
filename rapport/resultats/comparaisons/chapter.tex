@@ -1687,15 +1687,17 @@ Après post-traitement par proteus, nous obtenons l'ensemble des séquences d'ac
 \label{tab:etude_au_voisinnage}           
 \end{table}
 
-    \begin{figure}[h]
-      \centering
-      \begin{tabular}{c} 
-        \includegraphics[width=18cm]{align_1M61.png} 
-      \end{tabular}
-      
-      \caption{Aligmenent du voisinage: «1M61 2»}
+
+   \begin{figure}
+     \centering
+\begin{tabular}{c}
+          \includegraphics[width=10cm]{align_1CKA.png}\\
+          \includegraphics[width=10cm]{align_1M61.png} \\
+\end{tabular}
+     \caption{Alignement des séquences au voisinage d'une kcal/mol du GMEC pour «1CKA 3» (en haut) et «1M61 2» (en bas)}
 \label{image:Align_Suboptimal}
-    \end{figure}
+\end{figure}
+
 
 
 Avec le cas «1M61 2» pour le protocole H, nous examinons le voisinage du GMEC, mais cette fois-ci avec uniquement trois positions actives. Ce sont les positions pour lesquels H donne des acides aminés différents de toulbar2, c'est-à-dire les positions numéro 37, 39 et 47, le reste de la séquence/conformation étant fixé et identique à celle du GMEC.Le mode «suboptimal» de toulbar2 est utilisé avec un seuil de quatre.Le tableau~\ref{tab:voisinage_3actives} liste les différentes séquences existantes dans le voisinage et le rang de la meilleure conformation de chaque séquence. Le rang de la séquence de H est ici de vingt-trois, cela implique une forte dépendance des chaînes latérales aux trois positions actives pour les vingt-deux meilleurs séquences/conformations.Il existe vingt-et une configuration favorable sur quarante dix milles possibles pour le couple de position (39,47). Ce qui laisse espérer sur les cent mille cycles de H environ cinquante séquences/conformations initiales qui permettraient la leucine en position 37.Donc les interactions de ces trois positions n'expliquent probablement pas à elles seules la moindre performance de H.Alors, nous étendons les positions actives à l'ensemble {37,39,40,41,47}.La même analyse donne un rang pour la meilleure conformation de la séquence de H à 7961.Cela suggère une implication de l'ensemble \{40, 41\}, bien que moins marquée, dans la détermination de la position 37.
@@ -1814,17 +1816,21 @@ Nous mesurons maintenant,l'effet de l'augmentation du nombre de cycle heuristiqu
     \clearpage
    \subsection{Distribution des états visités }
    \paragraph{densité en séquences}
-Comme nous l'avons vu, les trajectoires des marcheurs Monte-Carlo et les ensembles de trajectoires «Replica Exchange»  suivent une distribution bien précise, celle de Poisson-Botzman.Pour examiner l'ensemble des états visités au court d'une simulation, nous sélectionnons deux tests à dix positions actives: le «1CKA 3 » et le «1CKA 5» et leurs trajectoires obtenues avec le protocole RE8b2.Parmi l'ensemble des températures utilisés par les marcheurs de ce protocoles nous nous focalisons sur l'espace exploré à la température qui représente la température ambiante: 0,592. 
+Pour examiner l'ensemble des états visités au court d'une simulation, nous sélectionnons deux tests à dix positions actives: le «1CKA 3 » et le «1CKA 5» et leurs trajectoires obtenues avec le protocole RE8b2.Parmi l'ensemble des températures utilisés par les marcheurs de ce protocoles nous nous focalisons sur les résultats à la température ambiante de 0,592. 
 
    \paragraph{densité en séquences}
+
+Pour chacune des séquences obtenues nous calculons la meilleure énergie sur l'ensemble de ses conformations visitées, la moins bonne et l'énergie moyenne. Pour «1CKA 3» les plages d'énergies explorées de façon significative sont d'environ de 20 kcal/mol pour les trois valeurs considérées. Dans le cas de «1CKA 5», l'énergie moyenne visite une plage énergétique d'environ 15,  
+
+
 
     \begin{figure}[h]
       \centering
       \begin{tabular}{cc} 
-        \includegraphics[width=10cm]{histo1_aa_Tambiante.png} &
+        \includegraphics[width=10cm]{histo_seq_1CKA_3.png} &
       \end{tabular}
       
-      \caption{.}
+      \caption{Histogramme des séquences de «1CKA 3» selon l'énergie moyenne,minimum et maximum des conformations}
 \label{graph:densité_en_séquences1}
     \end{figure}
 
@@ -1832,10 +1838,10 @@ Comme nous l'avons vu, les trajectoires des marcheurs Monte-Carlo et les ensembl
     \begin{figure}[h]
       \centering
       \begin{tabular}{cc} 
-        \includegraphics[width=10cm]{histo2_aa_Tambiante.png} &
+        \includegraphics[width=10cm]{histo_seq_1CKA_5.png} &
       \end{tabular}
       
-      \caption{.}
+      \caption{Histogramme des séquences de «1CKA 5» selon l'énergie moyenne,minimum et maximum des conformations}
 \label{graph:densité_en_séquences2}
     \end{figure}
 
@@ -1844,7 +1850,7 @@ Comme nous l'avons vu, les trajectoires des marcheurs Monte-Carlo et les ensembl
     \begin{figure}[h]
       \centering
       \begin{tabular}{cc} 
-        \includegraphics[width=10cm]{centiles_1CKA.png} &
+        \includegraphics[width=10cm]{centiles_1CKA_10posi.png} &
       \end{tabular}
       
       \caption{.}
