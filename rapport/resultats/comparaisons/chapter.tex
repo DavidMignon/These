@@ -104,13 +104,13 @@ Deux positions P et Q sont en interaction s'il existe un rotamère $r_P$ de P et
 avec $S_{Vois}$ un seuil donné par l'utilisateur à la configuration de proteus (voir chap. ?? pour les détails).
 
 Définissons maintenant la notion de n-uplet en interaction par la donnée de n positions avec $n \in \{5,10,20,30\}$ et d'un seuil  $S_{Vois}$  tels que pour toute paire de positions (P,Q) du n-uplet, P et Q sont en interaction.
-\paragraph{}
+\subparagraph{}
 Pour déterminer les positions actives,nous exécutons proteus en mode verbeux, sans effectuer d'optimisation.
 Il existe plusieurs façons de procéder ,ici nous utilisons le mode Monte-Carlo avec une trajectoire de zéro pas. Ces exécutions produisent en sortie standard la liste des voisins pour chaque position au seuil donnée en paramètre.
 Pour chaque protéine, nous exécutons proteus avec  $S_{Vois}$ égal à dix , cinq et un à tour de rôle. Nous obtenons quatre listes de voisins. 
 Ensuite, nous cherchons dans les listes, par un script dédié, les n-uplets en interaction en partant de la liste de voisins au sens le plus fort, c'est-à-dire dix, vers la liste de voisins au sens le plus faible ($0.1$).La recherche s'arrête si cinq n-uplets sont trouvés.
 
-Nous obtenons quarante-cinq n-uplets pour le groupe à cinq (respectivement dix, vingt et trente ) positions actives pour un $S_{Vois}$ égal à dix (respectivement dix, un et un) (voir les détails en annexe~\ref{chap:annexe}). Chaque n-uplet nous créons un fichier de configuration de proteus dans lequel la balise <Space\_Constraints> fixe les positions restantes au type d'acide aminé présent dans la séquence native. 
+Nous obtenons quarante-cinq n-uplets pour le groupe à cinq (respectivement dix, vingt et trente ) positions actives pour un $S_{Vois}$ égal à dix (respectivement dix, un et un) (voir les détails en annexe~\ref{chap:annexe1 }). Chaque n-uplet nous créons un fichier de configuration de proteus dans lequel la balise <Space\_Constraints> fixe les positions restantes au type d'acide aminé présent dans la séquence native. 
 
 
 \subsubsection{Définition de protocole comparable}
@@ -782,8 +782,7 @@ Pour faire le lien entre les comparaisons basées sur les meilleures énergies e
        \includegraphics[width=7cm]{simil_vs_ener_1O4C.png} \\
        \includegraphics[width=8cm]{simil_vs_ener_1R6J.png} \\
      \end{tabular}
-     
-     \caption{}
+     \caption{Similarité selon l'énergie}
 \label{graph:simil_vs_ener}
    \end{figure}
  
@@ -1841,7 +1840,7 @@ Pour chacune des séquences obtenues nous calculons la meilleure énergie sur l'
         \includegraphics[width=10cm]{histo_seq_1CKA_5.png} &
       \end{tabular}
       
-      \caption{Histogramme des séquences de «1CKA 5» selon l'énergie moyenne,minimum et maximum des conformations}
+      \caption{Histogramme des séquences de «1CKA 5» selon l'énergie moyenne, minimum et maximum des conformations}
 \label{graph:densité_en_séquences2}
     \end{figure}
 
@@ -1853,7 +1852,7 @@ Pour chacune des séquences obtenues nous calculons la meilleure énergie sur l'
         \includegraphics[width=10cm]{centiles_1CKA_10posi.png} &
       \end{tabular}
       
-      \caption{.}
+      \caption{La densité des meilleurs séquences/rotamères selon l'énergie (représentée par les centiles)}
 \label{graph:densité_en_séquences1}
     \end{figure}
 
