@@ -5,18 +5,15 @@
 \section{Les méthodes pratiques} 
 \label{sec:methodes_pratiques}
 Nous cherchons maintenant à déterminer les performances et les qualités des différents algorithmes de proteus.
-Pour évaluer les qualités des différents algorithmes de proteus, nous effectuons un ensemble de tests. 
-Plusieurs questions se présentent alors,premièrement grâce à l' algorithme de type toulbar2 il est possible d'obtenir la séquence/conformation qui possède l'énergie de dépliement la plus haute. Cela constitue une information important qui va nous servir de point de comparaison. Mais le facteur temps pose problème, nous ne savons pas à l'avance quand toulbar2 termine. Et il apparaît d'emblée illusoire d'espérer voir toulbar2 converger dans toutes les situations qui nous intéressent dans un temps raisonnable en particulier pour une situation où  toutes les positions du  backbone sont autorisées à muter et pour chaque type d'acide aminé la chaîne latérale peut prendre toutes les positions précédemment calculées dans la matrice. 
+Pour évaluer les différents algorithmes de proteus, comme pour leur établir un paramétrage, nous effectuons des séries de tests. 
+Grâce à l'algorithme de type toulbar2 il est possible d'obtenir la séquence/conformation qui possède la plus haute énergie de dépliement. Cela constitue une information important qui va nous servir d'élément de comparaison.Le facteur temps est également un élément déterminant. Il est dans certain cas limitant, nous ne savons pas à l'avance quand toulbar2 termine. Et il apparaît d'emblée illusoire d'espérer voir ce programme converger dans toutes les situations intéressantes dans un temps raisonnable.D'autres métriques qui caractérisent les séquences d'acides aminés de meilleurs énergies obtenues vont également être utilisées pour les évaluations et pour les paramétrages.   
 
-
-Dans la suite, on appelle "position active", une position pour laquelle, lors de la recherche par proteus, tous les types d'acides et tous les rotamères de chaque type d'acide aminé sont autorisés, pendant la recherche de proteus. 
-
+Dans la suite, on appelle «position active», une position pour laquelle, tous les types d'acides et tous les rotamères de chaque type d'acide aminé sont autorisés, au court de la recherche de proteus. On désigne «séquence/conformation» une séquence d'acides aminés munie à chaque position d'un rotamère (le backbone étant de toute façon fixé).Tandis ce que le terme simple «séquence»  sans plus de précision désigne une séquence d'acides aminés.
 
 \subsection{les protéines}
  
-Les tests sont effectués sur neuf protéines choisies pour avoir des longueurs de backbone variées , plusieurs domaines représentés, mais aussi plusieurs structures pour chaque famille présente. Ainsi l'ensemble se décompose en deux protéines SH3 de 56 et 57 résidus, de trois protéines PDZ de longueur comprise entre 82 et 97 résidus  et enfin de trois protéines SH2  longues de 105 ou 109 résidus (Table~\ref{tab:protéines}).L'ensemble a une moyenne, arrondie à l'unité inférieure, de quatre-vingt-neuf positions. 
+Les tests sont effectués sur neuf protéines choisies pour avoir des longueurs de backbone variées, plusieurs domaines représentés, mais aussi plusieurs structures pour chaque famille présente. Ainsi l'ensemble se décompose en deux protéines SH3 de 56 et 57 résidus, de trois protéines PDZ de longueur comprise entre 82 et 97 résidus  et enfin de trois protéines SH2 longues de 105 ou 109 résidus.L'ensemble a une moyenne, arrondie à l'unité inférieure, de quatre-vingt-neuf positions, voir les détails en table~\ref{tab:protéines}. 
   
-
 
     \begin{table}[!htbp]
       \centering
@@ -47,27 +44,27 @@ Les tests sont effectués sur neuf protéines choisies pour avoir des longueurs 
 Les tests sont répartis en deux ensembles:
 \begin{enumerate}
 \item un ensemble de tests où toutes les positions du backbone sont actives (cela correspond aux situations de design complet de protéines) 
-\item un ensemble de tests où le nombre de positions actives est gardé sous contrôle .De façon à maîtriser la taille de l'espace d'exploration
+\item un ensemble de tests où le nombre de positions actives est gardé sous contrôlée façon à maîtriser la taille de l'espace d'exploration
 \end{enumerate}
 
 
-\paragraph{Ensemble 'Tout actif'}
+\paragraph{Ensemble «Tout actif»}
 \label{methode_TTactif}
 Pour le premier ensemble de tests,la totalité de la matrice d'énergie est exploitée et pour chaque position l'espace d'exploration correspond à l'espace d'état déclaré dans le fichier ".bb".C'est-à-dire que tous les types de résidu et tous les rotamères sont possibles à chaque position.
-Comme l'espace des séquences/confirmations à explorer est gigantesque, nous ne faisons pas de tentatives de recherche du GMEC  par méthode exacte. 
+Comme l'espace des séquences/conformations à explorer est gigantesque, nous ne faisons pas de tentatives de recherche du GMEC  par méthode exacte. 
 
 Nous effectuons des recherches avec les algorithmes suivants:
 
 \begin{itemize}
 \item heuristique, noté H par la suite;
 \item Monte-Carlo, noté MC;
-\item ``'Replica Exchange'' ,noté RE);
+\item «Replica Exchange» ,noté RE);
 \end{itemize}
 
 
-\paragraph{L'ensemble 'Nombre d'actifs limité'}
+\paragraph{L'ensemble «Nombre d'actifs limité»}
 
-L'ensemble ``Nombre d'actifs limité'' est composé de six groupes de tests avec un nombre de positions actives fixe:  
+L'ensemble «Nombre d'actifs limité» est composé de six groupes de tests avec un nombre de positions actives fixe:  
 
 
 \begin{enumerate}
@@ -79,20 +76,20 @@ L'ensemble ``Nombre d'actifs limité'' est composé de six groupes de tests avec
 \item trente positions 
 \end{enumerate}
 
-Lorsqu'une position n'est pas active, on fixe l'acide aminé de la position en utilisant l'acide aminé de la séquence native.
+Lorsqu'une position n'est pas active,l'acide aminé de la position est fixé en utilisant l'acide aminé de la séquence native. La chaîne latérale est, elle, laissée libre. Il n'y a donc jamais de position complètement fixée dans ces tests.
 
-Le groupe "aucune position active" n'est constitué que d'un test par algorithme pour chaque protéine. Il y a donc neuf tests par algorithme.
-Ce sont les tests pendant lesquels  la séquence d'acides aminés est fixe et correspond à la séquence native de la protéine.
+Le groupe «aucune position active» n'est constitué que d'un test par algorithme pour chaque protéine. Il y a donc neuf tests par algorithme.
+Ce sont les tests pendant lesquels la séquence d'acides aminés est fixe et correspond à la séquence native de la protéine.
 
 Pour les tests avec une seule position active, comme des temps de calcul le permettent, nous décidons d'être exhaustifs:
 Toutes les positions sont testées, il y a alors huit cent quatre tests par algorithme.
-Pour tous les autres groupes de tests (5,10,20 et 30 positions actives), cinq tests sont effectués par protéine, c'est-à-dire quarante-cinq tests par algorithme.
+Pour tous les autres groupes de tests (cinq,dix,vingt et trente positions actives), cinq tests sont effectués par protéine, c'est-à-dire quarante-cinq tests par algorithme.
 
 \paragraph{le choix des positions actives}
 \label{para:choix_posi}
-Pour définir complètement les tests ,il reste maintenant à décrire comment le choix des positions actives pour les groupes numéro trois à numéro six a été effectué.
-Il y a peu d'intérêt à tester des situations avec position active sans interaction avec les autres positions actives. 
-En effet s'il existe une position active P dont chaque résidu est sans interaction avec tous les résidus possibles les autres positions actives, déterminer le meilleur état pour P est proche du test du groupe 2 avec P comme position active. Toutefois, cela n'est pas exactement la même question parce que les positions actives différentes de P peuvent influencer la position de la chaîne latérale de positions inactives qui à leur tour peuvent influencer l'état de P.
+Pour définir complètement les tests, il reste maintenant à décrire comment le choix des positions actives pour les groupes numéro trois à numéro six a été effectué.
+Il y a peu d'intérêt à tester des situations avec des positions actives sans interaction entre-elles.
+En effet, s'il existe une position active P dont chaque résidu est sans interaction avec tous les résidus possibles des autres positions actives, déterminer le meilleur état pour P est proche du test du groupe 2 avec P comme position active. Toutefois, cela n'est pas exactement la même question, parce que les positions actives différentes de P peuvent influencer la position de la chaîne latérale de positions inactives qui à leur tour peuvent influencer l'état de P.
 Ainsi, le choix des positions actives se fait non pas pas tirage aléatoire, car le risque d'avoir les positions peu en interaction est trop grand. Il se fait sous contrainte d'interaction.
 
 \paragraph{positions en interactions}
@@ -174,7 +171,7 @@ Les éléments à paramétrer pour l'algorithme Monte-Carlo sont les suivants:
 \item la température
 \item le nombre de pas (avec le nombre de trajectoires et la longueur de trajectoire )
 \item Le seuil de voisinage
-\item Les probabilités de changements de la séquence/rotamère
+\item Les probabilités de changements de la séquence/conformation
 \end{enumerate}
 
 Ce qui représente un ensemble de protocoles trop grand pour une approche exhaustive. Nous allons faire varier les paramètres un par un.
@@ -1724,7 +1721,7 @@ La représentation des structures tri-dimensionelles superposées de H et de tou
     \begin{figure}[h]
       \centering
       \begin{tabular}{c} 
-        \includegraphics[width=14cm]{1M61_2_gmec_vs_ph.png} 
+        \includegraphics[width=14cm]{1M61_2_gmec_vs_ph_2.png} 
       \end{tabular}
       
       \caption{test: 1M61 2, GMEC vs H}
@@ -1736,7 +1733,7 @@ La figure~\ref{image:1G9O_5_GMEC_vs_MC} représente le deuxième plus mauvais r�
     \begin{figure}[h]
       \centering
       \begin{tabular}{c} 
-        \includegraphics[width=14cm]{1CKA_5_gmec_vs_ph.png} 
+        \includegraphics[width=14cm]{1CKA_5_gmec_vs_ph_2.png} 
       \end{tabular}
       
       \caption{test: 1CKA 5, GMEC vs H}
@@ -1751,18 +1748,17 @@ De façon assez similaire, la structure GMEC de 1CKA possède une liaison entre 
     \begin{figure}[h]
       \centering
       \begin{tabular}{c} 
-        \includegraphics[width=14cm]{1CKA_5_gmec_vs_MC.png} 
+        \includegraphics[width=14cm]{1CKA_5_gmec_vs_MC_2.png} 
       \end{tabular}
       
       \caption{test: 1CKA 5, GMEC vs MC}
 \label{image:1CKA_5_GMEC_vs_MC}
     \end{figure}
     
-
     \begin{figure}[h]
       \centering
       \begin{tabular}{c} 
-        \includegraphics[width=14cm]{1G9O_5_gmec_vs_MC.png} 
+        \includegraphics[width=14cm]{1G9O_5_gmec_vs_MC_2.png} 
       \end{tabular}
       
       \caption{test: 1G9O 5, GMEC vs MC}
