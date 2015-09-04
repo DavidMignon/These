@@ -286,7 +286,7 @@ Après avoir converti nos matrices au format «wcsp» grâce à un script dédi�
 Le protocole de recherche du GMEC est le suivant:
 L'exécutable toulbar2 de version 0.9.7.0 est lancé avec les options « -l=3 -m -d: -s», ce qui correspond au paramétrage conseillé dans la documentation CDP~\citep{reftoulbar1,reftoulbar2}. Si l'exécution se termine en moins de vingt-quatre heures, le protocole est achevé. Sinon le programme est arrêté et une seconde version (la 0.9.6.0) est lancée avec les options «-l=1 -dee=1 -m -d: -s». Au bout de vingt-quatre heures si le programme n'est pas terminé, il est arrêté. La dernière séquence/conformation imprimée en sortie est collectée. Le choix de la seconde version et du paramétrage fait suite à une discussion avec monsieur Seydou Traoré.  
 
-Toulbar2 offre également la possibilité de fournir la liste des séquences/conformations dont l'énergie est comprise entre celle qui correspond au GMEC, $E_{GMEC}$ et une autre $E_{upper\_bound}$ donnée en paramètre. Pour utiliser cette fonctionnalité nous utilisons le paramétrage:  «-d: -a -s -ub=$E_{upper\_bound}$ ».
+Toulbar2 offre également la possibilité de fournir la liste des séquences/conformations dont l'énergie est comprise entre celle qui correspond au GMEC, $E_{GMEC}$ et une autre $E_{upper\_bound}$ donnée en paramètre. Pour utiliser cette fonctionnalité nous utilisons le paramétrage:  «-d: -a -s -ub=$E_{upper\_bound}$ ».Cependant, il s'avère que cette utilisation peut utiliser une quantité de mémoire vive importante.Alors, pour eviter tout plantage de nos machines, la mémoire que toulbar2 peut allouer  est limité à 30 Go.
 
 \subsection{Outils d'analyse des données} 
    \paragraph{Superfamily/SCOP} 
@@ -333,19 +333,19 @@ Afin de calculer un score de similarité d'un ensemble de nos séquences par rap
 \item La commande blastpgp est utilisée avec comme database (paramètre -d ) l'alignement Pfam et comme séquence en entrée ( paramètre -i ) la séquence native. 
 \item Dans la sortie blast, la séquence qui produit l'alignement le plus significatif avec la native est collectée, notons-la $S_0$. 
 \item L'alignement blast est alors utilisé pour positionner la native par rapport à $S_0$ et les gaps nécessaires pour aligner la native à $S_0$ sont ajoutés.
-\item  Le positionnement et les gaps sont alors appliqués tels quels à la liste de nos séquences.
+\item Le positionnement et les gaps sont alors appliqués tels quels à la liste de nos séquences.
 
 \end{enumerate}
 
 
 \paragraph{Répartition de l'énergie selon les centiles }
 
-Pour comparer différentes distributions d'ensemble de séquences/conformations selon l'énergie,nous déterminons les centiles de la façon suivante: 
+Pour étudier différentes distributions d'ensemble de séquences/conformations selon l'énergie,nous déterminons les centiles de la façon suivante: 
 
 \begin{enumerate}
-\item l'ensemble de séquences/conformations est trié selon l'énergie.
+\item L'ensemble de séquences/conformations est trié selon l'énergie.
 \item L'intervalle entre la meilleure énergie et la moins bonne est divisé en cent intervalles consécutifs contenant le même nombre de séquences/conformations (un centième du cardinal de l'ensemble).
-\item les quatre-vingt-dix-neuf valeurs d'énergie obtenues par ce découpage sont les centiles.   
+\item Les quatre-vingt-dix-neuf valeurs d'énergie obtenues par ce découpage sont les centiles.   
 \end{enumerate}
 
 
@@ -355,11 +355,10 @@ Pour comparer différentes distributions d'ensemble de séquences/conformations 
 
     \subsection{Paramétrage du protocole Monte-Carlo}
 
-Le choix des paramètres du protocole Monte-Carlo est décidé sur des tests sur les sept protéines avec toutes les positions actives.
-
+La valeur des paramètres du protocole Monte-Carlo est décidé sur les résultats des tests sur un ensemble de huit protéines (l'ensemble présenté en~\ref{tab:protéins} sans 2BYG, ceci à cause d'un problème technique) avec toutes les positions actives.
 
    \paragraph{Température et meilleures énergies} 
-Nous utilisons les protocoles de mc0 à mc5, voir table~\ref{tab:ener_mc} pour évaluer d'effet du paramètre température dans la recherche de séquences/conformations de meilleures énergies.La table~\ref{tab_ener_mc} présente les résultats obtenus arrondis à la kcal/mol inférieure. L'énergie proteus est l'énergie de dépliement c'est-à-dire l'énergie qu'il faut fournir à la protéine pour la déplier.Donc les meilleurs dans la table (et dans toutes les autres tables ) sont les énergies les plus grandes. Les tests aux températures les plus froides (0.001 et 0.1) donnent les meilleurs résultats  pour la majorité des protéines. Cependant la dégradation des performances est lente avec l'augmentation des températures. Et les résultats pour les températures intermédiaires (0.2 et 0.3) sont souvent très proches des meilleurs résultats.    
+Nous utilisons les protocoles de mc0 à mc5, voir table~\ref{tab:ener_mc} pour évaluer d'effet du paramètre température dans la recherche de séquences/conformations de meilleures énergies.La table~\ref{tab_ener_mc} présente les résultats obtenus arrondis à la kcal/mol inférieure. L'énergie proteus est l'énergie de dépliement c'est-à-dire l'énergie qu'il faut fournir à la protéine pour la déplier.Donc, dans toute la suite, les meilleures sont les énergies les plus grandes. Les tests aux températures les plus froides (0.001 et 0.1) donnent les meilleurs résultats  pour la majorité des protéines. Cependant la dégradation des performances est lente avec l'augmentation des températures. Et les résultats pour les températures intermédiaires (0.2 et 0.3) sont souvent très proches des meilleurs résultats.    
 
     \begin{table}[!htbp]
       \centering
@@ -381,13 +380,13 @@ Nous utilisons les protocoles de mc0 à mc5, voir table~\ref{tab:ener_mc} pour �
       \end{tabular}
       
 
-      \caption{Meilleure énergie selon la température,($^a$ le protocole mc0,$^b$ mc1,$^c$  mc2,$^d$ mc3,$^e$ mc4,$^f$ mc5 )}    
+      \caption{Meilleure énergie selon la température exprimée en kcal/mol,($^a$ le protocole mc0,$^b$ mc1,$^c$  mc2,$^d$ mc3,$^e$ mc4,$^f$ mc5 )}    
       \label{tab:ener_mc}
     \end{table}
  
    \paragraph{Température et taux d'identité de séquences} 
 \label{sec:T_et_I}
-Nous poursuivons la comparaison des protocoles mc0-mc5 en regardant le taux d'identité entre les séquences d'acides aminés et la séquence native. Pour cela, nous reprenons les séquences/conformations obtenues et triées selon l'énergie décroissante. Nous sélectionnons dans cette liste, les dix mille premières séquences pour chaque test. Les résultats sont présentés table~\ref{tab:ident_mc}.Nous obtenons des taux d'identités globalement compris entre 20 et 40\% , avec le plus suivant des valeurs proches de 30\%. Les résultats aux températures 0.2 et 0.3 sont aussi bons que ceux à la température 0.1 et légèrement meilleurs que pour 0.001. Ici aussi, il y a une dégradation aux températures les plus hautes, faible à 0.5, plus nette à 0.7.
+Nous poursuivons la comparaison des protocoles mc0-mc5 en regardant le taux d'identité entre les séquences d'acides aminés et la séquence native. Pour cela, nous reprenons les séquences/conformations obtenues et triées selon l'énergie décroissante. Nous sélectionnons dans cette liste, les dix mille premières séquences pour chaque test.Nous obtenons des taux d'identités globalement compris entre 20 et 40\% , avec le plus souvent des valeurs proches de 30\%. Les résultats aux températures 0.2 et 0.3 sont aussi bons que ceux à la température 0.1 et légèrement meilleurs que pour 0.001. Ici aussi, il y a une dégradation aux températures les plus hautes, faible à 0.5, plus nette à 0.7.  voir la table~\ref{tab:ident_mc}.
 
     \begin{table}[!htbp]
       \centering
