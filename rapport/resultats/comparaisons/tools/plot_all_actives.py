@@ -78,6 +78,9 @@ ax.set_xlabel("Proteins", fontsize=11)
 box = ax.get_position()
 ax.set_position([box.x0, box.y0, box.width * 0.95, box.height])
 
+box = ax2.get_position()
+ax2.set_position([box.x0, box.y0, box.width * 0.95, box.height])
+
 
 # Put a legend to the right of the current axis
 ax.legend(loc='center left',fontsize=9,labelspacing=0.2 ,numpoints=1,bbox_to_anchor=(1, 0.5),fancybox=True, shadow=True, ncol=1)
