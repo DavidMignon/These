@@ -1,0 +1,60 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}   % le fichier .tex est en UTF-8     
+\usepackage[francais]{babel}  %typo française                    
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{pdfcolmk}
+\usepackage{setspace}
+\usepackage[numbers,super,comma,sort&compress]{natbib}
+\renewcommand{\bibnumfmt}[1]{#1.}
+\bibliographystyle{jpc}
+\usepackage{hyperref}
+\hypersetup{%
+  pdftitle={Compte rendu de l'avancement des travaux - 3eme année de thèse},
+  pdfauthor={David Mignon},
+  pdfkeywords={keywords}
+  pdfsubject={article},
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
+  citecolor=black
+}
+
+\title{Compte rendu de l'avancement des travaux - 3e année de thèse}
+
+\author{David Mignon}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{spacing}{1.0}
+
+  Le "Computational protein design" (CPD) est en développement au sein de notre laboratoire depuis déjà quelques années, avec plusieurs succès à son actif.
+  Ce sont ces résultats prometteurs qui fondent notre motivation à aller de l'avant en améliorant nos outils, en enrichissant 
+  nos programmes pour progresser encore dans nos résultats. En particulier, mon travail se concentre sur le problème de l'exploration de l'espace des séquences d'acides aminés et son contrôle.
+
+  Cette année, une série d'évaluations de la qualité de nos séquences calculées a été réalisée, ainsi qu'une étude sur le voisinage du minimum global de notre fonction d'énergie pour quelques-uns des systèmes déjà étudiés.
+
+Plusieurs aspects sont intéressants pour juger de la qualité des séquences.L'un des plus importants est leur similarité  avec les séquences naturelles ayant une  structure 3D proche.Pour cela nous avons utilisé la classification de structure de protéine SCOP, couplé avec la base de données de modèles de Markov cachés Superfamily qui fait correspondre un modèle de Markov à chaque domaine SCOP.Nos résultats sont bons, avec pour huit de nos neuf protéines, 100\% des meilleures séquences  reconnues comme structure du domaine SCOP de notre séquence native.L'identité des séquences est également utilisée avec les matrices de couts de substitution d'acide aminé et la base de données de Pfam qui propose des alignements multiples de familles de séquences naturelles.Ensuite des comparaisons d'entropie par position, pour mesurer la diversité de nos séquences, ont été faites. Comme nos algorithmes Monte-Carlo produisent en théorie des ensembles de séquences qui suivent une distribution de Poisson-Botzman, nous avons examiné les densités d'états produites par notre programme.
+D'autre part une étude détaillée de la topologie au voisinage du minimum global de notre fonction d'énergie a été effectuée, ceci pour quelques-uns des systèmes déjà étudiés.
+
+Enfin, un article qui résume les résultats de ces deux dernières années est en cours de rédaction.
+
+
+
+
+ 
+
+\end{spacing}
+
+
+\end{document}
