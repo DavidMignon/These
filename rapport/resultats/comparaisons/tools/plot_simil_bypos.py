@@ -26,6 +26,8 @@ except:
 posi_seed           = np.loadtxt(native_seed,usecols=[0])
 native_seed_simil   = np.loadtxt(native_seed,usecols=[2])
 designed_seed_simil = np.loadtxt(designed_seed,usecols=[2])
+
+print(designed_seed_simil)
 pfam_seed_simil     = np.loadtxt(pfam_seed,usecols=[1])
 
 posi_full           = np.loadtxt(native_full,usecols=[0])
