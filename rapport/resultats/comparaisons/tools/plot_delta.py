@@ -92,8 +92,8 @@ for ligne in lignes[1:]:
 ax.xaxis.set_ticks([1,2,3,4,5,6])
 ax.xaxis.set_major_formatter(formatter)
 ax.set_xlim(2.5, 6.5)
-ax.set_ylim(0.4,6)
-ax.yaxis.set_ticks([0.4,1.,2.,3.,4,5,6])
+ax.set_ylim(0.0,6)
+ax.yaxis.set_ticks([0.0,1.,2.,3.,4,5,6])
 
 ax.grid(False)
 #ax.set_ylabel(u'')
@@ -110,17 +110,17 @@ ax.tick_params(axis = 'x', color='0.9')
 box = ax.get_position()
 ax.set_position([box.x0*1.5, box.y0, box.width * 0.95, box.height])
 
-black_patch = mpatches.Patch(color='black', label='H test')
+black_patch = mpatches.Patch(color='black', label='Heur test')
 gray_patch = mpatches.Patch(color='gray', label='MC test')
-white_patch = mpatches.Patch(facecolor='white', edgecolor='black', label='RE test')
+white_patch = mpatches.Patch(facecolor='white', edgecolor='black', label='REMC test')
 
 circle   = mlines.Line2D(range(1), range(1), color="white", marker='o', markerfacecolor="white",label='Best: CFN')
-square   = mlines.Line2D(range(1), range(1), color="white", marker='s', markerfacecolor="white",label='Best: H')
-triangle = mlines.Line2D(range(1), range(1), color="white", marker='^',markerfacecolor="white",label='Best: RE')
+square   = mlines.Line2D(range(1), range(1), color="white", marker='s', markerfacecolor="white",label='Best: Heur')
+triangle = mlines.Line2D(range(1), range(1), color="white", marker='^',markerfacecolor="white",label='Best: REMC')
 
 
 # Put a legend to the right of the current axis
-ax.legend(loc='center left',fontsize=9,labelspacing=0.2 ,numpoints=1,bbox_to_anchor=(1, 0.5),fancybox=True, shadow=True, ncol=1,handles=[black_patch,gray_patch,white_patch,circle,triangle,square])
+ax.legend(loc='center left',fontsize=11,labelspacing=0.2 ,numpoints=1,bbox_to_anchor=(0.73, 0.82),fancybox=True, shadow=True, ncol=1,handles=[black_patch,gray_patch,white_patch,circle,triangle,square])
 
 
 
