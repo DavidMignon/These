@@ -820,7 +820,7 @@ Il n'y pas de protocole qui domine les autres sur toutes les protéines. Le meil
         
         \bottomrule
       \end{tabular}      
-      \caption{les meilleures énergies pour tous les résidus actifs}
+      \caption{les meilleures énergies pour tous les résidus actifs( arrondies à l'entier inférieur )}
 \label{tab:best_ener_all_all}      
     \end{table}
 
@@ -1441,7 +1441,7 @@ Pour les  tests avec vingt positions actives,les mêmes quatre protocoles dans u
         1BM2 1 & yes  &  -526.0936 & 0.         & -0.0619 & -0.1584 & 0 \\         
         1BM2 2 & no*   &  -7.5304   & -525.3588  & -0.0725 & -0.0143 & 8 \\     
         1BM2 3 & yes  &  -534.3861 & -0.0229    & -0.4762 & -0.2897 & 0 \\    
-        1BM2 4 & no*   &  -0.1186   & -526.8307  & -2.5883 & -0.0789 & 2 \\     
+        1BM2 4 & yes**  & -526.7868   & -0.0432  & -2.1315 & -0.1221 & 2 \\     
         1BM2 5 & yes  &  -535.3334 & -0.2396    & -0.3746 & -0.3746 & 3 \\    
         1CKA 1 & yes*  & -295.8571  & 0.         & 0.      & 0. & 0 \\                   
         1CKA 2 & yes  & -295.3571  & 0.         & 0.      & 0. & 0 \\                   
@@ -1451,7 +1451,7 @@ Pour les  tests avec vingt positions actives,les mêmes quatre protocoles dans u
         1G9O 1 & no*   &  -2.0574   & -451.4604  & -1.2525 & -1.2525 & 5 \\ 
         1G9O 2 & no*   &  -3.2106   & -453.2474  & -0.2177 & -0.1915 & 1 \\ 
         1G9O 3 & no*   &  -1.9008   & -453.7856  & -0.4417 & -0.1019 & 1 \\ 
-        1G9O 4 & no*   &  -0.5030   & -456.7331  & -0.3855 & -0.1455 & 5 \\ 
+        1G9O 4 & yes**   & -456.7331 & 0.        & -0.3855 & -0.1455 & 5 \\ 
         1G9O 5 & no*   &  -0.4298   & -456.9981  & -0.1495 & -0.5114 & 5 \\ 
         1M61 1 & yes  & -528.0700 & 0.          & 0.      & 0. & 0 \\               
         1M61 2 & yes  & -528.7653 & 0.          & 0.      & 0. & 0 \\               
@@ -1780,7 +1780,7 @@ Nous mesurons maintenant,l'effet de l'augmentation du nombre de cycle heuristiqu
 
 
  \end{tabular}      
- \caption{Résultats pour 3 fois (resp 9 fois)plus de cycles heuristiques protocole H+ (resp H++)}
+ \caption{Résultats pour 3 fois (resp 9 fois) plus de cycles heuristiques que pour le protocole H, protocole H+ (resp H++).Les tests sont effectués sur les quatre cas à dix positions actives où l'heuristique ne trouve pas le GMEC}
 \label{tab:H+_H++}       
 \end{table}
 
@@ -1803,8 +1803,33 @@ Nous mesurons maintenant,l'effet de l'augmentation du nombre de cycle heuristiqu
 
  \end{tabular}      
  \caption{Ecarts d'énergie avec des trajectoires 2 fois plus longues pour le protocole RE8b2}
-\label{tab:H+_H++}       
+\label{tab:RE8b2+_RE8b2++}       
 \end{table}
+
+
+    \begin{table}[h]
+      \centering
+
+      \begin{tabular}{ccccc}
+
+        \toprule
+        Test (tout actif) & best ener & H & H+ & H++ \\
+        \cmidrule{1-5}
+        1A81 & -512 & -521 & -520 &  \\
+        1BM2 & -480 & -484 & -481 &  \\
+        1CKA & -247 & -252 & -251 &  \\
+        1G9O & -421 & -428 & -427 &  \\
+        1O4C & -524 & -535 & -529 &  \\
+        \toprule
+
+
+ \end{tabular}      
+ \caption{Ecarts d'énergie avec des trajectoires 2 fois plus longues pour le protocole RE8b2}
+\label{tab:RE8b2+_RE8b2++}       
+\end{table}
+
+
+
 
 
 
@@ -2151,7 +2176,7 @@ Pour chacune des séquences obtenues nous calculons la meilleure énergie sur l'
         1BM2 & 1.08 & 1.26 & 2.90 & 3.50 \\
         1O4C & 1.36 & 1.68 & 2.94 & 3.47 \\
         1M61 & 1.31 & 1.41 & 2.91 & 3.51 \\
-        1A81 & 1.13 &      & 2.91 & 3.51 \\
+        1A81 & 1.13 & 1.29 & 2.91 & 3.51 \\
         \bottomrule
 
       \end{tabular}      
