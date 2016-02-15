@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.3.10)  1 FEB 2016 10:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=latex 2016.1.25)  2 FEB 2016 22:32
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **\input rapport.tex
 (./rapport.tex (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
@@ -26,12 +25,12 @@ File: bk12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
@@ -54,22 +53,24 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@dimlist=\toks15
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2014/04/30 v1.2b Input encoding file
+Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks16
 \inpenc@posthook=\toks17
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
+File: utf8.def 2015/09/07 v1.1p UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
-File: t1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
+File: t1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00AD (decimal 173)
    defining Unicode char U+00BB (decimal 187)
    defining Unicode char U+00BF (decimal 191)
    defining Unicode char U+00C0 (decimal 192)
@@ -190,6 +191,10 @@ File: t1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+016F (decimal 367)
    defining Unicode char U+0170 (decimal 368)
    defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
    defining Unicode char U+0178 (decimal 376)
    defining Unicode char U+0179 (decimal 377)
    defining Unicode char U+017A (decimal 378)
@@ -197,6 +202,10 @@ File: t1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+017C (decimal 380)
    defining Unicode char U+017D (decimal 381)
    defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
    defining Unicode char U+200C (decimal 8204)
    defining Unicode char U+2013 (decimal 8211)
    defining Unicode char U+2014 (decimal 8212)
@@ -216,9 +225,11 @@ Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
-File: ot1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
+File: ot1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AD (decimal 173)
    defining Unicode char U+00B8 (decimal 184)
    defining Unicode char U+00BF (decimal 191)
    defining Unicode char U+00C5 (decimal 197)
@@ -236,6 +247,14 @@ File: ot1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
    defining Unicode char U+0142 (decimal 322)
    defining Unicode char U+0152 (decimal 338)
    defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
    defining Unicode char U+2013 (decimal 8211)
    defining Unicode char U+2014 (decimal 8212)
    defining Unicode char U+2018 (decimal 8216)
@@ -247,7 +266,7 @@ Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
-File: omsenc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
+File: omsenc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
    defining Unicode char U+00B7 (decimal 183)
@@ -275,7 +294,7 @@ Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
 (/usr/share/texmf/tex/latex/lm/lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
@@ -334,13 +353,13 @@ Package microtype Info: Loading configuration file microtype.cfg.
 File: microtype.cfg 2013/05/23 v2.5a microtype main configuration file (RS)
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2014/09/25 3.9l The Babel package
+Package: babel 2016/01/08 3.9n The Babel package
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2014/09/25 3.9l Babel common definitions
+File: babel.def 2016/01/08 3.9n Babel common definitions
 \babel@savecnt=\count93
 \U@D=\dimen112
 )
@@ -349,18 +368,19 @@ File: babel.def 2014/09/25 3.9l Babel common definitions
 \l@newzealand = a dialect from \language\l@british 
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel-french/frenchb.ldf
-Language: frenchb 2014/09/16 v3.1b French support from the babel system
+Language: frenchb 2016/01/01 v3.1k French support from the babel system
 \l@acadian = a dialect from \language\l@french 
 \l@canadien = a dialect from \language\l@french 
 \FBcolonskip=\skip44
 \FBthinskip=\skip45
 \FB@interchartokenstateORI=\count94
-Package babel Info: Making : an active character on input line 371.
-Package babel Info: Making ; an active character on input line 372.
-Package babel Info: Making ! an active character on input line 373.
-Package babel Info: Making ? an active character on input line 374.
+Package babel Info: Making : an active character on input line 372.
+Package babel Info: Making ; an active character on input line 373.
+Package babel Info: Making ! an active character on input line 374.
+Package babel Info: Making ? an active character on input line 375.
 \FBguillskip=\skip46
 \FBguill@level=\count95
+\FB@everypar=\toks19
 \FB@Mht=\dimen113
 \std@mcc=\count96
 \dec@mcc=\count97
@@ -378,8 +398,8 @@ Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Bdimen=\dimen116
 \calc@Askip=\skip50
 \calc@Bskip=\skip51
-LaTeX Info: Redefining \setlength on input line 75.
-LaTeX Info: Redefining \addtolength on input line 76.
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count100
 \calc@Cskip=\skip52
 )
@@ -393,7 +413,7 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks19
+\@emptytoks=\toks20
 \ex@=\dimen117
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -423,21 +443,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \dotsspace@=\muskip10
 \c@parentequation=\count108
 \dspbrk@lvl=\count109
-\tag@help=\toks20
+\tag@help=\toks21
 \row@=\count110
 \column@=\count111
 \maxfields@=\count112
-\andhelp@=\toks21
+\andhelp@=\toks22
 \eqnshift@=\dimen120
 \alignsep@=\dimen121
 \tagshift@=\dimen122
 \tagwidth@=\dimen123
 \totwidth@=\dimen124
 \lineht@=\dimen125
-\@envbody=\toks22
+\@envbody=\toks23
 \multlinegap=\skip54
 \multlinetaggap=\skip55
-\mathdisplay@stack=\toks23
+\mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
@@ -455,10 +475,10 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
@@ -466,27 +486,19 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: dvips.def on input line 94.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count113
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvips.def
+File: dvips.def 2014/10/14 v3.0j Driver-dependent file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen126
 \Gin@req@width=\dimen127
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+Package: caption 2015/09/17 v3.3-111 Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package: caption3 2015/09/20 v1.7-115 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
 \captionmargin=\dimen128
 \captionmargin@=\dimen129
@@ -496,21 +508,24 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 \caption@parindent=\dimen133
 \caption@hangindent=\dimen134
 )
-\c@ContinuedFloat=\count114
+\c@ContinuedFloat=\count113
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
-Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
-\c@subfigure=\count115
-\c@subtable=\count116
+Package: subcaption 2015/09/15 v1.1-100 Sub-captions (AR)
+\c@subfigure=\count114
+\c@subtable=\count115
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 137.
-)
+Package color Info: Driver file: dvips.def on input line 142.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2014/10/14 v3.0j Driver-dependent file (DPC,SPQR)
+))
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip56
 \f@ncyO@elh=\skip57
@@ -530,10 +545,10 @@ Package: setspace 2011/12/19 v6.7a set line spacing
 )
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count117
-\float@exts=\toks24
+\c@float@type=\count116
+\float@exts=\toks25
 \float@box=\box28
-\@float@everytoks=\toks25
+\@float@everytoks=\toks26
 \@floatcapt=\box29
 )
 (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
@@ -541,7 +556,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip65
 \bibsep=\skip66
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count118
+\c@NAT@ctr=\count117
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
@@ -555,19 +570,19 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen142
 \cmidrulekern=\dimen143
 \defaultaddspace=\dimen144
-\@cmidla=\count119
-\@cmidlb=\count120
+\@cmidla=\count118
+\@cmidlb=\count119
 \@aboverulesep=\dimen145
 \@belowrulesep=\dimen146
-\@thisruleclass=\count121
-\@lastruleclass=\count122
+\@thisruleclass=\count120
+\@lastruleclass=\count121
 \@thisrulewidth=\dimen147
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen148
 \extrarowheight=\dimen149
-\NC@list=\toks26
+\NC@list=\toks27
 \extratabsurround=\skip67
 \backup@length=\skip68
 )
@@ -575,15 +590,15 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \bigstrutjot=\dimen150
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
-Package: multicol 2014/10/28 v1.8i multicolumn formatting (FMi)
-\c@tracingmulticols=\count123
+Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
+\c@tracingmulticols=\count122
 \mult@box=\box30
 \multicol@leftmargin=\dimen151
-\c@unbalance=\count124
-\c@collectmore=\count125
-\doublecol@number=\count126
-\multicoltolerance=\count127
-\multicolpretolerance=\count128
+\c@unbalance=\count123
+\c@collectmore=\count124
+\doublecol@number=\count125
+\multicoltolerance=\count126
+\multicolpretolerance=\count127
 \full@width=\dimen152
 \page@free=\dimen153
 \premulticols=\dimen154
@@ -614,14 +629,14 @@ Package: multicol 2014/10/28 v1.8i multicolumn formatting (FMi)
 \@tempa=\box51
 \@tempa=\box52
 \@tempa=\box53
-\c@columnbadness=\count129
-\c@finalcolumnbadness=\count130
+\c@columnbadness=\count128
+\c@finalcolumnbadness=\count129
 \last@try=\dimen157
 \multicolovershoot=\dimen158
 \multicolundershoot=\dimen159
 \mult@nat@firstbox=\box54
 \colbreak@box=\box55
-\mc@col@check@num=\count131
+\mc@col@check@num=\count130
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
@@ -636,8 +651,8 @@ Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
-Package hobsub Info: Skipping package `infwarerr' (already loaded).
-Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 Package hobsub Info: Skipping package `ifvtex' (already loaded).
@@ -655,7 +670,7 @@ Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
+Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
 Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
 Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
 )
@@ -679,15 +694,15 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen160
-\Hy@linkcounter=\count132
-\Hy@pagecounter=\count133
+\Hy@linkcounter=\count131
+\Hy@pagecounter=\count132
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count134
+\Hy@SavedSpaceFactor=\count133
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -710,7 +725,7 @@ Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 ))
-\c@Hy@tempcnt=\count135
+\c@Hy@tempcnt=\count134
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
@@ -718,7 +733,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen161
-\Fld@menulength=\count136
+\Fld@menulength=\count135
 \Field@Width=\dimen162
 \Fld@charsize=\dimen163
 Package hyperref Info: Hyper figures OFF on input line 6295.
@@ -730,19 +745,27 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count137
-\c@Item=\count138
-\c@Hfootnote=\count139
+\Hy@abspage=\count136
+\c@Item=\count137
+\c@Hfootnote=\count138
 )
 
-Package hyperref Message: Driver (autodetected): hpdftex.
+Package hyperref Message: Driver (default): hdvips.
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hdvips.def
+File: hdvips.def 2012/11/06 v6.83m Hyperref driver for dvips
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pdfmark.def
+File: pdfmark.def 2012/11/06 v6.83m Hyperref definitions for pdfmark specials
+\pdf@docset=\toks28
+\pdf@box=\box56
+\pdf@toks=\toks29
+\pdf@defaulttoks=\toks30
+\HyField@AnnotCount=\count139
 \Fld@listcount=\count140
 \c@bookmark@seq@number=\count141
 \Hy@SectionHShift=\skip71
-)
+))
 Package hyperref Info: Option `colorlinks' set `true' on input line 58.
  (./rapport.aux
 (./merci.aux) (./dedicace.aux) (./glossaire.aux) (./intro.aux) (./contexte.aux)
@@ -823,9 +846,9 @@ LaTeX Font Info:    Try loading font information for T1+lmr on input line 250.
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 *geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
+*geometry* detected driver: dvips
 *geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
+* driver: dvips
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -858,12 +881,10 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Info: Redefining \microtypecontext on input line 250.
-Package microtype Info: Generating PDF output.
+Package microtype Info: Generating DVI output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
-Package microtype Info: Automatic font expansion enabled (level 2),
-(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
-Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: No font expansion.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -873,36 +894,12 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 )
 LaTeX Info: Redefining \degres on input line 250.
 LaTeX Info: Redefining \dots on input line 250.
+
+
+Package frenchb.ldf Warning: Please load the "natbib" package
+(frenchb.ldf)                BEFORE babel/frenchb; reported on input line 250.
+
 LaTeX Info: Redefining \up on input line 250.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count142
-\scratchdimen=\dimen164
-\scratchbox=\box56
-\nofMPsegments=\count143
-\nofMParguments=\count144
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count145
-\MPscratchDim=\dimen165
-\MPnumerator=\count146
-\makeMPintoPDFobject=\count147
-\everyMPtoPDFconversion=\toks28
-) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-)
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -910,14 +907,13 @@ Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box57
 Package backref Info: ** backref set up for natbib ** on input line 250.
 Package hyperref Info: Link coloring ON on input line 250.
-
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count148
+\c@section@level=\count142
 )
 LaTeX Info: Redefining \ref on input line 250.
 LaTeX Info: Redefining \pageref on input line 250.
@@ -927,12 +923,22 @@ LaTeX Info: Redefining \nameref on input line 250.
 \@outlinefile=\write3
 \openout3 = `rapport.out'.
 
- <X_logo.jpg, id=317, 435.87843pt x 596.2275pt>
-File: X_logo.jpg Graphic file (type jpg)
 
-<use X_logo.jpg>
-Package pdftex.def Info: X_logo.jpg used on input line 255.
-(pdftex.def)             Requested size: 77.39085pt x 105.86069pt.
+
+! LaTeX Error: Cannot determine size of graphic in X_logo.jpg (no BoundingBox).
+
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.255 \maketitle
+                
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: X_logo.jpg Graphic file (type eps)
+<X_logo.jpg>
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -986,11 +992,11 @@ Package microtype Info: Character `029' is missing
 (microtype)             Ignoring protrusion settings for this character.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./X_logo.jpg>] [2]
+] [2]
 \openout2 = `merci.aux'.
 
- (./merci.tex)
-[1
+
+(./merci.tex) [1
 
 
 
@@ -1015,18 +1021,169 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@toc=\write4
 \openout4 = `rapport.toc'.
 
- [7] [8
+ [7]
+[8
 
-] (./rapport.lof [9
+] (./rapport.lof
+Overfull \hbox (120.95517pt too wide) in paragraph at lines 17--17
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (198.30914pt too wide) in paragraph at lines 20--20
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (165.2423pt too wide) in paragraph at lines 25--25
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (168.86516pt too wide) in paragraph at lines 26--26
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (65.4045pt too wide) in paragraph at lines 27--27
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (631.13159pt too wide) in paragraph at lines 28--28
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (81.43031pt too wide) in paragraph at lines 29--29
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (582.40117pt too wide) in paragraph at lines 30--30
+ [][] [] [][]  
+ []
+
+[9
 
 ])
 \tf@lof=\write5
 \openout5 = `rapport.lof'.
 
- [10] (./rapport.lot [11
+ [10] (./rapport.lot
+Overfull \hbox (191.66519pt too wide) in paragraph at lines 9--9
+ [][] [] [][]  
+ []
 
 
-])
+Overfull \hbox (173.45421pt too wide) in paragraph at lines 10--10
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (351.8591pt too wide) in paragraph at lines 11--11
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (296.90674pt too wide) in paragraph at lines 13--13
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (20.46474pt too wide) in paragraph at lines 16--16
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (112.15553pt too wide) in paragraph at lines 18--18
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (45.49113pt too wide) in paragraph at lines 19--19
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (45.97954pt too wide) in paragraph at lines 20--20
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (47.15178pt too wide) in paragraph at lines 21--21
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (43.23978pt too wide) in paragraph at lines 22--22
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (44.51653pt too wide) in paragraph at lines 23--23
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (41.57452pt too wide) in paragraph at lines 24--24
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (47.36455pt too wide) in paragraph at lines 25--25
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (190.38129pt too wide) in paragraph at lines 32--32
+ [][] [] [][]  
+ []
+
+[11
+
+
+]
+Overfull \hbox (216.88596pt too wide) in paragraph at lines 33--33
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (726.47797pt too wide) in paragraph at lines 34--34
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (25.20372pt too wide) in paragraph at lines 35--35
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (25.32121pt too wide) in paragraph at lines 36--36
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (213.90942pt too wide) in paragraph at lines 37--37
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (36.782pt too wide) in paragraph at lines 38--38
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (255.88031pt too wide) in paragraph at lines 40--40
+ [][] [] [][]  
+ []
+
+
+Overfull \hbox (30.51642pt too wide) in paragraph at lines 41--41
+ [][] [] [][]  
+ []
+
+)
 \tf@lot=\write6
 \openout6 = `rapport.lot'.
 
@@ -1043,8 +1200,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ]
 \openout2 = `intro.aux'.
 
- (./intro.tex)
-[1
+ (./intro.tex) [1
 
 
 
@@ -1054,7 +1210,8 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ]
 \openout2 = `contexte.aux'.
 
- (./contexte.tex) [3
+ (./contexte.tex)
+[3
 
 
 ] [4
@@ -1096,28 +1253,40 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 (hyperref)                than one, level fixed on input line 53.
 
 [10] [11]
+Overfull \hbox (1.30153pt too wide) in paragraph at lines 103--104
+[]\T1/lmr/m/n/12 Alors on ap-pelle ^^Sn-uplet en in-ter-ac-tion^^T la don-née d
+e n po-si-tions avec $\OML/lmm/m/it/12 n \OMS/lmsy/m/n/12 2 f\OT1/lmr/m/n/12 5\
+OML/lmm/m/it/12 ;\OT1/lmr/m/n/12 10\OML/lmm/m/it/12 ;\OT1/lmr/m/n/12 20\OML/lmm
+/m/it/12 ;\OT1/lmr/m/n/12 30\OMS/lmsy/m/n/12 g$
+ []
+
 
 LaTeX Warning: Reference `chap:annexe1 ' on page 12 undefined on input line 110
 .
 
 [12]
+Overfull \hbox (3.40497pt too wide) in paragraph at lines 124--128
+\T1/lmr/m/n/12 quatre heures pour tous les exé-cu-tions. Toul-bar2 donne sa mei
+lleure sé-quence/conformation
+ []
+
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 137.
 
 
-Overfull \hbox (0.91866pt too wide) in paragraph at lines 162--163
- []\T1/lmr/bx/n/12 Protocoles Monte-Carlo[][] \T1/lmr/m/n/12 (-20) On dis-tingu
-e deux en-sembles de pro-to-coles Monte-Carlo.Dans
+Overfull \hbox (6.82288pt too wide) in paragraph at lines 162--163
+ []\T1/lmr/bx/n/12 Protocoles Monte-Carlo[][] \T1/lmr/m/n/12 On dis-tingue deux
+ en-sembles de pro-to-coles Monte-Carlo.Dans
  []
 
 [13] [14]
-Overfull \hbox (7.06929pt too wide) in paragraph at lines 197--223
+Overfull \hbox (7.06789pt too wide) in paragraph at lines 197--223
  [][] 
  []
 
 [15]
-Overfull \hbox (79.4315pt too wide) in paragraph at lines 262--278
+Overfull \hbox (79.4301pt too wide) in paragraph at lines 262--278
  [][] 
  []
 
@@ -1151,674 +1320,1023 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 (hyperref)                than one, level fixed on input line 562.
 
 [23]
-<./resultats/comparaisons/graphe/mc/simil_bypos_1ABO_h.png, id=853, 578.16pt x 
-433.62pt>
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1ABO_h.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.571 ...aphics[width=8cm]{simil_bypos_1ABO_h.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1ABO_h.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1ABO_h.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1ABO_h.
-png used on input line 571.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1ABO_h.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1ABO_h.png, id=855, 578.16pt x 
-433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1ABO_h.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.572 ...aphics[width=8cm]{simil_byseq_1ABO_h.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1ABO_h.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1ABO_h.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1ABO_h.
-png used on input line 572.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1ABO_h.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 571--573
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1ABO_mc2.png, id=856, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1ABO_mc2.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.578 ...hics[width=8cm]{simil_bypos_1ABO_mc2.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1ABO_mc2.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1ABO_mc2.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1ABO_mc
-2.png used on input line 578.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1ABO_mc2.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1ABO_mc2.png, id=857, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1ABO_mc2.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.579 ...hics[width=8cm]{simil_byseq_1ABO_mc2.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1ABO_mc2.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1ABO_mc2.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1ABO_mc
-2.png used on input line 579.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1ABO_mc2.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 578--580
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1ABO_mc3.png, id=858, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1ABO_mc3.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.585 ...hics[width=8cm]{simil_bypos_1ABO_mc3.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1ABO_mc3.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1ABO_mc3.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1ABO_mc
-3.png used on input line 585.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1ABO_mc3.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1ABO_mc3.png, id=859, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1ABO_mc3.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.586 ...hics[width=8cm]{simil_byseq_1ABO_mc3.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1ABO_mc3.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1ABO_mc3.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1ABO_mc
-3.png used on input line 586.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1ABO_mc3.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 585--587
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1CKA_h.png, id=860, 578.16pt x 
-433.62pt>
+LaTeX Warning: Float too large for page by 105.90698pt on input line 592.
+
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1CKA_h.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.597 ...aphics[width=8cm]{simil_bypos_1CKA_h.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1CKA_h.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1CKA_h.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1CKA_h.
-png used on input line 597.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1CKA_h.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1CKA_h.png, id=861, 578.16pt x 
-433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1CKA_h.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.598 ...aphics[width=8cm]{simil_byseq_1CKA_h.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1CKA_h.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1CKA_h.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1CKA_h.
-png used on input line 598.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1CKA_h.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 597--599
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1CKA_mc2.png, id=862, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1CKA_mc2.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.604 ...hics[width=8cm]{simil_bypos_1CKA_mc2.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1CKA_mc2.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1CKA_mc2.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1CKA_mc
-2.png used on input line 604.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1CKA_mc2.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1CKA_mc2.png, id=863, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1CKA_mc2.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.605 ...hics[width=8cm]{simil_byseq_1CKA_mc2.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1CKA_mc2.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1CKA_mc2.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1CKA_mc
-2.png used on input line 605.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1CKA_mc2.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 604--606
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1CKA_mc3.png, id=864, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1CKA_mc3.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.611 ...hics[width=8cm]{simil_bypos_1CKA_mc3.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1CKA_mc3.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1CKA_mc3.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1CKA_mc
-3.png used on input line 611.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1CKA_mc3.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1CKA_mc3.png, id=865, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1CKA_mc3.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.612 ...hics[width=8cm]{simil_byseq_1CKA_mc3.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1CKA_mc3.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1CKA_mc3.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1CKA_mc
-3.png used on input line 612.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1CKA_mc3.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 611--613
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1BM2_h.png, id=866, 578.16pt x 
-433.62pt>
+LaTeX Warning: Float too large for page by 105.90698pt on input line 618.
+
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1BM2_h.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.623 ...aphics[width=8cm]{simil_bypos_1BM2_h.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1BM2_h.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1BM2_h.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1BM2_h.
-png used on input line 623.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1BM2_h.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1BM2_h.png, id=867, 578.16pt x 
-433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1BM2_h.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.624 ...aphics[width=8cm]{simil_byseq_1BM2_h.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1BM2_h.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1BM2_h.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1BM2_h.
-png used on input line 624.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1BM2_h.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 623--625
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1BM2_mc2.png, id=868, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1BM2_mc2.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.630 ...hics[width=8cm]{simil_bypos_1BM2_mc2.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1BM2_mc2.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1BM2_mc2.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1BM2_mc
-2.png used on input line 630.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1BM2_mc2.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1BM2_mc2.png, id=869, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1BM2_mc2.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.631 ...hics[width=8cm]{simil_byseq_1BM2_mc2.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1BM2_mc2.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1BM2_mc2.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1BM2_mc
-2.png used on input line 631.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1BM2_mc2.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 630--632
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1BM2_mc3.png, id=870, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1BM2_mc3.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.637 ...hics[width=8cm]{simil_bypos_1BM2_mc3.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1BM2_mc3.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1BM2_mc3.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1BM2_mc
-3.png used on input line 637.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1BM2_mc3.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1BM2_mc3.png, id=871, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1BM2_mc3.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.638 ...hics[width=8cm]{simil_byseq_1BM2_mc3.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1BM2_mc3.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1BM2_mc3.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1BM2_mc
-3.png used on input line 638.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1BM2_mc3.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 637--639
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1M61_h.png, id=872, 578.16pt x 
-433.62pt>
+LaTeX Warning: Float too large for page by 105.90698pt on input line 644.
+
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1M61_h.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.649 ...aphics[width=8cm]{simil_bypos_1M61_h.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1M61_h.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1M61_h.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1M61_h.
-png used on input line 649.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1M61_h.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1M61_h.png, id=873, 578.16pt x 
-433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1M61_h.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.650 ...aphics[width=8cm]{simil_byseq_1M61_h.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1M61_h.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1M61_h.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1M61_h.
-png used on input line 650.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1M61_h.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 649--651
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1M61_mc2.png, id=874, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1M61_mc2.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.656 ...hics[width=8cm]{simil_bypos_1M61_mc2.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1M61_mc2.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1M61_mc2.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1M61_mc
-2.png used on input line 656.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1M61_mc2.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1M61_mc2.png, id=875, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1M61_mc2.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.657 ...hics[width=8cm]{simil_byseq_1M61_mc2.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1M61_mc2.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1M61_mc2.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1M61_mc
-2.png used on input line 657.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1M61_mc2.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 656--658
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1M61_mc3.png, id=876, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1M61_mc3.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.663 ...hics[width=8cm]{simil_bypos_1M61_mc3.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1M61_mc3.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1M61_mc3.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1M61_mc
-3.png used on input line 663.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1M61_mc3.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1M61_mc3.png, id=877, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1M61_mc3.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.664 ...hics[width=8cm]{simil_byseq_1M61_mc3.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1M61_mc3.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1M61_mc3.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1M61_mc
-3.png used on input line 664.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1M61_mc3.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 663--665
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1O4C_h.png, id=878, 578.16pt x 
-433.62pt>
+LaTeX Warning: Float too large for page by 105.90698pt on input line 670.
+
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1O4C_h.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.675 ...aphics[width=8cm]{simil_bypos_1O4C_h.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1O4C_h.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1O4C_h.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1O4C_h.
-png used on input line 675.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1O4C_h.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1O4C_h.png, id=879, 578.16pt x 
-433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1O4C_h.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.676 ...aphics[width=8cm]{simil_byseq_1O4C_h.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1O4C_h.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1O4C_h.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1O4C_h.
-png used on input line 676.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1O4C_h.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 675--677
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1O4C_mc2.png, id=880, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1O4C_mc2.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.682 ...hics[width=8cm]{simil_bypos_1O4C_mc2.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1O4C_mc2.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1O4C_mc2.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1O4C_mc
-2.png used on input line 682.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1O4C_mc2.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1O4C_mc2.png, id=881, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1O4C_mc2.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.683 ...hics[width=8cm]{simil_byseq_1O4C_mc2.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1O4C_mc2.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1O4C_mc2.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1O4C_mc
-2.png used on input line 683.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1O4C_mc2.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 682--684
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1O4C_mc3.png, id=882, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1O4C_mc3.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.689 ...hics[width=8cm]{simil_bypos_1O4C_mc3.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1O4C_mc3.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1O4C_mc3.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1O4C_mc
-3.png used on input line 689.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1O4C_mc3.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1O4C_mc3.png, id=883, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1O4C_mc3.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.690 ...hics[width=8cm]{simil_byseq_1O4C_mc3.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1O4C_mc3.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1O4C_mc3.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1O4C_mc
-3.png used on input line 690.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1O4C_mc3.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 689--691
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1G9O_h.png, id=884, 578.16pt x 
-433.62pt>
+LaTeX Warning: Float too large for page by 105.90698pt on input line 696.
+
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1G9O_h.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.701 ...aphics[width=8cm]{simil_bypos_1G9O_h.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1G9O_h.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1G9O_h.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1G9O_h.
-png used on input line 701.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1G9O_h.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1G9O_h.png, id=885, 578.16pt x 
-433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1G9O_h.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.702 ...aphics[width=8cm]{simil_byseq_1G9O_h.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1G9O_h.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1G9O_h.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1G9O_h.
-png used on input line 702.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1G9O_h.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 701--703
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1G9O_mc2.png, id=886, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1G9O_mc2.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.708 ...hics[width=8cm]{simil_bypos_1G9O_mc2.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1G9O_mc2.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1G9O_mc2.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1G9O_mc
-2.png used on input line 708.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1G9O_mc2.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1G9O_mc2.png, id=887, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1G9O_mc2.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.709 ...hics[width=8cm]{simil_byseq_1G9O_mc2.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1G9O_mc2.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1G9O_mc2.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1G9O_mc
-2.png used on input line 709.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1G9O_mc2.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 708--710
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1G9O_mc3.png, id=888, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1G9O_mc3.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.715 ...hics[width=8cm]{simil_bypos_1G9O_mc3.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1G9O_mc3.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1G9O_mc3.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1G9O_mc
-3.png used on input line 715.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1G9O_mc3.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1G9O_mc3.png, id=889, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1G9O_mc3.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.716 ...hics[width=8cm]{simil_byseq_1G9O_mc3.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1G9O_mc3.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1G9O_mc3.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1G9O_mc
-3.png used on input line 716.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1G9O_mc3.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 715--717
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1R6J_h.png, id=890, 578.16pt x 
-433.62pt>
+LaTeX Warning: Float too large for page by 105.90698pt on input line 722.
+
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1R6J_h.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.727 ...aphics[width=8cm]{simil_bypos_1R6J_h.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1R6J_h.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1R6J_h.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1R6J_h.
-png used on input line 727.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1R6J_h.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1R6J_h.png, id=891, 578.16pt x 
-433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1R6J_h.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.728 ...aphics[width=8cm]{simil_byseq_1R6J_h.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1R6J_h.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1R6J_h.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1R6J_h.
-png used on input line 728.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1R6J_h.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 727--729
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1R6J_mc2.png, id=892, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1R6J_mc2.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.734 ...hics[width=8cm]{simil_bypos_1R6J_mc2.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1R6J_mc2.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1R6J_mc2.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1R6J_mc
-2.png used on input line 734.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1R6J_mc2.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1R6J_mc2.png, id=893, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1R6J_mc2.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.735 ...hics[width=8cm]{simil_byseq_1R6J_mc2.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1R6J_mc2.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1R6J_mc2.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1R6J_mc
-2.png used on input line 735.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1R6J_mc2.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 734--736
  [][]  [] 
  []
 
 
-<./resultats/comparaisons/graphe/mc/simil_bypos_1R6J_mc3.png, id=894, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_bypos_1R6J_mc3.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.741 ...hics[width=8cm]{simil_bypos_1R6J_mc3.png}
+                                                  ~
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_bypos_1R6J_mc3.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_bypos_1R6J_mc3.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_bypos_1R6J_mc
-3.png used on input line 741.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_bypos_1R6J_mc3.png>
 
-<./resultats/comparaisons/graphe/mc/simil_byseq_1R6J_mc3.png, id=895, 578.16pt 
-x 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_byseq_1R6J_mc3.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.742 ...hics[width=8cm]{simil_byseq_1R6J_mc3.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_byseq_1R6J_mc3.png Graphic file 
-(type png)
- <use ./resultats/comparaisons/graphe/mc/simil_byseq_1R6J_mc3.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_byseq_1R6J_mc
-3.png used on input line 742.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
-
+(type eps)
+<./resultats/comparaisons/graphe/mc/simil_byseq_1R6J_mc3.png>
 Overfull \hbox (5.2221pt too wide) in paragraph at lines 741--743
  [][]  [] 
  []
 
-[24] [25 <./resultats/comparaisons/graphe/mc/simil_bypos_1ABO_h.png> <./resulta
-ts/comparaisons/graphe/mc/simil_byseq_1ABO_h.png> <./resultats/comparaisons/gra
-phe/mc/simil_bypos_1ABO_mc2.png> <./resultats/comparaisons/graphe/mc/simil_byse
-q_1ABO_mc2.png> <./resultats/comparaisons/graphe/mc/simil_bypos_1ABO_mc3.png> <
-./resultats/comparaisons/graphe/mc/simil_byseq_1ABO_mc3.png>] [26 <./resultats/
-comparaisons/graphe/mc/simil_bypos_1CKA_h.png> <./resultats/comparaisons/graphe
-/mc/simil_byseq_1CKA_h.png> <./resultats/comparaisons/graphe/mc/simil_bypos_1CK
-A_mc2.png> <./resultats/comparaisons/graphe/mc/simil_byseq_1CKA_mc2.png> <./res
-ultats/comparaisons/graphe/mc/simil_bypos_1CKA_mc3.png> <./resultats/comparaiso
-ns/graphe/mc/simil_byseq_1CKA_mc3.png>] [27 <./resultats/comparaisons/graphe/mc
-/simil_bypos_1BM2_h.png> <./resultats/comparaisons/graphe/mc/simil_byseq_1BM2_h
-.png> <./resultats/comparaisons/graphe/mc/simil_bypos_1BM2_mc2.png> <./resultat
-s/comparaisons/graphe/mc/simil_byseq_1BM2_mc2.png> <./resultats/comparaisons/gr
-aphe/mc/simil_bypos_1BM2_mc3.png> <./resultats/comparaisons/graphe/mc/simil_bys
-eq_1BM2_mc3.png>] [28 <./resultats/comparaisons/graphe/mc/simil_bypos_1M61_h.pn
-g> <./resultats/comparaisons/graphe/mc/simil_byseq_1M61_h.png> <./resultats/com
-paraisons/graphe/mc/simil_bypos_1M61_mc2.png> <./resultats/comparaisons/graphe/
-mc/simil_byseq_1M61_mc2.png> <./resultats/comparaisons/graphe/mc/simil_bypos_1M
-61_mc3.png> <./resultats/comparaisons/graphe/mc/simil_byseq_1M61_mc3.png>]
-[29 <./resultats/comparaisons/graphe/mc/simil_bypos_1O4C_h.png> <./resultats/co
-mparaisons/graphe/mc/simil_byseq_1O4C_h.png> <./resultats/comparaisons/graphe/m
-c/simil_bypos_1O4C_mc2.png> <./resultats/comparaisons/graphe/mc/simil_byseq_1O4
-C_mc2.png> <./resultats/comparaisons/graphe/mc/simil_bypos_1O4C_mc3.png> <./res
-ultats/comparaisons/graphe/mc/simil_byseq_1O4C_mc3.png>] [30 <./resultats/compa
-raisons/graphe/mc/simil_bypos_1G9O_h.png> <./resultats/comparaisons/graphe/mc/s
-imil_byseq_1G9O_h.png> <./resultats/comparaisons/graphe/mc/simil_bypos_1G9O_mc2
-.png> <./resultats/comparaisons/graphe/mc/simil_byseq_1G9O_mc2.png> <./resultat
-s/comparaisons/graphe/mc/simil_bypos_1G9O_mc3.png> <./resultats/comparaisons/gr
-aphe/mc/simil_byseq_1G9O_mc3.png>] [31 <./resultats/comparaisons/graphe/mc/simi
-l_bypos_1R6J_h.png> <./resultats/comparaisons/graphe/mc/simil_byseq_1R6J_h.png>
- <./resultats/comparaisons/graphe/mc/simil_bypos_1R6J_mc2.png> <./resultats/com
-paraisons/graphe/mc/simil_byseq_1R6J_mc2.png> <./resultats/comparaisons/graphe/
-mc/simil_bypos_1R6J_mc3.png> <./resultats/comparaisons/graphe/mc/simil_byseq_1R
-6J_mc3.png>]
-<./resultats/comparaisons/graphe/mc/simil_vs_ener_1ABO.png, id=973, 578.16pt x 
-433.62pt>
+
+LaTeX Warning: Float too large for page by 105.90698pt on input line 748.
+
+[24] [25] [26] [27] [28] [29] [30] [31]
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_vs_ener_1ABO.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.756 ...aphics[width=7cm]{simil_vs_ener_1ABO.png}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_vs_ener_1ABO.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_vs_ener_1ABO.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_vs_ener_1ABO.
-png used on input line 756.
-(pdftex.def)             Requested size: 199.16928pt x 149.3741pt.
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_vs_ener_1ABO.png>
 
-<./resultats/comparaisons/graphe/mc/simil_vs_ener_1BM2.png, id=974, 578.16pt x 
-433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_vs_ener_1BM2.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.757 ...aphics[width=7cm]{simil_vs_ener_1BM2.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_vs_ener_1BM2.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_vs_ener_1BM2.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_vs_ener_1BM2.
-png used on input line 757.
-(pdftex.def)             Requested size: 199.16928pt x 149.3741pt.
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_vs_ener_1BM2.png>
 
-<./resultats/comparaisons/graphe/mc/simil_vs_ener_1CKA.png, id=975, 578.16pt x 
-433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_vs_ener_1CKA.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.758 ...aphics[width=7cm]{simil_vs_ener_1CKA.png}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_vs_ener_1CKA.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_vs_ener_1CKA.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_vs_ener_1CKA.
-png used on input line 758.
-(pdftex.def)             Requested size: 199.16928pt x 149.3741pt.
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_vs_ener_1CKA.png>
 
-<./resultats/comparaisons/graphe/mc/simil_vs_ener_1G9O.png, id=976, 578.16pt x 
-433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_vs_ener_1G9O.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.759 ...aphics[width=7cm]{simil_vs_ener_1G9O.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_vs_ener_1G9O.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_vs_ener_1G9O.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_vs_ener_1G9O.
-png used on input line 759.
-(pdftex.def)             Requested size: 199.16928pt x 149.3741pt.
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_vs_ener_1G9O.png>
 
-<./resultats/comparaisons/graphe/mc/simil_vs_ener_1M61.png, id=977, 578.16pt x 
-433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_vs_ener_1M61.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.760 ...aphics[width=7cm]{simil_vs_ener_1M61.png}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_vs_ener_1M61.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_vs_ener_1M61.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_vs_ener_1M61.
-png used on input line 760.
-(pdftex.def)             Requested size: 199.16928pt x 149.3741pt.
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_vs_ener_1M61.png>
 
-<./resultats/comparaisons/graphe/mc/simil_vs_ener_1O4C.png, id=978, 578.16pt x 
-433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_vs_ener_1O4C.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.761 ...aphics[width=7cm]{simil_vs_ener_1O4C.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_vs_ener_1O4C.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_vs_ener_1O4C.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_vs_ener_1O4C.
-png used on input line 761.
-(pdftex.def)             Requested size: 199.16928pt x 149.3741pt.
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_vs_ener_1O4C.png>
 
-<./resultats/comparaisons/graphe/mc/simil_vs_ener_1R6J.png, id=979, 578.16pt x 
-433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/simil_vs_ener_1R6J.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.762 ...aphics[width=8cm]{simil_vs_ener_1R6J.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/mc/simil_vs_ener_1R6J.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/mc/simil_vs_ener_1R6J.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/simil_vs_ener_1R6J.
-png used on input line 762.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+ype eps)
+<./resultats/comparaisons/graphe/mc/simil_vs_ener_1R6J.png>
 
-
-LaTeX Warning: Float too large for page by 10.73474pt on input line 766.
+LaTeX Warning: Float too large for page by 217.07657pt on input line 766.
 
 
 LaTeX Warning: Reference `graph:centiles' on page 32 undefined on input line 77
 3.
 
 
-<./resultats/comparaisons/graphe/mc/centiles_1ABO.png, id=980, 578.16pt x 433.6
-2pt>
-File: ./resultats/comparaisons/graphe/mc/centiles_1ABO.png Graphic file (type p
-ng)
- <use ./resultats/comparaisons/graphe/mc/centiles_1ABO.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/centiles_1ABO.png u
-sed on input line 779.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/centiles_1ABO.png (no BoundingBox).
 
-<./resultats/comparaisons/graphe/mc/centiles_1BM2.png, id=981, 578.16pt x 433.6
-2pt>
-File: ./resultats/comparaisons/graphe/mc/centiles_1BM2.png Graphic file (type p
-ng)
- <use ./resultats/comparaisons/graphe/mc/centiles_1BM2.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/centiles_1BM2.png u
-sed on input line 780.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.779 ...udegraphics[width=8cm]{centiles_1ABO.png}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-<./resultats/comparaisons/graphe/mc/centiles_1CKA.png, id=982, 578.16pt x 433.6
-2pt>
-File: ./resultats/comparaisons/graphe/mc/centiles_1CKA.png Graphic file (type p
-ng)
- <use ./resultats/comparaisons/graphe/mc/centiles_1CKA.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/centiles_1CKA.png u
-sed on input line 781.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+File: ./resultats/comparaisons/graphe/mc/centiles_1ABO.png Graphic file (type e
+ps)
+<./resultats/comparaisons/graphe/mc/centiles_1ABO.png>
 
-<./resultats/comparaisons/graphe/mc/centiles_1G9O.png, id=983, 578.16pt x 433.6
-2pt>
-File: ./resultats/comparaisons/graphe/mc/centiles_1G9O.png Graphic file (type p
-ng)
- <use ./resultats/comparaisons/graphe/mc/centiles_1G9O.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/centiles_1G9O.png u
-sed on input line 782.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/centiles_1BM2.png (no BoundingBox).
 
-<./resultats/comparaisons/graphe/mc/centiles_1M61.png, id=984, 578.16pt x 433.6
-2pt>
-File: ./resultats/comparaisons/graphe/mc/centiles_1M61.png Graphic file (type p
-ng)
- <use ./resultats/comparaisons/graphe/mc/centiles_1M61.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/centiles_1M61.png u
-sed on input line 783.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.780 ...udegraphics[width=8cm]{centiles_1BM2.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-<./resultats/comparaisons/graphe/mc/centiles_1O4C.png, id=985, 578.16pt x 433.6
-2pt>
-File: ./resultats/comparaisons/graphe/mc/centiles_1O4C.png Graphic file (type p
-ng)
- <use ./resultats/comparaisons/graphe/mc/centiles_1O4C.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/centiles_1O4C.png u
-sed on input line 784.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+File: ./resultats/comparaisons/graphe/mc/centiles_1BM2.png Graphic file (type e
+ps)
+<./resultats/comparaisons/graphe/mc/centiles_1BM2.png>
 
-<./resultats/comparaisons/graphe/mc/centiles_1R6J.png, id=986, 578.16pt x 433.6
-2pt>
-File: ./resultats/comparaisons/graphe/mc/centiles_1R6J.png Graphic file (type p
-ng)
- <use ./resultats/comparaisons/graphe/mc/centiles_1R6J.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/mc/centiles_1R6J.png u
-sed on input line 785.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/centiles_1CKA.png (no BoundingBox).
 
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.781 ...udegraphics[width=8cm]{centiles_1CKA.png}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: ./resultats/comparaisons/graphe/mc/centiles_1CKA.png Graphic file (type e
+ps)
+<./resultats/comparaisons/graphe/mc/centiles_1CKA.png>
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/centiles_1G9O.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.782 ...udegraphics[width=8cm]{centiles_1G9O.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: ./resultats/comparaisons/graphe/mc/centiles_1G9O.png Graphic file (type e
+ps)
+<./resultats/comparaisons/graphe/mc/centiles_1G9O.png>
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/centiles_1M61.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.783 ...udegraphics[width=8cm]{centiles_1M61.png}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: ./resultats/comparaisons/graphe/mc/centiles_1M61.png Graphic file (type e
+ps)
+<./resultats/comparaisons/graphe/mc/centiles_1M61.png>
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/centiles_1O4C.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.784 ...udegraphics[width=8cm]{centiles_1O4C.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: ./resultats/comparaisons/graphe/mc/centiles_1O4C.png Graphic file (type e
+ps)
+<./resultats/comparaisons/graphe/mc/centiles_1O4C.png>
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/mc/centiles_1R6J.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.785 ...udegraphics[width=8cm]{centiles_1R6J.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: ./resultats/comparaisons/graphe/mc/centiles_1R6J.png Graphic file (type e
+ps)
+<./resultats/comparaisons/graphe/mc/centiles_1R6J.png>
 Overfull \hbox (23.99997pt too wide) in paragraph at lines 778--787
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 74.74937pt on input line 790.
+LaTeX Warning: Float too large for page by 302.44286pt on input line 790.
 
-[32] [33 <./resultats/comparaisons/graphe/mc/simil_vs_ener_1ABO.png> <./resulta
-ts/comparaisons/graphe/mc/simil_vs_ener_1BM2.png> <./resultats/comparaisons/gra
-phe/mc/simil_vs_ener_1CKA.png> <./resultats/comparaisons/graphe/mc/simil_vs_ene
-r_1G9O.png> <./resultats/comparaisons/graphe/mc/simil_vs_ener_1M61.png> <./resu
-ltats/comparaisons/graphe/mc/simil_vs_ener_1O4C.png> <./resultats/comparaisons/
-graphe/mc/simil_vs_ener_1R6J.png>] [34 <./resultats/comparaisons/graphe/mc/cent
-iles_1ABO.png> <./resultats/comparaisons/graphe/mc/centiles_1BM2.png> <./result
-ats/comparaisons/graphe/mc/centiles_1CKA.png> <./resultats/comparaisons/graphe/
-mc/centiles_1G9O.png> <./resultats/comparaisons/graphe/mc/centiles_1M61.png> <.
-/resultats/comparaisons/graphe/mc/centiles_1O4C.png> <./resultats/comparaisons/
-graphe/mc/centiles_1R6J.png>]
+[32] [33] [34]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 798.
@@ -1834,115 +2352,188 @@ Overfull \hbox (62.9163pt too wide) in paragraph at lines 805--823
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./resultats/comparaisons/graphe/best_all.png, id=1020, 578.16pt x 433.62pt>
-File: ./resultats/comparaisons/graphe/best_all.png Graphic file (type png)
 
-<use ./resultats/comparaisons/graphe/best_all.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/best_all.png used on i
-nput line 831.
-(pdftex.def)             Requested size: 512.1496pt x 384.13412pt.
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/best_all.png (no BoundingBox).
 
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.831 ...includegraphics[width=18cm]{best_all.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: ./resultats/comparaisons/graphe/best_all.png Graphic file (type eps)
+<./resultats/comparaisons/graphe/best_all.png>
 Overfull \hbox (68.90549pt too wide) in paragraph at lines 830--833
  [][] 
  []
 
 [35
 
-] [36 <./resultats/comparaisons/graphe/best_all.png>]
-<./resultats/comparaisons/graphe/best_by_cat.png, id=1030, 578.16pt x 433.62pt>
-File: ./resultats/comparaisons/graphe/best_by_cat.png Graphic file (type png)
-<use ./resultats/comparaisons/graphe/best_by_cat.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/best_by_cat.png used o
-n input line 844.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+] [36] [37]
 
-<./resultats/comparaisons/graphe/monoM.png, id=1031, 578.16pt x 433.62pt>
-File: ./resultats/comparaisons/graphe/monoM.png Graphic file (type png)
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/best_by_cat.png (no BoundingBox).
 
-<use ./resultats/comparaisons/graphe/monoM.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/monoM.png used on inpu
-t line 845.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.844 ...cludegraphics[width=8cm]{best_by_cat.png}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-<./resultats/comparaisons/graphe/best_RE4.png, id=1032, 578.16pt x 433.62pt>
-File: ./resultats/comparaisons/graphe/best_RE4.png Graphic file (type png)
+File: ./resultats/comparaisons/graphe/best_by_cat.png Graphic file (type eps)
+<./resultats/comparaisons/graphe/best_by_cat.png>
 
-<use ./resultats/comparaisons/graphe/best_RE4.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/best_RE4.png used on i
-nput line 846.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/monoM.png (no BoundingBox).
 
-<./resultats/comparaisons/graphe/best_RE8.png, id=1033, 578.16pt x 433.62pt>
-File: ./resultats/comparaisons/graphe/best_RE8.png Graphic file (type png)
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.845 ...   \includegraphics[width=8cm]{monoM.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-<use ./resultats/comparaisons/graphe/best_RE8.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/best_RE8.png used on i
-nput line 847.
-(pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
+File: ./resultats/comparaisons/graphe/monoM.png Graphic file (type eps)
+<./resultats/comparaisons/graphe/monoM.png>
 
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/best_RE4.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.846 ...\includegraphics[width=8cm]{best_RE4.png}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: ./resultats/comparaisons/graphe/best_RE4.png Graphic file (type eps)
+<./resultats/comparaisons/graphe/best_RE4.png>
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/best_RE8.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.847 ...\includegraphics[width=8cm]{best_RE8.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: ./resultats/comparaisons/graphe/best_RE8.png Graphic file (type eps)
+<./resultats/comparaisons/graphe/best_RE8.png>
 Overfull \hbox (23.99997pt too wide) in paragraph at lines 843--849
  [][] 
  []
 
 
-LaTeX Warning: Reference `???' on page 37 undefined on input line 856.
+LaTeX Warning: Reference `???' on page 38 undefined on input line 856.
 
-[37
+[38
 
- <./resultats/comparaisons/graphe/best_by_cat.png> <./resultats/comparaisons/gr
-aphe/monoM.png> <./resultats/comparaisons/graphe/best_RE4.png> <./resultats/com
-paraisons/graphe/best_RE8.png>]
-<./resultats/comparaisons/graphe/1A81_RE8b1.png, id=1043, 578.16pt x 433.62pt>
-File: ./resultats/comparaisons/graphe/1A81_RE8b1.png Graphic file (type png)
+]
 
-<use ./resultats/comparaisons/graphe/1A81_RE8b1.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1A81_RE8b1.png used on
- input line 864.
-(pdftex.def)             Requested size: 341.43306pt x 256.07178pt.
- [38 <./resultats/comparaisons/graphe/1A81_RE8b1.png>]
-<./resultats/comparaisons/graphe/1A81-RE4a-T_traj.png, id=1050, 578.16pt x 433.
-62pt>
-File: ./resultats/comparaisons/graphe/1A81-RE4a-T_traj.png Graphic file (type p
-ng)
- <use ./resultats/comparaisons/graphe/1A81-RE4a-T_traj.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1A81-RE4a-T_traj.png u
-sed on input line 879.
-(pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/1A81_RE8b1.png (no BoundingBox).
 
-<./resultats/comparaisons/graphe/1A81-RE4b-T_traj.png, id=1051, 578.16pt x 433.
-62pt>
-File: ./resultats/comparaisons/graphe/1A81-RE4b-T_traj.png Graphic file (type p
-ng)
- <use ./resultats/comparaisons/graphe/1A81-RE4b-T_traj.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1A81-RE4b-T_traj.png u
-sed on input line 880.
-(pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.864 ...cludegraphics[width=12cm]{1A81_RE8b1.png}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-<./resultats/comparaisons/graphe/1A81-RE8a2-T_traj.png, id=1052, 578.16pt x 433
-.62pt>
+File: ./resultats/comparaisons/graphe/1A81_RE8b1.png Graphic file (type eps)
+<./resultats/comparaisons/graphe/1A81_RE8b1.png>
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/1A81-RE4a-T_traj.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.879 ...phics[width=8.45cm]{1A81-RE4a-T_traj.png}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: ./resultats/comparaisons/graphe/1A81-RE4a-T_traj.png Graphic file (type e
+ps)
+<./resultats/comparaisons/graphe/1A81-RE4a-T_traj.png>
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/1A81-RE4b-T_traj.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.880 ...phics[width=8.45cm]{1A81-RE4b-T_traj.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: ./resultats/comparaisons/graphe/1A81-RE4b-T_traj.png Graphic file (type e
+ps)
+<./resultats/comparaisons/graphe/1A81-RE4b-T_traj.png>
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/1A81-RE8a2-T_traj.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.881 ...hics[width=8.45cm]{1A81-RE8a2-T_traj.png}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/1A81-RE8a2-T_traj.png Graphic file (type 
-png)
- <use ./resultats/comparaisons/graphe/1A81-RE8a2-T_traj.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1A81-RE8a2-T_traj.png 
-used on input line 881.
-(pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
+eps)
+<./resultats/comparaisons/graphe/1A81-RE8a2-T_traj.png>
 
-<./resultats/comparaisons/graphe/1A81-RE8b1-T_traj.png, id=1053, 578.16pt x 433
-.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/1A81-RE8b1-T_traj.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.882 ...hics[width=8.45cm]{1A81-RE8b1-T_traj.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/1A81-RE8b1-T_traj.png Graphic file (type 
-png)
- <use ./resultats/comparaisons/graphe/1A81-RE8b1-T_traj.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1A81-RE8b1-T_traj.png 
-used on input line 882.
-(pdftex.def)             Requested size: 240.42569pt x 180.31947pt.
-
+eps)
+<./resultats/comparaisons/graphe/1A81-RE8b1-T_traj.png>
 Overfull \hbox (49.60727pt too wide) in paragraph at lines 878--884
  [][] 
  []
 
-[39 <./resultats/comparaisons/graphe/1A81-RE4a-T_traj.png> <./resultats/compara
-isons/graphe/1A81-RE4b-T_traj.png> <./resultats/comparaisons/graphe/1A81-RE8a2-
-T_traj.png> <./resultats/comparaisons/graphe/1A81-RE8b1-T_traj.png>] [40
+[39] [40] [41]
+Overfull \hbox (3.13597pt too wide) in paragraph at lines 891--892
+\T1/lmr/m/n/12 quences/conformations de meilleures éner-gies sont sé-lec-tion-n
+ées, puis les sé-quences d'acides
+ []
+
+[42
 
 ]
 
@@ -1950,12 +2541,12 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 (hyperref)                than one, level fixed on input line 924.
 
 
-LaTeX Warning: Reference `??' on page 41 undefined on input line 925.
+LaTeX Warning: Reference `??' on page 43 undefined on input line 925.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[41
+[43
 
 ]
 
@@ -1979,7 +2570,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[42]
+[44]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1991,7 +2582,7 @@ Overfull \hbox (83.01137pt too wide) in paragraph at lines 1347--1348
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[43] [44]
+[45] [46]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1999,14 +2590,20 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<./resultats/comparaisons/graphe/all_result.png, id=1103, 578.16pt x 433.62pt>
-File: ./resultats/comparaisons/graphe/all_result.png Graphic file (type png)
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/all_result.png (no BoundingBox).
 
-<use ./resultats/comparaisons/graphe/all_result.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/all_result.png used on
- input line 1561.
-(pdftex.def)             Requested size: 512.1496pt x 384.13412pt.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1561 ...ludegraphics[width=18cm]{all_result.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
+File: ./resultats/comparaisons/graphe/all_result.png Graphic file (type eps)
+<./resultats/comparaisons/graphe/all_result.png>
 Overfull \hbox (68.90549pt too wide) in paragraph at lines 1560--1563
  [][] 
  []
@@ -2014,23 +2611,29 @@ Overfull \hbox (68.90549pt too wide) in paragraph at lines 1560--1563
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[45] [46]
-<./resultats/comparaisons/graphe/temps_de_calculs.png, id=1115, 578.16pt x 433.
-62pt>
-File: ./resultats/comparaisons/graphe/temps_de_calculs.png Graphic file (type p
-ng)
- <use ./resultats/comparaisons/graphe/temps_de_calculs.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/temps_de_calculs.png u
-sed on input line 1577.
-(pdftex.def)             Requested size: 341.43306pt x 256.07178pt.
+[47] [48]
 
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/temps_de_calculs.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1577 ...aphics[width=12cm]{temps_de_calculs.png}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: ./resultats/comparaisons/graphe/temps_de_calculs.png Graphic file (type e
+ps)
+<./resultats/comparaisons/graphe/temps_de_calculs.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[47] [48] [49] [50] [51] [52 <./resultats/comparaisons/graphe/all_result.png>]
-[53 <./resultats/comparaisons/graphe/temps_de_calculs.png>]
+[49] [50] [51] [52] [53] [54] [55]
 
-LaTeX Warning: Reference `tab:voisinnage_GMEC' on page 54 undefined on input li
+LaTeX Warning: Reference `tab:voisinnage_GMEC' on page 56 undefined on input li
 ne 1587.
 
 
@@ -2052,13 +2655,12 @@ LaTeX Warning: Command \` invalid in math mode on input line 1599.
 LaTeX Warning: Command \' invalid in math mode on input line 1599.
 
 
-Overfull \hbox (1.05568pt too wide) in paragraph at lines 1599--1601
-[]$\OT1/lmr/m/n/12 (-20) 10(\OML/lmm/m/it/12 positionsactives\OT1/lmr/m/n/12 (-
-20) ) \OMS/lmsy/m/n/12 ^^B \OT1/lmr/m/n/12 (-20) 200(\OML/lmm/m/it/12 rotam\OT1
-/lmr/m/n/12 (-20) è\OML/lmm/m/it/12 respossibles\OT1/lmr/m/n/12 (-20) ) \OMS/lm
-sy/m/n/12 ^^B \OT1/lmr/m/n/12 (-20) 81(\OML/lmm/m/it/12 positionsnon \OMS/lmsy/
-m/n/12 ^^@ \OML/lmm/m/it/12 activesde\OT1/lmr/m/n/12 (-20) 1\OML/lmm/m/it/12 CK
-A\OT1/lmr/m/n/12 (-20) ) \OMS/lmsy/m/n/12 ^^B
+Overfull \hbox (2.64838pt too wide) in paragraph at lines 1599--1601
+[]$\OT1/lmr/m/n/12 10(\OML/lmm/m/it/12 positionsactives\OT1/lmr/m/n/12 ) \OMS/l
+msy/m/n/12 ^^B \OT1/lmr/m/n/12 200(\OML/lmm/m/it/12 rotam\OT1/lmr/m/n/12 è\OML/
+lmm/m/it/12 respossibles\OT1/lmr/m/n/12 ) \OMS/lmsy/m/n/12 ^^B \OT1/lmr/m/n/12 
+81(\OML/lmm/m/it/12 positionsnon \OMS/lmsy/m/n/12 ^^@ \OML/lmm/m/it/12 activesd
+e\OT1/lmr/m/n/12 1\OML/lmm/m/it/12 CKA\OT1/lmr/m/n/12 ) \OMS/lmsy/m/n/12 ^^B
  []
 
 
@@ -2071,697 +2673,496 @@ LaTeX Warning: Command \` invalid in math mode on input line 1604.
 LaTeX Warning: Command \' invalid in math mode on input line 1604.
 
 
-LaTeX Warning: Reference `voisinage_GMEC' on page 54 undefined on input line 16
+LaTeX Warning: Reference `voisinage_GMEC' on page 56 undefined on input line 16
 09.
 
 
-Overfull \hbox (7.74487pt too wide) in paragraph at lines 1609--1610
+Overfull \hbox (9.93419pt too wide) in paragraph at lines 1609--1610
  []\T1/lmr/bx/n/12 Études des sé-quences d'acide aminé au voi-si-nage du GMEC[]
-[] \T1/lmr/m/n/12 (-20) Après post-traitement
+[] \T1/lmr/m/n/12 Après post-traitement
  []
 
-[54
+[56
 
 ]
-<./resultats/comparaisons/image/align_1CKA.png, id=1153, 476.82489pt x 466.9753
-9pt>
-File: ./resultats/comparaisons/image/align_1CKA.png Graphic file (type png)
- <use ./resultats/comparaisons/image/align_1CKA.png>
-Package pdftex.def Info: ./resultats/comparaisons/image/align_1CKA.png used on 
-input line 1667.
-(pdftex.def)             Requested size: 284.52756pt x 278.65541pt.
 
-<./resultats/comparaisons/image/align_1M61.png, id=1154, 667.71196pt x 504.3016
-5pt>
-File: ./resultats/comparaisons/image/align_1M61.png Graphic file (type png)
- <use ./resultats/comparaisons/image/align_1M61.png>
-Package pdftex.def Info: ./resultats/comparaisons/image/align_1M61.png used on 
-input line 1668.
-(pdftex.def)             Requested size: 284.52756pt x 214.89864pt.
- [55] [56 <./resultats/comparaisons/image/align_1CKA.png> <./resultats/comparai
-sons/image/align_1M61.png>] [57]
-<./resultats/comparaisons/image/1M61_2_gmec_vs_ph.png, id=1172, 1326.78293pt x 
-794.17583pt>
-File: ./resultats/comparaisons/image/1M61_2_gmec_vs_ph.png Graphic file (type p
-ng)
- <use ./resultats/comparaisons/image/1M61_2_gmec_vs_ph.png>
-Package pdftex.def Info: ./resultats/comparaisons/image/1M61_2_gmec_vs_ph.png u
-sed on input line 1717.
-(pdftex.def)             Requested size: 398.33858pt x 238.43636pt.
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/ima
+ge/align_1CKA.png (no BoundingBox).
 
-<./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png, id=1174, 1092.69098pt x 
-799.73506pt>
-File: ./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png Graphic file (type p
-ng)
- <use ./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png>
-Package pdftex.def Info: ./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png u
-sed on input line 1729.
-(pdftex.def)             Requested size: 398.33858pt x 291.54088pt.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1667 ...ludegraphics[width=10cm]{align_1CKA.png}
+                                                  \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
+File: ./resultats/comparaisons/image/align_1CKA.png Graphic file (type eps)
+<./resultats/comparaisons/image/align_1CKA.png>
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/ima
+ge/align_1M61.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1668 ...ludegraphics[width=10cm]{align_1M61.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: ./resultats/comparaisons/image/align_1M61.png Graphic file (type eps)
+<./resultats/comparaisons/image/align_1M61.png> [57] [58] [59]
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/ima
+ge/1M61_2_gmec_vs_ph.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1717 ...phics[width=14cm]{1M61_2_gmec_vs_ph.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: ./resultats/comparaisons/image/1M61_2_gmec_vs_ph.png Graphic file (type e
+ps)
+<./resultats/comparaisons/image/1M61_2_gmec_vs_ph.png>
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/ima
+ge/1CKA_5_gmec_vs_ph.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1729 ...phics[width=14cm]{1CKA_5_gmec_vs_ph.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: ./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png Graphic file (type e
+ps)
+<./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[60
+
+]
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/ima
+ge/1CKA_5_gmec_vs_MC.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1744 ...phics[width=14cm]{1CKA_5_gmec_vs_MC.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: ./resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png Graphic file (type e
+ps)
+<./resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<./resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png, id=1178, 1153.96336pt x 
-798.94087pt>
-File: ./resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png Graphic file (type p
-ng)
- <use ./resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png>
-Package pdftex.def Info: ./resultats/comparaisons/image/1CKA_5_gmec_vs_MC.png u
-sed on input line 1744.
-(pdftex.def)             Requested size: 398.33858pt x 275.78119pt.
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/ima
+ge/1G9O_5_gmec_vs_MC.png (no BoundingBox).
 
-[58
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1754 ...phics[width=14cm]{1G9O_5_gmec_vs_MC.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
- <./resultats/comparaisons/image/1M61_2_gmec_vs_ph.png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-<./resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png, id=1184, 1045.55836pt x 
-674.25528pt>
-File: ./resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png Graphic file (type p
-ng)
- <use ./resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png>
-Package pdftex.def Info: ./resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png u
-sed on input line 1754.
-(pdftex.def)             Requested size: 398.33858pt x 256.87811pt.
-
+File: ./resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png Graphic file (type e
+ps)
+<./resultats/comparaisons/image/1G9O_5_gmec_vs_MC.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[59 <./resultats/comparaisons/image/1CKA_5_gmec_vs_ph.png>] [60 <./resultats/co
-mparaisons/image/1CKA_5_gmec_vs_MC.png> <./resultats/comparaisons/image/1G9O_5_
-gmec_vs_MC.png>]
+[61] [62] [63]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[61
+[64
 
-] [62]
+] [65]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 1839.
 
 
-<./resultats/comparaisons/graphe/histo_seq_1CKA_3.png, id=1207, 578.16pt x 433.
-62pt>
-File: ./resultats/comparaisons/graphe/histo_seq_1CKA_3.png Graphic file (type p
-ng)
- <use ./resultats/comparaisons/graphe/histo_seq_1CKA_3.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/histo_seq_1CKA_3.png u
-sed on input line 1847.
-(pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/histo_seq_1CKA_3.png (no BoundingBox).
 
-<./resultats/comparaisons/graphe/histo_seq_1CKA_5.png, id=1208, 578.16pt x 433.
-62pt>
-File: ./resultats/comparaisons/graphe/histo_seq_1CKA_5.png Graphic file (type p
-ng)
- <use ./resultats/comparaisons/graphe/histo_seq_1CKA_5.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/histo_seq_1CKA_5.png u
-sed on input line 1858.
-(pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1847 ...aphics[width=10cm]{histo_seq_1CKA_3.png}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
+File: ./resultats/comparaisons/graphe/histo_seq_1CKA_3.png Graphic file (type e
+ps)
+<./resultats/comparaisons/graphe/histo_seq_1CKA_3.png>
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/histo_seq_1CKA_5.png (no BoundingBox).
 
-[63
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1858 ...aphics[width=10cm]{histo_seq_1CKA_5.png}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
- <./resultats/comparaisons/graphe/histo_seq_1CKA_3.png>] [64 <./resultats/compa
-raisons/graphe/histo_seq_1CKA_5.png>]
-<./resultats/comparaisons/graphe/centiles_1CKA_10posi.png, id=1220, 578.16pt x 
-433.62pt>
-File: ./resultats/comparaisons/graphe/centiles_1CKA_10posi.png Graphic file (ty
-pe png)
- <use ./resultats/comparaisons/graphe/centiles_1CKA_10posi.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/centiles_1CKA_10posi.p
-ng used on input line 1871.
-(pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
-
-[65
-
- <./resultats/comparaisons/graphe/centiles_1CKA_10posi.png>]
-<./resultats/comparaisons/graphe/1CKA_3T_entropy_seqnb.png, id=1227, 578.16pt x
- 433.62pt>
-File: ./resultats/comparaisons/graphe/1CKA_3T_entropy_seqnb.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/1CKA_3T_entropy_seqnb.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1CKA_3T_entropy_seqnb.
-png used on input line 1885.
-(pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
-
-<./resultats/comparaisons/graphe/1CKA_1_5T_entropy.png, id=1228, 578.16pt x 433
-.62pt>
-File: ./resultats/comparaisons/graphe/1CKA_1_5T_entropy.png Graphic file (type 
-png)
- <use ./resultats/comparaisons/graphe/1CKA_1_5T_entropy.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1CKA_1_5T_entropy.png 
-used on input line 1896.
-(pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
-
-<./resultats/comparaisons/graphe/1CKA_entropy_seqnb.png, id=1229, 578.16pt x 43
-3.62pt>
-File: ./resultats/comparaisons/graphe/1CKA_entropy_seqnb.png Graphic file (type
- png)
- <use ./resultats/comparaisons/graphe/1CKA_entropy_seqnb.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1CKA_entropy_seqnb.png
- used on input line 1907.
-(pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
-
+File: ./resultats/comparaisons/graphe/histo_seq_1CKA_5.png Graphic file (type e
+ps)
+<./resultats/comparaisons/graphe/histo_seq_1CKA_5.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [66
 
- <./resultats/comparaisons/graphe/1CKA_3T_entropy_seqnb.png> <./resultats/compa
-raisons/graphe/1CKA_1_5T_entropy.png>] [67 <./resultats/comparaisons/graphe/1CK
-A_entropy_seqnb.png>]
-Package epstopdf Info: Source file: <./resultats/comparaisons/graphe/1CKA_05_su
-boptimal.eps>
-(epstopdf)                    date: 2015-09-28 11:48:07
-(epstopdf)                    size: 781772 bytes
-(epstopdf)             Output file: <./resultats/comparaisons/graphe/1CKA_05_su
-boptimal-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-28 12:01:25
-(epstopdf)                    size: 21870 bytes
-(epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/g
-raphe/1CKA_05_suboptimal-eps-converted-to.pdf ./resultats/comparaisons/graphe/1
-CKA_05_suboptimal.eps>
-(epstopdf)             \includegraphics on input line 1920.
-Package epstopdf Info: Output file is already uptodate.
+] [67]
 
-<./resultats/comparaisons/graphe/1CKA_05_suboptimal-eps-converted-to.pdf, id=12
-42, 1445.4pt x 252.945pt>
-File: ./resultats/comparaisons/graphe/1CKA_05_suboptimal-eps-converted-to.pdf G
-raphic file (type pdf)
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/centiles_1CKA_10posi.png (no BoundingBox).
 
-<use ./resultats/comparaisons/graphe/1CKA_05_suboptimal-eps-converted-to.pdf>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1CKA_05_suboptimal-eps
--converted-to.pdf used on input line 1920.
-(pdftex.def)             Requested size: 455.24408pt x 79.6665pt.
-Package epstopdf Info: Source file: <./resultats/comparaisons/graphe/1CKA_2_sub
-optimal.eps>
-(epstopdf)                    date: 2015-09-28 11:48:07
-(epstopdf)                    size: 1215582 bytes
-(epstopdf)             Output file: <./resultats/comparaisons/graphe/1CKA_2_sub
-optimal-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-28 12:23:23
-(epstopdf)                    size: 23459 bytes
-(epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/g
-raphe/1CKA_2_suboptimal-eps-converted-to.pdf ./resultats/comparaisons/graphe/1C
-KA_2_suboptimal.eps>
-(epstopdf)             \includegraphics on input line 1921.
-Package epstopdf Info: Output file is already uptodate.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1871 ...cs[width=10cm]{centiles_1CKA_10posi.png}
+                                                   &
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-<./resultats/comparaisons/graphe/1CKA_2_suboptimal-eps-converted-to.pdf, id=124
-3, 1445.4pt x 252.945pt>
-File: ./resultats/comparaisons/graphe/1CKA_2_suboptimal-eps-converted-to.pdf Gr
-aphic file (type pdf)
+File: ./resultats/comparaisons/graphe/centiles_1CKA_10posi.png Graphic file (ty
+pe eps)
+<./resultats/comparaisons/graphe/centiles_1CKA_10posi.png> [68
 
-<use ./resultats/comparaisons/graphe/1CKA_2_suboptimal-eps-converted-to.pdf>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1CKA_2_suboptimal-eps-
-converted-to.pdf used on input line 1921.
-(pdftex.def)             Requested size: 455.24408pt x 79.6665pt.
-Package epstopdf Info: Source file: <./resultats/comparaisons/graphe/1CKA_05_RE
-_3T.eps>
-(epstopdf)                    date: 2015-09-28 12:18:23
-(epstopdf)                    size: 802000 bytes
-(epstopdf)             Output file: <./resultats/comparaisons/graphe/1CKA_05_RE
-_3T-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-28 12:23:23
-(epstopdf)                    size: 22761 bytes
-(epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/g
-raphe/1CKA_05_RE_3T-eps-converted-to.pdf ./resultats/comparaisons/graphe/1CKA_0
-5_RE_3T.eps>
-(epstopdf)             \includegraphics on input line 1922.
-Package epstopdf Info: Output file is already uptodate.
+]
 
-<./resultats/comparaisons/graphe/1CKA_05_RE_3T-eps-converted-to.pdf, id=1244, 1
-445.4pt x 252.945pt>
-File: ./resultats/comparaisons/graphe/1CKA_05_RE_3T-eps-converted-to.pdf Graphi
-c file (type pdf)
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/1CKA_3T_entropy_seqnb.png (no BoundingBox).
 
-<use ./resultats/comparaisons/graphe/1CKA_05_RE_3T-eps-converted-to.pdf>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1CKA_05_RE_3T-eps-conv
-erted-to.pdf used on input line 1922.
-(pdftex.def)             Requested size: 455.24408pt x 79.6665pt.
-Package epstopdf Info: Source file: <./resultats/comparaisons/graphe/1CKA_2_RE_
-3T.eps>
-(epstopdf)                    date: 2015-09-28 12:20:16
-(epstopdf)                    size: 1336521 bytes
-(epstopdf)             Output file: <./resultats/comparaisons/graphe/1CKA_2_RE_
-3T-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-09-28 12:23:24
-(epstopdf)                    size: 25368 bytes
-(epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/g
-raphe/1CKA_2_RE_3T-eps-converted-to.pdf ./resultats/comparaisons/graphe/1CKA_2_
-RE_3T.eps>
-(epstopdf)             \includegraphics on input line 1923.
-Package epstopdf Info: Output file is already uptodate.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1885 ...s[width=10cm]{1CKA_3T_entropy_seqnb.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-<./resultats/comparaisons/graphe/1CKA_2_RE_3T-eps-converted-to.pdf, id=1245, 14
-45.4pt x 252.945pt>
-File: ./resultats/comparaisons/graphe/1CKA_2_RE_3T-eps-converted-to.pdf Graphic
- file (type pdf)
+File: ./resultats/comparaisons/graphe/1CKA_3T_entropy_seqnb.png Graphic file (t
+ype eps)
+<./resultats/comparaisons/graphe/1CKA_3T_entropy_seqnb.png>
 
-<use ./resultats/comparaisons/graphe/1CKA_2_RE_3T-eps-converted-to.pdf>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1CKA_2_RE_3T-eps-conve
-rted-to.pdf used on input line 1923.
-(pdftex.def)             Requested size: 455.24408pt x 79.6665pt.
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/1CKA_1_5T_entropy.png (no BoundingBox).
 
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1896 ...phics[width=10cm]{1CKA_1_5T_entropy.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: ./resultats/comparaisons/graphe/1CKA_1_5T_entropy.png Graphic file (type 
+eps)
+<./resultats/comparaisons/graphe/1CKA_1_5T_entropy.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/1CKA_entropy_seqnb.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1907 ...hics[width=10cm]{1CKA_entropy_seqnb.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: ./resultats/comparaisons/graphe/1CKA_entropy_seqnb.png Graphic file (type
+ eps)
+<./resultats/comparaisons/graphe/1CKA_entropy_seqnb.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[69
+
+] [70] [71]
+File: ./resultats/comparaisons/graphe/1CKA_05_suboptimal.eps Graphic file (type
+ eps)
+ <./resultats/comparaisons/graphe/1CKA_05_suboptimal.eps>
+File: ./resultats/comparaisons/graphe/1CKA_2_suboptimal.eps Graphic file (type 
+eps)
+
+<./resultats/comparaisons/graphe/1CKA_2_suboptimal.eps>
+File: ./resultats/comparaisons/graphe/1CKA_05_RE_3T.eps Graphic file (type eps)
+
+
+<./resultats/comparaisons/graphe/1CKA_05_RE_3T.eps>
+File: ./resultats/comparaisons/graphe/1CKA_2_RE_3T.eps Graphic file (type eps)
+
+<./resultats/comparaisons/graphe/1CKA_2_RE_3T.eps>
 Overfull \hbox (11.99997pt too wide) in paragraph at lines 1919--1930
  [][] 
  []
 
-[68
-
- <./resultats/comparaisons/graphe/1CKA_05_suboptimal-eps-converted-to.pdf> <./r
-esultats/comparaisons/graphe/1CKA_2_suboptimal-eps-converted-to.pdf> <./resulta
-ts/comparaisons/graphe/1CKA_05_RE_3T-eps-converted-to.pdf> <./resultats/compara
-isons/graphe/1CKA_2_RE_3T-eps-converted-to.pdf>]
-<./resultats/comparaisons/graphe/1CKA_1_allT_entropy.png, id=1353, 578.16pt x 4
-33.62pt>
-File: ./resultats/comparaisons/graphe/1CKA_1_allT_entropy.png Graphic file (typ
-e png)
- <use ./resultats/comparaisons/graphe/1CKA_1_allT_entropy.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1CKA_1_allT_entropy.pn
-g used on input line 1941.
-(pdftex.def)             Requested size: 312.9803pt x 234.73357pt.
-
-<./resultats/comparaisons/graphe/1O4C_4_allT_entropy.png, id=1354, 578.16pt x 4
-33.62pt>
-File: ./resultats/comparaisons/graphe/1O4C_4_allT_entropy.png Graphic file (typ
-e png)
- <use ./resultats/comparaisons/graphe/1O4C_4_allT_entropy.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1O4C_4_allT_entropy.pn
-g used on input line 1942.
-(pdftex.def)             Requested size: 312.9803pt x 234.73357pt.
-
-<./resultats/comparaisons/graphe/1R6J_2_allT_entropy.png, id=1355, 578.16pt x 4
-33.62pt>
-File: ./resultats/comparaisons/graphe/1R6J_2_allT_entropy.png Graphic file (typ
-e png)
- <use ./resultats/comparaisons/graphe/1R6J_2_allT_entropy.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1R6J_2_allT_entropy.pn
-g used on input line 1943.
-(pdftex.def)             Requested size: 312.9803pt x 234.73357pt.
-
-
-LaTeX Warning: Float too large for page by 91.7508pt on input line 1948.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[69 <./resultats/comparaisons/graphe/1CKA_1_allT_entropy.png> <./resultats/comp
-araisons/graphe/1O4C_4_allT_entropy.png> <./resultats/comparaisons/graphe/1R6J_
-2_allT_entropy.png>]
-Package epstopdf Info: Source file: <./resultats/comparaisons/graphe/1CKA_nativ
-e_core_seqlogo.eps>
-(epstopdf)                    date: 2015-10-26 10:19:05
-(epstopdf)                    size: 109514 bytes
-(epstopdf)             Output file: <./resultats/comparaisons/graphe/1CKA_nativ
-e_core_seqlogo-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-10-26 10:33:22
-(epstopdf)                    size: 8852 bytes
-(epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/g
-raphe/1CKA_native_core_seqlogo-eps-converted-to.pdf ./resultats/comparaisons/gr
-aphe/1CKA_native_core_seqlogo.eps>
-(epstopdf)             \includegraphics on input line 1957.
-Package epstopdf Info: Output file is already uptodate.
-
-<./resultats/comparaisons/graphe/1CKA_native_core_seqlogo-eps-converted-to.pdf,
- id=1364, 1445.4pt x 252.945pt>
-File: ./resultats/comparaisons/graphe/1CKA_native_core_seqlogo-eps-converted-to
-.pdf Graphic file (type pdf)
-
-<use ./resultats/comparaisons/graphe/1CKA_native_core_seqlogo-eps-converted-to.
-pdf>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1CKA_native_core_seqlo
-go-eps-converted-to.pdf used on input line 1957.
-(pdftex.def)             Requested size: 426.79134pt x 74.68759pt.
-Package epstopdf Info: Source file: <./resultats/comparaisons/graphe/1CKA_desig
-ned_core_seqlogo.eps>
-(epstopdf)                    date: 2015-10-26 10:19:05
-(epstopdf)                    size: 190284 bytes
-(epstopdf)             Output file: <./resultats/comparaisons/graphe/1CKA_desig
-ned_core_seqlogo-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-10-26 10:32:42
-(epstopdf)                    size: 12609 bytes
-(epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/g
-raphe/1CKA_designed_core_seqlogo-eps-converted-to.pdf ./resultats/comparaisons/
-graphe/1CKA_designed_core_seqlogo.eps>
-(epstopdf)             \includegraphics on input line 1967.
-Package epstopdf Info: Output file is already uptodate.
-
-<./resultats/comparaisons/graphe/1CKA_designed_core_seqlogo-eps-converted-to.pd
-f, id=1365, 1445.4pt x 252.945pt>
-File: ./resultats/comparaisons/graphe/1CKA_designed_core_seqlogo-eps-converted-
-to.pdf Graphic file (type pdf)
-
-<use ./resultats/comparaisons/graphe/1CKA_designed_core_seqlogo-eps-converted-t
-o.pdf>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1CKA_designed_core_seq
-logo-eps-converted-to.pdf used on input line 1967.
-(pdftex.def)             Requested size: 426.79134pt x 74.68759pt.
-Package epstopdf Info: Source file: <./resultats/comparaisons/graphe/1CKA_pfam_
-seed_core_seqlogo.eps>
-(epstopdf)                    date: 2015-10-26 10:19:05
-(epstopdf)                    size: 543661 bytes
-(epstopdf)             Output file: <./resultats/comparaisons/graphe/1CKA_pfam_
-seed_core_seqlogo-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-10-26 10:32:42
-(epstopdf)                    size: 17938 bytes
-(epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/g
-raphe/1CKA_pfam_seed_core_seqlogo-eps-converted-to.pdf ./resultats/comparaisons
-/graphe/1CKA_pfam_seed_core_seqlogo.eps>
-(epstopdf)             \includegraphics on input line 1977.
-Package epstopdf Info: Output file is already uptodate.
-
-<./resultats/comparaisons/graphe/1CKA_pfam_seed_core_seqlogo-eps-converted-to.p
-df, id=1366, 1445.4pt x 252.945pt>
-File: ./resultats/comparaisons/graphe/1CKA_pfam_seed_core_seqlogo-eps-converted
--to.pdf Graphic file (type pdf)
-
-<use ./resultats/comparaisons/graphe/1CKA_pfam_seed_core_seqlogo-eps-converted-
-to.pdf>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1CKA_pfam_seed_core_se
-qlogo-eps-converted-to.pdf used on input line 1977.
-(pdftex.def)             Requested size: 426.79134pt x 74.68759pt.
-Package epstopdf Info: Source file: <./resultats/comparaisons/graphe/1CKA_pfam_
-full_core_seqlogo.eps>
-(epstopdf)                    date: 2015-10-26 10:18:00
-(epstopdf)                    size: 652315 bytes
-(epstopdf)             Output file: <./resultats/comparaisons/graphe/1CKA_pfam_
-full_core_seqlogo-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-10-26 10:32:43
-(epstopdf)                    size: 20056 bytes
-(epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/g
-raphe/1CKA_pfam_full_core_seqlogo-eps-converted-to.pdf ./resultats/comparaisons
-/graphe/1CKA_pfam_full_core_seqlogo.eps>
-(epstopdf)             \includegraphics on input line 1987.
-Package epstopdf Info: Output file is already uptodate.
-
-<./resultats/comparaisons/graphe/1CKA_pfam_full_core_seqlogo-eps-converted-to.p
-df, id=1367, 1445.4pt x 252.945pt>
-File: ./resultats/comparaisons/graphe/1CKA_pfam_full_core_seqlogo-eps-converted
--to.pdf Graphic file (type pdf)
-
-<use ./resultats/comparaisons/graphe/1CKA_pfam_full_core_seqlogo-eps-converted-
-to.pdf>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1CKA_pfam_full_core_se
-qlogo-eps-converted-to.pdf used on input line 1987.
-(pdftex.def)             Requested size: 426.79134pt x 74.68759pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[70
-
-
- <./resultats/comparaisons/graphe/1CKA_native_core_seqlogo-eps-converted-to.pdf
-> <./resultats/comparaisons/graphe/1CKA_designed_core_seqlogo-eps-converted-to.
-pdf> <./resultats/comparaisons/graphe/1CKA_pfam_seed_core_seqlogo-eps-converted
--to.pdf>] [71 <./resultats/comparaisons/graphe/1CKA_pfam_full_core_seqlogo-eps-
-converted-to.pdf>]
-Package epstopdf Info: Source file: <./resultats/comparaisons/graphe/2BYG_nativ
-e_core_seqlogo.eps>
-(epstopdf)                    date: 2015-10-26 10:51:56
-(epstopdf)                    size: 170860 bytes
-(epstopdf)             Output file: <./resultats/comparaisons/graphe/2BYG_nativ
-e_core_seqlogo-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-10-26 10:57:59
-(epstopdf)                    size: 8594 bytes
-(epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/g
-raphe/2BYG_native_core_seqlogo-eps-converted-to.pdf ./resultats/comparaisons/gr
-aphe/2BYG_native_core_seqlogo.eps>
-(epstopdf)             \includegraphics on input line 2004.
-Package epstopdf Info: Output file is already uptodate.
-
-<./resultats/comparaisons/graphe/2BYG_native_core_seqlogo-eps-converted-to.pdf,
- id=1442, 1445.4pt x 252.945pt>
-File: ./resultats/comparaisons/graphe/2BYG_native_core_seqlogo-eps-converted-to
-.pdf Graphic file (type pdf)
-
-<use ./resultats/comparaisons/graphe/2BYG_native_core_seqlogo-eps-converted-to.
-pdf>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/2BYG_native_core_seqlo
-go-eps-converted-to.pdf used on input line 2004.
-(pdftex.def)             Requested size: 426.79134pt x 74.68759pt.
-Package epstopdf Info: Source file: <./resultats/comparaisons/graphe/2BYG_desig
-ned_core_seqlogo.eps>
-(epstopdf)                    date: 2015-10-26 10:52:29
-(epstopdf)                    size: 261737 bytes
-(epstopdf)             Output file: <./resultats/comparaisons/graphe/2BYG_desig
-ned_core_seqlogo-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-10-26 10:57:59
-(epstopdf)                    size: 14011 bytes
-(epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/g
-raphe/2BYG_designed_core_seqlogo-eps-converted-to.pdf ./resultats/comparaisons/
-graphe/2BYG_designed_core_seqlogo.eps>
-(epstopdf)             \includegraphics on input line 2014.
-Package epstopdf Info: Output file is already uptodate.
-
-<./resultats/comparaisons/graphe/2BYG_designed_core_seqlogo-eps-converted-to.pd
-f, id=1443, 1445.4pt x 252.945pt>
-File: ./resultats/comparaisons/graphe/2BYG_designed_core_seqlogo-eps-converted-
-to.pdf Graphic file (type pdf)
-
-<use ./resultats/comparaisons/graphe/2BYG_designed_core_seqlogo-eps-converted-t
-o.pdf>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/2BYG_designed_core_seq
-logo-eps-converted-to.pdf used on input line 2014.
-(pdftex.def)             Requested size: 426.79134pt x 74.68759pt.
-Package epstopdf Info: Source file: <./resultats/comparaisons/graphe/2BYG_pfam_
-seed_core_seqlogo.eps>
-(epstopdf)                    date: 2015-10-26 10:51:18
-(epstopdf)                    size: 1147921 bytes
-(epstopdf)             Output file: <./resultats/comparaisons/graphe/2BYG_pfam_
-seed_core_seqlogo-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-10-26 10:58:00
-(epstopdf)                    size: 26558 bytes
-(epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/g
-raphe/2BYG_pfam_seed_core_seqlogo-eps-converted-to.pdf ./resultats/comparaisons
-/graphe/2BYG_pfam_seed_core_seqlogo.eps>
-(epstopdf)             \includegraphics on input line 2024.
-Package epstopdf Info: Output file is already uptodate.
-
-<./resultats/comparaisons/graphe/2BYG_pfam_seed_core_seqlogo-eps-converted-to.p
-df, id=1444, 1445.4pt x 252.945pt>
-File: ./resultats/comparaisons/graphe/2BYG_pfam_seed_core_seqlogo-eps-converted
--to.pdf Graphic file (type pdf)
-
-<use ./resultats/comparaisons/graphe/2BYG_pfam_seed_core_seqlogo-eps-converted-
-to.pdf>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/2BYG_pfam_seed_core_se
-qlogo-eps-converted-to.pdf used on input line 2024.
-(pdftex.def)             Requested size: 426.79134pt x 74.68759pt.
-Package epstopdf Info: Source file: <./resultats/comparaisons/graphe/1CKA_pfam_
-full_core_seqlogo.eps>
-(epstopdf)                    date: 2015-10-26 10:18:00
-(epstopdf)                    size: 652315 bytes
-(epstopdf)             Output file: <./resultats/comparaisons/graphe/1CKA_pfam_
-full_core_seqlogo-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-10-26 10:32:43
-(epstopdf)                    size: 20056 bytes
-(epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/g
-raphe/1CKA_pfam_full_core_seqlogo-eps-converted-to.pdf ./resultats/comparaisons
-/graphe/1CKA_pfam_full_core_seqlogo.eps>
-(epstopdf)             \includegraphics on input line 2034.
-Package epstopdf Info: Output file is already uptodate.
-File: ./resultats/comparaisons/graphe/1CKA_pfam_full_core_seqlogo-eps-converted
--to.pdf Graphic file (type pdf)
-
-<use ./resultats/comparaisons/graphe/1CKA_pfam_full_core_seqlogo-eps-converted-
-to.pdf>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1CKA_pfam_full_core_se
-qlogo-eps-converted-to.pdf used on input line 2034.
-(pdftex.def)             Requested size: 426.79134pt x 74.68759pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [72
 
+]
 
- <./resultats/comparaisons/graphe/2BYG_native_core_seqlogo-eps-converted-to.pdf
-> <./resultats/comparaisons/graphe/2BYG_designed_core_seqlogo-eps-converted-to.
-pdf> <./resultats/comparaisons/graphe/2BYG_pfam_seed_core_seqlogo-eps-converted
--to.pdf>] [73]
-Package epstopdf Info: Source file: <./resultats/comparaisons/graphe/1A81_nativ
-e_core_seqlogo.eps>
-(epstopdf)                    date: 2015-10-26 10:55:26
-(epstopdf)                    size: 140175 bytes
-(epstopdf)             Output file: <./resultats/comparaisons/graphe/1A81_nativ
-e_core_seqlogo-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-10-26 10:58:00
-(epstopdf)                    size: 9239 bytes
-(epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/g
-raphe/1A81_native_core_seqlogo-eps-converted-to.pdf ./resultats/comparaisons/gr
-aphe/1A81_native_core_seqlogo.eps>
-(epstopdf)             \includegraphics on input line 2050.
-Package epstopdf Info: Output file is already uptodate.
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/1CKA_1_allT_entropy.png (no BoundingBox).
 
-<./resultats/comparaisons/graphe/1A81_native_core_seqlogo-eps-converted-to.pdf,
- id=1508, 1445.4pt x 252.945pt>
-File: ./resultats/comparaisons/graphe/1A81_native_core_seqlogo-eps-converted-to
-.pdf Graphic file (type pdf)
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1941 ...ics[width=11cm]{1CKA_1_allT_entropy.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-<use ./resultats/comparaisons/graphe/1A81_native_core_seqlogo-eps-converted-to.
-pdf>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1A81_native_core_seqlo
-go-eps-converted-to.pdf used on input line 2050.
-(pdftex.def)             Requested size: 426.79134pt x 74.68759pt.
-Package epstopdf Info: Source file: <./resultats/comparaisons/graphe/1A81_desig
-ned_core_seqlogo.eps>
-(epstopdf)                    date: 2015-10-26 10:55:40
-(epstopdf)                    size: 150274 bytes
-(epstopdf)             Output file: <./resultats/comparaisons/graphe/1A81_desig
-ned_core_seqlogo-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-10-26 10:58:01
-(epstopdf)                    size: 12037 bytes
-(epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/g
-raphe/1A81_designed_core_seqlogo-eps-converted-to.pdf ./resultats/comparaisons/
-graphe/1A81_designed_core_seqlogo.eps>
-(epstopdf)             \includegraphics on input line 2060.
-Package epstopdf Info: Output file is already uptodate.
+File: ./resultats/comparaisons/graphe/1CKA_1_allT_entropy.png Graphic file (typ
+e eps)
+<./resultats/comparaisons/graphe/1CKA_1_allT_entropy.png>
 
-<./resultats/comparaisons/graphe/1A81_designed_core_seqlogo-eps-converted-to.pd
-f, id=1509, 1445.4pt x 252.945pt>
-File: ./resultats/comparaisons/graphe/1A81_designed_core_seqlogo-eps-converted-
-to.pdf Graphic file (type pdf)
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/1O4C_4_allT_entropy.png (no BoundingBox).
 
-<use ./resultats/comparaisons/graphe/1A81_designed_core_seqlogo-eps-converted-t
-o.pdf>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1A81_designed_core_seq
-logo-eps-converted-to.pdf used on input line 2060.
-(pdftex.def)             Requested size: 426.79134pt x 74.68759pt.
-Package epstopdf Info: Source file: <./resultats/comparaisons/graphe/1A81_pfam_
-seed_core_seqlogo.eps>
-(epstopdf)                    date: 2015-10-26 10:55:06
-(epstopdf)                    size: 643938 bytes
-(epstopdf)             Output file: <./resultats/comparaisons/graphe/1A81_pfam_
-seed_core_seqlogo-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-10-26 10:58:02
-(epstopdf)                    size: 21177 bytes
-(epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/g
-raphe/1A81_pfam_seed_core_seqlogo-eps-converted-to.pdf ./resultats/comparaisons
-/graphe/1A81_pfam_seed_core_seqlogo.eps>
-(epstopdf)             \includegraphics on input line 2070.
-Package epstopdf Info: Output file is already uptodate.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1942 ...ics[width=11cm]{1O4C_4_allT_entropy.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-<./resultats/comparaisons/graphe/1A81_pfam_seed_core_seqlogo-eps-converted-to.p
-df, id=1510, 1445.4pt x 252.945pt>
-File: ./resultats/comparaisons/graphe/1A81_pfam_seed_core_seqlogo-eps-converted
--to.pdf Graphic file (type pdf)
+File: ./resultats/comparaisons/graphe/1O4C_4_allT_entropy.png Graphic file (typ
+e eps)
+<./resultats/comparaisons/graphe/1O4C_4_allT_entropy.png>
 
-<use ./resultats/comparaisons/graphe/1A81_pfam_seed_core_seqlogo-eps-converted-
-to.pdf>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1A81_pfam_seed_core_se
-qlogo-eps-converted-to.pdf used on input line 2070.
-(pdftex.def)             Requested size: 426.79134pt x 74.68759pt.
-Package epstopdf Info: Source file: <./resultats/comparaisons/graphe/1CKA_pfam_
-full_core_seqlogo.eps>
-(epstopdf)                    date: 2015-10-26 10:18:00
-(epstopdf)                    size: 652315 bytes
-(epstopdf)             Output file: <./resultats/comparaisons/graphe/1CKA_pfam_
-full_core_seqlogo-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-10-26 10:32:43
-(epstopdf)                    size: 20056 bytes
-(epstopdf)             Command: <repstopdf --outfile=./resultats/comparaisons/g
-raphe/1CKA_pfam_full_core_seqlogo-eps-converted-to.pdf ./resultats/comparaisons
-/graphe/1CKA_pfam_full_core_seqlogo.eps>
-(epstopdf)             \includegraphics on input line 2080.
-Package epstopdf Info: Output file is already uptodate.
-File: ./resultats/comparaisons/graphe/1CKA_pfam_full_core_seqlogo-eps-converted
--to.pdf Graphic file (type pdf)
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/1R6J_2_allT_entropy.png (no BoundingBox).
 
-<use ./resultats/comparaisons/graphe/1CKA_pfam_full_core_seqlogo-eps-converted-
-to.pdf>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1CKA_pfam_full_core_se
-qlogo-eps-converted-to.pdf used on input line 2080.
-(pdftex.def)             Requested size: 426.79134pt x 74.68759pt.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1943 ...ics[width=11cm]{1R6J_2_allT_entropy.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
+File: ./resultats/comparaisons/graphe/1R6J_2_allT_entropy.png Graphic file (typ
+e eps)
+<./resultats/comparaisons/graphe/1R6J_2_allT_entropy.png>
+
+LaTeX Warning: Float too large for page by 326.74785pt on input line 1948.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[73]
+File: ./resultats/comparaisons/graphe/1CKA_native_core_seqlogo.eps Graphic file
+ (type eps)
+ <./resultats/comparaisons/graphe/1CKA_native_core_seqlogo.eps>
+File: ./resultats/comparaisons/graphe/1CKA_designed_core_seqlogo.eps Graphic fi
+le (type eps)
+
+<./resultats/comparaisons/graphe/1CKA_designed_core_seqlogo.eps>
+File: ./resultats/comparaisons/graphe/1CKA_pfam_seed_core_seqlogo.eps Graphic f
+ile (type eps)
+
+<./resultats/comparaisons/graphe/1CKA_pfam_seed_core_seqlogo.eps>
+File: ./resultats/comparaisons/graphe/1CKA_pfam_full_core_seqlogo.eps Graphic f
+ile (type eps)
+
+<./resultats/comparaisons/graphe/1CKA_pfam_full_core_seqlogo.eps>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [74
 
 
- <./resultats/comparaisons/graphe/1A81_native_core_seqlogo-eps-converted-to.pdf
-> <./resultats/comparaisons/graphe/1A81_designed_core_seqlogo-eps-converted-to.
-pdf> <./resultats/comparaisons/graphe/1A81_pfam_seed_core_seqlogo-eps-converted
--to.pdf>] [75]
-<./resultats/comparaisons/graphe/simil_bypos.png, id=1569, 578.16pt x 433.62pt>
-File: ./resultats/comparaisons/graphe/simil_bypos.png Graphic file (type png)
-<use ./resultats/comparaisons/graphe/simil_bypos.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/simil_bypos.png used o
-n input line 2096.
-(pdftex.def)             Requested size: 455.24408pt x 341.43124pt.
+] [75]
+File: ./resultats/comparaisons/graphe/2BYG_native_core_seqlogo.eps Graphic file
+ (type eps)
+ <./resultats/comparaisons/graphe/2BYG_native_core_seqlogo.eps>
+File: ./resultats/comparaisons/graphe/2BYG_designed_core_seqlogo.eps Graphic fi
+le (type eps)
 
+<./resultats/comparaisons/graphe/2BYG_designed_core_seqlogo.eps>
+File: ./resultats/comparaisons/graphe/2BYG_pfam_seed_core_seqlogo.eps Graphic f
+ile (type eps)
+
+<./resultats/comparaisons/graphe/2BYG_pfam_seed_core_seqlogo.eps>
+File: ./resultats/comparaisons/graphe/1CKA_pfam_full_core_seqlogo.eps Graphic f
+ile (type eps)
+
+<./resultats/comparaisons/graphe/1CKA_pfam_full_core_seqlogo.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[76
+
+
+] [77]
+File: ./resultats/comparaisons/graphe/1A81_native_core_seqlogo.eps Graphic file
+ (type eps)
+ <./resultats/comparaisons/graphe/1A81_native_core_seqlogo.eps>
+File: ./resultats/comparaisons/graphe/1A81_designed_core_seqlogo.eps Graphic fi
+le (type eps)
+
+<./resultats/comparaisons/graphe/1A81_designed_core_seqlogo.eps>
+File: ./resultats/comparaisons/graphe/1A81_pfam_seed_core_seqlogo.eps Graphic f
+ile (type eps)
+
+<./resultats/comparaisons/graphe/1A81_pfam_seed_core_seqlogo.eps>
+File: ./resultats/comparaisons/graphe/1CKA_pfam_full_core_seqlogo.eps Graphic f
+ile (type eps)
+
+<./resultats/comparaisons/graphe/1CKA_pfam_full_core_seqlogo.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[78
+
+
+] [79]
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/simil_bypos.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2096 ...udegraphics[width=16cm]{simil_bypos.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: ./resultats/comparaisons/graphe/simil_bypos.png Graphic file (type eps)
+<./resultats/comparaisons/graphe/simil_bypos.png>
 Overfull \hbox (11.99997pt too wide) in paragraph at lines 2095--2098
  [][] 
  []
 
-[76
+[80
 
- <./resultats/comparaisons/graphe/simil_bypos.png>]
-<./resultats/comparaisons/graphe/1BM2_core_simil_byseq.png, id=1575, 578.16pt x
- 433.62pt>
+]
+
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/1BM2_core_simil_byseq.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2109 ...cs[width=7cm]{1BM2_core_simil_byseq.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/1BM2_core_simil_byseq.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/1BM2_core_simil_byseq.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1BM2_core_simil_byseq.
-png used on input line 2109.
-(pdftex.def)             Requested size: 199.16928pt x 149.3741pt.
+ype eps)
+<./resultats/comparaisons/graphe/1BM2_core_simil_byseq.png>
 
-<./resultats/comparaisons/graphe/1ABO_core_simil_byseq.png, id=1576, 578.16pt x
- 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/1ABO_core_simil_byseq.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2118 ...cs[width=7cm]{1ABO_core_simil_byseq.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/1ABO_core_simil_byseq.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/1ABO_core_simil_byseq.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1ABO_core_simil_byseq.
-png used on input line 2118.
-(pdftex.def)             Requested size: 199.16928pt x 149.3741pt.
+ype eps)
+<./resultats/comparaisons/graphe/1ABO_core_simil_byseq.png>
 
-<./resultats/comparaisons/graphe/1R6J_core_simil_byseq.png, id=1577, 578.16pt x
- 433.62pt>
+! LaTeX Error: Cannot determine size of graphic in ./resultats/comparaisons/gra
+phe/1R6J_core_simil_byseq.png (no BoundingBox).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2127 ...cs[width=7cm]{1R6J_core_simil_byseq.png}
+                                                   \\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 File: ./resultats/comparaisons/graphe/1R6J_core_simil_byseq.png Graphic file (t
-ype png)
- <use ./resultats/comparaisons/graphe/1R6J_core_simil_byseq.png>
-Package pdftex.def Info: ./resultats/comparaisons/graphe/1R6J_core_simil_byseq.
-png used on input line 2127.
-(pdftex.def)             Requested size: 199.16928pt x 149.3741pt.
-
+ype eps)
+<./resultats/comparaisons/graphe/1R6J_core_simil_byseq.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[77
+[81
 
- <./resultats/comparaisons/graphe/1BM2_core_simil_byseq.png> <./resultats/compa
-raisons/graphe/1ABO_core_simil_byseq.png>] [78 <./resultats/comparaisons/graphe
-/1R6J_core_simil_byseq.png>] [79
+] [82] [83
 
-] [80
+] [84
 
 ]
 Chapitre 4.
-[81])
+[85]
 
 Package hyperref Warning: Difference (4) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 2224.
+
+[86
+
+])
+
+Package hyperref Warning: Difference (3) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 307.
 
-[82
+[87
+
+] [88
+
 
 ]
 \openout2 = `conc.aux'.
 
- (./conc.tex) [83
+ (./conc.tex) [89
 
 
 
-
-
-] [84
+] [90
 
 
 ]
@@ -2777,23 +3178,23 @@ Overfull \hbox (34.69362pt too wide) in paragraph at lines 253--254
  [][] 
  []
 
-) [85
+) [91
 
 
-] [86] [87] [88] [89] [90
+] [92] [93] [94] [95] [96
 
 
 ] (./rapport.bbl (./rapport.brf)
 \tf@brf=\write7
 \openout7 = `rapport.brf'.
 
- [91
+ [97
 
-]) [92]
+]) [98]
 \openout2 = `resume.aux'.
 
 
-(./resume.tex) [93
+(./resume.tex) [99
 
 
 
@@ -2804,10 +3205,10 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 344.
 (./glossaire.aux) (./intro.aux) (./contexte.aux) (./methodes_theoriques.aux)
 (./methodes_pratiques.aux) (./resultats/comparaisons/chapter.aux) (./conc.aux)
 (./annexe_posi.aux) (./resume.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 344.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 344.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 344.
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 202E8AD92276286C5AEC2BFBD9736CBF;5878.
+(rerunfilecheck)             Checksum: 0FB483D4FBC9C884FFAE2F6AA54E6F6F;5973.
 Package rerunfilecheck Info: File `rapport.brf' has not changed.
 (rerunfilecheck)             Checksum: 212FB78088FCEB4114FEC2D589B46F99;756.
 
@@ -2820,32 +3221,12 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 344.
  ) 
 Here is how much of TeX's memory you used:
- 12880 strings out of 493105
- 213216 string characters out of 6137072
- 428867 words of memory out of 5000000
- 15499 multiletter control sequences out of 15000+600000
- 91633 words of font info for 118 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 46i,12n,48p,2247b,589s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/s
-hare/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
--mathit.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsro
-m12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsrom8.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxo10.pfb><
-/usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/t
-exmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lm
-r6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts
-/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-</usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on rapport.pdf (109 pages, 7760822 bytes).
-PDF statistics:
- 1807 PDF objects out of 2073 (max. 8388607)
- 1262 compressed objects within 13 object streams
- 314 named destinations out of 1000 (max. 500000)
- 27759 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 11834 strings out of 494896
+ 184218 string characters out of 6178819
+ 417737 words of memory out of 5000000
+ 14723 multiletter control sequences out of 15000+600000
+ 86390 words of font info for 61 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 46i,12n,48p,52702b,589s stack positions out of 5000i,500n,10000p,200000b,80000s
 
+Output written on rapport.dvi (115 pages, 390372 bytes).
