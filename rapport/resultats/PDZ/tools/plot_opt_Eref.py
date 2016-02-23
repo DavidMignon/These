@@ -5,10 +5,8 @@
 import sys
 import numpy as np
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-from matplotlib.figure import Figure
 import matplotlib.pyplot as plt
-
-
+import matplotlib.gridspec as gs
 
 
 plt.close('all')
@@ -18,34 +16,42 @@ try:
     titre       = sys.argv[1]
     result_file = sys.argv[2]
     output_file = sys.argv[3]
-    idx         = int(sys.argv[4])
     
 except:
-    print  "usage: \n" + sys.argv[0] + " titre result_file graph_name.png line_index\n"
+    print  "usage: \n" + sys.argv[0] + " titre result_file graph_name.png \n"
     sys.exit(2)
 
 
 fo=open(result_file,"r")
 
-data_array=fo.readlines()
-size=len(data_array)
+datas=fo.readlines()
+size=len(datas) 
 
 print size
+idx=0
 
-fig = Figure()
-ax = fig.add_subplot(511)
-plt.setp(ax.get_yticklabels(), visible=False)
-plt.setp(ax.get_xticklabels(), visible=False)
 
-plt.locator_params(axis='y',nbins=2)#to specify number of ticks on both or any single a
+fig, axs = plt.subplots(size,sharex=True,figsize=(7,10))
+gs1 = gs.GridSpec(7,10)
+gs1.update(wspace=0,hspace=0)
 
+for line in datas:
+    label=line.split()[0]
+    data=line.split()[1:]
+    axs[idx].grid(True)
+    axs[idx].plot(data,color='red')
+    axs[idx].yaxis.set_ticks([])
+    axs[idx].xaxis.set_ticks([0,5,10,15])
+    axs[idx].set_ylabel(label,fontsize=9)
+    idx+=1
+
+axs[size-1].set_xlabel("Iterations")
+
+
+#fig.subplots_adjust(top=None,wspace=None,hspace=None)
+    
 canvas = FigureCanvas(fig)
 
-data=data_array[idx].split()
-#ax.yaxis.set_ticks([0.,0.1,0.2])
-#ax.xaxis.set_ticks([0.,10,20])
-ax.grid(True)
-ax.plot(data[1:],color='red')
 #
 
 
