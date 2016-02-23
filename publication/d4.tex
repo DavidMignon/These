@@ -120,7 +120,7 @@ simplifications, all possible residue pair interactions can be computed ahead of
 sequence/structure exploration are well-separated. The method is implemented in the Proteus CPD package
 \cite{Schmidt08,Simonson13b} (except for the CFN sequence exploration, done with Toulbar2). Our MC framework is
 presented in some detail below; the other methods are recalled more briefly.
-
+<
 We considered nine test proteins from three structural classes: SH3, SH2, and PDZ domains. For each one, we chose
 different numbers and sets of residues to mutate and we applied the different exploration methods, using several
 possible parameterizations for each one. To characterize the different methods, we compared their speed, their
@@ -787,7 +787,7 @@ corresponds to all the different combinations of sequences and rotamers.
 
 
 \begin{figure}[!h]
-\includegraphics[scale=0.65,trim=1cm 2cm 1cm 1cm, clip=true]{figures/seqlogos.pdf}
+%\includegraphics[scale=0.65,trim=1cm 2cm 1cm 1cm, clip=true]{figures/seqlogos.pdf}
 \caption[width=1cm]{\small 
 Sequence logos for the core region of two designed proteins: 1CKA (SH3) and 2BYG (PDZ).
 The low energy CPD sequences are compared to the sequences of the full Pfam collection of
@@ -799,8 +799,8 @@ protein; residue numbers are indicated (PDB numbering).
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics[scale=0.6,trim=4cm 3cm 4cm 2cm, clip=true]{figures/similarity_1ABO.pdf} \\
-\includegraphics[scale=0.6,trim=4cm 3cm 4cm 2cm, clip=true]{figures/similarity_1BM2.pdf} 
+%\includegraphics[scale=0.6,trim=4cm 3cm 4cm 2cm, clip=true]{figures/similarity_1ABO.pdf} \\
+%\includegraphics[scale=0.6,trim=4cm 3cm 4cm 2cm, clip=true]{figures/similarity_1BM2.pdf} 
 \end{center}
 \caption[width=1cm]{\small 
 Histogram of Blosum40 similarity scores to Pfam sequences for the core region of two
@@ -812,7 +812,7 @@ also shown, considering either the Pfam seed alignment or the much larger full a
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics[scale=1.2,trim=6cm 5.5cm 8cm 6cm, clip=true]{figures/cpu_times.pdf}
+%\includegraphics[scale=1.2,trim=6cm 5.5cm 8cm 6cm, clip=true]{figures/cpu_times.pdf}
 \end{center}
 \caption{\small 
 Run times for different test calculations and search methods. CPU times per core are
@@ -826,7 +826,7 @@ average Heur and REMC values are included as dashed lines.
 
 
 \begin{figure}[!h]
-\includegraphics[scale=0.75,trim=3.5cm 2cm 2cm 1cm, clip=true]{figures/best_ener.pdf}
+%\includegraphics[scale=0.75,trim=3.5cm 2cm 2cm 1cm, clip=true]{figures/best_ener.pdf}
 \caption{\small 
 Comparison between selected heuristic, MC, and REMC protocols for whole protein design.
 The best energy obtained with each protocol is shown for the nine test proteins. Zero represents
@@ -840,7 +840,7 @@ is labelled according to the protocol name.
 
 
 \begin{figure}[!h]
-\includegraphics[scale=0.8,trim=4cm 4cm 1cm 1cm, clip=true]{figures/ener_errors.pdf}
+%\includegraphics[scale=0.8,trim=4cm 4cm 1cm 1cm, clip=true]{figures/ener_errors.pdf}
 \caption[width=1cm]{\small 
 Lowest energies obtained with the different exploration methods for 5-, 10-, 20-, and 30-position design. Differences
 with respect to the GMEC or the overall best energy are shown, excluding the smallest values (less than 0.4 kcal/mol
@@ -853,7 +853,7 @@ where the best energy was given by the heuristic.
 
 
 \begin{figure}[!h]
-\includegraphics[scale=0.9,trim=5cm 2.5cm 1cm 1cm, clip=true]{figures/entropy.pdf}
+%\includegraphics[scale=0.9,trim=5cm 2.5cm 1cm 1cm, clip=true]{figures/entropy.pdf}
 \caption[width=1cm]{\small 
 Sequence entropy $S(E)$ and number of states $N(E)$ within a given energy range $E$ above the GMEC for the 1CKA
 SH3 domain. All positions were allowed to vary except Gly/Pro. The entropy (large dots) is a single position
