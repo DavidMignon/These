@@ -39,6 +39,43 @@ Les tests sont effectués sur neuf protéines choisies pour avoir des longueurs 
 \label{tab:protéines}      
     \end{table}
 
+
+
+
+\paragraph{Alignements Blast croisés}
+
+
+    \begin{table}[!htbp]
+      \centering
+
+      \begin{tabular}{ccccccccc}
+
+        \toprule
+     Protein & 1ABO  & 1CKA  & 1R6J & 1G9O & 2BYG & 1BM2  & 1O4C  & 1M61 & 1A81 \\
+        \cmidrule{1-9}
+        1ABO & 100\% &  26\% & no   & no   & 56\% & 50\%  & 100\% & no   & 42\%  \\     
+        1CKA &  26\% & 100\% & no   & no   & no   & 31\%  &  no   &  no  &  55\% \\
+        1R6J &  no   & no    & 100\%& 25\% & no   & no    &  no   &  no  &  no   \\ 
+        1G9O &  no   & no    & 25\% & 100\%& 35\% & no    &  no   &  no  &  60\% \\
+        2BYG &  56\% & no    & no   & 35\% & 100\%& 43\%  &  38\% &  30\%&  30\% \\
+        1BM2 &  26\% & 100\% & no   & no   & no   & 31\%  &  no   &  no  &  55\% \\
+        1O4C &  26\% & 100\% & no   & no   & no   & 31\%  &  no   &  no  &  55\% \\
+        1M61 &  26\% & 100\% & no   & no   & no   & 31\%  &  no   &  no  &  55\% \\
+        1A81 &  26\% & 100\% & no   & no   & no   & 31\%  &  no   &  no  &  55\% \\
+        \bottomrule
+
+
+      \end{tabular}      
+      \caption{E-value des alignements Blast native vs native pour notre jeu de protéines . (no= pas de touche avec une E-value inférieure à 10)}
+\label{tab:Xblast}      
+    \end{table}
+
+
+
+
+
+
+
 \subsection{Description des tests}
 \label{sec:description_tests}
 Les tests sont répartis en deux ensembles:

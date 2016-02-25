@@ -1,0 +1,65 @@
+BLASTP 2.2.29+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+Reference for composition-based statistics: Alejandro A. Schaffer,
+L. Aravind, Thomas L. Madden, Sergei Shavirin, John L. Spouge, Yuri
+I. Wolf, Eugene V. Koonin, and Stephen F. Altschul (2001),
+"Improving the accuracy of PSI-BLAST protein database searches with
+composition-based statistics and other refinements", Nucleic Acids
+Res. 29:2994-3005.
+
+
+
+Database: native.fasta
+           1 sequences; 109 total letters
+
+
+
+Query= 2BYG native
+
+Length=97
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+  1M61 native                                                         16.5    0.062
+
+
+> 1M61 native
+Length=109
+
+ Score = 16.5 bits (31),  Expect = 0.062, Method: Compositional matrix adjust.
+ Identities = 10/33 (30%), Positives = 13/33 (39%), Gaps = 0/33 (0%)
+
+Query  17  GLGFSIAGGVGNQHIPGDNSIYVTKIIDGGAAQ  49
+           G   S+   V   H P +  +  T  I GG A 
+Sbjct  42  GYVLSLVHDVRFHHFPIERQLNGTYAIAGGKAH  74
+
+
+
+Lambda      K        H        a         alpha
+   0.315    0.137    0.380    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 8428
+
+
+  Database: native.fasta
+    Posted date:  Feb 25, 2016  4:19 PM
+  Number of letters in database: 109
+  Number of sequences in database:  1
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 11
+Window for multiple hits: 40
