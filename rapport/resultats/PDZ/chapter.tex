@@ -58,12 +58,13 @@ enveler les redondances flagrantes
         \toprule
         protéines & seq NB & E value seuil & \% identité \\
         \cmidrule{1-4}
+     1G9O  & 63  &    10-32  &  95-67 \\
      1IHJ  & 56  &    10-10  &  95-38 \\
      1N7E  & 93  &    10-45  &  95-84 \\
      1R6J  & 86  &    10-43  &  95-85 \\
      2BYG  & 82  &    10-41  &  95-78 \\
      3K82  & 88  &    10-46  &  95-81 \\
-     1G9O  & 63  &    10-32  &  95-67 \\
+
 
         \bottomrule
 
@@ -308,6 +309,39 @@ enveler les redondances flagrantes
       \caption{Compositions en acides aminés des séquences expérimentales homologues aux positions exposées et actives.}
 \label{tab:freq_AA_ALL}      
     \end{table}
+
+
+    \clearpage
+   \paragraph{Résultats Superfamily}
+
+
+
+    \begin{table}[h]
+           \raggedleft{}
+
+      \begin{tabular}{cccccc}
+
+        \toprule
+        Protein & Match/seq & Superfamily & superfamily & Family & family \\
+        Protein & number & size & Evalue & success & Evalue &  success\\
+        \cmidrule{1-7}
+        1G9O  & 77/91 &  3.8e-9  & 10000 & 3.8e-3 & 10000 \\
+        1IHJ  & 84/94 &  9.8e-4  &  9997 & 2.4e-3 &  9997 \\
+        1N7E  & 79/95 &  3.9e-7  & 10000 & 2.3e-3 & 10000 \\
+        1R6J  & 61/82 &  1.4e-1  &  8855 & 1.2e-2 &  8855 \\
+        2BYG  & 58/97 &  4.7e-2  &  9956 & 7.6e-3 &  9956 \\
+        3K82  & 84/97 & 1.4e-12  & 10000 & 2.6e-3 & 10000 \\
+        CASK  & 42/83 &  7.7e-1  &   654 & 2.6e-2 &   654 \\
+        TIAM1 & 46/94 &     1.8  &   109 & 2.5e-2 &   109 \\
+        \bottomrule        
+      \end{tabular}   
+     \caption{Résultats Superfamily pour les huit protéines PDZ}   
+\label{tab:superfamily_bestRE}       
+\end{table}
+
+
+
+
 
 
 %%% Local Variables:
