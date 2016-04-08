@@ -322,9 +322,9 @@ enveler les redondances flagrantes
       \begin{tabular}{cccccc}
 
         \toprule
-        Protein & Match/seq & Superfamily & superfamily & Family & family \\
-        Protein & number & size & Evalue & success & Evalue &  success\\
-        \cmidrule{1-7}
+        Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+                & size      & Evalue      & success     & Evalue & success\\
+        \cmidrule{1-6}
         1G9O  & 77/91 &  3.8e-9  & 10000 & 3.8e-3 & 10000 \\
         1IHJ  & 84/94 &  9.8e-4  &  9997 & 2.4e-3 &  9997 \\
         1N7E  & 79/95 &  3.9e-7  & 10000 & 2.3e-3 & 10000 \\
@@ -335,11 +335,55 @@ enveler les redondances flagrantes
         TIAM1 & 46/94 &     1.8  &   109 & 2.5e-2 &   109 \\
         \bottomrule        
       \end{tabular}   
-     \caption{Résultats Superfamily pour les huit protéines PDZ}   
+     \caption{Résultats Superfamily pour les séquences Proteus des  protéines PDZ}   
 \label{tab:superfamily_bestRE}       
 \end{table}
 
 
+
+
+    \begin{table}[h]
+           \raggedleft{}
+
+      \begin{tabular}{cccccc}
+
+        \toprule
+        Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+                & size      & Evalue      & success     & Evalue & success\\
+        \cmidrule{1-6}
+        1G9O  & /91 &  &  &  &  \\
+        1IHJ  & /94 &  &  &  &  \\
+        1N7E  & /95 &  &  &  &  \\
+        1R6J  & /82 &  &  &  &  \\
+        2BYG  & /97 &  &  &  &  \\
+        3K82  & /97 &  &  &  &  \\
+        CASK  & /83 &  &  &  &  \\
+        TIAM1 & /94 &  &  &  &  \\
+        \bottomrule        
+      \end{tabular}   
+     \caption{Résultats Superfamily pour les séquences Rosetta des  protéines PDZ}   
+\label{tab:superfamily_bestRE}       
+\end{table}
+
+
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=8.45cm]{1G9O_simil_byseq.png} &
+       \includegraphics[width=8.45cm]{1IHJ_simil_byseq.png} \\
+       \includegraphics[width=8.45cm]{1N7E_simil_byseq.png} &
+       \includegraphics[width=8.45cm]{1R6J_simil_byseq.png} \\
+       \includegraphics[width=8.45cm]{2BYG_simil_byseq.png} &
+       \includegraphics[width=8.45cm]{3K82_simil_byseq.png} \\ 
+       \includegraphics[width=8.45cm]{CASK_simil_byseq.png} &
+       \includegraphics[width=8.45cm]{TIAM1_simil_byseq.png} \\ 
+
+     \end{tabular}
+     \caption{Similarité par séquence pour les séquences Proteus des protéines PDZ}
+\label{graph:Simil_Proteus_PDZ}
+   \end{figure}
 
 
 
