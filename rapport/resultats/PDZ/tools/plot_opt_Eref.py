@@ -13,7 +13,7 @@ plt.close('all')
 
 
 try:
-    titre       = sys.argv[1]
+    title       = sys.argv[1]
     result_file = sys.argv[2]
     output_file = sys.argv[3]
     
@@ -27,7 +27,6 @@ fo=open(result_file,"r")
 datas=fo.readlines()
 size=len(datas) 
 
-print size
 idx=0
 
 
@@ -41,7 +40,7 @@ for line in datas:
     axs[idx].grid(True)
     axs[idx].plot(data,color='red')
     axs[idx].yaxis.set_ticks([])
-    axs[idx].xaxis.set_ticks([0,5,10,15])
+    axs[idx].xaxis.set_ticks([0,5,10,15,20,25,30,35,40])
     axs[idx].set_ylabel(label,fontsize=9)
     idx+=1
 
@@ -49,15 +48,9 @@ axs[size-1].set_xlabel("Iterations")
 
 
 #fig.subplots_adjust(top=None,wspace=None,hspace=None)
-    
+
 canvas = FigureCanvas(fig)
 
-#
-
-
-#ax.set_ylabel("Frequence", fontsize=11)
-
-
-#axs[size-1].set_xlabel("Iterations", fontsize=11)
+fig.suptitle(title, fontsize=14)
 
 canvas.print_figure(output_file)

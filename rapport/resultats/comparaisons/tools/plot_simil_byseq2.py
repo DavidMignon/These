@@ -44,7 +44,7 @@ X=np.insert(X,0,newx)
 Y=np.insert(Y,0,0)
 Y=np.append(Y,0)
 
-ax.plot(X,Y,label='Rosetta vs pfam seed',linewidth=2,marker='s',color='black')
+ax.plot(X,Y,label='Proteus vs pfam seed',linewidth=2,marker='s',color='black')
 
 
 weights = 0.33*np.ones_like(designed_RP55_simil)/len(designed_RP55_simil)
@@ -57,7 +57,7 @@ Y=np.insert(Y,0,0)
 Y=np.append(Y,0)
 
 
-ax.plot(X,Y,label='Rosetta vs pfam RP55',linewidth=2,marker='o',color='0.75')
+ax.plot(X,Y,label='Proteus vs pfam RP55',linewidth=2,marker='o',color='0.75')
 
 
 weights = np.ones_like(pfam_seed_simil)/len(pfam_seed_simil)
@@ -86,8 +86,8 @@ Y=np.append(Y,0)
 ax.plot(X,Y,label='pfam vs pfam RP55',linewidth=2,linestyle='--',marker='o',color='0.75')
 
 
-#plt.axvline(x=native_RP55_simil,color='magenta',linewidth=2,label='native vs pfam RP55')
-#plt.axvline(x=native_seed_simil, color='red',linewidth=2,label='native vs pfam seed')
+plt.axvline(x=native_seed_simil, color='red',linewidth=2,label='native vs pfam seed')
+plt.axvline(x=native_RP55_simil,color='blue',linewidth=2,label='native vs pfam RP55')
 
 plt.title(protein)
 plt.xlabel("Similarity score", fontsize=17)
