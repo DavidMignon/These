@@ -470,6 +470,35 @@ enveler les redondances flagrantes
         Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
                 & size      & Evalue      & success     & Evalue & success\\
         \cmidrule{1-6}
+        1G9O  & 79/91 & 3.6e-7   &  10000 & 5.0e-3 &  9999  \\
+        1IHJ  & 83/94 & 4.4e-8   &   9998 & 2.4e-3 &  9998  \\
+        1N7E  & 78/95 & 6.05e-6  &   9999 & 1.8e-3 & 9999   \\
+        1R6J  & 61/82 & 5.6e-2   &  7721  & 9.3e-3 &  7716  \\
+        2BYG  & 75/97 & 4.3e-5   &  9993  & 4.2e-3 &  9993  \\
+        3K82  & 84/97 & 6.3e-11  &  9999  & 3.4e-3 &  9999  \\
+        CASK  & 44/83 & 9.9e-2   &  6981  & 1.9e-2 &  6977  \\
+        TIAM1 & 45/94 & 6.2e-1   &  151   & 9.2e-2 &  151  \\
+        \bottomrule        
+      \end{tabular}   
+     \caption{Résultats Superfamily pour les séquences Proteus avec le nouveau (T=0.175) test Monte Carlo}   
+\label{tab:superfamily_Old_MCtest}       
+\end{table}
+
+
+
+
+
+
+
+    \begin{table}[h]
+           \raggedleft{}
+
+      \begin{tabular}{cccccc}
+
+        \toprule
+        Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+                & size      & Evalue      & success     & Evalue & success\\
+        \cmidrule{1-6}
         1G9O  & 79/91   &    1.3e-13 & 10000 & 2.2e-3 & 10000 \\
         1IHJ  & 85/94   &    7.4e-14 & 10000 & 3.7e-3 & 10000 \\
         1N7E  & 84/95   &    2.2e-10 & 10000 & 1.2e-3 & 10000 \\
@@ -643,11 +672,37 @@ Tiam1 & I & Y & F & L & V & A & L & I & I & A & L & L & L & L & V \\
 \label{}
     \end{figure}
 
-
-
-
     \clearpage
 
+
+
+    \begin{table}[!htbp]
+      \centering
+
+      \begin{tabular}{ccccccc}
+
+        \toprule
+        Protein & Proteus &  Proteus2 &  Proteus3 & Rosetta & Pfam seed & Pfam RF55\\
+        \cmidrule{1-6}
+        1G9O  & 1.40 & 1.42 & 1.47 & 1.45 &  &  \\
+        1IHJ  & 1.38 & 1.46 & 1.51 & 1.55 &  &  \\
+        1N7E  & 1.37 & 1.37 & 1.69 & 1.44 &  &  \\
+        1R6J  & 1.39 & 1.44 & 1.53 & 1.43 &  &  \\
+        2BYG  & 1.27 & 1.30 & 1.78 & 1.57 &  &  \\
+        3K82  & 1.28 & 1.40 & 1.50 & 1.40 &  &  \\
+        CASK  & 1.45 & 1.95 & 1.62 & 1.68 &  &  \\
+        TIAM1 & 1.35 & 1.62 & 1.72 & 1.57 &  &  \\
+        \bottomrule
+
+      \end{tabular}      
+      \caption{Moyenne de l'exponentiel de l'entropie sur les ensembles des positions des protéines}
+\label{tab:Entroie_PDZ}      
+    \end{table}
+
+
+
+
+ \clearpage
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../../rapport"
