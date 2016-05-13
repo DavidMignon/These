@@ -9,6 +9,9 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 
+from matplotlib.legend_handler import HandlerPatch
+import matplotlib.patches as mpatches
+
 
 try:
     protein_name  = sys.argv[1]
@@ -29,6 +32,23 @@ except:
     sys.exit(2)
 
 
+
+def make_legend_arrow(legend, orig_handle,
+                      xdescent, ydescent,
+                      width, height, fontsize):
+    p = mpatches.FancyArrow(0, 0.5*height, width, 0, length_includes_head=True, head_width=0.75*height )
+    return p
+
+fig = plt.figure(figsize=(10,6))
+canvas = FigureCanvas(fig)
+arrow = plt.arrow(0,0, 0.5, 0.6, 'dummy', label='My label', )
+plt.legend([arrow], ['My label'], handler_map={mpatches.FancyArrow : HandlerPatch(patch_func=make_legend_arrow),
+                    })
+
+
+
+
+
 proteus_simil   = np.loadtxt(proteus_file,usecols=[1])
 native_simil    = np.loadtxt(native_file,usecols=[1])
 pfam_simil      = np.loadtxt(pfam_file,usecols=[1])
@@ -39,18 +59,20 @@ canvas = FigureCanvas(fig)
 
 ax = fig.add_subplot(111)
 
-weights = 0.35*np.ones_like(proteus_simil)/len(proteus_simil)
+weights = 0.45*np.ones_like(proteus_simil)/len(proteus_simil)
+#weights = np.ones_like(proteus_simil)/len(proteus_simil)
 
-Y,X=np.histogram(proteus_simil,bins=20,weights=weights)
+Y,X=np.histogram(proteus_simil,bins=40,weights=weights)
 
 newx=2*X[0] - X[1]
 X=np.insert(X,0,newx)
 Y=np.insert(Y,0,0)
 Y=np.append(Y,0)
 
-ax.plot(X,Y,label='Proteus vs pfam seed',linewidth=2,marker='o',color='black')
+proteus_pfam,=ax.plot(X,Y,linewidth=2,marker='o',color='black')
 
 weights = 0.33*np.ones_like(rosetta_simil)/len(rosetta_simil)
+#weights = np.ones_like(rosetta_simil)/len(rosetta_simil)
 
 Y,X=np.histogram(rosetta_simil,bins=20,weights=weights)
 
@@ -60,7 +82,7 @@ Y=np.insert(Y,0,0)
 Y=np.append(Y,0)
 
 
-ax.plot(X,Y,label='Rosetta vs pfam seed ',linewidth=2,marker='o',color='0.75')
+rosetta_pfam,=ax.plot(X,Y,linewidth=2,marker='o',color='0.75')
 
 
 weights = np.ones_like(pfam_simil)/len(pfam_simil)
@@ -73,16 +95,18 @@ X=np.insert(X,0,newx)
 Y=np.insert(Y,0,0)
 Y=np.append(Y,0)
 
-ax.plot(X,Y,label='pfam vs pfam seed',linewidth=2,linestyle='--',marker='o',color='black')
+pfam_pfam,=ax.plot(X,Y,linewidth=2,linestyle='--',marker='o',color='black')
 
-plt.axvline(x=native_simil, color='red',linewidth=2,label='native vs pfam seed')
 
+arrow = plt.arrow(native_simil, 0.25, 0, -0.03,color='red',head_width=0.5, head_length=0.01 )
+
+
+ax.legend([proteus_pfam,rosetta_pfam,pfam_pfam,arrow], ['Proteus vs pfam seed','Rosetta vs pfam seed ','pfam vs pfam seed','native vs pfam seed'], handler_map={mpatches.FancyArrow : HandlerPatch(patch_func=make_legend_arrow),},loc=0,fontsize=11)
 
 plt.title(protein_name)
 plt.xlabel("Similarity score", fontsize=17)
 plt.ylabel("Frequency", fontsize=17)
-ax.set_xlim(-10, 50)
+ax.set_xlim(10, 50)
 plt.grid()
 
-ax.legend(loc=2,fontsize=11)
 canvas.print_figure(output_file)
