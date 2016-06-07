@@ -1,0 +1,1091 @@
+\documentclass[12pt]{report}
+%
+\usepackage[english]{babel}
+\usepackage[font=small,labelfont=bf,format=hang]{caption}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{geometry}
+\usepackage[comma,numbers,sort&compress]{natbib}
+%
+\usepackage{amsmath}
+\usepackage{rotating}
+\usepackage{listings}
+%
+%\setcounter{secnumdepth}{2}
+\textwidth 150 mm
+\textheight 200 mm
+\oddsidemargin 0pt
+\evensidemargin 0pt
+\topmargin 0pt
+\headheight 0pt
+\headsep 1.25cm
+\renewcommand{\baselinestretch}{1.15}
+%
+\newcommand{\pluseq}{\mathrel{+}=}
+\newcommand{\und}{\underline}
+%
+%------------------------------------------------------------------
+% define new verbatim macro
+\def\beginverbatim{\par\bigskip\begingroup\setuplisting\doverbatim}
+ {\catcode`\|=0 \catcode`\\=12 
+   |obeylines|gdef|doverbatim#1\endverbatim{#1|bigskip|endgroup}}
+% 
+% define listing macro
+\def\listing#1 {\par\bigskip\begingroup\setuplisting\input#1 
+ \bigskip\endgroup}
+
+\newcount \lineno  % the number of lines listed
+\def\setuplisting{ \small \tt \hsize=8in 
+    \lineno=0
+    \parindent=0pt
+    \baselineskip=0.27cm
+    \lineskip=0.0cm
+    \lineskiplimit=0.0cm
+    \def\par{\leavevmode\endgraf} \catcode`\`=\active 
+    \obeylines 
+    \uncatcodespecials
+    \obeyspaces
+    \everypar{\advance\lineno by1 \llap{\sixrm\the\lineno\ \ }}}
+   {\obeyspaces\global\let =\ }  % let active space = control space
+
+\def\uncatcodespecials {\def\do##1{\catcode`##1=12}\dospecials}
+% end listing macro
+%
+\hfuzz 20pt
+%------------------------------------------------------------------
+%
+\begin{document}
+%
+\bibliographystyle{/home/simonson/tex/misc/acmunsrt}
+
+\hfill \today
+
+\vspace*{3cm}
+
+\Large
+\begin{center}
+{\bf Implicit solvent models in X-PLOR}
+\end{center}
+
+\vskip 1cm
+
+\large
+
+\centerline{Thomas Simonson, Savvas Polydorides, Francesco Villa, David Mignon}
+  \vskip 0.7cm
+
+\begin{center}
+Laboratoire de Biochimie, Ecole Polytechnique \\
+\normalsize
+thomas.simonson@polytechnique.fr
+\end{center}
+
+\vskip 2cm
+\normalsize
+
+\pagebreak
+\pagestyle{headings}
+\chapter{Generalized Born models}
+\section{Introduction}
+The Generalized Born (GB) model \cite{Still90,Hawkins95,Schaefer96,Qiu97} is an
+efficient and accurate implicit solvent model for biomolecular simulations and
+protein design. It describes the solvent around the biomolecule as a dielectric
+continuum. But the numerical complexities of an inhomogeneous solute/solvent dielectric
+system are swept away and replaced by approximate, efficient, analytical formulas.
+The model can be used either to determine the energy of a single structure or
+to generate multiple structures by molecular dynamics or simulated annealing. Several
+review articles describe the theoretical background, the performance, and the ongoing
+progress of the GB model; see eg \cite{Bashford00,Roux99,Simonson03}. Two GB variants have
+been implemented in X-PLOR \cite{Xplor} and CNS \cite{CNS}. The first is termed GB/ACE
+(Schaefer \& Karplus, {\it J. Phys.\ Chem.}, 1996, 100:1578), for ``Analytical Continuum
+Electrostatics''; the second is termed GB/HCT, for ``Hawkins, Cramer \& Truhlar'' (HCT,
+{\it Chem.\ Phys.\ Lett.}, 1995, 246:122). We emphasize that the GB solvation model decribes
+the solvent response to the charges and Coulomb potential of the solute. Therefore, it
+is meaningless to use GB in a simulation or structure refinement where the ordinary
+electrostatics energy term is turned off.  
+
+The Theory section below reviews the GB/ACE and GB/HCT models. Expressions of the
+solvation energies and forces are given. This section can be skipped by those already
+familiar with the model. The following section, Syntax, gives the necessary syntax and
+the default options for using GB in X-PLOR. 
+
+\section{Theory}
+\subsection{GB energy}
+In the world of continuum electrostatics, a biomolecular solute is viewed as
+a set of (fractional) atomic charges in a cavity delimited by the solute surface,
+embedded in a high dielectric solvent medium \cite{Kirkwood38}. The electrostatic
+energy $E^{\rm elec}$ is the sum of the Coulomb interaction energies between all
+solute charges and a solvation term $\Delta E^{\rm solv}$; the latter includes the
+interaction energies of each solute charge with solvent (its ``self-energy''), and
+a solvent-screening contribution to the interaction energies between solute charges:
+\begin{eqnarray}
+E^{\rm elec} &=& \sum_{i < j} \frac{q_i q_j}{r_{ij}} + \Delta E^{\rm solv} \\
+\Delta E^{\rm solv} &=& 
+   \sum_i \Delta E_i^{\rm self} + \sum_{i < j} \Delta E_{ij}^{\rm int}  \label{eq:gbenergy}
+\end{eqnarray}
+
+In the GB model, the solvent contribution $\Delta E^{int}_{ij}$ to the interaction
+energy between the charges $q_i$ and $q_j$ is approximated by \cite{Still90}:
+\begin{equation} \label{eq:gbinte}
+\Delta E^{\rm int}_{ij} =
+  -\frac{\tau  q_i q_j }{(r_{ij}^2 + b_i b_j \exp[-r_{ij}^2/4 b_i b_j])^{1/2}}
+\end{equation}
+where $r_{ij}$ is the distance between the charges, $\tau$ is given by
+\begin{equation}
+\tau = 1/\epsilon_p - 1/\epsilon_w
+\end{equation}
+$\epsilon_p$, $\epsilon_w$ are the protein and solvent dielectric constants, and $b_i$ is the `solvation
+radius' of charge $i$. By analogy to the case of a single charge in a spherical cavity, $b_i$ is defined by
+\begin{equation}  \label{eq:bi}
+\Delta E_i^{\rm self} = - \frac{\tau q_i^2}{2 b_i}
+\end{equation}
+where $\Delta E_i^{\rm self}$ is the self-energy of charge $i$. By partitioning the
+solute into atomic volumes (following Lee \& Richards, for example \cite{Lee71}),
+one can express the self-energy $\Delta E_i^{\rm self}$ as a sum over all the solute
+atoms \cite{Hawkins95,Schaefer96}:
+\begin{equation} \label{eq:self}
+\Delta E_i^{\rm self} = -\frac{\tau q_i^2}{2 R_i} + \tau q_i^2 \sum_{k \neq i} E_{ik}^{\rm self}
+\end{equation}
+where $R_i$ is a constant atomic radius to be determined (close to the
+van der Waals radius) and $E_{ik}^{\rm self}$ is related to the integral of
+the electrostatic energy over the volume of atom $k$. Notice that the
+charges of the other atoms, $q_k$, do not appear here. The effect of
+these atoms is merely to exclude solvent from the vicinity of atom $i$
+\cite{Schaefer90}.
+
+The volume integral $E_{ik}$ is approximated in two steps. The first
+step is to approximate the electric field by the `Coulombic field'
+of charge $i$ \cite{Schaefer90}. This is simply the unscreened field that
+would exist if $q_i$ were in a vacuum; it radiates uniformly in all directions
+and falls off as $1/r^2$ with distance; the corresponding energy density
+is $1/r^4$. The next step is to calculate the integral of $1/r^4$ over the
+volume of atom $k$. The different GB variants do this in different ways.
+In GB/ACE, for example, Schaefer \& Karplus assume the density of each solute
+atom is a gaussian centered at the atom's position. The integral $E_{ik}$
+then has a tractable form, which can be approximated by interpolating
+between a Gaussian form at short ranges and a $1/r^4$ form at long range, 
+leading to the Ansatz \cite{Schaefer96}:
+\begin{equation} \label{eq:ace}
+E_{ik}^{\rm self} = \frac{1}{\omega_{ik}} \exp(-r_{ik}^2/\sigma^2_{ik}) + 
+      \frac{V_k}{8 \pi} \left( \frac{r_{ik}^3}{r_{ik}^4 + \mu^4_{ik}} \right)^4
+\end{equation}
+Here, $\omega_{ik}$ and $\mu_{ik}$ are simple functions of the atomic
+volume $V_k$, the atomic radii $R_i$, $R_k$ (= $[3V_k/4\pi]^{1/3}$),
+and an adjustable ``smoothing'' parameter $\alpha$ that determines the
+width of the atomic gaussian distributions (see below).
+The atomic charges are taken directly from the existing force
+field. The adjustable parameters of the model are then the volumes $V_k$
+and the smoothing parameter $\alpha$. Ionic strength is not included,
+although methods to do so have been proposed \cite{Onufriev00,Srinivasan99}.
+Volumes $V_k$ can be either calculated using Voronoi polyhedra (using an
+external program \cite{Lee71} and reading them into X-PLOR), or assigned
+values from existing libraries \cite{Schaefer96,Onufriev00,Schaefer01,Lopes07}. 
+Note that the $V_k$ are considered to be constants, independent of the
+solute conformation. This is important to obtain tractable expressions for
+the GB forces (see below).
+
+With the above self-energy approximations, $\Delta E^{\rm self}_i$ can sometimes
+become positive, so that the (necessarily positive) solvation radius can no longer
+be defined by Eq.\ (\ref{eq:bi}). Therefore, we use a definition proposed by
+Schaefer et al.\ \cite{Schaefer98a}:
+\begin{eqnarray}
+b_i &=& - \frac{\tau q_i^2}{2 \Delta E^{\rm self}_i}
+     \hspace*{25mm} {\rm if } \, 
+   \Delta E^{\rm self}_i \leq E_{min} = - \frac{\tau q_i^2}{2 b_{max}}
+                   \nonumber \\
+&=& b_{max} \left( 2 - \frac{\Delta E^{\rm self}_i}{E_{min}} \right)
+     \hspace*{8mm} {\rm if } \, 
+   \Delta E^{\rm self}_i \geq E_{min}  \label{eq:bi2}
+\end{eqnarray}
+Here, $b_{max}$ is an upper limit for the solvation radius, which can be set to
+the largest linear dimension of the solute, for example. This definition leads
+to continuous energies and forces.
+
+\subsection{Calculation of forces}
+\subsubsection{Interaction energy term}
+We first consider the GB `interaction' term, on the far right of
+Eq.\ (\ref{eq:gbenergy}), and its gradient $\nabla_n$ with respect
+to the position of solute particle $n$. Noting that the solvation
+radii $b_i$, $b_j$ depend on all the atomic positions and using the
+chain rule for differentiation, we have:
+\begin{equation} \label{eq:togroup}
+\nabla_n \sum_{i<j} \Delta E^{\rm int}_{ij} =
+  \sum_{i<j} \frac{\partial \Delta E^{\rm int}_{ij}}{\partial r_{ij}} \nabla_n r_{ij} +
+  \sum_{i<j} \frac{\partial \Delta E^{\rm int}_{ij}}{\partial b_i} \nabla_n b_i +
+  \sum_{i<j} \frac{\partial \Delta E^{\rm int}_{ij}}{\partial b_j} \nabla_n b_j
+\end{equation}
+Only terms with $i =n$ or $j=n$ contribute to the first sum on the right.
+The second sum can be written
+\begin{equation} 
+\sum_{i<j} \frac{\partial \Delta E^{\rm int}_{ij}}{\partial b_i} \nabla_n b_i =
+\frac{1}{2} \sum_i \left( 
+   \sum_{j \neq i} \frac{\partial \Delta E^{\rm int}_{ij}}{\partial b_i} 
+                   \right) 
+   \frac{\partial b_i}{\partial \Delta E^{\rm self}_i} \nabla_n \Delta E^{\rm self}_i
+\end{equation}
+The quantity in parentheses will be denoted $dE^{\rm int,b}_i$,
+since, for a given conformation, it depends only on $i$. The last quantity
+on the right can be written:
+\begin{eqnarray}
+\nabla_n \Delta E^{\rm self}_i = \sum_{k \neq i} \nabla_n E^{\rm self}_{ik}
+&=&  \nabla_n E^{\rm self}_{in} \hspace*{11mm} {\rm if } \, i \neq n \nonumber \\
+&=& \sum_{k \neq n} \nabla_n E^{\rm self}_{nk} \hspace*{5mm} {\rm if } \, i = n.
+\end{eqnarray}
+Grouping the second and third terms on the right of (\ref{eq:togroup}) and
+rearranging the first, we obtain:
+\begin{equation} \label{eq:force}
+\nabla_n \sum_{i<j} \Delta E^{\rm int}_{ij} =
+ \sum_{i \neq n} \left( \frac{\partial \Delta E^{\rm int}_{in}}{\partial r_{in}} +
+  dE^{\rm int,b}_n \frac{\partial b_n}{\partial \Delta E^{\rm self}_n} 
+    \frac{\partial E^{\rm self}_{ni}}{\partial r_{in}} +
+   dE^{\rm int,b}_i \frac{\partial b_i}{\partial \Delta E^{\rm self}_i}
+       \frac{\partial E^{\rm self}_{in}}{\partial r_{in}} \right) \frac{\und{r}_n - \und{r}_i}{r_{in}}
+\end{equation}
+with
+\begin{eqnarray}
+dE^{\rm int,b}_i &=& 
+   \sum_{j \neq i} \frac{\partial \Delta E^{\rm int}_{ij}}{\partial b_i} \label{eq:deintb} \\
+\frac{\partial b_n}{\partial \Delta E^{\rm self}_n} &=&
+     - \frac{b_n}{\Delta E^{\rm self}_n}       \hspace*{20mm} {\rm if } \, 
+   \Delta E^{\rm self}_n \leq E_{min} =  - \frac{\tau q_n^2}{2 b_{max}} \nonumber \\
+&=& - \frac{b_{max}}{E_{min}}  \hspace*{23mm} {\rm if } \, 
+                                     \Delta E^{\rm self}_n \geq E_{min} \label{eq:dbdE}
+\end{eqnarray}
+The quantities $b_i$ and $dE^{\rm int,b}_i$ can be `precalculated', so that obtaining
+the force on atom $n$ requires only a loop over all solute atoms. In (\ref{eq:force}),
+the derivatives of $\Delta E^{\rm int}_{in}$ are the same for GB/ACE and GB/HCT:
+\begin{eqnarray}
+\frac{1}{r_{in}} \frac{\partial \Delta E^{\rm int}_{in}}{\partial r_{in}} &=&
+  \frac{ \tau q_i q_j }{\left[ r_{ij}^2 + b_i b_j \exp(-\frac{r_{ij}^2}{4b_i b_j})\right]^{3/2}}
+\left( 1 - \frac{1}{4} \exp(-\frac{r_{ij}^2}{4b_i b_j}) \right) \\
+dE^{\rm int,b}_i &=& \sum_{j \neq i} 
+  \frac{ \frac{1}{2} \tau q_i q_j b_j \exp(-\frac{r_{ij}^2}{4b_i b_j})}
+       {\left[r_{ij}^2 + b_i b_j \exp(-\frac{r_{ij}^2}{4b_i b_j})\right]^{3/2}}
+   \left(1 +  \frac{r_{ij}^2}{4b_i b_j} \right) 
+\end{eqnarray}
+
+\subsubsection{GB/ACE self-energy term}
+The self-energy and the associated forces depend on the GB variant. With GB/ACE,
+\begin{equation} \label{eq:acef}
+\frac{1}{r_{ij}} \frac{\partial E_{ij}^{\rm self}}{\partial r_{ij}} 
+   = - \frac{2}{\omega_{ij}\sigma_{ij}^2} \exp(-\frac{r_{ik}^2}{\sigma^2_{ik}}) + 
+       \frac{V_j}{2 \pi} \left( \frac{r_{ij}^{10}}{r_{ij}^4 + \mu^4_{ij}} \right)^5
+                         \left( 3 (r_{ij}^4 + \mu^4_{ij}) - 4 r_{ij}^4 \right).
+\end{equation}
+The parameters $\omega_{ij}$, $\sigma_{ij}$, $\mu_{ij}$ are defined by:
+\begin{eqnarray}
+\frac{1}{\omega_{ik}} &=& \frac{4}{3 \pi \alpha_{ik}^3}
+        (Q_{ik} - {\rm arctan} Q_{ik}) \frac{1}{\alpha_{ik} R_k} \\
+\sigma_{ik}^2 &=& \frac{3 (Q_{ik} - {\rm arctan} Q_{ik})}
+                       {(3+f_{ik})Q_{ik} - 4 {\rm arctan} Q_{ik}} \alpha_{ik}^2 R_{ik}^2 \\
+Q_{ik} &=& \frac{q_{ik}^2}{(2q_{ik}^2 +1)^{1/2}}  \\
+f_{ik} &=& \frac{2}{q_{ik}^2 +1} - \frac{1}{2q_{ik}^2 +1} \\
+q_{ik}^2 &=& \frac{\pi}{2} \left( \frac{\alpha_{ik} R_k}{R_i}  \right)^2 \\
+\alpha_{ik} &=& {\rm Max} ( \alpha, R_i/R_k ) \label{eq:alpha} \\
+\mu_{ik} &=& \frac{ 77 \pi \sqrt{2} R_i }
+              {512 ( 1 - 2 \pi^{3/2} \sigma_{ik}^3) \frac{R_i}{\omega_{ik} V_k} } \\
+V_k &=& \frac{4}{3}\pi R_k^3 \label{eq:radius}
+\end{eqnarray}
+
+\subsubsection{GB/HCT self-energy}
+With GB/HCT, the self-energy contribution $E_{ik}^{\rm self}$ is given by
+\cite{Hawkins95}
+\begin{equation}
+4 E_{ik}^{\rm self} = \frac{1}{L_{ik}} - \frac{1}{U_{ik}} 
+         + \frac{r_{ik}}{4} \left( \frac{1}{U^2_{ik}} - \frac{1}{L^2_{ik}} \right) 
+         + \frac{1}{2r_{ik}} \ln \frac{L_{ik}}{U_{ik}} 
+         + \frac{R_k^2}{4r_{ik}} \left( \frac{1}{L^2_{ik}} - \frac{1}{U^2_{ik}} \right),
+\end{equation}
+where
+\begin{eqnarray}
+L_{ik} &=& 1         
+\hspace*{2.2cm} {\rm if } \hspace*{.5cm} r_{ik} + R_k \leq R_i, \nonumber \\
+L_{ik} &=& R_i       
+\hspace*{2cm} {\rm if } \hspace*{.5cm} r_{ik} - R_k \leq R_k < r_{ik} + R_k, \nonumber \\
+L_{ik} &=& r_{ik} - R_k  
+\hspace*{.9cm} {\rm if } \hspace*{.5cm} R_i \leq R_k < r_{ik} - R_k,  \\
+U_{ik} &=& 1         
+\hspace*{2.2cm} {\rm if } \hspace*{.5cm} r_{ik} + R_k \leq R_i, \nonumber \\
+U_{ik} &=& r_{ik} - R_k      
+\hspace*{.9cm} {\rm if }   \hspace*{.5cm} R_i < r_{ik} + R_k.
+\end{eqnarray}
+The corresponding gradient is given by:
+\begin{eqnarray}
+\frac{4}{r_{ik}} \frac{\partial E_{ik}^{\rm self}}{\partial r_{ik}} &=&
+  - \frac{1}{r_{ik}} \left( \frac{L'_{ik}}{L_{ik}^2} - \frac{U'_{ik}}{U_{ik}^2} \right)
+  + \frac{1}{4r_{ik}} \left( \frac{1}{U^2_{ik}} - \frac{1}{L^2_{ik}} \right)
+  - \frac{1}{2} \left( \frac{U'_{ik}}{U^3_{ik}} - \frac{L'_{ik}}{L^3_{ik}} \right) 
+\label{eq:bsolvhct}  \\
+  &-& \frac{1}{2r^3_{ik}} \ln \frac{L_{ik}}{U_{ik}} 
+  + \frac{1}{2r_{ik}^2} \left( \frac{L'_{ik}}{L_{ik}} - \frac{U'_{ik}}{U_{ik}} \right)
+  - \frac{R_k^2}{4r^3_{ik}} \left( \frac{1}{L^2_{ik}} - \frac{1}{U^2_{ik}} \right) 
+  - \frac{R_k^2}{2r^2_{ik}} \left( \frac{L'_{ik}}{L^3_{ik}} - \frac{U'_{ik}}{U^3_{ik}} \right)
+\nonumber
+\end{eqnarray}
+with $L'_{ik} = \partial L_{ik} / \partial r_{ik}$, $U'_{ik} = \partial U_{ik} / \partial r_{ik}$.
+The radii $R_k$ are calculated from the atomic volumes as in Eq.\ (\ref{eq:radius}),
+then reduced by a scaling factor $S_k \leq 1$ which depends only on the chemical type of
+atom $k$. Reasonable values are given in Table 1 of \cite{Hawkins95}.
+
+This basic model was modified by Onufriev et al \cite{Onufriev00} to improve performance
+for proteins. The self-energy in Eq.\ (\ref{eq:self}) is replaced by:
+\begin{eqnarray} 
+\Delta E_i^{\rm self} &=& -\frac{\tau q_i^2}{2 b_i} \\
+b_i &=& \left[ (R_i - \rho_0)^{-1} 
+               - \lambda \sum_{k \neq i} E_{ik}^{self} \right]^{-1} - \delta
+ \label{eq:selfnew}
+\end{eqnarray}
+In other words, the atomic radius $R_i$ is reduced by a constant offset $\rho_0$,
+the self-energy contribution $E_{ik}^{\rm self}$ is scaled by a constant factor $\lambda$,
+and the solvation radius $b_i$ is reduced by a constant offset $\delta$. The values
+$\lambda = 1.4$, $\rho_0 = 0.09$ {\AA} and $\delta$ = 0.15 {\AA} were used in
+\cite{Onufriev00}.
+
+\subsection{Pairs of interacting groups}
+In structure refinement, it is often necessary to use a model in which
+different parts of the macromolecule are artificially duplicated, for example
+a protein side chain that is disordered and occupies multiple positions in a
+crystal structure. To allow for these situations, both X-PLOR \cite{Xplor} and
+CNS \cite{CNS} view the system formally as a set of ``pairs of interacting
+groups''. Usually, there is only one such pair: the macromolecule
+interacting with itself:
+\begin{center} $M$ $\leftrightarrow$ $M$, \end{center}
+where $M$ is the macromolecule and $\leftrightarrow$ indicates an interaction. In the
+case of a single disordered protein side chain thought to have two main conformations,
+one would normally consider a protein $P$ with two copies of the side chain: $S_1$ and $S_2$,
+leading to the following pairs of interacting groups:
+\begin{center}
+$P \, \backslash \{S_1, S_2\}$ $\leftrightarrow$ $P \, \backslash \{S_1, S_2\}$ \\
+$P \, \backslash \{S_1, S_2\}$ $\leftrightarrow$ $S_1$; weight of 1/2 \\
+$P \, \backslash \{S_1, S_2\}$ $\leftrightarrow$ $S_2$; weight of 1/2,
+\end{center}
+where $P \, \backslash \{S_1, S_2\}$ represents the protein without the disordered side
+chain and the protein--$S$ interactions are weighted by 1/2 because there
+are two copies of $S$. The two copies of $S$ do not interact with each other.
+This formalism is implemented in X-PLOR through the {\bf constraints interaction}
+statement (for an example, see the gbtests/testfirst.inp test case).
+
+The same formalism applies to the GB energy terms. If the interacting groups are denoted
+$A_p$, $B_p$ with $p=1,N$, their pairs take the form $P_p = A_p \times B_p = 
+\{(i,j); i \in A_p, j \in B_p\}$. There are $N$ pairs of groups $P_p$ and each has a
+weight $w_p$. The GB interaction and self energies take the form:
+\begin{equation} \label{eq:pig}
+\Delta E^{\rm int} = \frac{1}{2} \sum_{p=1}^N w_p \left( \sum_{i \in A_p, j \in B_p}
+ \Delta E^{\rm int}_{ij} \right)
+\end{equation}
+\begin{equation} 
+\Delta E^{\rm self} = \sum_{p=1}^N w_p \sum_{i \in A_p, j \in B_p}
+\left( -\frac{\tau q_i^2}{2 R_i}\delta_{ij} + \tau q_i^2 E_{ij}^{\rm self} \right)
+\end{equation}
+These equations generalize Eqs.\ (\ref{eq:gbinte}), (\ref{eq:self}), which correspond
+to a single pair $P_1 = M \times M$, $M$ being the whole macromolecule. The factor
+$\frac{1}{2}$ in Eq.\ (\ref{eq:pig}) corrects for double counting of $i,j$ and $j,i$
+terms; $\delta_{ij}$ is the Kronecker symbol.
+
+\subsection{Crystal symmetry}
+The implementation of crystal symmetry is described below and in a published article \cite{Moulinier03}.
+The system is now assumed to have $n_G$ symmetry elements, which are isometries of the form
+\begin{equation}
+S: \und{r} \rightarrow \und{\und{R}} \, \und{r} + \und{\rho}
+\end{equation}
+$\und{\und{R}}$ is a rotation or an inversion with respect to a plane or a point, and $\und{\rho}$
+is a translation vector. The total solvation energy now involves a sum over symmetry images; the solvation
+energy $E$ per asymetric unit is
+\begin{equation} 
+E = \frac{1}{2n_G} \sum_{iS} \sum_{jS'} g(S\und{r}_i, S'\und{r}_j)
+  = \frac{1}{2} \sum_{ijS} g(\und{r}_i,S\und{r}_j)
+\end{equation}
+where $n_G$ is the order of the symmetry group (which is infinite for an infinite crystal). 
+In practice, the infinite summation over all crystal translations can be truncated with
+a minimum image convention \cite{AllenBK}, since the total electrostatic interaction energy
+(Coulomb plus solvation) is rather short-ranged, in contrast to the Coulomb energy alone.
+
+To obtain the solvation forces, we use the relations
+\begin{eqnarray}
+\nabla_n g(\und{r}_n,S\und{r}_j) &=& 
+     g'(\und{r}_n,S\und{r}_j) \frac{\und{r}_n - S \und{r}_j}{| \und{r}_n - S \und{r}_j |} 
+\nonumber \\
+\nabla_n g(\und{r}_i,S\und{r}_n) &=& 
+     R^{-1} g'(\und{r}_i,S\und{r}_n) \frac{\und{r}_i - S \und{r}_n}{| \und{r}_i - S \und{r}_n |} 
+\label{eq:jimage} \nonumber \\
+\nabla_n g(\und{r}_n,S\und{r}_n) &=& 
+     2 g'(\und{r}_n,S\und{r}_n) \frac{\und{r}_n - S \und{r}_n}{| \und{r}_n - S \und{r}_n |}
+\nonumber
+\label{eq:iimage}
+\end{eqnarray}
+Here, $g'(\und{r}_i,\und{r}_j)$ represents differentiation of $g_{ij}=g(\und{r}_i,\und{r}_j)$ considered as a
+function of the scalar variable $r_{ij} = |\und{r}_i - \und{r}_j|$. The gradient of the solvation energy takes
+the form
+\begin{eqnarray}
+\nabla_i \, E &=& \sum_{i \leq j, S} \lambda_{ij} g'(r_{iJ}) \frac{\und{r}_i - \und{r}_J}{r_{iJ}}
+\nonumber \\
+ &+& \sum_{j \leq i, S} R^{-1} \lambda_{ij} g'(r_{Ij}) \frac{\und{r}_I - \und{r}_j}{r_{Ij}} 
+\end{eqnarray}
+The indices $I$, $J$ correspond to the images of the particles $i$, $j$ under $S$.
+
+The energy and forces can be accumulated by summing over the interacting pairs ($i$,$j$) where $i \leq j$
+\cite{Verlet67}. While processing the ($i,j$) term, we do two things: 1) we accumulate the contribution of $j$ to
+the force on $i$ (`direct' contribution); 2) we calculate and set aside $G_{ij} = \lambda_{ij} R^{-1} g'(r_{iJ})
+\frac{\und{r}_i - \und{r}_J}{r_{iJ}}$, which represents the contribution of $i$ to the force on $j$ (`scatter'
+contribution). In the vectorized code of CNS or X-PLOR, once the loop over all $j$ is finished, the $G_{ij}$
+are `scattered' \cite{AllenBK}, or added to the appropriate atomic forces, $F_j$.
+
+\section{Syntax}
+\subsection{GB energy terms}
+The GB solvation energy is divided into four terms: direct self-energy and interaction energy terms, and
+direct and self-energy terms corresponding to interactions with symmetry images:
+\[ E_{GBSOLV} = E_{GBSELF} + E_{GBINT} + E_{PGBS} + E_{PGBI} \]
+They are available to the user through the variables \$GBSE, \$GBIN, \$PGBS, and \$PGBI. They are activated
+by the {\bf flags} statement in the usual way:
+\begin{verbatim}
+flags include gbse gbin pgbs pgbi end
+\end{verbatim}
+They are inactive by default.
+
+\subsection{Setting the GB options}
+All the parameters of the GB solvent model are under user control, with
+sensible defaults. The setup of the atomic volumes is described further on.
+The other GB parameters are set up with the {\bf nbonds} subcommand:
+\begin{description}
+\item {\bf NBONDs $<$nbonds-statement$>$ $|$ $<$gborn-nbonds-statement$>$ END} \\
+applies to electrostatic, van der Waals, and GB energy terms.
+\item[$<$gborn-nbonds-statement$>$ :==] \mbox{}
+\begin{description}
+\item [GBACE $|$ GBHCT] Excusive flags activating the GB/ACE or the GB/HCT model.
+Default: inactive.
+\item [WEPS=$<$real$>$] Solvent dielectric constant. Default: 1 if GB is inactive,
+80 if GB is active. 
+\item [SMOOTh=$<$real$>$] Determines the atomic widths in GB/ACE; denoted $\alpha$
+in Eq.\ (\ref{eq:alpha}). Default: 1.
+\item [LAMBda=$<$real$>$] Scaling factor for solvation radii in GB/HCT; denoted $\lambda$
+in Eq.\ (\ref{eq:selfnew}). Default: 1.
+\item [OFFSet=$<$real$>$] Offset for atomic radii in GB/HCT; denoted $\rho_0$
+in Eq.\ (\ref{eq:selfnew}). Default: 0.
+\end{description}
+\end{description}
+
+\subsection{Setting up atomic volumes for GB}
+Two approaches can be used:
+
+\subsubsection{Volume libraries}
+Two sets of `standard' atomic volumes are available for proteins, in two force
+field parameter files: {\bf param19.gb.pro} and {\bf paramber.gb.inp}, located
+in \$GBXPLOR/gbtoppar (see File Orgaization, below). These volumes are automatically
+read along with the other force field parameters. The first set was developed by
+Schaefer and coworkers \cite{Schaefer01} and modified and tested for protein simulations
+by Calimet et al \cite{Calimet01}, and is meant to be used with the Charmm19 topology
+(toph19.pro) and parameter set. The second was developed and tested by our group
+\cite{Lopes07} and is meant to be used with the Amber all-atom force field
+\cite{Cornell95}. Other volume libraries are available in the literature and can
+be formatted for X-PLOR, for example nucleic acid libraries \cite{Tsui00}. 
+
+The syntax of the {\bf NONBonded} subcommand is modified accordingly: \\
+{\bf NONB $<$type$>$ $<$real$>$ $<$real$>$ $<$real$>$ $<$real$>$ [$<$real$>$ $<$real$>$]} \\
+reads the Lennard-Jones parameters for a specified chemical type, as before;
+the first pair of reals is $\epsilon$, $\sigma$; the second pair is $\epsilon$,
+$\sigma$ for 1--4 non-bonded interactions. The last two reals are $V$, the atomic
+volume (Eqs.\ \ref{eq:self}, \ref{eq:radius}), and $S$, the scaling parameter
+used for the HCT solvation radius (see text following Eq.\ \ref{eq:bsolvhct}). If the
+last two reals are omitted, $V$ and $S$ will both be set to 9999. Thus, for applications
+not using GB, there is backward compatibility with X-PLOR parameter files not set up
+for GB. But for applications using GB, $V$ must be included in the parameter file for
+both GB/ACE and GB/HCT, and $S$ must be included for GB/HCT. 
+
+\subsubsection{Volumes calculated with an external program}
+In some cases, it may be desirable to calculate the atomic volumes corresponding
+to a particular family of conformations and/or proteins, instead of relying on
+`standard' values \cite{Wagner99}. The standard GB/ACE volumes were obtained from
+atomic Voronoi volumes calculated for a large set of protein structures, then averaged
+over each chemical
+type \cite{Schaefer01}, then reduced by a factor of 0.9 to account for systematic
+errors in the GB/ACE self-energy approximation \cite{Calimet01}. Several programs
+have the capability to calculate Voronoi volumes for each individual atom of a
+particular protein (eg the VORONOI package of Fred Richards). If these are then
+stored in a particular field of a PDB coordinate file (for example the field normally
+used for the temperature factors, WMAIN), this information can be read into X-PLOR using
+the {\bf coordinate} statement, then made available to the GB routines internally.
+To do this, the volumes must be copied into the RMSD array, then averaged over
+each chemical type using the {\bf parameter reduce} statement: \\
+\begin{verbatim}
+coor @volumes.pdb                      {read coordinate file with       }
+                                       {atomic volumes in wmain field   }
+
+vector do (rmsd = wmain) (all)         {copy into rmsd field            }
+
+flags exclude * include gbse gbin end  {activate GB energy terms, so    }
+                                       {GB parameters will be reduced   }
+
+parameter reduce selection=(all)       {average volumes over            }
+  overwrite=true mode=average end      {each chemical type              }
+end
+flags include bonds angl dihe impr vdw elec  {reactivate the other terms}
+\end{verbatim}
+The atomic volumes, suitably averaged, are then available for GB calculations.
+
+\subsection{Examples}
+\subsubsection{Minimization with GB/ACE}
+\begin{verbatim}
+coordinates  @protein.pdb
+parameter
+nbonds 
+tolerance=0.25 atom cdie trunc 
+nbxmod=5 vswitch e14fac=1. cutnb=15. ctonnb=13. ctofnb=14.
+eps=1. weps=80. smooth=1.3 gbace   {GB options}
+end
+end
+flags include gbse gbin end
+minimize powell nstep=50 end
+\end{verbatim}
+
+\subsubsection{Molecular dynamics with GB/HCT}
+\begin{verbatim}
+remarks   Asparagine MD with GB/HCT
+remarks   this file: dyna.inp 
+
+topology  
+  @GBXPLOR:gbtoppar/amber/topamber.inp    {Amber topology file       }
+  @GBXPLOR:gbtoppar/amber/patches.pro     {N- and C-terminal patches }
+end                                       {for Amber force field     }
+parameter 
+  @GBXPLOR:gbtoppar/amber/paramber.gb.inp {Amber parameter file      }
+end                                       {including GB parameters   }
+segment
+name="ASN1"
+molecule name=ASN number=1 end
+end
+patch NASN refe=nil=(resid 1) end
+patch CASN refe=nil=(resid 1) end
+parameter 
+nbonds 
+    atom cdie trunc 
+    e14fac=0.8333333                     ! use this to reproduce amber elec
+    cutnb 500. ctonnb 480. ctofnb 490.   ! essentially no cutoff
+    tolerance=100.                       ! only build the nonbonded list once
+    nbxmod 5 vswitch
+    wmin=1.0
+end 
+end
+parameters nbonds
+    EPS=1. WEPS=80. GBHCT                ! GB parameters
+    offset=0.09 lambda=1.33              ! GB parameters
+end end
+coor @volumes.pdb                        ! PDB with volumes in wmain
+vector do (RMSD = wmain) (all)           ! copy into rmsd
+vector do (rmsd = rmsd * 0.9) (all)      ! reduce volumes by 10%
+flags include gbse gbin end
+parameter reduce selection=(all) overwrite=true mode=average end end
+coor @asn.pdb
+
+! Now run constant energy dynamics; random initial velocities
+vector do (vx = maxwell(250)) (all)
+vector do (vy = maxwell(250)) (all)
+vector do (vz = maxwell(250)) (all)
+dynamics verlet
+     nstep=500000 timest=0.001 {ps}     ! 500 ps dynamics
+     iasvel=current                     ! current velocities 
+     nprint=250 iprfrq=250              ! statistics output
+end 
+stop
+\end{verbatim}
+
+\section{Installation and testing}
+\subsection{File organization}
+Currently, the GB source files, test files, and documentation are stored
+separately from the rest of the X-PLOR distribution, although this is likely
+to change in the future. The top of the GB directory tree is named ``gbxplor''.
+We assume it is in the topmost directory of an existing X-PLOR distribution,
+and  assigned to the environment variable \$GBXPLOR. It contains a Readme file
+and the four following subdirectories: 
+\begin{itemize}
+\item
+{\bf gbsource} contains the additional or modified source code for the GB model.
+The new or modified source files are:
+\bigskip
+
+\begin{tabular}{l l}
+File &  Description \\ \hline
+gborn.s & The main source module for GB. \\
+gborn.fcm & Common blocks for GB. \\
+energy.s & Main energy routines; modified to set up and call GB routines. \\
+ener.fcm & Common blocks for energy routines; modified to include GB terms. \\
+nbonds.s & Set up of nonbonded options; modified to parse and set up GB options. \\ 
+nbonds.fcm & Common blocks containing nonbonded and GB options. \\
+parmio.s & Force field parameter reader; modified to read and set up GB parameters. \\
+param.fcm & Common blocks for force field parameters; modified to include GB parameters. \\
+\hline
+\end{tabular}
+\medskip
+\item
+{\bf gbtest} contains test files with the necessary data and shell scripts.
+\item
+{\bf gbtoppar} contains protein parameter files for use with GB/ACE and GB/HCT.
+\item
+{\bf gbdoc} contains this documentation.
+\end{itemize}
+
+\subsection{Installing}
+If the files described here were obtained in the form of an archive {\bf gbxplor.tar.gz},
+simply unpack it by ``gunzip -c gbxplor,tar.gz $|$ tar xvf -''. {\bf Make a backup copy
+of the original X-PLOR source directory}; copy the new or modified GB source code modules
+from \$GBXPLOR/gbsource into the main source directory \$SOURCE, and follow the usual
+X-PLOR installation procedure. Typically, this means precompiling, then compiling the
+new modules, as well as any other modules that make use of ener.fcm, nbonds.fcm, or
+param.fcm. 
+
+\subsection{Testing}
+Test files are in the directory \$GBXPLOR/gbtest. The tests consist of energy minimization
+and dynamics of an asparagine molecule and of the protein thioredoxin. The shell script
+\$GBXPLOR/gbtest/runtests.com can be used to execute all the tests (requiring about five
+minutes of CPU time on an 800MHz Intel PIII). \$GBXPLOR/gbtest/difftests.com compares the
+output to the output files provided with the code.
+
+\chapter{Generalized Born in a protein design context}
+
+\section{Residue GB and the protein design context}
+In protein design, we compute interaction energies between residue pairs, to be stored in an energy matrix \cite{Simonson13}.
+If the energy function is pairwise additive, each $I,J$ element of the energy matrix will not depend on residues other
+than $I$ and $J$. However, in continuum electrostatics, the energy is a many-body function. Thus, the GB interaction between
+two atoms $i$, $j$ has the form:
+\begin{equation}
+E_{ij}^{\rm int} = E_{ij}^{\rm int}({\bf r}_i, {\bf r}_j)
+              =\frac{\tau q_i q_j}{(r_{ij}^2+b_ib_j\exp[-r_{ij}^2/4b_ib_j])^{1/2}}
+\end{equation}
+It depends on the whole set of solute atomic coordinates through the atomic solvation radii,
+\begin{equation}
+b_i=b_i(\textbf{r}_{1},...,\textbf{r}_{N})
+\end{equation}
+Thus, an atomic-pairwise decomposition of screening energies is not possible. Nevertheless, Archontis \& Simonson showed how
+to modify the GB formulation to employ {\it residue-pairwise} solvation energies \cite{Archontis05b}. 
+
+We define the self-energy contribution of a pair of residues $I$ and $J$:
+\begin{equation}
+E_{IJ}^{\rm self}=\sum_{i\in I, j\in J} E_{ij}^{\rm self}
+\end{equation}
+The total self-energy can be written 
+\begin{equation}
+E^{\rm self}=\sum_I E_I^{\rm self} = \sum_I \sum_J E_{IJ}^{\rm self}
+\end{equation}
+where $E_I^{\rm self}$ is the self-energy of residue $I$ and each sum runs over all residues.
+
+We now define {\it residue} solvation radii $B_I$, by analogy to the atomic solvation radii above \cite{Archontis05b}:
+\begin{equation}
+E_I^{\rm self} = \tau \sum_{i \in I}\frac{q_i^2}{2b_i} \stackrel{\rm def}{=} \tau \sum_{i \in I}\frac{q_i^2}{2B_I}
+\end{equation}
+Thus, $B_I$ is a harmonic average of the atomic solvation radii $b_i$ weighted by the squared charges:
+\begin{equation}
+\sum_{i \in I} \frac{1}{B_I} = \sum_{i \in I} \frac{q_i^2}{b_i}
+\end{equation}
+
+Finally, we consider the GB interaction energy between residues $I, J$. With the usual GB formulation, we would have
+\begin{equation}
+\Delta E_{IJ}^{\rm int} = -\tau \sum_{i \in I, j \in J}\frac{q_i q_j}{(r_{ij}^2+b_ib_j\exp[-r_{ij}^2/4b_ib_j])^{1/2}}
+\end{equation}
+Here, however, we introduce a new approximation for $\Delta E_{IJ}^{\rm int}$, where the residue solvation radii replace the
+atomic ones:
+\begin{equation}
+\Delta E_{IJ}^{\rm int} = -\tau \sum_{i \in I, j \in J, i\neq j}\frac{q_i q_j}{(r_{ij}^2+B_IB_J\exp[-r_{ij}^2/4B_IB_J])^{1/2}}
+\end{equation}
+This new approximation for the GB interaction is referred to as {\bf ``residue GB''} \cite{Archontis05b}. For now, we assume
+we are using this method.
+
+For a given structure and set of interatomic distances, the interaction energy $\Delta E_{IJ}^{\rm int}$ is a slowly varying
+function of the quantity $B_I B_J$, which we denote $B$. The $B$-dependency can be approximated by fitting
+$\Delta E_{IJ}^{\rm int}(B)$ to a generalized polynomial as follows \cite{Archontis05b}:
+\begin{equation}
+\Delta E_{IJ}^{\rm int}(B) \approx c_1^{IJ} + c_2^{IJ} B + c_3^{IJ} B^2 + c_4^{IJ} B^{-\frac{1}{2}} + c_5^{IJ} B^{-\frac{3}{2}}
+\end{equation}
+The $c_n$ are constant fitting coefficients. This approximation holds for a large range of $B$ values. The {\it fitting
+coefficients} $c_n$ depend only the sets of coordinates $\textbf{r}_i \in I$ and $\textbf{r}_j \in J$: they can be computed
+without information on the rest of the solute structure. In this sense, residue GB is residue-pairwise additive.
+
+\section{X-PLOR syntax: the pick gbfit statement}
+To characterize the GB interaction between a pair of residues in a protein design context, we can compute the fitting
+coefficients $c_n$ introduced above, using the following statement:
+\begin{verbatim}
+pick gbfit (<selection 1>) (<selection 2>)
+\end{verbatim}
+The GB interaction between the two selections is computed as a function of $B$ = $B_I B_J$, where $B_I$, $B_J$ are the
+residue B values of the two selections. The resulting fitting coefficients are stored in the user variables \$GBFIT1,
+\$GBFIT2, ..., \$GBFIT5. Currently, XPLOR performs the fit using a collection of $B$ values uniformly distributed between
+1 and 150 \AA. In the future, more options will be added to increase user control over the fit. 
+
+\section{Examples}
+The following example shows how to compute the solvation radius $B_I$ for a given residue.
+\begin{verbatim}
+Remarks Compute the residue B value for a given residue
+topology
+  @xplor3.9/toppar/amber2xplor/lib/masses_parm99.rtf
+  @xplor3.9/toppar/amber2xplor/lib/amino_parm99SB.bbunif.rtf
+end
+parameters @xplor3.9/toppar/amber2xplor/lib/parm99SB.gbAA.prm end
+parameter nbonds
+    atom trunc cdie eps=1.0 weps=80.0 e14fac=0.83333333333
+    cutnb 500. ctonnb 480. ctofnb 490. nbxmod 5
+end end
+segment chain sequence SER ALA CYS end end end
+coor @data/3pept.pdb
+parameter nbonds gbhct bato end end        { activate GB         }
+flags exclude * include gbse gbint end
+constraints interaction (known) (known) end
+vector show (bsolv) (known)                {default values are 1.}
+energy end                                 {energy command leads }
+vector show (bsolv) (known)                {to updated values    }
+vector do (rmsd = charge*charge/bsolv)(resid 1)
+vector show sum (rmsd) (resid 1)
+eval ($ccob=$result)                       {residue B is the     }
+vector do (rmsd=charge*charge) (resid 1)   {harmonic average of  }
+vector show sum (rmsd) (resid 1)           {atomic b's, weighted }
+eval ($cc=$result)                         {by the atomic charges} 
+eval ($bsolv=$cc/$ccob) 
+stop
+\end{verbatim}
+
+The next example shows how to compute fitting coefficients and write out information for an energy matrix.
+\begin{verbatim}
+Remarks Fit GB interaction energy between residues I, J as a function of B
+topology
+  @xplor3.9/toppar/amber2xplor/lib/masses_parm99.rtf
+  @xplor3.9/toppar/amber2xplor/lib/amino_parm99SB.bbunif.rtf
+end
+parameters @xplor3.9/toppar/amber2xplor/lib/parm99SB.gbAA.prm end
+parameter nbonds
+  atom trunc cdie eps=1.0 weps=80.0 e14fac=0.83333333333
+  cutnb 500. ctonnb 480. ctofnb 490. nbxmod 5
+end end
+segment chain sequence SER ALA CYS end end end
+coor @data/3pept.pdb                            {compute and fit     }                                             
+pick gbfit (resid 1) (resid 2)                  {GB interaction;     }
+display $GBFIT1 $GBFIT2 $GBFIT3 $GBFIT4 $GBFIT5 {display coefficients}
+stop                                            {in matrix format    }
+\end{verbatim}
+
+Notice that the atomic solvation radii for a specific selection are updated when the GB self energy (\$GBSE) is computed
+with the bato parameter:
+\begin{verbatim}
+parameter nbonds gbhct bato end end
+\end{verbatim}
+
+\chapter{Modelling dispersion interactions}
+
+\section{Theory}
+The solute-solvent interaction consists of the electrostatic part where the atomic charges in the low dielectric cavity (solute) 
+interact with the high dielectric surrounding medium (solvent) as described by the Generalized Born (GB) model; and the 
+non electrostatic (non polar) part which describes the cavity formation and the van der Waals solute-solvent interaction.
+        
+\subsection{Solute-Solvent van der Waals Dispersion Model}
+In spirit of the Weeks-Chandler-Andersen (WCA) repulsive/attractive decomposion of the nonpolar contribution to the solvation
+free energy \cite{Weeks71} we model the solute-solvent van der Waals dispersion interactions using the attractive part of the
+Lennard-Jones potential. 
+
+Following the continuum solute-solvent van der Waals (vdW) energy model of Gallicchio et al. \cite{Levy03} the average vdW
+dispersion interaction of atom i with water is given by the integral of the attractive LJ potential between atom i and the
+oxygen atom of the water molecule, over the solvent volume, where the water number density  $\rm \rho_w$  is assumed constant.
+
+\begin{equation}
+\rm \Delta G^{DI} = \sum_i \bar{U}_i^{vdw} 
+\end{equation}
+
+\begin{equation}\label{eq:disp}
+\rm \bar{U}^{vdW}_i = -\rho_w \int_{solv} \frac{4\epsilon_{iw}\sigma_{iw}^6}{\left |r-r_i\right |^6} \,d^3r 
+\end{equation}
+$\epsilon_{iw} $ and $\sigma_{iw}$ are the LJ potential parameters for the solute atom-water oxygen pair.  The total solute-solvent
+vdW dispersion interaction is given by the sum of the individual vdW interactions of all atoms of the solute. The integral in the
+above equation can be re-written as the difference of the integral over the whole space and the solute region outside the vdW
+radius $\rm R_i$. In other words, the solvation free energy of an isolated atom i fully solvated, is reduced by the presence of
+all surrounding solute atoms j.    
+\begin{equation}\label{eq:disp2}
+\rm \bar{U}^{vdW}_i = - 4\epsilon_{ij}\sigma_{ij}^6 \rho_w \big(\frac{4\pi}{3R_i^3} 
+    - \int_{r>R_i}^{solu} \frac{1}{\left|r-r_i\right|^6} \,d^3r\big) 
+\end{equation}
+
+\begin{equation}\label{eq:uvdw}
+\rm \bar{U}^{vdW}_i =  -\frac{f_i}{R_i^3} + f_i (\frac{3}{4\pi}\int_{r>R_i}^{solu} \frac{1}{\left|r-r_i\right|^6} \,d^3r), \quad f_i  
+     =  \frac{16\pi}{3}\epsilon_{ij}\sigma_{ij}^6 
+\end{equation}
+The integral of $\rm1/r^6$ over the solute region is approximated by two contributions as proposed by Onufriev \cite{Aguilar10}
+and computed analytically. The main integral  $\rm I_i^{vdW}$ over the atomic vdW spheres and the correction integral
+$\rm I_i^{neck}$ over the ``neck" shaped free space regions formed between pairs of vdW spheres.    
+
+\begin{equation}\label{eq:integrals}
+\rm  \frac{3}{4\pi}\int_{r>R_i}^{solu} \frac{1}{\left|r-r_i\right|^6} \,d^3r  \approx  I_i^{vdW} + I_i^{neck} 
+\end{equation}
+
+\begin{eqnarray}\label{eq:vdwneck}
+%\rm I_i^{tot} & = &\rm \frac{3}{4\pi}\int_{r>R_i}^{solu} \frac{1}{\left|r-r_i\right|^6} \,d^3r  
+    \approx  I_i^{vdW} + I_i^{neck} \nonumber \\ 
+\rm I_i^{vdw} & = & \rm \frac{3}{4\pi}\int_{r>R_i}^{solu/vdw} \frac{1}{\left|r-r_i\right|^6} \,d^3r 
+     = \sum_{j\not= i} I_{ij}^{vdw}(r_{ij},R_i,S^{vdw}R_j) \nonumber \\
+\rm I_i^{neck} & = & \rm \frac{3}{4\pi}\int_{r>R_i}^{solu/neck} \frac{1}{\left|r-r_i\right|^6} \,d^3r 
+    = \frac{3}{4\pi}S^{neck}\sum_{j\not= i} I_{ij}^{neck}(r_{ij},R_i,R_j)  
+\end{eqnarray}
+Both terms of eq. \ref{eq:integrals} are computed by the sum $\rm \sum_{j\not=i} I_{ij}$ of all atom pairwise interactions
+expressed by the following analytical conditional functions: 
+
+\begin{equation}\label{eq:vdwfun}
+\rm    I_{ij}^{vdW}(R_i,R_j,r_{ij})= 
+\begin{cases}
+\rm    \frac{R_j^3}{(r_{ij}^2-R_j^2)^3},& \text{if } \rm r_{ij}\geq R_i + R_j\\
+ \rm   \frac{1}{16r_{ij}}\Big(\frac{r_{ij}+3R_j}{(r_{ij}+R_j)^3} + \frac{3(R_j^2-R_i^2-(r_{ij}-R_i)^2)+2r_{ij}R_i}{R_i^4} \Big), 
+   & \text{otherwise}
+\end{cases}
+\end{equation}
+
+\begin{equation}\label{eq:neckfun}
+\rm    I_{ij}^{neck}(R_i,R_j,r_{ij})= 
+\begin{cases}
+\rm   A_{ij}  (r_{ij}-B_{ij})^4(R_i + R_j + 2R_w - r_{ij})^4,& \text{if } \rm B_{ij} < r_{ij} < R_i + R_j + 2R_w \\
+ \rm   0,              & \text{otherwise}
+\end{cases}
+\end{equation}
+The neck term parameters A and B themselves depend on the atomic vdW radii of each pair and the water probe radius $\rm R_w$.
+Finally the total solute-solvent vdW dispersion interaction is given by 
+\begin{equation}
+\Delta G^{DI} = \sum_i -\frac{f_i}{R_i^3} + \sum_i \sum_{j\not= i} f_i ( I_{ij}^{vdw}+ \frac{3}{4\pi}S^{neck}I_{ij}^{neck} )
+\end{equation}
+
+\subsection{Gaussian Nonpolar Solvent Model}
+The Lazaridis and Karplus (LK) model \cite{Lazaridis99} expresses the total solvation free energy of a particular molecular
+conformation as a sum over contributions from individual groups of atoms, as follows: 
+\begin{eqnarray}\label{eq:lk}
+\rm \Delta G^{LK}  & = & \rm \sum_i \Delta G^{solv}_i \nonumber \\
+\rm \Delta G^{solv}_i  & = & \rm G_i^{ref} - \sum_{j\not= i} \int_{V_j} f_i(r_{ij}) dV \nonumber \\
+ & = & \rm G_i^{ref} - \sum_{j\not= i} f_i(r_{ij}) V_j
+\end{eqnarray} 
+
+Each contribution reflects the change in the solvation free energy due to the transfer of  the corresponding group from the
+unfolded (fully solvated) to the folded (partially solvated or burried) conformation. This transfer is accompanied by a partial
+or total replacement of the surrounding high dielectric solvent by the less polar solute medium, a change in the solvent
+orientation around the solute and a modification in the solute-solvent interactions. The solvation energy of a fully solvent
+exposed group i is given by an empirically determined reference value $\rm G_i^{ref}$. The same group inside the solute is
+screened from solvent by the surrounding groups each contributing to a reduction in the solvation energy of group i. This
+reduction is expressed by the integral over the volume of the surrounding solute groups of a gaussian energy density function :
+\begin{equation}
+\rm f_i(r_{ij}) = \frac{G_i^{free}}{2 \pi^{3/2}\lambda_i r_{ij}^2} e^{-(\frac{r_{ij}-R_i}{\lambda_i})^2}
+\end{equation}
+which depends on the distance $\rm r_{ij}$, the vdW radius $\rm R_i$, the gaussian correlation length $\rm \lambda_i$ and
+$\rm G_i^{free}$. This last parameter is such that, when group i is fully buried the total solvation energy becomes zero.
+In the LK model, the integrals are approximated by the product of the density function of group i and the atomic volume of the
+surrounding solute group j:
+\begin{equation}
+\rm \Delta G^{LK}  = \sum_i G_i^{ref} - \sum_i \sum_{j \not=i} f_i(r_{ij}) V_j 
+\end{equation}
+
+\section{Implementation}
+\textbf{The solute-solvent vdW dispersion interaction} was inserted at the level of non bonded Generalized Born (GB) evaluation
+with an individual subroutine. After an energy call the parameters of the model described above are read and stored. That is,
+type and atom-based van der Waals radii ($\rm R^{vdw}$) the solvent type (oxygen atom for water) and parameters A, B if the neck
+correction term is turned on. In a first stage the van der Waals interaction of each isolated atom of the solute with the continuum
+solvent is accumulated to give the `` self " part of the dispersion energy. The factor at the numerator of Eq. \eqref{eq:uvdw}
+depends on the water density number and the Lennard-Jones B coefficient for each solute-solvent atom pair. At a second stage,
+the interaction of all solute atoms j surrounding each atom i, is evaluated and summed, to give the `` interaction " part which
+accounts for the replacement of the surrounding solvent in the isolated atom state by solute. As shown in Eq. \eqref{eq:vdwneck}
+van der Waals radii of the surrounding atoms are scaled down by a factor $\rm S^{vdw}$.  The neck term correction of the simplistic
+representation of the solute as van der Waals spheres, accounts for omitted space between atomic vdW spheres within the solute
+boundary. The total neck contribution is scaled by a factor $\rm S^{neck}$ (Eq. \ref{eq:vdwneck}).  The parameters A and B present
+in Eq. \eqref{eq:neckfun} depend on the pair of $\rm R_i^{vdw}, R_j^{vdw}$ and the water probe radius $\rm R_w$. A set of A and B
+values has been evaluated on a 2-dimensional equally spaced grid ($\rm R_i^{vdW}\times R_j^{vdW}$) using the numerical method NSR6
+developed by Onufriev et. al \cite{Aguilar12}. If the van der Waals radii of a pair do not coincide with a grid node then A and B
+parameters are obtained by cubic spline interpolation. The second derivative values of neck parameters are also read from the
+parameter file. 
+
+The solute-solvent van der Waals dispersion interaction term is pairwise decomposable, the derivative has analytical form and the
+forces are readily obtained by
+\begin{eqnarray}
+\rm \frac{\partial\, \Delta G_i^{DI}}{\partial\, x_i} & = & \rm \sum_{j \not= i} f_i\frac{\partial \,I^{vdW}_{ij}}{\partial \,x_i} 
+    + \frac{3}{4\pi}S^{neck}f_i \frac{\partial \,I^{neck}_{ij}}{\partial \,x_i} \nonumber \\
+& = & \rm \sum_{j \not= i} \big \{f_i\frac{\partial \,I^{vdW}_{ij}}{\partial \,r_{ij}} 
+  + \frac{3}{4\pi}S^{neck}f_i \frac{\partial \,I^{neck}_{ij}}{\partial \,r_{ij}}\big \} \frac{(x_i-x_j)}{r_{ij}}
+\end{eqnarray}
+\begin{equation}
+\frac{\partial\, I_{ij}^{vdW}}{\partial\, r_{ij}} = 
+\begin{cases} 
+   \sum_{j\not= i}\frac{-6r_{ij}R_j^3}{(r_{ij}^2-R_j^2)^4},& \text{if } \rm r_{ij}\geq R_i + R_j\\
+    \sum_{j\not= i}\frac{-2}{16r_{ij}}\Big(\frac{r_{ij}+4R_j}{(r_{ij}+R_j)^4} + \frac{3r_{ij} -4R_i}{R_i^4}  \Big) 
+    - \frac{1}{16r_{ij}^2} I_{ij}^{vdW}(r_{ij}< R_i+R_j),              & \text{otherwise}
+\end{cases}
+\end{equation}
+\begin{equation}
+\rm \frac{\partial\, I_{ij}^{neck}}{\partial\, r_{ij}} = 
+\begin{cases} 
+\rm 4A_{ij}  (r_{ij}-B_{ij})^3(R_i + R_j + 2R_w - r_{ij})^3 (R_i+R_j+2(R_w-r_{ij})+B_{ij}) , \\   
+   & \hspace{-5.5cm} \text{if } \rm B_{ij} < r_{ij} <  R_i + R_j + 2R_w  \\
+ 0,   & \hspace{-2.5cm} \text{otherwise} 
+\end{cases}
+\end{equation}
+
+\vspace{1cm}
+\noindent{\textbf{The Lazaridis-Karplus gaussian nonpolar solvent model}} is put within the non-bonding intramolecular
+interactions calculation path with a separate subroutine. At first the type-based parameters of the model $\rm G^{ref}, G^{free}$
+and $\lambda$ are being read and stored in arrays. A separate type-based array is needed for use of the model with AMBER,
+because it was initially developed for CHARMM and there is a poor correspondence between carbon atoms types CT and CH1E/CH2E/CH3E.
+The nonpolar part of the solvation free energy is computed in two steps. First, we compute the sum of atomic solvation free
+energies ($\rm G^{ref}$) in their isolated-state completely surrounded by solvent   (first term of Eq. \eqref{eq:lll}); and then
+we subtract the sum of the desolvation (replacement of solvent by solute) of each atom from all remaining solute atoms j (second
+term of Eq. \eqref{eq:lll}). All atom pairs contribute to the LK model, so 1-2 and 1-3 pairs excluded from van der Waals and
+electrostatic interactions, are taken into account. All hydrogen atoms are considered part of the heavy atom they are attached
+to, and are excluded from the calculation, as in the initial model. 
+
+\begin{equation}\label{eq:lll}
+\rm \Delta G^{LK}  = \sum_i G_i^{ref} - \sum_i \sum_{j > i} (f_i(r_{ij}) V_j + f_j(r_{ij}) V_i)
+\end{equation}
+When using the constraint interaction command to compute the interaction energy between two selected groups of atoms, the first
+term of equation \eqref{eq:lll} is evaluated only for those atoms which belong in both groups. If the two groups do not share any
+atoms, only the second term is computed describing the desolvation of the first group from the second and the desolvation of the
+second from the first. The command \emph{cons inte ( resid $\rm R_1$ or resid $\rm R_2$ )( resid $\rm R_1$ or resid $\rm R_2$ ) end}
+computes the solvation energy of both residues $\rm R_1$ and $\rm R_2$ as follows
+\begin{equation}
+\rm \Delta G^{LK}(R_1,R_2)  = \sum_{i\in R_1,R_2} G_i^{ref} - \sum_{i\in R_1,R_2} \sum_{i < j\in R_1,R_2} (f_i(r_{ij}) V_j + f_j(r_{ij}) V_i)
+\end{equation}
+But, the command \emph{cons inte ( resid $\rm R_1$ )( resid $\rm R_1$ or resid $\rm R_2$ ) end} computes the solvation energy of
+residue $\rm R_1$ in the presence of residue $\rm R_2$ correctly taking into account the desolvation of $\rm R_1$ from $\rm R_2$
+but it also includes the desolvation of residue $\rm R_2$ from residue $\rm R_1$. To eliminate the latter undesirable contribution
+we remove $\rm f_j(r_{ij}),\, j\in R_2 $ by setting the atom-based parameters of residue $R_2$ to zero, with the command
+\emph{parameters GNSP ( resid $\rm R_2$ ) 0.0 0.0 1.0 end}. Now the solvation energy of residue $\rm R_1$ in the presence of
+$\rm R_2$ is given by 
+\begin{equation}
+\rm \Delta G^{LK}(R_1,R_1-R_2)  = \sum_{i\in R_1} G_i^{ref} - \sum_{i\in R_1} \sum_{i < j\in R_1,R_2} f_i(r_{ij}) V_j 
+\end{equation}
+
+The solvation free energy depends on the distance between pairs of atoms ($\rm r_{ij}$), and its derivative has the following
+analytical form 
+\begin{equation}
+\rm \frac{\partial  \,\Delta G^{LK}}{\partial \, x_i} = \sum_{j\not=i}\frac{2}{r_{ij}} \big \{ 
+(\frac{1}{r_{ij}} +\frac{r_{ij}-R_i}{\lambda_i^2})f_iV_j + (\frac{1}{r_{ij}}+\frac{r_{ij}-R_j}{\lambda_j^2})f_jV_i \big\} (x_i-x_j)
+\end{equation}
+
+\section{Syntax}
+\subsection{Solute-solvent van der Waals dispersion energy}
+The dispersion term is assigned the variable name \textbf{\$GBDI} and is activated by the flag statement:
+\textbf{flags include GBDI end}
+
+\subsubsection{Setting the GBDI options}
+\noindent\textbf{NBONDs \textless nbonds-statement\textgreater  \textbar \textless gborn-nbonds-statement\textgreater 
+\textbar \textless gbdi-nbonds-statement\textgreater \, END}\\
+\textbf{\textless gbdi-nbonds-statement\textgreater :==} 
+
+\textbf{GBDI GBDN} \,\, Flags activating the main GBDI term and the neck contribution. Default: inactive.
+
+\textbf{WTYPE}=\textless string\textgreater \,\,Solvent chemical type.  Default: OW (TIP3P oxygen atom).
+
+\textbf{WRHO}=\textless real\textgreater \,\, Solvent density number. Default: 1.
+
+\textbf{SGBDI}=\textless real\textgreater \,\, $\rm R_j^{vdW}$ scaling factor. Default: 1.
+
+\textbf{SNECK}=\textless real\textgreater \,\,Neck term scaling factor. Default: 1.
+
+\textbf{RWAT}=\textless real\textgreater \,\, Water probe radius. Default: 1.4.
+
+\subsubsection{Setting up the parameters}
+
+The type-based  parameters of the vdW dispersion model are being set with a parameter statement. \\ 
+
+\noindent\textbf{PARAmeter \{\textless parameter-statement\textgreater\} END}\\   
+\textbf{\textless parameter-statement\textgreater :==}\\
+
+\noindent{\textbf{DSPN \textless RvdW-statement\textgreater \textless neckAB-statement\textgreater \,END} \\
+\textbf{\textless RvdW-statement\textgreater :==} \\
+GNOD \\
+\textbf{\textless integer\textgreater \, \textless real\textgreater\, ... \textless real\textgreater} \, defines the size of
+the grid and assigns a vdW radius foreach node of the grid. \\ 
+\textbf{\textless neckAB-statement\textgreater :==} \\
+NCKA \\ 
+\textbf{\textless real\textgreater\, ... \textless real\textgreater} \,  assigns a value of the neck-A parameter to all nodes
+of a row in the ($\rm R_i^{vdW}\times R_j^{vdW}$) grid. \\ 
+NCKB \\ 
+\textbf{\textless real\textgreater\, ... \textless real\textgreater} \,  assigns a value of the neck-B parameter to all nodes
+of a row in the ($\rm R_i^{vdW}\times R_j^{vdW}$) grid. \\
+NC2A \\ 
+\textbf{\textless real\textgreater\, ... \textless real\textgreater} \,  assigns a value of the second derivative of neck-A
+parameter to  all nodes of a row in the ($\rm R_i^{vdW}\times R_j^{vdW}$) grid, used for cubic spline interpolation.\\
+NC2B \\ 
+\textbf{\textless real\textgreater\, ... \textless real\textgreater }\,  assigns a value of the second derivative of neck-B
+parameter to  all nodes of a row in the ($\rm R_i^{vdW}\times R_j^{vdW}$) grid, used for cubic spline interpolation. \\
+
+\subsubsection{Neck parameters calculated with an external program}
+The analytical expression of the neck correction (Eq. \ref{eq:vdwneck}) to the $\rm 1/|r|^6$ integral over the solute space
+(sum of atomic van der Waals spheres) uses  parameters $\rm A_{ij}\,\, B_{ij}$, which depend on the van der Waals radii of the
+atom pair and the water probe radius.    
+
+\subsection{Lazaridis-Karplus interaction energy}
+The LK term is assigned the variable name \textbf{\$GNSM} and is activated by the flag statement: \textbf{flags include GNSM end}. 
+
+\subsubsection{Setting GNSM}
+\noindent\textbf{NBONDs \textless nbonds-statement\textgreater  \textbar \textless gborn-nbonds-statement\textgreater 
+\textbar \textless gbdi-nbonds-statement\textgreater \textbar \textless gnsm-nbonds-statement\textgreater  END} \\ \\
+\textbf{\textless gnsm-nbonds-statement\textgreater :==} 
+
+\textbf{GNSM} \,\, Flag activating the GNSM term. Default: inactive.
+
+\subsubsection{Setting up the parameters}
+The type- and atom-based  parameters of the LK model are being set with a parameter statement. 
+
+\noindent\textbf{PARAmeter \{\textless parameter-statement\textgreater\} END}\\   
+\textbf{\textless parameter-statement\textgreater :==}\\
+GNSP \\
+\textbf{\textless type\textgreater \, \textless real\textgreater\, \textless real\textgreater\ \textless real\textgreater} 
+\, adds $\rm G^{ref}$, $\rm G^{free}$ and $\rm \lambda$ parameters for the atom type to the parameter database. \\ 
+\textbf{\textless selection\textgreater \, \textless real\textgreater\, \textless real\textgreater\ \textless real\textgreater} 
+\, adds $\rm G^{ref}$, $\rm G^{free}$ and $\rm \lambda$ parameters for the selected atoms to the parameter database. 
+
+\subsection{Examples}
+\textbf{Minimization and MD with GB/DI/LK} 
+\begin{lstlisting}[numbers=left, numbersep=5pt,numberstyle=\tiny\color{black}]
+topology
+@xplor3.9/toppar/amber2xplor/lib/masses_parm99.rtf
+@xplor3.9/toppar/amber2xplor/lib/amino_parm99SB.bbunif.rtf
+@xplor3.9/toppar/amber2xplor/lib/solvents.rtf
+@xplor3.9/toppar/amber2xplor/lib/ions.rtf
+end
+
+parameters
+@parm99SB.plus.prm		      !{plus DI and LK parameters}
+end
+
+structure @allh_model.psf end
+coordinates @allh_model.pdb
+
+@LK_charmm2amber.str   !{type conversion from charmm19 to amber99}
+
+parameter
+   nbonds
+    atom trunc cdie eps=1 e14fac=0.83333333333
+    ctonnb=97. ctofnb=98. cutnb=99. nbxmod=5 toler=100. 
+    gbhct eps=1. weps=80.
+    gbdi wtype = OW sgbdi=0.6211 wrho=0.033428  !{GBDI parameters}
+    gbdn sneck=0.4058 rwat=1.4  		!{GBDN parameters}
+    gnsm 					!{GNSM option}
+  end
+end
+
+flags include gbse gbin gbdi gnsm end
+
+energy end
+
+minimize powell nstep=50 end 
+
+energy end 
+
+display $gbse $gbin $gbdi $gnsm  
+
+vector do (vx = maxwell(250)) (all)
+vector do (vy = maxwell(250)) (all)
+vector do (vz = maxwell(250)) (all)
+
+dynamics verlet 
+ nstep=1000 timest=0.001 iasvel=current
+ nprint=250 iprfrq=250
+end
+
+stop
+
+\end{lstlisting}
+
+\chapter{Some data structures for protein design}
+
+\bibliography{/home/simonson/tex/bibtex/current}
+
+\end{document}
+
+
+

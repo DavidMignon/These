@@ -1,0 +1,21 @@
+struct @example.psf end
+
+
+coor disp=main @example.pdb
+coor copy end  
+write coor from=comp output=output0a.pdb end
+
+!! do the same with the new syntax
+
+coor disp=main @example.pdb
+coor copy from=main to=comp end  
+write coor  from=main output=output0b.pdb end
+
+
+!! do the same with the models
+!! output0c.pdb will have a model idx 
+coor disp=main @example.pdb
+coor copy  extended=true from=main to=MODEL end 
+write coor from=MODEL  output=output0c.pdb end
+
+stop

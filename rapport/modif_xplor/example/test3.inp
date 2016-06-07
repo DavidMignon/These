@@ -1,0 +1,13 @@
+!! idx and push 
+
+struct @example.psf end
+coor disp=model @example.pdb 
+coor copy extended=false sele (segid LIGA) from=MODEL to=MODEL IDX=1=10 end
+
+
+!! Warning! here the new idx will be 11 for all atoms
+
+coor disp=model push=true @example.pdb
+write coor from=MODEL output=output3.pdb end
+
+stop
