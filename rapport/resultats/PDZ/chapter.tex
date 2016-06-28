@@ -44,7 +44,8 @@ Nous cherchons maintenant à évaluer les performances de notre modèle CPD sur 
 \section{L'optimisation des énergies de références} 
 \label{sec:optERef}
 \subsection{La méthode}
-Dans notre système CPD, l'état replié d'une protéine est modélisée à l'aide d'un backbone fixe.Mais l'état déplié, lui est représenté par par une modélisation de chaque acide aminé X étendue en un peptide de la forme t ALA-X-ALA et nous considerons que chaque résidue X interagie uniquement avec le backbone environnent et avec le solvant.
+Dans notre système CPD, l'état replié joue un role important parce que les séquences d'intérts sont celles obtenues en maimimsant la differentes d'energie entre d'états de&plié et l'état replié .Donc c'est tres important!.
+Mais l'état déplié, lui est représenté comme une chaine popypeptidique largement etendue, de telle façon que nous considerons que chaque résidue X interagie uniquement avec le backbone environnent et avec le solvant.Puis, ce modèle est ajuster empiriquement en comparant les populations de chaque type de résidues dans les séquences calculées avec les populations dans les séquences expérimentales.L'optimisation des énergies de références consiste alors à corriger ces énergies de telles facons que la populations pour un type aa donné dans les séquences calculés cohencide avec la population experimentale de ce type . IL s'agit alors d'un problème de convergence pour la suite d'itérer de proteus + ajustement.
 
 \subsection{Seconde méthode d'itération}
 
