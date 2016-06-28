@@ -1,7 +1,55 @@
 \chapter{PDZ}
 \label{chap:PDZ}
 
-    \clearpage
+Nous cherchons maintenant à évaluer les performances de notre modèle CPD sur un ensemble de protéines de la famille PDZ.Nous utilisons les résultats précédents, en particulier ceux de la section ??, pour définir les valeurs des paramètres de l'optimisation du Monte-Carlo. Mais ici, nous reprenons l'optimisation des énergies de références.
+
+ 
+\section{Notre ensemble de protéine PDZ} 
+\label{sec:ensemble_PDZ}
+
+
+    \begin{table}[!htbp]
+      \centering
+
+      \begin{tabular}{ccc}
+
+        \toprule
+        Code PDB & résidus & nombre de positions actives\\
+        \cmidrule{1-3}
+        1G9O  & 	9-99	 & 	76	 \\
+        1IHJ  & 	13-105	 & 	82	 \\
+        1N7E  & 	668-761	 & 	79	 \\
+        1R6J  & 	193-273	 & 	72	 \\
+        2BYG  & 	186-282	 & 	82	 \\
+        3K82  & 	305-402	 & 	80	 \\
+        Cask  & 	487-568	 & 	74	 \\
+        Tiam1 & 	838-930	 & 	84	 \\
+        \bottomrule
+
+      \end{tabular}      
+      \caption{Les protéines PDZ}
+\label{tab:protéines_PDZ}      
+    \end{table}
+
+
+\subsection{Description}
+
+\subsection{Requêtes Blast croisées}
+
+\subsection{L'alignement choisi}
+
+\subsection{Le coeur PDZ sélectionné}
+
+
+\section{L'optimisation des énergies de références} 
+\label{sec:optERef}
+\subsection{La méthode}
+Dans notre système CPD, l'état replié d'une protéine est modélisée à l'aide d'un backbone fixe.Mais l'état déplié, lui est représenté par par une modélisation de chaque acide aminé X étendue en un peptide de la forme t ALA-X-ALA et nous considerons que chaque résidue X interagie uniquement avec le backbone environnent et avec le solvant.
+
+\subsection{Seconde méthode d'itération}
+
+\section{Résultats} 
+
 
 \paragraph{Alignements Blast croisés}
 
@@ -80,7 +128,7 @@ enveler les redondances flagrantes
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{1G9O_align.png} \\
+       \includegraphics[width=17cm]{align/1G9O.png} \\
      \end{tabular}
      \caption{L'alignement 1G9O }
 \label{graph:convEref}
@@ -91,7 +139,7 @@ enveler les redondances flagrantes
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{1IHJ_align.png} \\
+       \includegraphics[width=17cm]{align/1IHJ.png} \\
      \end{tabular}
      \caption{L'alignement 1IHJ }
 \label{graph:convEref}
@@ -102,7 +150,7 @@ enveler les redondances flagrantes
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{1N7E_align.png} \\
+       \includegraphics[width=17cm]{align/1N7E.png} \\
      \end{tabular}
      \caption{L'alignement 1N7E }
 \label{graph:convEref}
@@ -113,7 +161,7 @@ enveler les redondances flagrantes
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{1R6J_align.png} \\
+       \includegraphics[width=17cm]{align/1R6J.png} \\
      \end{tabular}
      \caption{L'alignement 1R6J }
 \label{graph:convEref}
@@ -124,7 +172,7 @@ enveler les redondances flagrantes
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{2BYG_align.png} \\
+       \includegraphics[width=17cm]{align/2BYG.png} \\
      \end{tabular}
      \caption{L'alignement 2BYG }
 \label{graph:convEref}
@@ -135,7 +183,7 @@ enveler les redondances flagrantes
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{3K82_align.png} \\
+       \includegraphics[width=17cm]{align/3K82.png} \\
      \end{tabular}
      \caption{L'alignement 3K82 }
 \label{graph:convEref}
@@ -770,51 +818,6 @@ Tiam1 & I & Y & F & L & V & A & L & I & I & A & L & L & L & L & V \\
 
     \clearpage
 
-
-    \begin{figure}[h]
-      \centering
-      \begin{tabular}{c} 
-        \includegraphics[width=15cm]{1CKA_native_core_seqlogo.eps} \\
-      \end{tabular}
-        
-      \caption{1CKA sauvage, positions du coeur}
-\label{}
-    \end{figure}
-
-    \begin{figure}[h]
-      \centering
-      \begin{tabular}{c} 
-        \includegraphics[width=15cm]{1CKA_designed_core_seqlogo.eps} \\
-      \end{tabular}
-        
-      \caption{1CKA séquences calculées, positions du coeur}
-\label{}
-    \end{figure}
-
-    \begin{figure}[h]
-      \centering
-      \begin{tabular}{c} 
-        \includegraphics[width=15cm]{1CKA_pfam_seed_core_seqlogo.eps} \\
-      \end{tabular}
-        
-      \caption{alignement Pfam seed, positions du coeur}
-\label{}
-    \end{figure}
-
-    \begin{figure}[h]
-      \centering
-      \begin{tabular}{c} 
-        \includegraphics[width=15cm]{1CKA_pfam_full_core_seqlogo.eps} \\
-      \end{tabular}
-        
-      \caption{alignement Pfam full, positions du coeur}
-\label{}
-    \end{figure}
-
-    \clearpage
-
-
-
     \begin{table}[!htbp]
       \centering
 
@@ -835,7 +838,7 @@ Tiam1 & I & Y & F & L & V & A & L & I & I & A & L & L & L & L & V \\
 
       \end{tabular}      
       \caption{Moyenne de l'exponentiel de l'entropie sur les ensembles des positions des protéines}
-\label{tab:Entroie_PDZ}      
+\label{tab:Entropie_PDZ}      
     \end{table}
 
 
@@ -935,18 +938,40 @@ Tiam1 & I & Y & F & L & V & A & L & I & I & A & L & L & L & L & V \\
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/Tiam1/boostHydro0.png} \\
+       \includegraphics[width=17cm]{Tiam1/boostHydro0.png} \\
      \end{tabular}
-     \caption{Séquences obtenues avec un delta des énergies de références à -0,4.}
+     \caption{Séquences Tiam1 obtenues avec un delta d'énergies de références à -0,4.}
 \label{result:PDZ_seed}
    \end{figure}
 
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/Tiam1/boostHydro1.png} \\
+       \includegraphics[width=17cm]{Tiam1/boostHydro1.png} \\
      \end{tabular}
-     \caption{Séquences obtenues avec un delta des énergies de références à -0,2.}
+
+     \caption{Séquences Tiam1 obtenues avec un delta d'énergies de références à -0,2.}
+\label{result:PDZ_seed}
+   \end{figure}
+
+    \clearpage
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{Tiam1/boostHydro2.png} \\
+     \end{tabular}
+     \caption{Séquences Tam1 obtenues avec un delta d'énergies de références à -0,1.}
+\label{result:PDZ_seed}
+   \end{figure}
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{Tiam1/boostHydro3.png} \\
+     \end{tabular}
+     \caption{Séquences Tiam1 obtenues avec un delta d'énergies de références à 0.}
 \label{result:PDZ_seed}
    \end{figure}
 
@@ -957,18 +982,49 @@ Tiam1 & I & Y & F & L & V & A & L & I & I & A & L & L & L & L & V \\
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/Tiam1/boostHydro2.png} \\
+       \includegraphics[width=17cm]{Tiam1/boostHydro4.png} \\
      \end{tabular}
-     \caption{Séquences obtenues avec un delta des énergies de références  à -0,1.}
+     \caption{Séquences Tiam1 obtenues avec un delta d'énergies de références à 0,1.}
 \label{result:PDZ_seed}
    \end{figure}
 
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/Tiam1/boostHydro3.png} \\
+       \includegraphics[width=17cm]{Tiam1/boostHydro5.png} \\
      \end{tabular}
-     \caption{Séquences obtenues avec un delta des énergies de références  à 0.}
+     \caption{Séquences Tiam1 obtenues avec un delta d'énergies de références à 0,2.}
+\label{result:PDZ_seed}
+   \end{figure}
+
+    \clearpage
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{Tiam1/boostHydro6.png} \\
+     \end{tabular}
+     \caption{Séquences Tiam1 obtenues avec un delta des énergies de références  à 0,4.}
+\label{result:PDZ_seed}
+   \end{figure}
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{2BYG/boostHydro0.png} \\
+     \end{tabular}
+     \caption{Séquences 2BYG obtenues avec un delta d'énergies de références à -0,4.}
+\label{result:PDZ_seed}
+   \end{figure}
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{2BYG/boostHydro1.png} \\
+     \end{tabular}
+     \caption{Séquences 2BYG obtenues avec un delta d'énergies de références à -0,2.}
 \label{result:PDZ_seed}
    \end{figure}
 
@@ -979,51 +1035,18 @@ Tiam1 & I & Y & F & L & V & A & L & I & I & A & L & L & L & L & V \\
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/Tiam1/boostHydro4.png} \\
+       \includegraphics[width=17cm]{2BYG/boostHydro2.png} \\
      \end{tabular}
-     \caption{Séquences obtenues avec un delta des énergies de références  à 0,1.}
+     \caption{Séquences 2BYG obtenues avec un delta d'énergies de références à -0,1.}
 \label{result:PDZ_seed}
    \end{figure}
 
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/Tiam1/boostHydro5.png} \\
+       \includegraphics[width=17cm]{2BYG/boostHydro3.png} \\
      \end{tabular}
-     \caption{Séquences obtenues avec un delta des énergies de références  à 0,2.}
-\label{result:PDZ_seed}
-   \end{figure}
-
-    \clearpage
-
-
-   \begin{figure}[t]
-     \centering
-     \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/Tiam1/boostHydro6.png} \\
-     \end{tabular}
-     \caption{Séquences obtenues avec un delta des énergies de références  à 0,4.}
-\label{result:PDZ_seed}
-   \end{figure}
-
-
-
-
-   \begin{figure}[t]
-     \centering
-     \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/2BYG/boostHydro0.png} \\
-     \end{tabular}
-     \caption{Séquences obtenues avec un delta des énergies de références à -0,4.}
-\label{result:PDZ_seed}
-   \end{figure}
-
-   \begin{figure}[t]
-     \centering
-     \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/2BYG/boostHydro1.png} \\
-     \end{tabular}
-     \caption{Séquences obtenues avec un delta des énergies de références à -0,2.}
+     \caption{Séquences 2BYG obtenues sans delta d'énergies de références.}
 \label{result:PDZ_seed}
    \end{figure}
 
@@ -1034,40 +1057,18 @@ Tiam1 & I & Y & F & L & V & A & L & I & I & A & L & L & L & L & V \\
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/2BYG/Tiam1/boostHydro2.png} \\
+       \includegraphics[width=17cm]{2BYG/boostHydro4.png} \\
      \end{tabular}
-     \caption{Séquences obtenues avec un delta des énergies de références  à -0,1.}
+     \caption{Séquences 2BYG obtenues avec un delta d'énergies de références à 0,1.}
 \label{result:PDZ_seed}
    \end{figure}
 
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/2BYG/boostHydro3.png} \\
+       \includegraphics[width=17cm]{2BYG/boostHydro5.png} \\
      \end{tabular}
-     \caption{Séquences obtenues avec un delta des énergies de références  à 0.}
-\label{result:PDZ_seed}
-   \end{figure}
-
-    \clearpage
-
-
-
-   \begin{figure}[t]
-     \centering
-     \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/2BYG/boostHydro4.png} \\
-     \end{tabular}
-     \caption{Séquences obtenues avec un delta des énergies de références  à 0,1.}
-\label{result:PDZ_seed}
-   \end{figure}
-
-   \begin{figure}[t]
-     \centering
-     \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/2BYG/boostHydro5.png} \\
-     \end{tabular}
-     \caption{Séquences obtenues avec un delta des énergies de références  à 0,2.}
+     \caption{Séquences 2BYG obtenues avec un delta d'énergies de références à 0,2.}
 \label{result:PDZ_seed}
    \end{figure}
 
@@ -1077,9 +1078,9 @@ Tiam1 & I & Y & F & L & V & A & L & I & I & A & L & L & L & L & V \\
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/2BYG/boostHydro6.png} \\
+       \includegraphics[width=17cm]{2BYG/boostHydro6.png} \\
      \end{tabular}
-     \caption{Séquences obtenues avec un delta des énergies de références  à 0,4.}
+     \caption{Séquences 2BYG obtenues avec un delta d'énergies de références à 0,4.}
 \label{result:PDZ_seed}
    \end{figure}
 
