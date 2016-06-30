@@ -44,7 +44,7 @@ Nous cherchons maintenant à évaluer les performances de notre modèle CPD sur 
 \section{L'optimisation des énergies de références} 
 \label{sec:optERef}
 \subsection{La méthode}
-Dans notre système CPD, l'état replié joue un role important parce que les séquences d'intérts sont celles obtenues en maimimsant la differentes d'energie entre d'états de&plié et l'état replié .Donc c'est tres important!.
+Dans notre système CPD, l'état replié joue un role important parce que les séquences d'intérts sont celles obtenues en maimimsant la differentes d'energie entre d'états deplié et l'état replié .Donc c'est tres important!.
 Mais l'état déplié, lui est représenté comme une chaine popypeptidique largement etendue, de telle façon que nous considerons que chaque résidue X interagie uniquement avec le backbone environnent et avec le solvant.Puis, ce modèle est ajuster empiriquement en comparant les populations de chaque type de résidues dans les séquences calculées avec les populations dans les séquences expérimentales.L'optimisation des énergies de références consiste alors à corriger ces énergies de telles facons que la populations pour un type aa donné dans les séquences calculés cohencide avec la population experimentale de ce type . IL s'agit alors d'un problème de convergence pour la suite d'itérer de proteus + ajustement.
 
 \subsection{Seconde méthode d'itération}
@@ -625,8 +625,8 @@ enveler les redondances flagrantes
                 & size      & Evalue      & success     & Evalue & success\\
         \cmidrule{1-6}
         1G9O  & 79/91 & 3.6e-7   &  10000 & 5.0e-3 &  9999  \\
-        1IHJ  & 83/94 & 4.4e-8   &   9998 & 2.4e-3 &  9998  \\
-        1N7E  & 78/95 & 6.05e-6  &   9999 & 1.8e-3 & 9999   \\
+        1IHJ  & 83/94 & 4.4e-8   &  9998  & 2.4e-3 &  9998  \\
+        1N7E  & 78/95 & 6.05e-6  &  9999  & 1.8e-3 & 9999   \\
         1R6J  & 61/82 & 5.6e-2   &  7721  & 9.3e-3 &  7716  \\
         2BYG  & 75/97 & 4.3e-5   &  9993  & 4.2e-3 &  9993  \\
         3K82  & 84/97 & 6.3e-11  &  9999  & 3.4e-3 &  9999  \\
@@ -635,6 +635,32 @@ enveler les redondances flagrantes
         \bottomrule        
       \end{tabular}   
      \caption{Résultats Superfamily pour les séquences Proteus avec le nouveau (T=0.175) test Monte Carlo}   
+\label{tab:superfamily_Old_MCtest}       
+\end{table}
+
+
+
+
+    \begin{table}[h]
+           \raggedleft{}
+
+      \begin{tabular}{cccccc}
+
+        \toprule
+        Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+                & size      & Evalue      & success     & Evalue & success\\
+        \cmidrule{1-6}
+        1G9O  & 79/91 & 1.3e-9  & 10000 & 3.1e-3 &  10000  \\
+        1IHJ  & 84/94 & 8.7e-8  & 10000 & 2.2e-3 &  10000  \\
+        1N7E  & 77/95 & 2.1e-3  & 10000 & 2.6e-3 &  10000  \\
+        1R6J  & 57/82 & 3.2e-1  & 7224  & 1.7e-2 &   7224  \\
+        2BYG  & 79/97 & 6.7e-4  & 10000 & 4.2e-3 &  10000  \\
+        3K82  & 84/97 & 3.7e-13 & 10000 & 2.9e-3 &  10000  \\
+        CASK  & 40/83 & 1.6e-1  &  6299 & 1.8e-2 &  6299   \\
+        TIAM1 & 51/94 & 1.9     &  24   & 1.2e-2 &  24     \\
+        \bottomrule        
+      \end{tabular}   
+     \caption{Résultats Superfamily nouveau Proteus et nouvelles energies de references}   
 \label{tab:superfamily_Old_MCtest}       
 \end{table}
 
