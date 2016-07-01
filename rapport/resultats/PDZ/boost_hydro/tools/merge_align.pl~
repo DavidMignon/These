@@ -19,8 +19,6 @@ my $html2=shift;
 my $line2="";
 my $cpt=0;
 my $aa1;
-my $color1;
-my $color2;
 #############################################################
 
 open(HTML1,"$html1" )  or die " $html1 : $!";
@@ -35,10 +33,8 @@ while(<HTML1>) {
     }
     if ( $line2=~ /<td>(\w)<\/TD>/ ){
         $line2=~ s/<td>(\w)<\/TD>/<td>$aa1<\/TD>/;
-    }elsif($line2=~ /<td BGCOLOR=(.+)><FONT COLOR=(.+)>(\w)<\/FONT><\/TD>/){
-        $color1=$1;
-        $color2=$2;
-        $line2=~ s/<td BGCOLOR=$color1><FONT COLOR=$color2>(\w)<\/FONT><\/TD>/<td BGCOLOR=$color1><FONT COLOR=$color2>$aa1<\/FONT><\/TD>/;
+    }elsif($line2=~ /<td BGCOLOR=.+><FONT COLOR=.+>(\w)<\/FONT><\/TD>/){
+        $line2=~ s/<td BGCOLOR=.+><FONT COLOR=.+>(\w)<\/FONT><\/TD>/<td BGCOLOR=.+><FONT COLOR=.+>$aa1<\/FONT><\/TD>/;
     }
     print $line2;
 }
