@@ -1,7 +1,8 @@
 \chapter{PDZ}
 \label{chap:PDZ}
 
-Nous cherchons maintenant à évaluer les performances de notre modèle CPD sur un ensemble de protéines de la famille PDZ.Nous utilisons les résultats précédents, en particulier ceux de la section ??, pour définir les valeurs des paramètres de l'optimisation du Monte-Carlo. Mais ici, nous reprenons l'optimisation des énergies de références.
+Nous cherchons maintenant à évaluer les performances de notre modèle CPD sur un ensemble de protéines de la famille PDZ. Nous utilisons les résultats précédents, en particulier ceux de la section ??, pour définir les valeurs des paramètres de l'optimisation du Monte-Carlo.  Ici, nous allons confronter nos résultats à ceux  du fameux outils de Rosetta obtenue dans des conditions identiques. Comme dans les situations précédentes le backbone de nos protéines est fixé tout le long de l'étude.La fonctions d'énergie est calculée en utilisant le model MM/GBSA (voir ?? et la chapitre 1 pour les détails).Mais ici, nous reprenons l'optimisation des énergies de références pour d'adapter à l'ensemble des protéines PDZ.
+
 
  
 \section{Notre ensemble de protéine PDZ} 
@@ -43,9 +44,47 @@ Nous cherchons maintenant à évaluer les performances de notre modèle CPD sur 
 
 \section{L'optimisation des énergies de références} 
 \label{sec:optERef}
-\subsection{La méthode}
-Dans notre système CPD, l'état replié joue un role important parce que les séquences d'intérts sont celles obtenues en maimimsant la differentes d'energie entre d'états deplié et l'état replié .Donc c'est tres important!.
-Mais l'état déplié, lui est représenté comme une chaine popypeptidique largement etendue, de telle façon que nous considerons que chaque résidue X interagie uniquement avec le backbone environnent et avec le solvant.Puis, ce modèle est ajuster empiriquement en comparant les populations de chaque type de résidues dans les séquences calculées avec les populations dans les séquences expérimentales.L'optimisation des énergies de références consiste alors à corriger ces énergies de telles facons que la populations pour un type aa donné dans les séquences calculés cohencide avec la population experimentale de ce type . IL s'agit alors d'un problème de convergence pour la suite d'itérer de proteus + ajustement.
+
+Dans notre système CPD, l'état replié joue un rôle important parce que les séquences d’intérêts sont celles obtenues en minimisant la différentes d’énergie entre l'état déplié et l'état replié. Donc c'est très important!.
+Mais l'état déplié, lui est représenté comme une chaîne polypeptidique largement étendue, de telle façon que nous considérons que chaque résidu X interagie uniquement avec le backbone environnent et avec le solvant.Puis, ce modèle est ajuster empiriquement en comparant les populations de chaque type de résidu dans les séquences calculées avec les populations dans les séquences expérimentales.L'optimisation des énergies de références consiste alors à corriger ces énergies de telles façons que la populations pour un type aa donné dans les séquences calculés coïncidence avec la population expérimentale de ce type. Il s'agit alors d'un problème de convergence pour la suite d'itérer de proteus + ajustement.
+
+\subsection{La composition naturelle en acide aminé}
+
+Pour avoir une composition naturelle en acide aminé de nos protéines,nous sélectionnons un ensemble de séquences naturelle homologues pour chacunes de nos 8 protéines.Pour cela, sur le site Web d'Uniprot (http://www.uniprot.org/ ),  nous effectuons des requêtes sur la base de données ``siwwprot + trEmBL'' avec la matrice BLOSUM62 sans l'option \og filtre\fg et avec l'option \og Gapped\fg. Nous obtenons un premier ensemble pour chaque cas en se limitant aux homologues de bonnes qualité au regard de E-value et du pourcentage d'identité , tout en conservant  en même temps une certaine diversité.Cela oblige pour certaines protéine à accepter des E-values plus haute que  1e-40, notamment 1IHJ et 1G9O , respectivement 1e-32 et 1e-10 ,pour avoir un nombre d'homologue suffisant.Ensuite, les redondances les plus flagrantes sont enlevées manuellement.Finalement,les ensembles se composent de 42 à 126 homologues,avec des pourcentages d'identité supérieurs à 66 \% excepté pour 1IHJ où il a fallut descendre jusqu'à 38\% d'identité.Voir le tableau pour les détails \ref{tab:select_homo}.
+
+    \begin{table}[!htbp]
+      \centering
+
+      \begin{tabular}{cccc}
+
+        \toprule
+        protéines & seq NB & E value seuil & \% identité \\
+        \cmidrule{1-4}
+     1G9O  & 62  &    1e-32  &  95-67 \\
+     1IHJ  & 42  &    1e-10  &  95-38 \\
+     1N7E  & 48  &    1e-45  &  95-84 \\
+     1R6J  & 85  &    1e-43  &  95-85 \\
+     2BYG  & 43  &    1e-41  &  95-78 \\
+     3K82  & 50  &    1e-46  &  95-81 \\
+     Cask  & 126 &    ?      &  85-60 \\
+     Tiam1 & 50  &    ?      &  85-60 \\
+
+        \bottomrule
+
+      \end{tabular}      
+      \caption{Sélection des homologues.}
+\label{tab:select_homo}      
+    \end{table}
+
+
+\subsection{Première méthode}
+
+Le modèle de l'état déplié considère qu'un résidu X n’interagit pas avec ses résidus voisins, donc l'énergie de l'état déplié de la chaîne polypeptidique peut s'écrire comme la somme sur les résidus des énergies de références.Ces énergies sont dans un premier temps déterminées par une simple modélisation en peptide étendu.
+ Nous souhaitons améliorer les énergies de références par une correction empirique. Cette correction a pour objectif de permettre à proteus de produire des populations d'acides aminés comparables à celles observées dans la composition naturelle définie au paragraphe précédent.
+Notons $e_x$ cette correction à l'énergie initiale $E_X^{ini}$ pour le résidu X.
+
+
+
 
 \subsection{Seconde méthode d'itération}
 
@@ -78,49 +117,6 @@ Mais l'état déplié, lui est représenté comme une chaine popypeptidique larg
       \end{tabular}      
       \caption{E-value des alignements Blast native vs native pour nos séquences PDZ. (no= pas de touche avec une E-value inférieure à 10)}
 \label{tab:Xblast}      
-    \end{table}
-
-
-requête sur le site d'uniprot
-
-Target database uniprot (swissprot + trEMBL)
-
-Matrix BLOSUM62
-
-Filtering NO
-
-Gapped YES
-
-
-Puis selection à la main -->
-enveler les redondances flagrantes
- + avoir un compromis entre diversité et qualité de l'alignement
- + rester dans la zone de ce qui a déjà été fait.
-
-
-
-    \begin{table}[!htbp]
-      \centering
-
-      \begin{tabular}{cccc}
-
-        \toprule
-        protéines & seq NB & E value seuil & \% identité \\
-        \cmidrule{1-4}
-     1G9O  & 63  &    10-32  &  95-67 \\
-     1IHJ  & 56  &    10-10  &  95-38 \\
-     1N7E  & 93  &    10-45  &  95-84 \\
-     1R6J  & 86  &    10-43  &  95-85 \\
-     2BYG  & 82  &    10-41  &  95-78 \\
-     3K82  & 88  &    10-46  &  95-81 \\
-
-
-        \bottomrule
-
-
-      \end{tabular}      
-      \caption{Sélection des homologues.}
-\label{tab:freq_AA_ALL}      
     \end{table}
 
 
@@ -590,30 +586,53 @@ enveler les redondances flagrantes
 
 
 
-    \begin{table}[h]
-           \raggedleft{}
-
-      \begin{tabular}{cccccc}
-
-        \toprule
-        Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
-                & size      & Evalue      & success     & Evalue & success\\
-        \cmidrule{1-6}
-        1G9O  & 77/91 & 1.3e-4  &  9999 & 3.2e-3 &  9999  \\
-        1IHJ  & 81/94 & 3.9e-6  &  9999 & 2.8e-3 &  9999  \\
-        1N7E  & 79/95 & 4.8e-6  & 10000 & 1.8e-3 & 100000 \\
-        1R6J  & 58/82 & 2.1e-1  &  8716 & 1.3e-2 &  8716  \\
-        2BYG  & 78/97 & 4.6e-3  &  9998 & 4.1e-3 &  9998  \\
-        3K82  & 84/97 & 4.0e-4  &  9998 & 3.8e-3 &  9998  \\
-        CASK  & 50/83 & 2.5e-1  &  7571 & 2.2e-2 &  7571  \\
-        TIAM1 & 51/94 & 7.2e-1  &  3367 & 5.8e-2 &  3367  \\
-        \bottomrule        
-      \end{tabular}   
-     \caption{Résultats Superfamily pour les séquences Proteus avec le nouveau test Monte Carlo}   
-\label{tab:superfamily_Old_MCtest}       
+\begin{table}[h]
+  \raggedleft{}
+  
+  \begin{tabular}{cccccc}
+    
+    \toprule
+    Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+            & size      & Evalue      & success     & Evalue & success\\
+    \cmidrule{1-6}
+    1G9O  & 77/91 & 1.3e-4  &  9999 & 3.2e-3 &  9999  \\
+    1IHJ  & 81/94 & 3.9e-6  &  9999 & 2.8e-3 &  9999  \\
+    1N7E  & 79/95 & 4.8e-6  & 10000 & 1.8e-3 & 10000 \\
+    1R6J  & 58/82 & 2.1e-1  &  8716 & 1.3e-2 &  8716  \\
+    2BYG  & 78/97 & 4.6e-3  &  9998 & 4.1e-3 &  9998  \\
+    3K82  & 84/97 & 4.0e-4  &  9998 & 3.8e-3 &  9998  \\
+    CASK  & 50/83 & 2.5e-1  &  7571 & 2.2e-2 &  7571  \\
+    TIAM1 & 51/94 & 7.2e-1  &  3367 & 5.8e-2 &  3367  \\
+    \bottomrule        
+  \end{tabular}   
+  \caption{Résultats Superfamily pour les séquences Proteus avec le nouveau test Monte Carlo}   
+  \label{tab:superfamily_Old_MCtest}       
 \end{table}
 
 
+
+
+
+\begin{table}[h]
+  \raggedleft{}
+  
+  \begin{tabular}{cccccc}
+    
+    \toprule
+    Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+            & size      & Evalue      & success     & Evalue & success\\
+    \cmidrule{1-6}
+    1G9O  & 78/91 & 2.5e-3  & 10000 & 3.0e-3 & 10000 \\
+    1IHJ  & 86/94 & 5.6e-7  & 10000 & 2.3e-3 & 10000 \\
+    1N7E  & 81/95 & 1.1e-6  & 10000 & 2.4e-3 & 10000 \\
+    1R6J  & 41/82 & 1.5     &  1350 & 2.6e-2 &  1350 \\
+    2BYG  & 77/97 & 1.0e-2  & 10000 & 2.3e-3 & 10000 \\
+    3K82  & 86/97 & 4.0e-16 & 10000 & 2.7e-3 & 10000 \\
+    \bottomrule        
+  \end{tabular}   
+  \caption{Résultats Superfamily pour les séquences Proteus avec le nouveau test Monte Carlo et énergies de références optimisées sur l'ensemble réduit à six protéines}   
+  \label{tab:superfamily_Old_MCtest}       
+\end{table}
 
     \begin{table}[h]
            \raggedleft{}
@@ -637,8 +656,6 @@ enveler les redondances flagrantes
      \caption{Résultats Superfamily pour les séquences Proteus avec le nouveau (T=0.175) test Monte Carlo}   
 \label{tab:superfamily_Old_MCtest}       
 \end{table}
-
-
 
 
     \begin{table}[h]
@@ -665,32 +682,27 @@ enveler les redondances flagrantes
 \end{table}
 
 
+\begin{table}[h]
+  \raggedleft{}
 
-
-
-
-
-    \begin{table}[h]
-           \raggedleft{}
-
-      \begin{tabular}{cccccc}
-
-        \toprule
-        Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
-                & size      & Evalue      & success     & Evalue & success\\
-        \cmidrule{1-6}
-        1G9O  & 79/91   &    1.3e-13 & 10000 & 2.2e-3 & 10000 \\
-        1IHJ  & 85/94   &    7.4e-14 & 10000 & 3.7e-3 & 10000 \\
-        1N7E  & 84/95   &    2.2e-10 & 10000 & 1.2e-3 & 10000 \\
-        1R6J  & 76/82   &    7.3e-13 & 10000 & 1.8e-3 & 10000 \\
-        2BYG  & 86/97   &    1.3e-9  & 10000 & 9.6e-4 & 10000 \\
-        3K82  & 90/97   &    3.7e-23 & 10000 & 5.2e-4 & 10000 \\
-        CASK  & 68/83   &    3.5e-3  &  9925 & 7.2e-3 &  9925 \\
-        TIAM1 & 65/94   &    2.3e-2  &  9775 & 2.8e-2 &  9769 \\
-        \bottomrule        
-      \end{tabular}   
-     \caption{Résultats Superfamily pour les séquences Rosetta des  protéines PDZ}   
-\label{tab:superfamily_bestRE}       
+  \begin{tabular}{cccccc}
+    
+    \toprule
+    Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+            & size      & Evalue      & success     & Evalue & success\\
+    \cmidrule{1-6}
+    1G9O  & 79/91   &    1.3e-13 & 10000 & 2.2e-3 & 10000 \\
+    1IHJ  & 85/94   &    7.4e-14 & 10000 & 3.7e-3 & 10000 \\
+    1N7E  & 84/95   &    2.2e-10 & 10000 & 1.2e-3 & 10000 \\
+    1R6J  & 76/82   &    7.3e-13 & 10000 & 1.8e-3 & 10000 \\
+    2BYG  & 86/97   &    1.3e-9  & 10000 & 9.6e-4 & 10000 \\
+    3K82  & 90/97   &    3.7e-23 & 10000 & 5.2e-4 & 10000 \\
+    CASK  & 68/83   &    3.5e-3  &  9925 & 7.2e-3 &  9925 \\
+    TIAM1 & 65/94   &    2.3e-2  &  9775 & 2.8e-2 &  9769 \\
+    \bottomrule        
+  \end{tabular}   
+  \caption{Résultats Superfamily pour les séquences Rosetta des  protéines PDZ}   
+  \label{tab:superfamily_bestRE}       
 \end{table}
 
 
