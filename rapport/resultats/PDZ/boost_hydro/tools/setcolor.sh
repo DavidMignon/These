@@ -4,7 +4,8 @@
 # David Mignon
 
 colors=("#ffffff" "#ffffff" "#ffffff" "#ffffff" "#000000" "#000000" "#000000" )
-bgcolors=("#000000" "#333333" "#666666" "#888888" "#aaaaaa" "#cccccc" "#eeeeee" )
+#bgcolors=("#000000" "#333333" "#666666" "#888888" "#aaaaaa" "#cccccc" "#eeeeee" )
+bgcolors=("#630c0c" "#c01818" "#d24a22" "#d27522" "#d2a022" "#fbda5e" "#fafbad" )
 
 hydro="L|A|F|T|V|M|P|I|C|G"
 

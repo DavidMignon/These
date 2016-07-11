@@ -4,10 +4,14 @@
 Nous cherchons maintenant à évaluer les performances de notre modèle CPD sur un ensemble de protéines de la famille PDZ. Nous utilisons les résultats précédents, en particulier ceux de la section ??, pour définir les valeurs des paramètres de l'optimisation du Monte-Carlo.  Ici, nous allons confronter nos résultats à ceux  du fameux outils de Rosetta obtenue dans des conditions identiques. Comme dans les situations précédentes le backbone de nos protéines est fixé tout le long de l'étude.La fonctions d'énergie est calculée en utilisant le model MM/GBSA (voir ?? et la chapitre 1 pour les détails).Mais ici, nous reprenons l'optimisation des énergies de références pour d'adapter à l'ensemble des protéines PDZ.
 
 
- 
-\section{Notre ensemble de protéine PDZ} 
-\label{sec:ensemble_PDZ}
+\section{L'ensemble des protéines PDZ} 
 
+Nous sélectionnons huit protéines de la famille PDZ, avec les trois présentes dans l'ensemble étudié au chapitre précédent: 1G9O,1R6J et 2BYG, aux quelles sont ajoutés 1IHJ, 1N7E, 3K82 et Cask , tiam1 représenté par .... et ... dans la base de données PDB. Cela constitue un ensemble où le nombre de positions actives , c'est à dire les postions qui vont être muté , est du même ordre pour chaque séquence d'acide aminé des protéines ( voir le tableau \ref{tab:protéines_PDZ}).
+
+\paragraph{}
+Pour caractériser les homologies dans cet ensemble, une série de requête blast est effectuée sur chaque paire de séquences en utilisant le programme blastp.Il apparaît que 1R6J et TiAM1 sont atypiques dans l'ensemble avec , aucun homologue avec une E-value inférieure à 1e-7 et plusieurs E-value supérieur à 10. 3K82 est la protéine plus consensuelle , ayant d'une part une homologie avec toutes les autres à au plus 6e-04 , et d'autre part ayant 4 homologues à moins de 2e-10, pour pourcentage d'identité compris entre 30 et 46.Globalement, il n'y a que peu d'homologies, la plus forte n'étant que de 3e-15 entre 3K82 et 2BYG pour un pourcentage d'identité de 37. Les détails sont dans le tableau \ref{tab:Xblast}.
+
+\label{sec:ensemble_PDZ}
 
     \begin{table}[!htbp]
       \centering
@@ -33,6 +37,39 @@ Nous cherchons maintenant à évaluer les performances de notre modèle CPD sur 
     \end{table}
 
 
+
+\paragraph{Alignements Blast croisés}
+
+
+    \begin{table}[!htbp]
+      \centering
+\scalebox{0.85}{
+      \begin{tabular}{ccccccccc}
+
+        \toprule
+        Protein & 1G9O & 1IHJ & 1N7E & 1R6J & 2BYG & 3K82 & CASK & TIAM1 \\
+        \cmidrule{1-9}
+
+        1G9O & 2e-66 (100)& 5e-10 (40)& 0.002 (25)& 3e-07 (25)& 2e-11 (35)& 1e-12 (30)& 5e-05 (25)& 9e-07(35)\\     
+        1IHJ & 5e-10 (40) & 3e-68 (100)&  2e-07 (27)& no      & 2e-08 (27) & 9e-14 (46)& 4e-06 (35)& no    \\
+        1N7E & 0.002 (25) & 2e-07 (27)&  3e-67 (100)& no       & 3e-14 (36) & 2e-10 (37)& 9e-12 (30)& 5e-05 (35)\\
+        1R6J & 3e-07 (25) & no    &    no    & 1e-59 (100) &  no      & 1e-06 (32)& 0.007 (32)& no    \\
+        2BYG & 2e-11 (35) & 2e-08 (27)&  3e-14 (37)& no      & 7e-71 (100) & 3e-15 (37)& 2e-07 (28)& 5e-05 (41)\\
+        3K82 & 1e-12 (30) & 9e-14 (46)&  2e-10 (36)& 1e-06 (32)& 3e-15 (37) & 4e-70 (100)& 1e-07 (27)& 6e-04(33) \\
+        Cask & 5e-05 (25) & 4e-06 (35)&  9e-12 (30)& 0.007 (32)& 2e-07 (28) & 1e-07 (27)& 7e-61 (100)& 5e-04(33) \\
+        Tiam1 & 9e-07 (35)  &  no     &  5e-05 (35)& no      & 5e-05 (41) & 6e-04 (33)& 5e-04 (33)& 1e-68 (100)\\
+        \bottomrule
+
+
+      \end{tabular} 
+}     
+      \caption{E-value et pourcentage d'identité des alignements Blast native versus native pour nos séquences PDZ. (no= pas de touche avec une E-value inférieure à 10)}
+\label{tab:Xblast}      
+    \end{table}
+
+
+
+
 \subsection{Description}
 
 \subsection{Requêtes Blast croisées}
@@ -50,7 +87,7 @@ Mais l'état déplié, lui est représenté comme une chaîne polypeptidique lar
 
 \subsection{La composition naturelle en acide aminé}
 
-Pour avoir une composition naturelle en acide aminé de nos protéines,nous sélectionnons un ensemble de séquences naturelle homologues pour chacunes de nos 8 protéines.Pour cela, sur le site Web d'Uniprot (http://www.uniprot.org/ ),  nous effectuons des requêtes sur la base de données ``siwwprot + trEmBL'' avec la matrice BLOSUM62 sans l'option \og filtre\fg et avec l'option \og Gapped\fg. Nous obtenons un premier ensemble pour chaque cas en se limitant aux homologues de bonnes qualité au regard de E-value et du pourcentage d'identité , tout en conservant  en même temps une certaine diversité.Cela oblige pour certaines protéine à accepter des E-values plus haute que  1e-40, notamment 1IHJ et 1G9O , respectivement 1e-32 et 1e-10 ,pour avoir un nombre d'homologue suffisant.Ensuite, les redondances les plus flagrantes sont enlevées manuellement.Finalement,les ensembles se composent de 42 à 126 homologues,avec des pourcentages d'identité supérieurs à 66 \% excepté pour 1IHJ où il a fallut descendre jusqu'à 38\% d'identité.Voir le tableau pour les détails \ref{tab:select_homo}.
+Pour avoir une composition naturelle en acide aminé de nos protéines,nous sélectionnons un ensemble de séquences homologues pour chacunes de nos 8 protéines.Pour cela, sur le site Web d'Uniprot (http://www.uniprot.org/ ), nous effectuons des requêtes sur la base de données ``siwwprot + trEmBL'' avec la matrice BLOSUM62 sans l'option \og filtre\fg et avec l'option \og Gapped\fg. Nous obtenons un premier ensemble pour chaque cas en se limitant aux homologues de bonnes qualité au regard de E-value et du pourcentage d'identité , tout en conservant  en même temps une certaine diversité.Cela oblige pour certaines protéine à accepter des E-values plus haute que  1e-40, notamment 1IHJ et 1G9O , respectivement 1e-32 et 1e-10 ,pour avoir un nombre d'homologue suffisant.Ensuite, les redondances les plus flagrantes sont enlevées manuellement.Finalement,les ensembles se composent de 42 à 126 homologues,avec des pourcentages d'identité supérieurs à 66 \% excepté pour 1IHJ où il a fallut descendre jusqu'à 38\% d'identité.Voir le tableau pour les détails \ref{tab:select_homo}.
 
     \begin{table}[!htbp]
       \centering
@@ -77,11 +114,13 @@ Pour avoir une composition naturelle en acide aminé de nos protéines,nous sél
     \end{table}
 
 
+
+
 \subsection{Première méthode}
 
 Le modèle de l'état déplié considère qu'un résidu X n’interagit pas avec ses résidus voisins, donc l'énergie de l'état déplié de la chaîne polypeptidique peut s'écrire comme la somme sur les résidus des énergies de références.Ces énergies sont dans un premier temps déterminées par une simple modélisation en peptide étendu.
  Nous souhaitons améliorer les énergies de références par une correction empirique. Cette correction a pour objectif de permettre à proteus de produire des populations d'acides aminés comparables à celles observées dans la composition naturelle définie au paragraphe précédent.
-Notons $e_x$ cette correction à l'énergie initiale $E_X^{ini}$ pour le résidu X.
+Notons $C_x$ cette correction à l'énergie initiale $E_X^{ini}$ pour le résidu X.
 
 
 
@@ -90,34 +129,6 @@ Notons $e_x$ cette correction à l'énergie initiale $E_X^{ini}$ pour le résidu
 
 \section{Résultats} 
 
-
-\paragraph{Alignements Blast croisés}
-
-
-    \begin{table}[!htbp]
-      \centering
-
-      \begin{tabular}{ccccccccc}
-
-        \toprule
-        Protein & 1G9O & 1IHJ & 1N7E & 1R6J & 2BYG & 3K82 & CASK & TIAM1 \\
-        \cmidrule{1-9}
-
-        1G9O &  2e-66 & 5e-10 &  0.002 & 3e-07 & 2e-11 & 1e-12 & 5e-05 & 9e-07 \\     
-        1IHJ &  5e-10 & 3e-68 &  2e-07 & no &   2e-08 & 9e-14 & 4e-06 & no    \\
-        1N7E &  0.002 & 2e-07 &  3e-67 & no &    3e-14 & 2e-10 & 9e-12 & 5e-05 \\
-        1R6J &  3e-07 & no  &    no  &  1e-59 &  no &   1e-06 & 0.007 & no    \\
-        2BYG &  2e-11 & 2e-08 &  3e-14 & no &    7e-71 & 3e-15 & 2e-07 & 5e-05 \\
-        3K82 &  1e-12 & 9e-14 &  2e-10 & 1e-06 & 3e-15 & 4e-70 & 1e-07 & 6e-04 \\
-        CASK &  5e-05 & 4e-06 &  9e-12 & 0.007 & 2e-07 & 1e-07 & 7e-61 & 5e-04 \\
-        TIAM1 & 9e-07 &  no &    5e-05 & no  &   5e-05 & 6e-04 & 5e-04 & 1e-68 \\
-        \bottomrule
-
-
-      \end{tabular}      
-      \caption{E-value des alignements Blast native vs native pour nos séquences PDZ. (no= pas de touche avec une E-value inférieure à 10)}
-\label{tab:Xblast}      
-    \end{table}
 
 
     \clearpage
