@@ -46,12 +46,13 @@ native_simil    = np.loadtxt(native_file,usecols=[1])
 pfam_simil      = np.loadtxt(pfam_file,usecols=[1])
 rosetta_simil   = np.loadtxt(rosetta_file,usecols=[1])
 
-fig = plt.figure()
+fig=plt.figure(figsize=(10,6))
+
 canvas = FigureCanvas(fig)
 
 ax = fig.add_subplot(111)
 
-weights = 0.048*np.ones_like(proteus_simil)/len(proteus_simil)
+weights = 0.04*np.ones_like(proteus_simil)/len(proteus_simil)
 Y,X=np.histogram(proteus_simil,bins=15,weights=weights)
 
 
@@ -62,7 +63,7 @@ Y=np.append(Y,0)
 
 proteus_pfam,=ax.plot(X,Y,linewidth=2,marker='o',color='black')
 
-weights = 0.12*np.ones_like(rosetta_simil)/len(rosetta_simil)
+weights = 0.1*np.ones_like(rosetta_simil)/len(rosetta_simil)
 Y,X=np.histogram(rosetta_simil,bins=20,weights=weights)
 
 
@@ -75,8 +76,8 @@ Y=np.append(Y,0)
 rosetta_pfam,=ax.plot(X,Y,linewidth=2,marker='o',color='0.75')
 
 
-weights = 0.18*np.ones_like(pfam_simil)/len(pfam_simil)
-Y,X=np.histogram(pfam_simil,bins=40,weights=weights)
+weights = 0.09*np.ones_like(pfam_simil)/len(pfam_simil)
+Y,X=np.histogram(pfam_simil,bins=20,weights=weights)
 
 
 newx=2*X[0] - X[1]
@@ -87,16 +88,16 @@ Y=np.append(Y,0)
 pfam_pfam,=ax.plot(X,Y,linewidth=2,linestyle='--',marker='o',color='black')
 
 
-arrow = plt.arrow(native_simil, 0.02, 0, -0.0025,color='red',head_width=0.4, head_length=0.001 )
+arrow = plt.arrow(native_simil, 0.0225, 0, -0.0025,color='red',head_width=0.4, head_length=0.001 )
 
 
-ax.legend([proteus_pfam,rosetta_pfam,pfam_pfam,arrow], ['Proteus vs pfam RP55','Rosetta vs pfam RP55 ','pfam vs pfam RP55','native vs pfam RP55'], handler_map={mpatches.FancyArrow : HandlerPatch(patch_func=make_legend_arrow),},loc=2,fontsize=11)
+#ax.legend([proteus_pfam,rosetta_pfam,pfam_pfam,arrow], ['Proteus vs pfam ','Rosetta vs pfam  ','pfam vs pfam ','native vs pfam '], handler_map={mpatches.FancyArrow : HandlerPatch(patch_func=make_legend_arrow),},loc=2,fontsize=20)
 
 plt.title(protein_name)
 plt.xlabel("Similarity score", fontsize=17)
 plt.ylabel("Frequency", fontsize=17)
-ax.set_xlim(-20,38)
-ax.set_ylim(0, 0.025)
+ax.set_xlim(-10,48)
+ax.set_ylim(0, 0.023)
 plt.grid()
-
+fig.tight_layout()
 canvas.print_figure(output_file)

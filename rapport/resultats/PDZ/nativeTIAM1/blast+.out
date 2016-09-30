@@ -1,0 +1,1956 @@
+BLASTP 2.2.29+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+Reference for composition-based statistics: Alejandro A. Schaffer,
+L. Aravind, Thomas L. Madden, Sergei Shavirin, John L. Spouge, Yuri
+I. Wolf, Eugene V. Koonin, and Stephen F. Altschul (2001),
+"Improving the accuracy of PSI-BLAST protein database searches with
+composition-based statistics and other refinements", Nucleic Acids
+Res. 29:2994-3005.
+
+
+
+Database: Non-redundant UniProtKB/SwissProt sequences
+           456,795 sequences; 170,518,380 total letters
+
+
+
+Query= TIAM1
+
+Length=94
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+sp|Q13009.2|TIAM1_HUMAN  RecName: Full=T-lymphoma invasion and me...    180   5e-52
+sp|Q60610.1|TIAM1_MOUSE  RecName: Full=T-lymphoma invasion and me...    164   2e-46
+sp|Q8IVF5.4|TIAM2_HUMAN  RecName: Full=T-lymphoma invasion and me...  42.4    2e-04
+sp|Q9H5P4.1|PDZD7_HUMAN  RecName: Full=PDZ domain-containing prot...  40.8    6e-04
+sp|Q5RBI7.1|PDZD7_PONAB  RecName: Full=PDZ domain-containing prot...  38.9    0.002
+sp|A8E0R9.2|GRIP2_XENLA  RecName: Full=Glutamate receptor-interac...  39.3    0.002
+sp|Q9P202.3|WHRN_HUMAN  RecName: Full=Whirlin; AltName: Full=Auto...  38.1    0.005
+sp|Q810W9.1|WHRN_RAT  RecName: Full=Whirlin; AltName: Full=CASK-i...  38.1    0.005
+sp|Q80VW5.3|WHRN_MOUSE  RecName: Full=Whirlin                         38.1    0.005
+sp|Q86UT5.2|NHRF4_HUMAN  RecName: Full=Na(+)/H(+) exchange regula...  37.7    0.006
+sp|Q3T0X8.1|NHRF3_BOVIN  RecName: Full=Na(+)/H(+) exchange regula...  35.8    0.026
+sp|Q4H4B6.1|SCRIB_DANRE  RecName: Full=Protein scribble homolog; ...  35.8    0.027
+sp|Q8R4H2.2|ARHGC_MOUSE  RecName: Full=Rho guanine nucleotide exc...  35.4    0.037
+sp|Q9NZN5.1|ARHGC_HUMAN  RecName: Full=Rho guanine nucleotide exc...  35.4    0.042
+sp|Q5RCF7.1|NHRF3_PONAB  RecName: Full=Na(+)/H(+) exchange regula...  34.7    0.055
+sp|Q9C0E4.3|GRIP2_HUMAN  RecName: Full=Glutamate receptor-interac...  34.3    0.081
+sp|Q9ES67.1|ARHGB_RAT  RecName: Full=Rho guanine nucleotide excha...  33.9    0.11 
+sp|Q6ZPF3.2|TIAM2_MOUSE  RecName: Full=T-lymphoma invasion and me...  33.9    0.12 
+sp|Q5T2W1.2|NHRF3_HUMAN  RecName: Full=Na(+)/H(+) exchange regula...  33.5    0.12 
+sp|O15085.1|ARHGB_HUMAN  RecName: Full=Rho guanine nucleotide exc...  33.9    0.13 
+sp|Q9QX74.2|SHAN2_RAT  RecName: Full=SH3 and multiple ankyrin rep...  33.1    0.23 
+sp|Q80Z38.2|SHAN2_MOUSE  RecName: Full=SH3 and multiple ankyrin r...  33.1    0.23 
+sp|Q9UPX8.3|SHAN2_HUMAN  RecName: Full=SH3 and multiple ankyrin r...  33.1    0.24 
+sp|Q9JIL4.1|NHRF3_MOUSE  RecName: Full=Na(+)/H(+) exchange regula...  32.7    0.25 
+sp|Q14160.4|SCRIB_HUMAN  RecName: Full=Protein scribble homolog; ...  32.7    0.25 
+sp|Q9WTW1.1|GRIP2_RAT  RecName: Full=Glutamate receptor-interacti...  32.7    0.26 
+sp|P91620.2|SIF2_DROME  RecName: Full=Protein still life, isoform...  32.7    0.28 
+sp|Q9JJ40.2|NHRF3_RAT  RecName: Full=Na(+)/H(+) exchange regulato...  32.3    0.36 
+sp|P91621.2|SIF1_DROME  RecName: Full=Protein still life, isoform...  32.3    0.37 
+sp|Q8N448.1|LNX2_HUMAN  RecName: Full=Ligand of Numb protein X 2;...  32.3    0.39 
+sp|F1M386.2|RPGF2_RAT  RecName: Full=Rap guanine nucleotide excha...  32.3    0.40 
+sp|Q91XL2.2|LNX2_MOUSE  RecName: Full=Ligand of Numb protein X 2;...  32.3    0.41 
+sp|P39447.2|ZO1_MOUSE  RecName: Full=Tight junction protein ZO-1;...  32.3    0.43 
+sp|Q4L530.1|HTRAL_STAHJ  RecName: Full=Serine protease HtrA-like      32.0    0.46 
+sp|Q8CHG7.2|RPGF2_MOUSE  RecName: Full=Rap guanine nucleotide exc...  32.0    0.50 
+sp|Q4L1J4.1|MAGI1_RAT  RecName: Full=Membrane-associated guanylat...  32.0    0.55 
+sp|A8MUH7.2|PDZ1P_HUMAN  RecName: Full=Putative PDZ domain-contai...  31.6    0.55 
+sp|A2AKB4.1|FRPD1_MOUSE  RecName: Full=FERM and PDZ domain-contai...  32.0    0.55 
+sp|F1MSG6.2|RPGF2_BOVIN  RecName: Full=Rap guanine nucleotide exc...  32.0    0.57 
+sp|Q5SYB0.1|FRPD1_HUMAN  RecName: Full=FERM and PDZ domain-contai...  32.0    0.58 
+sp|Q07157.3|ZO1_HUMAN  RecName: Full=Tight junction protein ZO-1;...  32.0    0.58 
+sp|O97758.1|ZO1_CANFA  RecName: Full=Tight junction protein ZO-1;...  31.6    0.61 
+sp|Q52KW0.1|SHAN2_XENLA  RecName: Full=SH3 and multiple ankyrin r...  31.6    0.64 
+sp|Q17353.1|PAR3_CAEEL  RecName: Full=Partitioning defective prot...  31.6    0.67 
+sp|O62683.1|ZO3_CANFA  RecName: Full=Tight junction protein ZO-3;...  31.6    0.69 
+sp|Q96QZ7.3|MAGI1_HUMAN  RecName: Full=Membrane-associated guanyl...  31.6    0.69 
+sp|Q6RHR9.1|MAGI1_MOUSE  RecName: Full=Membrane-associated guanyl...  31.6    0.71 
+sp|P45129.1|HTOA_HAEIN  RecName: Full=Probable periplasmic serine...  31.2    0.75 
+sp|E1V4H2.1|DEGPL_HALED  RecName: Full=Probable periplasmic serin...  31.2    0.76 
+sp|O85291.1|DEGPL_BUCAP  RecName: Full=Probable periplasmic serin...  31.2    0.92 
+sp|D3YZU1.1|SHAN1_MOUSE  RecName: Full=SH3 and multiple ankyrin r...  31.2    0.96 
+sp|Q9WV48.1|SHAN1_RAT  RecName: Full=SH3 and multiple ankyrin rep...  31.2    0.99 
+sp|Q9Y4G8.1|RPGF2_HUMAN  RecName: Full=Rap guanine nucleotide exc...  30.8    1.1  
+sp|F1PBJ0.2|RPGF2_CANFA  RecName: Full=Rap guanine nucleotide exc...  30.8    1.2  
+sp|Q9Y566.2|SHAN1_HUMAN  RecName: Full=SH3 and multiple ankyrin r...  30.8    1.3  
+sp|Q7KRY7.1|LAP4_DROME  RecName: Full=Protein lap4; AltName: Full...  30.8    1.3  
+sp|G5EDB9.1|RPGF_CAEEL  RecName: Full=Rap guanine nucleotide exch...  30.8    1.4  
+sp|O75970.2|MPDZ_HUMAN  RecName: Full=Multiple PDZ domain protein...  30.8    1.4  
+sp|Q08881.1|ITK_HUMAN  RecName: Full=Tyrosine-protein kinase ITK/...  30.4    1.5  
+sp|Q8TDM6.4|DLG5_HUMAN  RecName: Full=Disks large homolog 5; AltN...  30.4    1.6  
+sp|O96018.1|APBA3_HUMAN  RecName: Full=Amyloid beta A4 precursor ...  30.4    1.6  
+sp|Q5ZM14.1|NHRF1_CHICK  RecName: Full=Na(+)/H(+) exchange regula...  30.0    2.0  
+sp|Q63ZW7.2|INADL_MOUSE  RecName: Full=InaD-like protein; Short=I...  30.0    2.0  
+sp|Q925T6.1|GRIP1_MOUSE  RecName: Full=Glutamate receptor-interac...  30.0    2.1  
+sp|Q80U72.2|SCRIB_MOUSE  RecName: Full=Protein scribble homolog; ...  30.0    2.2  
+sp|Q9WVJ4.2|SYJ2B_RAT  RecName: Full=Synaptojanin-2-binding prote...  29.6    2.3  
+sp|Q9QXY1.1|ZO3_MOUSE  RecName: Full=Tight junction protein ZO-3;...  30.0    2.3  
+sp|Q9ES64.1|USH1C_MOUSE  RecName: Full=Harmonin; AltName: Full=PD...  30.0    2.5  
+sp|P97879.1|GRIP1_RAT  RecName: Full=Glutamate receptor-interacti...  30.0    2.5  
+sp|Q9P227.2|RHG23_HUMAN  RecName: Full=Rho GTPase-activating prot...  30.0    2.5  
+sp|Q9JHL1.2|NHRF2_MOUSE  RecName: Full=Na(+)/H(+) exchange regula...  29.6    2.5  
+sp|Q96L92.2|SNX27_HUMAN  RecName: Full=Sorting nexin-27               29.6    2.6  
+sp|O95049.2|ZO3_HUMAN  RecName: Full=Tight junction protein ZO-3;...  30.0    2.6  
+sp|Q8NI35.3|INADL_HUMAN  RecName: Full=InaD-like protein; Short=I...  30.0    2.6  
+sp|Q9DBG9.1|TX1B3_MOUSE  RecName: Full=Tax1-binding protein 3; Al...  29.3    2.7  
+sp|O14907.2|TX1B3_HUMAN  RecName: Full=Tax1-binding protein 3; Al...  29.3    2.7  
+sp|Q71M21.1|RH21B_XENLA  RecName: Full=Rho GTPase-activating prot...  29.6    3.1  
+sp|Q15599.2|NHRF2_HUMAN  RecName: Full=Na(+)/H(+) exchange regula...  29.6    3.3  
+sp|Q9Z252.1|LIN7B_RAT  RecName: Full=Protein lin-7 homolog B; Sho...  29.3    3.3  
+sp|Q91YE8.2|SYNP2_MOUSE  RecName: Full=Synaptopodin-2; AltName: F...  29.6    3.4  
+sp|A3CP96.1|YBEY_STRSV  RecName: Full=Endoribonuclease YbeY           29.3    3.5  
+sp|O88951.2|LIN7B_MOUSE  RecName: Full=Protein lin-7 homolog B; S...  29.3    3.5  
+sp|Q8K4V4.2|SNX27_RAT  RecName: Full=Sorting nexin-27; AltName: F...  29.3    3.6  
+sp|Q3UHD6.2|SNX27_MOUSE  RecName: Full=Sorting nexin-27               29.3    3.6  
+sp|A5PKA5.1|SNX27_BOVIN  RecName: Full=Sorting nexin-27               29.3    3.6  
+sp|Q9SI93.2|MGDG3_ARATH  RecName: Full=Monogalactosyldiacylglycer...  29.3    4.1  
+sp|Q8TEU7.2|RPGF6_HUMAN  RecName: Full=Rap guanine nucleotide exc...  29.3    4.1  
+sp|Q9RPP2.2|EEP_ENTFA  RecName: Full=Probable protease eep            29.3    4.2  
+sp|Q898V2.1|SYL_CLOTE  RecName: Full=Leucine--tRNA ligase; AltNam...  29.3    4.3  
+sp|P03301.3|POLG_POL1S  RecName: Full=Genome polyprotein; Contain...  29.3    4.3  
+sp|Q9Y6N9.3|USH1C_HUMAN  RecName: Full=Harmonin; AltName: Full=An...  29.3    4.6  
+sp|Q920G2.1|NHRF2_RAT  RecName: Full=Na(+)/H(+) exchange regulato...  28.9    4.8  
+sp|Q6DFV3.1|RHG21_MOUSE  RecName: Full=Rho GTPase-activating prot...  29.3    4.9  
+sp|Q2KIB6.1|LIN7B_BOVIN  RecName: Full=Protein lin-7 homolog B; S...  28.9    5.1  
+sp|Q3MHQ0.1|USH1C_BOVIN  RecName: Full=Harmonin; AltName: Full=Us...  28.9    5.1  
+sp|Q9HAP6.1|LIN7B_HUMAN  RecName: Full=Protein lin-7 homolog B; S...  28.9    5.2  
+sp|Q5HQE2.1|HTRAL_STAEQ  RecName: Full=Serine protease HtrA-like ...  28.9    5.8  
+sp|Q5T5U3.1|RHG21_HUMAN  RecName: Full=Rho GTPase-activating prot...  28.9    5.8  
+sp|A1A5G4.1|MAGI3_XENTR  RecName: Full=Membrane-associated guanyl...  28.9    6.1  
+sp|Q9Y3R0.3|GRIP1_HUMAN  RecName: Full=Glutamate receptor-interac...  28.9    6.1  
+sp|Q9Z0U1.2|ZO2_MOUSE  RecName: Full=Tight junction protein ZO-2;...  28.9    6.1  
+sp|Q9KPV9.1|Y2253_VIBCH  RecName: Full=Putative zinc metalloprote...  28.9    6.4  
+sp|Q9UDY2.2|ZO2_HUMAN  RecName: Full=Tight junction protein ZO-2;...  28.9    6.4  
+sp|Q95168.1|ZO2_CANFA  RecName: Full=Tight junction protein ZO-2;...  28.9    6.6  
+sp|Q4R6G4.1|NHRF1_MACFA  RecName: Full=Na(+)/H(+) exchange regula...  28.5    6.8  
+sp|Q3SZK8.1|NHRF1_BOVIN  RecName: Full=Na(+)/H(+) exchange regula...  28.5    6.9  
+sp|Q6P0Q8.2|MAST2_HUMAN  RecName: Full=Microtubule-associated ser...  28.5    7.3  
+sp|Q8SQG9.1|NHRF2_RABIT  RecName: Full=Na(+)/H(+) exchange regula...  28.5    7.6  
+sp|Q9QXN0.2|SHRM3_MOUSE  RecName: Full=Protein Shroom3                28.5    7.7  
+sp|Q9SGP2.1|HSL1_ARATH  RecName: Full=Receptor-like protein kinas...  28.5    8.3  
+sp|Q69ZH9.2|RHG23_MOUSE  RecName: Full=Rho GTPase-activating prot...  28.5    8.6  
+sp|Q4UN76.1|YIDC_RICFE  RecName: Full=Membrane protein insertase ...  28.5    8.9  
+sp|P44947.1|DEGS_HAEIN  RecName: Full=Serine endoprotease DegS; F...  28.1    9.1  
+sp|P54925.2|DEGPL_BARHE  RecName: Full=Probable periplasmic serin...  28.1    9.6  
+
+
+>sp|Q13009.2|TIAM1_HUMAN RecName: Full=T-lymphoma invasion and metastasis-inducing protein 
+1; Short=TIAM-1
+Length=1591
+
+ Score =   180 bits (457),  Expect = 5e-52, Method: Compositional matrix adjust.
+ Identities = 89/90 (99%), Positives = 89/90 (99%), Gaps = 0/90 (0%)
+
+Query  5    KVTHSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINN  64
+            KVT SIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINN
+Sbjct  841  KVTQSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINN  900
+
+Query  65   RAADALNSSMLKDFLSQPSLGLLVRTYPEL  94
+            RAADALNSSMLKDFLSQPSLGLLVRTYPEL
+Sbjct  901  RAADALNSSMLKDFLSQPSLGLLVRTYPEL  930
+
+
+>sp|Q60610.1|TIAM1_MOUSE RecName: Full=T-lymphoma invasion and metastasis-inducing protein 
+1; Short=TIAM-1
+Length=1591
+
+ Score =   164 bits (415),  Expect = 2e-46, Method: Compositional matrix adjust.
+ Identities = 81/89 (91%), Positives = 83/89 (93%), Gaps = 0/89 (0%)
+
+Query  5    KVTHSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINN  64
+            KVT +IHIEKSD AAD YGF LSSV+EDGIRRLYVNSVKETGLASKKGLKAGDEILEINN
+Sbjct  841  KVTQNIHIEKSDAAADNYGFLLSSVDEDGIRRLYVNSVKETGLASKKGLKAGDEILEINN  900
+
+Query  65   RAADALNSSMLKDFLSQPSLGLLVRTYPE  93
+            RAA  LNSSMLKDFLSQPSLGLLVRTYPE
+Sbjct  901  RAAGTLNSSMLKDFLSQPSLGLLVRTYPE  929
+
+
+>sp|Q8IVF5.4|TIAM2_HUMAN RecName: Full=T-lymphoma invasion and metastasis-inducing protein 
+2; Short=TIAM-2; AltName: Full=SIF and TIAM1-like exchange 
+factor
+Length=1701
+
+ Score = 42.4 bits (98),  Expect = 2e-04, Method: Compositional matrix adjust.
+ Identities = 23/87 (26%), Positives = 49/87 (56%), Gaps = 3/87 (3%)
+
+Query  8    HSIHIEKSDTAADTYGFSLSSV--EEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNR  65
+            + + + K+ +  D +GF++++   E   + R++++ V   GLA  +GL+ G+EI+ +N  
+Sbjct  889  YDVQLTKTGSVCD-FGFAVTAQVDERQHLSRIFISDVLPDGLAYGEGLRKGNEIMTLNGE  947
+
+Query  66   AADALNSSMLKDFLSQPSLGLLVRTYP  92
+            A   L+   ++   S+ S+GL +   P
+Sbjct  948  AVSDLDLKQMEALFSEKSVGLTLIARP  974
+
+
+>sp|Q9H5P4.1|PDZD7_HUMAN RecName: Full=PDZ domain-containing protein 7
+Length=517
+
+ Score = 40.8 bits (94),  Expect = 6e-04, Method: Compositional matrix adjust.
+ Identities = 28/85 (33%), Positives = 46/85 (54%), Gaps = 4/85 (5%)
+
+Query  6    VTHSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNR  65
+            + HS+ +EKS   A   GFS+    E G+  ++V+ V+E   A + GL  GD+I E+N  
+Sbjct  83   IIHSVRVEKS--PAGRLGFSVRGGSEHGLG-IFVSKVEEGSSAERAGLCVGDKITEVNGL  139
+
+Query  66   AADALN-SSMLKDFLSQPSLGLLVR  89
+            + ++    S +K   S   L ++VR
+Sbjct  140  SLESTTMGSAVKVLTSSSRLHMMVR  164
+
+
+ Score = 33.9 bits (76),  Expect = 0.12, Method: Compositional matrix adjust.
+ Identities = 21/65 (32%), Positives = 36/65 (55%), Gaps = 3/65 (5%)
+
+Query  17   TAADTY--GFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRAADALNSSM  74
+            T +D +  GF++   +E G+  +YV+ V   GLA + G+K GD++L  N    D ++ S 
+Sbjct  215  TTSDDFCLGFNIRGGKEFGLG-IYVSKVDHGGLAEENGIKVGDQVLAANGVRFDDISHSQ  273
+
+Query  75   LKDFL  79
+              + L
+Sbjct  274  AVEVL  278
+
+
+>sp|Q5RBI7.1|PDZD7_PONAB RecName: Full=PDZ domain-containing protein 7
+Length=528
+
+ Score = 38.9 bits (89),  Expect = 0.002, Method: Composition-based stats.
+ Identities = 27/85 (32%), Positives = 45/85 (53%), Gaps = 4/85 (5%)
+
+Query  6    VTHSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNR  65
+            + HS+ +EKS   A   GFS+    E G+  ++V+ V+E   A + GL  GD+I E+N  
+Sbjct  83   IIHSVRVEKS--PAGRLGFSVRGGSEHGLG-IFVSKVEEGSSAERAGLCVGDKITEVNGL  139
+
+Query  66   AADALN-SSMLKDFLSQPSLGLLVR  89
+            + ++    S +K       L ++VR
+Sbjct  140  SLESTTMGSAVKVLTGSSRLHMMVR  164
+
+
+ Score = 33.1 bits (74),  Expect = 0.17, Method: Composition-based stats.
+ Identities = 21/65 (32%), Positives = 36/65 (55%), Gaps = 3/65 (5%)
+
+Query  17   TAADTY--GFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRAADALNSSM  74
+            T +D +  GF++   +E G+  +YV+ V   GLA + G+K GD++L  N    D ++ S 
+Sbjct  215  TTSDDFCLGFNIRGGKEFGLG-IYVSKVDHGGLAEENGIKVGDQVLAANGVRFDDISHSQ  273
+
+Query  75   LKDFL  79
+              + L
+Sbjct  274  AVEVL  278
+
+
+>sp|A8E0R9.2|GRIP2_XENLA RecName: Full=Glutamate receptor-interacting protein 2; Short=xGRIP2; 
+Short=xGRIP2.1
+Length=1083
+
+ Score = 39.3 bits (90),  Expect = 0.002, Method: Compositional matrix adjust.
+ Identities = 22/69 (32%), Positives = 37/69 (54%), Gaps = 6/69 (9%)
+
+Query  14    KSDTAADTYGFSLSSVEEDGI--RRLYVNSVKETGLASKKGLKAGDEILEINNRAADALN  71
+             + D   D +GFS+S    DG+  + +YVN ++  G A + GLK  D+IL++N+      +
+Sbjct  978   QKDMDTDDFGFSVS----DGLLEKGVYVNMIRPGGPADRSGLKTYDQILQVNHVRTRDFD  1033
+
+Query  72    SSMLKDFLS  80
+               +    LS
+Sbjct  1034  CCLTVPLLS  1042
+
+
+>sp|Q9P202.3|WHRN_HUMAN RecName: Full=Whirlin; AltName: Full=Autosomal recessive deafness 
+type 31 protein
+Length=907
+
+ Score = 38.1 bits (87),  Expect = 0.005, Method: Compositional matrix adjust.
+ Identities = 19/49 (39%), Positives = 32/49 (65%), Gaps = 1/49 (2%)
+
+Query  18   AADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRA  66
+            A +  GFS+    E G+  +YV+ V+   LA K+GL+ GD+IL +N+++
+Sbjct  148  AHEGLGFSIRGGSEHGVG-IYVSLVEPGSLAEKEGLRVGDQILRVNDKS  195
+
+
+ Score = 31.2 bits (69),  Expect = 1.0, Method: Compositional matrix adjust.
+ Identities = 13/30 (43%), Positives = 18/30 (60%), Gaps = 0/30 (0%)
+
+Query  37   LYVNSVKETGLASKKGLKAGDEILEINNRA  66
+            +Y+  V     A   GLK GD+ILE+N R+
+Sbjct  304  IYITGVDPGSEAEGSGLKVGDQILEVNGRS  333
+
+
+>sp|Q810W9.1|WHRN_RAT RecName: Full=Whirlin; AltName: Full=CASK-interacting protein 
+CIP98
+Length=920
+
+ Score = 38.1 bits (87),  Expect = 0.005, Method: Compositional matrix adjust.
+ Identities = 19/49 (39%), Positives = 32/49 (65%), Gaps = 1/49 (2%)
+
+Query  18   AADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRA  66
+            A +  GFS+    E G+  +YV+ V+   LA K+GL+ GD+IL +N+++
+Sbjct  149  AHEGLGFSIRGGSEHGVG-IYVSLVEPGSLAEKEGLRVGDQILRVNDKS  196
+
+
+ Score = 31.6 bits (70),  Expect = 0.77, Method: Compositional matrix adjust.
+ Identities = 13/30 (43%), Positives = 18/30 (60%), Gaps = 0/30 (0%)
+
+Query  37   LYVNSVKETGLASKKGLKAGDEILEINNRA  66
+            +Y+  V     A   GLK GD+ILE+N R+
+Sbjct  303  IYITGVDPGSEAESSGLKVGDQILEVNGRS  332
+
+
+>sp|Q80VW5.3|WHRN_MOUSE RecName: Full=Whirlin
+Length=918
+
+ Score = 38.1 bits (87),  Expect = 0.005, Method: Compositional matrix adjust.
+ Identities = 19/49 (39%), Positives = 32/49 (65%), Gaps = 1/49 (2%)
+
+Query  18   AADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRA  66
+            A +  GFS+    E G+  +YV+ V+   LA K+GL+ GD+IL +N+++
+Sbjct  149  AHEGLGFSIRGGSEHGVG-IYVSLVEPGSLAEKEGLRVGDQILRVNDKS  196
+
+
+ Score = 31.6 bits (70),  Expect = 0.75, Method: Compositional matrix adjust.
+ Identities = 13/30 (43%), Positives = 18/30 (60%), Gaps = 0/30 (0%)
+
+Query  37   LYVNSVKETGLASKKGLKAGDEILEINNRA  66
+            +Y+  V     A   GLK GD+ILE+N R+
+Sbjct  305  IYITGVDPGSEAESSGLKVGDQILEVNGRS  334
+
+
+>sp|Q86UT5.2|NHRF4_HUMAN RecName: Full=Na(+)/H(+) exchange regulatory cofactor NHE-RF4; 
+Short=NHERF-4; AltName: Full=Intestinal and kidney-enriched 
+PDZ protein; AltName: Full=Natrium-phosphate cotransporter 
+IIa C-terminal-associated protein 2; Short=Na/Pi cotransporter 
+C-terminal-associated protein 2; Short=NaPi-Cap2; AltName: 
+Full=PDZ domain-containing protein 2; AltName: Full=PDZ domain-containing 
+protein 3; AltName: Full=Sodium-hydrogen exchanger 
+regulatory factor 4
+Length=571
+
+ Score = 37.7 bits (86),  Expect = 0.006, Method: Composition-based stats.
+ Identities = 19/43 (44%), Positives = 27/43 (63%), Gaps = 2/43 (5%)
+
+Query  21   TYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+            +YGF LS V      RL+++ V   G A++ GL+ GD ILE+N
+Sbjct  477  SYGFRLSCVASGP--RLFISQVTPGGSAARAGLQVGDVILEVN  517
+
+
+>sp|Q3T0X8.1|NHRF3_BOVIN RecName: Full=Na(+)/H(+) exchange regulatory cofactor NHE-RF3; 
+Short=NHERF-3; AltName: Full=Na(+)/H(+) exchanger regulatory 
+factor 3; AltName: Full=PDZ domain-containing protein 1; 
+AltName: Full=Sodium-hydrogen exchanger regulatory factor 3
+Length=520
+
+ Score = 35.8 bits (81),  Expect = 0.026, Method: Compositional matrix adjust.
+ Identities = 17/43 (40%), Positives = 28/43 (65%), Gaps = 2/43 (5%)
+
+Query  21   TYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+            +YGFSL +V+  G   +Y+  +K  G+A K G+ A D ++E+N
+Sbjct  143  SYGFSLKTVQ--GKNGVYMTDIKPQGVAMKAGVLADDHLIEVN  183
+
+
+>sp|Q4H4B6.1|SCRIB_DANRE RecName: Full=Protein scribble homolog; AltName: Full=Scribble1
+Length=1724
+
+ Score = 35.8 bits (81),  Expect = 0.027, Method: Compositional matrix adjust.
+ Identities = 19/49 (39%), Positives = 29/49 (59%), Gaps = 8/49 (16%)
+
+Query  15    SDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+             SD A+  +G     + E G+   +++ V   GLAS+ GL+ GD ILE+N
+Sbjct  1023  SDHASHPFG-----INEPGV---FISKVIPNGLASQSGLRVGDRILEVN  1063
+
+
+ Score = 32.0 bits (71),  Expect = 0.58, Method: Compositional matrix adjust.
+ Identities = 11/27 (41%), Positives = 21/27 (78%), Gaps = 0/27 (0%)
+
+Query  37   LYVNSVKETGLASKKGLKAGDEILEIN  63
+            ++++ V E G A++ G+K GD++LE+N
+Sbjct  761  IFISRVSEEGPAARAGVKVGDKLLEVN  787
+
+
+>sp|Q8R4H2.2|ARHGC_MOUSE RecName: Full=Rho guanine nucleotide exchange factor 12; AltName: 
+Full=Leukemia-associated RhoGEF
+Length=1543
+
+ Score = 35.4 bits (80),  Expect = 0.037, Method: Compositional matrix adjust.
+ Identities = 20/60 (33%), Positives = 33/60 (55%), Gaps = 8/60 (13%)
+
+Query  4    GKVTHSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+            G V   + I+K D     +G ++S     G   ++V SVKE G A + G++ GD I+++N
+Sbjct  67   GLVQRCVIIQKDDNG---FGLTVS-----GDNPVFVQSVKEDGAAMRAGVQTGDRIIKVN  118
+
+
+>sp|Q9NZN5.1|ARHGC_HUMAN RecName: Full=Rho guanine nucleotide exchange factor 12; AltName: 
+Full=Leukemia-associated RhoGEF
+Length=1544
+
+ Score = 35.4 bits (80),  Expect = 0.042, Method: Compositional matrix adjust.
+ Identities = 20/60 (33%), Positives = 33/60 (55%), Gaps = 8/60 (13%)
+
+Query  4    GKVTHSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+            G V   + I+K D     +G ++S     G   ++V SVKE G A + G++ GD I+++N
+Sbjct  67   GLVQRCVIIQKDDNG---FGLTVS-----GDNPVFVQSVKEDGAAMRAGVQTGDRIIKVN  118
+
+
+>sp|Q5RCF7.1|NHRF3_PONAB RecName: Full=Na(+)/H(+) exchange regulatory cofactor NHE-RF3; 
+Short=NHERF-3; AltName: Full=Na(+)/H(+) exchanger regulatory 
+factor 3; AltName: Full=PDZ domain-containing protein 1; 
+AltName: Full=Sodium-hydrogen exchanger regulatory factor 3
+Length=519
+
+ Score = 34.7 bits (78),  Expect = 0.055, Method: Compositional matrix adjust.
+ Identities = 16/43 (37%), Positives = 28/43 (65%), Gaps = 2/43 (5%)
+
+Query  21   TYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+            +YGFSL +V+  G + +Y+  +   G+A K G+ A D ++E+N
+Sbjct  144  SYGFSLKTVQ--GKKGVYMTDITPQGVAMKAGVLADDHLIEVN  184
+
+
+>sp|Q9C0E4.3|GRIP2_HUMAN RecName: Full=Glutamate receptor-interacting protein 2; Short=GRIP-2
+Length=1043
+
+ Score = 34.3 bits (77),  Expect = 0.081, Method: Compositional matrix adjust.
+ Identities = 19/59 (32%), Positives = 35/59 (59%), Gaps = 7/59 (12%)
+
+Query  8    HSIHIEKSDTAADTYGFSLSSVEEDGI--RRLYVNSVKETGLASKKGLKAGDEILEINN  64
+            H + + K     D +GFS+S    DG+  + +YV++V+  G A + GL+  D +L++N+
+Sbjct  940  HKVTLHKDPMRHD-FGFSVS----DGLLEKGVYVHTVRPDGPAHRGGLQPFDRVLQVNH  993
+
+
+>sp|Q9ES67.1|ARHGB_RAT RecName: Full=Rho guanine nucleotide exchange factor 11; AltName: 
+Full=RhoGEF glutamate transport modulator GTRAP48
+Length=1527
+
+ Score = 33.9 bits (76),  Expect = 0.11, Method: Compositional matrix adjust.
+ Identities = 23/75 (31%), Positives = 36/75 (48%), Gaps = 21/75 (28%)
+
+Query  5    KVTHSIHIEKSDTAADT----------------YGFSLSSVEEDGIRRLYVNSVKETGLA  48
+            + + S H + SDT+  T                +GF++S     G R + V SV+  G A
+Sbjct  41   RTSPSHHRQPSDTSETTAGLVQRCVIIQKDQHGFGFTVS-----GDRIVLVQSVRPGGAA  95
+
+Query  49   SKKGLKAGDEILEIN  63
+             K G+K GD I+++N
+Sbjct  96   MKAGVKEGDRIIKVN  110
+
+
+>sp|Q6ZPF3.2|TIAM2_MOUSE RecName: Full=T-lymphoma invasion and metastasis-inducing protein 
+2; Short=TIAM-2; AltName: Full=SIF and TIAM1-like exchange 
+factor
+Length=1715
+
+ Score = 33.9 bits (76),  Expect = 0.12, Method: Compositional matrix adjust.
+ Identities = 19/73 (26%), Positives = 37/73 (51%), Gaps = 2/73 (3%)
+
+Query  22   YGFSLSSV--EEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRAADALNSSMLKDFL  79
+            +GF+++    E   + R++++ V    LA   GL+ G+EI  +N      L+   ++   
+Sbjct  923  FGFAVTVQVDEHQHLNRIFISDVLPDSLAYGGGLRKGNEITSLNGEPVSDLDIQQMEALF  982
+
+Query  80   SQPSLGLLVRTYP  92
+            S+ S+GL +   P
+Sbjct  983  SEKSVGLTLVARP  995
+
+
+>sp|Q5T2W1.2|NHRF3_HUMAN RecName: Full=Na(+)/H(+) exchange regulatory cofactor NHE-RF3; 
+Short=NHERF-3; AltName: Full=CFTR-associated protein of 70 
+kDa; AltName: Full=Na(+)/H(+) exchanger regulatory factor 3; 
+AltName: Full=Na/Pi cotransporter C-terminal-associated protein 
+1; Short=NaPi-Cap1; AltName: Full=PDZ domain-containing 
+protein 1; AltName: Full=Sodium-hydrogen exchanger regulatory 
+factor 3
+Length=519
+
+ Score = 33.5 bits (75),  Expect = 0.12, Method: Compositional matrix adjust.
+ Identities = 15/43 (35%), Positives = 28/43 (65%), Gaps = 2/43 (5%)
+
+Query  21   TYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+            +YGFSL +V+  G + +Y+  +   G+A + G+ A D ++E+N
+Sbjct  144  SYGFSLKTVQ--GKKGVYMTDITPQGVAMRAGVLADDHLIEVN  184
+
+
+>sp|O15085.1|ARHGB_HUMAN RecName: Full=Rho guanine nucleotide exchange factor 11; AltName: 
+Full=PDZ-RhoGEF
+Length=1522
+
+ Score = 33.9 bits (76),  Expect = 0.13, Method: Compositional matrix adjust.
+ Identities = 21/60 (35%), Positives = 32/60 (53%), Gaps = 8/60 (13%)
+
+Query  4   GKVTHSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+           G V   + I+K       +GF++S     G R + V SV+  G A K G+K GD I+++N
+Sbjct  42  GLVQRCVIIQKDQHG---FGFTVS-----GDRIVLVQSVRPGGAAMKAGVKEGDRIIKVN  93
+
+
+>sp|Q9QX74.2|SHAN2_RAT RecName: Full=SH3 and multiple ankyrin repeat domains protein 
+2; Short=Shank2; AltName: Full=Cortactin-binding protein 1; 
+Short=CortBP1; AltName: Full=GKAP/SAPAP-interacting protein; 
+AltName: Full=Proline-rich synapse-associated protein 1; Short=ProSAP1; 
+AltName: Full=SPANK-3
+Length=1474
+
+ Score = 33.1 bits (74),  Expect = 0.23, Method: Compositional matrix adjust.
+ Identities = 13/27 (48%), Positives = 20/27 (74%), Gaps = 0/27 (0%)
+
+Query  38   YVNSVKETGLASKKGLKAGDEILEINN  64
+            Y+ SV E G+A + GL+ GD ++E+NN
+Sbjct  286  YLESVDEGGVAWQAGLRTGDFLIEVNN  312
+
+
+>sp|Q80Z38.2|SHAN2_MOUSE RecName: Full=SH3 and multiple ankyrin repeat domains protein 
+2; Short=Shank2; AltName: Full=Cortactin-binding protein 1; 
+Short=CortBP1
+Length=1476
+
+ Score = 33.1 bits (74),  Expect = 0.23, Method: Compositional matrix adjust.
+ Identities = 13/27 (48%), Positives = 20/27 (74%), Gaps = 0/27 (0%)
+
+Query  38   YVNSVKETGLASKKGLKAGDEILEINN  64
+            Y+ SV E G+A + GL+ GD ++E+NN
+Sbjct  285  YLESVDEGGVAWQAGLRTGDFLIEVNN  311
+
+
+>sp|Q9UPX8.3|SHAN2_HUMAN RecName: Full=SH3 and multiple ankyrin repeat domains protein 
+2; Short=Shank2; AltName: Full=Cortactin-binding protein 1; 
+Short=CortBP1; AltName: Full=Proline-rich synapse-associated 
+protein 1
+Length=1470
+
+ Score = 33.1 bits (74),  Expect = 0.24, Method: Compositional matrix adjust.
+ Identities = 13/27 (48%), Positives = 20/27 (74%), Gaps = 0/27 (0%)
+
+Query  38   YVNSVKETGLASKKGLKAGDEILEINN  64
+            Y+ SV E G+A + GL+ GD ++E+NN
+Sbjct  285  YLESVDEGGVAWQAGLRTGDFLIEVNN  311
+
+
+>sp|Q9JIL4.1|NHRF3_MOUSE RecName: Full=Na(+)/H(+) exchange regulatory cofactor NHE-RF3; 
+Short=NHERF-3; AltName: Full=CFTR-associated protein of 70 
+kDa; AltName: Full=Na(+)/H(+) exchanger regulatory factor 3; 
+AltName: Full=Na/Pi cotransporter C-terminal-associated protein 
+1; Short=NaPi-Cap1; AltName: Full=PDZ domain-containing 
+protein 1; AltName: Full=Sodium-hydrogen exchanger regulatory 
+factor 3
+Length=519
+
+ Score = 32.7 bits (73),  Expect = 0.25, Method: Compositional matrix adjust.
+ Identities = 14/45 (31%), Positives = 29/45 (64%), Gaps = 2/45 (4%)
+
+Query  19   ADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+             +++GFSL +++  G + +Y+  +   G+A K G+ A D ++E+N
+Sbjct  142  GNSFGFSLKTIQ--GKKGVYLTDIMPQGVAMKAGVLADDHLIEVN  184
+
+
+ Score = 32.7 bits (73),  Expect = 0.27, Method: Compositional matrix adjust.
+ Identities = 17/44 (39%), Positives = 27/44 (61%), Gaps = 2/44 (5%)
+
+Query  20   DTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+            D+YGF L+++   G    +V  V++ G A K GL+  D I+E+N
+Sbjct  386  DSYGFHLNAIR--GQPGSFVKEVQQGGPADKAGLENEDVIIEVN  427
+
+
+>sp|Q14160.4|SCRIB_HUMAN RecName: Full=Protein scribble homolog; Short=Scribble; Short=hScrib; 
+AltName: Full=Protein LAP4
+Length=1630
+
+ Score = 32.7 bits (73),  Expect = 0.25, Method: Composition-based stats.
+ Identities = 27/81 (33%), Positives = 43/81 (53%), Gaps = 12/81 (15%)
+
+Query  15    SDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNR-AADALNSS  73
+             SD ++  +G     V+E G+   +++ V   GLA++ GL+ GD IL +N +   DA +  
+Sbjct  1022  SDHSSHPFG-----VQEPGV---FISKVLPRGLAARSGLRVGDRILAVNGQDVRDATHQE  1073
+
+Query  74    MLKDFLSQP--SLGLLVRTYP  92
+              +   L +P   L LLVR  P
+Sbjct  1074  AVSALL-RPCLELSLLVRRDP  1093
+
+
+ Score = 30.0 bits (66),  Expect = 2.2, Method: Composition-based stats.
+ Identities = 11/30 (37%), Positives = 22/30 (73%), Gaps = 0/30 (0%)
+
+Query  37   LYVNSVKETGLASKKGLKAGDEILEINNRA  66
+            ++++ V E G A++ G++ GD++LE+N  A
+Sbjct  758  IFISRVSEEGPAARAGVRVGDKLLEVNGVA  787
+
+
+>sp|Q9WTW1.1|GRIP2_RAT RecName: Full=Glutamate receptor-interacting protein 2; Short=GRIP-2; 
+AltName: Full=AMPA receptor-interacting protein GRIP2
+Length=1043
+
+ Score = 32.7 bits (73),  Expect = 0.26, Method: Compositional matrix adjust.
+ Identities = 19/59 (32%), Positives = 35/59 (59%), Gaps = 7/59 (12%)
+
+Query  8    HSIHIEKSDTAADTYGFSLSSVEEDGI--RRLYVNSVKETGLASKKGLKAGDEILEINN  64
+            H + + K D   + +GFS+S    DG+  + +YV++V+  G A   GL+  D +L++N+
+Sbjct  941  HRVTLHK-DPVRNDFGFSVS----DGLLEKGVYVHTVRIDGPAQHGGLQPFDRLLQVNH  994
+
+
+>sp|P91620.2|SIF2_DROME RecName: Full=Protein still life, isoforms C/SIF type 2
+Length=2061
+
+ Score = 32.7 bits (73),  Expect = 0.28, Method: Composition-based stats.
+ Identities = 24/92 (26%), Positives = 50/92 (54%), Gaps = 7/92 (8%)
+
+Query  5     KVTHSIHIEKSDTAADTYGFSLSS-VEEDGIRR----LYVNSVKETGLASKKGLKAGDEI  59
+             K+ + + ++++ T    +GFS+ + + E+  R+     YV+ V++  +A   G+  GDEI
+Sbjct  1180  KILYQVELQRT-TLEQMWGFSVEAELIENAERQDELCCYVSRVEDKSVAMHNGIIKGDEI  1238
+
+Query  60    LEINNRAADALNSSMLKDFLSQP-SLGLLVRT  90
+             + IN      L+   L+  L +  SL +++R+
+Sbjct  1239  MVINGAIVSDLDMMYLESVLQEEQSLSMMMRS  1270
+
+
+>sp|Q9JJ40.2|NHRF3_RAT RecName: Full=Na(+)/H(+) exchange regulatory cofactor NHE-RF3; 
+Short=NHERF-3; AltName: Full=C-terminal-linking and modulating 
+protein; AltName: Full=Dietary Pi-regulated RNA-1; AltName: 
+Full=Diphor-1; AltName: Full=Na(+)/H(+) exchanger regulatory 
+factor 3; AltName: Full=Na/Pi cotransporter C-terminal-associated 
+protein 1; Short=NaPi-Cap1; AltName: Full=PDZ domain-containing 
+protein 1; AltName: Full=Sodium-hydrogen exchanger 
+regulatory factor 3
+Length=523
+
+ Score = 32.3 bits (72),  Expect = 0.36, Method: Compositional matrix adjust.
+ Identities = 17/44 (39%), Positives = 27/44 (61%), Gaps = 2/44 (5%)
+
+Query  20   DTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+            D+YGF L+++   G    +V  V++ G A K GL+  D I+E+N
+Sbjct  386  DSYGFHLNAIR--GQPGSFVKEVQQGGPADKAGLENEDIIIEVN  427
+
+
+ Score = 31.6 bits (70),  Expect = 0.56, Method: Compositional matrix adjust.
+ Identities = 13/45 (29%), Positives = 29/45 (64%), Gaps = 2/45 (4%)
+
+Query  19   ADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+             +++GFSL +++  G + +++  +   G+A K G+ A D ++E+N
+Sbjct  142  GNSFGFSLKTIQ--GKKGVFLTDITPQGVAMKAGVLADDHLIEVN  184
+
+
+>sp|P91621.2|SIF1_DROME RecName: Full=Protein still life, isoform SIF type 1
+Length=2072
+
+ Score = 32.3 bits (72),  Expect = 0.37, Method: Composition-based stats.
+ Identities = 24/92 (26%), Positives = 50/92 (54%), Gaps = 7/92 (8%)
+
+Query  5     KVTHSIHIEKSDTAADTYGFSLSS-VEEDGIRR----LYVNSVKETGLASKKGLKAGDEI  59
+             K+ + + ++++ T    +GFS+ + + E+  R+     YV+ V++  +A   G+  GDEI
+Sbjct  1200  KILYQVELQRT-TLEQMWGFSVEAELIENAERQDELCCYVSRVEDKSVAMHNGIIKGDEI  1258
+
+Query  60    LEINNRAADALNSSMLKDFLSQP-SLGLLVRT  90
+             + IN      L+   L+  L +  SL +++R+
+Sbjct  1259  MVINGAIVSDLDMMYLESVLQEEQSLSMMMRS  1290
+
+
+>sp|Q8N448.1|LNX2_HUMAN RecName: Full=Ligand of Numb protein X 2; AltName: Full=Numb-binding 
+protein 2; AltName: Full=PDZ domain-containing RING 
+finger protein 1
+Length=690
+
+ Score = 32.3 bits (72),  Expect = 0.39, Method: Composition-based stats.
+ Identities = 23/80 (29%), Positives = 42/80 (53%), Gaps = 3/80 (4%)
+
+Query  4    GKVTHSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKG-LKAGDEILEI  62
+            G++T +I I +S+      G S+    E  +  + +  V   G+ ++ G L AGD+IL++
+Sbjct  229  GEIT-TIEIHRSNPYIQ-LGISIVGGNETPLINIVIQEVYRDGVIARDGRLLAGDQILQV  286
+
+Query  63   NNRAADALNSSMLKDFLSQP  82
+            NN     ++ +  +  LSQP
+Sbjct  287  NNYNISNVSHNYARAVLSQP  306
+
+
+>sp|F1M386.2|RPGF2_RAT RecName: Full=Rap guanine nucleotide exchange factor 2; AltName: 
+Full=Cyclic nucleotide ras GEF; Short=CNrasGEF; AltName: 
+Full=Neural RAP guanine nucleotide exchange protein; Short=nRap 
+GEP; AltName: Full=PDZ domain-containing guanine nucleotide 
+exchange factor 1; Short=PDZ-GEF1; AltName: Full=RA-GEF-1; 
+AltName: Full=Ras/Rap1-associating GEF-1
+Length=1496
+
+ Score = 32.3 bits (72),  Expect = 0.40, Method: Compositional matrix adjust.
+ Identities = 13/27 (48%), Positives = 21/27 (78%), Gaps = 0/27 (0%)
+
+Query  37   LYVNSVKETGLASKKGLKAGDEILEIN  63
+            ++V+SV  +  A++ GLK GD+ILE+N
+Sbjct  411  IFVDSVDSSSKATEAGLKRGDQILEVN  437
+
+
+>sp|Q91XL2.2|LNX2_MOUSE RecName: Full=Ligand of Numb protein X 2; AltName: Full=Numb-binding 
+protein 2
+Length=687
+
+ Score = 32.3 bits (72),  Expect = 0.41, Method: Composition-based stats.
+ Identities = 23/80 (29%), Positives = 42/80 (53%), Gaps = 3/80 (4%)
+
+Query  4    GKVTHSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKG-LKAGDEILEI  62
+            G++T +I I +S+      G S+    E  +  + +  V   G+ ++ G L AGD+IL++
+Sbjct  228  GEIT-TIEIHRSNPYIQ-LGISIVGGNETPLINIVIQEVYRDGVIARDGRLLAGDQILQV  285
+
+Query  63   NNRAADALNSSMLKDFLSQP  82
+            NN     ++ +  +  LSQP
+Sbjct  286  NNYDISNVSHNHARAVLSQP  305
+
+
+>sp|P39447.2|ZO1_MOUSE RecName: Full=Tight junction protein ZO-1; AltName: Full=Tight 
+junction protein 1; AltName: Full=Zona occludens protein 1; 
+AltName: Full=Zonula occludens protein 1
+Length=1745
+
+ Score = 32.3 bits (72),  Expect = 0.43, Method: Composition-based stats.
+ Identities = 18/46 (39%), Positives = 27/46 (59%), Gaps = 3/46 (7%)
+
+Query  19   ADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINN  64
+             D+ G  L+   + GI   +V  V E   A+K+GL+ GD+IL +NN
+Sbjct  430  GDSVGLRLAGGNDVGI---FVAGVLEDSPAAKEGLEEGDQILRVNN  472
+
+
+>sp|Q4L530.1|HTRAL_STAHJ RecName: Full=Serine protease HtrA-like
+Length=639
+
+ Score = 32.0 bits (71),  Expect = 0.46, Method: Compositional matrix adjust.
+ Identities = 17/45 (38%), Positives = 27/45 (60%), Gaps = 0/45 (0%)
+
+Query  22   YGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRA  66
+            Y  +L  V ED    + V  +KE GL  K GLK GD ++E+++++
+Sbjct  556  YERNLLKVPEDVQNGIVVEKLKENGLGKKSGLKIGDVVVELDSKS  600
+
+
+>sp|Q8CHG7.2|RPGF2_MOUSE RecName: Full=Rap guanine nucleotide exchange factor 2; AltName: 
+Full=Cyclic nucleotide ras GEF; Short=CNrasGEF; AltName: 
+Full=Neural RAP guanine nucleotide exchange protein; Short=nRap 
+GEP; AltName: Full=PDZ domain-containing guanine nucleotide 
+exchange factor 1; Short=PDZ-GEF1; AltName: Full=RA-GEF-1; 
+AltName: Full=Ras/Rap1-associating GEF-1
+Length=1496
+
+ Score = 32.0 bits (71),  Expect = 0.50, Method: Compositional matrix adjust.
+ Identities = 13/27 (48%), Positives = 20/27 (74%), Gaps = 0/27 (0%)
+
+Query  37   LYVNSVKETGLASKKGLKAGDEILEIN  63
+            ++V+SV     A++ GLK GD+ILE+N
+Sbjct  411  IFVDSVDSCSKATEAGLKRGDQILEVN  437
+
+
+>sp|Q4L1J4.1|MAGI1_RAT RecName: Full=Membrane-associated guanylate kinase, WW and PDZ 
+domain-containing protein 1; AltName: Full=BAI1-associated 
+protein 1; Short=BAP-1; AltName: Full=Membrane-associated guanylate 
+kinase inverted 1; Short=MAGI-1
+Length=1255
+
+ Score = 32.0 bits (71),  Expect = 0.55, Method: Composition-based stats.
+ Identities = 23/67 (34%), Positives = 35/67 (52%), Gaps = 5/67 (7%)
+
+Query  8     HSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKG-LKAGDEILEINNRA  66
+             +++ +E+    A  +GFSL    E  +  LYV  + E G A + G ++ GDEILEIN   
+Sbjct  1150  YTVELER---GAKGFGFSLRGGREYNMD-LYVLRLAEDGPAERCGKMRIGDEILEINGET  1205
+
+Query  67    ADALNSS  73
+                +  S
+Sbjct  1206  TKNMKHS  1212
+
+
+ Score = 29.3 bits (64),  Expect = 4.0, Method: Composition-based stats.
+ Identities = 22/72 (31%), Positives = 37/72 (51%), Gaps = 9/72 (13%)
+
+Query  9    SIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASK-KGLKAGDEILEINNRAA  67
+            ++HI K       +GF+++     G +R     VK+   + + +GLK GD I+E+N R  
+Sbjct  642  TVHIVKGPMG---FGFTIADSPGGGGQR-----VKQIVDSPRCRGLKEGDLIVEVNKRNV  693
+
+Query  68   DALNSSMLKDFL  79
+             AL  + + D L
+Sbjct  694  QALTHNQVVDML  705
+
+
+>sp|A8MUH7.2|PDZ1P_HUMAN RecName: Full=Putative PDZ domain-containing protein 1P
+Length=402
+
+ Score = 31.6 bits (70),  Expect = 0.55, Method: Compositional matrix adjust.
+ Identities = 14/43 (33%), Positives = 28/43 (65%), Gaps = 2/43 (5%)
+
+Query  21  TYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+           ++GFSL +V+  G + +Y+  +   G+A + G+ A D ++E+N
+Sbjct  22  SHGFSLKTVQ--GKKGVYMTDITPQGVAMRAGVLADDHLIEVN  62
+
+
+>sp|A2AKB4.1|FRPD1_MOUSE RecName: Full=FERM and PDZ domain-containing protein 1
+Length=1549
+
+ Score = 32.0 bits (71),  Expect = 0.55, Method: Composition-based stats.
+ Identities = 26/80 (33%), Positives = 39/80 (49%), Gaps = 7/80 (9%)
+
+Query  2    AMGKVTHSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILE  61
+            A+  V H++ ++K D     YGF +S         L V +V   G A  K L  GD+IL+
+Sbjct  50   ALTPVRHTVTLDK-DVLLQNYGFHISETLP-----LTVVAVTAGGSAHGK-LFPGDQILQ  102
+
+Query  62   INNRAADALNSSMLKDFLSQ  81
+            +NN  A+ L+     D L +
+Sbjct  103  MNNELAEDLSCERAADILRE  122
+
+
+>sp|F1MSG6.2|RPGF2_BOVIN RecName: Full=Rap guanine nucleotide exchange factor 2; AltName: 
+Full=Cyclic nucleotide ras GEF; Short=CNrasGEF; AltName: 
+Full=Neural RAP guanine nucleotide exchange protein; Short=nRap 
+GEP; AltName: Full=PDZ domain-containing guanine nucleotide 
+exchange factor 1; Short=PDZ-GEF1; AltName: Full=RA-GEF-1; 
+AltName: Full=Ras/Rap1-associating GEF-1
+Length=1486
+
+ Score = 32.0 bits (71),  Expect = 0.57, Method: Compositional matrix adjust.
+ Identities = 13/27 (48%), Positives = 20/27 (74%), Gaps = 0/27 (0%)
+
+Query  37   LYVNSVKETGLASKKGLKAGDEILEIN  63
+            ++V+SV     A++ GLK GD+ILE+N
+Sbjct  411  IFVDSVDSASKATEAGLKRGDQILEVN  437
+
+
+>sp|Q5SYB0.1|FRPD1_HUMAN RecName: Full=FERM and PDZ domain-containing protein 1; AltName: 
+Full=FERM domain-containing protein 2
+Length=1578
+
+ Score = 32.0 bits (71),  Expect = 0.58, Method: Composition-based stats.
+ Identities = 27/76 (36%), Positives = 38/76 (50%), Gaps = 7/76 (9%)
+
+Query  6    VTHSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNR  65
+            V H++ I+K DT    YGF +S         L V +V   G A  K L  GD+IL++NN 
+Sbjct  54   VRHTVKIDK-DTLLQDYGFHISESLP-----LTVVAVTAGGSAHGK-LFPGDQILQMNNE  106
+
+Query  66   AADALNSSMLKDFLSQ  81
+             A+ L+     D L +
+Sbjct  107  PAEDLSWERAVDILRE  122
+
+
+>sp|Q07157.3|ZO1_HUMAN RecName: Full=Tight junction protein ZO-1; AltName: Full=Tight 
+junction protein 1; AltName: Full=Zona occludens protein 1; 
+AltName: Full=Zonula occludens protein 1
+Length=1748
+
+ Score = 32.0 bits (71),  Expect = 0.58, Method: Compositional matrix adjust.
+ Identities = 18/45 (40%), Positives = 27/45 (60%), Gaps = 3/45 (7%)
+
+Query  20   DTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINN  64
+            D+ G  L+   + GI   +V  V E   A+K+GL+ GD+IL +NN
+Sbjct  431  DSVGLRLAGGNDVGI---FVAGVLEDSPAAKEGLEEGDQILRVNN  472
+
+
+>sp|O97758.1|ZO1_CANFA RecName: Full=Tight junction protein ZO-1; AltName: Full=Tight 
+junction protein 1; AltName: Full=Zona occludens protein 1; 
+AltName: Full=Zonula occludens protein 1
+Length=1769
+
+ Score = 31.6 bits (70),  Expect = 0.61, Method: Compositional matrix adjust.
+ Identities = 18/45 (40%), Positives = 27/45 (60%), Gaps = 3/45 (7%)
+
+Query  20   DTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINN  64
+            D+ G  L+   + GI   +V  V E   A+K+GL+ GD+IL +NN
+Sbjct  430  DSVGLRLAGGNDVGI---FVAGVLEDSPAAKEGLEEGDQILRVNN  471
+
+
+>sp|Q52KW0.1|SHAN2_XENLA RecName: Full=SH3 and multiple ankyrin repeat domains protein 
+2; Short=Shank2
+Length=1292
+
+ Score = 31.6 bits (70),  Expect = 0.64, Method: Compositional matrix adjust.
+ Identities = 13/27 (48%), Positives = 19/27 (70%), Gaps = 0/27 (0%)
+
+Query  38   YVNSVKETGLASKKGLKAGDEILEINN  64
+            Y+ SV E G+A + GL+ GD + E+NN
+Sbjct  94   YLESVDEDGVAWQAGLRTGDFLTEVNN  120
+
+
+>sp|Q17353.1|PAR3_CAEEL RecName: Full=Partitioning defective protein 3; AltName: Full=Abnormal 
+embryonic partitioning of cytoplasm protein 3
+Length=1379
+
+ Score = 31.6 bits (70),  Expect = 0.67, Method: Compositional matrix adjust.
+ Identities = 21/73 (29%), Positives = 39/73 (53%), Gaps = 2/73 (3%)
+
+Query  18   AADTYGFSLSSVEE-DGIRRLYVNSVKETGLASKKGLKAGDEILEINNRAADALNSSMLK  76
+            +++ +GF+++  E   G R  Y+ +VK  G+A    LK+GD +LEIN         S + 
+Sbjct  521  SSNGFGFTVTGRETAKGERLFYIGTVKPYGVALGH-LKSGDRLLEINGTPTGQWTQSEIV  579
+
+Query  77   DFLSQPSLGLLVR  89
+            + L +  +G  ++
+Sbjct  580  EKLKETMVGEKIK  592
+
+
+>sp|O62683.1|ZO3_CANFA RecName: Full=Tight junction protein ZO-3; AltName: Full=Tight 
+junction protein 3; AltName: Full=Zona occludens protein 3; 
+AltName: Full=Zonula occludens protein 3
+Length=898
+
+ Score = 31.6 bits (70),  Expect = 0.69, Method: Compositional matrix adjust.
+ Identities = 22/75 (29%), Positives = 45/75 (60%), Gaps = 10/75 (13%)
+
+Query  17   TAADTYGFSLSSVEEDGIRRLYVNSVKETGLASK-KGLKAGDEILEINNRAADALNSSML  75
+            T ++ +G +L S       ++++  + ++GLA++ +GL+ GD IL+IN  +++ L+ S  
+Sbjct  193  TESEEFGVTLGS-------QIFIKHITDSGLAARNRGLQEGDLILQINGVSSENLSLSDT  245
+
+Query  76   KDFL--SQPSLGLLV  88
+            +  +  S+  L LLV
+Sbjct  246  RRLIEKSEGKLTLLV  260
+
+
+ Score = 30.0 bits (66),  Expect = 2.2, Method: Compositional matrix adjust.
+ Identities = 15/44 (34%), Positives = 27/44 (61%), Gaps = 3/44 (7%)
+
+Query  21   TYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINN  64
+            T G  L+   + GI   +V+ V+E   A  +G++ GD+IL++N+
+Sbjct  380  TIGLRLAGGNDVGI---FVSGVQEGSPADGQGIQEGDQILQVND  420
+
+
+>sp|Q96QZ7.3|MAGI1_HUMAN RecName: Full=Membrane-associated guanylate kinase, WW and PDZ 
+domain-containing protein 1; AltName: Full=Atrophin-1-interacting 
+protein 3; Short=AIP-3; AltName: Full=BAI1-associated 
+protein 1; Short=BAP-1; AltName: Full=Membrane-associated 
+guanylate kinase inverted 1; Short=MAGI-1; AltName: Full=Trinucleotide 
+repeat-containing gene 19 protein; AltName: Full=WW 
+domain-containing protein 3; Short=WWP3
+Length=1491
+
+ Score = 31.6 bits (70),  Expect = 0.69, Method: Composition-based stats.
+ Identities = 23/67 (34%), Positives = 35/67 (52%), Gaps = 5/67 (7%)
+
+Query  8     HSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKG-LKAGDEILEINNRA  66
+             +++ +E+    A  +GFSL    E  +  LYV  + E G A + G ++ GDEILEIN   
+Sbjct  1151  YTVELER---GAKGFGFSLRGGREYNMD-LYVLRLAEDGPAERCGKMRIGDEILEINGET  1206
+
+Query  67    ADALNSS  73
+                +  S
+Sbjct  1207  TKNMKHS  1213
+
+
+>sp|Q6RHR9.1|MAGI1_MOUSE RecName: Full=Membrane-associated guanylate kinase, WW and PDZ 
+domain-containing protein 1; AltName: Full=BAI1-associated 
+protein 1; Short=BAP-1; AltName: Full=Membrane-associated guanylate 
+kinase inverted 1; Short=MAGI-1
+Length=1471
+
+ Score = 31.6 bits (70),  Expect = 0.71, Method: Composition-based stats.
+ Identities = 23/67 (34%), Positives = 35/67 (52%), Gaps = 5/67 (7%)
+
+Query  8     HSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKG-LKAGDEILEINNRA  66
+             +++ +E+    A  +GFSL    E  +  LYV  + E G A + G ++ GDEILEIN   
+Sbjct  1131  YTVELER---GAKGFGFSLRGGREYNMD-LYVLRLAEDGPAERCGKMRIGDEILEINGET  1186
+
+Query  67    ADALNSS  73
+                +  S
+Sbjct  1187  TKNMKHS  1193
+
+
+>sp|P45129.1|HTOA_HAEIN RecName: Full=Probable periplasmic serine protease do/HhoA-like; 
+Flags: Precursor
+Length=466
+
+ Score = 31.2 bits (69),  Expect = 0.75, Method: Compositional matrix adjust.
+ Identities = 13/43 (30%), Positives = 27/43 (63%), Gaps = 0/43 (0%)
+
+Query  23   GFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNR  65
+            G +L   +  G++ + +  ++   LA+++GLK+GD I+ IN +
+Sbjct  389  GATLKDYDAKGVKGIEITKIQPNSLAAQRGLKSGDIIIGINRQ  431
+
+
+>sp|E1V4H2.1|DEGPL_HALED RecName: Full=Probable periplasmic serine endoprotease DegP-like; 
+AltName: Full=Protease Do; Flags: Precursor
+Length=474
+
+ Score = 31.2 bits (69),  Expect = 0.76, Method: Compositional matrix adjust.
+ Identities = 20/62 (32%), Positives = 33/62 (53%), Gaps = 11/62 (18%)
+
+Query  16   DTAADTYGFSLSSVEE--------DGIRRLYVNSVKETGLASKKGLKAGDEILEINNRAA  67
+            DTA    G ++  +EE        +G+R   V  V  TG+A+K G++AGD ++ I   A 
+Sbjct  379  DTAPARLGLAVRPLEEGQHDQAIDNGVR---VVEVDPTGVAAKAGIRAGDILVSIGEHAV  435
+
+Query  68   DA  69
+            ++
+Sbjct  436  ES  437
+
+
+ Score = 29.3 bits (64),  Expect = 3.9, Method: Compositional matrix adjust.
+ Identities = 16/40 (40%), Positives = 25/40 (63%), Gaps = 2/40 (5%)
+
+Query  46   GLASKKGLKAGDEILEINNRAADALNSSMLKDFLSQPSLG  85
+            G A++ GLKAGD +LE++ +  D+  SS L   + + S G
+Sbjct  306  GPAARDGLKAGDVVLEVDGQTVDS--SSALPRLIGRVSPG  343
+
+
+>sp|O85291.1|DEGPL_BUCAP RecName: Full=Probable periplasmic serine endoprotease DegP-like; 
+AltName: Full=Protease Do; Flags: Precursor
+Length=478
+
+ Score = 31.2 bits (69),  Expect = 0.92, Method: Compositional matrix adjust.
+ Identities = 24/78 (31%), Positives = 41/78 (53%), Gaps = 7/78 (9%)
+
+Query  12   IEKSDTAADTY----GFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRAA  67
+            ++ S +  D Y    G  LS    +G + + + ++K    ASK G K  D I+E+N +  
+Sbjct  386  LKNSVSLGDIYTGIEGADLSDCSLNGQKGVKIENIKLNTQASKIGFKKDDIIVEVNQKVI  445
+
+Query  68   DALNSSMLKDFL-SQPSL  84
+            + LN   LK+ L S+P++
+Sbjct  446  NNLND--LKNILDSKPNI  461
+
+
+>sp|D3YZU1.1|SHAN1_MOUSE RecName: Full=SH3 and multiple ankyrin repeat domains protein 
+1; Short=Shank1
+Length=2167
+
+ Score = 31.2 bits (69),  Expect = 0.96, Method: Compositional matrix adjust.
+ Identities = 12/28 (43%), Positives = 20/28 (71%), Gaps = 0/28 (0%)
+
+Query  38   YVNSVKETGLASKKGLKAGDEILEINNR  65
+            Y+ SV E G+A + GL+ GD ++E+N +
+Sbjct  701  YLESVDEGGVAWRAGLRMGDFLIEVNGQ  728
+
+
+>sp|Q9WV48.1|SHAN1_RAT RecName: Full=SH3 and multiple ankyrin repeat domains protein 
+1; Short=Shank1; AltName: Full=GKAP/SAPAP-interacting protein; 
+AltName: Full=SPANK-1; AltName: Full=Somatostatin receptor-interacting 
+protein; Short=SSTR-interacting protein; Short=SSTRIP; 
+AltName: Full=Synamon
+Length=2167
+
+ Score = 31.2 bits (69),  Expect = 0.99, Method: Compositional matrix adjust.
+ Identities = 12/28 (43%), Positives = 20/28 (71%), Gaps = 0/28 (0%)
+
+Query  38   YVNSVKETGLASKKGLKAGDEILEINNR  65
+            Y+ SV E G+A + GL+ GD ++E+N +
+Sbjct  701  YLESVDEGGVAWRAGLRMGDFLIEVNGQ  728
+
+
+>sp|Q9Y4G8.1|RPGF2_HUMAN RecName: Full=Rap guanine nucleotide exchange factor 2; AltName: 
+Full=Cyclic nucleotide ras GEF; Short=CNrasGEF; AltName: 
+Full=Neural RAP guanine nucleotide exchange protein; Short=nRap 
+GEP; AltName: Full=PDZ domain-containing guanine nucleotide 
+exchange factor 1; Short=PDZ-GEF1; AltName: Full=RA-GEF-1; 
+AltName: Full=Ras/Rap1-associating GEF-1
+Length=1499
+
+ Score = 30.8 bits (68),  Expect = 1.1, Method: Compositional matrix adjust.
+ Identities = 13/27 (48%), Positives = 20/27 (74%), Gaps = 0/27 (0%)
+
+Query  37   LYVNSVKETGLASKKGLKAGDEILEIN  63
+            ++V+SV     A++ GLK GD+ILE+N
+Sbjct  411  IFVDSVDSGSKATEAGLKRGDQILEVN  437
+
+
+>sp|F1PBJ0.2|RPGF2_CANFA RecName: Full=Rap guanine nucleotide exchange factor 2; AltName: 
+Full=Cyclic nucleotide ras GEF; Short=CNrasGEF; AltName: 
+Full=Neural RAP guanine nucleotide exchange protein; Short=nRap 
+GEP; AltName: Full=PDZ domain-containing guanine nucleotide 
+exchange factor 1; Short=PDZ-GEF1; AltName: Full=RA-GEF-1; 
+AltName: Full=Ras/Rap1-associating GEF-1
+Length=1498
+
+ Score = 30.8 bits (68),  Expect = 1.2, Method: Compositional matrix adjust.
+ Identities = 13/27 (48%), Positives = 20/27 (74%), Gaps = 0/27 (0%)
+
+Query  37   LYVNSVKETGLASKKGLKAGDEILEIN  63
+            ++V+SV     A++ GLK GD+ILE+N
+Sbjct  411  IFVDSVDSGSKATEAGLKRGDQILEVN  437
+
+
+>sp|Q9Y566.2|SHAN1_HUMAN RecName: Full=SH3 and multiple ankyrin repeat domains protein 
+1; Short=Shank1; AltName: Full=Somatostatin receptor-interacting 
+protein; Short=SSTR-interacting protein; Short=SSTRIP
+Length=2161
+
+ Score = 30.8 bits (68),  Expect = 1.3, Method: Composition-based stats.
+ Identities = 15/52 (29%), Positives = 29/52 (56%), Gaps = 0/52 (0%)
+
+Query  38   YVNSVKETGLASKKGLKAGDEILEINNRAADALNSSMLKDFLSQPSLGLLVR  89
+            Y+ SV E G+A + GL+ GD ++E+N +    +    + + + Q    L+V+
+Sbjct  701  YLESVDEGGVAWRAGLRMGDFLIEVNGQNVVKVGHRQVVNMIRQGGNTLMVK  752
+
+
+>sp|Q7KRY7.1|LAP4_DROME RecName: Full=Protein lap4; AltName: Full=Protein scribble; AltName: 
+Full=Protein smell-impaired
+Length=1851
+
+ Score = 30.8 bits (68),  Expect = 1.3, Method: Compositional matrix adjust.
+ Identities = 19/61 (31%), Positives = 34/61 (56%), Gaps = 8/61 (13%)
+
+Query  8    HSIHIEKSD-----TAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEI  62
+            + IHIE++      + A   G +    ++DGI   +++ V E G A   GLK GD+++++
+Sbjct  730  YEIHIERTAAGLGLSIAGGKGSTPFKGDDDGI---FISRVTEAGPADLAGLKVGDKVIKV  786
+
+Query  63   N  63
+            N
+Sbjct  787  N  787
+
+
+>sp|G5EDB9.1|RPGF_CAEEL RecName: Full=Rap guanine nucleotide exchange factor; Short=RA-GEF; 
+AltName: Full=PDZ-domain-containing exchange factor
+Length=1470
+
+ Score = 30.8 bits (68),  Expect = 1.4, Method: Compositional matrix adjust.
+ Identities = 14/41 (34%), Positives = 26/41 (63%), Gaps = 0/41 (0%)
+
+Query  37   LYVNSVKETGLASKKGLKAGDEILEINNRAADALNSSMLKD  77
+            +YV  V     A+++G+K  DE+LE+N ++A  L++   +D
+Sbjct  622  VYVAEVFPDTSAAREGVKRADEMLEVNQQSAKYLSAKKAED  662
+
+
+>sp|O75970.2|MPDZ_HUMAN RecName: Full=Multiple PDZ domain protein; AltName: Full=Multi-PDZ 
+domain protein 1
+Length=2070
+
+ Score = 30.8 bits (68),  Expect = 1.4, Method: Compositional matrix adjust.
+ Identities = 16/55 (29%), Positives = 32/55 (58%), Gaps = 1/55 (2%)
+
+Query  11    HIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKG-LKAGDEILEINN  64
+             +++  +   D  G  ++  EED +  + + S+ E G+A+  G LK GD+IL +++
+Sbjct  1480  NVQHLELPKDQGGLGIAISEEDTLSGVIIKSLTEHGVAATDGRLKVGDQILAVDD  1534
+
+
+>sp|Q08881.1|ITK_HUMAN RecName: Full=Tyrosine-protein kinase ITK/TSK; AltName: Full=Interleukin-2-inducible 
+T-cell kinase; Short=IL-2-inducible 
+T-cell kinase; AltName: Full=Kinase EMT; AltName: Full=T-cell-specific 
+kinase; AltName: Full=Tyrosine-protein kinase Lyk
+Length=620
+
+ Score = 30.4 bits (67),  Expect = 1.5, Method: Composition-based stats.
+ Identities = 19/78 (24%), Positives = 35/78 (45%), Gaps = 0/78 (0%)
+
+Query  1    GAMGKVTHSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEIL  60
+            G  G V  S  +EKS    +TY +   S+  D   +L +++ KE     +    AG   +
+Sbjct  216  GHEGYVPSSYLVEKSPNNLETYEWYNKSISRDKAEKLLLDTGKEGAFMVRDSRTAGTYTV  275
+
+Query  61   EINNRAADALNSSMLKDF  78
+             +  +A  + N+  +K +
+Sbjct  276  SVFTKAVVSENNPCIKHY  293
+
+
+>sp|Q8TDM6.4|DLG5_HUMAN RecName: Full=Disks large homolog 5; AltName: Full=Discs large 
+protein P-dlg; AltName: Full=Placenta and prostate DLG
+Length=1919
+
+ Score = 30.4 bits (67),  Expect = 1.6, Method: Compositional matrix adjust.
+ Identities = 20/58 (34%), Positives = 31/58 (53%), Gaps = 4/58 (7%)
+
+Query  6     VTHSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+             V    H+ K    ++  G S+ S E+ GI   YV+ V    +A + GL+ GD++LE N
+Sbjct  1345  VEEPRHV-KVQKGSEPLGISIVSGEKGGI---YVSKVTVGSIAHQAGLEYGDQLLEFN  1398
+
+
+>sp|O96018.1|APBA3_HUMAN RecName: Full=Amyloid beta A4 precursor protein-binding family 
+A member 3; AltName: Full=Adapter protein X11gamma; AltName: 
+Full=Neuron-specific X11L2 protein; AltName: Full=Neuronal 
+Munc18-1-interacting protein 3; Short=Mint-3
+Length=575
+
+ Score = 30.4 bits (67),  Expect = 1.6, Method: Composition-based stats.
+ Identities = 17/62 (27%), Positives = 34/62 (55%), Gaps = 4/62 (6%)
+
+Query  31   EDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRAADALNSSMLKDFLSQPSLGLLVRT  90
+            EDGI    + S+   G+A + G++ G  I+EIN ++  A   + + + L++    + ++T
+Sbjct  502  EDGI----ICSLLRGGIAERGGIRVGHRIIEINGQSVVATPHARIIELLTEAYGEVHIKT  557
+
+Query  91   YP  92
+             P
+Sbjct  558  MP  559
+
+
+>sp|Q5ZM14.1|NHRF1_CHICK RecName: Full=Na(+)/H(+) exchange regulatory cofactor NHE-RF1; 
+Short=NHERF-1; AltName: Full=Ezrin-radixin-moesin-binding 
+phosphoprotein 50; Short=EBP50; AltName: Full=Regulatory cofactor 
+of Na(+)/H(+) exchanger; AltName: Full=Sodium-hydrogen 
+exchanger regulatory factor 1; AltName: Full=Solute carrier 
+family 9 isoform A3 regulatory factor 1
+Length=333
+
+ Score = 30.0 bits (66),  Expect = 2.0, Method: Composition-based stats.
+ Identities = 17/48 (35%), Positives = 25/48 (52%), Gaps = 2/48 (4%)
+
+Query  16  DTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+           +   D YGF L    E G    Y+  V+    A + GL+AGD +LE++
+Sbjct  17  EKGPDGYGFHLHG--EKGKPGQYIRLVEAGSPAERSGLRAGDRLLEVD  62
+
+
+>sp|Q63ZW7.2|INADL_MOUSE RecName: Full=InaD-like protein; Short=Inadl protein; AltName: 
+Full=Channel-interacting PDZ domain-containing protein; AltName: 
+Full=Pals1-associated tight junction protein; AltName: 
+Full=Protein associated to tight junctions
+Length=1834
+
+ Score = 30.0 bits (66),  Expect = 2.0, Method: Compositional matrix adjust.
+ Identities = 19/59 (32%), Positives = 31/59 (53%), Gaps = 4/59 (7%)
+
+Query  8     HSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKG-LKAGDEILEINNR  65
+             H I +EK        G SL+  ++     ++V  +   G A+  G ++ GDE+LEINN+
+Sbjct  1244  HIIELEKDKNG---LGLSLAGNKDRSRMSIFVVGINPEGPAAADGRMRIGDELLEINNQ  1299
+
+
+>sp|Q925T6.1|GRIP1_MOUSE RecName: Full=Glutamate receptor-interacting protein 1; Short=GRIP-1
+Length=1127
+
+ Score = 30.0 bits (66),  Expect = 2.1, Method: Compositional matrix adjust.
+ Identities = 17/59 (29%), Positives = 34/59 (58%), Gaps = 7/59 (12%)
+
+Query  8     HSIHIEKSDTAADTYGFSLSSVEEDGI--RRLYVNSVKETGLASKKGLKAGDEILEINN  64
+             H + + K D+  + +GFS++    DG+  + +YV +++  G     GLK  D +L++N+
+Sbjct  1002  HKVTLYK-DSGMEDFGFSVA----DGLLEKGVYVKNIRPAGPGDVGGLKPYDRLLQVNH  1055
+
+
+>sp|Q80U72.2|SCRIB_MOUSE RecName: Full=Protein scribble homolog; Short=Scribble; AltName: 
+Full=Protein LAP4
+Length=1612
+
+ Score = 30.0 bits (66),  Expect = 2.2, Method: Composition-based stats.
+ Identities = 11/30 (37%), Positives = 22/30 (73%), Gaps = 0/30 (0%)
+
+Query  37   LYVNSVKETGLASKKGLKAGDEILEINNRA  66
+            ++++ V E G A++ G++ GD++LE+N  A
+Sbjct  744  IFISRVSEEGPAARAGVRVGDKLLEVNGVA  773
+
+
+ Score = 29.6 bits (65),  Expect = 3.5, Method: Composition-based stats.
+ Identities = 24/80 (30%), Positives = 39/80 (49%), Gaps = 10/80 (13%)
+
+Query  15    SDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRAADALNSSM  74
+             SD ++  +G     V++ G+   +++ V   GLA++ GL+ GD IL +N +         
+Sbjct  1008  SDHSSHPFG-----VQDPGV---FISKVLPRGLAARCGLRVGDRILAVNGQDVREATHQE  1059
+
+Query  75    LKDFLSQP--SLGLLVRTYP  92
+                 L +P   L LLVR  P
+Sbjct  1060  AVSALLRPCLELCLLVRRDP  1079
+
+
+>sp|Q9WVJ4.2|SYJ2B_RAT RecName: Full=Synaptojanin-2-binding protein; AltName: Full=Mitochondrial 
+outer membrane protein 25; AltName: Full=NPW16
+Length=145
+
+ Score = 29.6 bits (65),  Expect = 2.3, Method: Compositional matrix adjust.
+ Identities = 18/52 (35%), Positives = 30/52 (58%), Gaps = 9/52 (17%)
+
+Query  37  LYVNSVKETGLASKKG-LKAGDEILEINNRAADALNSSMLKDFLSQPSLGLL  87
+           +YV+ +KE G A++ G L+ GD+IL +N +         LK+ L Q ++ L 
+Sbjct  42  IYVSRIKEDGAAARDGRLQEGDKILSVNGQD--------LKNLLHQDAVDLF  85
+
+
+>sp|Q9QXY1.1|ZO3_MOUSE RecName: Full=Tight junction protein ZO-3; AltName: Full=Tight 
+junction protein 3; AltName: Full=Zona occludens protein 3; 
+AltName: Full=Zonula occludens protein 3
+Length=905
+
+ Score = 30.0 bits (66),  Expect = 2.3, Method: Compositional matrix adjust.
+ Identities = 22/65 (34%), Positives = 40/65 (62%), Gaps = 6/65 (9%)
+
+Query  30   EEDGIR---RLYVNSVKETGLASKK-GLKAGDEILEINNRAADALNSSMLKDFL--SQPS  83
+            EE G++   ++++  + E+GLA++  GL+ GD IL+IN  ++  L+ S  +  +  S+  
+Sbjct  196  EEFGVKLGSQIFIKHITESGLAARNHGLQEGDLILQINGVSSANLSLSDTRRLIEKSEGE  255
+
+Query  84   LGLLV  88
+            L LLV
+Sbjct  256  LTLLV  260
+
+
+>sp|Q9ES64.1|USH1C_MOUSE RecName: Full=Harmonin; AltName: Full=PDZ domain-containing protein; 
+AltName: Full=Usher syndrome type-1C protein homolog
+Length=910
+
+ Score = 30.0 bits (66),  Expect = 2.5, Method: Composition-based stats.
+ Identities = 17/43 (40%), Positives = 30/43 (70%), Gaps = 5/43 (12%)
+
+Query  23   GFSLSS--VEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+            G S+SS  +++ GI   +V+ VK   L+++ GL+ GD+I+E+N
+Sbjct  223  GCSISSGPIQKPGI---FVSHVKPGSLSAEVGLETGDQIVEVN  262
+
+
+>sp|P97879.1|GRIP1_RAT RecName: Full=Glutamate receptor-interacting protein 1; Short=GRIP-1; 
+AltName: Full=AMPA receptor-interacting protein GRIP1
+Length=1112
+
+ Score = 30.0 bits (66),  Expect = 2.5, Method: Compositional matrix adjust.
+ Identities = 17/59 (29%), Positives = 34/59 (58%), Gaps = 7/59 (12%)
+
+Query  8     HSIHIEKSDTAADTYGFSLSSVEEDGI--RRLYVNSVKETGLASKKGLKAGDEILEINN  64
+             H + + K D+  + +GFS++    DG+  + +YV +++  G     GLK  D +L++N+
+Sbjct  987   HKVTLYK-DSGMEDFGFSVA----DGLLEKGVYVKNIRPAGPGDLGGLKPYDRLLQVNH  1040
+
+
+>sp|Q9P227.2|RHG23_HUMAN RecName: Full=Rho GTPase-activating protein 23; AltName: Full=Rho-type 
+GTPase-activating protein 23
+Length=1491
+
+ Score = 30.0 bits (66),  Expect = 2.5, Method: Composition-based stats.
+ Identities = 11/30 (37%), Positives = 21/30 (70%), Gaps = 0/30 (0%)
+
+Query  37   LYVNSVKETGLASKKGLKAGDEILEINNRA  66
+            ++V +VKE G A + GL+ GD ++++N  +
+Sbjct  98   IFVKNVKEDGPAHRAGLRTGDRLVKVNGES  127
+
+
+>sp|Q9JHL1.2|NHRF2_MOUSE RecName: Full=Na(+)/H(+) exchange regulatory cofactor NHE-RF2; 
+Short=NHERF-2; AltName: Full=NHE3 kinase A regulatory protein 
+E3KARP; AltName: Full=Octs2; AltName: Full=SRY-interacting 
+protein 1; Short=SIP-1; AltName: Full=Sodium-hydrogen exchanger 
+regulatory factor 2; AltName: Full=Solute carrier family 
+9 isoform A3 regulatory factor 2; AltName: Full=Tyrosine 
+kinase activator protein 1; Short=TKA-1
+Length=337
+
+ Score = 29.6 bits (65),  Expect = 2.5, Method: Composition-based stats.
+ Identities = 17/49 (35%), Positives = 27/49 (55%), Gaps = 2/49 (4%)
+
+Query  22   YGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRAADAL  70
+            YGF+L S +    +  Y+ SV     AS  GL+A D ++E+N +  + L
+Sbjct  161  YGFNLHSDKSRPGQ--YIRSVDPGSPASHSGLRAQDRLIEVNGQNVEGL  207
+
+
+ Score = 28.5 bits (62),  Expect = 8.2, Method: Composition-based stats.
+ Identities = 15/42 (36%), Positives = 22/42 (52%), Gaps = 2/42 (5%)
+
+Query  22  YGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+           YGF L    E G R  ++  V+    A    L+AGD ++E+N
+Sbjct  21  YGFHLHG--EKGRRGQFIRRVEPGSPAEAAALRAGDRLVEVN  60
+
+
+>sp|Q96L92.2|SNX27_HUMAN RecName: Full=Sorting nexin-27
+Length=541
+
+ Score = 29.6 bits (65),  Expect = 2.6, Method: Composition-based stats.
+ Identities = 28/96 (29%), Positives = 45/96 (47%), Gaps = 16/96 (17%)
+
+Query  10   IHIEKSDTAADTYGFSL-SSVEEDGIRR-----LY-----VNSVKETGLASKKGLKAGDE  58
+            + I KS++    YGF++   V E G  R     LY     V++V   G A + G++ GD 
+Sbjct  44   VRIVKSESG---YGFNVRGQVSEGGQLRSINGELYAPLQHVSAVLPGGAADRAGVRKGDR  100
+
+Query  59   ILEINNRAADALNSSMLKDFL--SQPSLGLLVRTYP  92
+            ILE+N+   +      + D +   +  L L V + P
+Sbjct  101  ILEVNHVNVEGATHKQVVDLIRAGEKELILTVLSVP  136
+
+
+>sp|O95049.2|ZO3_HUMAN RecName: Full=Tight junction protein ZO-3; AltName: Full=Tight 
+junction protein 3; AltName: Full=Zona occludens protein 3; 
+AltName: Full=Zonula occludens protein 3
+Length=933
+
+ Score = 30.0 bits (66),  Expect = 2.6, Method: Compositional matrix adjust.
+ Identities = 17/60 (28%), Positives = 36/60 (60%), Gaps = 10/60 (17%)
+
+Query  5    KVTHSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASK-KGLKAGDEILEIN  63
+            K   S+ +++ D+  + +G  L S       ++++  + ++GLA++ +GL+ GD IL+IN
+Sbjct  191  KPVKSVLVKRRDS--EEFGVKLGS-------QIFIKHITDSGLAARHRGLQEGDLILQIN  241
+
+
+>sp|Q8NI35.3|INADL_HUMAN RecName: Full=InaD-like protein; Short=Inadl protein; Short=hINADL; 
+AltName: Full=Pals1-associated tight junction protein; 
+AltName: Full=Protein associated to tight junctions
+Length=1801
+
+ Score = 30.0 bits (66),  Expect = 2.6, Method: Compositional matrix adjust.
+ Identities = 19/59 (32%), Positives = 31/59 (53%), Gaps = 4/59 (7%)
+
+Query  8     HSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKG-LKAGDEILEINNR  65
+             H I +EK        G SL+  ++     ++V  +   G A+  G ++ GDE+LEINN+
+Sbjct  1238  HIIELEKDKNG---LGLSLAGNKDRSRMSIFVVGINPEGPAAADGRMRIGDELLEINNQ  1293
+
+
+ Score = 29.3 bits (64),  Expect = 3.9, Method: Compositional matrix adjust.
+ Identities = 19/52 (37%), Positives = 30/52 (58%), Gaps = 3/52 (6%)
+
+Query  23    GFSLSSVEEDGIRRLYVNSVKETGLASKKG-LKAGDEILEINNRAADALNSS  73
+             G S+   ++  +  + ++ V E G A++ G L AGD+ILE+N    D  NSS
+Sbjct  1448  GLSIVGGKDTPLNAIVIHEVYEEGAAARDGRLWAGDQILEVN--GVDLRNSS  1497
+
+
+>sp|Q9DBG9.1|TX1B3_MOUSE RecName: Full=Tax1-binding protein 3; AltName: Full=Tax interaction 
+protein 1; Short=TIP-1
+Length=124
+
+ Score = 29.3 bits (64),  Expect = 2.7, Method: Compositional matrix adjust.
+ Identities = 12/27 (44%), Positives = 18/27 (67%), Gaps = 0/27 (0%)
+
+Query  37  LYVNSVKETGLASKKGLKAGDEILEIN  63
+           +YV  V E G A   GL+ GD+I+++N
+Sbjct  55  IYVTRVSEGGPAEIAGLQIGDKIMQVN  81
+
+
+>sp|O14907.2|TX1B3_HUMAN RecName: Full=Tax1-binding protein 3; AltName: Full=Glutaminase-interacting 
+protein 3; AltName: Full=Tax interaction protein 
+1; Short=TIP-1; AltName: Full=Tax-interacting protein 1
+Length=124
+
+ Score = 29.3 bits (64),  Expect = 2.7, Method: Compositional matrix adjust.
+ Identities = 12/27 (44%), Positives = 18/27 (67%), Gaps = 0/27 (0%)
+
+Query  37  LYVNSVKETGLASKKGLKAGDEILEIN  63
+           +YV  V E G A   GL+ GD+I+++N
+Sbjct  55  IYVTRVSEGGPAEIAGLQIGDKIMQVN  81
+
+
+>sp|Q71M21.1|RH21B_XENLA RecName: Full=Rho GTPase-activating protein 21-B; AltName: Full=Rho-type 
+GTPase-activating protein 21-B; AltName: Full=XrGAP
+Length=1902
+
+ Score = 29.6 bits (65),  Expect = 3.1, Method: Compositional matrix adjust.
+ Identities = 12/27 (44%), Positives = 18/27 (67%), Gaps = 0/27 (0%)
+
+Query  37   LYVNSVKETGLASKKGLKAGDEILEIN  63
+            ++V  VKE G A + GL  GD I+++N
+Sbjct  105  IFVKQVKEGGPAHEAGLCTGDRIIKVN  131
+
+
+>sp|Q15599.2|NHRF2_HUMAN RecName: Full=Na(+)/H(+) exchange regulatory cofactor NHE-RF2; 
+Short=NHERF-2; AltName: Full=NHE3 kinase A regulatory protein 
+E3KARP; AltName: Full=SRY-interacting protein 1; Short=SIP-1; 
+AltName: Full=Sodium-hydrogen exchanger regulatory factor 
+2; AltName: Full=Solute carrier family 9 isoform A3 regulatory 
+factor 2; AltName: Full=Tyrosine kinase activator protein 
+1; Short=TKA-1
+Length=337
+
+ Score = 29.6 bits (65),  Expect = 3.3, Method: Composition-based stats.
+ Identities = 16/49 (33%), Positives = 28/49 (57%), Gaps = 2/49 (4%)
+
+Query  22   YGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRAADAL  70
+            YGF+L S +    +  Y+ SV     A++ GL+A D ++E+N +  + L
+Sbjct  161  YGFNLHSDKSRPGQ--YIRSVDPGSPAARSGLRAQDRLIEVNGQNVEGL  207
+
+
+>sp|Q9Z252.1|LIN7B_RAT RecName: Full=Protein lin-7 homolog B; Short=Lin-7B; AltName: 
+Full=Mammalian lin-seven protein 2; Short=MALS-2; AltName: 
+Full=Vertebrate lin-7 homolog 2; Short=Veli-2
+Length=207
+
+ Score = 29.3 bits (64),  Expect = 3.3, Method: Compositional matrix adjust.
+ Identities = 18/61 (30%), Positives = 34/61 (56%), Gaps = 3/61 (5%)
+
+Query  37   LYVNSVKETGLASKKG-LKAGDEILEINNRAADALNSSMLKDFL--SQPSLGLLVRTYPE  93
+            +Y++ V   G+A + G LK GD++L +N  + +  +     + L  +Q S+ L+VR  P 
+Sbjct  117  IYISRVIPGGVADRHGGLKRGDQLLSVNGVSVEGEHHEKAVELLKAAQGSVKLVVRYTPR  176
+
+Query  94   L  94
+            +
+Sbjct  177  V  177
+
+
+>sp|Q91YE8.2|SYNP2_MOUSE RecName: Full=Synaptopodin-2; AltName: Full=Myopodin
+Length=1087
+
+ Score = 29.6 bits (65),  Expect = 3.4, Method: Composition-based stats.
+ Identities = 21/63 (33%), Positives = 32/63 (51%), Gaps = 2/63 (3%)
+
+Query  15  SDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN-NRAADALNSS  73
+           S T    +GF L   +E+  + L V  ++    AS  GL+ GDE++ IN N  AD     
+Sbjct  10  SMTGGAPWGFRLQGGKEEQ-QPLQVAKIRSQSKASGSGLREGDEVVSINGNPCADLTYPE  68
+
+Query  74  MLK  76
+           ++K
+Sbjct  69  VIK  71
+
+
+>sp|A3CP96.1|YBEY_STRSV RecName: Full=Endoribonuclease YbeY
+Length=165
+
+ Score = 29.3 bits (64),  Expect = 3.5, Method: Compositional matrix adjust.
+ Identities = 16/44 (36%), Positives = 22/44 (50%), Gaps = 0/44 (0%)
+
+Query  37  LYVNSVKETGLASKKGLKAGDEILEINNRAADALNSSMLKDFLS  80
+           +Y+  V ETG  S++ LK   EILE   +     N  M   F+S
+Sbjct  1   MYIEMVDETGQVSEEILKQTQEILEFAAQKTGKENKEMAVTFVS  44
+
+
+>sp|O88951.2|LIN7B_MOUSE RecName: Full=Protein lin-7 homolog B; Short=Lin-7B; AltName: 
+Full=Mammalian lin-seven protein 2; Short=MALS-2; AltName: 
+Full=Vertebrate lin-7 homolog 2; Short=Veli-2
+Length=207
+
+ Score = 29.3 bits (64),  Expect = 3.5, Method: Compositional matrix adjust.
+ Identities = 18/61 (30%), Positives = 34/61 (56%), Gaps = 3/61 (5%)
+
+Query  37   LYVNSVKETGLASKKG-LKAGDEILEINNRAADALNSSMLKDFL--SQPSLGLLVRTYPE  93
+            +Y++ V   G+A + G LK GD++L +N  + +  +     + L  +Q S+ L+VR  P 
+Sbjct  117  IYISRVIPGGVADRHGGLKRGDQLLSVNGVSVEGEHHEKAVELLKAAQGSVKLVVRYTPR  176
+
+Query  94   L  94
+            +
+Sbjct  177  V  177
+
+
+>sp|Q8K4V4.2|SNX27_RAT RecName: Full=Sorting nexin-27; AltName: Full=MAP-responsive 
+gene protein; AltName: Full=Methamphetamine-responsive transcript 
+1 protein; AltName: Full=PDZ-protein Mrt1
+Length=539
+
+ Score = 29.3 bits (64),  Expect = 3.6, Method: Composition-based stats.
+ Identities = 28/96 (29%), Positives = 44/96 (46%), Gaps = 16/96 (17%)
+
+Query  10   IHIEKSDTAADTYGFSL-SSVEEDGIRR-----LY-----VNSVKETGLASKKGLKAGDE  58
+            + I KS++    YGF++   V E G  R     LY     V++V   G A + G++ GD 
+Sbjct  42   VRIVKSESG---YGFNVRGQVSEGGQLRSINGELYAPLQHVSAVLPGGAADRAGVRKGDR  98
+
+Query  59   ILEINNRAADALNSSMLKDFL--SQPSLGLLVRTYP  92
+            ILE+N    +      + D +   +  L L V + P
+Sbjct  99   ILEVNGVNVEGATHKQVVDLIRAGEKELILTVLSVP  134
+
+
+>sp|Q3UHD6.2|SNX27_MOUSE RecName: Full=Sorting nexin-27
+Length=539
+
+ Score = 29.3 bits (64),  Expect = 3.6, Method: Composition-based stats.
+ Identities = 28/96 (29%), Positives = 44/96 (46%), Gaps = 16/96 (17%)
+
+Query  10   IHIEKSDTAADTYGFSL-SSVEEDGIRR-----LY-----VNSVKETGLASKKGLKAGDE  58
+            + I KS++    YGF++   V E G  R     LY     V++V   G A + G++ GD 
+Sbjct  42   VRIVKSESG---YGFNVRGQVSEGGQLRSINGELYAPLQHVSAVLPGGAADRAGVRKGDR  98
+
+Query  59   ILEINNRAADALNSSMLKDFL--SQPSLGLLVRTYP  92
+            ILE+N    +      + D +   +  L L V + P
+Sbjct  99   ILEVNGVNVEGATHKQVVDLIRAGEKELILTVLSVP  134
+
+
+>sp|A5PKA5.1|SNX27_BOVIN RecName: Full=Sorting nexin-27
+Length=541
+
+ Score = 29.3 bits (64),  Expect = 3.6, Method: Composition-based stats.
+ Identities = 28/96 (29%), Positives = 44/96 (46%), Gaps = 16/96 (17%)
+
+Query  10   IHIEKSDTAADTYGFSL-SSVEEDGIRR-----LY-----VNSVKETGLASKKGLKAGDE  58
+            + I KS++    YGF++   V E G  R     LY     V++V   G A + G++ GD 
+Sbjct  44   VRIVKSESG---YGFNVRGQVSEGGQLRSINGELYAPLQHVSAVLPGGAADRAGVRKGDR  100
+
+Query  59   ILEINNRAADALNSSMLKDFL--SQPSLGLLVRTYP  92
+            ILE+N    +      + D +   +  L L V + P
+Sbjct  101  ILEVNGVNVEGATHKQVVDLIRAGEKELILTVLSVP  136
+
+
+>sp|Q9SI93.2|MGDG3_ARATH RecName: Full=Monogalactosyldiacylglycerol synthase 3, chloroplastic; 
+Short=AtMGD3; AltName: Full=MGDG synthase type C; Flags: 
+Precursor
+Length=465
+
+ Score = 29.3 bits (64),  Expect = 4.1, Method: Composition-based stats.
+ Identities = 12/52 (23%), Positives = 31/52 (60%), Gaps = 0/52 (0%)
+
+Query  24  FSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRAADALNSSML  75
+           F++S+VE++ I R   +  ++     K+GL+  +E++E+    A+ + + ++
+Sbjct  26  FNISTVEDEYIHRQRSSDYEKESRLRKRGLEDKEEVMEMEQMGAERIKTVLI  77
+
+
+>sp|Q8TEU7.2|RPGF6_HUMAN RecName: Full=Rap guanine nucleotide exchange factor 6; AltName: 
+Full=PDZ domain-containing guanine nucleotide exchange factor 
+2; Short=PDZ-GEF2; AltName: Full=RA-GEF-2
+Length=1601
+
+ Score = 29.3 bits (64),  Expect = 4.1, Method: Compositional matrix adjust.
+ Identities = 16/40 (40%), Positives = 24/40 (60%), Gaps = 1/40 (3%)
+
+Query  24   FSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+            FSL+   E G   ++V  V+    A+  GLK GD+I+E+N
+Sbjct  544  FSLNGGSEKGFG-IFVEGVEPGSKAADSGLKRGDQIMEVN  582
+
+
+>sp|Q9RPP2.2|EEP_ENTFA RecName: Full=Probable protease eep
+Length=422
+
+ Score = 29.3 bits (64),  Expect = 4.2, Method: Composition-based stats.
+ Identities = 15/45 (33%), Positives = 26/45 (58%), Gaps = 3/45 (7%)
+
+Query  24   FSLSSVEEDGIRRLYVNSVKET---GLASKKGLKAGDEILEINNR  65
+            F+L+   + G+  L  N + +    G A++ GLK  D++L INN+
+Sbjct  190  FTLAVFLQGGVTDLNTNQIGQVIPNGPAAEAGLKENDKVLSINNQ  234
+
+
+>sp|Q898V2.1|SYL_CLOTE RecName: Full=Leucine--tRNA ligase; AltName: Full=Leucyl-tRNA 
+synthetase; Short=LeuRS
+Length=812
+
+ Score = 29.3 bits (64),  Expect = 4.3, Method: Composition-based stats.
+ Identities = 25/72 (35%), Positives = 35/72 (49%), Gaps = 9/72 (13%)
+
+Query  8    HSIHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRAA  67
+            H++ IEK     +T  ++     EDGI    +NS +  GL S KG  A  E LE  N   
+Sbjct  352  HNLPIEKVIEGGETLPYT-----EDGI---MINSEEFNGLESSKGRSAVVEKLEKENLGV  403
+
+Query  68   DALNSSMLKDFL  79
+              +N   L+D+L
+Sbjct  404  KKINYR-LRDWL  414
+
+
+>sp|P03301.3|POLG_POL1S RecName: Full=Genome polyprotein; Contains: RecName: Full=Protein 
+VP0; AltName: Full=VP4-VP2; Contains: RecName: Full=Protein 
+VP4; AltName: Full=P1A; AltName: Full=Virion protein 4; 
+Contains: RecName: Full=Protein VP2; AltName: Full=P1B; AltName: 
+Full=Virion protein 2; Contains: RecName: Full=Protein 
+VP3; AltName: Full=P1C; AltName: Full=Virion protein 3; Contains: 
+RecName: Full=Protein VP1; AltName: Full=P1D; AltName: 
+Full=Virion protein 1; Contains: RecName: Full=Picornain 2A; 
+Short=P2A; Short=Protein 2A; Contains: RecName: Full=Protein 
+2B; Short=P2B; Contains: RecName: Full=Protein 2C; Short=P2C; 
+Contains: RecName: Full=Protein 3A; Short=P3A; Contains: 
+RecName: Full=Protein 3B; Short=P3B; AltName: Full=VPg; Contains: 
+RecName: Full=Picornain 3C; AltName: Full=Protease 
+3C; Short=P3C; Contains: RecName: Full=RNA-directed RNA polymerase 
+3D-POL; Short=P3D-POL
+Length=2209
+
+ Score = 29.3 bits (64),  Expect = 4.3, Method: Composition-based stats.
+ Identities = 18/71 (25%), Positives = 34/71 (48%), Gaps = 3/71 (4%)
+
+Query  26    LSSVEEDGIRRLYVNSVKETGLASKKGL--KAGDEILEINNRAADALNSSMLKDFLS-QP  82
+             L + EE+ + +   N ++  G A   G   + GD+I E+ N     +   +LK+ +    
+Sbjct  1020  LYAYEEEAMEQGITNYIESLGAAFGSGFTQQIGDKITELTNMVTSTITEKLLKNLIKIIS  1079
+
+Query  83    SLGLLVRTYPE  93
+             SL ++ R Y +
+Sbjct  1080  SLVIITRNYED  1090
+
+
+>sp|Q9Y6N9.3|USH1C_HUMAN RecName: Full=Harmonin; AltName: Full=Antigen NY-CO-38/NY-CO-37; 
+AltName: Full=Autoimmune enteropathy-related antigen AIE-75; 
+AltName: Full=Protein PDZ-73; AltName: Full=Renal carcinoma 
+antigen NY-REN-3; AltName: Full=Usher syndrome type-1C 
+protein
+Length=552
+
+ Score = 29.3 bits (64),  Expect = 4.6, Method: Compositional matrix adjust.
+ Identities = 16/43 (37%), Positives = 30/43 (70%), Gaps = 5/43 (12%)
+
+Query  23   GFSLSS--VEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+            G S+SS  +++ GI   +++ VK   L+++ GL+ GD+I+E+N
+Sbjct  223  GCSISSGPIQKPGI---FISHVKPGSLSAEVGLEIGDQIVEVN  262
+
+
+>sp|Q920G2.1|NHRF2_RAT RecName: Full=Na(+)/H(+) exchange regulatory cofactor NHE-RF2; 
+Short=NHERF-2; AltName: Full=NHE3 kinase A regulatory protein 
+E3KARP; AltName: Full=SRY-interacting protein 1; Short=SIP-1; 
+AltName: Full=Sodium-hydrogen exchanger regulatory factor 
+2; AltName: Full=Solute carrier family 9 isoform A3 regulatory 
+factor 2; AltName: Full=Tyrosine kinase activator protein 
+1; Short=TKA-1
+Length=337
+
+ Score = 28.9 bits (63),  Expect = 4.8, Method: Composition-based stats.
+ Identities = 17/49 (35%), Positives = 27/49 (55%), Gaps = 2/49 (4%)
+
+Query  22   YGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRAADAL  70
+            YGF+L S +    +  Y+ SV     AS  GL+A D ++E+N +  + L
+Sbjct  161  YGFNLHSDKSRPGQ--YIRSVDPGSPASLSGLRAQDRLIEVNGQNVEGL  207
+
+
+ Score = 28.1 bits (61),  Expect = 8.9, Method: Composition-based stats.
+ Identities = 15/42 (36%), Positives = 22/42 (52%), Gaps = 2/42 (5%)
+
+Query  22  YGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+           YGF L    E G R  ++  V+    A    L+AGD ++E+N
+Sbjct  21  YGFHLHG--EKGRRGQFIRRVEPGSPAEAAALRAGDRLVEVN  60
+
+
+>sp|Q6DFV3.1|RHG21_MOUSE RecName: Full=Rho GTPase-activating protein 21; AltName: Full=Rho 
+GTPase-activating protein 10; AltName: Full=Rho-type GTPase-activating 
+protein 21
+Length=1944
+
+ Score = 29.3 bits (64),  Expect = 4.9, Method: Compositional matrix adjust.
+ Identities = 12/27 (44%), Positives = 18/27 (67%), Gaps = 0/27 (0%)
+
+Query  37   LYVNSVKETGLASKKGLKAGDEILEIN  63
+            ++V  VKE G A + GL  GD I+++N
+Sbjct  107  IFVKQVKEGGPAFEAGLCTGDRIIKVN  133
+
+
+>sp|Q2KIB6.1|LIN7B_BOVIN RecName: Full=Protein lin-7 homolog B; Short=Lin-7B
+Length=201
+
+ Score = 28.9 bits (63),  Expect = 5.1, Method: Compositional matrix adjust.
+ Identities = 18/61 (30%), Positives = 33/61 (54%), Gaps = 3/61 (5%)
+
+Query  37   LYVNSVKETGLASKKG-LKAGDEILEINNRAADALNSSMLKDFL--SQPSLGLLVRTYPE  93
+            +Y++ V   G+A + G LK GD++L +N  + +        + L  +Q S+ L+VR  P 
+Sbjct  117  IYISRVIPGGVADRHGGLKRGDQLLSVNGVSVEGEQHEKAVELLKAAQGSVKLVVRYTPR  176
+
+Query  94   L  94
+            +
+Sbjct  177  V  177
+
+
+>sp|Q3MHQ0.1|USH1C_BOVIN RecName: Full=Harmonin; AltName: Full=Usher syndrome type-1C 
+protein homolog
+Length=551
+
+ Score = 28.9 bits (63),  Expect = 5.1, Method: Composition-based stats.
+ Identities = 16/43 (37%), Positives = 30/43 (70%), Gaps = 5/43 (12%)
+
+Query  23   GFSLSS--VEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+            G S+SS  +++ GI   +++ VK   L+++ GL+ GD+I+E+N
+Sbjct  223  GCSISSGPIQKPGI---FISHVKPGSLSAEVGLETGDQIVEVN  262
+
+
+>sp|Q9HAP6.1|LIN7B_HUMAN RecName: Full=Protein lin-7 homolog B; Short=Lin-7B; Short=hLin7B; 
+AltName: Full=Mammalian lin-seven protein 2; Short=MALS-2; 
+AltName: Full=Vertebrate lin-7 homolog 2; Short=Veli-2; 
+Short=hVeli2
+Length=207
+
+ Score = 28.9 bits (63),  Expect = 5.2, Method: Compositional matrix adjust.
+ Identities = 18/61 (30%), Positives = 33/61 (54%), Gaps = 3/61 (5%)
+
+Query  37   LYVNSVKETGLASKKG-LKAGDEILEINNRAADALNSSMLKDFL--SQPSLGLLVRTYPE  93
+            +Y++ V   G+A + G LK GD++L +N  + +        + L  +Q S+ L+VR  P 
+Sbjct  117  IYISRVIPGGVADRHGGLKRGDQLLSVNGVSVEGEQHEKAVELLKAAQGSVKLVVRYTPR  176
+
+Query  94   L  94
+            +
+Sbjct  177  V  177
+
+
+>sp|Q5HQE2.1|HTRAL_STAEQ RecName: Full=Serine protease HtrA-like
+ sp|Q8CT52.2|HTRAL_STAES RecName: Full=Serine protease HtrA-like
+Length=585
+
+ Score = 28.9 bits (63),  Expect = 5.8, Method: Compositional matrix adjust.
+ Identities = 13/27 (48%), Positives = 18/27 (67%), Gaps = 0/27 (0%)
+
+Query  37   LYVNSVKETGLASKKGLKAGDEILEIN  63
+            + +  VKE GL  K GLK GD I+E++
+Sbjct  517  VLIGEVKENGLGDKAGLKKGDVIVELD  543
+
+
+>sp|Q5T5U3.1|RHG21_HUMAN RecName: Full=Rho GTPase-activating protein 21; AltName: Full=Rho 
+GTPase-activating protein 10; AltName: Full=Rho-type GTPase-activating 
+protein 21
+Length=1957
+
+ Score = 28.9 bits (63),  Expect = 5.8, Method: Compositional matrix adjust.
+ Identities = 12/27 (44%), Positives = 18/27 (67%), Gaps = 0/27 (0%)
+
+Query  37   LYVNSVKETGLASKKGLKAGDEILEIN  63
+            ++V  VKE G A + GL  GD I+++N
+Sbjct  101  IFVKQVKEGGPAFEAGLCTGDRIIKVN  127
+
+
+>sp|A1A5G4.1|MAGI3_XENTR RecName: Full=Membrane-associated guanylate kinase, WW and PDZ 
+domain-containing protein 3; AltName: Full=Membrane-associated 
+guanylate kinase inverted 3; Short=MAGI-3
+Length=1107
+
+ Score = 28.9 bits (63),  Expect = 6.1, Method: Composition-based stats.
+ Identities = 18/53 (34%), Positives = 29/53 (55%), Gaps = 2/53 (4%)
+
+Query  22    YGFSLSSVEEDGIRRLYVNSVKETGLASKKG-LKAGDEILEINNRAADALNSS  73
+             +GFSL   +E  +  L++  + E G A K G +  GD+I+EINN     +  +
+Sbjct  1013  FGFSLRGGKEYNMG-LFILRLAEDGPAIKDGRIHVGDQIVEINNEPTQGITHT  1064
+
+
+>sp|Q9Y3R0.3|GRIP1_HUMAN RecName: Full=Glutamate receptor-interacting protein 1; Short=GRIP-1
+Length=1128
+
+ Score = 28.9 bits (63),  Expect = 6.1, Method: Compositional matrix adjust.
+ Identities = 17/59 (29%), Positives = 34/59 (58%), Gaps = 7/59 (12%)
+
+Query  8     HSIHIEKSDTAADTYGFSLSSVEEDGI--RRLYVNSVKETGLASKKGLKAGDEILEINN  64
+             H + + K D+  + +GFS++    DG+  + +YV +++  G     GLK  D +L++N+
+Sbjct  1003  HKVTLYK-DSDMEDFGFSVA----DGLLEKGVYVKNIRPAGPGDLGGLKPYDRLLQVNH  1056
+
+
+>sp|Q9Z0U1.2|ZO2_MOUSE RecName: Full=Tight junction protein ZO-2; AltName: Full=Tight 
+junction protein 2; AltName: Full=Zona occludens protein 2; 
+AltName: Full=Zonula occludens protein 2
+Length=1167
+
+ Score = 28.9 bits (63),  Expect = 6.1, Method: Compositional matrix adjust.
+ Identities = 15/46 (33%), Positives = 28/46 (61%), Gaps = 3/46 (7%)
+
+Query  20   DTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNR  65
+            D+ G  L+   + GI   +V  ++E   A ++GL+ GD+IL++N +
+Sbjct  499  DSVGLRLAGGNDVGI---FVAGIQEGTSAEQEGLQEGDQILKVNTQ  541
+
+
+>sp|Q9KPV9.1|Y2253_VIBCH RecName: Full=Putative zinc metalloprotease VC_2253
+Length=452
+
+ Score = 28.9 bits (63),  Expect = 6.4, Method: Composition-based stats.
+ Identities = 11/31 (35%), Positives = 19/31 (61%), Gaps = 0/31 (0%)
+
+Query  39   VNSVKETGLASKKGLKAGDEILEINNRAADA  69
+            + +V   G   + GL+ GD +L+IN +A +A
+Sbjct  227  LTNVSAQGAGERAGLQVGDTVLQINGQAVEA  257
+
+
+>sp|Q9UDY2.2|ZO2_HUMAN RecName: Full=Tight junction protein ZO-2; AltName: Full=Tight 
+junction protein 2; AltName: Full=Zona occludens protein 2; 
+AltName: Full=Zonula occludens protein 2
+Length=1190
+
+ Score = 28.9 bits (63),  Expect = 6.4, Method: Compositional matrix adjust.
+ Identities = 15/46 (33%), Positives = 28/46 (61%), Gaps = 3/46 (7%)
+
+Query  20   DTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNR  65
+            D+ G  L+   + GI   +V  ++E   A ++GL+ GD+IL++N +
+Sbjct  519  DSVGLRLAGGNDVGI---FVAGIQEGTSAEQEGLQEGDQILKVNTQ  561
+
+
+>sp|Q95168.1|ZO2_CANFA RecName: Full=Tight junction protein ZO-2; AltName: Full=Tight 
+junction protein 2; AltName: Full=Zona occludens protein 2; 
+AltName: Full=Zonula occludens protein 2
+Length=1174
+
+ Score = 28.9 bits (63),  Expect = 6.6, Method: Compositional matrix adjust.
+ Identities = 15/46 (33%), Positives = 28/46 (61%), Gaps = 3/46 (7%)
+
+Query  20   DTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNR  65
+            D+ G  L+   + GI   +V  ++E   A ++GL+ GD+IL++N +
+Sbjct  503  DSVGLRLAGGNDVGI---FVAGIQEGTSAEQEGLQEGDQILKVNTQ  545
+
+
+>sp|Q4R6G4.1|NHRF1_MACFA RecName: Full=Na(+)/H(+) exchange regulatory cofactor NHE-RF1; 
+Short=NHERF-1; AltName: Full=Ezrin-radixin-moesin-binding 
+phosphoprotein 50; Short=EBP50; AltName: Full=Regulatory cofactor 
+of Na(+)/H(+) exchanger; AltName: Full=Sodium-hydrogen 
+exchanger regulatory factor 1; AltName: Full=Solute carrier 
+family 9 isoform A3 regulatory factor 1
+Length=358
+
+ Score = 28.5 bits (62),  Expect = 6.8, Method: Compositional matrix adjust.
+ Identities = 17/42 (40%), Positives = 22/42 (52%), Gaps = 2/42 (5%)
+
+Query  22  YGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+           YGF L    E G    Y+  V+    A K GL AGD ++E+N
+Sbjct  24  YGFHLHG--EKGKLGQYIRLVEPGSPAEKAGLLAGDRLVEVN  63
+
+
+>sp|Q3SZK8.1|NHRF1_BOVIN RecName: Full=Na(+)/H(+) exchange regulatory cofactor NHE-RF1; 
+Short=NHERF-1; AltName: Full=Ezrin-radixin-moesin-binding 
+phosphoprotein 50; Short=EBP50; AltName: Full=Regulatory cofactor 
+of Na(+)/H(+) exchanger; AltName: Full=Sodium-hydrogen 
+exchanger regulatory factor 1; AltName: Full=Solute carrier 
+family 9 isoform A3 regulatory factor 1
+Length=368
+
+ Score = 28.5 bits (62),  Expect = 6.9, Method: Composition-based stats.
+ Identities = 24/67 (36%), Positives = 29/67 (43%), Gaps = 15/67 (22%)
+
+Query  22  YGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN-------------NRAAD  68
+           YGF L    E G    Y+  V+    A K GL AGD ++E+N             NR   
+Sbjct  24  YGFHLHG--EKGKVGQYIRLVEPGSPAEKSGLLAGDRLVEVNGENVEKETHQQVVNRIRA  81
+
+Query  69  ALNSSML  75
+           ALNS  L
+Sbjct  82  ALNSVRL  88
+
+
+>sp|Q6P0Q8.2|MAST2_HUMAN RecName: Full=Microtubule-associated serine/threonine-protein 
+kinase 2
+Length=1798
+
+ Score = 28.5 bits (62),  Expect = 7.3, Method: Compositional matrix adjust.
+ Identities = 23/81 (28%), Positives = 35/81 (43%), Gaps = 21/81 (26%)
+
+Query  2     AMGKVTHSIHIEKSDTAADTYGFSLSSVEEDGIRRLY------------VNSVKETGLAS  49
+             A+G +   I I +   A   YGF+L ++      R+Y            V  V++ G AS
+Sbjct  1097  ALGSMRPPIIIHR---AGKKYGFTLRAI------RVYMGDSDVYTVHHMVWHVEDGGPAS  1147
+
+Query  50    KKGLKAGDEILEINNRAADAL  70
+             + GL+ GD I  +N      L
+Sbjct  1148  EAGLRQGDLITHVNGEPVHGL  1168
+
+
+>sp|Q8SQG9.1|NHRF2_RABIT RecName: Full=Na(+)/H(+) exchange regulatory cofactor NHE-RF2; 
+AltName: Full=PDZ domain-containing protein NHERF-2; AltName: 
+Full=Sodium-hydrogen exchanger regulatory factor 2; AltName: 
+Full=Solute carrier family 9 isoform A3 regulatory factor 
+2
+Length=316
+
+ Score = 28.5 bits (62),  Expect = 7.6, Method: Composition-based stats.
+ Identities = 15/42 (36%), Positives = 22/42 (52%), Gaps = 2/42 (5%)
+
+Query  22  YGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEIN  63
+           YGF L    E G R  ++  V+    A    L+AGD ++E+N
+Sbjct  21  YGFHLHG--EKGRRGQFIRRVEPGSPAEAAALRAGDRLVEVN  60
+
+
+>sp|Q9QXN0.2|SHRM3_MOUSE RecName: Full=Protein Shroom3
+Length=1986
+
+ Score = 28.5 bits (62),  Expect = 7.7, Method: Composition-based stats.
+ Identities = 19/59 (32%), Positives = 31/59 (53%), Gaps = 3/59 (5%)
+
+Query  10  IHIEKSDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASK--KGLKAGDEILEINNRA  66
+           +++E        +GF+L    E G   L ++ ++E G A     GL+AGDE++ IN  A
+Sbjct  25  VYLEALLEGGAPWGFTLKGGLERG-EPLIISKIEEGGKADSVSSGLQAGDEVIHINEVA  82
+
+
+>sp|Q9SGP2.1|HSL1_ARATH RecName: Full=Receptor-like protein kinase HSL1; AltName: Full=Protein 
+HAESA-LIKE1; Flags: Precursor
+Length=996
+
+ Score = 28.5 bits (62),  Expect = 8.3, Method: Compositional matrix adjust.
+ Identities = 18/47 (38%), Positives = 25/47 (53%), Gaps = 3/47 (6%)
+
+Query  18   AADTYGFSLSSVEEDGIRRLYVNSVKETG-LASKKGLKAG--DEILE  61
+            +   Y   L++ E   ++RL+  SVKETG    +KG K G  DE  E
+Sbjct  687  SGKVYKVVLTNGETVAVKRLWTGSVKETGDCDPEKGYKPGVQDEAFE  733
+
+
+>sp|Q69ZH9.2|RHG23_MOUSE RecName: Full=Rho GTPase-activating protein 23; AltName: Full=Rho-type 
+GTPase-activating protein 23
+Length=1483
+
+ Score = 28.5 bits (62),  Expect = 8.6, Method: Composition-based stats.
+ Identities = 10/30 (33%), Positives = 21/30 (70%), Gaps = 0/30 (0%)
+
+Query  37   LYVNSVKETGLASKKGLKAGDEILEINNRA  66
+            ++V +VK+ G A + GL+ GD ++++N  +
+Sbjct  98   IFVKNVKDGGPAHRAGLRTGDRLVKVNGES  127
+
+
+>sp|Q4UN76.1|YIDC_RICFE RecName: Full=Membrane protein insertase YidC; AltName: Full=Foldase 
+YidC; AltName: Full=Membrane integrase YidC; AltName: 
+Full=Membrane protein YidC
+Length=560
+
+ Score = 28.5 bits (62),  Expect = 8.9, Method: Composition-based stats.
+ Identities = 14/32 (44%), Positives = 20/32 (63%), Gaps = 0/32 (0%)
+
+Query  30  EEDGIRRLYVNSVKETGLASKKGLKAGDEILE  61
+           EE G++R+ + S   TG  S KGL+  D IL+
+Sbjct  65  EESGVQRIKIESESLTGSISLKGLRFDDLILK  96
+
+
+>sp|P44947.1|DEGS_HAEIN RecName: Full=Serine endoprotease DegS; Flags: Precursor
+Length=340
+
+ Score = 28.1 bits (61),  Expect = 9.1, Method: Compositional matrix adjust.
+ Identities = 15/40 (38%), Positives = 24/40 (60%), Gaps = 3/40 (8%)
+
+Query  26   LSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNR  65
+            +SS  E+GI    +  V     A+K G++ GD IL++NN+
+Sbjct  260  ISSSSEEGI---VITDVSPNSPAAKSGIQVGDVILKLNNQ  296
+
+
+>sp|P54925.2|DEGPL_BARHE RecName: Full=Probable periplasmic serine endoprotease DegP-like; 
+AltName: Full=Antigen HtrA; AltName: Full=Protease Do; 
+Flags: Precursor
+Length=503
+
+ Score = 28.1 bits (61),  Expect = 9.6, Method: Compositional matrix adjust.
+ Identities = 17/52 (33%), Positives = 29/52 (56%), Gaps = 2/52 (4%)
+
+Query  15   SDTAADTYGFSLSSVEEDGIRRLYVNSVKETGLASKKGLKAGDEILEINNRA  66
+            SD   + YG  ++   +DG+  L V  V     A+ KG++ GD I+ +NN++
+Sbjct  412  SDETLEDYGLIVAP-SDDGVG-LVVTDVDPDSDAADKGIRPGDVIVTVNNKS  461
+
+
+
+Lambda      K        H        a         alpha
+   0.311    0.130    0.345    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 4238505000
+
+
+  Database: Non-redundant UniProtKB/SwissProt sequences
+    Posted date:  Dec 13, 2013  8:13 AM
+  Number of letters in database: 170,518,380
+  Number of sequences in database:  456,795
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 11
+Window for multiple hits: 40
