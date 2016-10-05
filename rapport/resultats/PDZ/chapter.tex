@@ -98,9 +98,9 @@ Pour avoir une composition naturelle en acide aminé de nos protéines,nous sél
         Code PDB & résidus & nombre de positions actives\\
         \cmidrule{1-3}
         1G9O  & 	9-99	 & 	76	 \\
-        1IHJ  & 	13-105	 & 	82	 \\
-        1N7E  & 	668-761	 & 	79	 \\
-        1R6J  & 	193-273	 & 	72	 \\
+        1IHJ  & 	12-105	 & 	82	 \\
+        1N7E  & 	667-761	 & 	79	 \\
+        1R6J  & 	192-273	 & 	72	 \\
         2BYG  & 	186-282	 & 	82	 \\
         3K82  & 	305-402	 & 	80	 \\
         Cask  & 	487-568	 & 	74	 \\
@@ -626,26 +626,26 @@ Notons $C_x$ cette correction à l'énergie initiale $E_X^{ini}$ pour le résidu
         Type d'acides aminés & Pos. Enf. & Pos Exp. \\
         \cmidrule{1-3}
 
-        ALA &  -0.028  &  4.119     \\
-        ARG &  -28.317 &  -24.782   \\
-        ASN &  -5.966  &  -1.882    \\
-        ASP &  -9.217  &  -5.676    \\
-        CYS &  -1.068  &  3.079     \\
-        GLN &  -4.745  &  -0.661    \\
-        GLU &  -7.932  &  -4.390    \\
-        HID &  11.930  &  16.507    \\
-        HIE &  11.395  &  15.972    \\
-        HIP &  14.499  &  19.075    \\
-        ILE &  4.688   &  6.225     \\
-        LEU &  1.141   &  2.679     \\
-        LYS &  -4.593  &  -0.349    \\
-        MET &  -2.811  &  0.583     \\
-        PHE &  -0.402  &  1.571     \\
-        SER &  -3.757  &  1.321     \\
-        THR &  -3.852  &  0.295     \\
-        TRP &  -1.642  &  0.331     \\
-        TYR &  -4.226  &  -1.979    \\
-        VAL &  0.807   &  2.345     \\
+        ALA & 0.00     &  0.00     \\
+        ARG & -28.29   &  -28.90   \\
+        ASN & -5.94    &  -6.00    \\
+        ASP & -9.19    &  -9.80    \\
+        CYS & -1.04    &  -1.04    \\
+        GLN & -4.72    &  -4.78    \\
+        GLU & -7.90    &  -8.51    \\
+        HID & 11.96    &  12.39    \\
+        HIE & 11.43    &  11.85    \\
+        HIP & 14.53    &  14.96    \\
+        ILE & 4.72     &  2.11     \\
+        LEU & 1.17     &  -1.44    \\
+        LYS & -4.56    &  -4.47    \\
+        MET & -2.78    &  -3.54    \\
+        PHE & -0.37    &  -2.55    \\
+        SER & -3.73    &  -2.80    \\
+        THR & -3.82    &  -3.82    \\
+        TRP & -1.61    &  -3.79    \\
+        TYR & -4.20    &  -6.10    \\
+        VAL & 0.83     &  -1.77    \\
 
         \bottomrule
 
@@ -656,7 +656,6 @@ Notons $C_x$ cette correction à l'énergie initiale $E_X^{ini}$ pour le résidu
     \end{table}
 
     \clearpage
-
 
    \begin{figure}[t]
      \centering
@@ -707,7 +706,7 @@ Notons $C_x$ cette correction à l'énergie initiale $E_X^{ini}$ pour le résidu
     \bottomrule        
   \end{tabular}   
   \caption{Résultats Superfamily pour les séquences Proteus avec le nouveau test Monte Carlo et énergies de références optimisées sur l'ensemble réduit à six protéines}   
-  \label{tab:superfamily_Old_MCtest}       
+  \label{tab:superfamily}       
 \end{table}
 
 
@@ -826,8 +825,6 @@ RP559&.&V&R&L&E&K&.&.&.&N&G&Q&G&L&G&I&K&.&V&T&.&.&T&V&E&G&F&A&.&.&.&/&/&.&.&.&N&
 \end{landscape}
 
 
-
-
     \clearpage
 
    \begin{figure}[t]
@@ -840,24 +837,36 @@ RP559&.&V&R&L&E&K&.&.&.&N&G&Q&G&L&G&I&K&.&V&T&.&.&T&V&E&G&F&A&.&.&.&/&/&.&.&.&N&
    \end{figure}
 
     \clearpage
+
+   \begin{figure}[t]
+ \raggedleft{}
+     \begin{tabular}{c}
+       \includegraphics[width=18cm]{natives_alignees.png} \\
+     \end{tabular}
+     \caption{l'aligenement des séquences natives;le cœur PDZ sélectionné est en jaune.}
+\label{graph:corePDZ}
+   \end{figure}
+
+
+    \clearpage
     \thispagestyle{empty}
    \begin{figure}[t]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=8.2cm]{optGrad0/RP55/1G9O_core_simil.png} &
-       \includegraphics[width=8.2cm]{optGrad0/RP55/1IHJ_core_simil.png} \\
-       \includegraphics[width=8.2cm]{optGrad0/RP55/1N7E_core_simil.png} &
-       \includegraphics[width=8.2cm]{optGrad0/RP55/1R6J_core_simil.png} \\
-       \includegraphics[width=8.2cm]{optGrad0/RP55/2BYG_core_simil.png} &
-       \includegraphics[width=8.2cm]{optGrad0/RP55/3K82_core_simil.png} \\
-       \includegraphics[width=8.2cm]{optGrad0/RP55/TIAM1_core_simil.png} &
-       \includegraphics[width=8.2cm]{optGrad0/RP55/CASK_core_simil.png} \\ 
+       \includegraphics[width=8.4cm]{optGrad0/RP55/1G9O_core_simil.png} &
+       \includegraphics[width=8.4cm]{optGrad0/RP55/1IHJ_core_simil.png} \\
+       \includegraphics[width=8.4cm]{optGrad0/RP55/1N7E_core_simil.png} &
+       \includegraphics[width=8.4cm]{optGrad0/RP55/1R6J_core_simil.png} \\
+       \includegraphics[width=8.4cm]{optGrad0/RP55/2BYG_core_simil.png} &
+       \includegraphics[width=8.4cm]{optGrad0/RP55/3K82_core_simil.png} \\
+       \includegraphics[width=8.4cm]{optGrad0/RP55/TIAM1_core_simil.png} &
+       \includegraphics[width=8.4cm]{optGrad0/RP55/CASK_core_simil.png} \\ 
 
      \end{tabular}
-     \caption{Similarité des séquences Proteus(Enegie de référence sur 6 protéines) et Rosetta à l'alignement Pfam RP55, aux positions du cœur.}
+
 \label{graph:Simil_Proteus_PDZ}
    \end{figure}
-
+%%     \caption{Similarité des séquences Proteus(Enegie de référence sur 6 protéines) et Rosetta à l'alignement Pfam RP55, aux positions du cœur.}
     \clearpage
 
     \begin{table}[!htbp]
@@ -963,8 +972,6 @@ RP559&.&V&R&L&E&K&.&.&.&N&G&Q&G&L&G&I&K&.&V&T&.&.&T&V&E&G&F&A&.&.&.&/&/&.&.&.&N&
       \caption{Pourcentage d'identité moyen à la séquence native (sans GLY ni PRO)}
 \label{tab:Entropie_PDZ}      
     \end{table}
-
-
 
 
 

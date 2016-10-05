@@ -1,0 +1,75 @@
+
+    \begin{table}[!htbp]
+      \centering
+
+      \begin{tabular}{ccc}
+
+        \toprule
+        Code PDB & résidus & nombre de positions actives\\
+        \cmidrule{1-3}
+        1G9O  & 	9-99	 & 	76	 \\
+        1IHJ  & 	12-105	 & 	82	 \\
+        1N7E  & 	667-761	 & 	79	 \\
+        1R6J  & 	192-273	 & 	72	 \\
+        2BYG  & 	186-282	 & 	82	 \\
+        3K82  & 	305-402	 & 	80	 \\
+        Cask  & 	487-568	 & 	74	 \\
+        Tiam1 & 	838-930	 & 	84	 \\
+        \bottomrule
+
+      \end{tabular}      
+      \caption{Les protéines PDZ}
+\label{tab:protéines_PDZ}      
+    \end{table}
+
+
+\begin{table}[h]
+  
+  \begin{tabular}{cccccc}
+    
+    \toprule
+    Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+            & size      & Evalue      & success     & Evalue & success\\
+    \cmidrule{1-6}
+    1G9O  & 78/91 & 2.5e-3  & 10000 & 3.0e-3 & 10000 \\
+    1IHJ  & 86/94 & 5.6e-7  & 10000 & 2.3e-3 & 10000 \\
+    1N7E  & 81/95 & 1.1e-6  & 10000 & 2.4e-3 & 10000 \\
+    1R6J  & 41/82 & 1.5     &  1350 & 2.6e-2 &  1350 \\
+    2BYG  & 77/97 & 1.0e-2  & 10000 & 2.3e-3 & 10000 \\
+    3K82  & 79/97 & 5.8e-10 & 10000 & 3.6e-3 & 10000 \\
+    \cmidrule{1-6}
+    TIAM1 & 43/94 & 1.28    & 442   & 4.0e-2 & 374 \\
+    CASK  & 72/83 & 2.3e-4  & 10000 & 1.5e-2 & 10000 \\
+    \cmidrule{1-6}
+    TIAM1 modelB & 64/94 & 1.2e-4  & 9920   & 5.19e-2 & 9058 \\
+    CASK  modelB & 71/83 & 3.2e-7  & 10000 & 8.2e-3 & 10000 \\
+    \bottomrule        
+  \end{tabular}   
+  \caption{Résultats Superfamily pour les séquences Proteus (énergies de références optimisées sur l'ensemble réduit à six protéines)}   
+  \label{tab:superfamily}       
+\end{table}
+
+\begin{table}[h]
+
+  \begin{tabular}{cccccc}
+    
+    \toprule
+    Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+            & size      & Evalue      & success     & Evalue & success\\
+    \cmidrule{1-6}
+    1G9O  & 79/91   &    1.3e-13 & 10000 & 2.2e-3 & 10000 \\
+    1IHJ  & 85/94   &    7.4e-14 & 10000 & 3.7e-3 & 10000 \\
+    1N7E  & 84/95   &    2.2e-10 & 10000 & 1.2e-3 & 10000 \\
+    1R6J  & 76/82   &    7.3e-13 & 10000 & 1.8e-3 & 10000 \\
+    2BYG  & 86/97   &    1.3e-9  & 10000 & 9.6e-4 & 10000 \\
+    3K82  & 90/97   &    3.7e-23 & 10000 & 5.2e-4 & 10000 \\
+    TIAM1 & 65/94   &    4.4e-4  & 9035  & 2.8e-2 & 9030  \\
+    CASK  & 68/83   &    2.8e-5  & 9832  & 7.5e-3 & 9832 \\
+    \bottomrule        
+  \end{tabular}   
+  \caption{Résultats Superfamily pour les séquences Rosetta}   
+  \label{tab:superfamily_bestRE}       
+\end{table}
+
+
+ 
