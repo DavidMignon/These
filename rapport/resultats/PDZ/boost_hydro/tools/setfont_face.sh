@@ -5,7 +5,6 @@
 
 
 FILE=$1
-COLOR=$2
-BGCOLOR=$3
 
-perl -pe "s/<td>(I|L|M|V|A|W|F|Y)<\/TD>/<td BGCOLOR=\"$BGCOLOR\"><FONT FACE=\"courier new\" COLOR=\"$COLOR\">\$1<\/FONT><\/TD>/g" $FILE
+
+perl -pe "s/<td>(\w)<\/TD>/<td><FONT FACE=\"courier new\">\$1<\/FONT><\/TD>/g" $FILE

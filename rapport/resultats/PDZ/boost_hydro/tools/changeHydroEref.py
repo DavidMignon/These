@@ -5,7 +5,7 @@ import re
 import math
 
 
-dicHydro = {'LEU':0, 'ALA':0, 'PHE':0, 'THR':0, 'VAL':0, 'MET':0, 'PRO':0, 'ILE':0, 'CYS':0, 'GLY':0}
+dicHydro = {'LEU':0, 'ALA':0, 'PHE':0, 'VAL':0, 'MET':0, 'TRP':0,'ILE':0, 'TYR':0}
 
 filin = open(sys.argv[1], 'r')
 lines = filin.readlines()
