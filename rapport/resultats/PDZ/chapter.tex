@@ -66,6 +66,39 @@ Pour caractériser les homologies dans cet ensemble, une série de requête blas
     \end{table}
     \clearpage
 
+
+
+\paragraph{similarité des homologues}
+
+\clearpage
+    \begin{table}[!htbp]
+        \raggedleft{}
+\scalebox{0.75}{
+      \begin{tabular}{ccccccccc}
+
+        \toprule
+        Protein & 1G9O        & 1IHJ      & 1N7E        & 1R6J        & 2BYG       & 3K82       & CASK       & TIAM1 \\
+        \cmidrule{1-9}
+
+        1G9O    & 326 &  64 &  15 &  15 &  59 & 112 & 49  &   1  \\     
+        1IHJ    &  64 & 221 &  56 &  -9 &  88 & 107 & 25  &   9  \\
+        1N7E    &  15 &  56 & 378 &  24 &  65 &  87 & 90  &  39  \\
+        1R6J    &  15 & -10 &  24 & 311 & -26 &  22 & 42  & -18  \\
+        2BYG    &  59 &  88 &  65 & -26 & 325 & 110 & 24  &  22  \\
+        3K82    & 112 & 107 &  87 &  22 & 110 & 325 & 66  &  21  \\
+        Cask    &  49 &  25 &  90 &  42 &  23 &  66 & 308 & 37   \\
+        Tiam1   &  1  &  10 &  39 & -18 &  22 &  21 & 37  & 371 \\
+        \bottomrule
+
+
+      \end{tabular} 
+}     
+      \caption{Similarité des séquences expérimentales homologues, pour les 8 protéines PDZ.}
+\label{tab:XSIMIL}      
+    \end{table}
+    \clearpage
+
+
 \subsection{Description}
 
 \subsection{Requêtes Blast croisées}
@@ -140,44 +173,16 @@ On coupe le début et/ou la fin (10-20 \%)
       \begin{tabular}{cccc}
 
         \toprule
-        protéines & seq NB & E value seuil & \% identité \\
-        \cmidrule{1-4}
-     1G9O  & 62  &    1e-32  &  95-67 \\
-     1IHJ  & 42  &    1e-10  &  95-38 \\
-     1N7E  & 48  &    1e-45  &  95-84 \\
-     1R6J  & 85  &    1e-43  &  95-85 \\
-     2BYG  & 43  &    1e-41  &  95-78 \\
-     3K82  & 50  &    1e-46  &  95-81 \\
-     Cask  & 126 &    ?      &  85-60 \\
-     Tiam1 & 50  &    ?      &  85-60 \\
-
-        \bottomrule
-
-      \end{tabular}      
-      \caption{Sélection des homologues.}
-\label{tab:select_homo}      
-    \end{table}
-
-
-    \clearpage
-
-
-    \begin{table}[!htbp]
-      \centering
-
-      \begin{tabular}{cccc}
-
-        \toprule
         protéines & \% identité \\
         \cmidrule{1-4}
-     1G9O  & 62  &    1e-32  &  95-67 \\
-     1IHJ  & 42  &    1e-10  &  95-38 \\
-     1N7E  & 48  &    1e-45  &  95-84 \\
-     1R6J  & 85  &    1e-43  &  95-85 \\
-     2BYG  & 43  &    1e-41  &  95-78 \\
-     3K82  & 50  &    1e-46  &  95-81 \\
-     Cask  & 126 &    ?      &  85-60 \\
-     Tiam1 & 50  &    ?      &  85-60 \\
+     1G9O  & 62  &    1e-32  &  67-95 \\
+     1IHJ  & 42  &    1e-10  &  38-95 \\
+     1N7E  & 48  &    1e-45  &  84-95 \\
+     1R6J  & 85  &    1e-43  &  85-95 \\
+     2BYG  & 43  &    1e-41  &  78-95 \\
+     3K82  & 50  &    1e-46  &  81-95 \\
+     Cask  & 126 &    7e-28  &  60-85 \\
+     Tiam1 & 50  &    2e-23  &  60-85 \\
 
         \bottomrule
 
@@ -1008,24 +1013,24 @@ RP559&.&V&R&L&E&K&.&.&.&N&G&Q&G&L&G&I&K&.&V&T&.&.&T&V&E&G&F&A&.&.&.&/&/&.&.&.&N&
     \begin{table}[!htbp]
       \centering
 
-      \begin{tabular}{ccc}
+      \begin{tabular}{ccccc}
 
         \toprule
-        Sequences & Proteus & Rosetta \\
-        \cmidrule{1-3}
-        1G9O  & 28  & 43 \\
-        1IHJ  & 26  & 40 \\
-        1N7E  & 33  & 48 \\
-        1R6J  & 26  & 46 \\
-        2BYG  & 28  & 46 \\
-        3K82  & 36  & 52 \\
-        TIAM1 & 18  & 25 \\
-        CASK  & 17  & 28 \\
+        Sequences & Proteus & Rosetta & Proteus (inclus G et P) & Rosetta (inclus G et P)\\
+        \cmidrule{1-5}
+        1G9O  & 28 &  43 & 44 & 59 \\
+        1IHJ  & 26 &  40 & 35 & 49 \\
+        1N7E  & 33 &  48 & 50 & 65 \\
+        1R6J  & 26 &  46 & 38 & 58 \\
+        2BYG  & 28 &  46 & 42 & 61 \\
+        3K82  & 36 &  52 & 54 & 70 \\
+        TIAM1 & 18 &  25 & 28 & 30 \\
+        CASK  & 17 &  28 & 28 &  39 \\
 
         \bottomrule
 
       \end{tabular}      
-      \caption{Pourcentage d'identité moyen à la séquence native (sans GLY ni PRO)}
+      \caption{Pourcentage d'identité moyen à la séquence native}
 \label{tab:Entropie_PDZ}      
     \end{table}
 
@@ -1151,17 +1156,69 @@ RP559&.&V&R&L&E&K&.&.&.&N&G&Q&G&L&G&I&K&.&V&T&.&.&T&V&E&G&F&A&.&.&.&/&/&.&.&.&N&
    \end{figure}
 
     \clearpage
+\begin{landscape}
 
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{boost_hydro/structureTIAM1.png} \\
+       \includegraphics[width=18cm]{boost_hydro/alignTIAM1.png} \\
      \end{tabular}
-%     \caption{S Tiam1 obtenues avec un delta des énergies de références à 0,4.Les hydrophobes pour des deltas de -0.4,-0.2,0,0.2 et 0.4 sont représentés par un dégradé allant du rouge foncé au jaune clair.}
+%     \caption{Séquences Tiam1 obtenues avec un delta des énergies de références à -0.4,-0.2,0,0.2 et 0.4. Les hydrophobes sont représentés par un dégradé allant du rouge foncé au jaune clair.}
 \label{result:PDZ_seed}
    \end{figure}
 
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=9cm]{boost_hydro/structureTIAM1.png} \\
+     \end{tabular}
+
+     \caption{\small Séquences Tiam1 obtenues avec un delta des énergies de références à -0.4,-0.2,0,0.2 et 0.4 et la struture native.Les hydrophobes pour des deltas de -0.4,-0.2,0,0.2 et 0.4 sont représentés par un dégradé allant du rouge foncé au jaune clair.}
+
+\label{result:PDZ_seed}
+   \end{figure}
+
+\end{landscape}
+
     \clearpage
+
+\begin{landscape}
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=14cm]{boost_hydro/align2BYG.png} \\
+     \end{tabular}
+%     \caption{Séquences Tiam1 obtenues avec un delta des énergies de références à -0.4,-0.2,0,0.2 et 0.4. Les hydrophobes sont représentés par un dégradé allant du rouge foncé au jaune clair.}
+\label{result:PDZ_seed}
+   \end{figure}
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=9cm]{boost_hydro/structure2BYG.png} \\
+     \end{tabular}
+
+     \caption{\small Séquences 2BYG.}
+
+\label{result:PDZ_seed}
+   \end{figure}
+
+\end{landscape}
+
+
+   \clearpage
+
+\begin{landscape}
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=20cm]{boost_hydro/alignCASK.png} \\
+     \end{tabular}
+     \caption{Séquences CASK obtenues avec un delta des énergies de références à -0.4,-0.2,0,0.2 et 0.4. Les hydrophobes sont représentés par un dégradé allant du rouge foncé au jaune clair.}
+\label{result:PDZ_seed}
+   \end{figure}
 
 
    \clearpage
@@ -1169,24 +1226,16 @@ RP559&.&V&R&L&E&K&.&.&.&N&G&Q&G&L&G&I&K&.&V&T&.&.&T&V&E&G&F&A&.&.&.&/&/&.&.&.&N&
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{boost_hydro/align2BYG.png} \\
+       \includegraphics[width=20cm]{boost_hydro/align3K82.png} \\
      \end{tabular}
-%     \caption{S Tiam1 obtenues avec un delta des énergies de références à 0,4.Les hydrophobes pour des deltas de -0.4,-0.2,0,0.2 et 0.4 sont représentés par un dégradé allant du rouge foncé au jaune clair.}
+
+     \caption{\small Séquences 3K82 obtenues avec un delta des énergies de références à -0.4,-0.2,0,0.2 et 0.4 .Les hydrophobes pour des deltas de -0.4,-0.2,0,0.2 et 0.4 sont représentés par un dégradé allant du rouge foncé au jaune clair.}
+
 \label{result:PDZ_seed}
    \end{figure}
 
-    \clearpage
+\end{landscape}
 
-   \clearpage
-
-   \begin{figure}[t]
-     \centering
-     \begin{tabular}{c}
-       \includegraphics[width=17cm]{boost_hydro/alignTIAM1.png} \\
-     \end{tabular}
-%     \caption{S Tiam1 obtenues avec un delta des énergies de références à 0,4.Les hydrophobes pour des deltas de -0.4,-0.2,0,0.2 et 0.4 sont représentés par un dégradé allant du rouge foncé au jaune clair.}
-\label{result:PDZ_seed}
-   \end{figure}
 
     \clearpage
 
