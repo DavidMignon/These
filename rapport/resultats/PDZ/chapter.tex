@@ -923,7 +923,7 @@ RP559&.&V&R&L&E&K&.&.&.&N&G&Q&G&L&G&I&K&.&V&T&.&.&T&V&E&G&F&A&.&.&.&/&/&.&.&.&N&
        \includegraphics[width=8.4cm]{optGrad0/RP55/TIAM1_core_simil.png} &
        \includegraphics[width=8.4cm]{optGrad0/RP55/CASK_core_simil.png} \\ 
      \end{tabular}
-    \caption{Similarité des séquences Proteus(Enegie de référence sur 6 protéines) et Rosetta à l'alignement Pfam RP55, aux positions du cœur.}
+%    \caption{Similarité des séquences Proteus(Enegie de référence sur 6 protéines) et Rosetta à l'alignement Pfam RP55, aux positions du cœur.}
 
 \label{graph:Simil_Proteus_PDZ}
    \end{figure}
@@ -1054,6 +1054,8 @@ RP559&.&V&R&L&E&K&.&.&.&N&G&Q&G&L&G&I&K&.&V&T&.&.&T&V&E&G&F&A&.&.&.&/&/&.&.&.&N&
     \cmidrule{1-6}
     CASK  & 72/83 & 2.3e-4  & 10000 & 1.5e-2 & 10000 \\
     TIAM1 & 43/94 & 1.28    & 442   & 4.0e-2 & 374 \\
+    \cmidrule{1-6}
+    1R6J-B & 70/82 & 1.4e-3    & 6664   & 4.0e-3 & 6664 \\
     \bottomrule        
   \end{tabular}   
   \caption{Résultats Superfamily pour les séquences Proteus avec le nouveau test Monte Carlo et énergies de référence optimisées sur l'ensemble réduit à six protéines}   
@@ -1180,6 +1182,29 @@ RP559&.&V&R&L&E&K&.&.&.&N&G&Q&G&L&G&I&K&.&V&T&.&.&T&V&E&G&F&A&.&.&.&/&/&.&.&.&N&
 
 \end{landscape}
 
+
+\clearpage
+\thispagestyle{empty}
+%\setcounter{page}{0}
+\begin{landscape}
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{l}
+       \includegraphics[width=18cm]{boost_hydro/alignTIAM1_V2.png} \\
+       \includegraphics[width=11cm]{boost_hydro/structureTIAM1_V2.png} \\
+     \end{tabular}
+%     \caption{Séquences Tiam1 obtenues avec un delta des énergies de références à -0.4,-0.2,0,0.2 et 0.4. Les hydrophobes sont représentés par un dégradé allant du rouge foncé au jaune clair.}
+\label{result:PDZ_seed}
+   \end{figure}
+%     \caption{\small Séquences Tiam1 obtenues avec un delta des énergies de références à -0.4,-0.2,0,0.2 et 0.4 et la struture native.Les hydrophobes pour des deltas de -0.4,-0.2,0,0.2 et 0.4 sont représentés par un dégradé allant du rouge foncé au jaune clair.}
+
+\label{result:PDZ_seed}
+   \end{figure}
+
+\end{landscape}
+
+
     \clearpage
 
 \begin{landscape}
@@ -1240,7 +1265,62 @@ RP559&.&V&R&L&E&K&.&.&.&N&G&Q&G&L&G&I&K&.&V&T&.&.&T&V&E&G&F&A&.&.&.&/&/&.&.&.&N&
     \clearpage
 
 
+    \clearpage
+    \thispagestyle{empty}
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=12cm]{modelB/1R6J_core_simil.png} \\
+       \includegraphics[width=12cm]{modelB/1R6J_simil.png} \\
+     \end{tabular}
+  \caption{Similarité des séquences 1R6J(modèleB) et Rosetta à l'alignement Pfam RP55,aux positions du cœur (en haut) et sur l'ensemble des positions (en bas).}
+
+\label{graph:Simil_modeB}
+   \end{figure}
+
+
+
+    \clearpage
+    \thispagestyle{empty}
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=8.4cm]{optGrad0/RP55/1G9O_simil.png} &
+       \includegraphics[width=8.4cm]{optGrad0/RP55/1IHJ_simil.png} \\
+       \includegraphics[width=8.4cm]{optGrad0/RP55/1N7E_simil.png} &
+       \includegraphics[width=8.4cm]{optGrad0/RP55/1R6J_simil.png} \\
+       \includegraphics[width=8.4cm]{optGrad0/RP55/2BYG_simil.png} &
+       \includegraphics[width=8.4cm]{optGrad0/RP55/3K82_simil.png} \\
+     \end{tabular}
+       \caption{Similarité des séquences Proteus(modèle A) et Rosetta à l'alignement Pfam RP55 sur l'ensemble des positions.}
+
+\label{graph:Simil_Proteus_PDZ_All}
+   \end{figure}
+   
+
+    \clearpage
+    \thispagestyle{empty}
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc} 
+       \includegraphics[width=8.4cm]{modelB/1R6J_simil_full.png} &
+       \includegraphics[width=8.4cm]{modelB/2BYG_simil_full.png} \\
+       \includegraphics[width=8.4cm]{modelB/1R6J_simil_struct.png} &
+       \includegraphics[width=8.4cm]{modelB/2BYG_simil_struct.png} \\
+       \includegraphics[width=8.4cm]{modelB/1R6J_simil_core.png} &
+       \includegraphics[width=8.4cm]{modelB/2BYG_simil_core.png} \\
+
+     \end{tabular}
+  \caption{Similarité des séquences 1R6J et 2BYG produites par proteus modèle Bet Rosetta à l'alignement Pfam RP55, sur l'ensemble des positions (au haut),aux positions structurées (au milieu) et sur les positions du coeur (en bas).}
+
+\label{graph:Simil_modeB}
+   \end{figure}
+   
+
+ 
+    
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../../rapport"
 %%% End:
+
