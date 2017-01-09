@@ -1239,13 +1239,27 @@ RP559&.&V&R&L&E&K&.&.&.&N&G&Q&G&L&G&I&K&.&V&T&.&.&T&V&E&G&F&A&.&.&.&/&/&.&.&.&N&
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=20cm]{boost_hydro/alignCASK.png} \\
+       \includegraphics[width=20cm]{boost_hydro/alignCASK_V2.png} \\
      \end{tabular}
      \caption{Séquences CASK obtenues avec un delta des énergies de références à -0.4,-0.2,0,0.2 et 0.4. Les hydrophobes sont représentés par un dégradé allant du rouge foncé au jaune clair.}
 \label{result:PDZ_seed}
    \end{figure}
+\end{landscape}
 
+   \clearpage
 
+\begin{landscape}
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=20cm]{boost_hydro/align2BYG_V2.png} \\
+     \end{tabular}
+     \caption{Séquences 2BYG obtenues avec un delta des énergies de références à -0.4,-0.2,0,0.2 et 0.4. Les hydrophobes sont représentés par un dégradé allant du rouge foncé au jaune clair.}
+\label{result:PDZ_seed}
+   \end{figure}
+\end{landscape}
+   
    \clearpage
 
    \begin{figure}[t]
@@ -1285,12 +1299,12 @@ RP559&.&V&R&L&E&K&.&.&.&N&G&Q&G&L&G&I&K&.&V&T&.&.&T&V&E&G&F&A&.&.&.&/&/&.&.&.&N&
    \begin{figure}[t]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=8.4cm]{optGrad0/RP55/1G9O_simil.png} &
-       \includegraphics[width=8.4cm]{optGrad0/RP55/1IHJ_simil.png} \\
-       \includegraphics[width=8.4cm]{optGrad0/RP55/1N7E_simil.png} &
-       \includegraphics[width=8.4cm]{optGrad0/RP55/1R6J_simil.png} \\
-       \includegraphics[width=8.4cm]{optGrad0/RP55/2BYG_simil.png} &
-       \includegraphics[width=8.4cm]{optGrad0/RP55/3K82_simil.png} \\
+       \includegraphics[width=8.4cm]{optGrad0/RP55/1G9O_simil_full.png} &
+       \includegraphics[width=8.4cm]{optGrad0/RP55/1IHJ_simil_full.png} \\
+       \includegraphics[width=8.4cm]{optGrad0/RP55/1N7E_simil_full.png} &
+       \includegraphics[width=8.4cm]{optGrad0/RP55/2BYG_simil_full.png} \\
+       \includegraphics[width=8.4cm]{optGrad0/RP55/1R6J_simil_full.png} &
+       \includegraphics[width=8.4cm]{optGrad0/RP55/3K82_simil_full.png} \\
      \end{tabular}
        \caption{Similarité des séquences Proteus(modèle A) et Rosetta à l'alignement Pfam RP55 sur l'ensemble des positions.}
 
@@ -1311,11 +1325,56 @@ RP559&.&V&R&L&E&K&.&.&.&N&G&Q&G&L&G&I&K&.&V&T&.&.&T&V&E&G&F&A&.&.&.&/&/&.&.&.&N&
        \includegraphics[width=8.4cm]{modelB/2BYG_simil_core.png} \\
 
      \end{tabular}
-  \caption{Similarité des séquences 1R6J et 2BYG produites par proteus modèle Bet Rosetta à l'alignement Pfam RP55, sur l'ensemble des positions (au haut),aux positions structurées (au milieu) et sur les positions du coeur (en bas).}
+  \caption{Similarité des séquences 1R6J et 2BYG produites par proteus modèle B et Rosetta à l'alignement Pfam RP55, sur l'ensemble des positions (au haut),aux positions structurées (au milieu) et sur les positions du coeur (en bas).}
 
 \label{graph:Simil_modeB}
    \end{figure}
+
+    \clearpage
+    \thispagestyle{empty}
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc} 
+       \includegraphics[width=8.4cm]{modelB/1G9O_simil_full.png} &
+       \includegraphics[width=8.4cm]{modelB/1N7E_simil_full.png} \\
+       \includegraphics[width=8.4cm]{modelB/1G9O_simil_core.png} &
+       \includegraphics[width=8.4cm]{modelB/1N7E_simil_core.png} \\
+
+     \end{tabular}
+  \caption{Similarité des séquences 1G9O,1N7E et 3K82 produites par proteus modèle B et Rosetta à l'alignement Pfam RP55, sur l'ensemble des positions (au haut) et sur les positions du coeur (en bas).}
+
+\label{graph:Simil_modeB}
+   \end{figure}
+
+   \clearpage   
+
+
    
+\begin{table}[h]
+  \raggedleft{}
+  
+  \begin{tabular}{cccccc}
+    
+    \toprule
+    Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+            & size      & Evalue      & success     & Evalue & success\\
+    \cmidrule{1-6}
+    1G9O  & 81/91 & 3.3e-13  & 6656  &  4.0e-3 & 6656 \\
+    1IHJ  &  /94 &      &    &   &    \\
+    1N7E  & 74/95 & 1.1e-7  & 3754  &  6.9e-3 & 3754 \\
+    1R6J  & 67/91 & 6.3e-3  & 6664  &  4.0e-3 & 6664 \\
+    2BYG  & 85/97 & 6.0e-9  & 4758  & 5.0e-3  & 4758 \\
+    3K82  & /97 &           &   0    &        &  0   \\
+
+    \bottomrule        
+  \end{tabular}   
+  \caption{Résultats Superfamily pour les séquences Proteus avec le modèle B.}   
+  \label{tab:superfamily}       
+\end{table}
+
+
+
+   proteus.uniq.fasta.result
 
  
     
