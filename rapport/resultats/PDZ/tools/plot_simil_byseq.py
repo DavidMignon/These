@@ -64,7 +64,7 @@ xlim_i=int(xlim_inf)
 xlim_s=int(xlim_sup)
 
 
-fig=plt.figure(figsize=(10,6),dpi=600)
+fig=plt.figure(figsize=(10,6),dpi=150)
 
 canvas = FigureCanvas(fig)
 
@@ -103,15 +103,15 @@ X=np.insert(X,0,newx)
 Y=np.insert(Y,0,0)
 Y=np.append(Y,0)
 
-#pfam_pfam,=ax.plot(X,Y,linewidth=2,linestyle='--',marker='o',color='black')
+pfam_pfam,=ax.plot(X,Y,linewidth=2,linestyle='--',marker='o',color='black')
 
 
-arrow = plt.arrow(native_simil, 5, 0, -0.8,color='black',head_width=0.5, head_length=0.2 ,linewidth=3)
+arrow = plt.arrow(native_simil, 9, 0, -0.8,color='black',head_width=0.8, head_length=0.3 ,linewidth=2)
 
 
-#ax.legend([proteus_pfam,rosetta_pfam,pfam_pfam,arrow], ['Proteus ','Rosetta','Pfam','Native'], handler_map={mpatches.FancyArrow : HandlerPatch(patch_func=make_legend_arrow),},loc=2,fontsize=30)
+ax.legend([proteus_pfam,rosetta_pfam,pfam_pfam,arrow], ['Proteus ','Rosetta','Pfam','Native'], handler_map={mpatches.FancyArrow : HandlerPatch(patch_func=make_legend_arrow),},loc=0,fontsize=25)
 
-#ax.legend([proteus_pfam,rosetta_pfam,arrow], ['Proteus ','Rosetta','Native'], handler_map={mpatches.FancyArrow : HandlerPatch(patch_func=make_legend_arrow),},loc=0,fontsize=20)
+#ax.legend([proteus_pfam,rosetta_pfam], ['Proteus ','Rosetta'], handler_map={mpatches.FancyArrow : HandlerPatch(patch_func=make_legend_arrow),},loc=9,fontsize=21)
 
 plt.title(protein_name,fontsize=30)
 
