@@ -31,10 +31,16 @@ set cartoon_oval_width, 1
 
 stereo on
 
- stereo walleye
-#stereo mode 3
+stereo walleye
 
-#ray 4680,3510
+ray 4685,3510
+
+save modelB2/Tiam1.png
+
+save modelB2/Tiam1.pse
 
 
-ray 4680,3510
+save TIAM1.png
+cmd.select('sele','none')
+cmd.select('sele',"byresi((((sele) or byresi((TIAM1`651))) and not ((byresi((TIAM1`651))) and byresi(sele))))",enable=1)
+
