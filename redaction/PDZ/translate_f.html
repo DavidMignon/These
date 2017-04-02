@@ -1,0 +1,1109 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body><pre>Titre abrégé: conception informatique des domaines PDZ
+
+Abstrait
+PDZ domine les interactions protéines-protéines directes et servent de modèles pour la conception des protéines.
+Ici, nous avons optimisé une fonction d'énergie de conception de protéines pour les domaines PDZ de Tiam1 et Cask qui associe une énergie de mécanique moléculaire, un solvant de Generalized Born et un
+Modèle empirique d'état déplié. Les séquences conçues ont été reconnues comme domaines PDZ
+Par l'outil de reconnaissance du repli de la Super-famille et avait des scores de similarité comparables à ceux de la nature
+Séquences PDZ. Le modèle optimisé a été utilisé pour redéfinir deux domaines PDZ, en modifiant progressivement le potentiel chimique des acides aminés hydrophobes; La tendance de chacun
+Le positionnement à perdre ou l'obtention d'un caractère hydrophobe représente un nouvel indice d'hydrophobicité.
+Nous avons également redessiné quatre positions dans le domaine PDZ de Tiam1 impliqué dans la spécificité de liaison aux peptides. Les différences d'affinité calculées entre les variantes conçues ont été reproduites
+Des données expérimentales et suggèrent des substitutions avec des spécificités altérées.
+Mots-clés: interactions protéine-protéine, modélisation moléculaire, simulation Monte Carlo,
+Logiciel Proteus
+
+1
+
+
+introduction
+
+Les domaines PDZ ("Postynaptic density-95 / Discs large / Zonula occludens-1") sont des domaines protéiques globulaires petits qui établissent des réseaux d'interactions protéine-protéine dans la cellule 1-6.
+Ils forment des interactions spécifiques avec d'autres protéines cibles, généralement en reconnaissant quelques-uns
+Acides aminés à l'extrémité C-terminale cible. En raison de leur importance biologique, les domaines PDZ
+Et leur interaction avec les protéines cibles ont été largement étudiées et conçues par ordinateur. Des ligands peptidiques ont été conçus pour moduler l'activité de
+Domaines PDZ impliqués dans diverses pathologies 7-9. Domaines PDZ d'ingénierie et PDZ
+Les ligands ont été utilisés pour élucider les principes du repliement des protéines et de l'évolution 10-13. Dans
+En outre, ces petits domaines avec leurs ligands peptidiques fournissent des repères pour tester la
+Méthodes de calcul elles-mêmes 14-16.
+Une méthode émergente qui a été appliquée à plusieurs domaines PDZ est un calcul
+Conception de protéines (CPD) 17-22. À partir d'un modèle structurel tridimensionnel (3D), CPD
+Explore un grand espace de séquences d'acides aminés et de conformations pour identifier des variants de protéines qui ont des propriétés prédéfinies, telles que la stabilité ou la liaison de ligand. Conformational
+L'espace est habituellement défini par une bibliothèque discrète ou continue de rotamers de sidechain et par
+Un ensemble fini de conformes de squelette ou un répertoire spécifique de déformations de squelette autorisées. La fonction énergétique qui entraîne la CPD combine habituellement les facteurs physiques et empiriques
+Termes 23 à 25, tandis que le solvant et l'état déplié de la protéine sont décrits implicitement.
+Nous considérons ici une classe simple mais importante de modèles CPD. L'énergie est une
+Fonction basée sur la physique du type "MMGBSA", qui combine une mécanique moléculaire
+Énergie de protéine avec un solvant implicite implanté dans la zone de surface Generalized Born +. Le plié
+La protéine est représentée par une conformation de squelette unique, fixe et une chaîne de référence discrète
+Bibliothèque de rotarramètres. L'énergie de l'état déployé dépend uniquement de la composition de séquence, et non d'une
+Modèle structurel explicite. Les paramètres principaux du modèle réglable sont le diélectrique des protéines
+P constant, un petit ensemble de coefficients d'énergie de surface atomique σi et une collection d'amino
+Potentiels chimiques acides ou "énergies de référence" Etr. Chaque coefficient de surface mesure le
+Préférence d'un type d'atome particulier pour être exposée au solvant, alors que chaque énergie de référence
+Représente la contribution d'un seul acide aminé de type t à l'énergie d'état dépliée.
+Le modèle est implémenté dans le logiciel Proteus 26-28.
+La fonction énergétique actuelle basée sur la physique peut être comparée à celle d'autres empiriques,
+2
+
+Dont le plus réussi est la fonction énergie Rosetta 29-31. La fonction Rosetta
+Comprend un terme de répulsion de Lennard-Jones, un terme Coulomb, un terme de liaison hydrogène,
+Un terme de solvatation Lazaridis-Karplus 32 et des énergies de référence d'état dépliées. Il a un
+Un grand nombre de paramètres spécifiquement optimisés pour CPD, qui offrent des performances optimales, mais moins transférables et une interprétation physique moins transparente. Proteus
+Fournit également des fonctionnalités spécifiques telles que Replica Exchange Monte Carlo, diverses
+Les méthodes d'échantillonnage importantes et la capacité de calculer les énergies libres formellement
+Exact 33-35.
+Nous avons optimisé les énergies de référence Etr pour les protéines Tiam1 et Cask PDZ, en utilisant un formalisme de vraisemblance maximale. Nous avons comparé deux valeurs du diélectrique protéique
+Constante, P = 4 et 8. Ces valeurs ont donné de bons résultats dans une étude systématique qui compare les constantes diélectriques dans la gamme 1-32 36. La performance du modèle a été testée
+En générant des séquences conçues pour les deux protéines et en les comparant à des séquences naturelles, ainsi que des séquences générées avec la fonction et le logiciel d'énergie Rosetta 37.
+La conception de la séquence a été effectuée en exécutant de longues simulations Monte Carlo où tous
+Les positions protéiques, sauf Gly et Pro, ont été autorisées à muter librement, ce qui a conduit à des milliers
+Des variantes de protéines conçues. Le test comprenait une validation croisée, où la référence
+Les énergies ont été optimisées en utilisant un ensemble de domaines PDZ, puis appliquées à d'autres. Nous avons aussi
+A effectué 100 à 1000 simulations de dynamique moléculaire à la nanoseconde (MD) pour quelques-uns des
+Des séquences conçues avec notre modèle CPD optimisé, pour aider à évaluer leur stabilité. Dix
+Les séquences étaient stables de plus de 100 ns ou plus et une sur 1000 ns de simulation MD.
+Nous avons ensuite appliqué le modèle CPD avec des paramètres optimisés à deux problèmes, ce qui
+Sont représentatifs des deux domaines principaux qui nous intéressent: explorer la plasticité de
+Espace de séquence pour les domaines PDZ et conception de ligands PDZ forts et spécifiques. Plus tôt
+Les applications dans ces domaines utilisent principalement des fonctions énergétiques empiriques et fondées sur la connaissance
+Comme la fonction Rosetta 9,10,13,14. D'abord, nous avons réalisé une série de simulations Monte Carlo de deux domaines PDZ où le potentiel chimique de l'amino hydrophobe
+Les types d'acide ont progressivement augmenté, polarisant artificiellement la composition de la protéine. Comme le
+Le biais hydrophobe a été augmenté, les acides aminés hydrophobes ont progressivement envahi la protéine
+De l'intérieur, formant un noyau hydrophobe devenu plus grand que le naturel.
+La propension de chaque position du noyau à devenir hydrophobe à un niveau de biais élevé ou faible
+Peut être considéré comme un indice d'hydrophobicité dépendant de la structure, qui fournit des informations
+3
+
+Sur la conception ou la plasticité du noyau protéique. La deuxième application consistait en
+La conception de quatre positions Tiam1 connues pour être impliquées dans la reconnaissance de cible spécifique. Celles-ci
+Quatre positions ont été variées grâce à des simulations de Monte Carlo de l'apo-protéine ou
+La protéine en complexe avec deux ligands peptidiques distincts. Les simulations étaient en accord avec les séquences expérimentales et les affinités de liaison, et suggèrent de nouvelles variantes qui
+Aurait pu modifier les spécificités. Cette application est une étape vers la conception de forts
+Liants peptidiques, qui pourraient être utiles comme réactifs ou inhibiteurs in vitro ou in vivo.
+
+2
+2.1
+
+Le modèle d'état déplié
+Energies de référence à maximum de vraisemblance
+
+La méthode de Monte Carlo utilisée ici génère une chaîne d'états de Markov 38,39, telle que
+Les états sont peuplés selon une distribution de Boltzmann. L'énergie utilisée est
+Pas l'énergie de la protéine pliée, mais plutôt son énergie de pliage, c'est-à-dire la différence entre
+Ses énergies d'état pliées et dépliées 33. Un mouvement élémentaire possible est une "mutation",
+Nous modifions le type sidechain t → t0 à une position choisie i dans la protéine pliée, en assignant
+Un rotamer r0 particulier à la nouvelle chaîne latérale. Nous considérons la même mutation dans
+État déplié. Pour une séquence S particulière, l'énergie d'état dépliée a la forme:
+UE
+
+La somme est sur tous les acides aminés; Ti représente le type sidechain en position i. le
+Les grandeurs dépendantes du type E r (t) ≡ Etr sont appelées "énergies de référence"; ils peuvent être
+Considérés comme des potentiels chimiques efficaces de chaque type d'acide aminé. L'énergie pliante
+Le changement en raison d'une mutation a donc la forme:
+
+
+(2)
+
+Où ΔE f et ΔE u sont les changements d'énergie dans l'état plié et déplié, respectivement.
+Les énergies de référence sont des paramètres essentiels dans le modèle de simulation. Notre objectif ici
+Est de les choisir empiriquement afin que la simulation produise des fréquences d'acides aminés
+Qui correspondent à un ensemble de valeurs cibles, par exemple des valeurs expérimentales dans la base de données Pfam.
+4
+
+Plus précisément, nous les choisirons afin de maximiser la probabilité, ou la probabilité de la
+Séquences cibles.
+Soit S une séquence particulière. Sa probabilité de Boltzmann est
+
+(3)
+
+Où ΔGS = GfS-ESu est l'énergie libre de pliage de S, GfS est l'énergie libre du plié
+Forme, β = 1 / kT est la température inverse et Z est une constante de normalisation (la partition
+fonction). Nous avons alors
+
+
+Où la somme à droite est supérieure aux types d'acides aminés et nS (t) est le nombre d'amino
+Acides du type t dans la séquence S.
+Nous considérons maintenant un ensemble S de N séquences cibles S; On dénote L la probabilité de
+Ensemble entier, qui dépend des paramètres du modèle Etr; On se réfère à L à leur gré 40.
+Nous avons
+
+En vue de maximiser L, on considère la dérivée de Z par rapport à l'un des Etr:
+
+(8)
+
+La quantité à droite est la moyenne de Boltzmann du nombre n (t) des acides aminés
+T sur toutes les séquences possibles. En pratique, c'est la population moyenne de t que nous voudrions
+Obtenir dans une longue simulation MC. Comme d'habitude dans la mécanique statistique 41, la dérivée de
+5
+
+En Z par rapport à une quantité (Etr) est égal à la moyenne d'ensemble du conjugué
+Quantité (βnS (t)).
+Une condition nécessaire pour maximiser ln L est que ses dérivées par rapport à l'Etr
+Devrait tous être zéro. On voit ça
+
+Ainsi, pour maximiser L, nous devrions choisir {Etr} telle qu'une longue simulation donne le même
+L maximum = ⇒
+
+Les fréquences d'acides aminés comme base de données cible.
+
+2.2
+
+Recherche du maximum de vraisemblance
+
+Nous utiliserons deux méthodes pour aborder les valeurs de vraisemblance maximale {Etr}, à partir de
+Une estimation actuelle {Etr (n)}. Avec la première méthode, on franchit le gradient de ln L en utilisant
+La règle de mise à jour 40:
+(11)
+
+Ici, α est une constante; Nexp
+= N (t) / N est la population moyenne d'acide aminé type t dans
+T
+La base de données cible; Hin indique une moyenne sur une simulation effectuée en utilisant le courant
+Énergies de référence {Etr (n)}, et δE est une constante empirique avec la dimension d'une
+Énergie, appelée l'amplitude de mise à jour. Cette procédure de mise à jour est répétée jusqu'à
+convergence. Nous appelons cette méthode comme méthode de mise à jour linéaire.
+La deuxième méthode, utilisée précédemment 26,27, utilise une règle de mise à jour logarithmique:
+
+(12)
+
+Où kT est une énergie thermique, réglée empiriquement à 0,5 kcal / mol (1 cal = 4.184 J). On se réfère à
+Ceci comme méthode de mise à jour logarithmique. Les méthodes de mise à jour linéaires et logarithmiques
+Convergent vers le même optimum, spécifié par (Éq. 10).
+Dans les itérations ultérieures, certaines valeurs Etr ont tendance à converger lentement, avec une oscillation
+comportement. Par conséquent, nous avons parfois utilisé une règle de mise à jour modifiée, où l'Etr (n + 1)
+6
+
+La valeur Etr (n) calculée avec la méthode linéaire ou logarithmique pour l'itération n a été mélangée
+Avec la valeur calculée à l'itération précédente, avec la valeur (n - 1) ayant un poids
+De 1/3 et la valeur actuelle d'un poids de 2/3. À chaque itération, nous avons généralement couru 500
+Millions d'étapes (par réplique) de Replica Exchange Monte Carlo.
+
+3
+3.1
+
+Méthodes de calcul
+Fonction énergétique efficace pour l'état plié
+
+La matrice énergétique a été calculée avec la fonction d'énergie efficace suivante pour
+État plié:
+E = Ebonds + Eangles + Edihe + Eimpr + Evdw + ECoul + Esolv
+
+(13)
+
+Les six premiers termes de l'équation (13) représentent l'énergie interne de la protéine. Ils ont été retirés de
+La fonction d'énergie empirique 42 de Amber ff99SB, légèrement modifiée pour CPD. L'original
+Les charges de squelette ont été remplacées par un ensemble unifié, obtenu en faisant la moyenne sur l'ensemble des acides aminés
+Types et ajuster légèrement pour rendre la partie squelette de chaque acide aminé neutre 43.
+Le dernier terme à droite de l'équation (13), Esolv, représente la contribution du solvant. nous
+A utilisé une "surface de surface + née généralisée", ou un modèle de solvant implicite GBSA 44:
+
+(14)
+Ici, W et P sont les constantes diélectriques des solvants et des protéines; Rij est la distance
+Entre les atomes i, j et bi est le "rayon de solvatation" de l'atome i 44,45. Ai est le solvant exposé
+Surface de surface accessible de l'atome i; Σi est un paramètre qui reflète la préférence de chaque atome
+Être exposé ou caché du solvant. Les atomes de soluté ont été divisés en quatre groupes
+Avec des valeurs σi spécifiques. Les valeurs étaient -5 (non polaires), -40 (aromatiques), -80 (polaire) et
+-100 (ionique) cal / mol / Å2. On a attribué aux atomes d'hydrogène un coefficient de surface de 0. Surface
+Les zones ont été calculées par l'algorithme Lee et Richards 46, implémenté dans le XPLOR
+Programme 47, en utilisant un rayon de sonde de 1,5 Å. Les simulations MC ont utilisé un diélectrique protéique de
+P = 4 ou 8.
+
+7
+
+Dans le terme énergétique GB, le rayon de solvatation atomique bi se rapproche de la distance
+De i à la surface de la protéine et est une fonction des coordonnées de tous les atomes de protéines.
+La forme BI particulière correspond à une variante GB que nous appelons GB / HCT, après son original
+Auteurs 44, avec des paramètres de modèle optimisés pour une utilisation avec le champ de force Amber 45. Depuis
+Bi dépend des coordonnées de tous les atomes de soluté 44, une approximation supplémentaire est
+Nécessaire pour rendre le terme énergétique GB par paire additif et pour définir la matrice énergétique 27,48.
+Nous utilisons une «approximation du milieu autochtone», ou NEA, où le rayon de solvatation bi
+De chaque groupe particulier (squelette, sidechain ou ligand) est calculé à l'avance, avec
+Le reste du système ayant sa séquence native et sa conformation 27,48.
+La contribution de l'énergie de surface Esurf n'est pas non plus un additif pair, car dans un
+La structure protéique, la surface enterrée par une chaîne latérale peut également être enterrée par une autre.
+Pour réaliser cette énergie par deux, nous avons utilisé la méthode de Street et al. 49. Dans cette méthode,
+La surface enterrée d'une chaîne latérale est calculée en additionnant la chaîne latérale voisine
+Et des groupes de backbone. Pour chaque groupe voisin, la zone de contact avec la sidechain de
+L'intérêt est calculé, indépendamment des autres groupes environnants. Les zones de contact sont
+Puis résumée. Pour éviter de surcharger la surface enterrée, un facteur d'échelle est appliqué
+Aux zones de contact impliquant des caisses latérales enterrées. L'étude précédente a montré qu'une mise à l'échelle
+Facteur de 0,65 fonctionne bien 45,48.
+
+3.2
+
+Energies de référence à l'état déplié
+
+Dans le modèle CPD, l'énergie d'état dépliée dépend de la composition de la séquence
+À travers un ensemble d'énergies de référence Etr (Eq. 1). Ici, les énergies de référence ont été attribuées en fonction des types d'acides aminés t, compte tenu également de la position de chaque amino
+Acide dans la structure pliée, à travers son caractère enterré ou exposé au solvant. Ainsi, pour
+Un type donné (Ala, disons), il y avait deux valeurs distinctes de Etr: un enterré et un exposé
+valeur. C'est ainsi même si les énergies de référence sont utilisées pour représenter le déploiement,
+Pas l'état plié. Cette procédure est soutenue par trois hypothèses. Tout d'abord, nous supposons que la structure résiduelle est présente dans l'état déplié, de sorte que les acides aminés conservent en partie
+Leur caractère enterré / exposé. Deuxièmement, nous émettons l'hypothèse que le modèle d'état déplié
+Compense de manière systématique des erreurs dans la fonction d'énergie de l'état plié, de sorte que
+La structure pliée contribue indirectement aux énergies de référence. Troisièmement, cette stratégie
+8
+
+Rend le modèle moins sensible aux variations de la longueur des boucles de surface et à la
+Proportion de résidus de surface contre enterrés, qui peuvent varier considérablement selon les homologues (voir
+au dessous de). Par conséquent, le modèle devrait être plus transférable dans une famille de protéines.
+Distinguer les positions enterrées / exposées double le nombre de paramètres Etr réglables. Inversement, pour réduire le nombre de paramètres réglables, nous groupons des amino
+Acides en classes homologues (données dans Résultats). Dans chaque classe c, et pour chaque type
+De position (enterré ou exposé), les énergies de référence ont la forme
+Etr = Ecr + δEtr
+
+(15)
+
+Ici, Ecr est un paramètre réglable, tandis que δEtr est une constante, calculée comme moléculaire
+Différence d'énergie mécanique entre les types d'acides aminés dans la classe c, en supposant une
+Conformation dépliée où chaque acide aminé interagit uniquement avec lui-même et avec un solvant.
+Plus précisément, nous avons effectué des simulations MC d'un peptide étendu (le peptide Syndecan1; voir
+Ci-dessous) et calculé les énergies moyennes pour chaque type d'acide aminé à chaque position peptidique (à l'exclusion des terminales). Nous avons pris les différences entre les types d'acides aminés et les avons vendues sur les positions peptidiques. Au cours de la maximisation de la probabilité, Ecr est optimisé
+Tandis que δEtr est retenu. Pour optimiser les valeurs Ecr, nous appliquons le linéaire ou logarithmique
+Tandis que les fréquences cibles correspondent aux fréquences expérimentales de la
+Exp
+Classes d'acides aminés, nexp
+C, plutôt que des types individuels (nt, ci-dessus).
+
+3.3
+
+Séquences expérimentales et modèles structurels
+
+Nous considérons les domaines Tiam1 et Cask PDZ, dont les structures cristallines sont connues
+(Codes PDB 4GVD et 1KWA, respectivement). Ils appartiennent tous deux à la liaison de classe II
+Motif 3, qui reconnaît le motif Φ-X-Φ à l'extrémité C-terminale de son ligand peptidique, où
+Φ est un acide aminé hydrophobe. Pour définir les fréquences d'acides aminés cibles pour la probabilité
+Maximisation, nous avons collecté des séquences homologues pour chaque domaine PDZ. Nous avons identifié
+Séquences homologues en utilisant l'outil Blast pour rechercher la base de données Uniprot, avec la
+Séquences extraites du fichier PDB en tant que requête et matrice de notation Blosum62. nous
+Homologues retenus avec une identité de séquence par rapport à la requête, au-dessus d'un seuil de 60%
+Et inférieur à un seuil de 85%. Si deux homologues avaient une identité de séquence mutuelle au-dessus
+95%, l'un des deux a été considéré comme redondant et a été jeté. Cela a conduit à 50 Tiam1
+9
+
+Et 126 séquences homologues de cask. Les deux ensembles d'homologues sont appelés HT et
+HC, respectivement. Pour chacun des ensembles, disons H, nous faisons la moyenne sur tous les homologues et tous
+Positions pour obtenir des fréquences globales d'acides aminés. La moyenne est terminée
+Séparément pour les positions enterrées et exposées. Les fréquences d'acides aminés résultantes sont
+Désigné {ftb (H), fte (H)}, où l'indice t représente un type d'acide aminé et le
+Les exposants b, e se réfèrent respectivement aux positions enterrées et exposées. Enfin, les ensembles de
+Les fréquences moyennes dérivées de HT et HC ont elles-mêmes été en moyenne, ce qui donne l'ensemble
+
+Cibler les fréquences d'acides aminés, ftb = ftb (HT) + ftb (HC) / 2 pour chaque type t et de manière similaire
+Pour les positions exposées. Des fréquences cibles distinctes ont ainsi été obtenues pour enterrer et
+Positions exposées.
+Le paramétrage et le test du modèle ont été principalement effectués pour l'état de l'apo de chaque protéine. Cependant, pour Cask, aucune structure d'arthroplastie d'apo n'était disponible au début de cette
+Travail, donc une structure holo-like a été utilisée, où le site de liaison peptidique est occupé par le
+C-terminus d'un autre domaine PDZ dans le réseau cristallin; L'état de l'apo a ensuite été modélisé
+En éliminant ce peptide. Pour le domaine PDZ de Tiam1, nous avons également utilisé une structure holo
+Puis modélisé l'état apo en enlevant le peptide. Pour ce domaine PDZ, l'écart entre les structures de rayons X apo et holo est de seulement 0,5 Å; Par conséquent, nous
+S'attendre à ce que le modèle CPD soit transférable entre les états apo / holo Tiam1. Pour plus d'informations
+Test, nous avons également considéré deux domaines PDZ classe I, syntenin et DLG2 (deuxième PDZ
+Domaine dans les deux cas), qui reconnaissent le motif S / T-X-Φ au C-terminus de son
+Ligand peptidique. Leurs structures de rayons X sont respectivement 1R6J et 2BYG. Dans ces deux cas
+, Le ligand peptidique n'était pas co-cristallisé, mais le site de liaison peptidique de chaque
+Le domaine PDZ a été partiellement occupé par le C-terminus d'une autre molécule de protéine dans le
+Treillis en cristal. Les structures employées sont listées dans le tableau 1.
+Pour réaliser les calculs de conception de Monte Carlo, les structures ont été préparées et
+Matrices d'énergie calculées à l'aide de procédures décrites précédemment 15,50. Deux segments manquants dans le domaine Tiam1 PDZ (résidus 851-854 et 868-869) ont été construits en utilisant le
+Programme Modeller 51. Le ligand peptidique a été retiré de la structure PDB pour la plupart
+Des calculs de conception avant de calculer la matrice énergétique. Pour chaque paire d'amino
+Les chaînes latérales acides, l'énergie d'interaction a été calculée après 15 étapes de minimisation de l'énergie, avec l'ossature retenue et seulement les interactions de la paire les unes avec les autres
+Et l'épine dorsale comprenait 26. Cette minimisation minimise le rotarymère discret
+dix
+
+approximation. Les rotamers de chaînes latérales ont été décrits par une version légèrement
+Bibliothèque de Tuffery et al 52, qui a un total de 254 rotars (additionnés de tous les acides aminés
+les types). Cette bibliothèque étendue comprend des orientations d'hydrogène supplémentaires pour OH et SH
+Groupes 48. Cette bibliothèque de rotarramètres a été choisie pour sa simplicité et parce qu'elle a donné très bien
+Performance dans les tests de placement latéral, comparables au programme scwrl4 spécialisé
+(Qui utilise une bibliothèque beaucoup plus grande) 53,54.
+
+3.4
+
+Simulations Monte Carlo
+
+La conception de la séquence a été réalisée avec Proteus, qui exécute de longues simulations Monte Carlo (MC) où les positions d'acides aminés sélectionnées peuvent se muter librement. Le choix de la mutation
+Les positions sont définies par l'utilisateur et dépendent du défi de conception spécifique. Quatre différents
+Des choix se sont produits dans le présent travail. Premièrement, pour optimiser les énergies de référence, nous avons fait
+Des simulations où environ la moitié des positions pourraient muter à la fois. Deuxièmement, les modèles optimisés ont été testés dans des simulations où tous les postes sauf Gly et Pro étaient
+Libre de muter. Le titrage hydrophobe de deux domaines PDZ a également utilisé ce choix.
+Troisièmement, pour produire des séquences conçues pour tester à travers la dynamique moléculaire, nous avons fait MC
+Des simulations où Gly, Pro et 11 positions étroitement liées à la liaison des peptides étaient
+Maintenu fixe, tandis que tous les autres postes ont été autorisés à muter. Quatrièmement, dans le deuxième Tiam1
+Application, seules quatre positions dans la protéine pourraient muter. Dans tous ces cas (avec deux
+Exceptions), des mutations se sont produites au hasard, soumises uniquement à la fonction d'énergie de MMGBSA
+Qui entraîne la simulation. Dans seulement deux cas, un terme énergétique supplémentaire "expérimental"
+A été utilisé pour polariser explicitement la simulation pour rester proche des séquences naturelles de Pfam.
+Les simulations de Monte Carlo ont utilisé des mouvements à une ou à deux positions, où les rotamères, les types d'acides aminés ou les deux ont changé. Pour les mouvements à deux positions, la deuxième position
+A été choisi parmi ceux qui avaient une énergie d'interaction significative avec le premier (c'est-à-dire,
+Il y avait au moins une conformation rotamérique où leur énergie d'interaction non signée était
+10 kcal / mol ou plus). De plus, l'échantillonnage a été amélioré par Replica Exchange Monte
+Carlo (REMC), où plusieurs simulations MC ("répliques" ou "marcheurs") ont été exécutées en parallèle, à différentes températures. Des échanges périodiques ont été tentés entre les conformations
+De deux marcheurs i, j (adjacents à la température). Le swap a été accepté avec la probabilité
+
+
+(16)
+
+Où βi, βj sont les températures inverse des deux marcheurs et ΔEi, ΔEj sont les
+Changements dans leurs énergies de pliage en raison du changement de conformation 55,56. Nous avons utilisé huit
+Marcheurs, avec des énergies thermiques kTi qui vont de 0,125 à 3 kcal / mol, espacés dans un
+Progression géométrique: Ti + 1 / Ti = constante 55. Des simulations ont été faites avec le protéus
+Programme (qui fait partie du paquet Proteus) 27. Le REMC a été mis en place avec un
+Efficace, mémoire partagée, parallélisation OpenMP 33.
+Une simulation de Tiam1 et une de Case ont été faites qui comprenaient un "expérimental",
+Polarisant le terme énergétique, qui a pénalisé des séquences qui avaient une faible similitude avec une référence,
+Ensemble expérimental. L'énergie de polarisation avait la forme
+
+Où la somme s'étend sur les positions d'acides aminés i; Ti est le type sidechain en position
+je; S (ti) est le score de similarité (sans dimension) Blosum40 par rapport à la position correspondante
+Dans l'alignement de la séquence Pfam RP55; Sirand est le score moyen (par rapport au même Pfam
+Colonne) pour un type aléatoire (où tous les types sont équiprobables), et c = 0,5 kcal / mol.
+
+3.5
+
+Génération de séquence Rosetta
+
+Des simulations de Monte Carlo ont également été réalisées à l'aide du programme Rosetta et de l'énergie
+Fonction 37. Les simulations ont été faites en utilisant la version 2015.38.58158 de Rosetta (librement
+Disponible en ligne), en utilisant la commande
+Fixbb -s Tiam1.pdb -resfile Tiam1.res -nstruct 10000 -ex1 -ex2 -linmem_ig 10
+
+Où les options ex1 et ex2 activent une recherche améliorée des rotariens pour les sidechins enterrés,
+La dernière option (linmem ig) correspond au calcul de l'énergie à la volée, et les paramètres par défaut ont été utilisés autrement. Les résidus Gly et Pro présents dans la protéine de type sauvage étaient
+Pas autorisé à muter, et les positions qui mutaient ne pouvaient pas se transformer en Gly ou Pro (comme
+Avec les simulations de conception de Proteus). Des simulations ont été exécutées pour chaque domaine PDZ jusqu'à
+10 000 séquences uniques à faible énergie ont été identifiées, ce qui correspond à des périodes d'exécution d'environ
+5 minutes par séquence sur un seul noyau d'un processeur Intel récent, pour un total de 10 heures
+(Par protéine) en utilisant 80 noyaux. C'était comparable au coût des calculs de Proteus
+(Matrice énergétique plus simulations Monte Carlo).
+12
+
+3.6
+
+Caractérisation de la séquence
+
+Les séquences conçues ont été comparées à l'alignement Pfam pour la famille PDZ, en utilisant le
+Matrice de notation Blosum40 et une pénalité d'écart de -6. Cette matrice est appropriée pour comparer
+Homologues plutôt éloignés (séquences CPD et Pfam dans ce cas). Chaque séquence Pfam était
+Également par rapport à l'alignement de Pfam, ce qui a permis de comparer
+Des séquences et une paire typique de domaines PDZ naturels. Pour ces comparaisons Pfam / Pfam,
+Si un domaine de test PDZ T faisait partie de l'alignement Pfam, l'auto-comparaison T / T était laissée
+Out, pour être plus cohérent avec les comparaisons de conception / Pfam. L'alignement Pfam
+Était l'alignement "RP55", composé de 12 255 séquences. Les similitudes ont été calculées
+Séparément pour les 14 résidus de base et 16 résidus de surface, définis par leur presque total
+Inhumation ou exposition (énumérés dans les résultats) et pour l'ensemble de la protéine.
+Les séquences conçues ont été soumises à la bibliothèque Superfamily de Markov caché
+Les modèles 57, 58, qui tentent de classer les séquences selon la classification structurelle
+Des protéines, ou SCOP 59. La classification était basée sur SCOP version 1.75 et version 3.5
+Des outils Superfamily. Superfamily exécute le programme hmmscan, qui implémente
+Un modèle de Markov caché pour chaque famille de SCOP et sa superfamille. Le programme hmmscan
+A été exécuté en utilisant un seuil de valeur E de 10 à 10 et un total de 15 438 modèles à représenter
+La base de données SCOP.
+Comparer la diversité des séquences conçues avec la diversité de la nature
+Séquences, nous avons utilisé l'entropie de séquence standard dépendant de la position 60, calculée comme
+Suit:
+
+Où fj (i) est la fréquence du type de résidu j à la position i, soit dans les séquences conçues
+Ou dans les séquences naturelles (organisées en alignement multiple). Au lieu de l'habitude,
+20 types d'acides aminés, nous avons utilisé six classes de résidus, correspondant à la suivante
+Groupes: {LVIMC}, {FYW}, {G}, {ASTP}, {EDNQ} et {KRH}. Cette classification
+A été obtenu par une analyse par grappes de la matrice BLOSUM62 61 et en analysant les énergies de contact résidués sur les protéines 62. Pour obtenir une idée du nombre de types d'acides aminés
+Apparaissait à une position typique, on rapporte l'entropie des résidus sous sa forme exponentielle,
+Exp (S) (qui varie de 1 à 6), en moyenne sur la chaîne de protéines.
+
+13
+
+3.7
+
+Protéines: énergies libres de liaison aux peptides
+
+Pour le domaine Tiam1 PDZ, nous avons utilisé des calculs de conception en présence et en absence
+D'un peptide lié pour obtenir des estimations des différences d'énergie libres de liaison entre
+Variantes de protéines. Si une séquence donnée S a été échantillonnée dans les états apo et holo, nous
+Calculé l'énergie moyenne hEholo (S) i, hEapo (S) i dans chacun des deux états en faisant la moyenne
+Sur les conformités échantillonnées. Ensuite, nous avons pris la différence
+ΔΔE (S, S 0) = (hEholo (S 0) i - hEapo (S 0) i) - (hEholo (S) i - hEapo (S) i)
+
+(19)
+
+Comme notre estimation de la différence d'énergie libre de liaison entre les variantes S et S 0. nous
+A également calculé la liaison des différences d'énergie libres entre les groupes de séquences homologues,
+Dire S et S 0, en regroupant les séquences homologues échantillonnées dans l'apo ou l'holo
+État, puis la moyenne sur les conformations échantillonnées et prendre la différence d'énergie
+ΔΔE (S, S 0).
+
+3,8
+
+Simulations de dynamique moléculaire
+
+Wildtype et un mutant quadruple Tiam1 et dix séquences conçues avec Proteus étaient
+Soumis à des simulations MD avec un solvant explicite et aucun ligand peptidique. Le démarrage
+Des structures ont été prises à partir de la trajectoire MC ou de la structure cristalline (protéine de type sauvage
+Et quadruple mutant: codes PDB 4GVD et 4NXQ) et légèrement minimisé avec des contraintes harmoniques pour maintenir la géométrie du squelette. La protéine a été immergée dans un
+Grande boîte d'eaux qui ne se chevauchent pas. Le système solvaté a été tronqué à la forme de
+Une boîte octaédrique tronquée à l'aide de l'interface graphique Charmm ou de la GUI 63. La distance minimale entre les atomes de protéines et la boîte était de 15 Å et les modèles finaux inclus
+Environ 11 000 molécules d'eau. Quelques ions de sodium ou de chlorure ont été inclus pour assurer
+Électroneutralité globale. Les états de protonation des histidines ont été assignés à être neutres, sur la base de l'inspection visuelle. MD a été effectué à température ambiante et pression, en utilisant
+Un thermostat Nose-Hoover et un barostat 64,65. Les interactions électrostatiques à longue distance étaient
+Traité avec une approche Eight de Particle Mesh 66. Le champ de force Amber ff99SB et le
+Le modèle TIP3P 67 a été utilisé pour la protéine et l'eau, respectivement. Des simulations ont été effectuées
+Pour 100 à 1000 nanosecondes, selon la séquence, en utilisant le Charmm et le NAMD
+Programmes 68,69.
+14
+
+4
+4.1
+
+Résultats
+Structures et séquences expérimentales
+
+Les structures tridimensionnelles (3D) des quatre domaines PDZ de test sont représentées sur la Fig. 1A.
+Quatorze résidus de noyau (identifiés visuellement) superposent bien entre les structures,
+Tandis que les boucles et les terminales de chaîne affichent de grandes écarts. L'hélice Tiam1 α2 est tournée légèrement vers l'extérieur par rapport aux trois autres structures 70. Figue. 1B illustre le
+La similarité entre les paires de domaines PDZ, déterminée par l'écart de rms entre
+Atomes Cα alignés structurellement et les identités séquentielles paires. Les écarts sont
+Entre 1,0 et 2,1 Å et les identités de séquence entre 17 et 33%. The Tiam1 / Cask
+L'identité de séquence est de 33% et leur écart structurel est de 1,7 Â basé sur 42 C
+Atomes. Les structures de syntenine et DLG2 sont plus similaires, avec une déviation structurelle
+De 1,0 Å sur la base de 60 atomes Cα alignés.
+Conservation de séquences dans les quatre domaines PDZ et un sous-ensemble de la graine Pfam
+L'alignement est représenté sur la Fig. 2. Les 14 positions utilisées pour définir le noyau hydrophobe sont
+Fortement, mais pas totalement conservé dans l'alignement des semences Pfam. Arginine, Lys
+Et Gln apparaissent à certaines positions, puisque dans de petites protéines comme les domaines PDZ, les
+Une longue partie hydrophobe de ces chaînes latérales peut être enterrée dans le noyau tout en permettant
+La pointe polaire de la chaîne latérale doit être exposée au solvant. Quelques résidus Asp et Glu aussi
+Apparaissent, dans les endroits où l'alignement des séquences peut ne pas réfléchir de près à la chaîne latérale 3D
+superposition.
+
+4.2
+
+Optimisation du modèle d'état déplié
+
+Nous avons optimisé les énergies de référence Etr pour Tiam1 et Cask, en utilisant leurs homologues naturels
+Pour définir les fréquences d'acides aminés cibles. La constante diélectrique de protéine P était soit 4
+Ou 8, avec P = 8 donnant les meilleurs résultats. Les optimisations Etr ont tous convergé vers 0,05
+Kcal / mol après environ 20 itérations pour la plupart des types d'acides aminés, et à 0,1 kcal / mol
+for the others (the weakly-populated types), using either the linear or the logarithmic
+method (Eq. 11 or 12). Table 2 indicates the final reference energies. The Etr values
+were compared to, and agreed qualitatively with the energies computed from an extended
+peptide structure, which provides a less empirical model of the unfolded state. Table 3
+15
+
+compares the amino acid frequencies from the natural homologs and the simulations using
+parameters optimized with  P =8. Results obtained using parameters optimized with  P =4
+are given in Supplementary Material. The theoretical population of the different amino
+acid classes agreed well with experiment, with rms deviations of about 1%, for both the
+exposed and buried positions. The agreement for the amino acid types was less good,
+with rms deviations of 3.9%/2.4% (buried/exposed positions). The intra-class frequency
+distributions depend explicitly on the energy offsets δEtr defined within each class, which
+were computed with molecular mechanics (see Methods, Eq. 15).
+
+4.3
+
+Assessing designed sequence quality
+
+Family recognition tests Proteus design simulations used Replica Exchange Monte
+Carlo with eight replicas and 750 million steps per replica, at thermal energies kT that
+ranged from 0.125 to 3 kcal/mol. All positions (except Gly and Pro) were allowed to
+mutate freely into all amino acid types except Gly and Pro. The simulations were done
+with the MMGBSA energy function, without any bias towards natural sequences or any
+limit on the number of mutations. The 10,000 sequences with the lowest energies among
+those sampled by any of the MC replicas were retained for analysis, along with the 10,000
+Rosetta sequences. These sequences were analyzed by the Superfamily fold recognition
+tool 58,71 (Table 4). With a protein dielectric constant of 8, we obtained a high percentage
+of sequences assigned to the correct family: 91% for Tiam1 and 100% for Cask, with
+E-values of around 10−3 for the family assignments. These values are similar to Rosetta
+(90 and 98% family recognition for Tiam1 and Cask). Changing the protein dielectric
+constant to  P =4 gave somewhat poorer results for Tiam1, with 53% of the sequences
+designed with Proteus correctly recognized by Superfamily.
+Sequences and sequence diversity Tiam1 and Cask sequences predicted by Proteus
+and Rosetta as well as natural sequences are shown in Fig. 3 for the fourteen core residues
+and in Fig. 4 for the sixteen surface residues (Tiam1 only). The sequences are represented
+as sequence logos. As seen in many previous CPD studies 30,72 , agreement with experiment
+for the core residues is very good, while agreement for the surface residues is much poorer.
+The behavior of surface positions was also probed by designing each position individually,
+
+16
+
+with the rest of the protein free to explore rotamers but not mutations (“mono-position”
+design). The corresponding logo (Fig. 4) shows an excess of Arg and Lys residues, suggesting that the CPD reference energies are not yet fully optimal, despite the extensive
+empirical Etr tuning. Sequence similarity scores are given in the next subsection.
+The diversity of the natural and designed sequences was characterized by a mean,
+exponential sequence entropy (see Methods), which corresponds to a mean number of
+sampled sequence classes per position. For example, a value of 2 at a particular position
+indicates that amino acids from two of the six classes are present at that position within
+the set of analyzed sequences. An overall average value of two indicates that on average,
+two amino acid classes are present at any position within the analyzed sequences. Pour
+reference, the Pfam RP55 set of 12,255 natural sequences has a mean entropy of 3.4.
+Pooling the designed Tiam1 and Cask sequences gave an entropy of 2.2 with Rosetta and
+2.0 with Proteus, indicating that these two backbone geometries cannot accomodate as
+much diversity as the much larger RP55 set. Taking the 10,000 lowest energy sequences
+sampled with the room temperature Monte Carlo replica (instead of the 10,000 lowest
+energies sampled collectively by all replicas at all temperatures) and pooling Tiam1 and
+Cask as before gave a higher overall entropy of 2.9 with Proteus. With Rosetta, entropy
+in the core was only slightly below the average over all positions. With Proteus, it was
+distinctly lower (1.25). For the Pfam-RP55 sequences, it was 1.8.
+Blosum similarity scores Fig. 5 shows the computed Blosum40 similarity scores between designed and natural sequences. With Proteus, for both Tiam1 and Cask, the
+overall similarities overlapped with the bottom of the peak of the natural scores, and
+were comparable to the values for the Rosetta sequences. For the surface residues, shown
+separately, similarity to the natural sequences was low (scores below zero), both for Proteus and Rosetta. With a protein dielectric constant of 4, Proteus performed about as
+well as with P =8, giving almost the same similarity averaged over all Tiam1 and Cask
+positions, for example.
+While the similarity scores vs. Pfam with Proteus were comparable to Rosetta (Fig.
+5), the identity scores vs. the wildtype sequence were significantly higher with Rosetta.
+Identity scores excluding (respectively, including) Gly and Pro positions (which did not
+mutate) were 20% (28%) for Proteus vs. 26% (34%) for Rosetta. Evidently, for Tiam1
+17
+
+and Cask, Rosetta performed ≈5 fewer mutations than Proteus.
+For certain applications, we may need to specifically explore a sequence space region
+very similar to Pfam, beyond the similarity provided by an MMGBSA energy. Cela peut être
+achieved by adding to the energy an “experimental,” or bias energy term that explicitly
+favors high sequence scores. Figue. 5 includes results that use such a biased energy term:
+by construction, it leads to very high similarity scores. A bias energy term could also be
+used to limit the total number of mutations.
+Cross-validation tests As a first cross-validation test, we applied the reference energies optimized using Tiam1 and Cask homologs (with  P =8) to two other PDZ domains:
+DLG2 and syntenin. The Superfamily scores were comparable to those obtained for Tiam1
+and Cask, with 100% family recognition (Table 4). Sequences designed with Rosetta for
+DLG2 and syntenin also gave 100% family recognition. For further cross-validation, we
+optimized reference energies using an alternate set of PDZ domains: DLG2, syntenin,
+PSD95, GRIP, INAD, and NHERF. Target frequencies were defined by a small set of their
+natural homologs. We used P =8. To distinguish the new and initial model variants, we
+refer to the new variant as the n=6 model (it uses six PDZ domains for parameterization), and the initial model as the “T+C” model (it used Tiam1 and Cask). The new,
+n=6 reference energies were then used to produce designed Tiam1 and Cask sequences,
+which were subjected to Superfamily tests and similarity calculations. The Superfamily
+performance for Tiam1 was slightly degraded, compared to the previous, T+C model.
+The Tiam1 Superfamily score decreased from 90.6% to 76.6% for family recognition. le
+Cask score was unchanged. Histograms of Blosum similarity scores (Supplementary Material) show that the overall scores for Tiam1 and Cask with n=6 were very similar to the
+T+C model, while the scores for the core positions were actually shifted to higher, not
+lower values. For DLG2 and syntenin, we also computed similarity scores using both the
+initial, T+C parameterization and the new, n=6 parameterization. The similarity scores
+with the T+C model were slightly poorer than with the n=6 model, as expected. le
+overall score decreased by about 20 points for syntenin and about 10 points for DLG2
+(Supplementary Material). Overall, the cross-validated models gave slightly degraded
+performance. Thus, for any PDZ domain of interest, it may be preferable to optimize reference energies specifically for that domain, rather than transferring values parameterized
+18
+
+using other PDZ domains.
+
+4.4
+
+Stability of designed sequences in molecular dynamics simulations
+
+As another test of the design model, ten Tiam1 sequences designed with Proteus were
+subjected to molecular dynamics simulations (MD) using an explicit solvent environment.
+These sequences were obtained using Proteus with either P =8 or the less polarizable
+value P =4. Although no peptide ligand was present during the design simulations, 11
+positions in the binding pocket that make close contact with the peptide when it is
+present were not allowed to mutate. This was done to allow future experimental testing of
+designed sequences by a peptide binding assay. Among the 2,500 lowest energy designed
+sequences, we narrowed down the choice of sequences using the following four criteria:
+(a) sequences should have a nonneutral isoelectric point, (b) they should be assigned to
+the correct SCOP family by Superfamily with good E-values, (c) they should have good
+Pfam similarity scores, and (d) they should have at most 15 mutations that drastically
+change the amino acid type compared to the wildtype protein (such a change is defined
+by a Blosum62 similarity score between the two amino acid types of -2 or less). Applying
+these criteria reduced the number of sequences to 66 from the P =8 model and 45 from the
+P =4 model. In addition, we eliminated sequences that had two mutations that created a
+buried cavity and those that had net protein charges of +6 or more (which could lead to
+protein instability). A total of six sequences were chosen for further analysis. We refer to
+them as sequences 1–6 or seq-1, ..., seq-6. Sequences 1, 2, 4, and 5 were modified further
+manually to eliminate charged residues in the exposed loop 852–856 (lysines were changed
+manually to alanine), giving sequences 1’, 2’, 4’, and 5’. The ten sequences are shown in
+Figue. 6A. Using these sequences as queries to search Uniprot with Blast, the top hits were
+either Tiam1 mammalian orthologs (including human Tiam1) or uncharacterized proteins,
+with identity scores between 35 and 40% and Blast E-values of around 10−8 –10−7 (except
+for one sequence which gave hits with lower E-values of around 10−10 ).
+All ten sequences were subjected to MD simulations with explicit solvent. Initial
+simulations were run for 100 ns, with all ten sequences exhibiting good stability. Six were
+extended to lengths of 500 or 1000 ns. The wildtype protein (WT) was also simulated
+19
+
+for 1000 ns. The WT sequence appeared stable over the entire simulation, judging by
+its rms deviations from the wildtype (WT) X-ray structure and from its own mean MD
+structure (Fig. 6B). The mean MD structure had a backbone rms deviation of 1.0 Å from
+the WT X-ray structure (excluding 3–4 residues at each terminus and one very flexible
+loop, residues 850–857). During the MD trajectory, the rms deviation from the mean
+MD structure varied in the range 1–1.5 Å, without any visible drift (Fig. 6B). A weakly
+stable quadruple mutant (QM) with an unfolding free energy of just 1 kcal/mol 70 was also
+simulated for 1000 ns. The mean MD structure of QM had a backbone rms deviation of
+1.6 Å relative to the QM X-ray structure (4NXQ). Note that the X-ray structure includes
+a peptide ligand, whereas the MD simulation represents the apo state. The average MD
+structure of QM (Fig. 6C) exhibited some unwinding of the N-terminus of the α2 helix.
+During the QM simulation, the structure had deviations from its average MD structure
+in the 0.8–1.2 Å range (Fig. 6B) and appeared stable.
+Sequences 1, 3, 4, and 5 were simulated for 500 ns; sequence 3 moved away from the
+mean MD structure towards the end of the simulation; the other three sequences appeared
+stable (Fig. 6B). Sequence 2 (or seq-2) appeared stable up to almost 1000 ns (Fig. 6B).
+The mean seq-2 structure exhibited a shortening of the β strands 2 and 3. Note that in
+the holo state, strand 2 makes direct contacts with the peptide ligand. The rms deviations
+between the average MD structure of seq-2 and the WT and QM X-ray structures were
+1.5 and 1.6 Å, respectively. During the seq-2 MD simulation, the rms deviation of seq-2
+from its average MD structure varied in the range 1.3–2 Å up to almost 1000 ns. At this
+point, just before 1000 ns, seq-2 underwent a large fluctuation. Extending the simulation
+for another 100 ns, the fluctuation largely regressed. More data are needed to determine
+if this fluctuation signals instability of this designed sequence.
+Sequence 6 appeared stable throughout the microsecond MD simulation (Fig. 6B).
+The mean MD structure had a backbone rms deviation from the WT X-ray structure of
+just 1.0 Å, the same deviation as the mean WT MD structure. The mean MD structures
+of seq-6 and WT are superimposed in Fig. 6C and are very similar to each other, with a
+1.2 Å backbone deviation between them. During the seq-6 MD trajectory, the deviations
+of seq-6 away from its mean MD structure fluctuated between about 1 and 1.5 Å, without
+any visible drift over the microsecond MD simulation.
+
+20
+
+4.5
+
+Application: growing the PDZ hydrophobic core
+
+As a first application of our optimized models, we examined the designability of the Tiam1
+and Cask hydrophobic cores. Each PDZ domain was subjected to Replica Exchange
+Monte Carlo simulations with a succession of biased energy functions that increasingly
+favored hydrophobic residues. The first simulation included a bias energy term δ = 0.4
+kcal/mol (per position) that penalized hydrophobic amino acid types (ILMVAWFY). le
+final simulation included a bias energy term δ = -0.4 kcal/mol (per position) that favored
+hydrophobic types. Intermediate bias energy values δ = 0.2, 0, and -0.2 kcal/mol were
+also simulated. By gradually decreasing the bias energy value δ, we effectively “titrate
+in” hydrophobic residues.
+The results for Tiam1 are illustrated in Fig. 7. At the largest δ value, the Tiam1
+hydrophobic core was depleted, with 10 amino acid positions (out of 94) changed to polar
+types. The changed positions mostly lie on the outer edge of the core. At the intermediate
+δ values, the hydrophobic core remained native-like. At the most negative δ value, the
+hydrophobic core became larger, expanding out towards surface regions, with 14 polar
+positions changed to hydrophobic types. Thus, the numbers of positions changed were
+approximately symmetric (around ±12 changes), reflecting the bias. About 2/3 of the
+changes were in secondary structure elements. Overall, the observed propensities of each
+position to become polar or hydrophobic in the presence of a large or small penalty bias
+energy δ can be thought of as a hydrophobic designability index. Here, 11 of the 14
+conserved core positions (all but positions 884, 898 and 903) remained hydrophobic even
+at the highest level of polar bias, along with 13 other positions, indicating that these
+positions have the highest hydrophobic propensity. Furthermore, 14 positions changed
+from polar to hydrophobic at the highest bias level, indicating that these positions also
+have a certain hydrophobic propensity. Results for Cask were similar, with 11 positions
+changed to polar at the highest polar bias and 9 changed to hydrophobic at the highest
+hydrophobic bias.
+We also derived a parameter to describe the relative number of amino acid type
+changes per unit bias energy. This parameter was defined as the number δN of residue
+positions changed from nonpolar to polar, divided by the product of the change δE in
+bias energy and the mean number N of nonpolar positions at zero bias. We call it the
+
+21
+
+hydrophobic susceptibility, χh . For the Tiam1 PDZ domain, this calculation amounts to
+χh =
+
+1 δN
+N δE
+
+= 0.88 changes (per position) per kcal/mol. For Cask, the susceptibility was
+
+χh = 0.71 changes per kcal/mol.
+
+4.6
+
+Application to Tiam1: designing specificity positions
+
+As a second application, we redesigned four amino acid positions in the Tiam1 PDZ
+domain known to contribute to peptide binding specificity. Modifying these four positions
+(quadruple mutant or QM) in the protein altered the binding specificity such that QM
+preferentially bound a Caspr4 peptide relative to a syndecan-1 (Sdc1) peptide 70,73 . le
+four mutations in the QM PDZ domain were L911M, K912E, L915F, and L920V. Tout
+four positions but Lys912 are part of the conserved hydrophobic core. The four single
+and two double mutants were also characterized experimentally 70,73 . For simplicity, we
+denote the native (WT) sequence as LKLL and the quadruple mutant (QM) as MEFV.
+Other variants are denoted similarly. Replica Exchange MC simulations were conducted
+on several structural templates, where all four positions could mutate simultaneously,
+into all amino acid types except Gly and Pro. We used the Proteus model with the lower
+dielectric constant,  P =4, which gave similarity scores equivalent to the  P =8 model but
+had a reduced tendency to bury polar sidechains, thanks to its lower dielectric constant.
+In addition, no bias energy term was used, only the MMGBSA energy function. The CPD
+model used either the wildtype or the quadruple mutant crystal structure as backbone
+template for the design (PDB codes 4GVD and 4NXQ, respectively), shown in Fig. 8.
+Although these two structures were determined with the Sdc1 and Caspr4 ligands, they
+were used here for both holo and apo design simulations. The backbone rms deviation
+between these structures is 0.9 Å, with the main differences in the flexible 850–857 loop
+near the peptide C-terminus and in helix α2 . This helix is pushed slightly outwards in
+the mutant complex, to accomodate Phe side chains both at protein position 915 and at
+the peptide C-terminus. One expectation is that the mutant backbone model (4NXQ)
+will better describe variants with Phe at position 915 and the wildtype backbone model
+(4GVD) will better describe variants with a smaller 915 sidechain.
+We studied six systems: the Tiam1 PDZ domain with either its wildtype or QM
+backbone X-ray structure, with the syndecan1 or the Caspr4 peptide ligand or no ligand.
+22
+
+Results are shown in Fig. 8. For all six systems, the native or native-like amino acid types
+were sampled at all four designed positions. For example, using the wildtype backbone
+structure (4GVD), Leu911 was preserved in the apo simulations and changed to Ile or Val
+in the holo simulations. Similarly, holo simulations with the mutant backbone structure
+(4NXQ) sampled Ile, Leu and Met. With the mutant backbone, holo simulations sampled
+somewhat different types at position 911 (Trp, Arg, Lys), which all appear in low amounts
+at the corresponding position in the Pfam seed alignment. All the simulations sampled
+mostly Arg, Lys, Gln and occasionally Glu at position 912, and mostly Leu and Val
+at position 920, similar to the wildtype sequence. Not surprisingly, agreement with the
+wildtype sequence was better with the wildtype X-ray structure, while agreement with
+the mutant sequence was better with the mutant X-ray structure.
+Recovery of the precise native and quadruple mutant sequences in the different states
+(apo and holo) was qualitative. Thus, using the wildtype backbone structure and in the
+apo state, the MC simulation recovered the wildtype sequence LKLL just 2 kcal/mol above
+the lowest energy sequence (KKLV). The LKML homolog was the second best sequence
+overall, and the homologs IKLL and LKLV were just 1–2 kcal/mol higher in energy. le
+mutant sequence MEFV did not appear, nor did any close homologs, probably because
+the wildtype backbone structure cannot accomodate Phe at position 915. Similar results
+were obtained with the Sdc1 ligand, with the LKLL, IKLL, VKLL, and MKLL sequences
+all having energies just 1–2 kcal/mol above the best sequence. The MKLL:Sdc1 affinity is
+known experimentally, and is within 0.1 kcal/mol of the wildtype value 73 . Experimentally,
+the wildtype and mutant sequences have the same binding free energy for Caspr4, and
+stabilities just 2 kcal/mol apart, suggesting that both should be sampled. Instead, neither
+was sampled. The closest homolog sequence was IEAV (similar to MEFV), at +2 kcal/mol
+(relative to the best sequence). This was probably due to steric conflict between position
+915 (L or F) and the Caspr4 Phe0 in this backbone geometry.
+Using the mutant backbone structure (4NXQ) and in the apo state, the room temperature Monte Carlo replica recovered the mutant sequence MEFV at an energy of +5
+kcal/mol (relative to the best sequence) and the wildtype sequence LKLL at +7 kcal/mol.
+Both protein variants are thermodynamically stable; a slightly higher energy to produce
+LKLL seems reasonable, since the design simulation used the mutant backbone structure, which presumably should favor MEFV. With the Sdc1 ligand, MEFV appeared at
+23
+
+an energy of +6 kcal/mol, relative to the best sequence, which was the close wildtype
+homolog IKLV. VKVL was just 3 kcal/mol higher. With the Caspr4 ligand, the mutant
+sequence appeared at an energy of +7 kcal/mol, compared to the best sequence, TKMV.
+Its homologs MQMV and MEMV appeared at +5 kcal/mol. The wildtype LKLL and its
+close homologs did not appear (indicating poorer energies), while MAFI was the second
+best sequence overall.
+A more detailed comparison is possible with the binding affinities of the experimentally characterized mutants 73 . The experiments show that (1) affinity changes associated
+with each position are roughly independent of the other positions (coupling free energies
+of 0.4 kcal/mol or less between positions); (2) homologous changes to Leu911, Leu915, and
+Val920 have a very small effect on the affinity; (3) changing Lys912 to Glu reduces binding by about 0.5–1 kcal/mol (for both peptides, possibly due to lost interactions with the
+Lys methylenes); (4) changing Leu915 to Phe affects binding differently depending on the
+residue type at position 912 type and the peptide. These properties are mostly reproduced
+by our simulations. With the wildtype backbone model, considering sequences of the form
+NKNN (where N ∈ {I,L,V,M}), the mean apo and Sdc1-bound energies are 0.9±0.6 and
+1.1±0.5 kcal/mol, respectively, which leads to a mean affinity of 0.2±0.8 kcal/mol (relative to IKLL, taken as a reference): mutations between the amino acid types I, L, V, and
+M (N to N’ mutations) change the Sdc1 affinity very little, consistent with experiment.
+Comparing the apo and holo energies sampled in our design simulations, we predict that
+NKNN → NENN mutations lead to affinity changes of +0.75 kcal/mol for both peptides,
+compared to 0.94 kcal/mol (Sdc1) and 0.55 kcal/mol (Caspr4) experimentally. De même,
+we predict that NKNN → NKFN mutations reduce the affinity by 0.5 kcal/mol for both
+peptides, compared to 1.2 and 0.8 kcal/mol experimentally. Only for NENN → NEFN
+mutations do we see larger errors: we predict a 0.5 kcal/mol affinity loss for Sdc1 (vs. no
+loss experimentally) and a 0.9 kcal/mol loss for Caspr4 (vs. a 0.5 kcal/mol gain experimentally). Specificity changes are predicted to be small, in qualitative agreement with
+experiment. For example the MKFV → MEFV mutation favors Caspr4, relative to Sdc1,
+by 0.2 kcal/mol, compared to 0.5 kcal/mol experimentally for the homologous LKLL →
+LELL mutation.
+The simulations also gave information on correlations between the four mutating
+positions. Figue. 8C shows covariance plots between positions 911 and 912 for the apo
+24
+
+and holo simulations. Position 911 was more diverse in the apo than in either holo
+state (Sdc1 or Caspr4), while 912 was not very sensitive to the peptide. The computed
+pairwise correlations between all four protein positions were weak, so that the covariance
+plots mostly exhibit horizontal and vertical lines or bands, without noticeable “diagonal”
+features. This agrees with the experimental affinities of the single, double, and quadruple
+mutants, where the affinity changes associated with each point mutation were only weakly
+coupled to the other positions 73 .
+
+5
+
+Discussion
+
+5.1
+
+Model limitations
+
+We have parameterized a simple CPD model for PDZ design, suitable for high-throughput
+design applications and implemented in the Proteus software. For the folded state representation, we use a high-quality protein force field and Generalized Born solvent model.
+We tested two sets of atomic surface energy parameters σi and two protein dielectric
+constants P , quantities that characterize the solvent model and are the main empirical
+parameters in the folded state energy function. We used a specific set of X-ray structures
+as our test proteins, each with a specific backbone conformation. For the sidechains, we
+used a simple, discrete rotamer library and a short minimization of each sidechain pair
+during the energy matrix calculation to alleviate the discrete rotamer approximation.
+Both the energy function and the rotamer description have been extensively tested and
+shown to give very good performance for sidechain reconstruction tests 54 (comparable to
+the popular Scwrl4 program 53 ) and good performance for a large set of protein acid/base
+constants 74 (superior to the Rosetta software 75 , despite extensive ad hoc parameter tuning).
+The unfolded state representation used a simple, implicit model, characterized by a
+set of empirical, amino acid chemical potentials or reference energies. These energies were
+chosen by a likelihood maximization procedure, formulated here, in order to reproduce
+the amino acid composition of carefully selected natural homologs. The unfolded state
+description used here is more refined than previously 76 , since distinct reference energy
+values were used for amino acid positions that are buried or exposed in the folded state.
+25
+
+This method assumes that there is residual structure in the unfolded state, with some
+positions more buried than others. Furthermore, it should make the parameterization
+more robust and less sensitive to the size and structure of the natural homologs used to
+define the target amino acid compositions, because the amino acid frequencies of exposed
+and buried regions are averaged separately. In principle, this doubles the number of
+adjustable reference energies. However, we reduced this number by introducing amino
+acid similarity classes, with one adjustable reference energy per class. To optimize the
+reference energies, we performed design calculations for each test protein (apo state)
+where half of the amino positions could mutate at a time (excluding Gly and Pro), with
+distinct simulations for each half. This way, during parameter optimization, a mutating
+position was always surrounded by an environment at least 50% identical to the wildtype
+sequence. The design calculations relied on a powerful and efficient Replica Exchange
+Monte Carlo exploration method that used over a half billion steps per simulation (per
+replica), and produced thousands of designed sequences in a single simulation. Reference
+energy values were optimized with two different choices for the protein dielectric constant
+P . The performance levels were similar with both values.
+The model has several limitations, most of which are widespread in CPD implementations and applications. The first is the use of protein stability as the sole design criterion,
+without explicitly accounting for fold specificity 77 , protection against aggregation, or functional considerations like ligand binding. We note, however, that the Superfamily tests
+did not lead to any fold misassignments (sequences that prefer another SCOP fold), so
+that in practice, fold specificity was achieved. Functional criteria can also be introduced
+in an ad hoc way; for example, the sequences tested by MD were designed with 11 peptide
+binding residues fixed, to facilitate future experimental studies.
+A second model limitation is the use of a fixed protein backbone. In fact, the backbone
+is not really fixed: rather, certain motions are allowed but modeled implicitly, through the
+use of a protein dielectric constant greater than one (P = 4 or 8) 78 . This dielectric value
+means that the protein structure (including its backbone) is allowed to relax or reorganize in response to charge redistribution associated with mutations or sidechain rotamer
+changes. However the reorganization is modeled implicitly, not explicitly 78 , and it does
+not involve motion of the atomic centers or their associated van der Waals spheres. Thus,
+the backbone cannot reorganize in response to steric repulsion produced by mutations or
+26
+
+rotamer changes, nor can it shift to fill space left empty by a mutation. The effect of this
+approximation was apparent in the design of the four Tiam1 specificity positions, where
+the designed sequences were sensitive to the particular backbone conformation of the protein and peptide. Specifically, with the wildtype backbone structure, there was no room
+to insert a Phe sidechain at position 915, even though Phe915 is present in the experimental quadruple mutant (which has a slightly different backbone structure). Donc,
+the choice of the initial X-ray structural model is important, and several strategies are
+possible. Here, to parameterize the CPD model, we used X-ray structures solved with
+a peptide ligand, even though the parameterization simulations and most of the testing
+were done for the apo proteins. This choice was made partly because the apo/holo PDZ
+structures are quite similar and partly to make the model more transferable and facilitate
+applications to peptide binding. Another strategy could have been to parameterize the
+model using all apo structures, then switch to holo structures for the Tiam1 application.
+For whole protein design (such as the hydrophobic titration application), the use of a
+fixed backbone can be partly counterbalanced by designing two or more PDZ structures.
+For example, pooling the designed Tiam1 and Cask sequences gave a mean sequence
+entropy comparable to the experimental Pfam set, and allowed us to recapitulate more
+sequences than design with just one backbone. In the application to Tiam1 4-position
+design, the fixed backbone was also counterbalanced by doing calculations separately with
+two different backbone structures, a holo wildtype and a holo mutant structure. Simulations with the mutant backbone allowed us to obtain mutants having Phe at position 915.
+Notice that a new method for multibackbone design was recently developed in Proteus,
+based on a novel, non-heuristic hybrid Monte Carlo method that preserves Boltzmann
+sampling 35 . This method could be applied in the future.
+A third limitation of our model is the need, for optimal results, to parameterize the
+reference energies specifically for a given set of proteins. This step is well-automated
+and highly parallel. However, it involves several choices that are partly arbitrary. Celles-ci
+include the choice of a set of protein domains to represent the protein or family of interest.
+We also need to choose a similarity threshold to define the target homologs from which
+we compute the experimental amino acid compositions. Here, we chose to use close
+homologs of each family member, compute their compositions, then average over the two
+family representatives. This method worked well but other choices are possible, and more
+27
+
+work is needed to draw definitive conclusions. Also, the mono-position design of Tiam1
+showed evidence of some systematic error (Fig. 4), with a large fraction of Arg, Lys, and
+Gln residues types on the protein surface, despite the optimized reference energies. Dans
+the future, it may be necessary to relax the intra-group constraints towards the end of
+the reference energy optimization and/or target smaller numbers of mutating positions,
+instead of one half of the protein at a time.
+A fourth limitation of our model is the discrete rotamer approximation, which requires
+some adaptation of the energy function to avoid exaggerated steric clashes; la méthode
+used here is the residue-pair minimization method described earlier 26,76 . A fifth limitation
+is the use of a pairwise additive solvation model (as in most CPD models). Specifically,
+the dielectric environment of each residue pair is assumed here to be native-like (so-called
+“Native Environment approximation” or NEA 74,76 ). This leads to an energy function that
+has the form of a sum over pairs of residues and that can be pre-calculated and stored
+in an energy matrix, which then serves as a lookup table during the subsequent Monte
+Carlo simulations. Despite this approximation, the model gave good results for a large
+acid/base benchmark, a problem that is very sensitive to the electrostatic treatment 74 .
+Some of these limitations could be removed in future work. In particular, since the
+energy function is mostly physics-based, it can benefit rapidly from ongoing improvements in protein force fields and solvation models. Thus, the NEA approximation could
+be removed in the future due to the recent implementation (manuscript in preparation)
+of a more exact Generalized Born calculation, whose efficiency is comparable to the pairwise approximation 79 . We have also implemented an improved model for hydrophobic
+solvation 80 , which is faster and more accurate than our current surface area energy term
+(manuscript in preparation).
+
+5.2
+
+Model testing and applications
+
+Designed sequences were extensively compared to natural sequences, through fold recognition tests, similarity calculations, and entropy calculations. In the test simulations, we
+designed the entire protein sequence, so that all positions (except Gly and Pro) could
+mutate freely, subject only to an overall bias towards the mean, experimental amino acid
+composition (through the reference energies). Despite the lack of experimental bias or
+28
+
+constraints, the resulting sequences had a high overall similarity to the natural, Pfam sequences, as measured by the Blosum40 similarity scores. The scores obtained were mostly
+comparable to the similarity scores between pairs of Pfam sequences themselves. Thus,
+the sequences designed with Proteus resemble moderately-distant natural homologs. le
+similarity was very strong for residues in the core of the protein, as observed in previous
+CPD studies 30,72 . In contrast, for residues at the protein surface, similarity scores were
+close to zero, the score one would obtain if one picked amino acid types randomly. Notice that many surface residues are involved in functional interactions, such as the eleven
+peptide-binding residues in PDZ domains. Surface residues are also selected by evolution
+to avoid aggregation or unwanted adhesion. Most of these functional constraints are not
+explicitly accounted for in our design protocol (although the energy function indirectly
+favors protein solubility). Despite the limited similarity scores for surface regions, fold
+recognition with the Superfamily tool and the best design models was almost perfect.
+Earlier fold recognition tests that used a simpler energy function gave a lower fold recognition rate of about 85% (for a larger and more diverse test set) and lower similarities 15,50 .
+Evidently, the combined use of an improved protein force field, Generalized Born solvent,
+and family-specific reference energies leads to designed sequences that are more native-like
+and presumably better.
+The Proteus sequences were also compared to sequences designed with the Rosetta
+software (using default parameters), which has itself been extensively tested. Based on the
+Blosum similarity scores (vs. natural sequences in Pfam) and the fold recognition tests,
+the Proteus and Rosetta sequences appear to be of about the same quality. cependant,
+Rosetta makes fewer mutations than Proteus, so that the identity scores, compared to
+the corresponding wildtype protein, are about 6 percent points higher. This means that
+Proteus mutates about five more positions, on average, per PDZ domain. This number
+could easily be reduced, by adding to the Proteus energy function an explicit bias energy
+term that increases with the number of mutations (away from the wildtype sequence). Un
+equivalent bias energy was used above for just two simulations of Tiam1 and Cask (see
+the “biased Proteus” results in the two upper panels of Fig. 5), to illustrate the possibility
+of using experimentally-restrained sampling. It remains to be seen whether a restraint
+based on the identity score would lead to more stable and realistic designed sequences.
+Another attractive route for testing designed sequences is through high-level MD sim29
+
+mulations. Here, ten designed Tiam1 sequences were tested in rather long MD simulations,
+in the apo form, using the same protein force field as in the CPD model (Amber force
+field) and an established explicit water model. These sequences were designed using Proteus, with Gly, Pro, and eleven peptide-binding positions held fixed but all others free to
+mutate. Seven of the sequences remained stable over 200 ns simulation lengths and two
+were extended up to a microsecond, which represents a very stringent test of the designs.
+Sequence 6 was stable over the whole microsecond. Its mean deviation from the starting,
+experimental wildtype structure was 1 Å, which is the same as the mean deviation in the
+MD simulation of the wildtype sequence itself. The deviation between the mean sequence
+6 MD structure and the mean wildtype MD structure was also small, just 1.2 Å. Sequence
+2 was also simulated and remained stable until just before the end of the microsecond
+simulation, at which point it underwent a larger fluctuation. The fluctuation regressed
+100 ns later. An even longer simulation would be needed to determine if this fluctuation
+is harmless or signals the beginning of domain unfolding. Note that in the presence of a
+peptide ligand, we expect the structural stability of the designed domains would increase
+further. MD simulations of additional designed sequences would also be of interest. Direct
+experimental testing of the designed proteins remains to be done.
+The CPD model was used for two applications. “Hydrophobic titration” of two
+PDZ domains illustrated a novel way to characterize protein designability. The cost or
+availability of hydrophobic sidechain types was controlled by a bias energy term that
+was gradually varied. One result was that the mean overall hydrophobic “susceptibility”,
+the number of type changes per kcal/mol and per position, differed by a factor of two
+between Tiam1 and Cask. In Tiam1, 12 of the core positions remained hydrophobic
+even with the largest bias value favoring polar types, while 17 other positions changed to
+polar (respectively, nonpolar) types at the largest polar (nonpolar) bias energy values. UNE
+comparison to other domain families would be of interest, and is left for future work.
+Redesign of four specificity positions in Tiam1 allowed us to test the design model
+in a different way. It revealed some of the limitations of fixed backbone design, but also
+gave semi-quantitative agreement with available binding free energies. This agreement
+predicts new mutations that could be of interest for obtaining new specificity properties.
+They remain to be studied further and tested experimentally. Here, the apo and two holo
+states were studied, and designed separately. Information about binding affinities and
+30
+
+binding specificity were then obtained by comparing the energies sampled in the different
+simulations. In the future, we would like to include binding affinity and/or specificity
+directly in the design calculations, as a property to be designed for or against within a
+single simulation. In addition, we should allow different backbone structures for the apo
+and each holo system. This could be done in the future, since recent hybrid Monte Carlo
+schemes 35,81 can be used for multi-backbone design, and can be extended to the problem
+of designing ligand binding specificity. We also note that since our energy function is
+physics-based, it has transferability to a range of molecule types, such as nonnatural
+amino acids (considered in an earlier protein-ligand design study 34 ). Such amino acids
+could be of interest for designing PDZ peptide ligands, to provide additional diversity and
+perhaps enhanced resistance to proteolysis.
+
+
+
+c The
+
+number of non-Gly, non-Pro positions, which can mutate during the design simulations.
+
+39
+
+Table 2: Unfolded state reference energies Etr (kcal/mol)
+Design, P =8
+
+une
+
+Design, P =4
+
+
+Energies within an extended peptide structure (averaged over positions). b His protonation states.
+
+40
+
+Table 3: Amino acid composition (%) of natural and designed PDZ proteins
+
+
+
+Compositions are given for buried/exposed positions,
+41for individual amino acid types (left) and for classes
+(right); values in brackets (right) are the deviations between design and experiment per class. le
+experimental target set included the Tiam1 and Cask homologs.
+
+Table 4: Fold recognition of designed sequences by Superfamily
+
+
+The average match length for sequences recognized by Superfamily and the total sequence length.
+
+Average E-values for Superfamily assignments to the correct SCOP superfamily/family.
+
+
+
+Figure 2: Alignment of natural PDZ sequences. The top four sequences were tested in
+this work. The others are the first 30 sequences from the Pfam seed alignment. Fourteen
+hydrophobic core positions are indicated by red arrows and the secondary structure elements are shown for reference. The Clustal color scheme is used, where conserved amino
+acids are colored according to their physical chemical properties.
+
+
+Figure 3: Sequence logos for the conserved hydrophobic core of designed and natural
+Tiam1 and Cask sequences. “Hom.” corresponds to the homologs that make up our
+target set of sequences (used for Etr optimization). “Pfam” corresponds to the Pfam
+seed alignment. Proteus sequences were generated with model  P =8. The height of each
+letter is proportional to the abundance of each type at the corresponding position in
+the Proteus/Rosetta simulations or the natural sequences. The color of each letter is
+determined by the physical chemical properties of each amino acid type.
+
+45
+
+Pfam
+
+Tiam
+Monoposition Proteus Hom. Rosetta
+Figure 4: Sequence logos for sixteen surface positions in Tiam1. Same representation as
+Figue. 3. The “mono-position” results are from a set of simulations where only one amino
+acid at a time could mutate, the rest of the protein having its native sequence (see text).
+Amino acid colors as in Fig. 3.
+
+46
+
+Figure 5: Histogram plots showing similarity scores for designed PDZ sequences. Similarity
+scores for Tiam1 (left) and Cask (right), relative to the Pfam-RP55 alignment. The scores were
+computed for all positions (top), 14 core positions (middle), and 16 surface positions (bottom).
+Values are shown for Proteus, Rosetta, and Pfam sequences (all compared to RP55). le
+similarity score of the wildtype sequence is indicated in each panel by a vertical arrow. The top
+panels include results for Proteus simulations where a bias energy was included, which explicitly
+favors sequences that are similar to Pfam (dotted lines, labeled “Biased Proteus”). Notice that
+the designed sequences represented in each top, middle, or bottom panel were the same; seulement
+the positions included in the similarity score calculation differ between panels.
+
+47
+
+Figure 6: MD simulations of Tiam1 variants designed with Proteus. A) Sequences of the
+wildtype (WT) PDZ domain and the ten designed variants simulated by MD. Asterisks indicate
+peptide binding residues held fixed during the design simulations. B) Backbone rms deviations
+over the course of an MD simulation for WT, QM, and 6 designed variants relative to the
+corresponding mean MD structure. C) Mean MD structures of WT, QM, seq-6, seq-2.
+
+48
+
+Figure 7: A) Tiam1 sequences designed with different levels of hydrophobic bias δ, increasing
+from top to bottom. The middle sequences were obtained from Proteus simulations without any
+bias (δ = 0). For each bias level, five low energy sequences are shown. Hydrophobic positions
+are colored according to the simulation where they appear first: from brick red (top) to light
+green (bottom). The 14 hydrophobic core positions are indicated by red arrows. B) 3D Tiam1
+structure (stereo) with colors as in A).
+
+49
+
+Figure 8: Design of four Tiam1 specificity positions. A) X-ray structures (stereo) with the
+wildtype sequence (LKLL; labelled WT; PDB code 4GVD) or the quadruple mutant sequence
+(MEFV; labelled QM; PDB code 4NXQ), with bound Sdc1 and Caspr4, respectively. le
+four designed sidechains are shown and labelled (both WT and QM mutant types). B) Logo
+representation of designed sequences with no ligand (apo) or Sdc1 or Caspr4, using the wildtype
+(left) or quadruple mutant (right) X-ray structure. C) Covariance plots for the 911-912 pair:
+populations of each pair of types are shown as levels of color, with yellow the most highlypopulated (5%) and red the lowest (0%). Results correspond to design simulations with the
+wildtype backbone.
+
+
+</pre></body></html>
