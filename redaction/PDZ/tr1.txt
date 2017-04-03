@@ -12,66 +12,10 @@ Des données expérimentales et suggèrent des substitutions avec des spécifici
 Mots-clés: interactions protéine-protéine, modélisation moléculaire, simulation Monte Carlo,
 Logiciel Proteus
 
-1
-
-
-introduction
-
-Les domaines PDZ ("Postynaptic density-95 / Discs large / Zonula occludens-1") sont des domaines protéiques globulaires petits qui établissent des réseaux d'interactions protéine-protéine dans la cellule 1-6.
-Ils forment des interactions spécifiques avec d'autres protéines cibles, généralement en reconnaissant quelques-uns
-Acides aminés à l'extrémité C-terminale cible. En raison de leur importance biologique, les domaines PDZ
-Et leur interaction avec les protéines cibles ont été largement étudiées et conçues par ordinateur. Des ligands peptidiques ont été conçus pour moduler l'activité de
-Domaines PDZ impliqués dans diverses pathologies 7-9. Domaines PDZ d'ingénierie et PDZ
-Les ligands ont été utilisés pour élucider les principes du repliement des protéines et de l'évolution 10-13. Dans
-En outre, ces petits domaines avec leurs ligands peptidiques fournissent des repères pour tester la
-Méthodes de calcul elles-mêmes 14-16.
-Une méthode émergente qui a été appliquée à plusieurs domaines PDZ est un calcul
-Conception de protéines (CPD) 17-22. À partir d'un modèle structurel tridimensionnel (3D), CPD
-Explore un grand espace de séquences d'acides aminés et de conformations pour identifier des variants de protéines qui ont des propriétés prédéfinies, telles que la stabilité ou la liaison de ligand. Conformational
-L'espace est habituellement défini par une bibliothèque discrète ou continue de rotamers de sidechain et par
-Un ensemble fini de conformes de squelette ou un répertoire spécifique de déformations de squelette autorisées. La fonction énergétique qui entraîne la CPD combine habituellement les facteurs physiques et empiriques
-Termes 23 à 25, tandis que le solvant et l'état déplié de la protéine sont décrits implicitement.
-Nous considérons ici une classe simple mais importante de modèles CPD. L'énergie est une
-Fonction basée sur la physique du type "MMGBSA", qui combine une mécanique moléculaire
-Énergie de protéine avec un solvant implicite implanté dans la zone de surface Generalized Born +. Le plié
-La protéine est représentée par une conformation de squelette unique, fixe et une chaîne de référence discrète
-Bibliothèque de rotarramètres. L'énergie de l'état déployé dépend uniquement de la composition de séquence, et non d'une
-Modèle structurel explicite. Les paramètres principaux du modèle réglable sont le diélectrique des protéines
-P constant, un petit ensemble de coefficients d'énergie de surface atomique σi et une collection d'amino
-Potentiels chimiques acides ou "énergies de référence" Etr. Chaque coefficient de surface mesure le
-Préférence d'un type d'atome particulier pour être exposée au solvant, alors que chaque énergie de référence
-Représente la contribution d'un seul acide aminé de type t à l'énergie d'état dépliée.
-Le modèle est implémenté dans le logiciel Proteus 26-28.
-La fonction énergétique actuelle basée sur la physique peut être comparée à celle d'autres empiriques,
-2
-
-Dont le plus réussi est la fonction énergie Rosetta 29-31. La fonction Rosetta
+La fonction Rosetta
 Comprend un terme de répulsion de Lennard-Jones, un terme Coulomb, un terme de liaison hydrogène,
 Un terme de solvatation Lazaridis-Karplus 32 et des énergies de référence d'état dépliées. Il a un
-Un grand nombre de paramètres spécifiquement optimisés pour CPD, qui offrent des performances optimales, mais moins transférables et une interprétation physique moins transparente. Proteus
-Fournit également des fonctionnalités spécifiques telles que Replica Exchange Monte Carlo, diverses
-Les méthodes d'échantillonnage importantes et la capacité de calculer les énergies libres formellement
-Exact 33-35.
-Nous avons optimisé les énergies de référence Etr pour les protéines Tiam1 et Cask PDZ, en utilisant un formalisme de vraisemblance maximale. Nous avons comparé deux valeurs du diélectrique protéique
-Constante, P = 4 et 8. Ces valeurs ont donné de bons résultats dans une étude systématique qui compare les constantes diélectriques dans la gamme 1-32 36. La performance du modèle a été testée
-En générant des séquences conçues pour les deux protéines et en les comparant à des séquences naturelles, ainsi que des séquences générées avec la fonction et le logiciel d'énergie Rosetta 37.
-La conception de la séquence a été effectuée en exécutant de longues simulations Monte Carlo où tous
-Les positions protéiques, sauf Gly et Pro, ont été autorisées à muter librement, ce qui a conduit à des milliers
-Des variantes de protéines conçues. Le test comprenait une validation croisée, où la référence
-Les énergies ont été optimisées en utilisant un ensemble de domaines PDZ, puis appliquées à d'autres. Nous avons aussi
-A effectué 100 à 1000 simulations de dynamique moléculaire à la nanoseconde (MD) pour quelques-uns des
-Des séquences conçues avec notre modèle CPD optimisé, pour aider à évaluer leur stabilité. Dix
-Les séquences étaient stables de plus de 100 ns ou plus et une sur 1000 ns de simulation MD.
-Nous avons ensuite appliqué le modèle CPD avec des paramètres optimisés à deux problèmes, ce qui
-Sont représentatifs des deux domaines principaux qui nous intéressent: explorer la plasticité de
-Espace de séquence pour les domaines PDZ et conception de ligands PDZ forts et spécifiques. Plus tôt
-Les applications dans ces domaines utilisent principalement des fonctions énergétiques empiriques et fondées sur la connaissance
-Comme la fonction Rosetta 9,10,13,14. D'abord, nous avons réalisé une série de simulations Monte Carlo de deux domaines PDZ où le potentiel chimique de l'amino hydrophobe
-Les types d'acide ont progressivement augmenté, polarisant artificiellement la composition de la protéine. Comme le
-Le biais hydrophobe a été augmenté, les acides aminés hydrophobes ont progressivement envahi la protéine
-De l'intérieur, formant un noyau hydrophobe devenu plus grand que le naturel.
-La propension de chaque position du noyau à devenir hydrophobe à un niveau de biais élevé ou faible
-Peut être considéré comme un indice d'hydrophobicité dépendant de la structure, qui fournit des informations
+Un grand nombre de paramètres spécifiquement optimisés pour CPD, qui offrent des performances optimales, mais moins transférables et une interprétatiPeut être considéré comme un indice d'hydrophobicité dépendant de la structure, qui fournit des informations
 3
 
 Sur la conception ou la plasticité du noyau protéique. La deuxième application consistait en
