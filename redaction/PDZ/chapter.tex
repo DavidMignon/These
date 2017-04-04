@@ -105,13 +105,109 @@ Pour avoir une composition naturelle en acide aminé de nos protéines,nous sél
 \paragraph{La fonction Rosetta}
 
 La fonction Rosetta (29-31) comprend un terme de répulsion de Lennard-Jones, un terme Coulomb, un terme de liaison hydrogène,un terme de solvatation Lazaridis-Karplus (32) et des énergies de référence d'état dépliées. Il a un
-Un grand nombre de paramètres spécifiquement optimisés pour CPD, qui offrent des performances optimales, mais une interprétation physique moins transparente que Proteus qui lui fournit la capacité de calculer les énergies libres formelement.
+Un grand nombre de paramètres spécifiquement optimisés pour CPD, qui offrent des performances optimales, mais une interprétation physique moins transparente que Proteus qui lui fournit la capacité de calculer les énergies libres formellement.
 
 \subsection{Description}
 La production de nos séquences calculées a été effectuée par des simulations Monte Carlo où toutes les positions de la chaîne polypeptidique ont été autorisées à muter librement, excepté celles occupées par une glycine ou une proline qui conservent leur type d'acide aminé. Ce qui nous procurent des milliers de variantes pour chaque domaine étudié. Nos tests comprennent une validation croisée où les énergies de référence optimisées sur un sous-ensemble de notre sélection sont utilisés sur un entre sous-ensemble de cette même sélection. Nous, réalisons également,une série de simulations Monte Carlo de deux domaines PDZ où le potentiel chimique hydrophobe des types d'acides aminés est progressivement augmenté, polarisant artificiellement la composition de la protéine. Comme Le biais hydrophobe augmente, les acides aminés hydrophobes envahissent progressivement  la protéine
 De l'intérieur, formant un noyau hydrophobe devenu plus grand que le naturel.
 La propension de chaque position du noyau à devenir hydrophobe à un niveau de biais plus ou moins élevé peut être considéré comme un indice d'hydrophobicité déterminé en fonction de la structure qui nous renseigne sur la propension du coeur à supporter des mutations.
 
+\section{Le modèle d'état déplié}
+\subsection{Le maximum de vraisemblance des énergies de référence}
+
+L'énergie utilisée est ici est l'énergie de pliage de la protéine, c'est-à-dire la différence entre
+Ses énergies d'état pliées et dépliées (33).Un mouvement élémentaire possible est une "mutation",
+Nous modifions le type sidechain t → t0 à une position choisie i dans la protéine pliée, en assignant
+Un rotamer r0 particulier à la nouvelle chaîne latérale. Nous considérons la même mutation dans
+État déplié. Pour une séquence S particulière, l'énergie d'état dépliée est de la forme:
+E^u=\sum_{i\inS}E^r(t_i)
+La somme se fait sur tous les acides aminés de S,t_i représente le type  à la position i.
+
+\paragraph{}Les grandeurs E^r(t) \equiv E_t^r sont appelées "énergies de référence".Ils peuvent être considérés comme des potentiels chimiques effectifs de chaque type d'acide aminé. Le changement d'énergie de repliement d'une mutation a donc la forme:
+\DeltaE=\DeltaE^f - \DeltaE^u=(E^f(...t'_i,r'_i...) - E^f(...t_i,r_i...)) -(E^r(t'_i) - E^r(t_i))
+avec \DeltaE^f and \DeltaE^u les changements d'énergie dans l'état plié et déplié, respectivement.
+Les énergies de référence sont des paramètres essentiels dans le modèle de simulation. Notre objectif ici
+Est de les choisir empiriquement afin que la simulation produise des fréquences d'acides aminés
+Qui correspondent à un ensemble de valeurs cibles, par exemple des valeurs expérimentales dans la base de données Pfam.
+
+Plus précisément, nous les choisirons telles qu'elles maximisent la probabilité des
+Séquences cibles. C'est à dire, nous celles qui sont le plus vraisemblable étant donnée l'observation des séquences cibles.
+
+Soit S une séquence particulière. Sa probabilité de Boltzmann est:
+
+p(S)=\frac{1}{Z}exp(-\beta\DeltaG_S),
+où \DeltaG_S=G_S^f - E^u_S est l'énergie libre de repliement de S, G^f_S est de l'état replié,\beta =\frac{1}{kT} est la température inverse et Z une constante de normalisation (la fonction de partition). Nous avons alors
+
+kTln p(S) = \sum_{i\inS} E^r(t_i) - G^f_S - kTln Z = \sum_{t\inaa}n_S(t)E^r_t - G^f_S - kTlnZ,
+
+où la somme à droite se fait sur l'ensemble des types d'acides aminés et n_S(t) est le nombre d'acide aminés de type t dans S.
+
+Nous considérons maintenant un ensemble S de N séquences cibles \textit{\textbf{S}}; On appelle \textit{\textbf{L}} la probabilité d'observer l'
+nsemble entier. \textit{\textbf{L}} est fonction des paramètres du modèle E_t^r.Comme nous voulons le maximum de \textit{\textbf{L}} sur les E_t^r , nous se réfère à  \textit{\textbf{L}} comme leur vraisemblance.
+
+Nous avons:
+
+kTln \textit{\textbf{L}} = \sum_S\sum_{i\inaa} n_S(t)E^r(t) - \sum_SG^f_S - NkTln Z = \sum_{t\inaa}n_S(t)E^r_t - \sum_SG^f_S - NkTlnZ,
+
+avec N(t) le nombre d'acide aminé de type t dans l'ensemble \textit{\textbf{S}}.Le facteur de normalisation Z (ou fonction de partition) est la somme sur l'ensemble les séquences possibles \textit{\textbf{R}}:
+
+Z=\sum_Sexp(-\beta\DeltaG_\textit{\textbf{R}})=\sum_\textit{\textbf{R}} exp(-\beta\DeltaG^f_\textit{\textbf{R}})\prod_{t\inaa}exp(\betan_\textit{\textbf{R}}(t)E^r_t)
+Pour maximiser \textit{\textbf{L}}, nous considerons la dérivé de Z selon chacunes des E_t:
+
+\frac{\partialZ}{\partialE^r_t}= \frac{\sum_\textit{\textbf{R}}n_\textit{\textbf{R}}(t)exp()-\beta\DeltaG_\textit{\textbf{R}}}{\frac_\textit{\textbf{R}}exp(-\beta\DeltaG_\textit{\textbf{R}})} = \langlen(t)\rangle.
+
+La quantité à droite est la moyenne de Boltzmann du nombre n(t) des acides aminés t sur toutes les séquences possibles. En pratique, c'est la population moyenne de t que nous voudrions obtenir dans une longue simulation Monte Carlo. 
+
+Pour que ln \textit{\textbf{L}} soit maximal il faut que ses dérivées par rapport à l'E_t^r soient nulles.
+
+\frac{1}{N}\frac{\partial}{\partialE^r_t}ln \textit{\textbf{L}} = \frac{1}{N}\sum_Sn_S(t) - \langle(t)\rangle = \frac{N(t)}{N} - \langlenn(t)\rangle
+
+et donc
+\textit{\textbf{L}} maximum  \Rightarrow \frac{N(t)}{N} = \langlenn(t)\rangle, \forall t \in aa
+
+Ainsi, pour maximiser L, nous devrions choisir {E^r_t} telle qu'une longue simulation donne les mêmes fréquences d'acides aminés que l'ensemble cible.
+
+
+
+\subsection{Recherche du maximum de vraisemblance}
+
+
+Nous utilisons trois méthodes pour approcher les valeurs {E^r_t}.
+
+\begin{enumerate}
+\item La première consiste à avancer dans la direction du gradient de ln(\textit{\textbf{L}}) en utilisant la règle itérative suivante (40):
+E^r_t(n+1) = E^r_t(n) + \alpha\frac{\partial}{\partialE^r_t}ln(\textit{\textbf{L}})=E^r_t(n) + \deltaE(n^{exp}_t - \langle n(t)\rangle_n)
+
+avec \alpha une constante, n^{exp}_t = \frac{N(t)}{N} la population moyenne d'acide aminé de type t dans l'ensemble ciblé ,
+\langle\rangle_n indique une moyenne sur une simulation effectuée en utilisant les énergies de références courantes {E^r_t(n)}, et \deltaE une constante empirique avec la dimension d'une énergie,correspondant à l'amplitude de mise à jour. Cette procédure de mise à jour est répétée jusqu'à convergence. Nous appelons cette méthode, la méthode de mise à jour linéaire.
+
+\item La deuxième méthode est une variante de la première dans laquelle le \deltaE n'est pas constant, mais ajusté au cours de la simulation de la façon suivante. La règle (11) est utilisées trois fois avec trois valeurs differentes et constantes pour le \deltaE ceci avec un jeu d'énergie de références identiques. une interpolation parabolique est efectuée sur les trois valeurs de la fonction proxy obtenues, le minimum de la parabole est calculée et est utilisée comme \deltaE pour le cycle suivant, en terme duquel les énergies sont mises à jours.
+
+\item La troisième méthode, utilisée précédement (26,27), utilise une règle de mise à jour logarithmique:
+
+  avec kT l'énergie thermique, fixée empiriquement à 0,5 kcal/mol. Nous l'appelons la méthode logarithmique. Dans les dernières itérations, certaines valeurs ont tandane à converger lentement,avec des oscillations. Par conséquent, une règle modifié où une énergie au cycle n et l'énergie au cycle  n-1 sont moyenenée avec un poids respectifs de 2/3 et 1/3.
+
+\end{enumerate}
+ 
+Chaque itération, dans la suite, ont étés effectué avec 500 000000 de pas par réplique de REMC.
+
+\section{Méthodes de calcul}
+  
+\subsection{Fonction énergétique efficace pour l'état replié}
+
+La matrice énergétique a été calculée avec la fonction d'énergie efficace suivante pour
+État plié:
+E = Ebonds + Eangles + Edihe + Eimpr + Evdw + ECoul + Esolv
+
+Les six premiers termes de l'équation (13) représentent l'énergie interne de la protéine. Ils sont tirés de
+La fonction d'énergie empirique Amber ff99SB (42), légèrement modifiée pour le CPD.
+
+Les charges du backbone ont été remplacées par un ensemble unifié, obtenu en faisant la moyenne sur l'ensemble des types  d'acides aminés et ajuster légèrement pour rendre la partie backbone de chaque acide aminé neutre (43).
+Le dernier terme à droite de l'équation (13), Esolv, représente la contribution du solvant.Nous avons utilisé un modèle de solvant implicite "Generalized Born + Surface Area" ou GBSA (44):
+
+E_solv = D_GB + E_{surf} = \frac{1}{2}(\frac{1}{\epsilon_W} - \frac{1}{\epsilon_P})\sum_{ij} q_iq_j (r^2_{ij} + b_ib_jexp[-\frac{r^2_{ij}}{4b_ib_j}])^{-\frac{1}{2}} + \sum_i \sigma_iA_i
+
+Ici, \epsilon_W et \epsilon_P sont les constantes diélectriques du solvant et de la protéine; r_{ij} est la distance entre les atomes i, j et b_i est le "rayon de solvatation" de l'atome i (44,45). A_i est la surface exposé accessible au solvant de l'atome i.\sigma_i  
 
 
 %%% Local Variables:

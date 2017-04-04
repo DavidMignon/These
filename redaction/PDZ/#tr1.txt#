@@ -3,38 +3,7 @@
 
 Recherche du maximum de vraisemblance
 
-Nous utiliserons deux méthodes pour aborder les valeurs de vraisemblance maximale {Etr}, à partir de
-Une estimation actuelle {Etr (n)}. Avec la première méthode, on franchit le gradient de ln L en utilisant
-La règle de mise à jour 40:
-(11)
 
-Ici, α est une constante; Nexp
-= N (t) / N est la population moyenne d'acide aminé type t dans
-T
-La base de données cible; Hin indique une moyenne sur une simulation effectuée en utilisant le courant
-Énergies de référence {Etr (n)}, et δE est une constante empirique avec la dimension d'une
-Énergie, appelée l'amplitude de mise à jour. Cette procédure de mise à jour est répétée jusqu'à
-convergence. Nous appelons cette méthode comme méthode de mise à jour linéaire.
-La deuxième méthode, utilisée précédemment 26,27, utilise une règle de mise à jour logarithmique:
-
-(12)
-
-Où kT est une énergie thermique, réglée empiriquement à 0,5 kcal / mol (1 cal = 4.184 J). On se réfère à
-Ceci comme méthode de mise à jour logarithmique. Les méthodes de mise à jour linéaires et logarithmiques
-Convergent vers le même optimum, spécifié par (Éq. 10).
-Dans les itérations ultérieures, certaines valeurs Etr ont tendance à converger lentement, avec une oscillation
-comportement. Par conséquent, nous avons parfois utilisé une règle de mise à jour modifiée, où l'Etr (n + 1)
-6
-
-La valeur Etr (n) calculée avec la méthode linéaire ou logarithmique pour l'itération n a été mélangée
-Avec la valeur calculée à l'itération précédente, avec la valeur (n - 1) ayant un poids
-De 1/3 et la valeur actuelle d'un poids de 2/3. À chaque itération, nous avons généralement couru 500
-Millions d'étapes (par réplique) de Replica Exchange Monte Carlo.
-
-3
-3.1
-
-Méthodes de calcul
 Fonction énergétique efficace pour l'état plié
 
 La matrice énergétique a été calculée avec la fonction d'énergie efficace suivante pour
@@ -43,17 +12,12 @@ E = Ebonds + Eangles + Edihe + Eimpr + Evdw + ECoul + Esolv
 
 (13)
 
-Les six premiers termes de l'équation (13) représentent l'énergie interne de la protéine. Ils ont été retirés de
-La fonction d'énergie empirique 42 de Amber ff99SB, légèrement modifiée pour CPD. L'original
-Les charges de squelette ont été remplacées par un ensemble unifié, obtenu en faisant la moyenne sur l'ensemble des acides aminés
-Types et ajuster légèrement pour rendre la partie squelette de chaque acide aminé neutre 43.
-Le dernier terme à droite de l'équation (13), Esolv, représente la contribution du solvant. nous
+
+ nous
 A utilisé une "surface de surface + née généralisée", ou un modèle de solvant implicite GBSA 44:
 
 (14)
-Ici, W et P sont les constantes diélectriques des solvants et des protéines; Rij est la distance
-Entre les atomes i, j et bi est le "rayon de solvatation" de l'atome i 44,45. Ai est le solvant exposé
-Surface de surface accessible de l'atome i; Σi est un paramètre qui reflète la préférence de chaque atome
+Σi est un paramètre qui reflète la préférence de chaque atome
 Être exposé ou caché du solvant. Les atomes de soluté ont été divisés en quatre groupes
 Avec des valeurs σi spécifiques. Les valeurs étaient -5 (non polaires), -40 (aromatiques), -80 (polaire) et
 -100 (ionique) cal / mol / Å2. On a attribué aux atomes d'hydrogène un coefficient de surface de 0. Surface
