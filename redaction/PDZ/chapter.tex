@@ -351,7 +351,7 @@ Pour réaliser les calculs Monte Carlo, les structures ont été préparés et l
 La conception des séquence est réalisé avec Proteus,
 
 D'abord,pour optimiser les énergies de référence, nous faisons des simulations où environ la moitié des position peuvent muter à la fois.
-Ensuite,les modèles optimisé ont été testés avec des simulations où tous les positions sauf sauf celles nativement en Gly ou Pro, sont libre de muter. C'est équalement de cas pour les simulations de la titration hydrophobe.
+Ensuite,les modèles optimisé ont été testés avec des simulations où tous les positions sauf sauf celles nativement en Gly ou Pro, sont libre de muter. C'est également de cas pour les simulations de la titration hydrophobe.
 
 Dans les deux cas des mutations se sont produites au hasard, soumises uniquement à la fonction d'énergie MMGBSA
 Qui entraîne la simulation. Les simulations Monte Carlo utilisent des mouvements à une ou deux positions,où les rotamères,les types d'acides aminés ou les deux peuvent changer.Pour les mouvements à deux positions, la deuxième position est choisi parmi celles qui avaient une énergie d'interaction significative avec la première (c'est à dire 10 kcal/mol ou plus). De plus, l'échantillonnage est amélioré par l'échange de réplique (REMC), où plusieurs simulations MC sont exécutées en parallèle, à différenres températures. Des échanges périodiques
@@ -361,9 +361,76 @@ Qui entraîne la simulation. Les simulations Monte Carlo utilisent des mouvement
 \subsection{Génération de séquence Rosetta}
 
 
+Des simulations Monte Carlo ont également été réalisées à l'aide du programme et de la fonction d'énergie Rosetta (37).Les simulations sont faites en utilisant la version 2015.38.58158 de la suite ( librement disponible en ligne ), en utilisant la commande:
+
+Fixbb -s Tiam1.pdb -resfile Tiam1.res -nstruct 10000 -ex1 -ex2 -linmem\_ig 10
+
+où les options ex1 et ex2 activent une recherche améliorée des rotamères pour les chaînes latérales enfouis. La dernière option correspond au calcul de l'énergie à la volée, et les paramètres par défaut sont utilisées pour les autres options.
+Les résidus Gly et Pro présents dans la protéine sauvage ne sont pas autorisé à muter, et les positions qui mutent ne peuvent pas le faire en Gly  ou Pro (comme  dans les simulations Proteus).Des simulations sont exécutées pour chaque domaine PDZ jusqu'à obtenir  10 000 séquences uniques de faible énergie, ce qui correspond à des durées d'éxecution d'environ 5 minutes par séquence sur un seul coeur d'un processeur Intel récent, pour un total de 10 heures par protéines en utilisant 80 coeurs.C'est tout à fait comparable au coût des calculs Proteus , en comptant le temps de caluls de la matrice d'énergie plus celui des simulations Monte Carlo.
 
 
 
+\subsection{Caractérisation de la séquence}
+
+Les séquences calculées sont comparées à l' alignement Pfam pour la famille PDZ, en utilisant a matrice Blosum40 et une pénalité d'écart de -6;Cette matrice est approproée pour comparer des homologies éloignés (séquences CPD et Pfam ici). Chaque séquence Pfam est également comparée à l'aligmement Pfam, ce qui permet de comparer des séquences calculées et un couple de domaine PDZ naturels. Pour ces comparaisons Pfam/Pfam, si un domaine de test T fait partie de l'aligmenent , la comparaison T/T n'est pas prise en compte, pour être plus cohérent avec les comparaisons calculées/Pfam.L'alignement Pfam utilisée est "RP55" , composée de 12255 séquences. Les similitudes sont calculées pour d'abord les 14 résidus du coeur et pour 16 résidus de surface définis par leur presque total enfuissemebt ou exposition (voir ??)  et enfin pour l'ensemble des positions de la protéine.
+\paragraph{}
+Les séquences calculées sont soumises à la bibliothèque de modèle de Markov Caché Superfamily (57,58) qui tente de classer les séquences selon la base de donnée structurelle de protéines SCOP (59). La classification étant basée sur la version 1.75 de SCOP et 3.5 des Superfamily(voir plu haut).Le programme hmmscan est exécuté avec un seuil de valeur E de 10^{-10} et un total de 15 438 modèles dans la base SCOP. 
+
+Pour comparer la diversité des séquences produites avec la diversité des séquences naturelles, nous utilisons l'entropie par position, à partir de la formule S_i = - \sum_{j=1}^6 f_j(i)lnf_j(i)
+
+avec f_j(i) la fréquence du type de résidu j à la position i, Au lieu de distingué les 20 types d'acide aminés, nous utilisons six classes de résidus, correspondant à  aux groupes suivants: {LVIMC}, {FYW}, {G}, {ASTP}, {EDNQ} et {KRH}. Cette classification est a été obtenu par une analyste de cluster  sur la matrice BLOSUM 62 (61) et une analyse  des énergies de contact entre résidue dans les proteines (62) . Pour obtenir une mesure du nombre de type d'acide aminés apparaissant à une position, on utilise exponentielle de l'entropie des résidus Exp(S) ( qui varie de 1 à 6 ), moyenner sur l'ensemble des résidues de la chaîne protéique.
+
+
+
+\section {Résultats}
+
+\subsection{Structures et séquences expérimentales}
+
+
+Les structures tridimensionnelles (3D) des quatre domaines PDZ de test sont représentées sur la Fig. 1A.
+Quatorze résidus de noyau (identifiés visuellement) des différentes structures se superposent bien.
+Tandis que les boucles et les chaînes terminales affichent de grands écarts. L'hélice \alpha2 de Tiam1 est tournée légèrement vers l'extérieur par rapport aux trois autres structures (70). La figure 1b illustre la similarité structurale entre les paries de domaines PDZ. Cette similarité est déterminé par l'écart de rms (root mean square) entre  les atomes C\alpha alignés structurelle-ment et par ailleurs les identités des paires de séquences. Les écarts se situe entre 1,0 et 2,1 \angstrom et des identités de séquences entre 17 et 33 \%.La paire Tiam1/Cask on observe une identité de séquence de 33\% et et leur écart structurel de 1,7 \angstrom calculé sur 42 carbones. Les structure de syntenine et GLG2 sont plus similaires, avec une déviation structurale de 1,0 \angstrom calculé sur 60 C\alpha alignés.
+\paragraph{}
+La conservation des séquences dans les quatre domaines PDZ et un sous-ensemble de l'alignent "seed" de Pfam est représenté sur la figure 2. Les 14 positions utilisés pour définir le noyau hydrophobe sont bien conservé conservé dans l'alignement des "seed" de Pfam, mais pas totalement. L'Arg, Lys et Gln apparaissent à certaines positions, puisque dans de petites protéines comme des domaines PDZ, Le longue partie hydrophobe  de ces chaînes latérales peut être enfui dans le noyau tout en permettant à la pointe polaire de la chaîne d'être exposé au solvant. Quelques résidus  Asp et Glu apparaissent aussi, dans les endroits où l'alignement des séquences peut ne pas très bien refléter la superpositions 3D les chaînes latérales. 
+
+\subsection{optimisation du modèle de l'état déplié}
+
+
+Nous optimisons les énergies de référence E_t^r pour les six protéines, en utilisant  leurs homologues naturels pour définie les fréquences d'acides aminés cibles. La constante diélectrique de la protéine P est 8. Les R_t^r ont tous convergé  à 0,05 Kcal/mol près apès environ 20 itérations pour la plupart des types d'acide aminés, et à 0,1 kcal/mol for les autres (ceux qui sont naturellement faiblement peuplé ) , en utilisant soit la méthode linéaire soit la méthode parabolique (équation 11 ou 12). Le tableau 2 indique les énergies de référence finales. Les valeurs R_t^r ont été comparés à, et validé qualitativement avec les énergies calculées à partir d'une structure peptidique étendue, qui fournit un modèle moins empirique de l'état déplié. Le tableau 3 compare les fréquences d'acide aminés des homologues naturels et les calculées. La population théorique des différentes classes d'acide aminé ont bien rejoint l' expérinece, avec des écarts de rms d'environ 1\%, pour les positions exposées et enfuies. L'accord entre les types d'acide aminés est moins bon avec des écarts de rms de 3,9\% et 2,4\% (enfuie/exposés).La distribution des fréquences intra-classe dépend par construction du \deltaE_t^r défini dans pour chaque classe, qui ont était calculés avec la mécanique moléculaire (voir méthodes, équation 15). Ainsi une seconde série de 20 itérations est effectué en relâchant cette contrainte alors l'optimisation ne se fait plus sur les six classes de type d 'acide aminés , mais directement sur les dix-huit types possibles (les positions Pro et Gly étant fixées). 
+
+\subsection{Évaluation de la qualité des séquences obtenues}
+
+\paragraph{Tests de reconnaissance de famille}
+
+Les simulations Proteus utilisent l'algorithme Monte Carlo avec échange de réplique (REMC) avec huit répliques et 750 millions de pas par réplique, avec des énergies thermiques kT  qui varient de 0,125 à 3 kcal/mol. Toutes les positions sont autorisés à muter librement dans tout les types d'acides aminés excepté Gly et Pro. Les simulations ont été faites avec la fonction d'énergie MMGBSA, sans aucune introduction de biais vers  les séquences naturelles ni aucune limite sur le nombre de mutations. Les 10 000 séquences avec les énergies les plus faibles parmi celles échantillonnées par au moins une des répliques MC sont retenue pour l'analyse. De la même façon, 10 000 séquences produites par Rosetta ont était retenue. Ces séquences sont analysées par les outils de reconnaissance de repliment "Superfamily" (58,71) , voir tableau 4.Avec une constante diélectrique de 8, nous avons obtenu un pourcentage élevé de séquences correctement associées à la famille et superfamille PDZ: 91\% pour Tiam1 et 100\ù pour Cask, avec des "E-values" d'environ 10^{-3} pour les affectations à la familles.Ces valeurs sont semblables à celles obtenues par Rosetta (90 et 98\% de reconnaissance de la famille pour Tiam1  et Cask).
+
+\paragraph{Séquences et diversité de séquence}
+Les séquences Tiam1 et Cask calculées par Proteus , par Rosetta et les séquences naturelles sont montrées à la figure 3. Pour les quatorze résidus du noyau et la figure 4 pour les seize résidus de surface (Tiam1  uniquement). Les séquences sont représentées par des logos de séquences. Comme on l'a vu dans de nombreuses études de CPD antérieures (30,72) l'accord avec l'expérience pour les positions du coeur est très bon, alors que l'accord en ce qui concerne les résidus de surface est nettement plus faible. La diversité des séquences naturelles et des séquences calculées est caractérisé par la moyenne sur la séquence de l'exponentielle de l'entropie résiduel (voir Méthodes), ce qui correspond à un nombre moyen de classe de séquence échantillonnées par position. Par exemple, une valeur de 2 à une position particulière indique que les acides aminés de deux des six classes sont présents à cette positions au sein de l'ensemble des séquences analysées. Une valeur moyenne globale de deux indique qu'en moyenne, deux classes d'acides aminés sont présentes à n'importe quelle position dans les séquences analysées. Comme référence l'ensemble Pfam RP55 et 12 255 séquences naturelles a une entropie moyenne de 3,4.Le regroupement des séquences Tiam1 et Cask calculés  donne une entropie de 2,2 avec Rosetta et 2,0 avec Proteus. Ce qui indique que ces deux seules géométries de backbone ne peuvent pas être attendre les mêmes niveaux de diversités que le grand ensemble RP55. Prenant les 10000 séquences Monte Carlo de meilleure énergie échantillonné à température ambiante (au lien des 10 000 de plus basses énergies échantillonnées collectivement par toutes les répliques à toutes les températures) et la mise en commun de Tiam1 et Cask donne une tropie globale plus élevée de 2,9 avec Proteus. Pour Rosetta, l' entropie dans le noyau est seulement légèrement inférieur à la moyenne sur toutes les positions. Pour Proteus, c'est nettement inférieur (1,25). Pour les séquences Pfam-Rp55, cette entropie est de 1,8.
+
+
+\paragraph{Scores de similarité Blosum}
+
+La figure 5 montre les scores de similarité Blosum40 entre les séquences calculées et les séquences naturelles. Avec Proteus, pour Tiam1 et Cask, les similitudes globales se chevauchent au pied du somment des scores naturels, sont comparables aux valeurs des séquences Rosetta. Pour les résidus de suface, montrés séparément, la similitude avec les séquences naturelles sont faibles (scores inférieur à zéro), à la fois pour Proteus et Rosetta. Avec \epsilon_p=8, Proteus donne presque la même similitude moyenne sur toutes les postions Tiam1 et Cask, par exemple.
+Alors que les scores de similarité Proteus par rapport à Pfam  sont comparable à Rosetta (figure 5) , les scores d'identité par rapport à la séquence sauvage sont significativement plus élevés avec Rosetta. Les scores d'identité excluant (respectivement incluant) les postions Gly et Pro (qui ne sont pas mutables) sont de 20\% (28\%) pour Proteus contre 26\% (34\%) pour Rosetta.
+
+\paragraph{Tests de validation croisée}
+Comme premier test de validation croisée,nous utilisons les énergies de référence optimisées à l'aide des homologues de Tiam1 et Cask à deux entre domaines PDZ: DLG2 et syntenine. Les scores Superfamily sont comparables à ceux obtenus pour Tiam1 et Cask, avec 100\% de reconnaissance de la famille (tableau 4). Les séquences calculées avec Rosetta pour la DLG2 et la syntenine ont également obtenues une reconnaissance  de la famille dans 100\% des cas. Comme validation croisée supplémentaire,nous optimisons les énergies de références en utilisant un ensemble alternatif de domaines PDZ: DLG2, syntenin,
+PSD95, GRIP, INAD et NHERF. Pour distinguer les variantes du modèles, nous nous reférons a cette nouvelle variante en tant que modèle n=6 (il utilise six domaines PDZ pour la paramétrisation) et le modèle initiale comme modèle n=2. Les énergies de référence  nouveau n=6,  sont alors utilisées pour produirent des séquence Tiam1 et Cask , qui sont alors soumisses aux tests Superfamily et des calculs de similarité. La performance de Tiam1 sur la super-famille est légèrement dégradée par rapport au précédent modèle n=2.Le score superfamily de Tiam1 diminue de 90,6\% à 76,6\% pour la reconnaissance de la famille. Les score de Cask est inchangé. Les histogrammes des scores de similarité Blosum montrent que les scores globaux pour Tiam1 et Cask avec n=6 sont très semblables à ceux du modèle n=2, alors que les scores pour les positions centrales sont nettement améliorés. Pour DLG2 et syntenine, nous calculons également les scores de similarité en utilisant à la fois le modèle n=2 et le modèle n=6. Les scores de similarité avec n=2 sont légèrement plus faibles qu'avec n=6, comme on pouvait le prévoir.Le score global a diminué d'environ 20 points pour la synténine et environ 10 points pour DLG2. dans l'ensemble, les modèles de validation croisée ont légèrement dégradé les performances. Ainsi, pour tout domaine d'intérêt PDZ, Il est préférable d'optimiser les énergies de référence spécifiquement pour ce domaine plutôt que de transférer des valeurs paramétrées en utilisant d'autres domaines PDZ. 
+
+\pararaph{Stabilité des séquences calculées dans les simulations de dynamique moléculaire}
+
+Un autre test  du modèle a été effectué au Laboratoire par Nicolas Panel. Dix séquences tiam1 conçues avec proteus sont soumises à des simulations de dynamique  moléculaire (MD) en utilisant un environnement de solvat explicite; Ces séquences sont obtenues en utilisant Proteus avec \epsilon_p =8 ou \epsilon_p =4 . Bien qu'aucun ligand peptidique ne soit présent pendant la génération des séquences, onze positions dans la poche de liaison qui sont en contact étroit avec le peptide lorsqu'il est présent ne sont pas autorisées à muter. Cela a été fait pour permettre de futurs assais expérimentaux de séquences calculés pour un essai de liaison peptidique. Parmi les 2 500 séquences calculées de plus faibles énergies, le choix des séquences est réduit en utilisant les quatre critères suivants:
+
+\begin{enumerate}
+
+\item Les séquences doivent avoir un point isoélectrique non neutre
+\item Elles doivent être assignées à la bonne famille SCOP par Superfamily avec de bonnes "E-values"
+\item Elles doivent avoir de bons scores de similarité Pfam
+\item Elle doivent avoir au plus 15 mutations qui modifie le type d'acide aminé par rapport à la protéine sauvage. C'est à dire
+  une mutation telle que le score BLOSUM62 associé soit inférieur au égal à -2.
+
+L'application de ces critères ont réduit de l nombre de séquences à 66 pour \epsilon_p=8 et 45 pour \epsilon_p=4. En outre, ont été éliminées les séquences 
+  
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../these"
