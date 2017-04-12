@@ -106,10 +106,10 @@ Y=np.append(Y,0)
 pfam_pfam,=ax.plot(X,Y,linewidth=2,linestyle='--',marker='o',color='black')
 
 
-arrow = plt.arrow(native_simil, 9, 0, -0.8,color='black',head_width=0.8, head_length=0.3 ,linewidth=2)
+arrow = plt.arrow(native_simil, 8, 0, -0.8,color='black',head_width=0.5, head_length=0.2 ,linewidth=2)
 
 
-ax.legend([proteus_pfam,rosetta_pfam,pfam_pfam,arrow], ['Proteus ','Rosetta','Pfam','Native'], handler_map={mpatches.FancyArrow : HandlerPatch(patch_func=make_legend_arrow),},loc=0,fontsize=25)
+#ax.legend([proteus_pfam,rosetta_pfam,pfam_pfam,arrow], ['Proteus ','Rosetta','Pfam','Native'], handler_map={mpatches.FancyArrow : HandlerPatch(patch_func=make_legend_arrow),},loc=0,fontsize=25)
 
 #ax.legend([proteus_pfam,rosetta_pfam], ['Proteus ','Rosetta'], handler_map={mpatches.FancyArrow : HandlerPatch(patch_func=make_legend_arrow),},loc=9,fontsize=21)
 

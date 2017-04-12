@@ -1625,6 +1625,46 @@ PRO                  & 0.0                  &                        & 1.8      
 \end{landscape}
 
 
+    \clearpage
+    \thispagestyle{empty}
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc} 
+       \includegraphics[width=8.4cm]{modelExactGB/1G9O_simil_cut.png} &
+       \includegraphics[width=8.4cm]{modelExactGB/1R6J_simil_cut.png} \\
+       \includegraphics[width=8.4cm]{modelExactGB/1G9O_simil_core.png} &
+       \includegraphics[width=8.4cm]{modelExactGB/1R6J_simil_core.png} \\
+     \end{tabular}
+  \caption{Similarité des séquences produites par proteus modèle exactGB  (E ref optimisées sur 20 cycles selon les classes + 20 cycles selon les types) et Rosetta à l'alignement Pfam RP55, sur toutes les postions en haut  et sur les positions du coeur en bas.}
+
+\label{graph:Simil_modelExactGB}
+
+
+   \end{figure}
+
+
+
+   \clearpage
+\begin{table}[h]
+  \raggedleft{}
+  
+  \begin{tabular}{cccccc}
+    
+    \toprule
+    Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+            & size      & Evalue      & success     & Evalue & success\\
+    \cmidrule{1-6}
+    1G9O  & 79/91 & 9.23e-12  & 10000  & 9.17e-3 & 10000  \\
+    1R6J  & 75/91 &  3.05e-3  &  9991  & 4.04e-3 &  9991  \\
+    2BYG  & /97   &           &        &         &        \\
+
+    \bottomrule        
+  \end{tabular}   
+  \caption{Résultats Superfamily pour les séquences Proteus avec le modèle exactGB (E ref optimisées sur 20 cycles selon les classes + 20 cycles selon les types).}   
+  \label{tab:superfamily_model_B6}       
+\end{table}
+
+   
    
    
 
