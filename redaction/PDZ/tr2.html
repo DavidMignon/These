@@ -1,161 +1,39 @@
 
+Une autre voie attrayante pour tester les séquences conçues est à travers des simulations de MD de haut niveau.
+Ici, dix séquences Tiam1 conçues ont été testées dans des simulations MD plutôt longues,
+Dans la forme apo, en utilisant le même champ de force protéique que dans le modèle CPD (force ambre
+Domaine) et un modèle d'eau explicite établi. Ces séquences ont été conçues à l'aide de Proteus, avec Gly, Pro et onze positions de liaison aux peptides maintenues fixes, mais toutes autres libres de
+subir une mutation. Sept des séquences sont restées stables sur 200 ns de longueurs de simulation et deux
+Ont été prolongés jusqu'à une microseconde, ce qui représente un test très rigoureux des dessins.
+La séquence 6 était stable sur toute la microseconde. Son écart moyen par rapport au démarrage,
+La structure expérimentale de type sauvage était de 1 Å, ce qui correspond à l'écart moyen
+MD simulation de la séquence de type sauvage elle-même. L'écart entre la séquence moyenne
+La structure MD 6 et la structure moyenne de MD de type sauvage étaient également petites, à peine 1,2 Å. Séquence
+2 a également été simulé et est resté stable jusqu'à juste avant la fin de la microseconde
+Simulation, moment auquel il a subi une fluctuation plus importante. La fluctuation a régressé
+100 ns plus tard. Une simulation encore plus longue serait nécessaire pour déterminer si cette fluctuation
+Est inoffensif ou signale le début du déploiement du domaine. Notez qu'en présence d'un
+Ligand peptidique, nous nous attendons à ce que la stabilité structurelle des domaines conçus augmente
+plus loin. Les simulations MD de séquences supplémentaires conçues seraient également intéressantes. Direct
+Des essais expérimentaux des protéines conçues restent à faire.
+Le modèle CPD a été utilisé pour deux applications. "Titrage hydrophobe" de deux
+Les domaines PDZ ont illustré un nouveau moyen de caractériser l'aptitude à la conception des protéines. Le coût ou
+La disponibilité des types de chaînes latérales hydrophobes a été contrôlée par un terme d'énergie de polarisation qui
+A progressivement varié. Un résultat a été que la "susceptibilité" globale hydrophobe moyenne
+Le nombre de changements de type par kcal / mol et par position diffère d'un facteur de deux
+Entre Tiam1 et Cask. Dans Tiam1, 12 des positions centrales restent hydrophobes
+Même avec la plus grande valeur de polarisation favorisant les types polaires, tandis que 17 autres positions ont changé pour
+Polaires (respectivement, non polaires) dans les plus grandes valeurs d'énergie polarisée (non polarisée). UNE
+La comparaison avec d'autres familles de domaine serait intéressante et est laissée pour des travaux futurs.
+La rédaction de quatre postes de spécificité dans Tiam1 nous a permis de tester le modèle de conception
+d'une autre façon. Il a révélé quelques-unes des limites de la conception du squelette fixe, mais aussi
+A donné un accord semi-quantitatif avec les énergies libres de liaison disponibles. Cet accord
+Prédit de nouvelles mutations qui pourraient être intéressantes pour l'obtention de nouvelles propriétés de spécificité.
+Ils restent étudiés plus avant et testés expérimentalement. Ici, l'apo et deux holo
+Les États ont été étudiés et conçus séparément. Des informations sur les affinités de liaison et
 
-Cette méthode suppose qu'il existe une structure résiduelle à l'état déplié, avec certains
-Les positions sont plus enterrées que d'autres. En outre, il devrait faire le paramétrage
-Plus robuste et moins sensible à la taille et à la structure des homologues naturels utilisés pour
-Définissent les compositions d'acides aminés cibles, car les fréquences d'acides aminés des exposés
-Et les régions enterrées sont calculées en moyenne séparément. En principe, cela double le nombre de
-Énergies de référence réglables. Cependant, nous avons réduit ce nombre en introduisant des amino
-Classes de similarité acide, avec une énergie de référence réglable par classe. Pour optimiser
-Énergie de référence, nous avons effectué des calculs de conception pour chaque protéine d'essai (état de l'apo)
-Où la moitié des positions amino pourraient muter à la fois (à l'exclusion de Gly et Pro), avec
-Des simulations distinctes pour chaque moitié. De cette façon, lors de l'optimisation des paramètres, une
-La position était toujours entourée d'un environnement au moins 50% identique au type sauvage
-séquence. Les calculs de conception s'appuyaient sur une puissante et efficace réplique d'échange
-Méthode d'exploration de Monte Carlo qui a utilisé plus d'un demi-milliard de pas par simulation (par
-Réplique), et a produit des milliers de séquences conçues dans une seule simulation. Référence
-Les valeurs d'énergie ont été optimisées avec deux choix différents pour la constante diélectrique des protéines
-P. Les niveaux de performance étaient similaires aux deux valeurs.
-Le modèle présente plusieurs limitations, dont la plupart sont répandues dans les implémentations et les applications de CPD. Le premier est l'utilisation de la stabilité des protéines comme seul critère de conception,
-Sans expliquer explicitement la spécificité du pli 77, la protection contre l'agrégation, ou des considérations fonctionnelles comme la liaison des ligands. Nous notons toutefois que les tests Superfamily
-N'a pas entraîné de mauvaises affections (séquences qui préfèrent un autre pli SCOP), donc
-Qu'en pratique, la spécificité du pli a été réalisée. Des critères fonctionnels peuvent également être introduits
-D'une manière ad hoc; Par exemple, les séquences testées par MD ont été conçues avec 11 peptides
-Résidus contraignants fixés, pour faciliter les futures études expérimentales.
-Une deuxième limitation du modèle est l'utilisation d'un squelette protéique fixe. En fait, l'épine dorsale
-N'est pas vraiment réparé: plutôt, certains mouvements sont autorisés, mais modélisés implicitement, à travers les
-Utilisation d'une constante diélectrique protéique supérieure à une (P = 4 ou 8) 78. Cette valeur diélectrique
-Signifie que la structure protéique (y compris son squelette) est autorisée à se détendre ou à se réorganiser en réponse à une redistribution de charge associée à des mutations ou à un rotarymide latéral
-changements. Cependant, la réorganisation est modélisée implicitement, pas explicitement 78, et elle ne l'est pas
-Ne pas impliquer le mouvement des centres atomiques ou de leurs sphères associées van der Waals. Ainsi,
-L'épine dorsale ne peut pas se réorganiser en réponse à une répulsion stérique produite par des mutations ou
-26
 
-Les changements de rotérares, et ils ne peuvent pas non plus se déplacer pour remplir l'espace laissé vide par une mutation. L'effet de cette
-L'approximation était apparente dans la conception des quatre positions de spécificité Tiam1, où
-Les séquences conçues étaient sensibles à la conformation du squelette particulier de la protéine et du peptide. Plus précisément, avec la structure du squelette de type sauvage, il n'y avait pas de place
-Pour insérer une chaîne latérale Phe à la position 915, même si Phe915 est présent dans le mutant quadruple expérimental (qui a une structure de squelette légèrement différente). Donc,
-Le choix du modèle structurel de rayons X initial est important et plusieurs stratégies sont
-possible. Ici, pour paramétrer le modèle CPD, nous avons utilisé des structures de rayons X résolues avec
-Un ligand peptidique, même si les simulations de paramétrage et la plupart des tests
-Ont été effectués pour les protéines apo. Ce choix a été fait en partie parce que l'apo / holo PDZ
-Les structures sont assez similaires et en partie pour rendre le modèle plus transférable et faciliter
-Applications à la liaison peptidique. Une autre stratégie aurait pu être de paramétrer les
-Modèle en utilisant toutes les structures apo, puis passer aux structures holo pour l'application Tiam1.
-Pour la conception complète des protéines (comme la demande de titrage hydrophobe), l'utilisation d'un
-Le squelette fixe peut être en partie contrebalancé en concevant deux ou plusieurs structures PDZ.
-Par exemple, la mise en commun des séquences Tiam1 et Cask conçues a donné une séquence moyenne
-Entropie comparable à l'ensemble expérimental Pfam, et nous a permis de récapituler plus
-Séquences que de conception avec un seul squelette. Dans l'application à Tiam1 4-position
-Conception, le squelette fixe a également été contrebalancé en effectuant des calculs séparément avec
-Deux structures de squelette différentes, un holo wildtype et une structure de holo mutant. Les simulations avec le squelette mutant nous ont permis d'obtenir des mutants ayant Phe à la position 915.
-Notez qu'une nouvelle méthode pour la conception multibackbone a récemment été développée dans Proteus,
-Sur la base d'une méthode hybride hybride non-heuristique novatrice qui préserve Boltzmann
-Échantillonnage 35. Cette méthode pourrait être appliquée à l'avenir.
-Une troisième limitation de notre modèle est la nécessité, pour des résultats optimaux, de paramétrer les
-Énergies de référence spécifiquement pour un ensemble donné de protéines. Cette étape est bien automatisée
-Et très parallèle. Cependant, cela implique plusieurs choix qui sont partiellement arbitraires. Celles-ci
-Comprennent le choix d'un ensemble de domaines protéiques pour représenter la protéine ou la famille d'intérêt.
-Nous devons également choisir un seuil de similarité pour définir les homologues cibles à partir desquels
-On calcule les compositions expérimentales d'acides aminés. Ici, nous avons choisi d'utiliser
-Les homologues de chaque membre de la famille, calculent leurs compositions, puis la moyenne sur les deux
-Représentants familiaux. Cette méthode a fonctionné bien, mais d'autres choix sont possibles, et plus encore
-27
 
-Il faut travailler pour tirer des conclusions définitives. Also, the mono-position design of Tiam1
-showed evidence of some systematic error (Fig. 4), with a large fraction of Arg, Lys, and
-Gln residues types on the protein surface, despite the optimized reference energies. Dans
-the future, it may be necessary to relax the intra-group constraints towards the end of
-the reference energy optimization and/or target smaller numbers of mutating positions,
-instead of one half of the protein at a time.
-A fourth limitation of our model is the discrete rotamer approximation, which requires
-some adaptation of the energy function to avoid exaggerated steric clashes; la méthode
-used here is the residue-pair minimization method described earlier 26,76 . A fifth limitation
-is the use of a pairwise additive solvation model (as in most CPD models). Specifically,
-the dielectric environment of each residue pair is assumed here to be native-like (so-called
-“Native Environment approximation” or NEA 74,76 ). This leads to an energy function that
-has the form of a sum over pairs of residues and that can be pre-calculated and stored
-in an energy matrix, which then serves as a lookup table during the subsequent Monte
-Carlo simulations. Despite this approximation, the model gave good results for a large
-acid/base benchmark, a problem that is very sensitive to the electrostatic treatment 74 .
-Some of these limitations could be removed in future work. In particular, since the
-energy function is mostly physics-based, it can benefit rapidly from ongoing improvements in protein force fields and solvation models. Thus, the NEA approximation could
-be removed in the future due to the recent implementation (manuscript in preparation)
-of a more exact Generalized Born calculation, whose efficiency is comparable to the pairwise approximation 79 . We have also implemented an improved model for hydrophobic
-solvation 80 , which is faster and more accurate than our current surface area energy term
-(manuscript in preparation).
-
-5.2
-
-Model testing and applications
-
-Designed sequences were extensively compared to natural sequences, through fold recognition tests, similarity calculations, and entropy calculations. In the test simulations, we
-designed the entire protein sequence, so that all positions (except Gly and Pro) could
-mutate freely, subject only to an overall bias towards the mean, experimental amino acid
-composition (through the reference energies). Despite the lack of experimental bias or
-28
-
-constraints, the resulting sequences had a high overall similarity to the natural, Pfam sequences, as measured by the Blosum40 similarity scores. The scores obtained were mostly
-comparable to the similarity scores between pairs of Pfam sequences themselves. Thus,
-the sequences designed with Proteus resemble moderately-distant natural homologs. le
-similarity was very strong for residues in the core of the protein, as observed in previous
-CPD studies 30,72 . In contrast, for residues at the protein surface, similarity scores were
-close to zero, the score one would obtain if one picked amino acid types randomly. Notice that many surface residues are involved in functional interactions, such as the eleven
-peptide-binding residues in PDZ domains. Surface residues are also selected by evolution
-to avoid aggregation or unwanted adhesion. Most of these functional constraints are not
-explicitly accounted for in our design protocol (although the energy function indirectly
-favors protein solubility). Despite the limited similarity scores for surface regions, fold
-recognition with the Superfamily tool and the best design models was almost perfect.
-Earlier fold recognition tests that used a simpler energy function gave a lower fold recognition rate of about 85% (for a larger and more diverse test set) and lower similarities 15,50 .
-Evidently, the combined use of an improved protein force field, Generalized Born solvent,
-and family-specific reference energies leads to designed sequences that are more native-like
-and presumably better.
-The Proteus sequences were also compared to sequences designed with the Rosetta
-software (using default parameters), which has itself been extensively tested. Based on the
-Blosum similarity scores (vs. natural sequences in Pfam) and the fold recognition tests,
-the Proteus and Rosetta sequences appear to be of about the same quality. cependant,
-Rosetta makes fewer mutations than Proteus, so that the identity scores, compared to
-the corresponding wildtype protein, are about 6 percent points higher. This means that
-Proteus mutates about five more positions, on average, per PDZ domain. This number
-could easily be reduced, by adding to the Proteus energy function an explicit bias energy
-term that increases with the number of mutations (away from the wildtype sequence). Un
-equivalent bias energy was used above for just two simulations of Tiam1 and Cask (see
-the “biased Proteus” results in the two upper panels of Fig. 5), to illustrate the possibility
-of using experimentally-restrained sampling. It remains to be seen whether a restraint
-based on the identity score would lead to more stable and realistic designed sequences.
-Another attractive route for testing designed sequences is through high-level MD sim29
-
-mulations. Here, ten designed Tiam1 sequences were tested in rather long MD simulations,
-in the apo form, using the same protein force field as in the CPD model (Amber force
-field) and an established explicit water model. These sequences were designed using Proteus, with Gly, Pro, and eleven peptide-binding positions held fixed but all others free to
-mutate. Seven of the sequences remained stable over 200 ns simulation lengths and two
-were extended up to a microsecond, which represents a very stringent test of the designs.
-Sequence 6 was stable over the whole microsecond. Its mean deviation from the starting,
-experimental wildtype structure was 1 Å, which is the same as the mean deviation in the
-MD simulation of the wildtype sequence itself. The deviation between the mean sequence
-6 MD structure and the mean wildtype MD structure was also small, just 1.2 Å. Sequence
-2 was also simulated and remained stable until just before the end of the microsecond
-simulation, at which point it underwent a larger fluctuation. The fluctuation regressed
-100 ns later. An even longer simulation would be needed to determine if this fluctuation
-is harmless or signals the beginning of domain unfolding. Note that in the presence of a
-peptide ligand, we expect the structural stability of the designed domains would increase
-further. MD simulations of additional designed sequences would also be of interest. Direct
-experimental testing of the designed proteins remains to be done.
-The CPD model was used for two applications. “Hydrophobic titration” of two
-PDZ domains illustrated a novel way to characterize protein designability. The cost or
-availability of hydrophobic sidechain types was controlled by a bias energy term that
-was gradually varied. One result was that the mean overall hydrophobic “susceptibility”,
-the number of type changes per kcal/mol and per position, differed by a factor of two
-between Tiam1 and Cask. In Tiam1, 12 of the core positions remained hydrophobic
-even with the largest bias value favoring polar types, while 17 other positions changed to
-polar (respectively, nonpolar) types at the largest polar (nonpolar) bias energy values. UNE
-comparison to other domain families would be of interest, and is left for future work.
-Redesign of four specificity positions in Tiam1 allowed us to test the design model
-in a different way. It revealed some of the limitations of fixed backbone design, but also
-gave semi-quantitative agreement with available binding free energies. This agreement
-predicts new mutations that could be of interest for obtaining new specificity properties.
-They remain to be studied further and tested experimentally. Here, the apo and two holo
-states were studied, and designed separately. Information about binding affinities and
 30
 
 binding specificity were then obtained by comparing the energies sampled in the different
