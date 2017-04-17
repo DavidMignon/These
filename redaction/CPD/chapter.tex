@@ -2,6 +2,26 @@
 \chapter{CPD}
 \label{chap:CPD}
 
+\section{Electrostatique des protéines}
+\subsection{Effet du solvant}
+\paragraph{}
+Les interactions électrotastiques sont déterminantes pour la structure, la dynamique et la fonction des protéines. Ce qui en fait une des étapes les plus importantes dans la modélisation des molècules biologique. La majeure partie de ces interactions implique le solvant dans lequel évoluent les biomolécules ( ou le soluté), c'est à dire l'eau liquide.
+La structure électronique de la molécule d'eau lui confaire une répartition assymétrique de ses charges, ce qui lui donne un moment dipolaire important et un moment quadripolaire 
+Pour un soluté dans de l'eau, les molécules d'eau s'organisent autour du soluté. Si le soluté comporte des groupes polaires, l'eau peut former des liaisons hydrogènes avec eux.Sinon,les molécules d'eau à proximité immédiate du soluté ( la première couche de solvatation)s'oriente pour fromer des liaisons hydrogène avec d'autres molécules d'eau, alors une polarisation se créé à sa surface.
+\paragraph{}
+L'effet de l'eau sur la protéine se décompose principalement en 4 contributions:
+
+\begin{enumerate}
+\item Les interactions électrostatiques
+\item L'énergie de VanDer Waals
+\item l'entropie de réorganisation des molécules aqueuses autour de la protéine
+\item les effect de friction mécanique entre l'eau et le soluté
+
+Ces effets sont modélisés précisemment lorsque le solvant et le soluté sont décrit au niveau atomique, c'est à dire avec un modèle de solvant explicite.AUjourd'hui, les simulations de mécanique moléculaire prenant en compte le solvant peuvent considérer plusieurs milliers de molécules de solvant par protéine. Ces simulations sont dites en solvant explicite.Elles sont particulierement couteuse à produire. Deux approches ont alors possibles.  
+
+\subsection{Solvant explicite}
+
+La méthode du solvant explicite consiste à modéliser l'eau par des molécules d'eau. Ce type d'approche permet une description  précises et complete des phénomènes d'hydratation (levy & Gallicchio, 1998). IL existe de nombreux modèles pour réprésenter les molécules d'eau, avec différent niveaux de précision et donc de coût et terme de calculs (Keutsh et al,2003).Le modèle TIP3P donne une représentaiton classique de la molécule par ses atomes d'oxygène et d'hydrogène. 
 
 
 %%% Local Variables:
