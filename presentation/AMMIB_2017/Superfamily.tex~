@@ -1,0 +1,54 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry}
+
+\usepackage[utf8]{inputenc}   % le fichier .tex est en UTF-8     
+\usepackage[francais]{babel}  %typo française                    
+\usepackage[T1]{fontenc}      % encodage des fonts latex         
+\usepackage{lmodern}                                             
+\usepackage{microtype}        % typo supplémentaires             
+
+
+\usepackage{multirow}  %  pour des tableaux multilignes/multicolonnes
+
+\usepackage{graphicx} %inclusion de graphiques
+
+\usepackage{hyperref} % liens dans le pdf
+\hypersetup{%
+  pdftitle={Title},
+  pdfauthor={Author1, Author2},
+  pdfkeywords={keywords}
+  pdfsubject={article},
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
+  citecolor=black
+}
+
+
+\begin{document}
+
+\begin{table}[h]
+  \raggedleft{}
+  
+  \begin{tabular}{cccccc}
+    
+    \toprule
+    Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+            & size      & Evalue      & success     & Evalue & success\\
+    \cmidrule{1-6}
+    1G9O  & 62/91 &  3.24e-3 & 9857    & 1.01e-2 & 9857  \\
+    1R6J  & 70/91 &  2.85e-3  & 9876   & 3.63e-3 & 9876  \\
+    2BYG  & 83/97 &  1.67e-3  &  9876  & 3.19e-3 &  9876  \\
+
+    \bottomrule        
+  \end{tabular}   
+  \caption{Résultats Superfamily pour les séquences Proteus avec le modèle neaGB epsilon=4 (E ref optimisées sur 20 cycles selon les classes + 20 cycles selon les types).}   
+  \label{tab:superfamily_model_B6}       
+\end{table}
+
+
+\thispagestyle{empty}
+
+\end{document}
+ 
+
