@@ -1656,7 +1656,7 @@ PRO                  & 0.0                  &                        & 1.8      
             & size      & Evalue      & success     & Evalue & success\\
     \cmidrule{1-6}
     1G9O  & 80/91 &  8.54e-14  & 10000  & 8.94e-3 & 10000  \\
-    1R6J  & 70/91 &  2.85e-6   & 10000  & 2.69e-3 & 10000  \\
+    1R6J  & 70/82 &  2.85e-6   & 10000  & 2.69e-3 & 10000  \\
     2BYG  & 88/97 &  3.26e-12  & 10000  & 1.96e-3 & 10000  \\
 
     \bottomrule        
@@ -1665,7 +1665,7 @@ PRO                  & 0.0                  &                        & 1.8      
   \label{tab:superfamily_model_B6}       
 \end{table}
 
-
+\begin{table}[h]
   \begin{tabular}{cccccc}
     
     \toprule
@@ -1682,16 +1682,34 @@ PRO                  & 0.0                  &                        & 1.8      
   \label{tab:superfamily_model_B6}       
 \end{table}
 
+\begin{table}[h]
+  \raggedleft{}
+  
+  \begin{tabular}{cccccc}
+    
+    \toprule
+    Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+            & size      & Evalue      & success     & Evalue & success\\
+    \cmidrule{1-6}
+    1G9O  & 62/91 & 3.22 10^{-3}  & 9857  & 1.00 10^{-2} & 9857 \\
+    1R6J  & 70/82 & 2.83 10^{-3}  & 9879  & 3.62 10^{-3} & 9879 \\
+    2BYG  & 83/97 & 1.66 10^{-3}  & 9876  & 3.18 10^{-3} & 9876 \\
+
+    \bottomrule        
+  \end{tabular}   
+  \caption{Résultats Superfamily pour les séquences Proteus avec le modèle GB NEA $\epsilon$=4 (E ref optimisées sur 20 cycles selon les classes + 20 cycles selon les types).}   
+  \label{tab:superfamily_model_B6}       
+\end{table}
 
 
    \clearpage
 \begin{table}[h]
   \raggedleft{}
-  
+
   \begin{tabular}{ccc|cc}
     
     \toprule
-               & \multicolumn{2}{c|}{Proteus} & \multicolumn{2}{c|}{Rosetta} \\
+               & \multicolumn{2}{c|}{Proteus} & \multicolumn{2}{c}{Rosetta} \\
     \cmidrule{1-5}
     Protein    & Family & Family  & Family & Family \\
                & Evalue & success & Evalue & success \\
@@ -1709,11 +1727,190 @@ PRO                  & 0.0                  &                        & 1.8      
 \end{table}
 
 
+   \clearpage
+\begin{table}[h]
+  \raggedleft{}
+  
+  \begin{tabular}{cccccc}
+    
+    \toprule
+    Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+            & size      & Evalue      & success     & Evalue & success\\
+    \cmidrule{1-6}
+    1G9O  & 62/91 & 3.22 10^{-3}  & 9857  & 1.00 10^{-2} & 9857 \\
+    1R6J  & 70/82 & 2.83 10^{-3}  & 9879  & 3.62 10^{-3} & 9879 \\
+    2BYG  & 83/97 & 1.66 10^{-3}  & 9876  & 3.18 10^{-3} & 9876 \\
+
+    \bottomrule        
+  \end{tabular}   
+  \caption{Résultats Superfamily pour les séquences Proteus avec le modèle GB NEA $\epsilon$=4 (E ref optimisées sur 20 cycles selon les classes + 20 cycles selon les types).}   
+  \label{tab:superfamily_model_B6}       
+\end{table}
+
+    \clearpage
+    \thispagestyle{empty}
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc} 
+       \includegraphics[width=8.4cm]{neaGB4/1G9O_simil_cut.png} &
+       \includegraphics[width=8.4cm]{neaGB4/1G9O_simil_core.png} \\
+       \includegraphics[width=8.4cm]{neaGB4/1R6J_simil_cut.png} &
+       \includegraphics[width=8.4cm]{neaGB4/1R6J_simil_core.png} \\
+       \includegraphics[width=8.4cm]{neaGB4/2BYG_simil_cut.png} &
+       \includegraphics[width=8.4cm]{neaGB4/2BYG_simil_core.png} \\
+     \end{tabular}
+     \caption{Similarité des séquences produites par proteus modèle GB NEA $\epsilon$=4, E ref optimisées selon les classes puis selon les types et Rosetta à l'alignement Pfam RP55, sur toutes les positions à gauche  et sur les positions du coeur à droite.}
+
+\label{graph:Simil_modelExactGB}
 
 
+   \end{figure}
+
+
+       \clearpage
+    \thispagestyle{empty}
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc} 
+       \includegraphics[width=8.4cm]{control/1G9O_simil_cut.png} &
+       \includegraphics[width=8.4cm]{control/1G9O_simil_core.png} \\
+       \includegraphics[width=8.4cm]{control/1R6J_simil_cut.png} &
+       \includegraphics[width=8.4cm]{control/1R6J_simil_core.png} \\
+       \includegraphics[width=8.4cm]{control/2BYG_simil_cut.png} &
+       \includegraphics[width=8.4cm]{control/2BYG_simil_core.png} \\
+     \end{tabular}
+     \caption{Similarité des séquences produites Rosetta , et des séquences de l'aligenment Pfam RP55, sur toutes les positions à gauche  et sur les positions du coeur à droite.}
+
+\label{graph:Simil_control}
+
+
+   \end{figure}
+
+
+
+       \clearpage
+    \thispagestyle{empty}
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc} 
+       \includegraphics[width=8.4cm]{exactGB/1G9O_simil_cut.png} &
+       \includegraphics[width=8.4cm]{exactGB/1G9O_simil_core.png} \\
+       \includegraphics[width=8.4cm]{exactGB/1R6J_simil_cut.png} &
+       \includegraphics[width=8.4cm]{exactGB/1R6J_simil_core.png} \\
+       \includegraphics[width=8.4cm]{exactGB/2BYG_simil_cut.png} &
+       \includegraphics[width=8.4cm]{exactGB/2BYG_simil_core.png} \\
+     \end{tabular}
+%     \caption{Similarité des séquences Proteus (NEA et FDB),Rosetta , et des séquences de l'aligenment Pfam RP55, sur toutes les positions à gauche  et sur les positions du coeur à droite.}
+
+\label{graph:Simil_control_B}
+
+
+   \end{figure}
+
+
+   \clearpage
+   
+    \begin{table}[!htbp]
+      \centering
+
+      \begin{tabular}{ccc|cc}
+
+        \toprule
+        \multirow{2}{*}{acides aminés}  & \multicolumn{2}{c|}{NEA} & \multicolumn{2}{c}{FDB} \\
+        \cmidrule{2-5}
+         & Pos. Enf. & Pos Exp. & Pos. Enf. & Pos Exp. \\
+        \cmidrule{1-5}
+
+        ALA &   0.00     &  0.00    &   0.00  &   0.00       \\
+        CYS &  -0.89     &  -2.57   &  -1.06  &   -1.64      \\
+        THR &  -5.31     &  -8.075  &  -4.84  &   -6.68      \\
+        SER &  -5.55     &  -6.55   &  -4.45  &   -5.24      \\
+        ASP &  -17.26    &  -22.06  &  -14.56 &   -18.82     \\
+        GLU &  -16.12    &  -20.68  &  -14.52 &   -18.21     \\
+        ASN &  -16.38    &  -20.41  &  -14.02 &   -17.80     \\
+        GLN &  -14.00    &  -18.41  &  -13.14 &   -16.61     \\
+        HID &   11.21    &  6.95    &  10.85  &   8.13       \\
+        HIE &   10.63    &  6.15    &  10.41  &   7.37       \\
+        HIP &   15.17    &  10.72   &  12.86  &   10.98      \\
+        ARG &  -53.40    &  -57.36  &  -51.37 &   -54.76     \\
+        LYS &  -8.20     &  -12.34  &  -8.24  &   -11.35     \\
+        ILE &   6.76     &  3.44    &  5.50   &   3.06       \\
+        VAL &   0.43     &  -2.19   &  -0.05  &   -1.66      \\
+        LEU &   0.52     &  -3.72   &  0.00   &   -2.94      \\
+        MET &  -1.61     &  -3.21   &  -2.85  &   -3.09      \\
+        PHE &   1.86     &  -2.68   &  0.17   &   -3.18      \\
+        TRP &  -0.23     &  -7.67   &  -1.94  &   -5.53      \\
+        TYR &  -5.10     &  -10.90  &  -5.91  &   -10.14     \\
+
+        \bottomrule
+
+
+      \end{tabular}      
+      \caption{Les énergies de référence obtenues avec l'optimisation 6 protéines.}
+\label{tab:RefEner_groupes}      
+    \end{table}
+
+    \clearpage
+
+
+
+   \begin{table}
+     \centering
+\caption{La composition en acide aminé (\%) des séquences expérimentales et Proteus après optimisation des énergies de référence. La différence entre expérimentales et Proteus sur les classes est donnée entre crochets.}
+\begin{tabular}{l|cccc|cccc}
+\hline
+\multirow{2}{*}{Res} & \multicolumn{4}{c|}{Experimental n=3}& \multicolumn{4}{c}{FDB}\\
+ & \multicolumn{2}{c}{Buried} & \multicolumn{2}{c|}{Exposed} & \multicolumn{2}{c}{Buried} & \multicolumn{2}{c}{Exposed} \\
+\hline
+ & type & classe & type & classe & type & classe & type & classe \\
+\hline 
+ALA                  & 8.7                  &  \multirow{3}{*}{16.8} & 5.5                  & \multirow{3}{*}{13.2}   &   9.6               & \multirow{2}{*}{17.1}     & 1.8 & \multirow{2}{*}{11.3} \\
+CYS                  & 1.9                  &                        & 0.4                  &                         &    2.8               & \multirow{2}{*}{[-0.3]}  & 0.6 & \multirow{2}{*}{[1.9]} \\
+THR                  & 6.2                  &                        & 8.3                  &                         &    4.7               &                          & 8.9 &                       \\
+\hline
+\multirow{2}{*}{SER} & \multirow{2}{*}{4.4}                          & \multirow{2}{*}{6.7}                           & \multirow{2}{*}{5.2} & \multirow{2}{*}{7.7}     & \multirow{2}{*}{7.9} \\
+                     &                      &                        &                      &                         &                      &  [-0.8]                  &                      & [-1.2] \\
+\hline
+ASP                  & 4.8                  & \multirow{2}{*}{7.4}   & 6.1                  & \multirow{2}{*}{17.1}   &   5.8                &  8.6                     & 8.1    & 20.6  \\
+GLU                  & 2.6                  &                        & 11.0                 &                         &   2.8                &  [-1.2]                  & 12.5   &  [-3.5] \\
+\hline
+ASN                  & 3.4                  & \multirow{2}{*}{5.1}   & 6.9                  & \multirow{2}{*}{12.7}   &   4.2                &  6.0                     & 8.8 & 16.0 \\
+GLN                  & 1.7                  &                        & 5.8                  &                         &   1.8               &  [-0.9]                   & 7.3 & [-3.3]    \\
+\hline
+HIP                  & 2.0                  & \multirow{3}{*}{2.0}   & 5.9                  & \multirow{3}{*}{5.9}    &   1.6                & \multirow{2}{*}{2.2}     & 0.0 & \multirow{2}{*}{3.8} \\
+HIE                  & 0.0                  &                        & 0.0                  &                         &   0.5                & \multirow{2}{*}{[-0.2]}  & 2.6 & \multirow{2}{*}{[2.1]}  \\
+HID                  & 0.0                  &                        & 0.0                  &                         &   0.1                &                          & 1.2 & \\
+\hline
+ILE                  & 12.4                 & \multirow{3}{*}{50.3}  & 4.1                  & \multirow{3}{*}{14.0}   &   11.2               & \multirow{2}{*}{49.4}    & 0.6 & \multirow{2}{*}{12.5} \\
+VAL                  & 21.1                 &                        & 5.1                  &                         &   21.2               & \multirow{2}{*}{[0.9]}   & 5.2 & \multirow{2}{*}{[1.5]}  \\
+LEU                  & 16.8                 &                        & 4.8                  &                         &   17.0               &                          & 6.7 & \\
+\hline
+\multirow{2}{*}{MET} & \multirow{2}{*}{1.3}                          & \multirow{2}{*}{1.8}                           & \multirow{2}{*}{1.0}                            & \multirow{2}{*}{2.2}  \\
+                     &                      &                        &                      &                         &                      & [0.3]                    &              & [-0.4] \\
+\hline
+\multirow{2}{*}{LYS} & \multirow{2}{*}{3.4}                          & \multirow{2}{*}{10.8}                          & \multirow{2}{*}{4.3}                            & \multirow{2}{*}{12.4}   \\
+                     &                      &                        &                       &                        &                      &  [1.1]                   &              & [-1.6] \\
+\hline
+\multirow{2}{*}{ARG} & \multirow{2}{*}{1.1}                          & \multirow{2}{*}{9.8}                           & \multirow{2}{*}{1.8}                            & \multirow{2}{*}{11.8}    \\
+                     &                      &                        &                      &                        &                      & [-0.7]                    &             & [-2.0]   \\
+\hline
+PHE                  & 4.6                  & \multirow{2}{*}{4.6}   & 2.4                  & \multirow{2}{*}{2.5}    &  3.9                 & 3.9                      & 0.0 & 0.0 \\
+TRP                  & 0.0                  &                        & 0.1                  &                         &  0.0                 & [0.7]                    & 0.0 & [2.5]               \\
+\hline
+TYR                  & \multirow{2}{*}{2.4}                          &   \multirow{2}{*}{1.2}                         &  2.0                 & [0.4]                    & 0.0 & [1.2]               \\
+\hline
+GLY                  & 1.0                  & \multirow{2}{*}{1.1}   & 1.9                  & \multirow{2}{*}{3.7}    &   0.0                &  0.0                     & 0.0 & 0.0 \\
+PRO                  & 0.1                  &                        & 1.8                  &                         &   0.0                &  [1.1]                   & 0.0 & [3.7]\\
+\hline
+
+\end{tabular} 
+\end{table}
+
+   \clearpage
+
+    
    
       
-
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../../rapport"

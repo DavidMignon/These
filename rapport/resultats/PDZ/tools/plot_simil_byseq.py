@@ -79,7 +79,7 @@ X=np.insert(X,0,newx)
 Y=np.insert(Y,0,0)
 Y=np.append(Y,0)
 
-proteus_pfam,=ax.plot(X,Y,linewidth=2,marker='o',color='black')
+#proteus_pfam,=ax.plot(X,Y,linewidth=2,marker='o',color='black')
 
 weights = rosetta_w*np.ones_like(rosetta_simil)/len(rosetta_simil)
 Y,X=np.histogram(rosetta_simil,bins=20,weights=weights)
@@ -91,7 +91,7 @@ Y=np.insert(Y,0,0)
 Y=np.append(Y,0)
 
 
-rosetta_pfam,=ax.plot(X,Y,linewidth=4,marker='o',color='0.75')
+rosetta_pfam,=ax.plot(X,Y,linewidth=4,linestyle='--',marker='*',color='0.65')
 
 
 weights = pfam_w*np.ones_like(pfam_simil)/len(pfam_simil)
@@ -103,10 +103,13 @@ X=np.insert(X,0,newx)
 Y=np.insert(Y,0,0)
 Y=np.append(Y,0)
 
-pfam_pfam,=ax.plot(X,Y,linewidth=2,linestyle='--',marker='o',color='black')
+pfam_pfam,=ax.plot(X,Y,linewidth=2,linestyle='-',marker='o',color='0.65')
 
 
-arrow = plt.arrow(native_simil, 7, 0, -0.8,color='black',head_width=0.4, head_length=0.2 ,linewidth=2)
+arrow = plt.arrow(native_simil, 7, 0, -0.8,color='black',head_width=0.8, head_length=0.2 ,linewidth=2)
+
+
+#ax.legend([rosetta_pfam,pfam_pfam,arrow], ['Rosetta','Pfam','Native'], handler_map={mpatches.FancyArrow : HandlerPatch(patch_func=make_legend_arrow),},loc=0,fontsize=33)
 
 
 #ax.legend([proteus_pfam,rosetta_pfam,pfam_pfam,arrow], ['Proteus ','Rosetta','Pfam','Native'], handler_map={mpatches.FancyArrow : HandlerPatch(patch_func=make_legend_arrow),},loc=0,fontsize=25)
