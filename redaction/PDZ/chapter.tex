@@ -5,9 +5,8 @@
 
 \section{Introduction}
 
-Nous cherchons maintenant à évaluer performances de notre modèle CPD sur un ensemble de protéines. Les domaines PDZ ("Postynaptic density-95 / Discs large / Zonula occludens-1") sont de petits domaines globulaires qui établissent  des réseaux d'interactions entre protéines dans la cellule(1-6).   Ils forment des interactions spécifiques avec des protéines cibles, généralement en reconnaissant quelques acides aminés à l'extrémité C-terminale. En raison de leur importance biologique, les domaines PDZ et leur interaction avec les protéines cibles ont été largement étudiées et utilisées en conception in sillico. Des ligands ont été conçus  pour moduler l'activité de domaines PDZ impliqués dans diverses pathologie (7-9).des domaines  PDZ des ligands PDZ redessinés ont été utilisés pour élucider les principes du repliement des protéines et de l'évolution (10-13).Et ces domaines avec leurs ligands peptidiques fournissent des "benchmarks" pour tester les méthodes informatiques elles-mêmes (14-16).
-\paragraph{}
-A partir d'une sélection de domaines PDZ,nous optimisons les énergies de référence E/ref  en utilisant un formalisme du maximum de vraisemblance. La performance du modèle est testée en générant des séquences par proteus pour chaque protéine de la sélection. Pour cela, nous utilisons les résultats précédents, en particulier ceux de la section (12), pour définir les valeurs des paramètres de l'optimisation du Monte-Carlo. Nous confrontons nos résultats à ceux de la fonction d'énergie de Rosetta , fonction, plus empirique que la notre, qui a connue le plus de succès(29-31). Elle comprend un terme de répulsion de Lennard-Jones, un terme Coulomb, un terme de liaison hydrogène,un terme de solvatation Lazaridis-Karplus (32) et des énergies de référence d'état dépliées. Il a un
+Nous cherchons maintenant à évaluer performances de notre modèle CPD sur un ensemble de protéines. Les domaines PDZ ("Postynaptic density-95 / Discs large / Zonula occludens-1") sont de petits domaines globulaires qui établissent  des réseaux d'interactions entre protéines dans la cellule \cite{Harris01,Hung02,Tonikian08,Gfeller11,Subbaiah11,Sheperd11r}.   Ils forment des interactions spécifiques avec des protéines cibles, généralement en reconnaissant quelques acides aminés à l'extrémité C-terminale. En raison de leur importance biologique, les domaines PDZ et leur interaction avec les protéines cibles ont été largement étudiées et utilisées en conception in sillico. Des ligands ont été conçus  pour moduler l'activité de domaines PDZ impliqués dans diverses pathologie \cite{Bach12,Roberts12,Zheng15}.Des domaines  PDZ et leurs  ligands redessinés ont été utilisés pour élucider les principes du repliement des protéines et de l'évolution \cite{Socolich05,Kong09,Mclaughlin12,Melero14}.Et ces domaines avec leurs ligands peptidiques fournissent des "benchmarks" pour tester les méthodes informatiques elles-mêmes \cite{Reina02,Schmidt10,Smith10}.
+A partir d'une sélection de domaines PDZ,nous optimisons les énergies de référence $E^r_t$  en utilisant un formalisme du maximum de vraisemblance. La performance du modèle est testée en générant des séquences par proteus pour chaque protéine de la sélection. Pour cela, nous utilisons les résultats précédents, en particulier ceux de la section \ref(12), pour définir les valeurs des paramètres de l'optimisation du Monte-Carlo. Nous confrontons nos résultats à ceux de la fonction d'énergie de Rosetta , fonction, plus empirique que la notre, qui a connue le plus de succès\cite{Baker06b}. Elle comprend un terme de répulsion de Lennard-Jones, un terme Coulomb, un terme de liaison hydrogène,un terme de solvatation Lazaridis-Karplus (32) et des énergies de référence d'état dépliées. Il a un
 Un grand nombre de paramètres spécifiquement optimisés pour CPD, qui offrent des performances optimales, mais une interprétation physique moins transparente que Proteus qui lui fournit la capacité de calculer les énergies libres formellement.
    
 
@@ -20,22 +19,22 @@ La propension de chaque position du noyau à devenir hydrophobe à un niveau de 
 \subsection{Le maximum de vraisemblance des énergies de référence}
 
 L'énergie utilisée est ici est l'énergie de pliage de la protéine, c'est-à-dire la différence entre
-Ses énergies d'état pliées et dépliées (33).Un mouvement élémentaire possible est une "mutation",
-Nous modifions le type de chaîne latérale t \rightarrow t' à une position choisie i dans la protéine pliée, en assignant
+ses énergies d'état pliées et dépliées (33).Un mouvement élémentaire possible est une "mutation",
+Nous modifions le type de chaîne latérale $t \rightarrow t'$ à une position choisie i dans la protéine pliée, en assignant
 Un rotamer r' particulier à la nouvelle chaîne latérale. Nous considérons la même mutation dans
-État déplié. Pour une séquence S particulière, l'énergie d'état dépliée est de la forme:
-\begin{displaymath}
+l'état déplié. Pour une séquence $S$ particulière, l'énergie d'état dépliée est de la forme:
+\begin{equation}
   E^u=\sum_{i\inS}E^r(t_i)
-  \label{Eref}
-\end{displaymath} 
+  \label{eq:unfolded}
+\end{equation} 
 
-Avec i la position dans la séquence et t_i le type en i.La somme se fait donc sur tous les acides aminés de S.
+Avec $i$ la position dans la séquence et $t_i$ le type en $i$.La somme se fait donc sur tous les acides aminés de $S$.
 
 Les grandeurs $E^r(t) \equiv E_t^r$ sont appelées "énergies de référence".Ils peuvent être considérés comme des potentiels chimiques effectifs de chaque type d'acide aminé. Le changement d'énergie de repliement d'une mutation a donc la forme:
-\begin{displaymath}
-  \DeltaE=\DeltaE^f - \DeltaE^u=(E^f(...t'_i,r'_i...) - E^f(...t_i,r_i...)) -(E^r(t'_i) - E^r(t_i))
-\end{displaymath} 
-avec \DeltaE^f and \DeltaE^u les changements d'énergie dans l'état plié et déplié, respectivement.
+\begin{equation} \label{eq:deltaE}
+  \Delta E=\Delta E^f - \Delta E^u=(E^f(...t'_i,r'_i...) - E^f(...t_i,r_i...)) -(E^r(t'_i) - E^r(t_i))
+\end{equation} 
+avec $\Delta E^f$ and $\Delta E^u$ les changements d'énergie dans l'état plié et déplié, respectivement.
 Les énergies de référence sont des paramètres essentiels dans le modèle de simulation. Notre objectif ici
 est de les choisir empiriquement afin que la simulation produise des fréquences d'acides aminés
 Qui correspondent à un ensemble de valeurs cibles, par exemple des valeurs expérimentales dans la base de données Pfam.
@@ -43,61 +42,81 @@ Qui correspondent à un ensemble de valeurs cibles, par exemple des valeurs exp�
 Plus précisément, nous les choisirons telles qu'elles maximisent la probabilité des
 Séquences cibles. C'est à dire, nous celles qui sont le plus vraisemblable étant donnée l'observation des séquences cibles.
 
-Soit S une séquence particulière. Sa probabilité de Boltzmann est:
-\begin{displaymath}
-  p(S)=\frac{1}{Z}exp(-\beta\DeltaG_S),
-\end{displaymath}
-où \DeltaG_S=G_S^f - E^u_S est l'énergie libre de repliement de S, G^f_S est de l'état replié,\beta =\frac{1}{kT} est la température inverse et Z une constante de normalisation (la fonction de partition). Nous avons alors
-\begin{displaymath}
-kTln p(S) = \sum_{i\inS} E^r(t_i) - G^f_S - kTln Z = \sum_{t\inaa}n_S(t)E^r_t - G^f_S - kTlnZ,
-\end{displaymath}
-où la somme à droite se fait sur l'ensemble des types d'acides aminés et n_S(t) est le nombre d'acide aminés de type t dans S.
+Soit $S$ une séquence particulière. Sa probabilité de Boltzmann est:
+\begin{equation}
+  p(S)=\frac{1}{Z}\exp(-\beta \Delta G_S),
+\end{equation}
+où $\Delta G_S=G_S^f - E^u_S $ est l'énergie libre de repliement de $S$, $G^f_S$ est de l'état replié,$\beta =\frac{1}{kT}$ est la température inverse et $Z$ une constante de normalisation (la fonction de partition). Nous avons alors
+\begin{equation}
+kTln p(S) = \sum_{i\in S} E^r(t_i) - G^f_S - kT \ln Z = \sum_{t\in aa}n_S(t)E^r_t - G^f_S - kT\ln Z,
+\end{equation}
+où la somme à droite se fait sur l'ensemble des types d'acides aminés et $n_S(t)$ est le nombre d'acide aminés de type $t$ dans $S$.
 
-Nous considérons maintenant un ensemble S de N séquences cibles \textit{\textbf{S}}; On appelle \textit{\textbf{L}} la probabilité d'observer l'ensemble entier. \textit{\textbf{L}} est fonction des paramètres du modèle E_t^r.Comme nous voulons le maximum de \textit{\textbf{L}} sur les E_t^r , nous se réfère à  \textit{\textbf{L}} comme leur vraisemblance.
+Nous considérons maintenant un ensemble \mathcal{S} de $N$ séquences cibles; On appelle \mathcal{L} la probabilité d'observer l'ensemble entier. \mathcal{L} est fonction des paramètres du modèle $E_t^r$.Comme nous voulons le maximum de \mathcal{L} sur les $E_t^r$ , nous nous référons  à  \mathcal{L} comme leur vraisemblance \cite{Kleinman06}.
 
 Nous avons:
-\begin{displaymath}
-kTln \textit{\textbf{L}} = \sum_S\sum_{i\inaa} n_S(t)E^r(t) - \sum_SG^f_S - NkTln Z = \sum_{t\inaa}n_S(t)E^r_t - \sum_SG^f_S - NkTlnZ,
-\end{displaymath}
-avec N(t) le nombre d'acide aminé de type t dans l'ensemble \textit{\textbf{S}}.Le facteur de normalisation Z (ou fonction de partition) est la somme sur l'ensemble les séquences possibles \textit{\textbf{R}}:
-\begin{displaymath}
-  Z=\sum_Sexp(-\beta\DeltaG_\textit{\textbf{R}})=\sum_\textit{\textbf{R}} exp(-\beta\DeltaG^f_\textit{\textbf{R}})\prod_{t\inaa}exp(\betan_\textit{\textbf{R}}(t)E^r_t)
-\end{displaymath} 
-Pour maximiser \textit{\textbf{L}}, nous considerons la dérivé de Z selon chacunes des E_t:
-\begin{displaymath}
-\frac{\partialZ}{\partialE^r_t}= \frac{\sum_\textit{\textbf{R}}n_\textit{\textbf{R}}(t)exp()-\beta\DeltaG_\textit{\textbf{R}}}{\frac_\textit{\textbf{R}}exp(-\beta\DeltaG_\textit{\textbf{R}})} = \langlen(t)\rangle.
-\end{displaymath} 
+\begin{equation}
+  kT \ln \mathcal{L} = \sum_S\sum_{i\in aa} n_S(t)E^r_t - \sum_S G^f_S - N kT \ln Z
+                     = \sum_{t\in aa} N(t) E^r_t - \sum_SG^f_S - N kT \lnZ,
+\end{equation}
+avec $N(t)$ le nombre d'acide aminé de type $t$ dans l'ensemble $\mathcal{S}$.Le facteur de normalisation $Z$ (ou fonction de partition) est la somme sur l'ensemble les séquences possibles $R$:
+\begin{equation}
+  Z=\sum_R \exp(-\beta \Delta G_R) = \sum_R \exp(-\beta\Delta G^f_R)\Pi_{t\in aa}\exp(\beta n_R (t) E^r_t)
+\end{equation} 
+Pour maximiser $\mathcal{L}$, nous considerons la dérivé de $Z$ selon chacunes des $E_t$:
+\begin{equation}
+\frac{ \partial Z }{ \partial E^r_t } = 
+   \sum_R \beta n_R(t) \exp (-\beta \Delta G^f_R) \prod_{s \in aa} \exp(\beta n_R(s) E^r_s) 
+\end{equation}
+
+Nous avons alors:
+\begin{equation}
+\frac{kT}{Z} \frac{ \partial Z }{ \partial E^r_t }
+   = \frac{ \sum_R n_R(t) \exp(-\beta \Delta G_R) }{ \sum_R \exp(-\beta \Delta G_R) } = \langle n(t) \rangle.
+\end{equation}
+
 La quantité à droite est la moyenne de Boltzmann du nombre n(t) des acides aminés t sur toutes les séquences possibles. En pratique, c'est la population moyenne de t que nous voudrions obtenir dans une longue simulation Monte Carlo. 
 
-Pour que ln \textit{\textbf{L}} soit maximal il faut que ses dérivées par rapport à l'$E_t^r$ soient nulles.
-\begin{displaymath}
-\frac{1}{N}\frac{\partial}{\partialE^r_t}ln \textit{\textbf{L}} = \frac{1}{N}\sum_Sn_S(t) - \langle(t)\rangle = \frac{N(t)}{N} - \langlenn(t)\rangle
-\end{displaymath} 
-et donc
-$\textit{\textbf{L}} maximum  \Rightarrow \frac{N(t)}{N} = \langle n(t)\rangle, \forall t \in aa$
+Pour que $ln \mathcal{L}$ soit maximal il faut que ses dérivées par rapport à l'$E_t^r$ soient nulles.
 
-Ainsi, pour maximiser L, nous devrions choisir ${E^r_t}$ telle qu'une longue simulation donne les mêmes fréquences d'acides aminés que l'ensemble cible.
+\begin{equation}
+\frac{1}{N} \frac{\partial}{\partial E^r_t} \ln {\mathcal L} = \frac{1}{N} \sum_S n_S(t) - \langle n(t) \rangle 
+   = \frac{N(t)}{N} - \langle n(t) \rangle
+\end{equation}
+et donc
+\begin{displaymath}
+{\mathcal L} \hspace*{2mm} {\rm maximum} \Longrightarrow \frac{N(t)}{N} = \langle n(t) \rangle, 
+\hspace*{2mm} \forall t \in {\rm aa}
+\label{eq:optimum}
+\end{displaymath}
+
+Ainsi, pour maximiser $\mathcal{L}$, nous devrions choisir ${E^r_t}$ telle qu'une longue simulation donne les mêmes fréquences d'acides aminés que l'ensemble cible.
 
 
 \subsection{Recherche du maximum de vraisemblance}
 
 
-Nous utilisons trois méthodes pour approcher les valeurs {E^r_t}.
+Nous utilisons trois méthodes pour approcher les valeurs ${E^r_t}$.
 
 \begin{enumerate}
-\item La première consiste à avancer dans la direction du gradient de ln(\textit{\textbf{L}}) en utilisant la règle itérative suivante (40):
-\begin{displaymath}
-  E^r_t(n+1) = E^r_t(n) + \alpha\frac{\partial}{\partialE^r_t}ln(\textit{\textbf{L}})=E^r_t(n) + \deltaE(n^{exp}_t - \langle n(t)\rangle_n)
-\end{displaymath} 
+\item La première consiste à avancer dans la direction du gradient de $ln(\mathcal{L})$ en utilisant la règle itérative suivante \cite{Kleinman06}:
+\begin{equation} \label {eq: linear}
+  E^r_t(n+1) = E^r_t(n) + \alpha \frac{\partial}{\partial E^r_t} \ln(\mathcal{L})=E^r_t(n) + \delta E (n^{exp}_t - \langle n(t)\rangle_n)
+\end{equation} 
 
-avec \alpha une constante, $n^{exp}_t = \frac{N(t)}{N}$ la population moyenne d'acide aminé de type t dans l'ensemble ciblé,
-\langle\rangle_n indique une moyenne sur une simulation effectuée en utilisant les énergies de références courantes {E^r_t(n)}, et \deltaE une constante empirique avec la dimension d'une énergie,correspondant à l'amplitude de mise à jour. Cette procédure de mise à jour est répétée jusqu'à convergence. Nous appelons cette méthode, la méthode de mise à jour linéaire.
+avec $\alpha$ une constante, $n^{exp}_t = \frac{N(t)}{N}$ la population moyenne d'acide aminé de type t dans l'ensemble ciblé,
+$\langle\rangle_n$ indique une moyenne sur une simulation effectuée en utilisant les énergies de références courantes ${E^r_t(n)}$, et $\delta E$ une constante empirique avec la dimension d'une énergie,correspondant à l'amplitude de mise à jour. Cette procédure de mise à jour est répétée jusqu'à convergence. Nous appelons cette méthode, la méthode de mise à jour linéaire.
 
-\item La deuxième méthode est une variante de la première dans laquelle le \deltaE n'est pas constant, mais ajusté au cours de la simulation de la façon suivante. La règle (11) est utilisées trois fois avec trois valeurs differentes et constantes pour le \deltaE ceci avec un jeu d'énergie de références identiques. une interpolation parabolique est effectuée sur les trois valeurs de la fonction proxy obtenues, le minimum de la parabole est calculée et est utilisée comme \deltaE pour le cycle suivant, en terme duquel les énergies sont mises à jours.
+\item La deuxième méthode est une variante de la première dans laquelle le $\delta E$ n'est pas constant, mais ajusté au cours de la simulation de la façon suivante. La règle (11) est utilisées trois fois avec trois valeurs differentes et constantes pour le $\delta E$ ceci avec un jeu d'énergie de références identiques. une interpolation parabolique est effectuée sur les trois valeurs de la fonction proxy obtenues, le minimum de la parabole est calculée et est utilisée comme $\delta E$ pour le cycle suivant, en terme duquel les énergies sont mises à jours.
 
-\item La troisième méthode, utilisée précédement (26,27), utilise une règle de mise à jour logarithmique:
+\item La troisième méthode, utilisée précédement \cite{Schmidt08,Simonson13b}, utilise une règle de mise à jour logarithmique:
 
-  avec kT l'énergie thermique, fixée empiriquement à 0,5 kcal/mol. Nous l'appelons la méthode logarithmique. Dans les dernières itérations, certaines valeurs ont tendance à converger lentement,avec des oscillations. Par conséquent, une règle modifié où une énergie au cycle n et l'énergie au cycle  n-1 sont moyenenée avec un poids respectifs de 2/3 et 1/3.
+  \begin{equation} \label{eq:log}
+E^r_t (n+1) = E^r_t (n) + kT \, \ln \frac{\langle n(t) \rangle_n}{n_t^{\rm exp}}
+\end{equation}
+
+
+  avec $kT$ l'énergie thermique, fixée empiriquement à 0,5 kcal/mol. Nous l'appelons la méthode logarithmique. Dans les dernières itérations, certaines valeurs ont tendance à converger lentement,avec des oscillations. Par conséquent, une règle modifié où une énergie au cycle n et l'énergie au cycle  n-1 sont moyenenée avec un poids respectifs de 2/3 et 1/3.
 
 \end{enumerate}
  
@@ -109,45 +128,39 @@ Chaque itération, dans la suite, ont étés effectué avec 500 000 000 de pas p
 
 La matrice énergétique a été calculée avec la fonction d'énergie efficace suivante pour
 État plié:
-\begin{displaymath}
-E = E_{bonds} + E_{angles} + E_{dihe} + E_{impr} + E_{vdw} + E_{Coul} + E_{solv}
-\end{displaymath}
+\begin{equation}
+  E = E_{bonds} + E_{angles} + E_{dihe} + E_{impr} + E_{vdw} + E_{Coul} + E_{solv}
+  \label{eq:energy} 
+\end{equation
 
-Les six premiers termes de l'équation (13) représentent l'énergie interne de la protéine. Ils sont tirés de
-La fonction d'énergie empirique Amber ff99SB (42), légèrement modifiée pour le CPD.
+Les six premiers termes de l'équation Eq.\ (\ref{eq:energy})  représentent l'énergie interne de la protéine. Ils sont tirés de
+La fonction d'énergie empirique Amber ff99SB \cite{Cornell95}, légèrement modifiée pour le CPD.
 
-Les charges du backbone ont été remplacées par un ensemble unifié, obtenu en faisant la moyenne sur l'ensemble des types  d'acides aminés et ajuster légèrement pour rendre la partie backbone de chaque acide aminé neutre (43).
-Le dernier terme à droite de l'équation (13), E_{solv}, représente la contribution du solvant.Nous avons utilisé un modèle de solvant implicite "Generalized Born + Surface Area" ou GBSA (44):
+Le dernier terme à droite de l'équation (13), $E_{solv}$, représente la contribution du solvant.Nous avons utilisé un modèle de solvant implicite "Generalized Born + Surface Area" ou GBSA (44):
 \begin{displaymath}
-E_{solv} = D_GB + E_{surf} = \frac{1}{2}(\frac{1}{\epsilon_W} - \frac{1}{\epsilon_P})\sum_{ij} q_iq_j (r^2_{ij} + b_ib_jexp[-\frac{r^2_{ij}}{4b_ib_j}])^{-\frac{1}{2}} + \sum_i \sigma_iA_i
+E_{solv} = E_{GB} + E_{surf} = \frac{1}{2}(\frac{1}{\epsilon_w} - \frac{1}{\epsilon_p})\sum_{ij} q_iq_j (r^2_{ij} + b_ib_jexp[-\frac{r^2_{ij}}{4b_ib_j}])^{-\frac{1}{2}} + \sum_i \sigma_iA_i
 \end{displaymath} 
-Ici, $\epsilon_W$ et $\epsilon_P$ sont les constantes diélectriques du solvant et de la protéine; $r_{ij}$ est la distance entre les atomes i, j et $b_i$ est le "rayon de solvatation" de l'atome i (44,45). $A_i$ est la surface exposé accessible au solvant de l'atome i.\sigma_i  
+Ici, $\epsilon_w$ et $\epsilon_p$ sont les constantes diélectriques du solvant et de la protéine; $r_{ij}$ est la distance entre les atomes $i$, $j$ et $b_i$ est le "rayon de solvatation" de l'atome $i$ \cite{Hawkins95,Lopes07}. $A_i$ est la surface exposé accessible au solvant de l'atome $i$.$\sigma_i$ est un paramètre qui représente la préférence de chaque atome à être exposé ou caché du solvant. Les atomes du soluté sont divisés en quatre groupes avec pour chacun une valeur $\sigma_i$ spécifique en cal/mol/Å^2:
+non polaire -5,aromatique -40,polaire -80,ionique -100.
 
-\sigmai est un paramètre qui représente la préférence de chaque atome à être exposé ou caché du solvant. Les atomes du soluté sont divisés en quatre groupes avec pour chacun une valeur \sigma_i spécifique en cal/mol/Å^2:
+On attribue aux atomes d'hydrogène un coefficient de surface de 0. Les surface sont calculées par l'algorithme de Lee et Richards \cite{Lee71},  qui est implementé dans le programme XPLOR \cite{Xplor}, en utilisant un rayon de «probe radius» de 1,5 {AA}. Les simulations MC utlisent une constante dielectrique \epsilon_p = 4 ou 8 (voir la partie Résultats).
 
-\begin{enumarete}
-\item non polaire -5   
-\item aromatique  -40  
-\item polaire     -80  
-\item ionique     -100 
-\end{enumarate}
+Dans le terme énergétique GB, le rayon de solvatation atomique $b_i$ approxime la distance de $i$ à la surface de la protéine.C'est une fonction des coordonnées de tous les atomes de protéines. La forme $b_i$ correspond à une variante GB que nous appelons GB/HCT, d'après ses auteurs \cite{Hawkins95}, avec les paramètres du modèle optimisées pour une utilisation avec le champ de force Amber \cite{Lopes07}.Comme $b_i$ dépend des coordonnés de tous les atomes du soluté \cite{Hawkins95}, une approximation supplémentaire est nécessaire pour rendre le terme énergitique GB additif par paire et pour rendre la matrice d'énergie définissable.
+Nous utilisons une approximation NEA ("Nativce Environment Approxition"), dans laquelle le rayon de solvatation $b_i$ de chaque groupe (backbone, chaîne laterale ou ligand) est calculé à l'avance , le reste du système étant fixé à sa séquence et sa conformation native \cite{Simonson13b,Gaillard14}.
+La contribution de l'énergie de surface $E_{surf}$ n'est pas non plus additif par pair, car dans la structure de la protéine, la surface enfouie par une chaîne latérale peut également être enfuie par une autre chaîne.Alors, nous avons utilisé la méthoede de Street et al \cite{Street98}. Dans laquelle, la surface enfuie d'une chaîne latérale est calculée en additionnant la chaîne latérale voisine et les groupes backbones. Pour chaque groupe voisin, la zone de contact avec la chaîne latérale en question est calculé indépendamment des autres groupes. Les zones de contact sont additionnées. Pour éviter de sur-evaluer la surface enfuie, un facteur est appliqué aux zones de contact des chaînes latérales impliquées. Des études précédentes ont montré qu'un facteur de 0.65 fonctionne bien \cite{Lopes07,Gaillard14}.  
 
-On attribue aux atomes d'hydrogème un coefficient de surface de 0. Les surface sont calculées par l'algorithme de Lee et Richards (46),  qui est implementé dans le programme XPLOR, en utilisant un rayon de «probe radius» de 1,5 Å. Les simulations MC utlisent une constante dielectrique \sigmap = 4 ou 8.
-
-Dans le terme énergétique GB, le rayon de solvatation atomique $b_i$ approxime la distance de i à la surface de la protéine et est une fonction des coordonnées de tous les atomes de protéines. La forme $b_i$ correspond à une variante GB que nous appelons GB/HCT, d'après ses auteurs (44),avec les paramètres du modèle optimisées pour une utilisation avec le champ de force Amber (45).Comme $b_i$ dépend des coordonnés de tous les atomes du soluté (44), une approxamiation supplémentaire est nécessaire pour rendre le terme énergitique GB additif par paire et pour rendre la matrice d'énergie définissable (27,28).
-Nous utilisons une approximation NEA ("Nativce Environment Approxition"), dans laquelle le rayon de solvatation $b_i$ de chaque groupe (backbone, chaîne laterale ou ligand) est calculé à l'avance , le reste du système étant fixé à sa séquence et sa conformation native.
-La contribution de l'énergie de surface E_{surf} n'est pas non plus additif par pair, car dans la structure de la protéine, la surface enfouie par une chaîne latérale peut également être enfuie par une autre chaîne.Alors, nous avons utilisé la méthoede de Street et al (49). Dans cette méthode, la surface enfuie d'une chaîne latérale est calculée en additionnant la chaîne latérale voisine et les groupes backbones. Pour chaque groupe voisin, la zone de contact avec la chaîne latérale en question est calculé indépendamment des autres groupes. Les zones de contact sont additionnées. Pour éviter de sur-evaluer la surface enfuie, un facteur est appliqué aux zones de contact des chaînes latérales impliquées. Des études précédentes ont montré qu'un facteur de 0.65 fonctionne bien (45,48).  
+La fonction d'énergie empirique Amber ff99SB (42), légèrement modifiée pour le CPD, en remplaceant les charges du backbone par un ensemble unifié, obtenu en faisant la moyenne sur l'ensemble des types  d'acides aminés et ajuster légèrement pour rendre la partie backbone de chaque acide aminé neutre \cite{Aleksandrov10b}.
 
 
 \subsection{Les énergies de référence de l'état déplié}
 
-Dans le modèle CPD, l'énergie de l'état dépliée dépend de la composition de la séquence par l'ensemble des énergies de référence $E^r_t$ (équation~eqref{Eref}). Ici, les énergies de référence ont été attribuées en fonction des types d'acides aminés t, mais aussi de la position de chaque acide aminé dans la structure repliée à travers son caractère enfoui ou exposé au solvant. Ainsi, pour un type donné (Ala, par exemple), il y a deux valeurs distinctes de $R^r_t$ , une enfuie et une exposée. Cette approche se justifie par trois éléments. Tout d'abord, nous supposons que la structure résiduelle est présente dans l' état déplié, de sorte que les acides aminés conservent en partie leur caractère enfui/exposé. Deuxièmement, nous supposons que le modèle d'état déplié compense de manière systématique des erreurs dans la fonction d'énergie de l'état plié, de sorte que  la structure pliée contribue indirectement aux énergies de référence. Troisièmement, cette stratégie rend le modèle moins sensible aux variations de la longueur des boucles de surface et au rassio  de résidus de surface sur  enterrés, qui peut varier considérablement selon les homologues (voir plus bas).  
+Dans le modèle CPD, l'énergie de l'état dépliée dépend de la composition de la séquence par l'ensemble des énergies de référence $E^r_t$ (équation \ref{eq:unfolded}). Ici, les énergies de référence ont été attribuées en fonction des types d'acides aminés t, mais aussi de la position de chaque acide aminé dans la structure repliée à travers son caractère enfoui ou exposé au solvant. Ainsi, pour un type donné (Ala, par exemple), il y a deux valeurs distinctes de $E^r_t$ , une enfuie et une exposée. Cette approche se justifie par trois éléments. Tout d'abord, nous supposons que la structure résiduelle est présente dans l' état déplié, de sorte que les acides aminés conservent en partie leur caractère enfui/exposé. Deuxièmement, nous supposons que le modèle d'état déplié compense de manière systématique des erreurs dans la fonction d'énergie de l'état plié, de sorte que  la structure pliée contribue indirectement aux énergies de référence. Troisièmement, cette stratégie rend le modèle moins sensible aux variations de la longueur des boucles de surface et au rassio  de résidus de surface sur  enterrés, qui peut varier considérablement selon les homologues (voir plus bas).  
 
 Par conséquent, le modèle devrait être transférable dans une famille de protéines. Distinguer les positions enfouies / exposées double le nombre de paramètres $E^r_t$ à ajuster. Inversement, pour réduire le nombre de paramètres, nous groupons les acides aminés en classes homologues voir table (t1).Dans chaque classe c , et pour chaque type de position (enfoui ou exposé), les énergies de référence ont la forme
 \begin{displaymath}
-E^r_t = E^r_c + \deltaE^r_t
+E^r_t = E^r_c + \delta E^r_t
 \end{displaymath}
-avec $E^r_c$ est un paramètre ajustable,tandis que $\deltaR^r_t$ est une constante, calculée comme la différence d'énergie de mécanique moléculaire entre les types d'acides aminés de classe c,supposé en conformation dépliée où chaque acide aminé interagit uniquement avec lui-même et avec le solvant.
+avec $E^r_c$ est un paramètre ajustable,tandis que $\delta E^r_t$ est une constante, calculée comme la différence d'énergie de mécanique moléculaire entre les types d'acides aminés de classe c,supposé en conformation dépliée où chaque acide aminé interagit uniquement avec lui-même et avec le solvant.
 
 
     \begin{table}[!htbp]
@@ -188,9 +201,9 @@ avec $E^r_c$ est un paramètre ajustable,tandis que $\deltaR^r_t$ est une consta
 
 
 Plus précisément, nous effectuons des simulations MC d'un peptide étendu (le peptide Syndecan1; voir
-Ci-dessous) et calculons les énergies moyennes pour chaque type d'acide aminé à chaque position peptidique (à l'exclusion des positions terminales). Nous prenons les différences entre les types d'acides aminés et les moyennons sur les positions peptidiques.
+ci-dessous) et calculons les énergies moyennes pour chaque type d'acide aminé à chaque position peptidique (à l'exclusion des positions terminales). Nous prenons les différences entre les types d'acides aminés et les moyennons sur les positions peptidiques.
 
-Pendant, la maximisation de la vraisemblance, $E_c$ est optimisé tandis que \deltaE_t est fixe. Pour optimiser les valeurs E^r_t, nous utilisons une trois méthodes (\ll) avec des fréquences cibles correspondent aux fréquences expérimentales soient des classes d'acides aminés, soient des types d'acides aminés. Le choix se faisant en générale par un début d'optimisation sur les classes, puis lorsque la convergence est correctement établie sur ces classe, nous relâchons la contraintes des classes pour optimiser sur les types.  
+Pendant, la maximisation de la vraisemblance, $E_c$ est optimisé tandis que $\delta E_t$ est fixe. Pour optimiser les valeurs $E^r_t$, nous utilisons une trois méthodes () avec des fréquences cibles correspondent aux fréquences expérimentales soient des classes d'acides aminés, soient des types d'acides aminés. Le choix se faisant en générale par un début d'optimisation sur les classes, puis lorsque la convergence est correctement établie sur ces classe, nous relâchons la contraintes des classes pour optimiser sur les types.  
 
 
 \section{Séquences expérimentales et modèles structurels}
@@ -198,15 +211,14 @@ Pendant, la maximisation de la vraisemblance, $E_c$ est optimisé tandis que \de
 
 \section{L'ensemble des protéines PDZ}
 
-Nous sélectionnons huit protéines de la famille PDZ dont les structures cristalographiques sont connues, avec les trois présentes dans l'ensemble étudié au chapitre précédent: 1G9O,1R6J et 2BYG, aux quelles sont ajoutés 1IHJ, 1N7E, 3K82 et Cask , Tiam1 représenté par .... et ... dans la base de données PDB. Cela constitue un ensemble où le nombre de positions actives , c'est à dire les postions qui vont être muté , est du même ordre pour chaque séquence d'acide aminé des protéines ( voir le tableau \ref{tab:protéines_PDZ}).
+Nous sélectionnons huit protéines de la famille PDZ dont les structures cristalographiques sont connues, avec les trois présentes dans l'ensemble étudié au chapitre précédent: 1G9O,1R6J et 2BYG, aux quelles sont ajoutés 1IHJ, 1N7E, 3K82 et Cask , Tiam1 représenté par 1KWA et 4GVD respectivement dans la base de données PDB. Cela constitue un ensemble où le nombre de positions actives , c'est à dire les postions qui vont être muté , est du même ordre pour chaque séquence d'acide aminé des protéines ( voir le tableau \ref{tab:protéines_PDZ}).
 
 
 
     \begin{table}[!htbp]
       \centering
-
+      \caption{La sélection de domaines protéiques PDZ}
       \begin{tabular}{cccc}
-
         \toprule
         nom & Code PDB & résidus & nombre de positions actives\\
         \cmidrule{1-4}
@@ -221,10 +233,8 @@ Nous sélectionnons huit protéines de la famille PDZ dont les structures crista
         \bottomrule
 
       \end{tabular}      
-      \caption{La sélection de domaines protéiques PDZ}
 \label{tab:protéines_PDZ}      
     \end{table}
-
 
 
 
@@ -234,7 +244,8 @@ Pour caractériser les homologies dans cet ensemble, une série de requête blas
 
     \begin{table}[!htbp]
         \raggedleft{}
-\scalebox{0.75}{
+        \scalebox{0.75}{
+                \caption{E-value et pourcentage d'identité des alignements Blast native versus native pour nos séquences PDZ.S'il n'y a pas de touche avec une E-value inférieure à 10,[] donne le pourcentage d'identité du couple dans l'alignement des 6 séquences sauvages.}
       \begin{tabular}{ccccccccc}
 
         \toprule
@@ -253,12 +264,12 @@ Pour caractériser les homologies dans cet ensemble, une série de requête blas
 
       \end{tabular} 
 }     
-      \caption{E-value et pourcentage d'identité des alignements Blast native versus native pour nos séquences PDZ.S'il n'y a pas de touche avec une E-value inférieure à 10,[] donne le pourcentage d'identité du couple dans l'alignement des 6 séquences sauvages.}
+
 \label{tab:Xblast}      
     \end{table}
 
 
-\paragraph{similarité des homologues}
+\paragraph{sélection des homologues}
 
 
 Pour définir les fréquences d'acide aminés cibles pour maximiser nos vraisemblances,nous sélectionnons un ensemble de séquences homologues pour chacunes de nos 8 protéines. Pour cela, nous effectuons des recherches blast avec comme requête la séquence extraites du fichier PDB sur la base de données ``siwwprot + trEmBL'' d'Uniprot avec la matrice BLOSUM62 sans l'option \og filtre\fg et avec l'option \og Gapped\fg. Nous obtenons un premier ensemble pour chaque cas en se limitant aux homologues de bonnes qualité au regard de E-value et du pourcentage d'identité, tout en conservant  en même temps une certaine diversité.Cela oblige pour certaines protéine à accepter des E-values plus haute que  1e-40, notamment 1IHJ et 1G9O , respectivement 1e-32 et 1e-10 ,pour avoir un nombre d'homologue suffisant. Ensuite, les redondances les plus flagrantes sont enlevées manuellement. Finalement,les ensembles se composent de 42 à 126 homologues,avec des pourcentages d'identité supérieurs à 66 \% excepté pour 1IHJ où il a fallut descendre jusqu'à 38\% d'identité.Voir le tableau pour les détails \ref{tab:select_homo}.
@@ -266,7 +277,7 @@ Pour définir les fréquences d'acide aminés cibles pour maximiser nos vraisemb
 
     \begin{table}[!htbp]
       \centering
-
+      \caption{Sélection des homologues.}
       \begin{tabular}{cccc}
 
         \toprule
@@ -284,7 +295,6 @@ Pour définir les fréquences d'acide aminés cibles pour maximiser nos vraisemb
         \bottomrule
 
       \end{tabular}      
-      \caption{Sélection des homologues.}
 \label{tab:select_homo}      
     \end{table}
 
@@ -292,7 +302,6 @@ Pour définir les fréquences d'acide aminés cibles pour maximiser nos vraisemb
 
     Pour chaque  ensemble d'homologues, notons le H, nous calculons la moyenne sur toutes les séquences et toues les prositions pour obtenir des fréquences globales d'acides aminés. Les fréquences sont déterminées séparément pour les positions enfouies et exposées.Notons les ${f^b_t(H),f^e_t(H)}$ , où l'indice t représente un type d'acide aminé et les exposants e et b  représentent respectivement aux positions enfuie et exposées. Enfin les ensembles de fréquences moyennes des huit protéines sont eux-mêmes moyennés , ce qui donne deux ensembles cibles distincts de fréquences d'acides aminés $f^b_t$ et $f^e_t$ pour chaque type, et de même pour chaque classe de type.
 
-\paragraph{similarité des homologues}
 
     \begin{table}[!htbp]
         \raggedleft{}
@@ -319,19 +328,16 @@ Pour définir les fréquences d'acide aminés cibles pour maximiser nos vraisemb
 \label{tab:XSIMIL}      
     \end{table}
 
-
-
-
     
 \paragraph{}
 
-Pour réaliser les calculs Monte Carlo, les structures ont été préparés et les matrices d' énergie calculées à l'aide d'une procédure décrites précédement (15,50).Deux sgments manquants dans le domaine Tiam1 (résidus 851-854 et 868-869) ont été construits en utilisant le programme Modeller (51). Le ligand peptidique a été retiré de la structure PDB avant de calculer la matrice d'énergie.Pour chaque paire d'acide aminés, l'énergie d'interaction a été obtenue après 15 pas de minimisation de l'énergie, avec le backbone fixé et seulement les interactions de la paire entre les autres chaînes et le backbone. Cette courte minimisation simplifie l 'approximation discret. Les rotamères de chaînes latérales utilisés sont une version légérement étendue de la librairie de Tuffery et cal (52), qui poséde un total de 254 rotamères (sur l'ensemble des types d'acides aminés).Cette extension comprends des orientations d'hydrogème supplémentaires pour les groupes OH et SH (48). Cette bibliothèque de rotamères a été choisié pour sa simplicité et parce qu'elle a donné de très bonnes performances dans les tests de placement de chaînes en comparaison au programme spécialisé scwlr4 qui utilise une bibliothèque beaucoup plus grande (53,54).
+Pour réaliser les calculs Monte Carlo, les structures ont été préparés et les matrices d' énergie calculées à l'aide d'une procédure décrites précédement \cite{Schmidt09,Schmidt10}.Deux ségments manquants dans le domaine Tiam1 (résidus 851-854 et 868-869) ont été construits en utilisant le programme Modeller (51). Le ligand peptidique a été retiré de la structure PDB avant de calculer la matrice d'énergie.Pour chaque paire d'acide aminés, l'énergie d'interaction a été obtenue après 15 pas de minimisation de l'énergie, avec le backbone fixé et seulement les interactions de la paire entre les autres chaînes et le backbone. Cette courte minimisation simplifie l 'approximation discret. Les rotamères de chaînes latérales utilisés sont une version légérement étendue de la librairie de Tuffery et col \cite{Tuffery91}, qui poséde un total de 254 rotamères (sur l'ensemble des types d'acides aminés).Cette extension comprends des orientations d'hydrogème supplémentaires pour les groupes OH et SH \cite{Gaillard14}. Cette bibliothèque de rotamères a été choisié pour sa simplicité et parce qu'elle a donné de très bonnes performances dans les tests de placement de chaînes en comparaison au programme spécialisé scwlr4 qui utilise une bibliothèque beaucoup plus grande \cite{Krivov09,Gaillard16}.
 
 
     
     \begin{table}[!htbp]
       \centering
-
+      \caption{Compositions en acides aminés des séquences expérimentales homologues aux positions enfouies et actives. pour les 8 protéines.}
       \begin{tabular}{ccccccccc}
 
         \toprule
@@ -374,48 +380,45 @@ Pour réaliser les calculs Monte Carlo, les structures ont été préparés et l
 
         \bottomrule
 
-
       \end{tabular}      
-      \caption{Compositions en acides aminés des séquences expérimentales homologues aux positions enfouies et actives. pour les 8 protéines.}
+
 \label{tab:freq_AA_ALL}      
     \end{table}
 
 
 \subsection{simulation Monte Carlo}    
 
-La conception des séquence est réalisé avec Proteus,
-
-D'abord,pour optimiser les énergies de référence, nous faisons des simulations où environ la moitié des position peuvent muter à la fois.
-Ensuite,les modèles optimisé ont été testés avec des simulations où tous les positions sauf sauf celles nativement en Gly ou Pro, sont libre de muter. C'est également de cas pour les simulations de la titration hydrophobe.
-
-Dans les deux cas des mutations se sont produites au hasard, soumises uniquement à la fonction d'énergie MMGBSA
-Qui entraîne la simulation. Les simulations Monte Carlo utilisent des mouvements à une ou deux positions,où les rotamères,les types d'acides aminés ou les deux peuvent changer.Pour les mouvements à deux positions, la deuxième position est choisi parmi celles qui avaient une énergie d'interaction significative avec la première (c'est à dire 10 kcal/mol ou plus). De plus, l'échantillonnage est amélioré par l'échange de réplique (REMC), où plusieurs simulations MC sont exécutées en parallèle, à différenres températures. Des échanges périodiques
-
+La conception des séquence est réalisé avec Proteus \cite{Simonson13b}.Dans un premier temps, nous faisons des simulations où environ la moitié des position peuvent muter à la fois, pour optimiser les énergies de référence.
+Ensuite,les modèles optimisé ont été testés avec des simulations où tous les positions sauf celles nativement en Gly ou Pro, sont libre de muter.
+Dans les deux cas des mutations sont produites au hasard, soumises uniquement à la fonction d'énergie MMGBSA qui entraîne la simulation. Les simulations Monte Carlo utilisent des mouvements à une ou deux positions,où les rotamères,les types d'acides aminés ou les deux peuvent changer.Pour les mouvements à deux positions, la deuxième position est choisie parmi celles qui avaient une énergie d'interaction significative avec la première pour au moins une conformation du couple formé de leur chaîne latérale(c'est à dire 10 kcal/mol ou plus). De plus, l'échantillonnage est amélioré par l'échange de réplique (REMC), où plusieurs simulations MC sont exécutées en parallèle, à différenres températures. Des échanges périodiques sont effectuées comme indiquées dans \ref{para:REMC}.
 
 
 \subsection{Génération de séquence Rosetta}
 
+Des simulations Monte Carlo ont également été réalisées à l'aide du programme et de la fonction d'énergie Rosetta \cite{Baker06b}.Les simulations sont faites en utilisant la version 2015.38.58158 de la suite ( librement disponible en ligne ), en utilisant la commande:
 
+\begin{verbatim}
+fixbb -s Tiam1.pdb -resfile Tiam1.res -nstruct 10000 -ex1 -ex2 -linmem_ig 10
+\end{verbatim} \normalsize
 
-Des simulations Monte Carlo ont également été réalisées à l'aide du programme et de la fonction d'énergie Rosetta (37).Les simulations sont faites en utilisant la version 2015.38.58158 de la suite ( librement disponible en ligne ), en utilisant la commande:
-
-Fixbb -s Tiam1.pdb -resfile Tiam1.res -nstruct 10000 -ex1 -ex2 -linmem\_ig 10
 
 où les options ex1 et ex2 activent une recherche améliorée des rotamères pour les chaînes latérales enfouis. La dernière option correspond au calcul de l'énergie à la volée, et les paramètres par défaut sont utilisées pour les autres options.
 Les résidus Gly et Pro présents dans la protéine sauvage ne sont pas autorisé à muter, et les positions qui mutent ne peuvent pas le faire en Gly  ou Pro (comme  dans les simulations Proteus).Des simulations sont exécutées pour chaque domaine PDZ jusqu'à obtenir  10 000 séquences uniques de faible énergie, ce qui correspond à des durées d'éxecution d'environ 5 minutes par séquence sur un seul coeur d'un processeur Intel récent, pour un total de 10 heures par protéines en utilisant 80 coeurs.C'est tout à fait comparable au coût des calculs Proteus , en comptant le temps de caluls de la matrice d'énergie plus celui des simulations Monte Carlo.
 
 
-
 \subsection{Caractérisation de la séquence}
 
-Les séquences calculées sont comparées à l' alignement Pfam pour la famille PDZ, en utilisant a matrice Blosum40 et une pénalité d'écart de -6;Cette matrice est approproée pour comparer des homologies éloignés (séquences CPD et Pfam ici). Chaque séquence Pfam est également comparée à l'aligmement Pfam, ce qui permet de comparer des séquences calculées et un couple de domaine PDZ naturels. Pour ces comparaisons Pfam/Pfam, si un domaine de test T fait partie de l'aligmenent , la comparaison T/T n'est pas prise en compte, pour être plus cohérent avec les comparaisons calculées/Pfam.L'alignement Pfam utilisée est "RP55" , composée de 12255 séquences. Les similitudes sont calculées pour d'abord les 14 résidus du coeur et pour 16 résidus de surface définis par leur presque total enfuissemebt ou exposition (voir ??)  et enfin pour l'ensemble des positions de la protéine.
-\paragraph{}
-Les séquences calculées sont soumises à la bibliothèque de modèle de Markov Caché Superfamily (57,58) qui tente de classer les séquences selon la base de donnée structurelle de protéines SCOP (59). La classification étant basée sur la version 1.75 de SCOP et 3.5 des Superfamily(voir plu haut).Le programme hmmscan est exécuté avec un seuil de valeur E de 10^{-10} et un total de 15 438 modèles dans la base SCOP. 
+Les séquences calculées sont comparées à l'alignement Pfam pour la famille PDZ, en utilisant a matrice Blosum40 et une pénalité d'écart de -6;Cette matrice est approproée pour comparer des homologies éloignés (séquences CPD et Pfam ici). Chaque séquence Pfam est également comparée à l'aligmement Pfam, ce qui permet de comparer des séquences calculées et un couple de domaine PDZ naturels. Pour ces comparaisons Pfam/Pfam, si un domaine de test T fait partie de l'aligmenent , la comparaison T/T n'est pas prise en compte, pour être plus cohérent avec les comparaisons calculées/Pfam.L'alignement Pfam utilisée est "RP55" , composée de 12255 séquences. Les similitudes sont calculées pour d'abord les 14 résidus du coeur et pour 16 résidus de surface définis par leur presque total enfuissemebt ou exposition (voir ??)  et enfin pour l'ensemble des positions de la protéine.
+Les séquences calculées sont soumises à la bibliothèque de modèle de Markov Caché Superfamily \cite{Gough01,Wilson07}  qui tente de classer les séquences selon la base de donnée structurelle de protéines SCOP \cite{Andreeva04}. La classification étant basée sur la version 1.75 de SCOP et 3.5 des Superfamily(voir plu haut).Le programme hmmscan est exécuté avec un seuil de valeur E de $10^{-10}$ et un total de 15 438 modèles dans la base SCOP. 
 
-Pour comparer la diversité des séquences produites avec la diversité des séquences naturelles, nous utilisons l'entropie par position, à partir de la formule S_i = - \sum_{j=1}^6 f_j(i)lnf_j(i)
+Pour comparer la diversité des séquences produites avec la diversité des séquences naturelles, nous utilisons l'entropie par position \cite{DurbinBK}, à partir de la formule:
 
-avec f_j(i) la fréquence du type de résidu j à la position i, Au lieu de distingué les 20 types d'acide aminés, nous utilisons six classes de résidus, correspondant à  aux groupes suivants: {LVIMC}, {FYW}, {G}, {ASTP}, {EDNQ} et {KRH}. Cette classification est a été obtenu par une analyste de cluster  sur la matrice BLOSUM 62 (61) et une analyse  des énergies de contact entre résidue dans les proteines (62) . Pour obtenir une mesure du nombre de type d'acide aminés apparaissant à une position, on utilise exponentielle de l'entropie des résidus Exp(S) ( qui varie de 1 à 6 ), moyenner sur l'ensemble des résidues de la chaîne protéique.
+\begin{equation} \label{eq:entropy}
+  S_i = - \sum_{j=1}^6 f_j(i)lnf_j(i)
+\end{equation} 
 
+
+avec $f_j(i)$ la fréquence du type de résidu $j$ à la position $i$, Au lieu de distingué les 20 types d'acide aminés, nous utilisons six classes de résidus, correspondant à  aux groupes suivants: \{LVIMC\}, \{FYW\}, \{G\}, \{ASTP\}, \{EDNQ\} et \{KRH\}. Cette classification est a été obtenu par une analyste de cluster  sur la matrice BLOSUM 62 \label{eq:entropy} et une analyse  des énergies de contact entre résidue dans les proteines \cite{Launay07} . Pour obtenir une mesure du nombre de type d'acide aminés apparaissant à une position, on utilise exponentielle de l'entropie des résidus \exp(S) ( qui varie de 1 à 6 ), moyenner sur l'ensemble des résidues de la chaîne protéique.
 
 
 \section {Résultats}
@@ -425,84 +428,64 @@ avec f_j(i) la fréquence du type de résidu j à la position i, Au lieu de dist
 
 Les structures tridimensionnelles (3D) des quatre domaines PDZ de test sont représentées sur la Fig. 1A.
 Quatorze résidus de noyau (identifiés visuellement) des différentes structures se superposent bien.
-Tandis que les boucles et les chaînes terminales affichent de grands écarts. L'hélice \alpha2 de Tiam1 est tournée légèrement vers l'extérieur par rapport aux trois autres structures (70). La figure 1b illustre la similarité structurale entre les paries de domaines PDZ. Cette similarité est déterminé par l'écart de rms (root mean square) entre  les atomes C\alpha alignés structurelle-ment et par ailleurs les identités des paires de séquences. Les écarts se situe entre 1,0 et 2,1 \angstrom et des identités de séquences entre 17 et 33 \%.La paire Tiam1/Cask on observe une identité de séquence de 33\% et et leur écart structurel de 1,7 \angstrom calculé sur 42 carbones. Les structure de syntenine et GLG2 sont plus similaires, avec une déviation structurale de 1,0 \angstrom calculé sur 60 C\alpha alignés.
+Tandis que les boucles et les chaînes terminales affichent de grands écarts. L'hélice $\alpha_2$ de Tiam1 est tournée légèrement vers l'extérieur par rapport aux trois autres structures (70). La figure 1b illustre la similarité structurale entre les paries de domaines PDZ. Cette similarité est déterminé par l'écart de rms (root mean square) entre  les atomes $C\alpha$ alignés structurelle-ment et par ailleurs les identités des paires de séquences. Les écarts se situe entre 1,0 et 2,1 \angstrom et des identités de séquences entre 17 et 33 \%.La paire Tiam1/Cask on observe une identité de séquence de 33\% et et leur écart structurel de 1,7 \angstrom calculé sur 42 carbones. Les structure de syntenine et GLG2 sont plus similaires, avec une déviation structurale de 1,0 \angstrom calculé sur 60 C\alpha alignés.
 \paragraph{}
 La conservation des séquences dans les quatre domaines PDZ et un sous-ensemble de l'alignent "seed" de Pfam est représenté sur la figure 2. Les 14 positions utilisés pour définir le noyau hydrophobe sont bien conservé conservé dans l'alignement des "seed" de Pfam, mais pas totalement. L'Arg, Lys et Gln apparaissent à certaines positions, puisque dans de petites protéines comme des domaines PDZ, Le longue partie hydrophobe  de ces chaînes latérales peut être enfui dans le noyau tout en permettant à la pointe polaire de la chaîne d'être exposé au solvant. Quelques résidus  Asp et Glu apparaissent aussi, dans les endroits où l'alignement des séquences peut ne pas très bien refléter la superpositions 3D les chaînes latérales. 
 
 \subsection{optimisation du modèle de l'état déplié}
 
 
-Nous optimisons les énergies de référence E_t^r pour les six protéines, en utilisant  leurs homologues naturels pour définie les fréquences d'acides aminés cibles. La constante diélectrique de la protéine P est 8. Les R_t^r ont tous convergé  à 0,05 Kcal/mol près apès environ 20 itérations pour la plupart des types d'acide aminés, et à 0,1 kcal/mol for les autres (ceux qui sont naturellement faiblement peuplé ) , en utilisant soit la méthode linéaire soit la méthode parabolique (équation 11 ou 12). Le tableau 2 indique les énergies de référence finales. Les valeurs R_t^r ont été comparés à, et validé qualitativement avec les énergies calculées à partir d'une structure peptidique étendue, qui fournit un modèle moins empirique de l'état déplié. Le tableau 3 compare les fréquences d'acide aminés des homologues naturels et les calculées. La population théorique des différentes classes d'acide aminé ont bien rejoint l' expérinece, avec des écarts de rms d'environ 1\%, pour les positions exposées et enfuies. L'accord entre les types d'acide aminés est moins bon avec des écarts de rms de 3,9\% et 2,4\% (enfuie/exposés).La distribution des fréquences intra-classe dépend par construction du \deltaE_t^r défini dans pour chaque classe, qui ont était calculés avec la mécanique moléculaire (voir méthodes, équation 15). Ainsi une seconde série de 20 itérations est effectué en relâchant cette contrainte alors l'optimisation ne se fait plus sur les six classes de type d 'acide aminés , mais directement sur les dix-huit types possibles (les positions Pro et Gly étant fixées). 
+Nous optimisons les énergies de référence $E_t^r$ pour les six protéines, en utilisant  leurs homologues naturels pour définie les fréquences d'acides aminés cibles. La constante diélectrique de la protéine P est 8. Les $E_t^r$ ont tous convergé  à 0,05 Kcal/mol près apès environ 20 itérations pour la plupart des types d'acide aminés, et à 0,1 kcal/mol for les autres (ceux qui sont naturellement faiblement peuplé ) , en utilisant soit la méthode linéaire soit la méthode parabolique (équation 11 ou 12). Le tableau 2 indique les énergies de référence finales. Les valeurs $E_t^r$ ont été comparés à, et validé qualitativement avec les énergies calculées à partir d'une structure peptidique étendue, qui fournit un modèle moins empirique de l'état déplié. Le tableau 3 compare les fréquences d'acide aminés des homologues naturels et les calculées. La population théorique des différentes classes d'acide aminé ont bien rejoint l' expérinece, avec des écarts de rms d'environ 1\%, pour les positions exposées et enfuies. L'accord entre les types d'acide aminés est moins bon avec des écarts de rms de 3,9\% et 2,4\% (enfuie/exposés).La distribution des fréquences intra-classe dépend par construction du $\deltaE_t^r$ défini dans pour chaque classe, qui ont était calculés avec la mécanique moléculaire (voir méthodes, équation 15). Ainsi une seconde série de 20 itérations est effectué en relâchant cette contrainte alors l'optimisation ne se fait plus sur les six classes de type d 'acide aminés , mais directement sur les dix-huit types possibles (les positions Pro et Gly étant fixées). 
 
 \subsection{Évaluation de la qualité des séquences obtenues}
 
 \paragraph{Tests de reconnaissance de famille}
 
-Les simulations Proteus utilisent l'algorithme Monte Carlo avec échange de réplique (REMC) avec huit répliques et 750 millions de pas par réplique, avec des énergies thermiques kT  qui varient de 0,125 à 3 kcal/mol. Toutes les positions sont autorisés à muter librement dans tout les types d'acides aminés excepté Gly et Pro. Les simulations ont été faites avec la fonction d'énergie MMGBSA, sans aucune introduction de biais vers  les séquences naturelles ni aucune limite sur le nombre de mutations. Les 10 000 séquences avec les énergies les plus faibles parmi celles échantillonnées par au moins une des répliques MC sont retenue pour l'analyse. De la même façon, 10 000 séquences produites par Rosetta ont était retenue. Ces séquences sont analysées par les outils de reconnaissance de repliment "Superfamily" (58,71) , voir tableau 4.Avec une constante diélectrique de 8, nous avons obtenu un pourcentage élevé de séquences correctement associées à la famille et superfamille PDZ: 91\% pour Tiam1 et 100\ù pour Cask, avec des "E-values" d'environ 10^{-3} pour les affectations à la familles.Ces valeurs sont semblables à celles obtenues par Rosetta (90 et 98\% de reconnaissance de la famille pour Tiam1  et Cask).
+Les simulations Proteus utilisent l'algorithme Monte Carlo avec échange de réplique (REMC) avec huit répliques et 750 millions de pas par réplique, avec des énergies thermiques kT  qui varient de 0,125 à 3 kcal/mol. Toutes les positions sont autorisés à muter librement dans tout les types d'acides aminés excepté Gly et Pro. Les simulations ont été faites avec la fonction d'énergie MMGBSA, sans aucune introduction de biais vers  les séquences naturelles ni aucune limite sur le nombre de mutations. Les 10 000 séquences avec les énergies les plus faibles parmi celles échantillonnées par au moins une des répliques MC sont retenue pour l'analyse. De la même façon, 10 000 séquences produites par Rosetta ont était retenue. Ces séquences sont analysées par les outils de reconnaissance de repliment "Superfamily" (\ref{superfamily}) , voir tableau 4.Avec une constante diélectrique de 8, nous avons obtenu un pourcentage élevé de séquences correctement associées à la famille et superfamille PDZ: 91\% pour Tiam1 et 100\% pour Cask, avec des "E-values" d'environ $10^{-3}$ pour les affectations à la familles.Ces valeurs sont semblables à celles obtenues par Rosetta (90 et 98\% de reconnaissance de la famille pour Tiam1  et Cask).
 
 \paragraph{Séquences et diversité de séquence}
-Les séquences Tiam1 et Cask calculées par Proteus , par Rosetta et les séquences naturelles sont montrées à la figure 3. Pour les quatorze résidus du noyau et la figure 4 pour les seize résidus de surface (Tiam1  uniquement). Les séquences sont représentées par des logos de séquences. Comme on l'a vu dans de nombreuses études de CPD antérieures (30,72) l'accord avec l'expérience pour les positions du coeur est très bon, alors que l'accord en ce qui concerne les résidus de surface est nettement plus faible. La diversité des séquences naturelles et des séquences calculées est caractérisé par la moyenne sur la séquence de l'exponentielle de l'entropie résiduel (voir Méthodes), ce qui correspond à un nombre moyen de classe de séquence échantillonnées par position. Par exemple, une valeur de 2 à une position particulière indique que les acides aminés de deux des six classes sont présents à cette positions au sein de l'ensemble des séquences analysées. Une valeur moyenne globale de deux indique qu'en moyenne, deux classes d'acides aminés sont présentes à n'importe quelle position dans les séquences analysées. Comme référence l'ensemble Pfam RP55 et 12 255 séquences naturelles a une entropie moyenne de 3,4.Le regroupement des séquences Tiam1 et Cask calculés  donne une entropie de 2,2 avec Rosetta et 2,0 avec Proteus. Ce qui indique que ces deux seules géométries de backbone ne peuvent pas être attendre les mêmes niveaux de diversités que le grand ensemble RP55. Prenant les 10000 séquences Monte Carlo de meilleure énergie échantillonné à température ambiante (au lien des 10 000 de plus basses énergies échantillonnées collectivement par toutes les répliques à toutes les températures) et la mise en commun de Tiam1 et Cask donne une tropie globale plus élevée de 2,9 avec Proteus. Pour Rosetta, l' entropie dans le noyau est seulement légèrement inférieur à la moyenne sur toutes les positions. Pour Proteus, c'est nettement inférieur (1,25). Pour les séquences Pfam-Rp55, cette entropie est de 1,8.
+Les séquences Tiam1 et Cask calculées par Proteus, par Rosetta et les séquences naturelles sont montrées à la figure 3. Pour les quatorze résidus du noyau et la figure 4 pour les seize résidus de surface (Tiam1  uniquement). Les séquences sont représentées par des logos de séquences. Comme on l'a vu dans de nombreuses études de CPD antérieures (30,72) l'accord avec l'expérience pour les positions du coeur est très bon, alors que l'accord en ce qui concerne les résidus de surface est nettement plus faible. La diversité des séquences naturelles et des séquences calculées est caractérisé par la moyenne sur la séquence de l'exponentielle de l'entropie résiduel (voir Méthodes), ce qui correspond à un nombre moyen de classe de séquence échantillonnées par position. Par exemple, une valeur de 2 à une position particulière indique que les acides aminés de deux des six classes sont présents à cette positions au sein de l'ensemble des séquences analysées. Une valeur moyenne globale de deux indique qu'en moyenne, deux classes d'acides aminés sont présentes à n'importe quelle position dans les séquences analysées. Comme référence l'ensemble Pfam RP55 et 12 255 séquences naturelles a une entropie moyenne de 3,4.Le regroupement des séquences Tiam1 et Cask calculés  donne une entropie de 2,2 avec Rosetta et 2,0 avec Proteus. Ce qui indique que ces deux seules géométries de backbone ne peuvent pas être attendre les mêmes niveaux de diversités que le grand ensemble RP55. Prenant les 10000 séquences Monte Carlo de meilleure énergie échantillonné à température ambiante (au lien des 10 000 de plus basses énergies échantillonnées collectivement par toutes les répliques à toutes les températures) et la mise en commun de Tiam1 et Cask donne une tropie globale plus élevée de 2,9 avec Proteus. Pour Rosetta, l' entropie dans le noyau est seulement légèrement inférieur à la moyenne sur toutes les positions. Pour Proteus, c'est nettement inférieur (1,25). Pour les séquences Pfam-Rp55, cette entropie est de 1,8.
 
 
 \paragraph{Scores de similarité Blosum}
 
-La figure 5 montre les scores de similarité Blosum40 entre les séquences calculées et les séquences naturelles. Avec Proteus, pour Tiam1 et Cask, les similitudes globales se chevauchent au pied du somment des scores naturels, sont comparables aux valeurs des séquences Rosetta. Pour les résidus de suface, montrés séparément, la similitude avec les séquences naturelles sont faibles (scores inférieur à zéro), à la fois pour Proteus et Rosetta. Avec \epsilon_p=8, Proteus donne presque la même similitude moyenne sur toutes les postions Tiam1 et Cask, par exemple.
+La figure 5 montre les scores de similarité Blosum40 entre les séquences calculées et les séquences naturelles. Avec Proteus, pour Tiam1 et Cask, les similitudes globales se chevauchent au pied du somment des scores naturels, sont comparables aux valeurs des séquences Rosetta. Pour les résidus de suface, montrés séparément, la similitude avec les séquences naturelles sont faibles (scores inférieur à zéro), à la fois pour Proteus et Rosetta. Avec $\epsilon_p=8$, Proteus donne presque la même similitude moyenne sur toutes les postions Tiam1 et Cask, par exemple.
 Alors que les scores de similarité Proteus par rapport à Pfam  sont comparable à Rosetta (figure 5) , les scores d'identité par rapport à la séquence sauvage sont significativement plus élevés avec Rosetta. Les scores d'identité excluant (respectivement incluant) les postions Gly et Pro (qui ne sont pas mutables) sont de 20\% (28\%) pour Proteus contre 26\% (34\%) pour Rosetta.
 
 \paragraph{Tests de validation croisée}
 Comme premier test de validation croisée,nous utilisons les énergies de référence optimisées à l'aide des homologues de Tiam1 et Cask à deux entre domaines PDZ: DLG2 et syntenine. Les scores Superfamily sont comparables à ceux obtenus pour Tiam1 et Cask, avec 100\% de reconnaissance de la famille (tableau 4). Les séquences calculées avec Rosetta pour la DLG2 et la syntenine ont également obtenues une reconnaissance  de la famille dans 100\% des cas. Comme validation croisée supplémentaire,nous optimisons les énergies de références en utilisant un ensemble alternatif de domaines PDZ: DLG2, syntenin,
 PSD95, GRIP, INAD et NHERF. Pour distinguer les variantes du modèles, nous nous reférons a cette nouvelle variante en tant que modèle n=6 (il utilise six domaines PDZ pour la paramétrisation) et le modèle initiale comme modèle n=2. Les énergies de référence  nouveau n=6,  sont alors utilisées pour produirent des séquence Tiam1 et Cask , qui sont alors soumisses aux tests Superfamily et des calculs de similarité. La performance de Tiam1 sur la super-famille est légèrement dégradée par rapport au précédent modèle n=2.Le score superfamily de Tiam1 diminue de 90,6\% à 76,6\% pour la reconnaissance de la famille. Les score de Cask est inchangé. Les histogrammes des scores de similarité Blosum montrent que les scores globaux pour Tiam1 et Cask avec n=6 sont très semblables à ceux du modèle n=2, alors que les scores pour les positions centrales sont nettement améliorés. Pour DLG2 et syntenine, nous calculons également les scores de similarité en utilisant à la fois le modèle n=2 et le modèle n=6. Les scores de similarité avec n=2 sont légèrement plus faibles qu'avec n=6, comme on pouvait le prévoir.Le score global a diminué d'environ 20 points pour la synténine et environ 10 points pour DLG2. dans l'ensemble, les modèles de validation croisée ont légèrement dégradé les performances. Ainsi, pour tout domaine d'intérêt PDZ, Il est préférable d'optimiser les énergies de référence spécifiquement pour ce domaine plutôt que de transférer des valeurs paramétrées en utilisant d'autres domaines PDZ. 
 
-\Subsection{Stabilité des séquences calculées dans les simulations de dynamique moléculaire}
-
-Un autre test  du modèle a été effectué au Laboratoire par Nicolas Panel. Dix séquences tiam1 conçues avec proteus sont soumises à des simulations de dynamique  moléculaire (MD) en utilisant un environnement de solvat explicite; Ces séquences sont obtenues en utilisant Proteus avec \epsilon_p =8 ou \epsilon_p =4 . Bien qu'aucun ligand peptidique ne soit présent pendant la génération des séquences, onze positions dans la poche de liaison qui sont en contact étroit avec le peptide lorsqu'il est présent ne sont pas autorisées à muter. Cela a été fait pour permettre de futurs essais expérimentaux de séquences calculés pour un essai de liaison peptidique. Parmi les 2 500 séquences calculées de plus faibles énergies, le choix des séquences est réduit en utilisant les quatre critères suivants:
-
-\begin{enumerate}
-
-\item Les séquences doivent avoir un point isoélectrique non neutre
-\item Elles doivent être assignées à la bonne famille SCOP par Superfamily avec de bonnes "E-values"
-\item Elles doivent avoir de bons scores de similarité Pfam
-\item Elle doivent avoir au plus 15 mutations qui modifie le type d'acide aminé par rapport à la protéine sauvage. C'est à dire
-  une mutation telle que le score BLOSUM62 associé soit inférieur au égal à -2.
-
-L'application de ces critères ont réduit de l nombre de séquences à 66 pour \epsilon_p=8 et 45 pour \epsilon_p=4. En outre, ont été éliminées les séquences ayant deux mutations qui créent une cavité enfuie et celles qui ont des charges protéiques nettes de +6 ou plus (ce qui peut entraîner l'instabilité des protéines). Au final, six séquences sont choisies pour une cette analyse. On se réfère à elles comme séquences 1-6 ou seq-1,..., seq-6. Les séquences 1, 2, 4, et 5 ont été modifiées manuellement pour éliminer les résidus chargés dans la boucle 852-856 (les lysines changées on alanine), donnant des séquences 1',2', 4' et 5'.Les dix séquences sont présentées à la figure 6A. En utilisant ces séquences comme requêtes Blast sur la base Uniprot, les meilleures résultats sont des ortholoques de mammifères Tiam1 ( y compris le Tiam1 humain) ou des protéines non caractérisées, avec des scores d'identité entre 35 et 40\% et des "E-values" Blast d'environ 10^{-8}-10^{-7} (sauf une séquence avec une "E-value" à 10^{-10}). Les dix séquences ont été soumises à des simulations MD avec un solvant explicite. Des simulations initiales sont faites pendant 100 ns, les dix séquences présentant une bonne stabilité. Six sont prolongées de 500 jusqu'à 1000ns. La protèine de type sauvage (WT) a également été simulée pendant 1000ns. La séquence WT est apparue stable sur toute la simulation, à en juger par ses déviations rms par rappport  à  la structure au rayon X et à son propre structure MD moyenne (figure 6B). la strucutre MD moyenne a un écart à l'origine de 1,0 \angstrom de la structure aux rayons X (excepté 3 ou 4 résidus à chaque extrémité et une boucle très flexible , au résidus 850-857). Au cours dela trajectoire MD, l'écart de rms par rapport à la structure MD moyenne varie de 1 à 1,5 \angstrom , sans dérive visible (figure 6B). Les séquences 1,3,4 et 5 sont simulées pendant 500 ns; La séquence 3 s'est éloigné de la structure MD significativement vers la fin de la simulation. Les trois autres séquences apparaissent stable (figure 6B). La séquence 2 ( ou seq-2) semble stable  jusqu'à près de 1000 ns (figure 6B); La strcture seq-2 moyenne a montré un raccourcissement des brins \beta 2 et 3. Au cours de la simulation seq-2 MD, l'écart de rms de seq-2
-De sa structure MD moyenne variait entre 1,3 et 2 Â jusqu'à près de 1000 ns. A ce moment, juste avant les 1000 ns, seq-2 connait une forte fluctuation. Sur 100 ns supplémentaires de simulation, la fluctuation régresse largement. Plus de données sont nécessaires pour déterminer si cette fluctuation indique l'instabilité de cette séquence. La séquence 6 apparaît stable tout au long de la simulation MD (figure 6B). La structure MD moyenne a une déviation  rms de backbone de la structure WT rayons X de seulement 1,0 \anstromg, c'est le même écart que la structure WT MD moyenne. Les structure MD moyennes de seq-6 et WT sont superposés à la figure 6C et sont très semblables les uns aux autres, avec une déviation de 1,2 \anstromg des backbones entre-eux. Au cours de la trajectoire MD de seq-6, les écarts par rapport à sa structure MD moyenne a fluctué entre environ 1 et 1,5 \anstrong, sans aucune dérive visible sur la microseconde de simulation MD.  
-
-
 \section{Application: Croissance du noyau hydrophobe}
-Comme application de nos modèles optimisés, nous examinons la possibilité de conception du coeur hydrophobe des domaines PDZ. Chaque domaine PDZ est soumis à une simulation REMC avec une succession de fonctions énergétiques biaisées qui favorisent de plus en plus les résidus hydrophobes. La première simulation comprend un terme d'énergie de biais \delta =0,4 kcal/mol (par position) qui pénalise les types d'acides aminés hydrophobes (I,L,M,V,A,W,F et Y). La dernière simulation comprend un terme d'énergie de biais \delta = -0.4 kcal/mol (par position) qui favorise les types hydrophobes. Les valeurs d'énergie de biais intermédiaire \delta =0,2 kcal/mol et \delta = -0,2 kcal/mol sont également simulé. En diminuant progressivement la valeur du biais d'énergie \delta, nous "titrons" efficacement dans les résidus hydrophobes.
-\paragraph{}
-Les résultats pour Tiam1 sont présenté à la figure 7. A la plus grande valeur \delta le coeur hydrophobe de Tiam1 est "réduit" avec 10 positions d'acides aminés (sur 94) qui changent en un type polaire. Les positions modifiées se situent principalement sur le bord extérieur du noyau. A la valeur intermédiaire de \delta, le noyau hydrophobe ne compte plus que 4 changement es type polaire par rapport un coeur native. A la valeur de \delta la plus négative, le coeur hydrophobe devient plus grand, s'étendant vers les régions de surface , avec 14 positions polaires changé en type hydrophobes. Ainsi le nombre de positions modifiées est approximativement symétrique ( environ +/- 12 changements), reflétant le biais. Environ 2/3 des changements se produisent dans de éléments de structure secondaire. Dans l'ensemble, les propensions observées de chaque position à devenir polaire ou hydrophobe en présence d'un biais de pénalité petit ou grand d'énergie \delta peut être considéré comme un indice de conception hydrophobe. Ici, 11 des 14 positions du coeur conservées (toute sauf les positions 884,898 et 903) sont restés hydrophobes même au plus haut niveau de biais polaire, avec 13 autres positions, indiquant que ces positions ont la plus grande propension a être hydrophobe. De plus, 14 positions ont changé de polaire à hydrophobe qu niveau de polarisation le plus élevé, indiquant que ces positions aussi ont une certaine propension a être hydrophobe. Les résultats pour Cask sont similaires, avec 11 positions changés en polaire au plus haut biais et 9 changés en hydrophobe au plus haut biais  hydrophobe.
-\paragraph{}
-Nous calculons également un paramètre pour décrire le nombre de changement relatif de type d'acide aminé par unité de l'énergie du biais. Ce  paramètre est défini comme le nombre \deltaN de positions de résidu  changées de non-polaire à polaire, divisé par le produit de la variation \deltaE dans l'énergie de polarisation et le nombre moyen N de position non polaires à biais nul. Nous l'appelons la sensibilité hydrophobe \psi_h . Pour le domaine PDZ Tiams1, ce calcul donne:
-\psi_h = \frac{1}{N} frac{\deltaN}{\deltaE} = 0,88 changements par position et par kcal/mol. Pour Cask, la sensibilité hydrophobe  est  \psi_h = 0,71 changements par position et par kcal/mol.
+Comme application de nos modèles optimisés, nous examinons la possibilité de conception du coeur hydrophobe des domaines PDZ. Chaque domaine PDZ est soumis à une simulation REMC avec une succession de fonctions énergétiques biaisées qui favorisent de plus en plus les résidus hydrophobes. La première simulation comprend un terme d'énergie de biais $\delta =0,4 kcal/mol$ (par position) qui pénalise les types d'acides aminés hydrophobes (I,L,M,V,A,W,F et Y). La dernière simulation comprend un terme d'énergie de biais $\delta = -0.4 kcal/mol$ (par position) qui favorise les types hydrophobes. Les valeurs d'énergie de biais intermédiaire $\delta =0,2 kcal/mol$ et $\delta = -0,2 kcal/mol$ sont également simulé. En diminuant progressivement la valeur du biais d'énergie $\delta$, nous "titrons" efficacement dans les résidus hydrophobes.
 
-\section{Discussion}
+Les résultats pour Tiam1 sont présenté à la figure 7. A la plus grande valeur $\delta$ le coeur hydrophobe de Tiam1 est "réduit" avec 10 positions d'acides aminés (sur 94) qui changent en un type polaire. Les positions modifiées se situent principalement sur le bord extérieur du noyau. A la valeur intermédiaire de $\delta$, le noyau hydrophobe ne compte plus que 4 changement es type polaire par rapport un coeur native. A la valeur de $\delta$ la plus négative, le coeur hydrophobe devient plus grand, s'étendant vers les régions de surface , avec 14 positions polaires changé en type hydrophobes. Ainsi le nombre de positions modifiées est approximativement symétrique ( environ +/- 12 changements), reflétant le biais. Environ 2/3 des changements se produisent dans de éléments de structure secondaire. Dans l'ensemble, les propensions observées de chaque position à devenir polaire ou hydrophobe en présence d'un biais de pénalité petit ou grand d'énergie $\delta$ peut être considéré comme un indice de conception hydrophobe. Ici, 11 des 14 positions du coeur conservées (toute sauf les positions 884,898 et 903) sont restés hydrophobes même au plus haut niveau de biais polaire, avec 13 autres positions, indiquant que ces positions ont la plus grande propension a être hydrophobe. De plus, 14 positions ont changé de polaire à hydrophobe qu niveau de polarisation le plus élevé, indiquant que ces positions aussi ont une certaine propension a être hydrophobe. Les résultats pour Cask sont similaires, avec 11 positions changés en polaire au plus haut biais et 9 changés en hydrophobe au plus haut biais  hydrophobe.
+Nous calculons également un paramètre pour décrire le nombre de changement relatif de type d'acide aminé par unité de l'énergie du biais. Ce  paramètre est défini comme le nombre $\delta N$ de positions de résidu  changées de non-polaire à polaire, divisé par le produit de la variation $\delta E$ dans l'énergie de polarisation et le nombre moyen N de position non polaires à biais nul. Nous l'appelons la sensibilité hydrophobe $\psi_h$ . Pour le domaine PDZ Tiams1, ce calcul donne:
+$\psi_h = \frac{1}{N} frac{\deltaN}{\deltaE} = 0,88$ changements par position et par kcal/mol. Pour Cask, la sensibilité hydrophobe  est  $\psi_h = 0,71$ changements par position et par kcal/mol.
+
+\section{Conclusion}
 
 \subsection{limites du modèle}
 
-Nous paramétrons un modèle CPD simple pour la conception de domaine PDZ, adapté aux applications à conception de nombreuses séquences et mis en oeuvre dans le logiciel Proteus. Pour la modélisation de l'état replié, nous utilisons un champ de force protéique de haute qualité. Nous avons testé deux ensembles de paramètres d''énergie de surface atomique \sigma_i et deux modèles de solvant "GB généralisé", le modèle NEA et le exactGB, avec une constante diélectrique \epsilon_P = 8  pour le NEA ,et \epsilon_P = 4 pour le exactGB quantités  qui caractérisent  le modèle de solvant et sont les principaux paramètres empiriques dans la fonction d'énergie de l'état replié. Pour les chaînes latérales, nous utilisons une bibliothèque de rotamères simple et discrète et une petite minimisation de chaque paire pendant le calcul  de la matrice d'énergie pour atténuer l'approximation de la discrétisassions des rotamères. La fonction d'énergie et la description des rotamères ont été testées de manière approfondie et ont démontrés donner de très bonnes performances pour les tests reconstruction de chaînes latérales (54) (comparable au programme populaire Scwrl4 (53) ) et de bonnes performances pour sur un grand ensemble de constantes acide/base de protéine (74) (supérieure au logiciel Rosetta (75), malgré une importante réglage de paramètres ad hoc).
-\paragraph{}
-La représentation de l'état déplié utilise un modèle simple caractérisé par une ensemble de potentiels chimiques d'acide aminé empiriques ou énergies de référence. Ces énergies sont choisi par une procédure de maximisation de la probabilité, formulée ici, afin de reproduire la composition d'acides aminés d'homologues naturels soigneusement sélectionnés. L'état déplié utilisé ici est plus raffinée qu'auparavant (76), puisque des valeurs d'énergies de référence distinctes sont utilisés pour les positions d'acides aminés qui sont enfuis ou exposés à l'état replié.  
+Nous paramétrons un modèle CPD simple pour la conception de domaine PDZ, adapté aux applications à conception de nombreuses séquences et mis en oeuvre dans le logiciel Proteus. Pour la modélisation de l'état replié, nous utilisons un champ de force protéique de haute qualité. Nous avons testé deux ensembles de paramètres d'énergie de surface atomique $\sigma_i$ et deux modèles de solvant "GB généralisé", le modèle NEA et le FDB, avec une constante diélectrique $\epsilon_P = 8$  pour le NEA ,et $\epsilon_P = 4$ pour le FDB quantités  qui caractérisent  le modèle de solvant et sont les principaux paramètres empiriques dans la fonction d'énergie de l'état replié. Pour les chaînes latérales, nous utilisons une bibliothèque de rotamères simple et discrète et une petite minimisation de chaque paire pendant le calcul de la matrice d'énergie pour atténuer l'approximation de la discrétisassions des rotamères. La fonction d'énergie et la description des rotamères ont été testées de manière approfondie et ont démontrés donner de très bonnes performances pour les tests reconstruction de chaînes latérales \cite{Gaillard16} (comparable au programme populaire Scwrl4 (\cite{Krivov09}) ) et de bonnes performances pour sur un grand ensemble de constantes acide/base de protéine \cite{Polydorides13} (supérieure au logiciel Rosetta (\cite{Kilambi12}), malgré une importante réglage de paramètres ad hoc).
 
-Cette méthode suppose qu'il existe une structure résiduelle à l'état déplié, où certaines positions sont plus enfuis que d'autres. En outre, cela doit rendre le paramétrage plus robuste et moins sensible à la taille et à la structure des homologues naturels utilisés poue définir les compositions d'acide aminés cibles, car les fréquences d'acide aminés des positions exposés et des régions enfouies sont calculées séparément. En principe, cela double le nombre d'énergie de référence à ajuster. Cependant, nous avons réduit ce nombre en introduisant des classes de similarité d''acide aminés, avec une énergie de référence ajustable par classe. Contrainte qui est levé en fin d'optimisation. Lors de l'optimisation de énergie de référence, nous effectuons, des calcules de séquences pour chaque protéines de notre jeu de test (à l'état apo) où une positions sur deux  peut muter, soit la moitié des positions ( à l'exception de Gly et Pro), avec une simulations distinctes pour chaque moitié. De cette façon, lors de l'optimisation des paramètres, une position mutable est toujours entouré d'un environnement  identique au type sauvage au moins sur les deux positions immédiatement voisines sur le squelette. Les calculs de conception des protéines s'appuient sur une méthode d'exploration Monte Carlo avec échange de réplique, puissante et efficace, qui utilise plus d'un demi-miliard de pas par simulation et par réplique, et  produit des milliers de séquences dans une seulle simulation. Les valeurs des énergie de référence sont optimisées avec deux choix différents du couple modèle de solvant constante diélectrique des protéines \epsilon_p. Les performance sont améliorés pour le modèle exactGB.
-Le modèle présente plusieurs limitation, dont la plupart se trouvent dans les implémentations et les applications du CPD. La première est l'utilisation de la stabilité des protéines comme seul critère de conception, sans prendre en compte explicitement la spécificité du pli (77), la protection contre l'agrégation , ou des considérations fonctionnelles comme la liaison des ligands. Toutefois, nous notons que les tests superfamily n'ont pas entraînés de mauvaises affectations ( séquences perçue comme préférant un autre pli SCOP), donc en pratique, la spécification du pli est réalisée. Le limitation supplémentaire est introduite  par l'utilisation d'un squelette protéique fixe lors du calcul de la matrice d'énergie. En fait, la squelette n'est pas vraiment fixe, certains mouvement sont autoriés, mais modélisés implicitement, à travers l'utilisation d'une constante diélectrique protéique supérieur à 1 (\epsilon_p= 4 ou 8) (78). Cette valeur diélectrique signifie que la structure protéique (y compris son squelette) est autorisé à se détendre ou à se réorganiser en réponse à une redistribution de charge associée à des mutation ou a un changement de rotamères du chaîne latérale. Cependant, la réorganisation est modélisée non pas explicitement mais implicitement (78), et elle n'implique pas de mouvement des centres atomiques ou de leur sphère de Van der Waals associées. Ainsi, le squelette ne peut ni se réorganiser en réponse à une répulsion stérique produite par des mutations ou des changements de rotamères, ni se déplacer pour remplir l'espace laissé vide par une mutation.  
-L'utilisation d'un squelette fixe peut être en partie compensé en concevant plusieurs structures PDZ. Par exemple, la mise en commun des séquences calculées de Tiam1 et Cask a donnée une entropie moyenne de séquence comparable à celle de l'ensemble expérimental  Pfam, et nous a permis d'inventorier plus de séquences que les calculs avec un seul squelette. Notez qu'une nouvelle méthodepour la conception de protéine multi-backbone a récemment été développée dans Proteus, sur la base d'une méthode Monte Carlo hydride qui préserve l'échantillonnage de la distribution de Boltzmann (35). Cette méthode pourra être appliquée dans les prochaines études.
-\paragraph{}
+La représentation de l'état déplié utilise un modèle simple caractérisé par une ensemble de potentiels chimiques d'acide aminé empiriques ou énergies de référence. Ces énergies sont choisi par une procédure de maximisation de la probabilité, formulée ici, afin de reproduire la composition d'acides aminés d'homologues naturels soigneusement sélectionnés. L'état déplié utilisé ici est plus raffinée qu'auparavant, puisque des valeurs d'énergies de référence distinctes sont utilisés pour les positions d'acides aminés qui sont enfuis ou exposés à l'état replié.  
+
+Cette méthode suppose qu'il existe une structure résiduelle à l'état déplié, où certaines positions sont plus enfuis que d'autres. En outre, cela doit rendre le paramétrage plus robuste et moins sensible à la taille et à la structure des homologues naturels utilisés pour définir les compositions d'acide aminés cibles, car les fréquences d'acide aminés des positions exposés et des régions enfouies sont calculées séparément. En principe, cela double le nombre d'énergie de référence à ajuster. Cependant, nous avons réduit ce nombre en introduisant des classes de similarité d''acide aminés, avec une énergie de référence ajustable par classe. Contrainte qui est levé en fin d'optimisation. Lors de l'optimisation de énergie de référence, nous effectuons, des calcules de séquences pour chaque protéines de notre jeu de test (à l'état apo) où une positions sur deux  peut muter, soit la moitié des positions ( à l'exception de Gly et Pro), avec une simulations distinctes pour chaque moitié. De cette façon, lors de l'optimisation des paramètres, une position mutable est toujours entouré d'un environnement  identique au type sauvage au moins sur les deux positions immédiatement voisines sur le squelette. Les calculs de conception des protéines s'appuient sur une méthode d'exploration Monte Carlo avec échange de réplique, puissante et efficace, qui utilise plus d'un demi-miliard de pas par simulation et par réplique, et  produit des milliers de séquences dans une seulle simulation. Les valeurs des énergie de référence sont optimisées avec deux choix différents du couple modèle de solvant constante diélectrique des protéines $\epsilon_p$. Les performance sont améliorés pour le modèle FDB.
+Le modèle présente plusieurs limitation, dont la plupart se trouvent dans les implémentations et les applications du CPD. La première est l'utilisation de la stabilité des protéines comme seul critère de conception, sans prendre en compte explicitement la spécificité du pli \cite{Schmidt08,Simonson13}, la protection contre l'agrégation , ou des considérations fonctionnelles comme la liaison des ligands. Toutefois, nous notons que les tests superfamily n'ont pas entraînés de mauvaises affectations ( séquences perçue comme préférant un autre pli SCOP), donc en pratique, la spécification du pli est réalisée. Le limitation supplémentaire est introduite  par l'utilisation d'un squelette protéique fixe lors du calcul de la matrice d'énergie. En fait, la squelette n'est pas vraiment fixe, certains mouvement sont autoriés, mais modélisés implicitement, à travers l'utilisation d'une constante diélectrique protéique supérieur à 1 ($\epsilon_p= 4$ ou 8) (78). Cette valeur diélectrique signifie que la structure protéique (y compris son squelette) est autorisé à se détendre ou à se réorganiser en réponse à une redistribution de charge associée à des mutation ou a un changement de rotamères du chaîne latérale. Cependant, la réorganisation est modélisée non pas explicitement mais implicitement (78), et elle n'implique pas de mouvement des centres atomiques ou de leur sphère de Van der Waals associées. Ainsi, le squelette ne peut ni se réorganiser en réponse à une répulsion stérique produite par des mutations ou des changements de rotamères, ni se déplacer pour remplir l'espace laissé vide par une mutation.  
+L'utilisation d'un squelette fixe peut être en partie compensé en concevant plusieurs structures PDZ. Par exemple, la mise en commun des séquences calculées de Tiam1 et Cask a donnée une entropie moyenne de séquence comparable à celle de l'ensemble expérimental  Pfam, et nous a permis d'inventorier plus de séquences que les calculs avec un seul squelette. Notez qu'une nouvelle méthodepour la conception de protéine multi-backbone a récemment été développée dans Proteus, sur la base d'une méthode Monte Carlo hydride qui préserve l'échantillonnage de la distribution de Boltzmann \cite{Druart17}. Cette méthode pourra être appliquée dans les prochaines études.
 Une autre limitation de notre modèle est la nécessité, pour des résultats optimaux, de paramètres les énergies de référence spécifiquement pour un ensemble donné de protéines. Cette étape est bien automatisée et de façon très parallèle. Cependant, cela implique plusieurs choix qui sont partiellement arbitraires. Ceux-ci comprennent le choix d'un ensemble de domaines protéiques pour représenter la protéine ou la famille d'intérêt. Nous devons également choisir un seuil de similarité pour définir les homologues cibles à partir desquels sont calculées les compositions expérimentales d'acides aminés. Ici, nous avons choisi d'utiliser les homologues de chaque membre de la famille, de calculer leurs compositions, puis la moyenne sur les six familles. Cette méthode a correctement fonctionné, mais d'autres choix sont possibles et il faut travailler d'avantage pour pouvoir tirer des conclusions définitives sur ces choix.
-\paragraph{}
+
 Une autre limitation de notre modèle est l'approximation de  la position des chaînes latérales en rotamères discrets. qui nécessite une certaine adaptation de la fonction d'énergie pour éviter les affrontements stériques exagérés. La méthode utilisée ici les t la méthode de minimisation de la paire de résidu décrite précédemment (26,76).
-\paragraph{ailleurs!!}
-Une cinquième limitation est l'utilisation d'un modèle de solvatation additif par paires ( comme dans la plupart des modèles CPD). Plus précisément, l'environnement diélectrique de chaque paire de résidus est supposé ici être celui de la structure native (ce qu'on appelle "Approvisionnement environnemental natif" ou NEA 74,76). Cela conduit à une fonction énergétique qui a la forme d''une somme sur les paires de résidus et peut être pré-calculée et stockée dna une matrice énergétique, qui sert alors de table de consultations pendant les simulations Monte-Carlo. Malgré cette approximation, le modèle a donné de bons résultats pour un grand nombre d' indice acide/base de référence, un problème très sensible au traitement électrostatique 74. Certaines de ces limitations sur supprimées dans le modèle exactGB. En particulier, comme la fonction d'énergie est principalement basée sur la physique, elle a pu être améliorée par implémentions d'un calcul "GB" plus exact. Par ailleurs, il a été mis en place une modèle amélioré pour la solvatation hydrophobe (80), qui est plus rapide et plus précise que notre terme d''énergie de surface actuelle (article préparation).
+
+Une cinquième limitation est l'utilisation d'un modèle de solvatation additif par paires ( comme dans la plupart des modèles CPD). Plus précisément, l'environnement diélectrique de chaque paire de résidus est supposé ici être celui de la structure native (ce qu'on appelle "Approvisionnement environnemental natif" ou NEA 74,76). Cela conduit à une fonction énergétique qui a la forme d''une somme sur les paires de résidus et peut être pré-calculée et stockée dna une matrice énergétique, qui sert alors de table de consultations pendant les simulations Monte-Carlo. Malgré cette approximation, le modèle a donné de bons résultats pour un grand nombre d' indice acide/base de référence, un problème très sensible au traitement électrostatique \cite{Polydorides13}. Certaines de ces limitations sur supprimées dans le modèle FDB. En particulier, comme la fonction d'énergie est principalement basée sur la physique, elle a pu être améliorée par implémentions d'un calcul "GB" plus exact. Par ailleurs, il a été mis en place une modèle amélioré pour la solvatation hydrophobe (80), qui est plus rapide et plus précise que notre terme d''énergie de surface actuelle (article préparation).
 
 \subsection{modèle de test et applications}
 
 Les séquences calculées sont largement comparées aux séquences naturelles, à travers des tests de reconnaissance du pli, des calculs de similarité et des calculs d'entropie. Dans les simulations, nous concevons la totalité de la séquence de la protéine, de sirte que toutes les positions  ( à l'exception de Gly et Pro) peuvent muter librement, soumis seulement à un biais vers la composition moyenne expérimental des acides aminés ( à travers les énergies de références). Malgré la quasi-absence de biais expérimenaux ou de contraintes, les séquences obtenues ont une forte similitude globale avec les séquence naturelles de Pfam, mesurées par les scores de similarité Blosum40. Les scores obtenus sont, pour l'essentiel, comparables aux scores de similarité entre les paires de séquences Pfam entre-elles.  Ainsi, les séquences conçues avec Proteus ressemblent à des homologues naturels modérément éloignés. La similitude est très forte pour les résidus au coeur de la protéine, comme cela a été observé dans des études CPD précédantes (30,72). En revanche, pour les résidus à la surface de la protéine, les scores de similarité sont proche de zéro, le score obtenu si l'on tirait au hasard les acides aminés a ces positions. Notez que de nombreux résidus de surface sont impliqués dans des interactions fonctionnelles, comme les onze résidus de liaison aux peptides dans les domaines PDZ. Les résidus de surface sont également sélectionnés selon l'évolution pour éviter l'agrégation ou des adhésion indésirable. La plupart de ces contraintes fonctionnelles ne sont pas explicitement pris en compte dans  notre protocole de design (bien que la fonction d'énergie soit indirectement la solubilité des protéines). Malgré les scores de similarité limités pour les régions de surface, la reconnaissance de pli avec l'outil Superfamily  appliquée aux meilleures modèles concues est presque parfaite. Les test de reconnaissance de plie antérieurs qui utilisaient une fonction d'énergie plus simple donnaient un taux de reconnaissance de pli inférieur, à environ 85\% (pour un ensemble de tests plus large et plus diversifié) et des similitudes inférieures (15,50).De toute évidence, l'utilisarion combinée d'un champ de force protéique amélioré, du solvant "GB" et des énergie de référence spécifiques à la famille conduisent à des séquences calculées sont proche des séquences natives et sans doute meilleures.
 
-\paragraph{}
 les séquences Proteus ont également été comparées aux séquences obtenues avec le logiciel Rosetta , qui a lui-même été testé de manière approfondie. Sur la Base des scores de similarité de Blosum (par rapport aux séquences naturelles dans Pfam) et des tests de reconnaissance du pli, les séquences Proteus et Rosetta semblent être de la même qualité. Cependant, rosetta fait moins de mutations que Proteus; de sorte que les scores d'identité, par rapport à la protéine de type sauvage correspondante, sont sont environ 6\%  plus haut chez Rosetta. Ce qui veut dire que Proteus modifie environ 5 positions en plus , en moyenne, par domaine PDZ. Ce nombre peut facilement être réduit en ajoutant à la fonction d'énergie de Proteus un terme  d'énergie de biais explicite qui augmente avec le nombre de mutations l'éloignant de la séquence de type sauvage. 
 
-\paragraph{}
 Une autre possibilité pour tester nos séquences  est d'utiliser les simulation de dynamique moléculaire. Nicolas Panel a testé dix séquences Tiam1 calculées dans des simulation MD assez longues, dans la forme apo, en utisant le même champ de force protéique que dans le modèle CPD (champ de force Amber) et un modèle d'eau explicite. Ces séquences 
 
 
