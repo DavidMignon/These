@@ -1,4 +1,3 @@
-
 \chapter{PDZ}
 \label{chap:PDZ}
 
@@ -24,7 +23,7 @@ Nous modifions le type de chaîne latérale $t \rightarrow t'$ à une position c
 Un rotamer r' particulier à la nouvelle chaîne latérale. Nous considérons la même mutation dans
 l'état déplié. Pour une séquence $S$ particulière, l'énergie d'état dépliée est de la forme:
 \begin{equation}
-  E^u=\sum_{i\inS}E^r(t_i)
+  E^u=\sum_{i\in S}E^r(t_i)
   \label{eq:unfolded}
 \end{equation} 
 
@@ -52,12 +51,12 @@ kTln p(S) = \sum_{i\in S} E^r(t_i) - G^f_S - kT \ln Z = \sum_{t\in aa}n_S(t)E^r_
 \end{equation}
 où la somme à droite se fait sur l'ensemble des types d'acides aminés et $n_S(t)$ est le nombre d'acide aminés de type $t$ dans $S$.
 
-Nous considérons maintenant un ensemble \mathcal{S} de $N$ séquences cibles; On appelle \mathcal{L} la probabilité d'observer l'ensemble entier. \mathcal{L} est fonction des paramètres du modèle $E_t^r$.Comme nous voulons le maximum de \mathcal{L} sur les $E_t^r$ , nous nous référons  à  \mathcal{L} comme leur vraisemblance \cite{Kleinman06}.
+Nous considérons maintenant un ensemble $\mathcal{S}$ de $N$ séquences cibles; On appelle $\mathcal{L}$ la probabilité d'observer l'ensemble entier. $\mathcal{L}$ est fonction des paramètres du modèle $E_t^r$.Comme nous voulons le maximum de $\mathcal{L}$ sur les $E_t^r$ , nous nous référons  à  $\mathcal{L}$ comme leur vraisemblance \cite{Kleinman06}.
 
 Nous avons:
 \begin{equation}
-  kT \ln \mathcal{L} = \sum_S\sum_{i\in aa} n_S(t)E^r_t - \sum_S G^f_S - N kT \ln Z
-                     = \sum_{t\in aa} N(t) E^r_t - \sum_SG^f_S - N kT \lnZ,
+  kT \ln \mathcal{L} = \sum_S\sum_{i \in aa} n_S(t)E^r_t - \sum_S G^f_S - N kT \ln Z
+                     = \sum_{t \in aa} N(t) E^r_t - \sum_SG^f_S - N kT \lnZ,
 \end{equation}
 avec $N(t)$ le nombre d'acide aminé de type $t$ dans l'ensemble $\mathcal{S}$.Le facteur de normalisation $Z$ (ou fonction de partition) est la somme sur l'ensemble les séquences possibles $R$:
 \begin{equation}
@@ -140,10 +139,10 @@ Le dernier terme à droite de l'équation (13), $E_{solv}$, représente la contr
 \begin{displaymath}
 E_{solv} = E_{GB} + E_{surf} = \frac{1}{2}(\frac{1}{\epsilon_w} - \frac{1}{\epsilon_p})\sum_{ij} q_iq_j (r^2_{ij} + b_ib_jexp[-\frac{r^2_{ij}}{4b_ib_j}])^{-\frac{1}{2}} + \sum_i \sigma_iA_i
 \end{displaymath} 
-Ici, $\epsilon_w$ et $\epsilon_p$ sont les constantes diélectriques du solvant et de la protéine; $r_{ij}$ est la distance entre les atomes $i$, $j$ et $b_i$ est le "rayon de solvatation" de l'atome $i$ \cite{Hawkins95,Lopes07}. $A_i$ est la surface exposé accessible au solvant de l'atome $i$.$\sigma_i$ est un paramètre qui représente la préférence de chaque atome à être exposé ou caché du solvant. Les atomes du soluté sont divisés en quatre groupes avec pour chacun une valeur $\sigma_i$ spécifique en cal/mol/Å^2:
+Ici, $\epsilon_w$ et $\epsilon_p$ sont les constantes diélectriques du solvant et de la protéine; $r_{ij}$ est la distance entre les atomes $i$, $j$ et $b_i$ est le "rayon de solvatation" de l'atome $i$ \cite{Hawkins95,Lopes07}. $A_i$ est la surface exposé accessible au solvant de l'atome $i$.$\sigma_i$ est un paramètre qui représente la préférence de chaque atome à être exposé ou caché du solvant. Les atomes du soluté sont divisés en quatre groupes avec pour chacun une valeur $\sigma_i$ spécifique en $cal/mol/Å^2$:
 non polaire -5,aromatique -40,polaire -80,ionique -100.
 
-On attribue aux atomes d'hydrogène un coefficient de surface de 0. Les surface sont calculées par l'algorithme de Lee et Richards \cite{Lee71},  qui est implementé dans le programme XPLOR \cite{Xplor}, en utilisant un rayon de «probe radius» de 1,5 {AA}. Les simulations MC utlisent une constante dielectrique \epsilon_p = 4 ou 8 (voir la partie Résultats).
+On attribue aux atomes d'hydrogène un coefficient de surface de 0. Les surface sont calculées par l'algorithme de Lee et Richards \cite{Lee71},  qui est implementé dans le programme XPLOR \cite{Xplor}, en utilisant un rayon de «probe radius» de 1,5 {AA}. Les simulations MC utlisent une constante dielectrique $\epsilon_p = 4 ou 8$ (voir la partie Résultats).
 
 Dans le terme énergétique GB, le rayon de solvatation atomique $b_i$ approxime la distance de $i$ à la surface de la protéine.C'est une fonction des coordonnées de tous les atomes de protéines. La forme $b_i$ correspond à une variante GB que nous appelons GB/HCT, d'après ses auteurs \cite{Hawkins95}, avec les paramètres du modèle optimisées pour une utilisation avec le champ de force Amber \cite{Lopes07}.Comme $b_i$ dépend des coordonnés de tous les atomes du soluté \cite{Hawkins95}, une approximation supplémentaire est nécessaire pour rendre le terme énergitique GB additif par paire et pour rendre la matrice d'énergie définissable.
 Nous utilisons une approximation NEA ("Nativce Environment Approxition"), dans laquelle le rayon de solvatation $b_i$ de chaque groupe (backbone, chaîne laterale ou ligand) est calculé à l'avance , le reste du système étant fixé à sa séquence et sa conformation native \cite{Simonson13b,Gaillard14}.
@@ -242,10 +241,13 @@ Nous sélectionnons huit protéines de la famille PDZ dont les structures crista
 Pour caractériser les homologies dans cet ensemble, une série de requête blast est effectuée sur chaque paire de séquences en utilisant le programme blastp avec les options comme indiqué en (45).Il apparaît que 1R6J et TiAM1 sont atypiques dans l'ensemble avec, aucun homologue avec une E-value inférieure à 1e-7 et plusieurs E-value supérieur à 10. 3K82 est la protéine plus consensuelle , ayant d'une part une homologie avec toutes les autres à au plus 6e-04 , et d'autre part ayant 4 homologues à moins de 2e-10, pour pourcentage d'identité compris entre 30 et 46.Globalement, il n'y a que peu d'homologies, la plus forte n'étant que de 3e-15 entre 3K82 et 2BYG pour un pourcentage d'identité de 37. Les détails sont dans le tableau \ref{tab:Xblast}.
 
 
+
     \begin{table}[!htbp]
-        \raggedleft{}
-        \scalebox{0.75}{
-                \caption{E-value et pourcentage d'identité des alignements Blast native versus native pour nos séquences PDZ.S'il n'y a pas de touche avec une E-value inférieure à 10,[] donne le pourcentage d'identité du couple dans l'alignement des 6 séquences sauvages.}
+%       \raggedleft{}
+       \caption{E-value et pourcentage d'identité des alignements Blast native versus native pour nos séquences PDZ.}
+       \resizebox{\linewidth}{!}{%
+
+%       \scalebox{0.99}{
       \begin{tabular}{ccccccccc}
 
         \toprule
@@ -262,12 +264,14 @@ Pour caractériser les homologies dans cet ensemble, une série de requête blas
         Tiam1   & 9e-07 (35) &  [16]      &  5e-05 (35) & [18]        & 5e-05 (41) & 6e-04 (33) & 5e-04 (33) & 1e-68 (100)\\
         \bottomrule
 
-      \end{tabular} 
-}     
+      \end{tabular}
+      }
+      {\footnotesize S'il n'y a pas de touche avec une E-value inférieure à 10,[.] donne le pourcentage d'identité du couple dans l'alignement des 6 séquences sauvages.
+}
+
 
 \label{tab:Xblast}      
     \end{table}
-
 
 \paragraph{sélection des homologues}
 
@@ -385,7 +389,139 @@ Pour réaliser les calculs Monte Carlo, les structures ont été préparés et l
 \label{tab:freq_AA_ALL}      
     \end{table}
 
+    \clearpage
 
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{homologues/1G9O.png} \\
+     \end{tabular}
+     \caption{L'aligmenent des séquences homologues à la protéine NHREF (1G9O) selectionnées}
+\label{align_homo:1G9O}
+   \end{figure}
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{proteus/1G9O.png} \\
+     \end{tabular}
+     \caption{Une sélection de séquences proteus pour NHREF (1G9O), parmi les 10000 séquences de meilleure énergie}
+\label{align_proteus:1G9O}
+   \end{figure}
+
+    \clearpage
+   \clearpage
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{homologues/1G9O.png} \\
+     \end{tabular}
+     \caption{L'aligmenent des séquences homologues à la protéine 1G9O selectionnées}
+\label{align_homo:1G9O}
+   \end{figure}
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{result/TIAM1.png} \\
+     \end{tabular}
+     \caption{Une sélection de séquences proteus pour 1G9O, parmi les 10000 séquences de meilleure énergie}
+\label{align_proteus:1G9O}
+   \end{figure}
+
+    \clearpage
+   \clearpage
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{homologues/1G9O.png} \\
+     \end{tabular}
+     \caption{L'aligmenent des séquences homologues à la protéine 1G9O selectionnées}
+\label{align_homo:1G9O}
+   \end{figure}
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{result/TIAM1.png} \\
+     \end{tabular}
+     \caption{Une sélection de séquences proteus pour 1G9O, parmi les 10000 séquences de meilleure énergie}
+\label{align_proteus:1G9O}
+   \end{figure}
+
+    \clearpage
+   \clearpage
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{homologues/1G9O.png} \\
+     \end{tabular}
+     \caption{L'aligmenent des séquences homologues à la protéine 1G9O selectionnées}
+\label{align_homo:1G9O}
+   \end{figure}
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{result/TIAM1.png} \\
+     \end{tabular}
+     \caption{Une sélection de séquences proteus pour 1G9O, parmi les 10000 séquences de meilleure énergie}
+\label{align_proteus:1G9O}
+   \end{figure}
+
+    \clearpage
+   \clearpage
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{homologues/1G9O.png} \\
+     \end{tabular}
+     \caption{L'aligmenent des séquences homologues à la protéine 1G9O selectionnées}
+\label{align_homo:1G9O}
+   \end{figure}
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{result/TIAM1.png} \\
+     \end{tabular}
+     \caption{Une sélection de séquences proteus pour 1G9O, parmi les 10000 séquences de meilleure énergie}
+\label{align_proteus:1G9O}
+   \end{figure}
+
+    \clearpage
+   \clearpage
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{homologues/1G9O.png} \\
+     \end{tabular}
+     \caption{L'aligmenent des séquences homologues à la protéine 1G9O selectionnées}
+\label{align_homo:1G9O}
+   \end{figure}
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{result/TIAM1.png} \\
+     \end{tabular}
+     \caption{Une sélection de séquences proteus pour 1G9O, parmi les 10000 séquences de meilleure énergie}
+\label{align_proteus:1G9O}
+   \end{figure}
+
+    \clearpage
+   
+
+
+
+
+
+    
 \subsection{simulation Monte Carlo}    
 
 La conception des séquence est réalisé avec Proteus \cite{Simonson13b}.Dans un premier temps, nous faisons des simulations où environ la moitié des position peuvent muter à la fois, pour optimiser les énergies de référence.
@@ -428,14 +564,14 @@ avec $f_j(i)$ la fréquence du type de résidu $j$ à la position $i$, Au lieu d
 
 Les structures tridimensionnelles (3D) des quatre domaines PDZ de test sont représentées sur la Fig. 1A.
 Quatorze résidus de noyau (identifiés visuellement) des différentes structures se superposent bien.
-Tandis que les boucles et les chaînes terminales affichent de grands écarts. L'hélice $\alpha_2$ de Tiam1 est tournée légèrement vers l'extérieur par rapport aux trois autres structures (70). La figure 1b illustre la similarité structurale entre les paries de domaines PDZ. Cette similarité est déterminé par l'écart de rms (root mean square) entre  les atomes $C\alpha$ alignés structurelle-ment et par ailleurs les identités des paires de séquences. Les écarts se situe entre 1,0 et 2,1 \angstrom et des identités de séquences entre 17 et 33 \%.La paire Tiam1/Cask on observe une identité de séquence de 33\% et et leur écart structurel de 1,7 \angstrom calculé sur 42 carbones. Les structure de syntenine et GLG2 sont plus similaires, avec une déviation structurale de 1,0 \angstrom calculé sur 60 C\alpha alignés.
+Tandis que les boucles et les chaînes terminales affichent de grands écarts. L'hélice $\alpha_2$ de Tiam1 est tournée légèrement vers l'extérieur par rapport aux trois autres structures (70). La figure 1b illustre la similarité structurale entre les paries de domaines PDZ. Cette similarité est déterminé par l'écart de rms (root mean square) entre  les atomes $C\alpha$ alignés structurelle-ment et par ailleurs les identités des paires de séquences. Les écarts se situe entre $1,0$ et $2,1 \AA$ et des identités de séquences entre 17 et 33 \%.La paire Tiam1/Cask on observe une identité de séquence de 33\% et et leur écart structurel de 1,7 \AA calculé sur 42 carbones. Les structure de syntenine et GLG2 sont plus similaires, avec une déviation structurale de 1,0 \angstrom calculé sur 60 C\alpha alignés.
 \paragraph{}
 La conservation des séquences dans les quatre domaines PDZ et un sous-ensemble de l'alignent "seed" de Pfam est représenté sur la figure 2. Les 14 positions utilisés pour définir le noyau hydrophobe sont bien conservé conservé dans l'alignement des "seed" de Pfam, mais pas totalement. L'Arg, Lys et Gln apparaissent à certaines positions, puisque dans de petites protéines comme des domaines PDZ, Le longue partie hydrophobe  de ces chaînes latérales peut être enfui dans le noyau tout en permettant à la pointe polaire de la chaîne d'être exposé au solvant. Quelques résidus  Asp et Glu apparaissent aussi, dans les endroits où l'alignement des séquences peut ne pas très bien refléter la superpositions 3D les chaînes latérales. 
 
 \subsection{optimisation du modèle de l'état déplié}
 
 
-Nous optimisons les énergies de référence $E_t^r$ pour les six protéines, en utilisant  leurs homologues naturels pour définie les fréquences d'acides aminés cibles. La constante diélectrique de la protéine P est 8. Les $E_t^r$ ont tous convergé  à 0,05 Kcal/mol près apès environ 20 itérations pour la plupart des types d'acide aminés, et à 0,1 kcal/mol for les autres (ceux qui sont naturellement faiblement peuplé ) , en utilisant soit la méthode linéaire soit la méthode parabolique (équation 11 ou 12). Le tableau 2 indique les énergies de référence finales. Les valeurs $E_t^r$ ont été comparés à, et validé qualitativement avec les énergies calculées à partir d'une structure peptidique étendue, qui fournit un modèle moins empirique de l'état déplié. Le tableau 3 compare les fréquences d'acide aminés des homologues naturels et les calculées. La population théorique des différentes classes d'acide aminé ont bien rejoint l' expérinece, avec des écarts de rms d'environ 1\%, pour les positions exposées et enfuies. L'accord entre les types d'acide aminés est moins bon avec des écarts de rms de 3,9\% et 2,4\% (enfuie/exposés).La distribution des fréquences intra-classe dépend par construction du $\deltaE_t^r$ défini dans pour chaque classe, qui ont était calculés avec la mécanique moléculaire (voir méthodes, équation 15). Ainsi une seconde série de 20 itérations est effectué en relâchant cette contrainte alors l'optimisation ne se fait plus sur les six classes de type d 'acide aminés , mais directement sur les dix-huit types possibles (les positions Pro et Gly étant fixées). 
+Nous optimisons les énergies de référence $E_t^r$ pour les six protéines, en utilisant  leurs homologues naturels pour définie les fréquences d'acides aminés cibles. La constante diélectrique de la protéine P est 8. Les $E_t^r$ ont tous convergé  à 0,05 Kcal/mol près apès environ 20 itérations pour la plupart des types d'acide aminés, et à 0,1 kcal/mol for les autres (ceux qui sont naturellement faiblement peuplé ) , en utilisant soit la méthode linéaire soit la méthode parabolique (équation 11 ou 12). Le tableau 2 indique les énergies de référence finales. Les valeurs $E_t^r$ ont été comparés à, et validé qualitativement avec les énergies calculées à partir d'une structure peptidique étendue, qui fournit un modèle moins empirique de l'état déplié. Le tableau 3 compare les fréquences d'acide aminés des homologues naturels et les calculées. La population théorique des différentes classes d'acide aminé ont bien rejoint l' expérinece, avec des écarts de rms d'environ 1\%, pour les positions exposées et enfuies. L'accord entre les types d'acide aminés est moins bon avec des écarts de rms de 3,9\% et 2,4\% (enfuie/exposés).La distribution des fréquences intra-classe dépend par construction du $\delta E_t^r$ défini dans pour chaque classe, qui ont était calculés avec la mécanique moléculaire (voir méthodes, équation 15). Ainsi une seconde série de 20 itérations est effectué en relâchant cette contrainte alors l'optimisation ne se fait plus sur les six classes de type d 'acide aminés , mais directement sur les dix-huit types possibles (les positions Pro et Gly étant fixées). 
 
 \subsection{Évaluation de la qualité des séquences obtenues}
 
@@ -461,7 +597,7 @@ Comme application de nos modèles optimisés, nous examinons la possibilité de 
 
 Les résultats pour Tiam1 sont présenté à la figure 7. A la plus grande valeur $\delta$ le coeur hydrophobe de Tiam1 est "réduit" avec 10 positions d'acides aminés (sur 94) qui changent en un type polaire. Les positions modifiées se situent principalement sur le bord extérieur du noyau. A la valeur intermédiaire de $\delta$, le noyau hydrophobe ne compte plus que 4 changement es type polaire par rapport un coeur native. A la valeur de $\delta$ la plus négative, le coeur hydrophobe devient plus grand, s'étendant vers les régions de surface , avec 14 positions polaires changé en type hydrophobes. Ainsi le nombre de positions modifiées est approximativement symétrique ( environ +/- 12 changements), reflétant le biais. Environ 2/3 des changements se produisent dans de éléments de structure secondaire. Dans l'ensemble, les propensions observées de chaque position à devenir polaire ou hydrophobe en présence d'un biais de pénalité petit ou grand d'énergie $\delta$ peut être considéré comme un indice de conception hydrophobe. Ici, 11 des 14 positions du coeur conservées (toute sauf les positions 884,898 et 903) sont restés hydrophobes même au plus haut niveau de biais polaire, avec 13 autres positions, indiquant que ces positions ont la plus grande propension a être hydrophobe. De plus, 14 positions ont changé de polaire à hydrophobe qu niveau de polarisation le plus élevé, indiquant que ces positions aussi ont une certaine propension a être hydrophobe. Les résultats pour Cask sont similaires, avec 11 positions changés en polaire au plus haut biais et 9 changés en hydrophobe au plus haut biais  hydrophobe.
 Nous calculons également un paramètre pour décrire le nombre de changement relatif de type d'acide aminé par unité de l'énergie du biais. Ce  paramètre est défini comme le nombre $\delta N$ de positions de résidu  changées de non-polaire à polaire, divisé par le produit de la variation $\delta E$ dans l'énergie de polarisation et le nombre moyen N de position non polaires à biais nul. Nous l'appelons la sensibilité hydrophobe $\psi_h$ . Pour le domaine PDZ Tiams1, ce calcul donne:
-$\psi_h = \frac{1}{N} frac{\deltaN}{\deltaE} = 0,88$ changements par position et par kcal/mol. Pour Cask, la sensibilité hydrophobe  est  $\psi_h = 0,71$ changements par position et par kcal/mol.
+$\psi_h = \frac{1}{N} frac{\delta N}{\delta E} = 0,88$ changements par position et par kcal/mol. Pour Cask, la sensibilité hydrophobe  est  $\psi_h = 0,71$ changements par position et par kcal/mol.
 
 \section{Conclusion}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.4.3)  10 MAY 2017 18:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.4.3)  11 MAY 2017 11:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -860,8 +860,20 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 59.
  (./these.aux
 (./merci.aux) (./dedicace.aux) (./glossaire.aux) (./intro.aux) (./contexte.aux)
 (./CPD/chapter.aux) (./proteus/chapter.aux) (./methodes/chapter.aux)
-(./comparaisons/chapter.aux) (./PDZ/chapter.aux) (./conc.aux)
-(./annexe_posi.aux) (./resume.aux))
+(./comparaisons/chapter.aux) (./PDZ/chapter.aux
+
+LaTeX Warning: Label `eq:unfolded' multiply defined.
+
+
+LaTeX Warning: Label `eq:deltaE' multiply defined.
+
+
+LaTeX Warning: Label `eq:entropy' multiply defined.
+
+
+LaTeX Warning: Label `eq:entropy' multiply defined.
+
+) (./conc.aux) (./annexe_posi.aux) (./resume.aux))
 \openout1 = `these.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 252.
@@ -879,7 +891,8 @@ LaTeX Font Info:    ... okay on input line 252.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 252.
 LaTeX Font Info:    ... okay on input line 252.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 252.
- (/usr/share/texmf/tex/latex/lm/t1lmr.fd
+
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 *geometry* driver: auto-detecting
@@ -1906,82 +1919,7 @@ Package natbib Warning: Citation `Baker06b' on page 49 undefined on input line
 [49
 
 
-]
-! Undefined control sequence.
-l.27   E^u=\sum_{i\inS
-                      }E^r(t_i)
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[50]
-
-! LaTeX Error: \mathcal allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.55 ...nsidérons maintenant un ensemble \mathcal
-                                                  {S} de $N$ séquences cibl...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \mathcal allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.55 ...$N$ séquences cibles; On appelle \mathcal
-                                                  {L} la probabilité d'obse...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \mathcal allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.55 ...té d'observer l'ensemble entier. \mathcal
-                                                  {L} est fonction des param...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \mathcal allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.55 ....Comme nous voulons le maximum de \mathcal
-                                                  {L} sur les $E_t^r$ , nous...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \mathcal allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.55 ..._t^r$ , nous nous référons  à  \mathcal
-                                                  {L} comme leur vraisemblan...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+] [50]
 
 Package natbib Warning: Citation `Kleinman06' on page 51 undefined on input lin
 e 55.
@@ -2048,21 +1986,8 @@ Package natbib Warning: Citation `Hawkins95' on page 53 undefined on input line
 Package natbib Warning: Citation `Lopes07' on page 53 undefined on input line 1
 43.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.143 ...eur $\sigma_i$ spécifique en cal/mol/Å^
-                                                  2:
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.145 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+LaTeX Warning: Command \r invalid in math mode on input line 143.
 
 [53]
 
@@ -2072,25 +1997,6 @@ Package natbib Warning: Citation `Lee71' on page 54 undefined on input line 146
 
 Package natbib Warning: Citation `Xplor' on page 54 undefined on input line 146
 .
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.146 ...isent une constante dielectrique \epsilon
-                                                  _p = 4 ou 8 (voir la parti...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \' invalid in math mode on input line 146.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.147 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
 
 Package natbib Warning: Citation `Hawkins95' on page 54 undefined on input line
@@ -2133,269 +2039,108 @@ Package natbib Warning: Citation `Aleksandrov10b' on page 54 undefined on input
 Package hyperref Warning: Difference (3) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 242.
 
-! You can't use `\hrule' here except with leaders.
-\caption@hrule ->\hrule 
-                        \@height \z@ 
-l.266 }
-       
-To put a horizontal rule in an hbox or an alignment,
-you should use \leaders or \hrulefill (see The TeXbook).
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \vskip 
-l.266 }
-       
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \vskip 
-l.266 }
-       
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.266 }
-       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.266 }
-       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.266 }
-       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.266 }
-       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Overfull \hbox (173.09099pt too wide) in paragraph at lines 266--266
-[][] 
- []
-
-! Extra }, or forgotten \endgroup.
-\Gscale@box ...cale@y {#2}\setbox \z@ \hbox {{#3}}
-                                                  \setbox \tw@ \hbox {\Gscal...
-l.266 }
-       
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Undefined control sequence.
-<argument> \Gscale@x 
-                     
-l.266 }
-       
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> \Gscale@y 
-                     
-l.266 }
-       
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 [56]
-! Extra }, or forgotten \endgroup.
-\@endfloatbox ...pagefalse \outer@nobreak \egroup 
-                                                  \color@endbox 
-l.269     \end{table}
-                     
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Extra }, or forgotten \endgroup.
-\color@endbox ->\color@endgroup \egroup 
-                                        
-l.269     \end{table}
-                     
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-! LaTeX Error: \begin{equation} on input line 131 ended by \end{table}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.269     \end{table}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 275.
-
-
-Package natbib Warning: Citation `Schmidt09' on page 57 undefined on input line
- 334.
-
-
-Package natbib Warning: Citation `Schmidt10' on page 57 undefined on input line
- 334.
-
-
-Package natbib Warning: Citation `Tuffery91' on page 57 undefined on input line
- 334.
-
-
-Package natbib Warning: Citation `Gaillard14' on page 57 undefined on input lin
-e 334.
-
-
-Package natbib Warning: Citation `Krivov09' on page 57 undefined on input line 
-334.
-
-
-Package natbib Warning: Citation `Gaillard16' on page 57 undefined on input lin
-e 334.
+(hyperref)                than one, level fixed on input line 280.
 
 [57]
 
-Package natbib Warning: Citation `Simonson13b' on page 58 undefined on input li
-ne 391.
+Package natbib Warning: Citation `Schmidt09' on page 58 undefined on input line
+ 339.
 
 
-LaTeX Warning: Reference `para:REMC' on page 58 undefined on input line 393.
+Package natbib Warning: Citation `Schmidt10' on page 58 undefined on input line
+ 339.
+
+
+Package natbib Warning: Citation `Tuffery91' on page 58 undefined on input line
+ 339.
+
+
+Package natbib Warning: Citation `Gaillard14' on page 58 undefined on input lin
+e 339.
+
+
+Package natbib Warning: Citation `Krivov09' on page 58 undefined on input line 
+339.
+
+
+Package natbib Warning: Citation `Gaillard16' on page 58 undefined on input lin
+e 339.
 
 [58] [59]
 
+Package natbib Warning: Citation `Simonson13b' on page 60 undefined on input li
+ne 396.
+
+
+LaTeX Warning: Reference `para:REMC' on page 60 undefined on input line 398.
+
+
 Package natbib Warning: Citation `Baker06b' on page 60 undefined on input line 
-398.
+403.
 
 
-Overfull \hbox (14.05612pt too wide) in paragraph at lines 402--402
+Overfull \hbox (14.05612pt too wide) in paragraph at lines 407--407
 []\T1/lmtt/m/n/12 fixbb -s Tiam1.pdb -resfile Tiam1.res -nstruct 10000 -ex1 -ex
 2 -linmem_ig 10[] 
  []
 
 
 Package natbib Warning: Citation `Gough01' on page 60 undefined on input line 4
-12.
+17.
 
 
 Package natbib Warning: Citation `Wilson07' on page 60 undefined on input line 
-412.
+417.
 
 
 Package natbib Warning: Citation `Andreeva04' on page 60 undefined on input lin
-e 412.
+e 417.
 
 [60]
 
 Package natbib Warning: Citation `DurbinBK' on page 61 undefined on input line 
-414.
+419.
 
 
 Package natbib Warning: Citation `Launay07' on page 61 undefined on input line 
-421.
+426.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.421 ...nentielle de l'entropie des résidus \exp
+l.426 ...nentielle de l'entropie des résidus \exp
                                                   (S) ( qui varie de 1 à 6 ...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-LaTeX Warning: Command \` invalid in math mode on input line 421.
+LaTeX Warning: Command \` invalid in math mode on input line 426.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 421.
+LaTeX Warning: Command \' invalid in math mode on input line 426.
 
 
-LaTeX Warning: Command \^ invalid in math mode on input line 421.
+LaTeX Warning: Command \^ invalid in math mode on input line 426.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 421.
+LaTeX Warning: Command \' invalid in math mode on input line 426.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.422 
+l.427 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-! Undefined control sequence.
-l.431 ...carts se situe entre 1,0 et 2,1 \angstrom
-                                                   et des identités de séq...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+
+LaTeX Warning: Command \r invalid in math mode on input line 436.
 
 ! Undefined control sequence.
-l.431 ...t leur écart structurel de 1,7 \angstrom
-                                                   calculé sur 42 carbones....
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.431 ...e déviation structurale de 1,0 \angstrom
+l.436 ...e déviation structurale de 1,0 \angstrom
                                                    calculé sur 60 C\alpha a...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2406,97 +2151,69 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.431 ... de 1,0 \angstrom calculé sur 60 C\alpha
+l.436 ... de 1,0 \angstrom calculé sur 60 C\alpha
                                                    alignés.
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 431.
+LaTeX Warning: Command \' invalid in math mode on input line 436.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.432 \paragraph
+l.437 \paragraph
                 {}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 433.
-
 [61]
-! Undefined control sequence.
-<recently read> \deltaE 
-                        
-l.438 ...asse dépend par construction du $\deltaE
-                                                  _t^r$ défini dans pour ch...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 444.
+(hyperref)                than one, level fixed on input line 438.
+
+[62]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 449.
 
 
-LaTeX Warning: Reference `superfamily' on page 62 undefined on input line 444.
+LaTeX Warning: Reference `superfamily' on page 63 undefined on input line 449.
 
-[62] [63] [64]
-! Undefined control sequence.
-l.464 $\psi_h = \frac{1}{N} frac{\deltaN
-                                        }{\deltaE} = 0,88$ changements par p...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.464 $\psi_h = \frac{1}{N} frac{\deltaN}{\deltaE
-                                                 } = 0,88$ changements par p...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[65]
+[63] [64] [65]
 
 Package natbib Warning: Citation `Gaillard16' on page 66 undefined on input lin
-e 470.
-
-
-Package natbib Warning: Citation `Krivov09' on page 66 undefined on input line 
-470.
-
-
-Package natbib Warning: Citation `Polydorides13' on page 66 undefined on input 
-line 470.
-
-
-Package natbib Warning: Citation `Kilambi12' on page 66 undefined on input line
- 470.
-
-
-Package natbib Warning: Citation `Schmidt08' on page 66 undefined on input line
- 475.
-
-
-Package natbib Warning: Citation `Simonson13' on page 66 undefined on input lin
 e 475.
 
 
-Package natbib Warning: Citation `Druart17' on page 66 undefined on input line 
-476.
+Package natbib Warning: Citation `Krivov09' on page 66 undefined on input line 
+475.
 
-[66] [67]
+
+Package natbib Warning: Citation `Polydorides13' on page 66 undefined on input 
+line 475.
+
+
+Package natbib Warning: Citation `Kilambi12' on page 66 undefined on input line
+ 475.
+
+[66]
+
+Package natbib Warning: Citation `Schmidt08' on page 67 undefined on input line
+ 480.
+
+
+Package natbib Warning: Citation `Simonson13' on page 67 undefined on input lin
+e 480.
+
+
+Package natbib Warning: Citation `Druart17' on page 67 undefined on input line 
+481.
+
+[67]
 
 Package natbib Warning: Citation `Polydorides13' on page 68 undefined on input 
-line 481.
+line 486.
 
 [68] [69]) [70]
 \openout2 = `conc.aux'.
@@ -2540,6 +2257,19 @@ No file these.bbl.
 
 Package natbib Warning: There were undefined citations.
 
+
+! LaTeX Error: \begin{equation} on input line 131 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.338 \end{document}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 338.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 338.
 (./these.aux (./merci.aux) (./dedicace.aux) (./glossaire.aux) (./intro.aux)
@@ -2555,43 +2285,44 @@ Package rerunfilecheck Info: File `these.out' has not changed.
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 338.
- ) 
-Here is how much of TeX's memory you used:
- 12774 strings out of 494875
- 190071 string characters out of 6178749
- 379715 words of memory out of 5000000
- 15281 multiletter control sequences out of 15000+600000
- 107082 words of font info for 170 fonts, out of 8000000 for 9000
- 36 hyphenation exceptions out of 8191
- 46i,12n,48p,2556b,587s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{table.caption.57} has been referenced but does no
-t exist, replaced by a fixed one
+ )
+(\end occurred inside a group at level 1)
 
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvip
-s/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/sha
-re/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/
-lm-ec.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsrom1
-2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsrom8.pfb
-></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/typ
-e1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxo10.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/
-public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/te
-xmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr
-10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/font
-s/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/p
-ublic/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmtt12.pfb>
-Output written on these.pdf (95 pages, 678625 bytes).
+### semi simple group (level 1) entered at line 131 (\begingroup)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 12769 strings out of 494875
+ 190030 string characters out of 6178749
+ 375857 words of memory out of 5000000
+ 15278 multiletter control sequences out of 15000+600000
+ 106995 words of font info for 169 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 46i,12n,48p,2556b,722s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texm
+f/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
+sy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fon
+ts/enc/dvips/lm/lm-ec.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/dou
+blestroke/dsrom12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doubles
+troke/dsrom8.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmbxo10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/te
+xmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
+mi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/tex
+mf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lms
+y6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/font
+s/type1/public/lm/lmtt12.pfb>
+Output written on these.pdf (95 pages, 680085 bytes).
 PDF statistics:
- 1181 PDF objects out of 1200 (max. 8388607)
- 1049 compressed objects within 11 object streams
+ 1183 PDF objects out of 1200 (max. 8388607)
+ 1051 compressed objects within 11 object streams
  277 named destinations out of 1000 (max. 500000)
  30894 words of extra memory for PDF output out of 35830 (max. 10000000)
 
