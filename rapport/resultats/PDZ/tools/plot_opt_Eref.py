@@ -37,10 +37,10 @@ gs1.update(wspace=0,hspace=0)
 for line in datas:
     label=line.split()[0]
     data=line.split()[1:]
-    axs[idx].grid(True)
+#    axs[idx].grid(True)
     axs[idx].plot(data,color='red')
     axs[idx].yaxis.set_ticks([])
-    axs[idx].xaxis.set_ticks([0,5,10,15,20,25,30,35,40])
+#    axs[idx].xaxis.set_ticks([0,5,10,15,20,25,30,35,40])
     axs[idx].set_ylabel(label,fontsize=9)
     idx+=1
 

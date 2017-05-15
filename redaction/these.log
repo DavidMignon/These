@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.4.3)  11 MAY 2017 11:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.4.3)  15 MAY 2017 15:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -868,6 +868,9 @@ LaTeX Warning: Label `eq:unfolded' multiply defined.
 LaTeX Warning: Label `eq:deltaE' multiply defined.
 
 
+LaTeX Warning: Label `graph:corePDZ' multiply defined.
+
+
 LaTeX Warning: Label `eq:entropy' multiply defined.
 
 
@@ -1092,16 +1095,20 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
  [7] [8
 
-] (./these.lof)
-\tf@lof=\write5
-\openout5 = `these.lof'.
-
+] (./these.lof
+Overfull \hbox (0.3287pt too wide) in paragraph at lines 17--17
+ \T1/lmr/m/n/12 (-20) �ner-gie, ob-te-nues avec le back-bone de la pro-t�ine NH
+-REF (code PDB :1G9O), 
+ []
 
 [9
 
-] [10
+])
+\tf@lof=\write5
+\openout5 = `these.lof'.
 
-] (./these.lot [11
+ [10] (./these.lot [11
+
 
 ])
 \tf@lot=\write6
@@ -1847,74 +1854,74 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Chapitre 5.
 
 Package natbib Warning: Citation `Harris01' on page 49 undefined on input line 
-8.
+7.
 
 
-Package natbib Warning: Citation `Hung02' on page 49 undefined on input line 8.
+Package natbib Warning: Citation `Hung02' on page 49 undefined on input line 7.
 
 
 
 Package natbib Warning: Citation `Tonikian08' on page 49 undefined on input lin
-e 8.
+e 7.
 
 
 Package natbib Warning: Citation `Gfeller11' on page 49 undefined on input line
- 8.
+ 7.
 
 
 Package natbib Warning: Citation `Subbaiah11' on page 49 undefined on input lin
-e 8.
+e 7.
 
 
 Package natbib Warning: Citation `Sheperd11r' on page 49 undefined on input lin
-e 8.
+e 7.
 
 
-Package natbib Warning: Citation `Bach12' on page 49 undefined on input line 8.
+Package natbib Warning: Citation `Bach12' on page 49 undefined on input line 7.
 
 
 
 Package natbib Warning: Citation `Roberts12' on page 49 undefined on input line
- 8.
+ 7.
 
 
-Package natbib Warning: Citation `Zheng15' on page 49 undefined on input line 8
+Package natbib Warning: Citation `Zheng15' on page 49 undefined on input line 7
 .
 
 
 Package natbib Warning: Citation `Socolich05' on page 49 undefined on input lin
-e 8.
+e 7.
 
 
-Package natbib Warning: Citation `Kong09' on page 49 undefined on input line 8.
+Package natbib Warning: Citation `Kong09' on page 49 undefined on input line 7.
 
 
 
 Package natbib Warning: Citation `Mclaughlin12' on page 49 undefined on input l
-ine 8.
+ine 7.
 
 
 Package natbib Warning: Citation `Melero14' on page 49 undefined on input line 
-8.
+7.
 
 
-Package natbib Warning: Citation `Reina02' on page 49 undefined on input line 8
+Package natbib Warning: Citation `Reina02' on page 49 undefined on input line 7
 .
 
 
 Package natbib Warning: Citation `Schmidt10' on page 49 undefined on input line
- 8.
+ 7.
 
 
-Package natbib Warning: Citation `Smith10' on page 49 undefined on input line 8
+Package natbib Warning: Citation `Smith10' on page 49 undefined on input line 7
 .
 
 
-LaTeX Warning: Reference `(' on page 49 undefined on input line 9.
+LaTeX Warning: Reference `(' on page 49 undefined on input line 8.
 
 
 Package natbib Warning: Citation `Baker06b' on page 49 undefined on input line 
-9.
+8.
 
 [49
 
@@ -1922,10 +1929,10 @@ Package natbib Warning: Citation `Baker06b' on page 49 undefined on input line
 ] [50]
 
 Package natbib Warning: Citation `Kleinman06' on page 51 undefined on input lin
-e 55.
+e 54.
 
 ! Undefined control sequence.
-l.60 ...n aa} N(t) E^r_t - \sum_SG^f_S - N kT \lnZ
+l.59 ...n aa} N(t) E^r_t - \sum_SG^f_S - N kT \lnZ
                                                   ,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1936,23 +1943,23 @@ and I'll forget about whatever was undefined.
 [51]
 
 Package natbib Warning: Citation `Kleinman06' on page 52 undefined on input lin
-e 102.
+e 101.
 
 [52]
 
 Package natbib Warning: Citation `Schmidt08' on page 53 undefined on input line
- 112.
+ 111.
 
 
 Package natbib Warning: Citation `Simonson13b' on page 53 undefined on input li
-ne 112.
+ne 111.
 
 Runaway argument?
 {equation 
 ! Paragraph ended before \end was complete.
 <to be read again> 
                    \par 
-l.135 
+l.134 
       
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -1961,7 +1968,7 @@ My plan is to forget the whole thing and hope for the best.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.135 
+l.134 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1969,178 +1976,367 @@ you left one out. Proceed, with fingers crossed.
 ! Display math should end with $$.
 <to be read again> 
                    \par 
-l.135 
+l.134 
       
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
 
 Package natbib Warning: Citation `Cornell95' on page 53 undefined on input line
- 137.
+ 136.
 
 
 Package natbib Warning: Citation `Hawkins95' on page 53 undefined on input line
- 143.
+ 142.
 
 
 Package natbib Warning: Citation `Lopes07' on page 53 undefined on input line 1
-43.
+42.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 143.
+LaTeX Warning: Command \r invalid in math mode on input line 142.
 
 [53]
 
-Package natbib Warning: Citation `Lee71' on page 54 undefined on input line 146
+Package natbib Warning: Citation `Lee71' on page 54 undefined on input line 145
 .
 
 
-Package natbib Warning: Citation `Xplor' on page 54 undefined on input line 146
+Package natbib Warning: Citation `Xplor' on page 54 undefined on input line 145
 .
 
 
 Package natbib Warning: Citation `Hawkins95' on page 54 undefined on input line
- 148.
+ 147.
 
 
 Package natbib Warning: Citation `Lopes07' on page 54 undefined on input line 1
-48.
+47.
 
 
 Package natbib Warning: Citation `Hawkins95' on page 54 undefined on input line
- 148.
+ 147.
 
 
 Package natbib Warning: Citation `Simonson13b' on page 54 undefined on input li
-ne 149.
+ne 148.
+
+
+Package natbib Warning: Citation `Gaillard14' on page 54 undefined on input lin
+e 148.
+
+
+Package natbib Warning: Citation `Street98' on page 54 undefined on input line 
+149.
+
+
+Package natbib Warning: Citation `Lopes07' on page 54 undefined on input line 1
+49.
 
 
 Package natbib Warning: Citation `Gaillard14' on page 54 undefined on input lin
 e 149.
 
 
-Package natbib Warning: Citation `Street98' on page 54 undefined on input line 
-150.
-
-
-Package natbib Warning: Citation `Lopes07' on page 54 undefined on input line 1
-50.
-
-
-Package natbib Warning: Citation `Gaillard14' on page 54 undefined on input lin
-e 150.
-
-
 Package natbib Warning: Citation `Aleksandrov10b' on page 54 undefined on input
- line 152.
+ line 151.
 
 [54] [55]
 
 Package hyperref Warning: Difference (3) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 242.
+(hyperref)                than one, level fixed on input line 241.
 
 [56]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 280.
+(hyperref)                than one, level fixed on input line 279.
 
-[57]
+[57] [58]
+<./PDZ/images/natives_alignees.png, id=1009, 1219.16348pt x 181.86626pt>
+File: ./PDZ/images/natives_alignees.png Graphic file (type png)
 
-Package natbib Warning: Citation `Schmidt09' on page 58 undefined on input line
- 339.
+<use ./PDZ/images/natives_alignees.png>
+Package pdftex.def Info: ./PDZ/images/natives_alignees.png used on input line 3
+48.
+(pdftex.def)             Requested size: 512.1496pt x 76.39995pt.
 
+<./PDZ/images/corePDZ.png, id=1011, 1265.51054pt x 787.82242pt>
+File: ./PDZ/images/corePDZ.png Graphic file (type png)
 
-Package natbib Warning: Citation `Schmidt10' on page 58 undefined on input line
- 339.
+<use ./PDZ/images/corePDZ.png>
+Package pdftex.def Info: ./PDZ/images/corePDZ.png used on input line 360.
+(pdftex.def)             Requested size: 398.33858pt x 247.97304pt.
+ [59
 
+ <./PDZ/images/natives_alignees.png> <./PDZ/images/corePDZ.png>]
 
-Package natbib Warning: Citation `Tuffery91' on page 58 undefined on input line
- 339.
-
-
-Package natbib Warning: Citation `Gaillard14' on page 58 undefined on input lin
-e 339.
-
-
-Package natbib Warning: Citation `Krivov09' on page 58 undefined on input line 
-339.
-
-
-Package natbib Warning: Citation `Gaillard16' on page 58 undefined on input lin
-e 339.
-
-[58] [59]
-
-Package natbib Warning: Citation `Simonson13b' on page 60 undefined on input li
-ne 396.
+Package natbib Warning: Citation `Schmidt09' on page 60 undefined on input line
+ 410.
 
 
-LaTeX Warning: Reference `para:REMC' on page 60 undefined on input line 398.
+Package natbib Warning: Citation `Schmidt10' on page 60 undefined on input line
+ 410.
 
 
-Package natbib Warning: Citation `Baker06b' on page 60 undefined on input line 
-403.
+Package natbib Warning: Citation `Tuffery91' on page 60 undefined on input line
+ 410.
 
 
-Overfull \hbox (14.05612pt too wide) in paragraph at lines 407--407
+Package natbib Warning: Citation `Gaillard14' on page 60 undefined on input lin
+e 410.
+
+
+Package natbib Warning: Citation `Krivov09' on page 60 undefined on input line 
+410.
+
+
+Package natbib Warning: Citation `Gaillard16' on page 60 undefined on input lin
+e 410.
+
+[60
+
+] <./PDZ/homologues/1G9O.png, id=1022, 662.9987pt x 541.62791pt>
+File: ./PDZ/homologues/1G9O.png Graphic file (type png)
+
+<use ./PDZ/homologues/1G9O.png>
+Package pdftex.def Info: ./PDZ/homologues/1G9O.png used on input line 419.
+(pdftex.def)             Requested size: 483.69684pt x 395.16194pt.
+
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 418--421
+ [][] 
+ []
+
+<./PDZ/proteus/1G9O.png, id=1023, 664.56978pt x 698.87473pt>
+File: ./PDZ/proteus/1G9O.png Graphic file (type png)
+
+<use ./PDZ/proteus/1G9O.png>
+Package pdftex.def Info: ./PDZ/proteus/1G9O.png used on input line 428.
+(pdftex.def)             Requested size: 483.69684pt x 508.66003pt.
+
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 427--430
+ [][] 
+ []
+
+[61 <./PDZ/homologues/1G9O.png>] [62 <./PDZ/proteus/1G9O.png (PNG copy)>]
+<./PDZ/homologues/1IHJ.png, id=1033, 677.13847pt x 463.79868pt>
+File: ./PDZ/homologues/1IHJ.png Graphic file (type png)
+
+<use ./PDZ/homologues/1IHJ.png>
+Package pdftex.def Info: ./PDZ/homologues/1IHJ.png used on input line 439.
+(pdftex.def)             Requested size: 483.69684pt x 331.30215pt.
+
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 438--441
+ [][] 
+ []
+
+<./PDZ/proteus/1IHJ.png, id=1034, 669.28305pt x 697.28638pt>
+File: ./PDZ/proteus/1IHJ.png Graphic file (type png)
+
+<use ./PDZ/proteus/1IHJ.png>
+Package pdftex.def Info: ./PDZ/proteus/1IHJ.png used on input line 448.
+(pdftex.def)             Requested size: 483.69684pt x 503.92903pt.
+
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 447--450
+ [][] 
+ []
+
+[63 <./PDZ/homologues/1IHJ.png>] [64 <./PDZ/proteus/1IHJ.png (PNG copy)>]
+<./PDZ/homologues/1R6J.png, id=1045, 595.44196pt x 532.09781pt>
+File: ./PDZ/homologues/1R6J.png Graphic file (type png)
+
+<use ./PDZ/homologues/1R6J.png>
+Package pdftex.def Info: ./PDZ/homologues/1R6J.png used on input line 458.
+(pdftex.def)             Requested size: 483.69684pt x 432.2391pt.
+
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 457--460
+ [][] 
+ []
+
+<./PDZ/proteus/1R6J.png, id=1046, 581.30217pt x 696.4922pt>
+File: ./PDZ/proteus/1R6J.png Graphic file (type png)
+
+<use ./PDZ/proteus/1R6J.png>
+Package pdftex.def Info: ./PDZ/proteus/1R6J.png used on input line 467.
+(pdftex.def)             Requested size: 483.69684pt x 579.555pt.
+
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 466--469
+ [][] 
+ []
+
+[65 <./PDZ/homologues/1R6J.png>] [66 <./PDZ/proteus/1R6J.png (PNG copy)>]
+<./PDZ/homologues/1N7E.png, id=1056, 680.28065pt x 525.7444pt>
+File: ./PDZ/homologues/1N7E.png Graphic file (type png)
+
+<use ./PDZ/homologues/1N7E.png>
+Package pdftex.def Info: ./PDZ/homologues/1N7E.png used on input line 477.
+(pdftex.def)             Requested size: 483.69684pt x 373.82663pt.
+
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 476--479
+ [][] 
+ []
+
+<./PDZ/proteus/1N7E.png, id=1057, 678.70956pt x 694.10966pt>
+File: ./PDZ/proteus/1N7E.png Graphic file (type png)
+
+<use ./PDZ/proteus/1N7E.png>
+Package pdftex.def Info: ./PDZ/proteus/1N7E.png used on input line 486.
+(pdftex.def)             Requested size: 483.69684pt x 494.68538pt.
+
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 485--488
+ [][] 
+ []
+
+[67 <./PDZ/homologues/1N7E.png>] [68 <./PDZ/proteus/1N7E.png (PNG copy)>]
+<./PDZ/homologues/2BYG.png, id=1067, 701.49033pt x 471.74043pt>
+File: ./PDZ/homologues/2BYG.png Graphic file (type png)
+
+<use ./PDZ/homologues/2BYG.png>
+Package pdftex.def Info: ./PDZ/homologues/2BYG.png used on input line 496.
+(pdftex.def)             Requested size: 483.69684pt x 325.2853pt.
+
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 495--498
+ [][] 
+ []
+
+<./PDZ/proteus/2BYG.png, id=1068, 685.77945pt x 696.4922pt>
+File: ./PDZ/proteus/2BYG.png Graphic file (type png)
+
+<use ./PDZ/proteus/2BYG.png>
+Package pdftex.def Info: ./PDZ/proteus/2BYG.png used on input line 505.
+(pdftex.def)             Requested size: 483.69684pt x 491.27151pt.
+
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 504--507
+ [][] 
+ []
+
+[69 <./PDZ/homologues/2BYG.png>] [70 <./PDZ/proteus/2BYG.png (PNG copy)>]
+<./PDZ/homologues/3K82.png, id=1080, 696.77707pt x 546.39296pt>
+File: ./PDZ/homologues/3K82.png Graphic file (type png)
+
+<use ./PDZ/homologues/3K82.png>
+Package pdftex.def Info: ./PDZ/homologues/3K82.png used on input line 515.
+(pdftex.def)             Requested size: 483.69684pt x 379.31262pt.
+
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 514--517
+ [][] 
+ []
+
+<./PDZ/proteus/3K82.png, id=1081, 688.1361pt x 697.28638pt>
+File: ./PDZ/proteus/3K82.png Graphic file (type png)
+
+<use ./PDZ/proteus/3K82.png>
+Package pdftex.def Info: ./PDZ/proteus/3K82.png used on input line 524.
+(pdftex.def)             Requested size: 483.69684pt x 490.12932pt.
+
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 523--526
+ [][] 
+ []
+
+[71 <./PDZ/homologues/3K82.png>] [72 <./PDZ/proteus/3K82.png (PNG copy)>]
+<./PDZ/homologues/TIAM1.png, id=1091, 687.35054pt x 540.03957pt>
+File: ./PDZ/homologues/TIAM1.png Graphic file (type png)
+
+<use ./PDZ/homologues/TIAM1.png>
+Package pdftex.def Info: ./PDZ/homologues/TIAM1.png used on input line 534.
+(pdftex.def)             Requested size: 483.69684pt x 380.02751pt.
+
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 533--536
+ [][] 
+ []
+
+<./PDZ/homologues/CASK.png, id=1092, 606.43956pt x 555.92308pt>
+File: ./PDZ/homologues/CASK.png Graphic file (type png)
+
+<use ./PDZ/homologues/CASK.png>
+Package pdftex.def Info: ./PDZ/homologues/CASK.png used on input line 543.
+(pdftex.def)             Requested size: 483.69684pt x 443.39879pt.
+
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 542--545
+ [][] 
+ []
+
+[73 <./PDZ/homologues/TIAM1.png (PNG copy)>] [74 <./PDZ/homologues/CASK.png (PN
+G copy)>]
+
+Package natbib Warning: Citation `Simonson13b' on page 75 undefined on input li
+ne 554.
+
+
+LaTeX Warning: Reference `para:REMC' on page 75 undefined on input line 556.
+
+
+Package natbib Warning: Citation `Baker06b' on page 75 undefined on input line 
+561.
+
+
+Overfull \hbox (14.05612pt too wide) in paragraph at lines 565--565
 []\T1/lmtt/m/n/12 fixbb -s Tiam1.pdb -resfile Tiam1.res -nstruct 10000 -ex1 -ex
 2 -linmem_ig 10[] 
  []
 
 
-Package natbib Warning: Citation `Gough01' on page 60 undefined on input line 4
-17.
+Package natbib Warning: Citation `Gough01' on page 75 undefined on input line 5
+75.
 
 
-Package natbib Warning: Citation `Wilson07' on page 60 undefined on input line 
-417.
+Package natbib Warning: Citation `Wilson07' on page 75 undefined on input line 
+575.
 
 
-Package natbib Warning: Citation `Andreeva04' on page 60 undefined on input lin
-e 417.
+Package natbib Warning: Citation `Andreeva04' on page 75 undefined on input lin
+e 575.
 
-[60]
-
-Package natbib Warning: Citation `DurbinBK' on page 61 undefined on input line 
-419.
+[75
 
 
-Package natbib Warning: Citation `Launay07' on page 61 undefined on input line 
-426.
+
+
+
+
+
+
+]
+
+Package natbib Warning: Citation `DurbinBK' on page 76 undefined on input line 
+577.
+
+
+Package natbib Warning: Citation `Launay07' on page 76 undefined on input line 
+584.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.426 ...nentielle de l'entropie des résidus \exp
+l.584 ...nentielle de l'entropie des résidus \exp
                                                   (S) ( qui varie de 1 à 6 ...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-LaTeX Warning: Command \` invalid in math mode on input line 426.
+LaTeX Warning: Command \` invalid in math mode on input line 584.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 426.
+LaTeX Warning: Command \' invalid in math mode on input line 584.
 
 
-LaTeX Warning: Command \^ invalid in math mode on input line 426.
+LaTeX Warning: Command \^ invalid in math mode on input line 584.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 426.
+LaTeX Warning: Command \' invalid in math mode on input line 584.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.427 
+l.585 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 436.
+LaTeX Warning: Command \r invalid in math mode on input line 594.
 
 ! Undefined control sequence.
-l.436 ...e déviation structurale de 1,0 \angstrom
+l.594 ...e déviation structurale de 1,0 \angstrom
                                                    calculé sur 60 C\alpha a...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2151,79 +2347,79 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.436 ... de 1,0 \angstrom calculé sur 60 C\alpha
+l.594 ... de 1,0 \angstrom calculé sur 60 C\alpha
                                                    alignés.
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 436.
+LaTeX Warning: Command \' invalid in math mode on input line 594.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.437 \paragraph
+l.595 \paragraph
                 {}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-[61]
+[76]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 438.
+(hyperref)                than one, level fixed on input line 596.
 
-[62]
+[77]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 449.
+(hyperref)                than one, level fixed on input line 707.
 
 
-LaTeX Warning: Reference `superfamily' on page 63 undefined on input line 449.
+LaTeX Warning: Reference `superfamily' on page 78 undefined on input line 707.
 
-[63] [64] [65]
+[78] [79] [80] [81] [82]
 
-Package natbib Warning: Citation `Gaillard16' on page 66 undefined on input lin
-e 475.
-
-
-Package natbib Warning: Citation `Krivov09' on page 66 undefined on input line 
-475.
+Package natbib Warning: Citation `Gaillard16' on page 83 undefined on input lin
+e 784.
 
 
-Package natbib Warning: Citation `Polydorides13' on page 66 undefined on input 
-line 475.
+Package natbib Warning: Citation `Krivov09' on page 83 undefined on input line 
+784.
 
 
-Package natbib Warning: Citation `Kilambi12' on page 66 undefined on input line
- 475.
-
-[66]
-
-Package natbib Warning: Citation `Schmidt08' on page 67 undefined on input line
- 480.
+Package natbib Warning: Citation `Polydorides13' on page 83 undefined on input 
+line 784.
 
 
-Package natbib Warning: Citation `Simonson13' on page 67 undefined on input lin
-e 480.
+Package natbib Warning: Citation `Kilambi12' on page 83 undefined on input line
+ 784.
 
 
-Package natbib Warning: Citation `Druart17' on page 67 undefined on input line 
-481.
+Package natbib Warning: Citation `Schmidt08' on page 83 undefined on input line
+ 789.
 
-[67]
 
-Package natbib Warning: Citation `Polydorides13' on page 68 undefined on input 
-line 486.
+Package natbib Warning: Citation `Simonson13' on page 83 undefined on input lin
+e 789.
 
-[68] [69]) [70]
+
+Package natbib Warning: Citation `Druart17' on page 83 undefined on input line 
+790.
+
+[83] [84]
+
+Package natbib Warning: Citation `Polydorides13' on page 85 undefined on input 
+line 795.
+
+[85] [86]) [87] [88
+
+
+]
 \openout2 = `conc.aux'.
 
- (./conc.tex) [71
+ (./conc.tex) [89
 
 
-
-
-] [72
+] [90
 
 
 ]
@@ -2239,17 +2435,17 @@ Overfull \hbox (34.69362pt too wide) in paragraph at lines 253--254
  [][] 
  []
 
-) [73
+) [91
 
 
-] [74] [75] [76] [77] [78
+] [92] [93] [94] [95] [96
 
 
 ]
 No file these.bbl.
 \openout2 = `resume.aux'.
 
-(./resume.tex) [79
+(./resume.tex) [97
 
 
 
@@ -2258,7 +2454,7 @@ No file these.bbl.
 Package natbib Warning: There were undefined citations.
 
 
-! LaTeX Error: \begin{equation} on input line 131 ended by \end{document}.
+! LaTeX Error: \begin{equation} on input line 130 ended by \end{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2278,9 +2474,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 338.
 (./conc.aux) (./annexe_posi.aux) (./resume.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 338.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 338.
-Package rerunfilecheck Info: File `these.out' has not changed.
-(rerunfilecheck)             Checksum: 779382FB7C4223D571C3063A5C696C1F;6379.
 
+
+Package rerunfilecheck Warning: File `these.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `these.out':
+(rerunfilecheck)             Before: D794A4CD05A9C2A8B54BD7F0604A714A;6379
+(rerunfilecheck)             After:  1762ABC2213E7CCDDA393C5C509C4180;6379.
 
 LaTeX Warning: There were undefined references.
 
@@ -2291,38 +2493,50 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 338.
  )
 (\end occurred inside a group at level 1)
 
-### semi simple group (level 1) entered at line 131 (\begingroup)
+### semi simple group (level 1) entered at line 130 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 12769 strings out of 494875
- 190030 string characters out of 6178749
- 375857 words of memory out of 5000000
- 15278 multiletter control sequences out of 15000+600000
- 106995 words of font info for 169 fonts, out of 8000000 for 9000
+ 12897 strings out of 494875
+ 192720 string characters out of 6178749
+ 380422 words of memory out of 5000000
+ 15359 multiletter control sequences out of 15000+600000
+ 106908 words of font info for 168 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 46i,12n,48p,2556b,722s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texm
-f/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
-sy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fon
-ts/enc/dvips/lm/lm-ec.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/dou
-blestroke/dsrom12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doubles
-troke/dsrom8.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm
-/lmbxo10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/te
-xmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
-mi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pf
-b></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/typ
-e1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/
-share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public
-/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/tex
-mf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lms
-y6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/font
-s/type1/public/lm/lmtt12.pfb>
-Output written on these.pdf (95 pages, 680085 bytes).
+ 46i,13n,48p,2564b,722s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{table.caption.89} has been referenc
+ed but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.93} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter*.87} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.85} has been referenced but does not exist
+, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvip
+s/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/sha
+re/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/
+lm-ec.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsrom1
+2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsrom8.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxo10.pfb></u
+sr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/
+public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/te
+xmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr
+10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/font
+s/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></u
+sr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmtt12.pfb>
+Output written on these.pdf (113 pages, 3305602 bytes).
 PDF statistics:
- 1183 PDF objects out of 1200 (max. 8388607)
- 1051 compressed objects within 11 object streams
- 277 named destinations out of 1000 (max. 500000)
- 30894 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 1355 PDF objects out of 1440 (max. 8388607)
+ 1180 compressed objects within 12 object streams
+ 319 named destinations out of 1000 (max. 500000)
+ 30974 words of extra memory for PDF output out of 35830 (max. 10000000)
 

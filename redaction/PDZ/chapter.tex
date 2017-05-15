@@ -332,71 +332,93 @@ Pour définir les fréquences d'acide aminés cibles pour maximiser nos vraisemb
 \label{tab:XSIMIL}      
     \end{table}
 
+
+
+
+    \clearpage
+
+
+
+   \begin{figure}[t]
+     \raggedleft{}
+          \scalebox{0.8}{
+     \begin{tabular}{c}
+       \includegraphics[width=18cm]{images/natives_alignees.png} \\
+     \end{tabular}
+     }
+     \caption{l'aligenement des séquences natives;le cœur PDZ sélectionné est en jaune.}
+\label{graph:corePDZ}
+   \end{figure}
+
+
+
+
+    
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=14cm]{images/corePDZ.png} \\
+     \end{tabular}
+     \caption{le cœur PDZ sélectionné}
+\label{graph:corePDZ}
+   \end{figure}
+    \begin{table}[!htbp]
+      \centering
+
+     \caption{Alignement PDZ positions du cœur}   
+     \scalebox{0.5}{
+       \begin{tabular}{ccccccccccccccc}
+         
+         \toprule
+         
+         \cmidrule{1-15}
+         
+          
+         1G9O & Y & F & L & I & A & L & L & V & V & V & I & V & L & V \\
+         & 24 & 26 & 28 & 39 & 48 & 53 & 59 & 62 & 67 & 75 & 79 & 86 & 88 & 90 \\ 
+         1IHJ & F & I & I & I & A & L & I & L & V & V & I & I & L & I \\ 
+         & 28 & 30 & 32 & 50 & 59 & 65 & 71 & 74 & 79 & 87 & 91 & 98 & 100 & 102 \\ 
+         1N7E & L & I & I & I & A & I & I & I & L & A & L & V & L & I \\
+         & 682 & 684 & 686 & 698 & 707 & 713 & 719 & 722 & 727 & 735 & 739 & 746 & 748 & 750 \\ 
+         1R6J & V & F & F & I & A & L & I & I & V & I & L & V & I & I \\ 
+         & 209 & 211 & 213 & 218 & 227 & 232 & 238 & 241 & 246 & 254 & 258 & 265 & 267 & 269 \\ 
+         2BYG & L & F & I & V & A & L & L & V & L & A & L & V & L & V \\ 
+         & 203 & 205 & 207 & 224 & 233 & 239 & 245 & 248 & 253 & 261 & 265 & 272 & 274 & 276 \\ 
+         3K82 & L & F & I & I & A & L & I & V & L & A & L & V & I & A \\ 
+         & 323 & 325 & 327 & 338 & 347 & 353 & 359 & 362 & 367 & 375 & 379 & 386 & 388 & 390 \\ 
+         CASK & M & I & L & V & I & L & I & I & V & L & L & I & F & I \\ 
+         & 501 & 503 & 505 & 515 & 524 & 530 & 536 & 539 & 544 & 552 & 556 & 563 & 565 & 567 \\ 
+         Tiam1 & Y & F & L & V & A & L & I & I & A & L & L & L & L & V \\ 
+         & 858 & 860 & 862 & 875 & 884 & 889 & 895 & 898 & 903 & 911 & 915 & 920 & 922 & 924 \\
+         
+         \bottomrule
+         
+         
+         
+       \end{tabular}
+       }
+       \label{tab:corePDZ}      
+    \end{table}
+
+
+    \clearpage
+
+
     
 \paragraph{}
 
 Pour réaliser les calculs Monte Carlo, les structures ont été préparés et les matrices d' énergie calculées à l'aide d'une procédure décrites précédement \cite{Schmidt09,Schmidt10}.Deux ségments manquants dans le domaine Tiam1 (résidus 851-854 et 868-869) ont été construits en utilisant le programme Modeller (51). Le ligand peptidique a été retiré de la structure PDB avant de calculer la matrice d'énergie.Pour chaque paire d'acide aminés, l'énergie d'interaction a été obtenue après 15 pas de minimisation de l'énergie, avec le backbone fixé et seulement les interactions de la paire entre les autres chaînes et le backbone. Cette courte minimisation simplifie l 'approximation discret. Les rotamères de chaînes latérales utilisés sont une version légérement étendue de la librairie de Tuffery et col \cite{Tuffery91}, qui poséde un total de 254 rotamères (sur l'ensemble des types d'acides aminés).Cette extension comprends des orientations d'hydrogème supplémentaires pour les groupes OH et SH \cite{Gaillard14}. Cette bibliothèque de rotamères a été choisié pour sa simplicité et parce qu'elle a donné de très bonnes performances dans les tests de placement de chaînes en comparaison au programme spécialisé scwlr4 qui utilise une bibliothèque beaucoup plus grande \cite{Krivov09,Gaillard16}.
 
 
-    
-    \begin{table}[!htbp]
-      \centering
-      \caption{Compositions en acides aminés des séquences expérimentales homologues aux positions enfouies et actives. pour les 8 protéines.}
-      \begin{tabular}{ccccccccc}
 
-        \toprule
-        aa & 1G9O & 1IHJ & 1N7E & 1R6J & 2BYG & 3K82 & cask & tiam1 \\
-        \cmidrule{1-9}
-     ALA  & 5.8  & 10.4 & 14.5  & 8.3  &  12.1 &  4.6 &    4.6   &     7.1  \\
-     CYS  & 3.0  & 1.6  & 0.1   & 2.6  &  0.2  &  0.4 &    3.0   &     0.0  \\
-     THR  & 3.0  & 1.4  & 6.1   &  8.9  &  6.7  &  2.5 &    4.4   &     3.0  \\
-        \cmidrule{1-9}
-     SER  & 4.2  & 8.5  & 3.2   & 7.2  &  1.8  &  7.1 &    4.4   &     4.8  \\
-        \cmidrule{1-9}
-     GLU  & 7.4  & 1.4  & 0.0   & 0.3  &  0.1  &  6.3 &    6.3   &     5.9  \\
-     ASP  & 6.3  & 3.1  & 5.9   & 0.2  &  8.0  &  2.4 &    3.9   &     3.0  \\
-        \cmidrule{1-9}
-     ASN  & 2.9   & 0.3  & 2.9  & 3.3  &  3.9  &  2.4 &    0.7   &     2.9  \\
-     GLN  & 3.2  & 3.0  & 0.0   & 0.7  &  1.1  &  4.7 &    1.4   &     0.1  \\
-        \cmidrule{1-9}
-     ILE  & 7.0  & 22.1 & 23.4  & 17.0 &  13.3 &  3.3 &    19.7  &     11.6  \\
-     VAL  & 25.8 & 16.4 & 7.9   & 18.8 &  18.6 &  1.8 &    13.8  &     13.1  \\
-     LEU  & 17.2 & 13.6 & 29.9  & 14.6 &  18.8 &  5.3 &    15.1  &     25.5  \\
-        \cmidrule{1-9}
-     MET  & 1.2  & 0.8  & 0.1   & 2.6  &  0.0  &  0.6 &    8.4   &     1.5  \\
-        \cmidrule{1-9}
-     HID  & 0.0  & 0.0  & 0.0   & 0.0  &  0.0  &  0.0 &    0.0   &     0.0  \\
-     HIE  & 0.0  & 0.0  & 0.0   & 0.0  &  0.0  &  0.0 &    0.0   &     0.0  \\
-     HIP  & 0.0  & 0.7  & 0.0   & 3.4  &  2.6  &  0.3 &    1.2   &     0.1  \\
-        \cmidrule{1-9}
-     ARG  & 2.8  & 6.5  & 2.9   & 0.3  &  0.2  &  4.4 &    0.6   &     2.9  \\
-        \cmidrule{1-9}
-     LYS  & 0.1  & 1.8  & 0.2   & 5.7  &  4.4  &  2.7 &    7.1   &     5.8  \\
-        \cmidrule{1-9}
-     TRP  & 0.1 & 0.0  & 0.0    & 0.0  &  0.0  &  0.1 &    0.0   &     0.0  \\
-        \cmidrule{1-9}
-     PHE  & 6.4  & 6.8  & 0.2  & 4.2  &  3.08 &  4.3 &    3.9   &     5.9  \\
-        \cmidrule{1-9}
-     TYR  & 3.4  & 0.3  & 2.8  & 1.1  &  2.6  &  5.4 &    0.0   &     5.7  \\
-        \cmidrule{1-9}
-     GLY  & 0.1  & 0.9  & 0.0  & 0.5  &  2.3  &  1.0 &    0.0   &     0.0  \\
-     PRO  & 0.1  & 0.3  & 0.0  & 0.0  &  0.1  &  0.2 &    0.6   &     0.0  \\
-
-        \bottomrule
-
-      \end{tabular}      
-
-\label{tab:freq_AA_ALL}      
-    \end{table}
-
-    \clearpage
+\clearpage
 
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
        \includegraphics[width=17cm]{homologues/1G9O.png} \\
      \end{tabular}
-     \caption{L'aligmenent des séquences homologues à la protéine NHREF (1G9O) selectionnées}
+     \caption{L'aligmenent de notre sélection de séquences homologues à la protéine NHREF (code PDB:1G9O)}
 \label{align_homo:1G9O}
    \end{figure}
 
@@ -405,121 +427,126 @@ Pour réaliser les calculs Monte Carlo, les structures ont été préparés et l
      \begin{tabular}{c}
        \includegraphics[width=17cm]{proteus/1G9O.png} \\
      \end{tabular}
-     \caption{Une sélection de séquences proteus pour NHREF (1G9O), parmi les 10000 séquences de meilleure énergie}
+       \caption{Une sélection de séquences proteus, parmi les 10000 séquences de meilleure énergie, obtenues avec le backbone de la protéine NHREF (code PDB:1G9O), modèle FDB}
 \label{align_proteus:1G9O}
    \end{figure}
 
-    \clearpage
-   \clearpage
+\clearpage
 
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{homologues/1G9O.png} \\
+       \includegraphics[width=17cm]{homologues/1IHJ.png} \\
      \end{tabular}
-     \caption{L'aligmenent des séquences homologues à la protéine 1G9O selectionnées}
-\label{align_homo:1G9O}
+     \caption{L'aligmenent de notre sélection de séquences homologues à la protéine INAD (code PDB:1IHJ )}
+\label{align_homo:1IHJ}
    \end{figure}
 
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/TIAM1.png} \\
+       \includegraphics[width=17cm]{proteus/1IHJ.png} \\
      \end{tabular}
-     \caption{Une sélection de séquences proteus pour 1G9O, parmi les 10000 séquences de meilleure énergie}
-\label{align_proteus:1G9O}
+       \caption{Une sélection de séquences proteus, parmi les 10000 séquences de meilleure énergie, obtenues avec le backbone de la protéine INAD (code PDB:1IHJ), modèle NEA}
+\label{align_proteus:1IHJ}
    \end{figure}
-
-    \clearpage
-   \clearpage
+\clearpage
 
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{homologues/1G9O.png} \\
+       \includegraphics[width=17cm]{homologues/1R6J.png} \\
      \end{tabular}
-     \caption{L'aligmenent des séquences homologues à la protéine 1G9O selectionnées}
-\label{align_homo:1G9O}
-   \end{figure}
-
-   \begin{figure}[t]
-     \centering
-     \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/TIAM1.png} \\
-     \end{tabular}
-     \caption{Une sélection de séquences proteus pour 1G9O, parmi les 10000 séquences de meilleure énergie}
-\label{align_proteus:1G9O}
-   \end{figure}
-
-    \clearpage
-   \clearpage
-
-   \begin{figure}[t]
-     \centering
-     \begin{tabular}{c}
-       \includegraphics[width=17cm]{homologues/1G9O.png} \\
-     \end{tabular}
-     \caption{L'aligmenent des séquences homologues à la protéine 1G9O selectionnées}
-\label{align_homo:1G9O}
+     \caption{L'aligmenent de notre sélection de séquences homologues à la protéine Syntenin (code PDB 1R6J)}
+\label{align_homo:1R6J}
    \end{figure}
 
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/TIAM1.png} \\
+       \includegraphics[width=17cm]{proteus/1R6J.png} \\
      \end{tabular}
-     \caption{Une sélection de séquences proteus pour 1G9O, parmi les 10000 séquences de meilleure énergie}
-\label{align_proteus:1G9O}
+       \caption{Une sélection de séquences proteus, parmi les 10000 séquences de meilleure énergie, obtenues avec le backbone de la protéine Syntenin (code PDB:1R6J), modèle FDB}
+\label{align_proteus:1R6J}
    \end{figure}
-
-    \clearpage
-   \clearpage
+\clearpage
 
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{homologues/1G9O.png} \\
+       \includegraphics[width=17cm]{homologues/1N7E.png} \\
      \end{tabular}
-     \caption{L'aligmenent des séquences homologues à la protéine 1G9O selectionnées}
-\label{align_homo:1G9O}
-   \end{figure}
-
-   \begin{figure}[t]
-     \centering
-     \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/TIAM1.png} \\
-     \end{tabular}
-     \caption{Une sélection de séquences proteus pour 1G9O, parmi les 10000 séquences de meilleure énergie}
-\label{align_proteus:1G9O}
-   \end{figure}
-
-    \clearpage
-   \clearpage
-
-   \begin{figure}[t]
-     \centering
-     \begin{tabular}{c}
-       \includegraphics[width=17cm]{homologues/1G9O.png} \\
-     \end{tabular}
-     \caption{L'aligmenent des séquences homologues à la protéine 1G9O selectionnées}
-\label{align_homo:1G9O}
+     \caption{L'aligmenent de notre sélection de séquences homologues à la protéine GRIP (code PDB: 1N7E)}
+\label{align_homo:1N7E}
    \end{figure}
 
    \begin{figure}[t]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=17cm]{result/TIAM1.png} \\
+       \includegraphics[width=17cm]{proteus/1N7E.png} \\
      \end{tabular}
-     \caption{Une sélection de séquences proteus pour 1G9O, parmi les 10000 séquences de meilleure énergie}
-\label{align_proteus:1G9O}
+       \caption{Une sélection de séquences proteus, parmi les 10000 séquences de meilleure énergie, obtenues avec le backbone de la protéine GRIP (code PDB:1N7E), modèle NEA}
+\label{align_proteus:1N7E}
+   \end{figure}
+\clearpage
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{homologues/2BYG.png} \\
+     \end{tabular}
+     \caption{L'aligmenent de notre sélection de séquences homologues à la protéine DLG2 (code PDB 2BYG)}
+\label{align_homo:2BYG}
    \end{figure}
 
-    \clearpage
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{proteus/2BYG.png} \\
+     \end{tabular}
+       \caption{Une sélection de séquences proteus, parmi les 10000 séquences de meilleure énergie, obtenues avec le backbone de la protéine DLG2 (code PDB 2BYG), modèle FDB}
+\label{align_proteus:2BYG}
+   \end{figure}
+\clearpage
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{homologues/3K82.png} \\
+     \end{tabular}
+     \caption{L'aligmenent de notre sélection de séquences homologues à la protéine PSD95 (code PDB 3K82)}
+\label{align_homo:3K82}
+   \end{figure}
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{proteus/3K82.png} \\
+     \end{tabular}
+       \caption{Une sélection de séquences proteus, parmi les 10000 séquences de meilleure énergie, obtenues avec le backbone de la protéine PSD95 (code PDB:3K82), modèle FDB}
+\label{align_proteus:3K82}
+   \end{figure}
+\clearpage
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{homologues/TIAM1.png} \\
+     \end{tabular}
+     \caption{L'aligmenent de notre sélection de séquences homologues à la protéine Tiam1 (code PDB )}
+\label{align_homo:Tiam1}
+   \end{figure}
    
-
-
-
-
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=17cm]{homologues/CASK.png} \\
+     \end{tabular}
+     \caption{L'aligmenent de notre sélection de séquences homologues à la protéine Cask (code PDB)}
+   \label{align_homo:CASK}
+   \end{figure}
+   
+\clearpage
 
     
 \subsection{simulation Monte Carlo}    
@@ -571,7 +598,107 @@ La conservation des séquences dans les quatre domaines PDZ et un sous-ensemble 
 \subsection{optimisation du modèle de l'état déplié}
 
 
-Nous optimisons les énergies de référence $E_t^r$ pour les six protéines, en utilisant  leurs homologues naturels pour définir les fréquences d'acides aminés cibles. La constante diélectrique de la protéine P est 8. Les $E_t^r$ ont tous convergé  à 0,05 Kcal/mol près après environ 20 itérations pour la plupart des types d'acide aminés, et à 0,1 kcal/mol for les autres (ceux qui sont naturellement faiblement peuplés ) , en utilisant soit la méthode linéaire soit la méthode parabolique (équation 11 ou 12). Le tableau 2 indique les énergies de référence finales. Les valeurs $E_t^r$ ont été comparées à, et validé qualitativement avec les énergies calculées à partir d'une structure peptidique étendue, qui fournit un modèle moins empirique de l'état déplié. Le tableau 3 compare les fréquences d'acide aminé des homologues naturels et les calculées. La population théorique des différentes classes d'acide aminé ont bien rejoint l' expérience, avec des écarts de rms d'environ 1\%, pour les positions exposées et enfuies. L'accord entre les types d'acide aminé est moins bon avec des écarts de rms de 3,9\% et 2,4\% (enfuie/exposés).La distribution des fréquences intra classe dépend par construction du $\delta E_t^r$ défini dans pour chaque classe, qui ont était calculés avec la mécanique moléculaire (voir méthodes, équation 15). Ainsi une seconde série de 20 itérations est effectué en relâchant cette contrainte alors l'optimisation ne se fait plus sur les six classes de type d'acide aminé , mais directement sur les dix-huit types possibles (les positions Pro et Gly étant fixées). 
+Nous optimisons les énergies de référence $E_t^r$ pour les six protéines, en utilisant  leurs homologues naturels pour définir les fréquences d'acides aminés cibles. La constante diélectrique de la protéine P est 8. Les $E_t^r$ ont tous convergé  à 0,05 Kcal/mol près après environ 20 itérations pour la plupart des types d'acide aminés, et à 0,1 kcal/mol for les autres (ceux qui sont naturellement faiblement peuplés ) , en utilisant soit la méthode linéaire soit la méthode parabolique (équation 11 ou 12). Le tableau 2 indique les énergies de référence finales. Les valeurs $E_t^r$ ont été comparées à, et validé qualitativement avec les énergies calculées à partir d'une structure peptidique étendue, qui fournit un modèle moins empirique de l'état déplié.
+
+\begin{table}
+
+\scalebox{0.75}{
+%%\caption{Amino acid composition (\%) from experimental and theoritical sequences after optimization. Difference between experimental and theoritical sequence are indicated into brackets.}
+\begin{tabular}{lcccc|cccc|cccc|cccc}
+\hline
+ & \multicolumn{4}{c}{Experimental n=6}& \multicolumn{4}{c}{Model A}& \multicolumn{4}{c}{Experimental n=2}& \multicolumn{4}{c}{Model B}\\
+Res & \multicolumn{2}{c}{Buried} & \multicolumn{2}{c}{Exposed} & \multicolumn{2}{c}{Buried} & \multicolumn{2}{c}{Exposed} & \multicolumn{2}{c}{Buried} & \multicolumn{2}{c}{Exposed} & \multicolumn{2}{c}{Buried} & \multicolumn{2}{c}{Exposed}\\
+\hline
+ALA&10.9&\multirow{3}{*}{16.9}&4.6&\multirow{3}{*}{13.4}&11.1&\multirow{2}{*}{17.0}&4.4&\multirow{2}{*}{12.0}&5.9&\multirow{3}{*}{11.2}&4.6&\multirow{3}{*}{13.4}&4.1&\multirow{2}{*}{12.7}&7.2&\multirow{2}{*}{13.6}\\
+CYS&1.3&&0.5&&0.0&\multirow{2}{*}{(0.1)}&0.3&\multirow{2}{*}{(-1.4)}&1.5&&1.2&&8.6&\multirow{2}{*}{(1.5)}&5.8&\multirow{2}{*}{(0.2)}\\
+THR&4.7&&8.3&&5.9&&7.3&&3.8&&7.6&&0.0&&0.6&\\
+\hline
+ASP&4.3&\multirow{2}{*}{6.8}&6.0&\multirow{2}{*}{17.9}&4.5&\multirow{1}{*}{6.7}&5.6&\multirow{1}{*}{16.7}&3.5&\multirow{2}{*}{9.6}&6.2&\multirow{2}{*}{16.7}&7.4&\multirow{1}{*}{9.4}&8.0&\multirow{1}{*}{16.1}\\
+GLU&2.5&&11.9&&2.2&(-0.1)&11.1&(-1.2)&6.1&&10.5&&2.0&(-0.2)&8.1&(-0.6)\\
+\hline                          
+ASN&2.6&\multirow{2}{*}{4.7}&6.7&\multirow{2}{*}{12.2}&2.5&\multirow{1}{*}{4.7}&7.5&\multirow{1}{*}{14.0}&1.9&\multirow{2}{*}{2.7}&7.4&\multirow{2}{*}{16.1}&1.8&\multirow{1}{*}{2.8}&8.6&\multirow{1}{*}{17.1}\\
+GLN&2.1&&5.5&&2.2&(0.0)&6.5&(1.8)&0.8&&8.7&&1.0&(0.1)&8.5&(1.0)\\
+\hline                                                                                       
+HIP&1.2&\multirow{3}{*}{1.2}&5.0&\multirow{3}{*}{5.0}&1.0&\multirow{2}{*}{1.1}&5.2&\multirow{2}{*}{5.6}&0.7&\multirow{3}{*}{0.7}&4.7&\multirow{3}{*}{4.7}&0.1&\multirow{2}{*}{0.9}&1.8&\multirow{2}{*}{4.5}\\
+HIE&0.0&&0.0&&0.1&\multirow{2}{*}{(-0.1)}&0.4&\multirow{2}{*}{(0.6)}&0.0&&0.0&&0.6&\multirow{2}{*}{(0.2)}&2.2&\multirow{2}{*}{(-0.2)}\\
+HID&0.0&&0.0&&0.0&&0.0&&0.0&&0.0&&0.2&&0.5&\\
+\hline                                                                                  
+ILE&16.0&\multirow{3}{*}{50.7}&4.2&\multirow{3}{*}{14.0}&16.9&\multirow{2}{*}{52.1}&4.1&\multirow{2}{*}{14.0}&15.7&\multirow{3}{*}{49.6}&4.1&\multirow{3}{*}{14.4}&25.1&\multirow{2}{*}{46.7}&8.4&\multirow{2}{*}{15.3}\\
+VAL&16.5&&5.4&&16.7&\multirow{2}{*}{(1.4)}&5.6&\multirow{2}{*}{(0.0)}&13.5&&5.5&&12.8&\multirow{2}{*}{(-2.9)}&3.3&\multirow{2}{*}{(0.9)}\\
+LEU&18.2&&4.4&&18.5&&4.3&&20.4&&4.8&&8.8&&3.6&\\
+\hline                                                                              
+\multirow{2}{*}{LYS}&\multirow{2}{*}{2.5}&\multirow{2}{*}{2.5}&\multirow{2}{*}{10.9}&\multirow{2}{*}{10.9}&\multirow{2}{*}{1.5}&1.5&\multirow{2}{*}{13.0}&13.0&\multirow{2}{*}{6.5}&\multirow{2}{*}{6.5}&\multirow{2}{*}{10.1}&\multirow{2}{*}{10.1}&\multirow{2}{*}{5.5}&5.5&\multirow{2}{*}{10.8}&10.8\\
+&&&&&&(-1.0)&&(2.1)&&&&&&(-1.0)&&(0.7)\\
+\hline                                                                        
+\multirow{2}{*}{MET}&\multirow{2}{*}{0.9}&\multirow{2}{*}{0.9}&\multirow{2}{*}{1.5}&\multirow{2}{*}{1.5}&\multirow{2}{*}{1.6}&1.6&\multirow{2}{*}{1.4}&1.4&\multirow{2}{*}{5.0}&\multirow{2}{*}{5.0}&\multirow{2}{*}{1.4}&\multirow{2}{*}{1.4}&\multirow{2}{*}{5.9}&5.9&\multirow{2}{*}{1.4}&1.4\\
+&&&&&&(0.7)&&(-0.1)&&&&&&(0.9)&&(0.0)\\
+\hline                                                                         
+\multirow{2}{*}{ARG}&\multirow{2}{*}{2.8}&\multirow{2}{*}{2.8}&\multirow{2}{*}{8.7}&\multirow{2}{*}{8.7}&\multirow{2}{*}{2.5}&2.5&\multirow{2}{*}{6.1}&6.1&\multirow{2}{*}{1.8}&\multirow{2}{*}{1.8}&\multirow{2}{*}{9.5}&\multirow{2}{*}{9.5}&\multirow{2}{*}{2.2}&2.2&\multirow{2}{*}{9.1}&9.1\\
+&&&&&&(-0.3)&&(-2.6)&&&&&&(0.4)&&(-0.4)\\
+\hline                                                                                  
+\multirow{2}{*}{SER} &\multirow{2}{*}{5.3}&\multirow{2}{*}{5.3}&\multirow{2}{*}{7.6}&\multirow{2}{*}{7.6}&\multirow{2}{*}{4.3}&4.3&\multirow{2}{*}{8.7}&8.7&\multirow{2}{*}{4.7}&\multirow{2}{*}{4.7}&\multirow{2}{*}{10.2}&\multirow{2}{*}{10.2}&\multirow{2}{*}{4.9}&4.9&\multirow{2}{*}{10.7}&10.7\\
+&&&&&&(-1.0)&&(1.1)&&&&&&(0.2)&&(0.5)\\
+\hline                                                         
+PHE      &4.1&\multirow{2}{*}{4.1}&2.4&\multirow{2}{*}{2.4}&4.5&\multirow{1}{*}{4.6}&2.1&\multirow{1}{*}{2.1}&5.0&\multirow{2}{*}{5.0}&0.4&\multirow{2}{*}{0.4}&3.2&\multirow{1}{*}{5.5}&0.3&\multirow{1}{*}{0.5}\\
+TRP&0.0&&0.0&&0.1&(0.5)&0.0&(-0.3)&0.0&&0.0&&2.3&(0.5)&0.2&(0.1)\\
+\hline                                                                                                                                                                                   
+\multirow{2}{*}{TYR}&\multirow{2}{*}{2.6}&\multirow{2}{*}{2.6}&\multirow{2}{*}{1.2}&\multirow{2}{*}{1.2}&\multirow{2}{*}{2.2}&2.2&\multirow{2}{*}{0.4}&0.4&\multirow{2}{*}{2.9}&\multirow{2}{*}{2.9}&\multirow{2}{*}{0.9}&\multirow{2}{*}{0.9}&\multirow{2}{*}{3.4}&3.4&\multirow{2}{*}{0.9}&0.9\\
+&&&&&&(-0.4)&&(-0.8)&&&&&&(0.5)&&(0.0)\\
+\hline                                                                                                                                                                            
+GLY&0.8&\multirow{2}{*}{0.9}&3.1&\multirow{2}{*}{4.9}&0.0&\multirow{1}{*}{0.0}&0.0&\multirow{1}{*}{0.0}&0.0&\multirow{2}{*}{0.3}&1.7&\multirow{2}{*}{2.1}&0.0&\multirow{1}{*}{0.0}&0.0&\multirow{1}{*}{0.0}\\
+PRO&0.1&&1.8&&0.0&(-0.9)&0.0&(-4.9)&0.3&&0.4&&0.0&(-0.3)&0.0&(-2.1)\\
+\hline
+\end{tabular}
+}
+\end{table}
+
+
+
+
+
+Le tableau 3 compare les fréquences d'acide aminé des homologues naturels et les calculées. La population théorique des différentes classes d'acide aminé ont bien rejoint l' expérience, avec des écarts de rms d'environ 1\%, pour les positions exposées et enfuies. L'accord entre les types d'acide aminé est moins bon avec des écarts de rms de 3,9\% et 2,4\% (enfuie/exposés).La distribution des fréquences intra classe dépend par construction du $\delta E_t^r$ défini dans pour chaque classe, qui ont était calculés avec la mécanique moléculaire (voir méthodes, équation 15). Ainsi une seconde série de 20 itérations est effectué en relâchant cette contrainte alors l'optimisation ne se fait plus sur les six classes de type d'acide aminé , mais directement sur les dix-huit types possibles (les positions Pro et Gly étant fixées). 
+
+
+    \begin{table}[!htbp]
+      \centering
+
+      \begin{tabular}{ccc}
+
+        \toprule
+        Type d'acides aminés & Pos. Enf. & Pos Exp. \\
+        \cmidrule{1-3}
+
+        ALA & 0.00     &  0.00     \\
+        ARG & -28.29   &  -28.90   \\
+        ASN & -5.94    &  -6.00    \\
+        ASP & -9.19    &  -9.80    \\
+        CYS & -1.04    &  -1.04    \\
+        GLN & -4.72    &  -4.78    \\
+        GLU & -7.90    &  -8.51    \\
+        HID & 11.96    &  12.39    \\
+        HIE & 11.43    &  11.85    \\
+        HIP & 14.53    &  14.96    \\
+        ILE & 4.72     &  2.11     \\
+        LEU & 1.17     &  -1.44    \\
+        LYS & -4.56    &  -4.47    \\
+        MET & -2.78    &  -3.54    \\
+        PHE & -0.37    &  -2.55    \\
+        SER & -3.73    &  -2.80    \\
+        THR & -3.82    &  -3.82    \\
+        TRP & -1.61    &  -3.79    \\
+        TYR & -4.20    &  -6.10    \\
+        VAL & 0.83     &  -1.77    \\
+
+        \bottomrule
+
+
+      \end{tabular}      
+      \caption{Les énergies de référence obtenues avec l'optimisation 6 protéines.}
+\label{tab:RefEner_groupes}      
+    \end{table}
+
+
+
 
 \subsection{Évaluation de la qualité des séquences obtenues}
 
@@ -581,6 +708,57 @@ Les simulations Proteus utilisent l'algorithme Monte-Carlo avec échange de rép
 
 \paragraph{Séquences et diversité de séquence}
 Les séquences Tiam1 et Cask calculées par Proteus, par Rosetta et les séquences naturelles sont montrées à la figure 3. Pour les quatorze résidus du noyau et la figure 4 pour les seize résidus de surface (Tiam1  uniquement). Les séquences sont représentées par des logos de séquences. Comme on l'a vu dans de nombreuses études de CPD antérieures (30,72) l'accord avec l'expérience pour les positions du cœur est très bon, alors que l'accord en ce qui concerne les résidus de surface est nettement plus faible. La diversité des séquences naturelles et des séquences calculées est caractérisées par la moyenne sur la séquence de l'exponentielle de l'entropie résiduel (voir Méthodes), ce qui correspond à un nombre moyen de classe de séquence échantillonnées par position. Par exemple, une valeur de 2 à une position particulière indique que les acides aminés de deux des six classes sont présents à cette position au sein de l'ensemble des séquences analysées. Une valeur moyenne globale de deux indique qu'en moyenne, deux classes d'acides aminés sont présentes à n'importe quelle position dans les séquences analysées. Comme référence l'ensemble Pfam RP55 et 12 255 séquences naturelles a une entropie moyenne de 3,4.Le regroupement des séquences Tiam1 et Cask calculés  donne une entropie de 2,2 avec Rosetta et 2,0 avec Proteus. Ce qui indique que ces deux seules géométries de backbone ne peuvent pas être attendre les mêmes niveaux de diversités que le grand ensemble RP55. Prenant les 10000 séquences Monte-Carlo de meilleure énergie échantillonnées à température ambiante (au lien des 10 000 de plus basses énergies échantillonnées collectivement par toutes les répliques à toutes les températures) et la mise en commun de Tiam1 et Cask donne une entropie globale plus élevée de 2,9 avec Proteus. Pour Rosetta, l' entropie dans le noyau est seulement légèrement inférieure à la moyenne sur toutes les positions. Pour Proteus, c'est nettement inférieur (1,25). Pour les séquences Pfam-Rp55, cette entropie est de 1,8.
+
+    \begin{table}[!htbp]
+      \centering
+
+      \begin{tabular}{ccccc}
+
+        \toprule
+        Protein & Proteus & Rosetta & Pfam seed \\
+        \cmidrule{1-4}
+        1G9O  & 1.38 & 1.45 & 3.15  \\
+        1IHJ  & 1.37 & 1.55 & 3.06  \\
+        1N7E  & 1.33 & 1.44 & 3.09  \\
+        1R6J  & 1.39 & 1.43 & 3.03  \\
+        2BYG  & 1.24 & 1.57 & 3.11  \\
+        3K82  & 1.27 & 1.40 & 3.15  \\
+        6prots & 2.42  & 2.88 &    \\
+        CASK  & 1.55 & 1.68 & 3.15  \\
+        TIAM1 & 1.22 & 1.57 & 3.15  \\
+
+        \bottomrule
+
+      \end{tabular}      
+      \caption{Moyenne de l'exponentiel de l'entropie sur les ensembles des positions des protéines}
+\label{tab:Entropie_PDZ}      
+    \end{table}
+
+
+        \begin{table}[!htbp]
+      \centering
+
+      \begin{tabular}{ccccc}
+
+        \toprule
+        Sequences & Proteus & Rosetta & Proteus (inclus G et P) & Rosetta (inclus G et P)\\
+        \cmidrule{1-5}
+        1G9O  & 28 &  43 & 44 & 59 \\
+        1IHJ  & 26 &  40 & 35 & 49 \\
+        1N7E  & 33 &  48 & 50 & 65 \\
+        1R6J  & 26 &  46 & 38 & 58 \\
+        2BYG  & 28 &  46 & 42 & 61 \\
+        3K82  & 36 &  52 & 54 & 70 \\
+        TIAM1 & 18 &  25 & 28 & 30 \\
+        CASK  & 17 &  28 & 28 &  39 \\
+
+        \bottomrule
+
+      \end{tabular}      
+      \caption{Pourcentage d'identité moyen à la séquence native}
+\label{tab:Entropie_PDZ}      
+    \end{table}
+
 
 
 \paragraph{Scores de similarité Blosum}
