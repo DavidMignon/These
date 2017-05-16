@@ -55,8 +55,7 @@ Nous considérons maintenant un ensemble $\mathcal{S}$ de $N$ séquences cibles;
 
 Nous avons:
 \begin{equation}
-  kT \ln \mathcal{L} = \sum_S\sum_{i \in aa} n_S(t)E^r_t - \sum_S G^f_S - N kT \ln Z
-                     = \sum_{t \in aa} N(t) E^r_t - \sum_SG^f_S - N kT \lnZ,
+  $kT \ln \mathcal{L} = \sum_S\sum_{i \in aa} n_S(t)E^r_t - \sum_S G^f_S - N kT \ln Z = \sum_{t \in aa} N(t) E^r_t - \sum_SG^f_S - N kT \lnZ,$
 \end{equation}
 avec $N(t)$ le nombre d'acides aminés de type $t$ dans l'ensemble $\mathcal{S}$.Le facteur de normalisation $Z$ (ou fonction de partition) est la somme sur l'ensemble les séquences possibles $R$:
 \begin{equation}
@@ -308,7 +307,7 @@ Pour définir les fréquences d'acide aminés cibles pour maximiser nos vraisemb
 
 
     \begin{table}[!htbp]
-        \raggedleft{}
+      \centering
 
       \begin{tabular}{ccccccccc}
 
@@ -528,26 +527,26 @@ Pour réaliser les calculs Monte Carlo, les structures ont été préparés et l
    \end{figure}
 \clearpage
 
-   \begin{figure}[t]
-     \centering
-     \begin{tabular}{c}
-       \includegraphics[width=17cm]{homologues/TIAM1.png} \\
-     \end{tabular}
-     \caption{L'aligmenent de notre sélection de séquences homologues à la protéine Tiam1 (code PDB )}
-\label{align_homo:Tiam1}
-   \end{figure}
-   
-   \begin{figure}[t]
-     \centering
-     \begin{tabular}{c}
-       \includegraphics[width=17cm]{homologues/CASK.png} \\
-     \end{tabular}
-     \caption{L'aligmenent de notre sélection de séquences homologues à la protéine Cask (code PDB)}
-   \label{align_homo:CASK}
-   \end{figure}
-   
-\clearpage
-
+%   \begin{figure}[t]
+%     \centering
+%     \begin{tabular}{c}
+%       \includegraphics[width=17cm]{homologues/TIAM1.png} \\
+%     \end{tabular}
+%     \caption{L'aligmenent de notre sélection de séquences homologues à la protéine Tiam1 (code PDB )}
+%\label{align_homo:Tiam1}
+%   \end{figure}
+%   
+%   \begin{figure}[t]
+%     \centering
+%     \begin{tabular}{c}
+%       \includegraphics[width=17cm]{homologues/CASK.png} \\
+%     \end{tabular}
+%     \caption{L'aligmenent de notre sélection de séquences homologues à la protéine Cask (code PDB)}
+%   \label{align_homo:CASK}
+%   \end{figure}
+%   
+%\clearpage
+%
     
 \subsection{simulation Monte Carlo}    
 
@@ -761,21 +760,261 @@ Les séquences Tiam1 et Cask calculées par Proteus, par Rosetta et les séquenc
 
 
 
+\begin{table}[h]
+  
+  \begin{tabular}{cccccc}
+    
+    \toprule
+    Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+            & size      & Evalue      & success     & Evalue & success\\
+    \cmidrule{1-6}
+    1G9O  & 81/91 &  2.00e-12 & 10000  & 9.97e-3 & 10000  \\
+    1IHJ  & 84/94 &  4.80e-11 & 10000  & 2.83e-3 & 10000  \\
+    1N7E  & 82/95 &  4.73e-8  & 10000  & 5.56e-3 & 10000  \\
+    1R6J  & 63/91 &  4.01e-4  &  9999  & 1.05e-2 &  9999  \\
+    2BYG  & 84/97 &  3.82e-10 & 10000  & 3.75e-3 & 10000  \\
+    3K82  & 46/97 &  7.65e-1  &  5029  & 4.06e-2 &  4719  \\
+
+    \bottomrule        
+  \end{tabular}   
+  \caption{Résultats Superfamily pour les séquences Proteus avec le modèle B N=6 (E ref optimisées sur 20 cycles selon les classes + 20 cycles selon les types).}   
+  \label{tab:superfamily_model_B6}       
+\end{table}
+
+
+        
+\begin{table}[h]
+
+  \begin{tabular}{cccccc}
+    
+    \toprule
+    Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+            & size      & Evalue      & success     & Evalue & success\\
+    \cmidrule{1-6}
+    1G9O  & 79/91   &    1.3e-13 & 10000 & 2.2e-3 & 10000 \\
+    1IHJ  & 85/94   &    7.4e-14 & 10000 & 3.7e-3 & 10000 \\
+    1N7E  & 84/95   &    2.2e-10 & 10000 & 1.2e-3 & 10000 \\
+    1R6J  & 76/82   &    7.3e-13 & 10000 & 1.8e-3 & 10000 \\
+    2BYG  & 86/97   &    1.3e-9  & 10000 & 9.6e-4 & 10000 \\
+    3K82  & 90/97   &    3.7e-23 & 10000 & 5.2e-4 & 10000 \\
+    \bottomrule        
+  \end{tabular}   
+  \caption{Résultats Superfamily pour les séquences Rosetta des  protéines PDZ}   
+  \label{tab:superfamily_bestRE}       
+\end{table}
+
+        
 \paragraph{Scores de similarité Blosum}
 
 La figure 5 montre les scores de similarité Blosum40 entre les séquences calculées et les séquences naturelles. Avec Proteus, pour Tiam1 et Cask, les similitudes globales se chevauchent au pied du somment des scores naturels, sont comparables aux valeurs des séquences Rosetta. Pour les résidus de surface, montrés séparément, la similitude avec les séquences naturelles est faible (scores inférieurs à zéro), à la fois pour Proteus et Rosetta. Avec $\epsilon_p=8$, Proteus donne presque la même similitude moyenne sur toutes les postions Tiam1 et Cask, par exemple.
 Alors que les scores de similarité Proteus par rapport à Pfam  sont comparables à Rosetta (figure 5) , les scores d'identité par rapport à la séquence sauvage sont significativement plus élevés avec Rosetta. Les scores d'identité excluants (respectivement incluant) les postions Gly et Pro (qui ne sont pas mutables) sont de 20\% (28\%) pour Proteus contre 26\% (34\%) pour Rosetta.
 
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc} 
+       \includegraphics[width=8.4cm]{modelB6+/1G9O_simil_full.png} &
+       \includegraphics[width=8.4cm]{modelB6+/1IHJ_simil_full.png} \\
+       \includegraphics[width=8.4cm]{modelB6+/1R6J_simil_full.png} &
+       \includegraphics[width=8.4cm]{modelB6+/1N7E_simil_full.png} \\
+       \includegraphics[width=8.4cm]{modelB6+/2BYG_simil_full.png} &
+       \includegraphics[width=8.4cm]{modelB6+/3K82_simil_full.png} \\
+     \end{tabular}
+  \caption{Similarité des séquences des 6 protéines produites par proteus modèle B N=6 (E ref optimisées sur 20 cycles selon les classes + 20 cycles selon les types) et Rosetta à l'alignement Pfam RP55, sur l'ensemble des positions.}
+
+   \end{figure}
+
+
 \paragraph{Tests de validation croisée}
 Comme premier test de validation croisée,nous utilisons les énergies de référence optimisées à l'aide des homologues de Tiam1 et Cask à deux entre domaines PDZ: DLG2 et Syntenine. Les scores Superfamily sont comparables à ceux obtenus pour Tiam1 et Cask, avec 100\% de reconnaissance de la famille (tableau 4). Les séquences calculées avec Rosetta pour la DLG2 et la Syntenine ont également obtenu une reconnaissance  de la famille dans 100\% des cas. Comme validation croisée supplémentaire,nous optimisons les énergies de références en utilisant un ensemble alternatif de domaines PDZ: DLG2, Syntenin,
 PSD95, GRIP, INAD et NHERF. Pour distinguer les variantes du modèle, nous nous référons à cette nouvelle variante en tant que modèle n=6 (il utilise six domaines PDZ pour la paramétrisation) et le modèle initial comme modèle n=2. Les énergies de référence  nouveau n=6,  sont alors utilisées pour produire des séquences Tiam1 et Cask , qui sont alors soumisses aux tests Superfamily et des calculs de similarité. La performance de Tiam1 sur la superfamille est légèrement dégradée par rapport au précédent modèle n=2.Le score superfamily de Tiam1 diminue de 90,6\% à 76,6\% pour la reconnaissance de la famille. Les scores de Cask sont inchangés. Les histogrammes des scores de similarité Blosum montrent que les scores globaux pour Tiam1 et Cask avec n=6 sont très semblables à ceux du modèle n=2, alors que les scores pour les positions centrales sont nettement améliorés. Pour DLG2 et Syntenine, nous calculons également les scores de similarité en utilisant à la fois le modèle n=2 et le modèle n=6. Les scores de similarité avec n=2 sont légèrement plus faibles qu'avec n=6, comme on pouvait le prévoir.Le score global a diminué d'environ 20 points pour la Synténine et environ 10 points pour DLG2. dans l'ensemble, les modèles de validation croisée ont légèrement dégradé les performances. Ainsi, pour tout domaine d'intérêt PDZ, Il est préférable d'optimiser les énergies de référence spécifiquement pour ce domaine plutôt que de transférer des valeurs paramétrées en utilisant d'autres domaines PDZ. 
 
+\paragraph{Modèle FDB}
+
+
+\begin{table}[h]
+  \raggedleft{}
+  
+  \begin{tabular}{ccccccc}
+    
+    \toprule
+    Model &Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+            & size      & Evalue      & success     & Evalue & success\\
+    \cmidrule{1-7}
+    Proteus    & 1G9O  & 80/91 &  8.54 $10^{-14}$  & 10000  & 8.94 $10^{-3}$ & 10000 \\
+    FDB        & 1R6J  & 70/82 &  2.85 $10^{-6}$   & 10000  & 2.69 $10^{-3}$ & 10000 \\
+    epsilon=4  & 2BYG  & 88/97 &  3.26 $10^{-12}$  & 10000  & 1.96 $10^{-3}$ & 10000 \\
+    \cmidrule{1-7}
+    \multirow{3}{*}{Rosetta} & 1G9O  & 79/91  &  1.3 $10^{-13}$ & 10000 & 2.2 $10^{-3}$ & 10000 \\
+                             & 1R6J  & 76/82  &  7.3 $10^{-13}$ & 10000 & 1.8 $10^{-3}$ & 10000 \\
+                             & 2BYG  & 86/97  &  1.3 $10^{-9}$  & 10000 & 9.6 $10^{-4}$ & 10000 \\    
+    \cmidrule{1-7}
+    Proteus    & 1G9O  & 62/91 & 3.22 $10^{-3}$  & 9857  & 1.00 $10^{-2}$ & 9857 \\
+    NEA        & 1R6J  & 70/82 & 2.83 $10^{-3}$  & 9879  & 3.62 $10^{-3}$ & 9879 \\
+    epsilon=4  & 2BYG  & 83/97 & 1.66 $10^{-3}$  & 9876  & 3.18 $10^{-3}$ & 9876 \\ 
+    \bottomrule        
+  \end{tabular}   
+  \caption{Résultats Superfamily pour les séquences Proteus avec le modèle exactGB (E ref optimisées sur 20 cycles selon les classes + 20 cycles selon les types).}   
+  \label{tab:superfamily_model_B6}       
+\end{table}
+
+    \begin{table}[!htbp]
+      \centering
+
+      \begin{tabular}{ccc|cc}
+
+        \toprule
+        \multirow{2}{*}{acides aminés}  & \multicolumn{2}{c|}{NEA} & \multicolumn{2}{c}{FDB} \\
+        \cmidrule{2-5}
+         & Pos. Enf. & Pos Exp. & Pos. Enf. & Pos Exp. \\
+        \cmidrule{1-5}
+
+        ALA &   0.00     &  0.00    &   0.00  &   0.00       \\
+        CYS &  -0.89     &  -2.57   &  -1.06  &   -1.64      \\
+        THR &  -5.31     &  -8.075  &  -4.84  &   -6.68      \\
+        SER &  -5.55     &  -6.55   &  -4.45  &   -5.24      \\
+        ASP &  -17.26    &  -22.06  &  -14.56 &   -18.82     \\
+        GLU &  -16.12    &  -20.68  &  -14.52 &   -18.21     \\
+        ASN &  -16.38    &  -20.41  &  -14.02 &   -17.80     \\
+        GLN &  -14.00    &  -18.41  &  -13.14 &   -16.61     \\
+        HID &   11.21    &  6.95    &  10.85  &   8.13       \\
+        HIE &   10.63    &  6.15    &  10.41  &   7.37       \\
+        HIP &   15.17    &  10.72   &  12.86  &   10.98      \\
+        ARG &  -53.40    &  -57.36  &  -51.37 &   -54.76     \\
+        LYS &  -8.20     &  -12.34  &  -8.24  &   -11.35     \\
+        ILE &   6.76     &  3.44    &  5.50   &   3.06       \\
+        VAL &   0.43     &  -2.19   &  -0.05  &   -1.66      \\
+        LEU &   0.52     &  -3.72   &  0.00   &   -2.94      \\
+        MET &  -1.61     &  -3.21   &  -2.85  &   -3.09      \\
+        PHE &   1.86     &  -2.68   &  0.17   &   -3.18      \\
+        TRP &  -0.23     &  -7.67   &  -1.94  &   -5.53      \\
+        TYR &  -5.10     &  -10.90  &  -5.91  &   -10.14     \\
+
+        \bottomrule
+
+      \end{tabular}      
+      \caption{Les énergies de référence obtenues avec l'optimisation 6 protéines.}
+\label{tab:RefEner_groupes}      
+    \end{table}
+
+
+
+   \begin{table}
+     \centering
+\caption{La composition en acide aminé (\%) des séquences expérimentales et Proteus après optimisation des énergies de référence. La différence entre expérimentales et Proteus sur les classes est donnée entre crochets.}
+\begin{tabular}{l|cccc|cccc}
+\hline
+\multirow{2}{*}{Res} & \multicolumn{4}{c|}{Experimental n=3}& \multicolumn{4}{c}{FDB}\\
+ & \multicolumn{2}{c}{Buried} & \multicolumn{2}{c|}{Exposed} & \multicolumn{2}{c}{Buried} & \multicolumn{2}{c}{Exposed} \\
+\hline
+ & type & classe & type & classe & type & classe & type & classe \\
+\hline 
+ALA                  & 8.7                  &  \multirow{3}{*}{16.8} & 5.5                  & \multirow{3}{*}{13.6}   &   9.6                & \multirow{2}{*}{17.1}    & 1.8 & \multirow{2}{*}{11.3} \\
+CYS                  & 1.9                  &                        & 0.4                  &                         &    2.8               & \multirow{2}{*}{[-0.3]}  & 0.6 & \multirow{2}{*}{[2.3]} \\
+THR                  & 6.2                  &                        & 7.7                  &                         &    4.7               &                          & 8.9 &                       \\
+\hline
+\multirow{2}{*}{SER} & \multirow{2}{*}{4.4} & \multirow{2}{*}{4.4}   & \multirow{2}{*}{6.7} & \multirow{2}{*}{6.7}    & \multirow{2}{*}{5.2} & 5.2                      & \multirow{2}{*}{7.9} & 7.9\\
+                     &                      &                        &                      &                         &                      &  [-0.8]                  &                      & [-1.2] \\
+\hline
+ASP                  & 4.8                  & \multirow{2}{*}{7.4}   & 6.1                  & \multirow{2}{*}{17.1}   &   5.8                &  8.6                     & 8.1    & 20.6  \\
+GLU                  & 2.6                  &                        & 11.0                 &                         &   2.8                &  [-1.2]                  & 12.5   &  [-3.5] \\
+\hline
+ASN                  & 3.4                  & \multirow{2}{*}{5.1}   & 6.9                  & \multirow{2}{*}{12.7}   &   4.2                &  6.0                     & 8.8 & 16.0 \\
+GLN                  & 1.7                  &                        & 5.8                  &                         &   1.8                &  [-0.9]                  & 7.2 & [-3.3]    \\
+\hline
+HIP                  & 2.0                  & \multirow{3}{*}{2.0}   & 5.9                  & \multirow{3}{*}{5.9}    &   0.0                & \multirow{2}{*}{0.6}     & 0.4 & \multirow{2}{*}{5.0} \\
+HIE                  & 0.0                  &                        & 0.0                  &                         &   0.5                & \multirow{2}{*}{[1.4]}   & 2.7 & \multirow{2}{*}{[0.9]}  \\
+HID                  & 0.0                  &                        & 0.0                  &                         &   0.1                &                          & 1.9 & \\
+\hline
+ILE                  & 12.4                 & \multirow{3}{*}{50.3}  & 4.1                  & \multirow{3}{*}{14.0}   &   11.2               & \multirow{2}{*}{49.4}    & 0.6 & \multirow{2}{*}{12.5} \\
+VAL                  & 21.1                 &                        & 5.1                  &                         &   21.2               & \multirow{2}{*}{[0.9]}   & 5.2 & \multirow{2}{*}{[1.5]}  \\
+LEU                  & 16.8                 &                        & 4.8                  &                         &   17.0               &                          & 6.7 & \\
+\hline
+\multirow{2}{*}{MET} & \multirow{2}{*}{1.3} & \multirow{2}{*}{1.3}   & \multirow{2}{*}{1.8} & \multirow{2}{*}{1.8}    & \multirow{2}{*}{1.0} & 1.0                      & \multirow{2}{*}{2.2}  & 2.2\\
+                     &                      &                        &                      &                         &                      & [0.3]                    &                       & [-0.4] \\
+\hline
+\multirow{2}{*}{LYS} & \multirow{2}{*}{3.4} & \multirow{2}{*}{3.4}   & \multirow{2}{*}{10.8} & \multirow{2}{*}{10.8}  & \multirow{2}{*}{4.2} & 4.2                    & \multirow{2}{*}{12.4} & 12.4  \\
+                     &                      &                        &                       &                        &                       &  [-0.8]                  &                       & [-1.6] \\
+\hline
+\multirow{2}{*}{ARG} & \multirow{2}{*}{1.1} & \multirow{2}{*}{1.1}   & \multirow{2}{*}{9.8}  & \multirow{2}{*}{9.8}   & \multirow{2}{*}{1.8} & 1.8                      & \multirow{2}{*}{11.8} & 11.8    \\
+                     &                      &                        &                      &                         &                      & [-0.7]                    &                      & [-2.0]   \\
+\hline
+PHE                  & 4.6                  & \multirow{2}{*}{4.6}   & 2.4                  & \multirow{2}{*}{2.5}    &  3.9                 & 3.9                      & 0.0 & 0.0 \\
+TRP                  & 0.0                  &                        & 0.1                  &                         &  0.0                 & [0.7]                    & 0.0 & [2.5]               \\
+\hline
+TYR                  & \multirow{2}{*}{2.4} & \multirow{2}{*}{2.4}  & \multirow{2}{*}{1.2}  &   \multirow{2}{*}{1.2}  &  \multirow{2}{*}{2.0} & 2.0                     & \multirow{2}{*}{0.0}  & 0.0   \\
+                     &                      &                        &                      &                         &                       & [0.4]                   &                      & [1.2]  \\
+\hline
+GLY                  & 1.0                  & \multirow{2}{*}{1.1}   & 1.9                  & \multirow{2}{*}{3.7}    &   0.0                &  0.0                     & 0.0 & 0.0 \\
+PRO                  & 0.1                  &                        & 1.8                  &                         &   0.0                &  [1.1]                   & 0.0 & [3.7]\\
+\hline
+
+\end{tabular} 
+\end{table}
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc} 
+       \includegraphics[width=8.4cm]{exactGB/1G9O_simil_cut.png} &
+       \includegraphics[width=8.4cm]{exactGB/1G9O_simil_core.png} \\
+       \includegraphics[width=8.4cm]{exactGB/1R6J_simil_cut.png} &
+       \includegraphics[width=8.4cm]{exactGB/1R6J_simil_core.png} \\
+       \includegraphics[width=8.4cm]{exactGB/2BYG_simil_cut.png} &
+       \includegraphics[width=8.4cm]{exactGB/2BYG_simil_core.png} \\
+     \end{tabular}
+     \caption{Similarité des séquences Proteus (NEA et FDB),Rosetta , et des séquences de l'aligenment Pfam RP55, sur toutes les positions à gauche  et sur les positions du coeur à droite.}
+
+\label{graph:Simil_control_B}
+
+    
 \section{Application: Croissance du noyau hydrophobe}
 Comme application de nos modèles optimisés, nous examinons la possibilité de conception du cœur hydrophobe des domaines PDZ. Chaque domaine PDZ est soumis à une simulation REMC avec une succession de fonctions énergétiques biaisées qui favorisent de plus en plus les résidus hydrophobes. La première simulation comprend un terme d'énergie de biais $\delta =0,4 kcal/mol$ (par position) qui pénalise les types d'acides aminés hydrophobes (I,L,M,V,A,W,F et Y). La dernière simulation comprend un terme d'énergie de biais $\delta = -0.4 kcal/mol$ (par position) qui favorise les types hydrophobes. Les valeurs d'énergie de biais intermédiaire $\delta =0,2 kcal/mol$ et $\delta = -0,2 kcal/mol$ sont également simulé. En diminuant progressivement la valeur du biais d'énergie $\delta$, nous "titrons" efficacement dans les résidus hydrophobes.
 
 Les résultats pour Tiam1 sont présentés à la figure 7. À la plus grande valeur, $\delta$ le cœur hydrophobe de Tiam1 est "réduit" avec 10 positions d'acides aminés (sur 94) qui changent en un type polaire. Les positions modifiées se situent principalement sur le bord extérieur du noyau. A la valeur intermédiaire de $\delta$, le noyau hydrophobe ne compte plus que 4 changements es type polaire par rapport un cœur natif. À la valeur de $\delta$ la plus négative, le cœur hydrophobe devient plus grand, s'étendant vers les régions de surface , avec 14 positions polaires changées en type hydrophobe. Ainsi le nombre de positions modifiées est approximativement symétrique ( environ +/- 12 changements), reflétant le biais. Environ 2/3 des changements se produisent dans des éléments de structure secondaire. Dans l'ensemble, les propensions observées de chaque position à devenir polaire ou hydrophobe en présence d'un biais de pénalité petit ou grand d'énergie $\delta$ peuvent être considérées comme un indice de conception hydrophobe. Ici, 11 des 14 positions du cœur conservées (toute sauf les positions 884,898 et 903) sont restées hydrophobes même au plus haut niveau de biais polaire, avec 13 autres positions, indiquant que ces positions ont la plus grande propension à être hydrophobe. De plus, 14 positions ont changé de polaire à hydrophobe qu niveau de polarisation le plus élevé, indiquant que ces positions aussi ont une certaine propension a être hydrophobe. Les résultats pour Cask sont similaires, avec 11 positions changés en polaire au plus haut biais et 9 changés en hydrophobe au plus haut biais  hydrophobe.
+
+
+
+    \begin{figure}[!h]
+      \centering
+      \begin{tabular}{c}
+        \includegraphics[width=14cm]{titration/alignTiam1.png} \\
+      \end{tabular}
+
+      \caption{\small Séquences Tiam1 obtenues avec un delta des énergies de références à -0.4,-0.2,0,0.2 et 0.4 et la struture native.Les hydrophobes pour des deltas de -0.4,-0.2,0,0.2 et 0.4 sont représentés par un dégradé allant du rouge foncé au vert clair, en passant par le jaune.}
+      
+      \label{titration_Tiam1}
+    \end{figure}
+
+
+    \begin{figure}[!h]
+      \centering
+      \begin{tabular}{c}
+        \includegraphics[width=15cm]{titration/structure_Tiam1.png} \\
+      \end{tabular}
+
+      \caption{\small Structure native Tiam1 avec les hydrophobes pour des deltas de -0.4,-0.2,0,0.2 et 0.4 sont représentés par un dégradé allant du rouge foncé au vert clair, en passant par le jaune.}
+      
+      \label{titration_Tiam1}
+    \end{figure}
+
+    
+
 Nous calculons également un paramètre pour décrire le nombre de changements relatifs de type d'acide aminé par unité de l'énergie du biais. Ce  paramètre est défini comme le nombre $\delta N$ de positions de résidu  changées de non polaire à polaire, divisé par le produit de la variation $\delta E$ dans l'énergie de polarisation et le nombre moyen N de position non polaire à biais nul. Nous l'appelons la sensibilité hydrophobe $\psi_h$ . Pour le domaine PDZ Tiams1, ce calcul donne:
 $\psi_h = \frac{1}{N} frac{\delta N}{\delta E} = 0,88$ changements par position et par kcal/mol. Pour Cask, la sensibilité hydrophobe  est  $\psi_h = 0,71$ changements par position et par kcal/mol.
+
+
+\begin{figure}[!h]
+  \centering
+  \begin{tabular}{c}
+    \includegraphics[width=16cm]{titration/alignCASK.png} \\
+  \end{tabular}
+  
+  \caption{\small Séquences Cask obtenues avec un delta des énergies de références à -0.4,-0.2,0,0.2 et 0.4 et la struture native.Les hydrophobes pour des deltas de -0.4,-0.2,0,0.2 et 0.4 sont représentés par un dégradé allant du rouge foncé au vert clair, en passant par le jaune.}
+  \label{result:PDZ_seed}
+\end{figure}
+
+
+
 
 \section{Conclusion}
 
