@@ -96,7 +96,7 @@ Nous utilisons trois méthodes pour approcher les valeurs ${E^r_t}$.
 
 \begin{enumerate}
   \label{enumMeth}
-\item La première consiste à avancer dans la direction du gradient de $ln(\mathcal{L})$ en utilisant la règle itérative suivante \cite{Kleinman06}:
+\item La première consiste à avancer dans la direction du gradient de $ln(\mathcal{L})$ en utilisant la règle itérative suivante \cite{Kleinman06}, nous l'appelons méthode linéaire:
 \begin{equation} \label {eq: linear}
   E^r_t(n+1) = E^r_t(n) + \alpha \frac{\partial}{\partial E^r_t} \ln(\mathcal{L})=E^r_t(n) + \delta E (n^{exp}_t - \langle n(t)\rangle_n)
 \end{equation} 
@@ -122,7 +122,7 @@ E^r_t (n+1) = E^r_t (n) + kT \, \ln \frac{\langle n(t) \rangle_n}{n_t^{\rm exp}}
 
 \end{enumerate}
  
-Chaque itération, dans la suite, a été effectuée avec 500 000 000 de pas par réplique de REMC.
+Chaque itération, pour le modèle NEA (voir plus bas), a été effectuée avec 500 millions de pas par réplique de REMC, et 100 millions de pas pour le modèle FDB.
 
 \section{Méthodes de calcul}
   
@@ -149,9 +149,9 @@ On attribue aux atomes d'hydrogène un coefficient de surface de 0. Les surface 
 Dans le terme énergétique GB, le rayon de solvatation atomique $b_i$ approxime la distance de $i$ à la surface de la protéine.C'est une fonction des coordonnées de tous les atomes de protéines. La forme $b_i$ correspond à une variante GB que nous appelons GB/HCT, d'après ses auteurs \cite{Hawkins95}, avec les paramètres du modèle optimisées pour une utilisation avec le champ de force Amber \cite{Lopes07}.Comme $b_i$ dépend des coordonnés de tous les atomes du soluté \cite{Hawkins95}, une approximation supplémentaire est nécessaire pour rendre le terme énergitique GB additif par paire et pour rendre la matrice d'énergie définissable.
 Pour cela nous utilisons deux approximations, la méthode NEA pour \og Nativce Environment Approxition\fg et la méthode FDB \og Fluctuating Dielectric Boundary\fg \cite{Villa01}.
 
-Dans la méthode NEA, le rayon de solvatation $b_i$ de chaque groupe (backbone, chaîne laterale ou ligand) est calculé à l'avance , le reste du système étant fixé à sa séquence et sa conformation native \cite{Simonson13b,Gaillard14}, voir le chapitre CPD.
+Dans le modèle NEA, le rayon de solvatation $b_i$ de chaque groupe (backbone, chaîne laterale ou ligand) est calculé à l'avance , le reste du système étant fixé à sa séquence et sa conformation native \cite{Simonson13b,Gaillard14}, voir le chapitre CPD.
 
-Dans la méthode FDB, est exploité le fait que dans le GB , l'environment dielectric d'une paire de résidus est complétement caractérisé par un petit ensemble de rayons de solvatation atomique et ces rayons sont eux-mêmes sommes de paires sur les atomes de la protéine. Cette méthode est composée de deux étapes. La première est le calcul de rayon de solvatation moyen $B_I$ pour chaque résidue $I$ et la seconde est l'expressoin de l'interaction enérgitique GB de chaque paire de résidu $I$ , $J$, commme une serie de puissance des  $B_I$  et $B_J$, voir le chapitre CPD. 
+Dans la modèle FDB, est exploité le fait que dans le GB , l'environment dielectric d'une paire de résidus est complétement caractérisé par un petit ensemble de rayons de solvatation atomique et ces rayons sont eux-mêmes sommes de paires sur les atomes de la protéine. Cette méthode est composée de deux étapes. La première est le calcul de rayon de solvatation moyen $B_I$ pour chaque résidue $I$ et la seconde est l'expressoin de l'interaction enérgitique GB de chaque paire de résidu $I$ , $J$, commme une serie de puissance des  $B_I$  et $B_J$, voir le chapitre CPD. 
 
 La contribution de l'énergie de surface $E_{surf}$ n'est pas non plus additif par pair, car dans la structure de la protéine, la surface enfouie par une chaîne latérale peut également être enfuie par une autre chaîne. Alors, nous avons utilisé la méthode de Street et al \cite{Street98}. Dans laquelle, la surface enfuie d'une chaîne latérale est calculée en additionnant la chaîne latérale voisine et les groupes backbones. Pour chaque groupe voisin, la zone de contact avec la chaîne latérale en question est calculé indépendamment des autres groupes. Les zones de contact sont additionnées. Pour éviter de sur-evaluer la surface enfuie, un facteur est appliqué aux zones de contact des chaînes latérales impliquées. Des études précédentes ont montré qu'un facteur de 0.65 fonctionne bien \cite{Lopes07,Gaillard14}.  
 
@@ -209,7 +209,7 @@ Pendant, la maximisation de la vraisemblance, $E_c$ est optimisé tandis que $\d
 
 
 
-\section{Outils d'analyse de séqences} 
+\section{Outils d'analyse de séquences} 
 \subsection{Superfamily/SCOP}
 \label{subsection:Superfamily}
 
@@ -233,7 +233,7 @@ Id(S,N) =\frac{1}{l}\sum_{1<i<l} \mathds{1}(s_i,n_i)} \times 100
 avec $s_i$ et $n_i$ l'acide animé en $i$ de $S$ et de $N$ respectivement, et $\mathds{1}(x,y)$ la fonction qui vaut $1$ lorsque $x=y$ et $0$ sinon. 
 
 \subsection{Taux d'identité par position}
-
+\label{TauxID}
 Le taux d'identité d'un alignement $A_S$ à la position i par rapport à une séquence N de même longueur se définit comme:
 
 \begin{equation}
@@ -429,8 +429,8 @@ Comme nous avons caractérisé les homologies des séquences natives, nous calcu
 
 \subsection{Les fréquences d'acides aminés}
 
-    Pour chaque ensemble d'homologues, notons le $H$, nous calculons la moyenne sur toutes les séquences et toutes les positions pour obtenir les fréquences globales d'acides aminés. Les fréquences sont déterminées séparément pour les positions enfouies et exposées. Notons les ${f^b_t(H),f^e_t(H)}$ , où l'indice t représente un type d'acide aminé et les exposants e et b signifient respectivement les ensembles de positions enfuies et exposées. Enfin les ensembles de fréquences moyennes des huit protéines sont eux-mêmes moyennés sur deux groupes de protéines, d'une part le groupe {NHREF,INAD,GRIP,Syntenin,DLG2,PSD95} et d'autrepart le groupe {Cask,Tiam1}, ce qui donne quatre ensembles cibles distincts de fréquences d'acides aminés $f^b_t$ et $f^e_t$ pour chaque type, et de même pour chaque classe de type. Cette partition en deux sous-ensembles de protéines va nous permettre d'estimer la tranferabilité des énergies de réferences obtenues à partir d'un sous-ensemble de protéines sur un autre sous-ensemble de protéines.
-
+    Pour chaque ensemble d'homologues, notons le $H$, nous calculons la moyenne sur toutes les séquences et toutes les positions pour obtenir les fréquences globales d'acides aminés. Les fréquences sont déterminées séparément pour les positions enfouies et exposées. Notons les ${f^b_t(H),f^e_t(H)}$ , où l'indice t représente un type d'acide aminé et les exposants e et b signifient respectivement les ensembles de positions enfuies et exposées. Enfin les ensembles de fréquences moyennes des huit protéines sont eux-mêmes moyennés sur deux groupes de protéines, d'une part le sous-ensemble $S_1 = {NHREF,INAD,GRIP,Syntenin,DLG2,PSD95}$ et d'autrepart le groupe $S_2 ={Cask,Tiam1}$, ce qui donne deux jeux de deux  ensembles cibles distincts de fréquences d'acides aminés $f^b_t$ et $f^e_t$ pour chaque type, et de même pour chaque classe de type. Cette partition en deux sous-ensembles de protéines va nous permettre d'estimer la tranferabilité des énergies de réferences obtenues à partir d'un sous-ensemble de protéines sur un autre sous-ensemble de protéines.
+\label{subsection:freqaa}
         
 \clearpage
 
@@ -487,7 +487,7 @@ Comme nous avons caractérisé les homologies des séquences natives, nous calcu
      \begin{tabular}{c}
        \includegraphics[width=17cm]{proteus/1R6J.png} \\
      \end{tabular}
-       \caption{Une sélection de séquences proteus, parmi les 10000 séquences de meilleure énergie, obtenues avec le backbone de la protéine Syntenin (code PDB:1R6J), modèle FDB}
+       \caption{Une sélection de séquences proteus, parmi les 10000 séquences de meilleure énergie, obtenues avec le backbone de la protéine Syntenin (code PDB:1R6J), modèle NEA}
 \label{align_proteus:Syntenin}
    \end{figure}
 \clearpage
@@ -604,11 +604,10 @@ Les séquences calculées sont comparées à l'alignement Pfam pour la famille P
 Les séquences calculées sont soumises à la bibliothèque de modèle de Markov Caché Superfamily \cite{Gough01,Wilson07}  qui tente de classer les séquences selon la base de donnée structurelle de protéines SCOP \cite{Andreeva04},voir \ref{subsection:Superfamily}.Le programme hmmscan est exécuté avec un seuil de valeur E de $10^{-10}$. 
 
 \section {Résultats du modèle NEA}
-
+\label{sectionNEA} 
 \subsection{optimisation du modèle de l'état déplié}
 
-Nous optimisons les énergies de référence $E_t^r$ pour les six protéines, en utilisant leurs homologues naturels pour définir les fréquences d'acides aminés cibles. La constante diélectrique de la protéine P est 8. Après 20 itérations avec la contrainte des groupes et 20 itérations sans cette contrainte,alors l'optimisation ne se fait plus sur les six classes de type d'acide aminé , mais directement sur les dix-huit types possibles. La fonction Proxy converge autour les valeurs 0,06, 0,07 (pour respectivement les énergies enfuis et exposés ) et pour les types 0,08 et 0,14 pour les groupes. Ce qui correspond à des variations  pour les $E_t^r$ inferieur à 0,05 Kcal/mol pour tous les types d'acide aminés sur les 5 derniers cycles d'optimisation en utilisant la méthode linéaire (équation \ref{eq: linear}). Le tableau {tab:RefEner6} donne énergies de référence finales, qui sont utilisées par la suite pour la génération de séquences.
-
+Nous optimisons les énergies de référence $E_t^r$ pour les six protéines, en utilisant leurs homologues naturels pour définir les fréquences d'acides aminés cibles. La constante diélectrique de la protéine $\epsilon_p$ est égale $8$. La méthode d'optimisation utilisé est la méthode linéaire voir (\ref{enumMeth}) avec 20 itérations avec la contrainte des groupes et 20 itérations sans cette contrainte,l'optimisation ne se fait plus alors sur les six classes de type d'acide aminé , mais directement sur les dix-huit types possibles. La fonction Proxy calculées sur les groupes de types converge autour les valeurs $0.06$, $0.07$ (pour respectivement les énergies enfuis et exposés ) et pour les types $0.08$ et $0.14$ pour les groupes. Ce qui correspond à des variations  pour les $E_t^r$ inferieur à $0,05 Kcal/mol$ pour tous les types d'acide aminés sur les 5 derniers cycles d'optimisation. Le tableau \ref{tab:RefEner6} les donne énergies de référence finales, qui sont utilisées ensuite pour la génération de séquences.
 
     \begin{table}[!htbp]
       \centering
@@ -704,7 +703,7 @@ PRO&0.1&&1.8&&0.0&(-0.9)&0.0&(-4.9)\\
 
 
 \subsection{Tests de reconnaissance de famille}
-
+A partir, nos énergies optimisées, nous générons des séquences pour chaque protéine.
 Les simulations Proteus utilisent l'algorithme Monte-Carlo avec échange de répliques (REMC) avec huit répliques (ou marcheurs) et 750 millions de pas par réplique, avec des énergies thermiques kT  qui varient de 0,125 à 3 kcal/mol. Toutes les positions sont autorisées à muter librement dans tout les types d'acides aminés exceptés Gly et Pro. Les simulations ont été faites avec la fonction d'énergie MMGBSA, sans aucune introduction de biais vers les séquences naturelles ni aucune limite sur le nombre de mutations. Les 10 000 séquences avec les énergies les plus faibles parmi celles échantillonnées par au moins une des répliques MC sont retenues pour l'analyse. De la même façon, 10 000 séquences produites par Rosetta ont était retenues. Ces séquences sont analysées par les outils de reconnaissance de repliment \og Superfamily \fg (voir \ref{{subsection:Superfamily}}).Avec une constante diélectrique de 8, nous avons obtenu un pourcentage élevé de séquences correctement associées à la famille et superfamille PDZ: 100\% pour NHREF, INAD,GRIP, DLG2 , 99\%  pour Syntenin , seule PSD95 donne un score acces mauvaisde 47\% pour la famille et 50\% pour la superfamille.Les E-values dsont inférieur à $10^{-3}$ pour les affectations à la famille.Ces valeurs sont semblables à celles obtenues par Rosettapour les cinq premiers cas, par contre l'affectation à la superfamille meilleure pour Rosetta avec cas E-values compris entre $3.7$ $10^{-23}$ et $1.3$ $10^{-9}$, alors que Proteus obtient des E-values compris entre $4$ $10^{-4}$ et $2$ $10^{-12}$ si l'on exclus PSD95 les détails sont présentés aux tables \ref{tab:superfamily_model_B6} et \ref{tab:superfamily_bestRE}.
 
 
@@ -750,8 +749,9 @@ Les simulations Proteus utilisent l'algorithme Monte-Carlo avec échange de rép
 \end{table}
 
 
-\subsection{Séquences et diversité de séquence}
-Une selection des meilleures séquences calculées par Proteus , au sens de l'énergie, pour le sous-ensemble de 6 proteines sont montrées aux figures \ref{align_proteus:NHREF} \ref{align_proteus:INAD}\ref{align_proteus:Syntenin}\ref{align_proteus:GRIP}\ref{align_proteus:DLG2}\ref{align_proteus:PSD95} et les homologues naturelles aux figures \ref{align_homo:NHREF} \ref{align_homo:INAD}\ref{align_homo:Syntenin}\ref{align_homo:GRIP}\ref{align_homo:DLG2}\ref{align_homo:PSD95} (la coloration est celle de clustalX inplementé dans Jalview~cite\{Jalview}). Comme on l'a vu dans de nombreuses études de CPD antérieures (30,72) l'accord avec l'expérience pour les positions du cœur est très bon, alors que l'accord en ce qui concerne les résidus de surface est nettement plus faible. La diversité des séquences naturelles et des séquences calculées est caractérisées par la moyenne sur la séquence de l'exponentielle de l'entropie résiduel (voir \ref{subsection:Entropie}).Comme référence nous utilisons l'ensemble Pfam Seed qui est constitué d'un sous-ensemble représentatifs des domaines PDZ naturelles (ref{subsection:AlignPfam}).L'entropie est calculée aux positions de chaque protéine. La diversité des séquences Rosetta est légérement meilleure avec des valeurs comprises entre $1.4$ et $1.68$ alors que celles de Proteus sont comprises $1.24$ et $1.55$ tandis que la diversité de Pfam Seed se situe  a une entropie moyenne de 3,11.Le regroupement des séquences de NHREF,INAD,GRIP,Syntenin,DLG2 et PSD95 calculés  donne une entropie de 2,88 avec Rosetta et 2,42 avec Proteus. Ce qui indique que ces six seules géométries de backbone ne peuvent pas atteindre les mêmes niveaux de diversités que l'ensemble Seed concue pour caractériser la diversité des domaines PDZ et notament la diversité de leur backbone. 
+\subsection{Séquences et diversité de séquences}
+Une selection des meilleures séquences calculées par Proteus , au sens de l'énergie, pour le sous-ensemble de 6 proteines sont montrées aux figures \ref{align_proteus:NHREF} \ref{align_proteus:INAD}\ref{align_proteus:Syntenin}\ref{align_proteus:GRIP}\ref{align_proteus:DLG2}\ref{align_proteus:PSD95} et les homologues naturelles aux figures \ref{align_homo:NHREF} \ref{align_homo:INAD}\ref{align_homo:Syntenin}\ref{align_homo:GRIP}\ref{align_homo:DLG2}\ref{align_homo:PSD95} (la coloration est celle de clustalX inplementé dans Jalview~cite\{Jalview}). Comme on l'a vu dans de nombreuses études de CPD antérieures (30,72) l'accord avec l'expérience pour les positions du cœur est très bon, alors que l'accord en ce qui concerne les résidus de surface est nettement plus faible. La diversité des séquences naturelles et des séquences calculées est caractérisées par la moyenne sur la séquence de l'exponentielle de l'entropie résiduel (voir \ref{subsection:Entropie}).Comme référence nous utilisons l'ensemble Pfam Seed qui est constitué d'un sous-ensemble représentatifs des domaines PDZ naturelles (ref{subsection:AlignPfam}).L'entropie est calculée aux positions de chaque protéine. La diversité des séquences Rosetta est légérement meilleure avec des valeurs comprises entre $1.4$ et $1.68$ alors que celles de Proteus sont comprises $1.24$ et $1.55$ tandis que la diversité de Pfam Seed se situe  a une entropie moyenne de 3,11.Le regroupement des séquences de NHREF,INAD,GRIP,Syntenin,DLG2 et PSD95 calculés  donne une entropie de 2,88 avec Rosetta et 2,42 avec Proteus. Ce qui indique que ces six seules géométries de backbone ne peuvent pas atteindre les mêmes niveaux de diversités que l'ensemble Seed concue pour caractériser la diversité des domaines PDZ et notament la diversité de leur backbone.
+
 
     \begin{table}[!htbp]
       \centering
@@ -768,6 +768,7 @@ Une selection des meilleures séquences calculées par Proteus , au sens de l'é
         DLG2  & 1.24 & 1.57 & 3.11  \\
         PSD95  & 1.27 & 1.40 & 3.15  \\
         6prots & 2.42  & 2.88 &    \\
+        \cmidrule{1-5}
         CASK  & 1.55 & 1.68 & 3.15  \\
         TIAM1 & 1.22 & 1.57 & 3.15  \\
 
@@ -778,6 +779,11 @@ Une selection des meilleures séquences calculées par Proteus , au sens de l'é
 \label{tab:Entropie_PDZ}      
     \end{table}
 
+
+  
+\subsection{Taux d'identité à la séquence native}  
+  
+Pour chaque protéine, nous calculons le taux d'identité des 10000 séquences de meilleurs énergies par rapport à la séquence native, ainsi que pour les 10000 séquences Rosetta ,voir \ref{TauxID}.Si l'on considère uniquement les positions mutables,ce taux varie pour Proteus entre 26\% et 36\% , et entre 40\% et 52\% soit un écart d'environ 15\% entre les deux outils.Considèrer toutes les positions, fait apparaître , chez Rosetta, des identités très fortes de plus de 60\% en moyenne sur les 6 protéines, voir la table \ref{tab:IdentNEA}.  
 
         \begin{table}[!htbp]
       \centering
@@ -793,23 +799,18 @@ Une selection des meilleures séquences calculées par Proteus , au sens de l'é
         Syntenin  & 26 &  46 & 38 & 58 \\
         DLG2  & 28 &  46 & 42 & 61 \\
         PSD95  & 36 &  52 & 54 & 70 \\
-        TIAM1 & 18 &  25 & 28 & 30 \\
-        CASK  & 17 &  28 & 28 &  39 \\
-
         \bottomrule
 
       \end{tabular}      
       \caption{Pourcentage d'identité moyen à la séquence native}
-\label{tab:Entropie_PDZ}      
+\label{tab:IdentNEA}      
     \end{table}
 
         
-
         
 \subsection{Scores de similarité Blosum}
 
-La figure \ref{fig:similNEA} montre les scores de similarité Blosum40 entre les séquences calculées et les séquences naturelles. Avec Proteus, pour Tiam1 et Cask, les similitudes globales se chevauchent au pied du somment des scores naturels, sont comparables aux valeurs des séquences Rosetta. Pour les résidus de surface, montrés séparément, la similitude avec les séquences naturelles est faible (scores inférieurs à zéro), à la fois pour Proteus et Rosetta. Avec $\epsilon_p=8$, Proteus donne presque la même similitude moyenne sur toutes les postions Tiam1 et Cask, par exemple.
-Alors que les scores de similarité Proteus par rapport à Pfam  sont comparables à Rosetta (figure 5) , les scores d'identité par rapport à la séquence sauvage sont significativement plus élevés avec Rosetta. Les scores d'identité excluants (respectivement incluant) les postions Gly et Pro (qui ne sont pas mutables) sont de 20\% (28\%) pour Proteus contre 26\% (34\%) pour Rosetta.
+La figure \ref{fig:similNEAfull} montre les scores de similarité Blosum40 entre les séquences calculées et les séquences naturelles sur l'ensemble des positions.Globalement, la similitude avec les séquences naturelles est faible.les similitudes Proteus et Rosetta se chevauchent au pied du somment des scores naturels pour NHREF INAD, GRIP et DLG2 avec des valeurs Proteus en retraint de celles de Rosetta de quelques dixiène de points, moins de 20 pour NHREF mais près de cinquante pour Syntenin. Les résultats Proteus pour PSD95 sont beaucoup moins bon que ceux de Rosetta avec un écart moyen de plus de 70.Pour les résidus du coeur, montrés à la figure , \ref{fig:similNEAcore}la similitude des séquences calculées avec les séquences naturelles est beaucoup plus forte,avec beaucoup de séquences Proteus avec des scores à plus de 30 pour NHREF,INAD et DLG2. Proteus fait jeu égale avec Rosetta sur NHREF et Syntenin, globlement meilleur sur INAD et DLG2, et moins bon sur GRIP et PSD95. 
 
 
    \begin{figure}[t]
@@ -822,47 +823,47 @@ Alors que les scores de similarité Proteus par rapport à Pfam  sont comparable
        \includegraphics[width=8.4cm]{modelB6+/2BYG_simil_full.png} &
        \includegraphics[width=8.4cm]{modelB6+/3K82_simil_full.png} \\
      \end{tabular}
-  \caption{Similarité des séquences des 6 protéines produites par proteus modèle B N=6 (E ref optimisées sur 20 cycles selon les classes + 20 cycles selon les types) et Rosetta à l'alignement Pfam RP55, sur l'ensemble des positions.}
-\label{fig:similNEA}
+  \caption{Similarité des séquences des 6 protéines produites par Proteus et Rosetta à l'alignement Pfam RP55, sur l'ensemble des positions.}
+\label{fig:similNEAfull}
    \end{figure}
 
 
-\subsection{Tests de validation croisée}
-Comme premier test de validation croisée,nous utilisons les énergies de référence optimisées à l'aide des homologues de Tiam1 et Cask à deux entre domaines PDZ: DLG2 et Syntenine. Les scores Superfamily sont comparables à ceux obtenus pour Tiam1 et Cask, avec 100\% de reconnaissance de la famille (tableau 4). Les séquences calculées avec Rosetta pour la DLG2 et la Syntenine ont également obtenu une reconnaissance  de la famille dans 100\% des cas. Comme validation croisée supplémentaire,nous optimisons les énergies de références en utilisant un ensemble alternatif de domaines PDZ: DLG2, Syntenin,
-PSD95, GRIP, INAD et NHERF. Pour distinguer les variantes du modèle, nous nous référons à cette nouvelle variante en tant que modèle n=6 (il utilise six domaines PDZ pour la paramétrisation) et le modèle initial comme modèle n=2. Les énergies de référence  nouveau n=6,  sont alors utilisées pour produire des séquences Tiam1 et Cask , qui sont alors soumisses aux tests Superfamily et des calculs de similarité. La performance de Tiam1 sur la superfamille est légèrement dégradée par rapport au précédent modèle n=2.Le score superfamily de Tiam1 diminue de 90,6\% à 76,6\% pour la reconnaissance de la famille. Les scores de Cask sont inchangés. Les histogrammes des scores de similarité Blosum montrent que les scores globaux pour Tiam1 et Cask avec n=6 sont très semblables à ceux du modèle n=2, alors que les scores pour les positions centrales sont nettement améliorés. Pour DLG2 et Syntenine, nous calculons également les scores de similarité en utilisant à la fois le modèle n=2 et le modèle n=6. Les scores de similarité avec n=2 sont légèrement plus faibles qu'avec n=6, comme on pouvait le prévoir.Le score global a diminué d'environ 20 points pour la Synténine et environ 10 points pour DLG2. dans l'ensemble, les modèles de validation croisée ont légèrement dégradé les performances. Ainsi, pour tout domaine d'intérêt PDZ, Il est préférable d'optimiser les énergies de référence spécifiquement pour ce domaine plutôt que de transférer des valeurs paramétrées en utilisant d'autres domaines PDZ. 
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc} 
+       \includegraphics[width=8.4cm]{modelB6+/1G9O_simil_core.png} &
+       \includegraphics[width=8.4cm]{modelB6+/1IHJ_simil_core.png} \\
+       \includegraphics[width=8.4cm]{modelB6+/1R6J_simil_core.png} &
+       \includegraphics[width=8.4cm]{modelB6+/1N7E_simil_core.png} \\
+       \includegraphics[width=8.4cm]{modelB6+/2BYG_simil_core.png} &
+       \includegraphics[width=8.4cm]{modelB6+/3K82_simil_core.png} \\
+     \end{tabular}
+  \caption{Similarité des séquences des 6 protéines produites par proteus modèle NEA et Rosetta à l'alignement Pfam RP55, sur les positions du coeur hydrophobe.}
+\label{fig:similNEAcore}
+   \end{figure}
+   
+   \subsection{Tests de validation croisée}
+   Cette partie a été effectuée en commun avec Nicolas Panel, doctorant de notre laboratoire.Les détails sont publiés dans \cite{mignon2017}.
+Comme premier test de validation croisée, nous appliquons nos énergies de référence aux deux domaines, notre sous-ensemble $S_2$, qui ne font pas parti du sous-ensemble $S_1$ utilisé pendant l'optimisation, voir \ref{subsection:freqaa}. Ainsi, nous générons des séquences Tiam1 et Cask qui sont alors soumisses aux tests Superfamily et aux calculs de similarité.La performance de Tiam1 sur la superfamille ,84,6\%, est un peu en dessous de celles obtenues sur les autre proteines.Le score de Tiam1 pour la reconnaissance de la famille est à 76,6\%. Les scores de Cask sont du même ordre que ceux de nos 6 premières protéines avec 100\% de reconnaissance pour la famille et la superfamille, avec des E-value comparable.
+
+Comme validation croisée supplémentaire,les énergies de références ont été optimisées par Nicolas Panel,en utilisant notre sous-ensemble $S_2$ comme ensemble alternatif de domaines PDZ, et la troisième méthode d'optimisation, voir \ref{eq:log}.Nous générons alors, avec ce modèle, des séquences pour Syntenin et DLG2.
+Encore une fois, les scores sont proches de ceux obtenues avec le modèle potimisé sur 6 protéines;les reconnaisances sont à 100\% et les Evalues montent de $4.01$ $10^{-4}$  à $1.3$ $10^{-2}$  avec syntenin pour la superfamille et de $3.82$ $10^{-10}$  à $8.0$ $10^{-9}$ pour DLG2.
+
+Les histogrammes des scores de similarité Blosum montrent que les scores globaux pour Tiam1 et Cask sont très semblables pour les deux modèles. Pour DLG2 et Syntenine, nous calculons également les scores de similarité en utilisant les deux modèles. Les scores de similarité avec le modèle $S_2$  sont légèrement plus faibles qu'avec le  modèle $S_1$. Le score global a diminué d'environ 20 points pour la Synténine et environ 10 points pour DLG2. dans l'ensemble, les modèles de validation croisée ont légèrement dégradé les performances. Ainsi, pour tout domaine d'intérêt PDZ, Il est préférable d'optimiser les énergies de référence spécifiquement pour ce domaine plutôt que de transférer des valeurs paramétrées en utilisant d'autres domaines PDZ. 
 
 \section{Résultats du modèle FDB}
 
+\subsection{optimisation du modèle de l'état déplié}
 
-\begin{table}[h]
-  \raggedleft{}
-  
-  \begin{tabular}{ccccccc}
-    
-    \toprule
-    Model &Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
-            & size      & Evalue      & success     & Evalue & success\\
-    \cmidrule{1-7}
-    Proteus                   & NHREF     & 80/91  &  8.54 $10^{-14}$  & 10000  & 8.94 $10^{-3}$ & 10000 \\
-    FDB                       & Syntenin  & 70/82  &  2.85 $10^{-6}$   & 10000  & 2.69 $10^{-3}$ & 10000 \\
-    epsilon=4                 & DLG2      & 88/97  &  3.26 $10^{-12}$  & 10000  & 1.96 $10^{-3}$ & 10000 \\
-    \cmidrule{1-7}
-    \multirow{3}{*}{Rosetta}  & NHREF     & 79/91  &  1.3 $10^{-13}$ & 10000    & 2.2 $10^{-3}$ & 10000 \\
-                              & Syntenin  & 76/82  &  7.3 $10^{-13}$ & 10000    & 1.8 $10^{-3}$ & 10000 \\
-                              & DLG2      & 86/97  &  1.3 $10^{-9}$  & 10000    & 9.6 $10^{-4}$ & 10000 \\    
-    \cmidrule{1-7}
-    Proteus                   & NHREF     & 62/91 &   3.22 $10^{-3}$  & 9857    & 1.00 $10^{-2}$ & 9857 \\
-    NEA                       & Syntenin  & 70/82 &   2.83 $10^{-3}$  & 9879    & 3.62 $10^{-3}$ & 9879 \\
-    epsilon=4                 & DLG2      & 83/97 &   1.66 $10^{-3}$  & 9876    & 3.18 $10^{-3}$ & 9876 \\ 
-    \bottomrule        
-  \end{tabular}   
-  \caption{Résultats Superfamily pour les séquences Proteus avec le modèle exactGB (E ref optimisées sur 20 cycles selon les classes + 20 cycles selon les types).}   
-  \label{tab:superfamily_model_B6}       
-\end{table}
+Nous optimisons maintenant les énergies de référence $E_t^r$ pour trois protéines: NHREF,Syntenin et DLG2.Ici, la constante diélectrique de la protéine est fixé à $4$.La méthode d'optimisation utilisé est la méthode parabolique voir (\ref{enumMeth}) avec 20 itérations avec la contrainte des groupes de type d'acide aminés et 20 itérations sans cette contrainte. Chaque itération se fait avec 100 millions de pas. La fonction Proxy converge aux valeurs $0.06$ et $0.03$ , pour les énergies enfuis et respectivement les énergies exposés et aux valeurs $0.03$ (enfuis) et $0.02$ (exposés) pour la fonction proxy calculées sur les types.Ce qui donne pour les $E_t^r$, les variations inférieur à $0,05 Kcal/mol$ sur les $5$ dernires cycles , pour tous les types, sauf pour Arg et Hip dans le cas enfui, où les varations montent à $0.1 Kcal/mol$
+
+Pour pouvoir évaluer l'apport du modèle FDB, nous optimisons également les $E_t^r$ pour les trois protéines avec le modèle NEA et la constante diélectrique de la protéine à $4$. La même méthode est utilisée.Dans ces conditions,les $E_t^r$ se stabilisent à $0.05$ pour tous les types enfuis ou exposés.Ces 4 jeux d'énergies sont données dans le tableau \ref{tab:RefEner3prot}. 
+
 
     \begin{table}[!htbp]
       \centering
-
+      \caption{Les énergies de référence obtenues avec l'optimisation sur 3 protéines.}
       \begin{tabular}{ccc|cc}
 
         \toprule
@@ -895,9 +896,41 @@ PSD95, GRIP, INAD et NHERF. Pour distinguer les variantes du modèle, nous nous 
         \bottomrule
 
       \end{tabular}      
-      \caption{Les énergies de référence obtenues avec l'optimisation 6 protéines.}
-\label{tab:RefEner_groupes}      
+
+\label{tab:RefEner3prot}      
     \end{table}
+
+\subsection{Tests de reconnaissance de famille}
+A présent, nous générons des séquences pour chaque protéine et pour chacun des jeux des $E_t^r$ FDB et NEA. Le protocole pour Proteus est identique à celui utilisé voir de la section \ref{sectionNEA},la constante diélectrique dela protéine étant ici de $4$. Ici encore, les 10 000 séquences de meilleurs énergies parmi celles échantillonnées par les répliques MC sont retenues pour l'analyse.Les résultats Superfamily sont présentés au tableau \ref{tab:superfamily3prot}. Pour le FDB, la reconnaissance des familles et des superfamilles est de 100\% pour les 3 protéines tout comme Rosetta. En terme de E-value, Proteus FDB fait jeu égal avec Rosetta, avec des valeurs pour la superfamille allant de $2.85$ $10^{-6}$ jusqu'à $8.54$ $10^{-14}$ et des valeurs très proche pour la famille.Pour le NEA, les résultats sont correct pour la reconnaissance avec 98\% pour les trois protéines, mais nettement moins bon pour les E-value de la Superfamille. 
+
+
+
+\begin{table}[h]
+  \raggedleft{}
+  
+  \begin{tabular}{ccccccc}
+    
+    \toprule
+    Model &Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+            & size      & Evalue      & success     & Evalue & success\\
+    \cmidrule{1-7}
+    Proteus                   & NHREF     & 80/91  &  8.54 $10^{-14}$  & 10000  & 8.94 $10^{-3}$ & 10000 \\
+    FDB                       & Syntenin  & 70/82  &  2.85 $10^{-6}$   & 10000  & 2.69 $10^{-3}$ & 10000 \\
+    epsilon=4                 & DLG2      & 88/97  &  3.26 $10^{-12}$  & 10000  & 1.96 $10^{-3}$ & 10000 \\
+    \cmidrule{1-7}
+    \multirow{3}{*}{Rosetta}  & NHREF     & 79/91  &  1.3 $10^{-13}$ & 10000    & 2.2 $10^{-3}$ & 10000 \\
+                              & Syntenin  & 76/82  &  7.3 $10^{-13}$ & 10000    & 1.8 $10^{-3}$ & 10000 \\
+                              & DLG2      & 86/97  &  1.3 $10^{-9}$  & 10000    & 9.6 $10^{-4}$ & 10000 \\    
+    \cmidrule{1-7}
+    Proteus                   & NHREF     & 62/91 &   3.22 $10^{-3}$  & 9857    & 1.00 $10^{-2}$ & 9857 \\
+    NEA                       & Syntenin  & 70/82 &   2.83 $10^{-3}$  & 9879    & 3.62 $10^{-3}$ & 9879 \\
+    epsilon=4                 & DLG2      & 83/97 &   1.66 $10^{-3}$  & 9876    & 3.18 $10^{-3}$ & 9876 \\ 
+    \bottomrule        
+  \end{tabular}   
+  \caption{Résultats Superfamily pour les séquences Proteus avec le modèle exactGB (E ref optimisées sur 20 cycles selon les classes + 20 cycles selon les types).}   
+  \label{tab:superfamily3prot}       
+\end{table}
+
 
 
 
