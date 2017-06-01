@@ -982,7 +982,7 @@ Cela représente moins de 10\% de la longueur de la séquence.Pour NHREF,l'appro
   
 \subsection{Taux d'identité à la séquence native}  
   
-Pour chaque protéine, nous calculons le taux d'identité des 10000 séquences de meilleurs énergies par rapport à la séquence native, ainsi que pour les 10000 séquences Rosetta ,voir \ref{TauxID}.Si l'on considère uniquement les positions mutables,ce taux varie pour Proteus entre 26\% et 36\% , et entre 40\% et 52\% soit un écart d'environ 15\% entre les deux outils.Considèrer toutes les positions, fait apparaître , chez Rosetta, des identités très fortes de plus de 60\% en moyenne sur les 6 protéines, voir la table \ref{tab:IdentNEA}.  
+Pour chaque protéine, nous calculons le taux d'identité des 10000 séquences de meilleurs énergies par rapport à la séquence native, ainsi que pour les 10000 séquences Rosetta ,voir \ref{TauxID}.On considère uniquement les positions mutables sans celles aux extrémités des séquences comme expliqué au paragraphe précédent.Ce taux varie pour Proteus FDB entre 24\% et 33\% , et entre 20\% et 33\% pour la version NEA. Pour Rosetta les taux se situent entre 35 et 40\% avec un écart de 11\% pour NHREF sur le FDB et de 7\% pour les deux autres protéines. voir la table \ref{tab:IdentNEA}. Il s'avere donc que les séquences Rosetta sont nettement plus proche des séquences natives que celles de Proteus.  
 
 \begin{table}[!htbp]
       \centering
@@ -1001,6 +1001,12 @@ Pour chaque protéine, nous calculons le taux d'identité des 10000 séquences d
       \caption{Pourcentage d'identité moyen à la séquence native}
 \label{tab:IdentNEA}      
     \end{table}
+
+\subsection{Seqlogos des séquences obtenues}
+
+
+
+
 
     
 \section{Application: Croissance du noyau hydrophobe}
