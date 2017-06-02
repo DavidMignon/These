@@ -982,7 +982,7 @@ Cela représente moins de 10\% de la longueur de la séquence.Pour NHREF,l'appro
   
 \subsection{Taux d'identité à la séquence native}  
   
-Pour chaque protéine, nous calculons le taux d'identité des 10000 séquences de meilleurs énergies par rapport à la séquence native, ainsi que pour les 10000 séquences Rosetta ,voir \ref{TauxID}.Si l'on considère uniquement les positions mutables,ce taux varie pour Proteus entre 26\% et 36\% , et entre 40\% et 52\% soit un écart d'environ 15\% entre les deux outils.Considèrer toutes les positions, fait apparaître , chez Rosetta, des identités très fortes de plus de 60\% en moyenne sur les 6 protéines, voir la table \ref{tab:IdentNEA}.  
+Pour chaque protéine, nous calculons le taux d'identité des 10000 séquences de meilleurs énergies par rapport à la séquence native, ainsi que pour les 10000 séquences Rosetta ,voir \ref{TauxID}.On considère uniquement les positions mutables sans celles aux extrémités des séquences comme expliqué au paragraphe précédent.Ce taux varie pour Proteus FDB entre 24\% et 33\% , et entre 20\% et 33\% pour la version NEA. Pour Rosetta les taux se situent entre 35 et 40\% avec un écart de 11\% pour NHREF sur le FDB et de 7\% pour les deux autres protéines. voir la table \ref{tab:IdentNEA}. Il s'avere donc que les séquences Rosetta sont nettement plus proche des séquences natives que celles de Proteus.  
 
 \begin{table}[!htbp]
       \centering
@@ -1002,79 +1002,9 @@ Pour chaque protéine, nous calculons le taux d'identité des 10000 séquences d
 \label{tab:IdentNEA}      
     \end{table}
 
-    
-\section{Application: Croissance du noyau hydrophobe}
-Comme application de nos modèles optimisés, nous examinons la possibilité de conception du cœur hydrophobe des domaines PDZ. Chaque domaine PDZ est soumis à une simulation REMC avec une succession de fonctions énergétiques biaisées qui favorisent de plus en plus les résidus hydrophobes. La première simulation comprend un terme d'énergie de biais $\delta =0,4 kcal/mol$ (par position) qui pénalise les types d'acides aminés hydrophobes (I,L,M,V,A,W,F et Y). La dernière simulation comprend un terme d'énergie de biais $\delta = -0.4 kcal/mol$ (par position) qui favorise les types hydrophobes. Les valeurs d'énergie de biais intermédiaire $\delta =0,2 kcal/mol$ et $\delta = -0,2 kcal/mol$ sont également simulé. En diminuant progressivement la valeur du biais d'énergie $\delta$, nous \og titrons \fg efficacement dans les résidus hydrophobes.
+\subsection{Logos des séquences obtenues}
 
-Les résultats pour Tiam1 sont présentés à la figure 7. À la plus grande valeur, $\delta$ le cœur hydrophobe de Tiam1 est réduit à 10 positions d'acides aminés (sur 94) qui changent en un type polaire. Les positions modifiées se situent principalement sur le bord extérieur du noyau. A la valeur intermédiaire de $\delta$, le noyau hydrophobe ne compte plus que 4 changements es type polaire par rapport un cœur natif. À la valeur de $\delta$ la plus négative, le cœur hydrophobe devient plus grand, s'étendant vers les régions de surface , avec 14 positions polaires changées en type hydrophobe. Ainsi le nombre de positions modifiées est approximativement symétrique ( environ +/- 12 changements), reflétant le biais. Environ 2/3 des changements se produisent dans des éléments de structure secondaire. Dans l'ensemble, les propensions observées de chaque position à devenir polaire ou hydrophobe en présence d'un biais de pénalité petit ou grand d'énergie $\delta$ peuvent être considérées comme un indice de conception hydrophobe. Ici, 11 des 14 positions du cœur conservées (toute sauf les positions 884,898 et 903) sont restées hydrophobes même au plus haut niveau de biais polaire, avec 13 autres positions, indiquant que ces positions ont la plus grande propension à être hydrophobe. De plus, 14 positions ont changé de polaire à hydrophobe qu niveau de polarisation le plus élevé, indiquant que ces positions aussi ont une certaine propension a être hydrophobe. Les résultats pour Cask sont similaires, avec 11 positions changés en polaire au plus haut biais et 9 changés en hydrophobe au plus haut biais  hydrophobe.
-
-
-    \begin{figure}[h]
-      \centering
-      \begin{tabular}{c}
-        \includegraphics[width=14cm]{titration/alignTiam1.png} \\
-      \end{tabular}
-
-      \caption{\small Séquences Tiam1 obtenues avec un delta des énergies de références à -0.4,-0.2,0,0.2 et 0.4 et la struture native.Les hydrophobes pour des deltas de -0.4,-0.2,0,0.2 et 0.4 sont représentés par un dégradé allant du rouge foncé au vert clair, en passant par le jaune.}
-      
-      \label{titration_Tiam1}
-    \end{figure}
-
-
-    \begin{figure}[h]
-      \centering
-      \begin{tabular}{c}
-        \includegraphics[width=15cm]{titration/structure_Tiam1.png} \\
-      \end{tabular}
-
-      \caption{\small Structure native Tiam1 avec les hydrophobes pour des deltas de -0.4,-0.2,0,0.2 et 0.4 sont représentés par un dégradé allant du rouge foncé au vert clair, en passant par le jaune.}
-      
-      \label{titration_Tiam1}
-    \end{figure}
-
-    
-
-Nous calculons également un paramètre pour décrire le nombre de changements relatifs de type d'acide aminé par unité de l'énergie du biais. Ce  paramètre est défini comme le nombre $\delta N$ de positions de résidu  changées de non polaire à polaire, divisé par le produit de la variation $\delta E$ dans l'énergie de polarisation et le nombre moyen N de position non polaire à biais nul. Nous l'appelons la sensibilité hydrophobe $\psi_h$ . Pour le domaine PDZ Tiams1, ce calcul donne:
-$\psi_h = \frac{1}{N} frac{\delta N}{\delta E} = 0,88$ changements par position et par kcal/mol. Pour Cask, la sensibilité hydrophobe  est  $\psi_h = 0,71$ changements par position et par kcal/mol.
-
-
-\begin{figure}[!h]
-  \centering
-  \begin{tabular}{c}
-    \includegraphics[width=16cm]{titration/alignCASK.png} \\
-  \end{tabular}
-  
-  \caption{\small Séquences Cask obtenues avec un delta des énergies de références à -0.4,-0.2,0,0.2 et 0.4 et la struture native.Les hydrophobes pour des deltas de -0.4,-0.2,0,0.2 et 0.4 sont représentés par un dégradé allant du rouge foncé au vert clair, en passant par le jaune.}
-  \label{result:PDZ_seed}
-\end{figure}
-
-
-
-
-\section{Conclusion}
-
-\subsection{limites du modèle}
-
-Nous paramétrons un modèle CPD simple pour la conception de domaine PDZ, adapté aux applications à conception de nombreuses séquences et mis en œuvre dans le logiciel Proteus. Pour la modélisation de l'état replié, nous utilisons un champ de force protéique de haute qualité. Nous avons testé deux ensembles de paramètres d'énergie de surface atomique $\sigma_i$ et deux modèles de solvant \og GB généralisé \fg, le modèle NEA et le FDB, avec une constante diélectrique $\epsilon_P = 8$  pour le NEA ,et $\epsilon_P = 4$ pour le FDB quantités  qui caractérisent  le modèle de solvant et sont les principaux paramètres empiriques dans la fonction d'énergie de l'état replié. Pour les chaînes latérales, nous utilisons une bibliothèque de rotamères simple et discrète et une petite minimisation de chaque paire pendant le calcul de la matrice d'énergie pour atténuer l'approximation de la discrétisation des rotamères. La fonction d'énergie et la description des rotamères ont été testées de manière approfondie et ont démontré de très bonnes performances pour les tests reconstruction de chaînes latérales \cite{Gaillard16} (comparable au programme populaire Scwrl4 (\cite{Krivov09}) ) et de bonnes performances pour sur un grand ensemble de constant acide/base de protéine \cite{Polydorides13} (supérieure au logiciel Rosetta (\cite{Kilambi12}), malgré un important réglage de paramètres ad hoc).
-
-La représentation de l'état déplié utilise un modèle simple caractérisé par un ensemble de potentiels chimiques d'acide aminé empiriques ou énergies de référence. Ces énergies sont choisies par une procédure de maximisation de la probabilité, formulée ici, afin de reproduire la composition d'acides aminés d'homologues naturels soigneusement sélectionnés. L'état déplié utilisé ici est plus raffiné qu'auparavant, puisque des valeurs d'énergies de référence distinctes sont utilisées pour les positions d'acides aminés qui sont enfuis ou exposés à l'état replié.  
-
-Cette méthode suppose qu'il existe une structure résiduelle à l'état déplié, où certaines positions sont plus enfuies que d'autres. En outre, cela doit rendre le paramétrage plus robuste et moins sensible à la taille et à la structure des homologues naturels utilisés pour définir les compositions d'acide aminé cibles, car les fréquences d'acide aminé des positions exposées et des régions enfouies sont calculées séparément. En principe, cela double le nombre d'énergie de référence à ajuster. Cependant, nous avons réduit ce nombre en introduisant des classes de similarité d''acide aminé, avec une énergie de référence ajustable par classe. Contrainte qui est levée en fin d'optimisation. Lors de l'optimisation d’ énergie de référence, nous effectuons, des calcules de séquences pour chaque protéine de notre jeu de test (à l'état apo) où une position sur deux  peut muter, soit la moitié des positions ( à l'exception de Gly et Pro), avec une simulation distincte pour chaque moitié. De cette façon, lors de l'optimisation des paramètres, une position mutable est toujours entourée d'un environnement  identique au type sauvage au moins sur les deux positions immédiatement voisines sur le squelette. Les calculs de conception des protéines s'appuient sur une méthode d'exploration Monte-Carlo avec échange de réplique, puissante et efficace, qui utilise plus d'un demi-miliard de pas par simulation et par réplique, et  produit des milliers de séquences dans une seule simulation. Les valeurs des énergies de référence sont optimisées avec deux choix différents du couple modèle de solvant constante diélectrique des protéines $\epsilon_p$. Les performances sont améliorées pour le modèle FDB.
-Le modèle présente plusieurs limitations, dont la plupart se trouvent dans les implémentations et les applications du CPD. La première est l'utilisation de la stabilité des protéines comme seul critère de conception, sans prendre en compte explicitement la spécificité du pli \cite{Schmidt08,Simonson13}, la protection contre l'agrégation , ou des considérations fonctionnelles comme la liaison des ligands. Toutefois, nous notons que les tests superfamily n'ont pas entraînés de mauvaises affectations ( séquences perçues comme préférant un autre pli SCOP), donc en pratique, la spécification du pli est réalisée. La limitation supplémentaire est introduite  par l'utilisation d'un squelette protéique fixe lors du calcul de la matrice d'énergie. En fait, le squelette n'est pas vraiment fixe, certains mouvements sont autorisés, mais modélisés implicitement, à travers l'utilisation d'une constante diélectrique protéique supérieure à 1 ($\epsilon_p= 4$ ou 8) (78). Cette valeur diélectrique signifie que la structure protéique (y compris son squelette) est autorisée à se détendre ou à se réorganiser en réponse à une redistribution de charge associée à des mutations ou a un changement de rotamères de la chaîne latérale. Cependant, la réorganisation est modélisée non pas explicitement mais implicitement (78), et elle n'implique pas de mouvement des centres atomiques ou de leur sphère de Van der Waals associée. Ainsi, le squelette ne peut ni se réorganiser en réponse à une répulsion stérique produite par des mutations ou des changements de rotamères ni se déplacer pour remplir l'espace laissé vide par une mutation.  
-L'utilisation d'un squelette fixe peut être en partie compensé en concevant plusieurs structures PDZ. Par exemple, la mise en commun des séquences calculées de Tiam1 et Cask a donnée une entropie moyenne de séquence comparable à celle de l'ensemble expérimental  Pfam, et nous a permis d'inventorier plus de séquences que les calculs avec un seul squelette. Notez qu'une nouvelle méthode pour la conception de protéine multi-backbone a récemment été développée dans Proteus, sur la base d'une méthode Monte-Carlo hybride qui préserve l'échantillonnage de la distribution de Boltzmann \cite{Druart17}. Cette méthode pourra être appliquée dans les prochaines études.
-Une autre limitation de notre modèle est la nécessité, pour des résultats optimaux, de paramètres les énergies de référence spécifiquement pour un ensemble donné de protéines. Cette étape est bien automatisée et de façon très parallèle. Cependant, cela implique plusieurs choix qui sont partiellement arbitraires. Ceux-ci comprennent le choix d'un ensemble de domaines protéiques pour représenter la protéine ou la famille d'intérêt. Nous devons également choisir un seuil de similarité pour définir les homologues cibles à partir desquels sont calculées les compositions expérimentales d'acides aminés. Ici, nous avons choisi d'utiliser les homologues de chaque membre de la famille, de calculer leurs compositions, puis la moyenne sur les six familles. Cette méthode a correctement fonctionné, mais d'autres choix sont possibles et il faut travailler davantage pour pouvoir tirer des conclusions définitives sur ces choix.
-
-Une autre limitation de notre modèle est l'approximation de  la position des chaînes latérales en rotamères discrets. qui nécessite une certaine adaptation de la fonction d'énergie pour éviter les affrontements stériques exagérés. La méthode utilisée ici est la méthode de minimisation de la paire de résidus décrite précédemment (26,76).
-
-Une cinquième limitation est l'utilisation d'un modèle de solvatation additif par paire ( comme dans la plupart des modèles CPD). Plus précisément, l'environnement diélectrique de chaque paire de résidus est supposé ici être celui de la structure native (ce qu'on appelle \og Approvisionnement environnemental natif\fg ou NEA 74,76). Cela conduit à une fonction énergétique qui a la forme d''une somme sur les paires de résidus et peut être précalculée et stockée dans une matrice énergétique, qui sert alors de table de consultations pendant les simulations Monte-Carlo. Malgré cette approximation, le modèle a donné de bons résultats pour un grand nombre d' indices acide/base de référence, un problème très sensible au traitement électrostatique \cite{Polydorides13}. Certaines de ces limitations sont supprimées dans le modèle FDB. En particulier, comme la fonction d'énergie est principalement basée sur la physique, elle a pu être améliorée par implémentations d'un calcul GB plus exact. Par ailleurs, il a été mis en place un modèle amélioré pour la solvatation hydrophobe (80), qui est plus rapide et plus précise que notre terme d''énergie de surface actuelle (article préparation).
-
-\subsection{modèle de test et applications}
-
-Les séquences calculées sont largement comparées aux séquences naturelles, à travers des tests de reconnaissance du pli, des calculs de similarité et des calculs d'entropie. Dans les simulations, nous concevons la totalité de la séquence de la protéine, de sirte que toutes les positions  ( à l'exception de Gly et Pro) peuvent muter librement, soumis seulement à un biais vers la composition moyenne expérimentale des acides aminés ( à travers les énergies de références). Malgré la quasi-absence de biais expérimentaux ou de contraintes, les séquences obtenues ont une forte similitude globale avec les séquences naturelles de Pfam, mesurée par les scores de similarité Blosum40. Les scores obtenus sont, pour l'essentiel, comparables aux scores de similarité entre les paires de séquences Pfam entre elles.  Ainsi, les séquences conçues avec Proteus ressemblent à des homologues naturels modérément éloignés. La similitude est très forte pour les résidus au cœur de la protéine, comme cela a été observé dans des études CPD précédentes (30,72). En revanche, pour les résidus à la surface de la protéine, les scores de similarité sont proches de zéro, le score obtenu si l'on tirait au hasard les acides aminés a ces positions. Notez que de nombreux résidus de surface sont impliqués dans des interactions fonctionnelles, comme les onze résidus de liaison aux peptides dans les domaines PDZ. Les résidus de surface sont également sélectionnés selon l'évolution pour éviter l'agrégation ou des adhésions indésirables. La plupart de ces contraintes fonctionnelles ne sont pas explicitement prises en compte dans  notre protocole de design (bien que la fonction d'énergie soit indirectement la solubilité des protéines). Malgré les scores de similarité limités pour les régions de surface, la reconnaissance de pli avec l'outil Superfamily  appliquée aux meilleurs modèles conçus est presque parfaite. Les tests de reconnaissance de plis antérieurs qui utilisaient une fonction d'énergie plus simple donnaient un taux de reconnaissance de pli inférieur, à environ 85\% (pour un ensemble de tests plus large et plus diversifié) et des similitudes inférieures (15,50).De toute évidence, l'utilisation combinée d'un champ de force protéique amélioré, du solvant GB et des énergies de référence spécifiques à la famille conduisent à des séquences calculées sont proche des séquences natives et sans doute meilleures.
-
-Les séquences Proteus ont également été comparées aux séquences obtenues avec le logiciel Rosetta , qui a lui-même été testé de manière approfondie. Sur la Base des scores de similarité de Blosum (par rapport aux séquences naturelles dans Pfam) et des tests de reconnaissance du pli, les séquences Proteus et Rosetta semblent être de la même qualité. Cependant, Rosetta fait moins de mutations que Proteus; de sorte que les scores d'identité, par rapport à la protéine de type sauvage correspondante, sont environ 6\%  plus haut chez Rosetta. Ce qui veut dire que Proteus modifie environ 5 positions en plus , en moyenne, par domaine PDZ. Ce nombre peut facilement être réduit en ajoutant à la fonction d'énergie de Proteus un terme  d'énergie de biais explicite qui augmente avec le nombre de mutations l'éloignant de la séquence de type sauvage. 
-
-Une autre possibilité pour tester nos séquences  est d'utiliser les simulations de dynamique moléculaire. Nicolas Panel a testé dix séquences Tiam1 calculées dans des simulations MD assez longues, dans la forme apo, en utilisant le même champ de force protéique que dans le modèle CPD (champ de force Amber) et un modèle d'eau explicite. Ces séquences 
+Finalement, nous montrons ici les séquences obtenues. Elle sont représentées sous forme de logos à la figure \ref{logo:corePDZ} pour les positions du coeur hydrophobe, et la figure \ref{logo:} pour les positions exposées. L'accord avec les séquences naturelles sur les positions du coeur est très bon et l'accord sur les positions exposées est nettement moins bon.Mais au regard de la diversité des types aux positions exposées dans les séquences naturelles de Pfam le concensus entre les séquences naturelles est lui-même quasi inexistant.
 
    \begin{figure}[t]
      \scalebox{0.8}{
@@ -1082,8 +1012,8 @@ Une autre possibilité pour tester nos séquences  est d'utiliser les simulation
          \includegraphics[width=18cm]{logos/core.png} \\
        \end{tabular}
      }
-     \caption{Les seqlogos du coeur hydrophode PDZ}
-\label{graph:corePDZ}
+     \caption{Les séquences concues par Proteus et les séquences naturelles représentées sous forme de logo pour les positions du coeur hydrophobe}
+\label{logo:corePDZ}
    \end{figure}
 
    \begin{figure}[t]
@@ -1092,9 +1022,83 @@ Une autre possibilité pour tester nos séquences  est d'utiliser les simulation
          \includegraphics[width=18cm]{logos/exposed.png} \\
        \end{tabular}
      }
-     \caption{Les seqlogos des positions exposées PDZ}
-\label{graph:corePDZ}
+     \caption{Les séquences concues par Proteus et les séquences naturelles représentées sous forme de logo pour les positiones du coeur hydrophobe}
+\label{logo:corePDZ}
    \end{figure}
+
+
+    
+\section{Application: Croissance du noyau hydrophobe}
+Comme application de nos modèles optimisés, nous examinons la possibilité de concevoir du cœur hydrophobe des domaines PDZ. Chaque domaine PDZ est soumis à une simulation REMC avec une succession de fonctions énergétiques biaisées qui favorisent de plus en plus les résidus hydrophobes. La première simulation comprend un terme d'énergie de biais $\delta =0,4 kcal/mol$ (par position) qui pénalise les types d'acides aminés hydrophobes (I,L,M,V,A,W,F et Y). Le biais augmente alors progressivement, est passe par les valeurs intermédiaires $\delta =0,2 kcal/mol$,$\delta =0 kcal/mol$ et  $\delta = -0,2 kcal/mol$.La dernière simulation comprend un terme d'énergie de biais $\delta = -0.4 kcal/mol$ (par position) qui favorise les types hydrophobes. En diminuant progressivement la valeur du biais d'énergie $\delta$, nous \og titrons \fg efficacement les résidus hydrophobes.
+
+      \caption{\small Séquences Tiam1 obtenues avec un delta des énergies de références à -0.4,-0.2,0,0.2 et 0.4 et la struture native.Les hydrophobes pour des deltas de -0.4,-0.2,0,0.2 et 0.4 sont représentés par un dégradé allant du rouge foncé au vert clair, en passant par le jaune.}
+
+
+    \begin{figure}[!htbp]
+      \centering
+      \begin{tabular}{c}
+        \includegraphics[width=20cm]{titration/alignTiam1.png} \\
+      \end{tabular}      
+      \label{titrationAlignTiam1}
+            {\footnotesize Les flèches bleues indiquent les positions du coeur hydrophobe PDZ défini à partir de notre sélection de 6 domaines.Chaque groupe de séquences est une sélection à $\delta$ fixé parmi les séquences de plus faible énergie.}
+
+    \end{figure}
+
+\begin{landscape}
+    \begin{figure}[!htbp]
+      \centering
+      \caption{\small Structure native Tiam1 avec les hydrophobes pour des $\delta$ de -0.4,-0.2,0,0.2 et 0.4 sont représentés par un jeu de couleuts allant du rouge foncé au vert clair, en passant par le jaune.}
+
+      \begin{tabular}{c}
+        \includegraphics[width=20cm]{titration/structure_Tiam1.png} \\
+      \end{tabular}
+      
+      \label{titrationStructTiam1}
+    \end{figure}
+
+\end{landscape}
+
+Les résultats pour Tiam1 sont présentés à la figure \ref{titrationAlignTiam1} et à la figure \ref{titrationStructTiam1}. À la plus grande valeur de $\delta$ le cœur hydrophobe de Tiam1 est réduit à environ 10 positions (environ parce qu'il s'agit d'une sélection de séquences) d'acides aminés (sur 94) qui changent en  un type polaire par rapport aux séquences sans biais. Les positions modifiées se situent principalement sur le bord extérieur du noyau. A la valeur intermédiaire de $\delta$ à $0,2 kcal/mol$, le noyau hydrophobe ne compte plus que 4 ou 5 changements en type polaire. À la valeur de $\delta$ la plus négative, le cœur hydrophobe devient plus grand, s'étendant vers les régions de surface , avec globalement 14 positions polaires changées en type hydrophobe. Ainsi le nombre de positions modifiées est approximativement symétrique ( environ +/- 12 changements), reflétant le biais. Environ 2 tiers des changements se produisent dans des éléments de structure secondaire. Dans l'ensemble, les propensions observées de chaque position à devenir polaire ou hydrophobe en présence d'un biais de pénalité petit ou grand d'énergie $\delta$ peuvent être considérées comme un indice de conception hydrophobe. Ici, 11 des 14 positions du cœur PDZ (toute sauf les positions 884,898 et 903) sont restées hydrophobes au plus haut niveau de biais polaire, avec à peu près 13 autres positions, indiquant que ces positions ont la plus grande propension à être hydrophobe. De plus, près de 14 positions ont basculée de polaire à hydrophobe au niveau de polarisation le plus élevé, indiquant que ces positions aussi ont une certaine propension a être hydrophobe. Les résultats pour Cask sont similaires, avec 11 positions changés en polaire au plus haut biais polaire et 9 changés en hydrophobe au plus haut biais hydrophobe, voir \ref{titrationAlignCask}.
+
+Nous introduisons également un indice pour décrire le nombre de changements relatifs de type d'acide aminé par unité d'énergie du biais. Cet indice  $\psi_h$ est défini comme le nombre $\delta N$ de positions qui ont changées de non polaire à polaire, divisé par le produit de la variation $\delta E$ dans l'énergie de polarisation et le nombre moyen N de position non polaire à biais nul. Nous appelons $\psi_h$ la sensibilité hydrophobe. Pour le domaine PDZ Tiam1, ce calcul donne:
+$\psi_h = \frac{1}{N} \frac{\delta N}{\delta E} = 0,9$ changements par position et par kcal/mol. Pour Cask, la sensibilité hydrophobe  est  $\psi_h = 0,7$ changements par position et par kcal/mol.
+
+
+\begin{figure}[!h]
+  \centering
+  \caption{\small Structure native Cask avec les hydrophobes pour des $\delta$ de -0.4,-0.2,0,0.2 et 0.4 sont représentés par un dégradé allant du rouge foncé au vert clair, en passant par le jaune.}
+
+  \begin{tabular}{c}
+    \includegraphics[width=25cm]{titration/alignCASK.png} \\
+  \end{tabular}
+  
+  \caption{\small Séquences Cask obtenues avec un delta des énergies de références à -0.4,-0.2,0,0.2 et 0.4 et la struture native.Les hydrophobes pour des deltas de -0.4,-0.2,0,0.2 et 0.4 sont représentés par un jeu de couleurs allant du rouge foncé au vert clair, en passant par le jaune.}
+  \label{titrationAlignCask}
+\end{figure}
+
+
+\section{Conclusion}
+
+\subsection{modèle mis en oeuvre}
+
+Nous avons paramétré notre modèle CPD pour la conception de domaine PDZ, mis en œuvre dans le logiciel Proteus. Pour la modélisation de l'état replié, nous avons utilisé un champ de force protéique de qualité. Nous avons effectué un premier paramètrage sur un ensemble de 8 domaines PDZ, dont 2 pour évaluer la tranferabilité du paramètrage, avec un premier modèle de solvant \og GB \fg, le modèle NEA et une constante diélectrique $\epsilon_P$  égale à $8$.Puis nous avons effectué de nouveaux paramétrages sur un ensemble de 3 domaines PDZ, avec une constante diélectrique $\epsilon_P$  égale à $4$ et avec deux modèles de solvant, le NEA et un second modèle \og GB \fg , le modèle FDB. Pour les chaînes latérales, nous utilisons une bibliothèque de rotamères simple et discrète et une petite minimisation de chaque paire pendant le calcul de la matrice d'énergie pour atténuer l'approximation de la discrétisation des rotamères. La fonction d'énergie et la description des rotamères ont été testées de manière approfondie et ont démontré de très bonnes performances pour les tests de reconstruction de chaînes latérales \cite{Gaillard16} (comparable au programme très populaire Scwrl4 (\cite{Krivov09}) ).
+
+La représentation de l'état déplié utilise un modèle simple caractérisé par un ensemble de potentiels chimiques d'acide aminé empiriques ou énergies de référence. Ces énergies sont déterminées par une procédure de maximisation de vraisemblance, décrite ici, afin de reproduire la composition d'acides aminés d'homologues naturels soigneusement sélectionnés. L'état déplié utilisé ici bénécifie d'un raffinement supplimentaire, puisque des valeurs d'énergies de référence distinctes sont utilisées pour les positions d'acides aminés qui sont enfuis ou exposés à l'état replié.  
+
+Cette méthode suppose qu'il existe une structure résiduelle à l'état déplié, où certaines positions sont plus enfuies que d'autres. En outre, cela doit rendre le paramétrage plus robuste et moins sensible à la taille et à la structure des homologues naturels utilisés pour définir les compositions d'acide aminé cibles, car les fréquences d'acide aminé des positions exposées et des régions enfouies sont calculées séparément. En principe, cela double le nombre d'énergie de référence à ajuster. Cependant, nous avons réduit ce nombre en introduisant des classes de similarité d'acide aminé, avec une énergie de référence ajustable par classe. Cette contrainte est levée dans la seconde moitié des cycles d'optimisation. Lors de l'optimisation des énergies de référence, nous effectuons, des calculs de séquences pour chaque protéine de notre jeu de test où une position sur deux  peut muter, soit la moitié des positions ( à l'exception de Gly et Pro), avec une simulation distincte pour chaque moitié. De cette façon, lors de l'optimisation des paramètres, une position mutable est toujours entourée d'un environnement  identique au type sauvage au moins sur les deux positions immédiatement voisines sur le squelette. Les calculs de conception des séquences s'appuient sur une méthode d'exploration Monte-Carlo avec échange de réplique, qui utilise plus d'un demi-miliard de pas par simulation et par réplique, et produit des milliers de séquences par simulation.
+Le modèle présente plusieurs limitations, dont la plupart se trouvent dans les implémentations et les applications du CPD. La première est l'utilisation de la stabilité des protéines comme seul critère de conception, sans prendre en compte explicitement la spécificité du pli \cite{Schmidt08,Simonson13}, la protection contre l'agrégation , ou des considérations fonctionnelles comme la liaison des ligands. Toutefois, nous notons que les tests superfamily n'ont pas entraînés de mauvaises affectations ( séquences perçues comme préférant un autre pli SCOP), donc en pratique, la spécification du pli est réalisée. Une limitation supplémentaire est introduite  par l'utilisation d'un squelette protéique fixe lors du calcul de la matrice d'énergie. En fait, le squelette n'est pas vraiment fixe, certains mouvements sont autorisés, mais modélisés implicitement, à travers l'utilisation d'une constante diélectrique protéique supérieure à $1$ ($\epsilon_p= 4$ ou $8$) (\cite{Simonson13}). Cette valeur diélectrique signifie que la structure protéique (y compris son squelette) est autorisée à se détendre ou à se réorganiser en réponse à une redistribution de charge associée à des mutations ou a un changement de rotamères de la chaîne latérale. Cependant, la réorganisation est modélisée non pas explicitement mais implicitement (\cite{Simonson13}), et elle n'implique pas de mouvement des centres atomiques ou de leur sphère de Van der Waals associée. Ainsi, le squelette ne peut ni se réorganiser en réponse à une répulsion stérique produite par des mutations ou des changements de rotamères ni se déplacer pour remplir l'espace laissé vide par une mutation.  
+L'utilisation d'un squelette fixe peut être en partie compensé en concevant plusieurs structures PDZ. Par exemple, la mise en commun des séquences calculées sur 6 protéines a donnée une entropie moyenne de séquence nettement plus proche de cette de l'ensemble expérimental  Pfam.Une nouvelle méthode pour la conception de protéine multi-backbone a récemment été développée dans Proteus, sur la base d'une méthode Monte-Carlo hybride qui préserve l'échantillonnage de la distribution de Boltzmann \cite{Druart17}. Cette méthode pourra être appliquée dans les prochaines études.
+Une autre limitation de notre modèle est la nécessité, pour des résultats optimaux, de paramètres les énergies de référence spécifiquement pour un ensemble donné de protéines. Cette étape est bien automatisée et de façon très parallèle. Cependant, cela implique plusieurs choix qui sont partiellement arbitraires. Ceux-ci comprennent le choix d'un ensemble de domaines protéiques pour représenter la protéine ou la famille d'intérêt. Nous devons également choisir un seuil de similarité pour définir les homologues cibles à partir desquels sont calculées les compositions expérimentales d'acides aminés. Ici, nous avons choisi d'utiliser les homologues de chaque membre de la famille, de calculer leurs compositions, puis la moyenne sur l'ensemble des familles. Cette méthode a correctement fonctionné, mais d'autres choix sont possibles et des travaux complémentaires sont nécéssaires pour pouvoir tirer des conclusions définitives sur ces choix.
+
+Une autre limitation de notre modèle est l'approximation de la position des chaînes latérales en rotamères discrets. qui nécessite une certaine adaptation de la fonction d'énergie pour éviter les affrontements stériques exagérés. La méthode utilisée ici est la méthode de minimisation de la paire de résidus décrite précédemment (\cite{26},\cite{76}).
+
+Une cinquième limitation est l'utilisation d'un modèle de solvatation additif par paire (comme dans la plupart des modèles CPD). Plus précisément, l'environnement diélectrique de chaque paire de résidus est supposé ici être celui de la structure native (ce qu'on appelle \og Approvisionnement environnemental natif\fg ou NEA \cite{74},\cite{76}). Cela conduit à une fonction énergétique qui a la forme d''une somme sur les paires de résidus et peut être précalculée et stockée dans une matrice énergétique, qui sert alors de table de consultations pendant les simulations Monte-Carlo. Malgré cette approximation, le modèle a donné de bons résultats pour un grand nombre d'indices acide/base de référence, un problème très sensible au traitement électrostatique \cite{Polydorides13}. Certaines de ces limitations sont supprimées dans le modèle FDB. En particulier, comme la fonction d'énergie est principalement basée sur la physique, elle a pu être améliorée par implémentations d'un calcul GB plus exact. Par ailleurs, il a été mis en place un modèle amélioré pour la solvatation hydrophobe (80), qui est plus rapide et plus précise que notre terme d'énergie de surface actuelle (article en préparation).
+
+\subsection{tests et application}
+
+Les séquences concues par Proteus sont comparées aux séquences naturelles, à travers des tests de reconnaissance du pli, des calculs de similarité, des calculs d'entropie et des taux d'identité de séquences. Dans les simulations, nous concevons la totalité de la séquence de la protéine, de sorte que toutes les positions  ( à l'exception de Gly et Pro) peuvent muter librement, soumis à la seulement contrainte de générer une composition moyenne en acides aminés similaire à la composition moyenne expérimentale ( à travers les énergies de références). Malgré la quasi-absence de contrainte expérimentale, les séquences obtenues ont une forte similitude globale avec les séquences naturelles de Pfam, mesurée par les scores de similarité Blosum40. Les scores obtenus sont, pour l'essentiel, comparables aux scores de similarité entre les paires de séquences Pfam entre elles. La similitude est très forte pour les résidus au cœur de la protéine, comme cela a été observé dans des études CPD précédentes (\cite{30},\cite{72}). En revanche, pour les résidus pris sur l'ensemble de la protéine, les scores de similarité sont plus faible, mais l'approximation FDB couplé à une constante dielectrique $\epsilon_p$ égale à 4 donne toujours des séquences similaires à des homologues naturels modérément éloignés. Notez que de nombreux résidus de surface sont impliqués dans des interactions fonctionnelles, comme les onze résidus de liaison aux peptides dans les domaines PDZ. Les résidus de surface sont également sélectionnés selon l'évolution pour éviter l'agrégation ou des adhésions indésirables.Ces contraintes fonctionnelles ne sont pas explicitement prises en compte dans  notre protocole de design.  Malgré ces difficultés sur les résidues de surface, la reconnaissance de pli avec l'outil Superfamily  appliquée aux meilleurs modèles conçus est presque parfaite. Les tests de reconnaissance de plis antérieurs qui utilisaient une fonction d'énergie plus simple donnaient un taux de reconnaissance de pli inférieur, à environ 85\% (pour un ensemble de tests plus large et plus diversifié) et des similitudes inférieures (\cite{15},\cite{50}).De toute évidence, l'utilisation combinée d'un champ de force protéique amélioré, du solvant GB FDB et des énergies de référence spécifiques à la famille conduisent à des séquences calculées sont proche des séquences natives et sans doute meilleures.
+Les séquences Proteus ont également été comparées aux séquences obtenues avec le logiciel Rosetta , qui a lui-même été testé de manière approfondie. Sur la Base des scores de similarité de Blosum (par rapport aux séquences naturelles dans Pfam) et des tests de reconnaissance du pli, les séquences Proteus et Rosetta sont de même qualité. Cependant, Rosetta fait moins de mutations que Proteus; de sorte que les scores d'identité, par rapport à la protéine de type sauvage correspondante, sont entre 7\% et 9\% plus haut chez Rosetta que pour la version FDB de notre modèle. Ce qui veut dire que Proteus modifie environ 5 positions en plus, en moyenne, par domaine PDZ. 
+
 
 
    
