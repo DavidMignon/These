@@ -1,8 +1,46 @@
 
-\chapter{CPD}
+\chapter{le \og CPD\fg: Conception de protéine par ordinateur}
 \label{chap:CPD}
 
+L'ingénierie des protéines est l'ensemble des techniques qui ont pour objet de modifier la fonction, ou la structure d'une protéine en modifiant sa séquence d'acide aminés.Les objectifs sont d'augmenter la stabilités des protéines, à modifier des fonctionnements enzymatiques ou encore à ajouter une conformation altéernative à une protéine.
+Dans ce domaine, existe la mutagénèse dirigée dans laquelle sont une première étape est l'identification des mutations interessantes pour l'objectif fixé, puis des méthodes de génie génétique sont utilisées pour produire les mutants dont les propriétés souhaitées pourront être vérifiées a posteriori.Une deuxième approche est l'évolution dirigée, dans laquelle un ensemble de mutation aléatoire est effectué sur une séquence de protéine d'intérêt et toutes les séquences ainsi produites sont testé afin de trouver la caractéristique atendue.La selection de fait alors, comme pour l'evolution naturelle dont elle reprend les mécanismes, sur les séquences positives aux tests.
+Un autre approche est d'utiliser de la capacité de calculs des ordinateurs, avec l'apparition des méthodes d'ingénierie des protéines \og in silico\fg.L'unes d'elles, le \og Computational Protein Design\fg ou CPD conciste à déterminer les séquences d'acides aminés compatibles avec une structure protéique donnée. Ce qui implique la connaissance de la structure dans l'espace 3D de la protéine.Cette méthode comporte trois élèments principaux.
 
+\begin{enumerate}
+\item la determination d'un espace de conformation de la protéine
+  C'est sur elle que repose la prédiction de structure des séquences considérées.Elle doit être capable de de representer une ou un petit nombre de conformation de la chaîne principale du polypeptide et tout un ensemble dede poistionnemnent de la chaîne latérale de chacun des résidues.
+\item Un fonction d'énergie, qui permet d'évaluer la pertinence des conformations 
+\item Un algorithme d'exploration de l'espace de conformation qui permet grâce à la fonction d'énergie d'échantilloner les séquences favorables.
+  
+\end{enumerate}
+
+Dans ce chapitre, nous aborterons le problème de la modélisation des protéines et de leur espace de conformation, Puis, nous verrons les fonctions d'énergies classiques pour une conformation.Ensuite, sera detaile , les approches possibles pour la modélisation du solvant. Plusieurs algorithmes d'explorations de l'ensembles des conformations serrons vue. Les principaux programme CPD seront énumèrés. Et enfin, nous présenterons quelques applications du CPD.   
+
+
+\section{l'espace de conformation d'une protéine}
+
+\subsection{l'état replié }
+La mécanique moléculaire propose d'utiliser les représentations de la mécanique classique aux molécules.Les atomes sont représent forme de sphère et leur liaisons sous forme de ressorts. Ces objects sont alors considérer être plonger dans un espace 3D euclidien.
+La protéine dans un milieu aqueux est fléxible et en permanence en mouvement.C'est en particulier le cas pour les chaînes latérales ou pour les boucles flexibles. L'espace des d'états d'une protéine, dans le cadre de la mécanique moléculaire est alors constitue un vaste espace continue de conformation possibles. D'autrepart si un polypeptide a un nombre $n$ de résidus compris entre $50$ et $100$ , et que chacunes des $n$ positions de la chaîne peut muter $20$ types differents d'acide aminés, le nombre de polypeptide à considérer est égale à  $n^{20}$.Il est donc nécessaire de réduire la taille de l'espace des conformations à prendre en compte.Pour cela, Ponder & Richards [1987] propose une approche avec le squelette de la protéine fixé, et les conformations des chaînes latérales reduites à un ensemble fini de positionnenent dans l'espace 3D: une bibliothèque discrète de rotamères.Ensuite, des variations sur ce principe ont étés introduites, avec notament l'introduction de bibliothèques de rotamères dépendant du squelettes ou par la prise en compte de la mobilité de la chaîne principale dans un ensemble discret ou continu d'état.L'approche qui consiste à générer un ensemble de squelettes et a faire des calculs CPD pour l'ensemble a été utilisé par [137].Desjarlais permet le mouvement du backbone en autorisant des variations des angles $\phy$, $psi$ et $/omega$. 
+
+
+
+\subsubsection{les chaînes latérales}
+\subsubsection{Le squelette}
+\subsection{l'état deplié }
+\section{l'énegie de conformation}
+\subsection{Les interactions liées }
+\subsection{Les interactions non liées}
+\section{Modélisation du solvant}
+\subsection{modèle CASA}
+\subsection{modèle Poisson Boltzmann}
+\subsection{modèle Born Généralisé}
+\subsubsection{l'approximation NEA}
+\subsubsection{l'approximation FDB}
+\subsubsection{l'algorithme d'exploration}
+
+\section{Les programmes CPD}
+\section{Les succès}
 
 %%% Local Variables:
 %%% mode: latex
