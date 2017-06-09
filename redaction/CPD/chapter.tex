@@ -20,19 +20,68 @@ Dans ce chapitre, nous aborterons le problème de la modélisation des protéine
 \section{l'espace de conformation d'une protéine}
 
 \subsection{l'état replié }
-La mécanique moléculaire propose d'utiliser les représentations de la mécanique classique aux molécules.Les atomes sont représent forme de sphère et leur liaisons sous forme de ressorts. Ces objects sont alors considérer être plonger dans un espace 3D euclidien.
-La protéine dans un milieu aqueux est fléxible et en permanence en mouvement.C'est en particulier le cas pour les chaînes latérales ou pour les boucles flexibles. L'espace des d'états d'une protéine, dans le cadre de la mécanique moléculaire est alors constitue un vaste espace continue de conformation possibles. D'autrepart si un polypeptide a un nombre $n$ de résidus compris entre $50$ et $100$ , et que chacunes des $n$ positions de la chaîne peut muter $20$ types differents d'acide aminés, le nombre de polypeptide à considérer est égale à  $n^{20}$.Il est donc nécessaire de réduire la taille de l'espace des conformations à prendre en compte.Pour cela, Ponder & Richards [1987] propose une approche avec le squelette de la protéine fixé, et les conformations des chaînes latérales reduites à un ensemble fini de positionnenent dans l'espace 3D: une bibliothèque discrète de rotamères.Ensuite, des variations sur ce principe ont étés introduites, avec notament l'introductoin de la prise en compte de la mobilité de la chaîne principale dans un ensemble discret ou continu d'état.L'approche qui consiste à générer un ensemble de squelettes et a faire des calculs CPD pour l'ensemble a été utilisé par [137].Desjarlais permet le mouvement du backbone en autorisant des variations des angles $\phy$, $psi$ et $/omega$. 
+La mécanique moléculaire propose d'utiliser les représentations de la mécanique classique aux molécules.Les atomes sont représent forme de sphère.Ces objects sont alors considérer être plonger dans un espace 3D euclidien.
+La protéine dans un milieu aqueux est fléxible et en permanence en mouvement.C'est en particulier le cas pour les chaînes latérales ou pour les boucles flexibles. L'espace des d'états d'une protéine, dans le cadre de la mécanique moléculaire est alors constitue un vaste espace continue de conformation possibles. D'autrepart si un polypeptide a un nombre $n$ de résidus compris entre $50$ et $100$ , et que chacunes des $n$ positions de la chaîne peut muter $20$ types differents d'acide aminés, le nombre de polypeptide à considérer est égale à  $n^{20}$.Il est donc nécessaire de réduire la taille de l'espace des conformations à prendre en compte.Pour cela, Ponder & Richards [1987] propose une approche en deux points:
+\begin{enumerate}
+\item Le squelette de la protéine est fixé.
+\item Les conformations des chaînes latérales sont reduites à un ensemble fini de positionnenent dans l'espace 3D.
+\end{enumerate}  
+Ensuite, des variations sur ce principe ont étés introduites, avec notament l'introductoin de la prise en compte de la mobilité de la chaîne principale dans un ensemble discret ou continu d'état.L'approche qui consiste à générer un ensemble de squelettes et a faire des calculs CPD pour l'ensemble a été utilisé par [137]. 
+Nous présentons maintenant, la modélisation des chaînes latérales et celle du backbone.
 
 \subsubsection{les chaînes latérales}
 
-les travaux de Finkelstein et Ptitsyn [77],Janin et al [78] ainsi que Ponder et Rischars [87] ont établie que la chaîne latérales des résidues, sur un ensemble de protéines, adope de facon préférentiel un petit ensemble de conformation (fig \ref{..}). Janin introduit alors le terme de \og rotamère\fg pour désigner ces conformations. Il est alors possible reduite l'espace continue des conformations des acides aminés à cette ensemble discret de rotamères.la plupart des méthodes de CPD utilisent cette discrétisation.Beaucoup de librairies de rotamères ont été proposées dansla litérarure scientifique. la plupart sont indépendantes du backbone.s  
-
-
+les travaux de Finkelstein et Ptitsyn [77],Janin et al [78] ainsi que Ponder et Rischars [87] ont établie que la chaîne latérales des résidues, sur un ensemble de protéines, adope de facon préférentiel un petit ensemble de conformation (fig \ref{..}). Janin introduit alors le terme de \og rotamère\fg pour désigner ces conformations. Il est alors possible reduite l'espace continue des conformations des acides aminés à cette ensemble discret de rotamères.la plupart des méthodes de CPD utilisent cette discrétisation.Beaucoup de librairies de rotamères ont été proposées dans la litérarure scientifique. la plupart sont indépendantes du backbone. Mais il existe également des librairies qui dépendent du squelette de la protéine voir [147,148].Le nombre de structures de protéine utilisé est variable , La librairie de Tufféry utlise 53 structures. 
 
 \subsubsection{Le squelette}
+Partant du fait que les positionnements des chaînes latérales ne modifie que faiblement la structure adoptée par le backbone,la chaîne principale de la protéine est fixé dans beaucoup de programme CPD. Le problème de la prédiction de struture est alors ramener à celui du placement des chaînes latérale sur ce squelette. De part la configuration particulière de la proline avec le backbone de type est traité a part. Cette approche a obtenue de nombreux succès , voir \ref{...}.
+Cependant, cette approximation peu avoir des consequences importantes.Un type d'acide aminé considéré comme défavorable peut devenir favorable avec une petite adapation du backbone et il a été établie que quelques mouvements de squelettes peuvent faire varié significativement l'énergie de la conformation (Desjarlais et Handel [1999]).
+En réponse à ce problème, [137] propose de générer un ensemble de squelettes et de faire du CPD pour chacun des exemplaires obtenus. Une autre approche consiste à donner une certaine liberté aux angles $\phy$ , $\psi$ en introudisant des variations aliéatoires sur ceux-ci (Desjarlais et Handel)[141].
+Puis raissament, De Dantas et al [2007] font des simulations avec une minimisation après chaque mouvement de chaîne latérale.Kuhlman et al [2003] optimisent alternativement la structure du squelette et la séquence d'acide aminés.Enfin, citont l'utilisation du classes particulier de mouvement des squelettes protéiques appelé \og backrub \fg. Ce sont des mouvements naturels du backbone mis en évidence par David et al [2006], à partir de structures cristallographiques. Ces mouvenent consiste en des déplacement de l'ensemble $C_{\alpha}-C_{\beta}$ à une position $i$ donnée de la chaîne, sans déplacement des carbones $C_{\alpha_{i+1}}$ et $C_{\alpha_{i-1}}$ . Ces mouvements backrub ont permis à Georgiev et al [2008] et Smith et Kortemme [2008] d'améliorer la qualité des prédiction des mutants par rapport à des simllutations à squelette rigide.
+
 \subsection{l'état deplié }
+Lorsque la stabilité d'une protéine est évalué par une variation de l'énergie libre entre son état déplié et son état replié, il faut connaître l'énergie de l'état déplié.mais cet état est déstructré et ne correspond pas à une conformation unique; la modélisation hexaustive est difficile. Une approche simple consite à représenter cet état par une chaîne étendue; un résidu de la protéine est en interaction principalement avec le solvant et avec le backbone.Ainsi l'énergie libre de l'état déplié dépend de la séquence uniquement par la composition en acide aminés de celle-ci.En pratique, on peut utiliser pour chaque type d'acide aminé X de la protéine  un tripeptide ALA--X--ALA , et on identifie son exposition au solvant à celle de X dans l'état déplié [152] Dahiyat & Mayo [1996]. On en déduit une énergie définie par type X que l'on somme pour l'énergie de la protéine dépliée. 
+
 \section{l'énegie de conformation}
+
+La fonction d'énergie (ou fonction de score) de conformation permet d'évaluer la stabilité ( ou une affinité avec un ligand) de chaque conformation de la protéine. Cette fonction doit être capable de prendre en compte les détails des interactions entre les atomes de la protéine, les effets de l'environnement aqueux  dans lequel elle se trouve et en même temps être suffisament rapide pour évaluer en un temps raisonnable une partie la plus significative possible de l'espace des conformations.Une classe importante est constitué des fonctions d'énergie basée sur la mécanique moléculaire.
+
+\subsection{La mécanique moléculaire}
+La mécanique moléculaire représente les atomes comme des particules sphériques ayant une charge électrique nette fixe et chaque liaison est modélisé par ressort.
+Cette mécanique consiste à intégrer les équations du mouvement de la mécanique classique dans un champ de force propre aux molécules étudiés.Ce champ de force décrit les interactions inter-atomiques du point de vue énergétique et est invariant au cours d'une simulation.
+Dans la suite, nous appelons $E_{MM}$ l'énergie qui dérive d'un tel champs de force.
+
+Il existe beaucoup de champs de force à la disposition des simulateurs voici les quatre principaux optimisés pour les protéines:
+
+\begin{enumerate}
+\item AMBER: Assisted Model Building with Energy Refinement [106]
+\item CHARMM: Chemistry at HARvard Molecular Mechanics [105]
+\item OPLS: Optimized Potential for Liquid Simulations [107]
+\item GROMOS:GROningen MOlecular Simulation [108]
+\end{enumerate}
+
+L'énergie d'une conformation se défini alors comme la somme de l'énergie $E_{MM}$  et de l'énergie de solvatation:
+
+\begin{equation}
+  E = E_{MM} + E_{solv}
+\end{equation}
+
+Le terme E_{MM} se décompose en :
+
+\begin{equation}
+  E_{MM} = E_{bond} + E_{inbond}
+\end{equation}
+
+avec $E_{bond}$ l'énergie d'interactions des atomes éloignés d'au plus deux liaisons covalentes et $E_{inbond}$  l'énergie des autres interactions.
+
 \subsection{Les interactions liées }
+
+
+
+inclut un terme d'élongation des liaisons,un terme de déformation des angles, de rotation des angles dièdres, de torsions, des interactions de Van der Waals, enfin un terme électrostatique de Coulomb. 
+
+
+
 \subsection{Les interactions non liées}
 \section{Modélisation du solvant}
 \subsection{modèle CASA}
