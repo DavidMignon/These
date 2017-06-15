@@ -199,7 +199,7 @@ avec $A_i$ la surface accessible au solvant  de l'atome $i$ et $\sigma_{t_i}$ un
 \subsection{modèle CASA}
 
 
-La présence des molécules d'eau qui sont très fortement polarisé induit une adénuation des interactions électostatiques entre atomes de la protéine. On parle de l'écrantage induit par l'eau.
+La présence des molécules d'eau qui sont très fortement polarisé induit une aténuation des interactions électostatiques entre atomes de la protéine. On parle de l'écrantage induit par l'eau.
 
 
 Le modèle \og Coulomb Accessible Surface Area\fg (CASA) réduit l'effet électrostatique du solvant à l'écrantage subit par la protéine. 
@@ -208,18 +208,24 @@ Le modèle \og Coulomb Accessible Surface Area\fg (CASA) réduit l'effet électr
 \Delta G_{solv} \approx E_{screen} + \sum_i \sigma_{t_i} A_i
 \end{equation}
 
-
-avec le terme $E_{screen}$ 
+avec 
 
 \begin{equation}
-E_{screen} =  (\frac{1}{\epsilon} -1 )E_{elec}
+E_{screen} =  (\frac{1}{\epsilon} -1 )E_{coul}
 \end{equation}
 
-
-
+Ainsi, l'ecrantage est décrit par un facteur unique pour toutes les interactions électrstatiques.La simplicité de ce modèle proposé par Wesson et Einsenberg [212]fait de lui un modèle fréquement utilisée. Cependant, il est en difficulté pour le traitement de la surface des protéines.
 
 \subsection{modèle Poisson Boltzmann}
+La méthode de Poisson Boltzmann est très utilisés parce qu'elle a l'avantage de fournir des résultats de grande précision. I
+
+
+
 \subsection{modèle Born Généralisé}
+
+
+
+
 \subsubsection{l'approximation NEA}
 \subsubsection{l'approximation FDB}
 \subsubsection{l'algorithme d'exploration}
