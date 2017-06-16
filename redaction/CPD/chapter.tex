@@ -199,7 +199,7 @@ avec $A_i$ la surface accessible au solvant  de l'atome $i$ et $\sigma_{t_i}$ un
 \subsection{modèle CASA}
 
 
-La présence des molécules d'eau qui sont très fortement polarisé induit une adénuation des interactions électostatiques entre atomes de la protéine. On parle de l'écrantage induit par l'eau.
+La présence des molécules d'eau qui sont très fortement polarisé induit une aténuation des interactions électostatiques entre atomes de la protéine. On parle de l'écrantage induit par l'eau.
 
 
 Le modèle \og Coulomb Accessible Surface Area\fg (CASA) réduit l'effet électrostatique du solvant à l'écrantage subit par la protéine. 
@@ -208,21 +208,109 @@ Le modèle \og Coulomb Accessible Surface Area\fg (CASA) réduit l'effet électr
 \Delta G_{solv} \approx E_{screen} + \sum_i \sigma_{t_i} A_i
 \end{equation}
 
-
-avec le terme $E_{screen}$ 
+avec 
 
 \begin{equation}
-E_{screen} =  (\frac{1}{\epsilon} -1 )E_{elec}
+E_{screen} =  (\frac{1}{\epsilon} -1 )E_{coul}
+\end{equation}
+
+Ainsi, l'ecrantage est décrit par un facteur unique pour toutes les interactions électrstatiques.La simplicité de ce modèle proposé par Wesson et Einsenberg [212]fait de lui un modèle fréquement utilisée. Cependant, il est en difficulté pour le traitement de la surface des protéines.
+
+\subsection{modèle Poisson Boltzmann}
+La méthode de Poisson Boltzmann est très utilisés parce qu'elle fournit des résultats de grande précision,prend en compte l'effet ionique et toute la forme de la protéine. Dans cette méthode, la protéine est supposée fixe, elle forme une cavité dans un milieu continu diélectrique qui peut est polarisé (on parle de continuum), Il s'agit donc encore d'un modèle de solvant implicite.Par contre les charges de la  proteine sont traitées de façon explicite. Ainsi ce modèle est capable de prendre en compte l'écrantage du solvant sur les interactions intrasoluté, mais aussi les interactions électrostatiques entre groupes chargés  de la proteine et solvant polarisé.Le continuum est munie d'une distribution de charge \rho_P , alors le potentiel électrostatique dans ce milieu est donnée par l'équation de Poisson:
+
+\begin{equation}
+  -\nabla . \epsilon(x)\nabla \phi(x) = \rho(x)  
+\end{equation}
+
+avec $\epsilon(x)$ le coefficient diélectrique qui depend du milieu, \phi (x) le potentiel électrostatique .Typiquement \epsilon prend des valeurs faibles , entre 1 à 8 pour les protéines, et élevè pour l'eau à 80.
+
+L'équation de Poisson-Boltzmann est une expension de l'équation de Poisson dans laquelle les charges d'ions mobiles sont pris en compte.La théorie de Debys-Hückel donne la distribution des ions comme suivant une loi de Boltzmann ( d'où son nom):
+
+
+\begin{equation}
+  \rho_i =  C_i \exp{-q_i(\psi(x)+ V_i(x))}
+\end{equation}
+
+avec $C_i$ une constante pour chaque type d'ion $i$, $q_i$ la charge partielle en dans le potentoel $\psi(x)$ , et  $V_i(x)$ une fonction d'énergie stérique représente la difficulté des charges mobiles à pénetrer dans le soluté.
+
+La distributions de charge devient:
+
+\begin{equation}
+  \rho_{PB} = -\nabla . \epsilon(x)\nabla \phi(x) + C_i \exp{-q_i(\psi(x)+ V_i(x))}
+\end{equation}
+
+Malheureusement, il n'existe pas , pour les protéines , de solution analytique à \ref eq. Il faut effectué une résolution numérique. Plusieurs programmes sont à la disposition de la communauté, DelPhi[], APBS[] qui sont basés sur la méthodes des différences finies [][] et des éléments finis [][][].
+
+Une fois le potentiel électrostatique calculé, l'énergie libre électrostatique  est donné par:
+
+\begin{equation}
+\Delta G_{elec} = frac{1}{2} \int \rho \phi dx
+\end{equation}
+
+
+Quelque soit l'approche utilisée les calculs sont couteux pour une protéine entière.
+
+
+\subsection{modèle Born Généralisé}
+
+Le modèle de solvant GB pour \og Generalized-Born  \fg est une façon de reexpriment l'équation de Poisson-Bolztlman; ce qui ouvre la voie à une nouvelle classe d'approximations.L'objectif est alors de donner les résultats de mêmes qualités que PB avec un coût numérique bien inférieur.On procede de la façon suivante:Dans un premier temps, on cherche à évaluer l'énergie libre électrostatique d'un ensemble de N particules, de rayon de Born $R_i$ de charge $q_i$ dans une milieu de constante diélectrique $\epsilon$:
+
+\begin{equation}
+  \label{eq:GB}
+  \Delta G_{elec} = - frac{1}{8\pi} (1 - frac{1}{\epsilon}) \sum_{i=1}^{N} frac{}{q_i^2}{\alpha_i}
 \end{equation}
 
 
 
+\begin{equation}
+  \label{eq:GB}
+  E_{elec} =  E_{Coul} + \Delta G_{solv}
+\end{equation}
 
-\subsection{modèle Poisson Boltzmann}
-\subsection{modèle Born Généralisé}
-\subsubsection{l'approximation NEA}
-\subsubsection{l'approximation FDB}
-\subsubsection{l'algorithme d'exploration}
+
+\begin{equation}
+  \label{eq:GB}
+  E_{elec} = \sum_{i\neq j}^{N} frac{q_iq_j}{r_{ij}} + \Delta G_{solv}
+\end{equation}
+
+
+
+chez Najette
+\begin{equation}
+  \label{eq:GB}
+  \Delta G_{solv} = \sum_i \Delta E_i^{self} + \sum_{i<j} \Delta E_{ij}^{int}  
+\end{equation}
+
+Dans article Fran
+
+
+\begin{equation}
+  \label{eq:GB}
+  \Delta G_{solv} = \sum_{ij} g_{ij} 
+\end{equation}
+
+
+\begin{equation}
+  \label{eq:GB}
+  g_{ij}=g(r_i,r_j) = \tau q_iq_j (r²_{ij} + b_ib_j exp(-r²_{ij}/4b_ib_j)})^{-1/2} 
+\end{equation}
+
+avec $\tau = frac{1}{\epsilon_w} - frac{1}{\epsilon_p}$, $\epsilon_w$ étant la constante diélectrique du solvant,$\epsilon_p$ étant la constante diélectrique de la protéine. 
+
+Cette expression est exacte lorsque les rayons de Born ne se recouvrent pas. Mais les rayons de Born des différentes particules ne sont pas connus.
+Dans le cas où les rayons de Born se recouvrent, Il a été proposée une généralisation de la formule ~\ref{eq:BG} [23]:
+
+
+\begin{equation}
+  \label{eq:GB}
+  \Delta G_{elec} = - frac{1}{8\pi} (1 - frac{1}{\epsilon})  \sum_{i=1}^{N} \sum_{j>i}^{N}  frac{}{q_iq_j}{\sqtr{r^2_{ij} + \alpha_i\alpha_j exp (frac{-r^2_{ij}}{4\alpha_j \alpha_j})}}
+\end{equation}
+
+Le calcul des rayons de Born $\alpha_i$ se fait par le calcul de l'énergie libre électrostatique de l'atome $i$, dans la situation où toutes les autres particules ont une charge ramenée à zéro. 
+
+
+\section{l'algorithme d'exploration}
 
 \section{Les programmes CPD}
 \section{Les succès}
