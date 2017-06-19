@@ -131,6 +131,7 @@ avec $D_0$ et $r_0$ des constantes, r_{ij} la distance entre l'atome $i$ et l'at
   
 \end{enumerate}
 
+
 \subsection{D' autres approches}
 
 Même si la mécanique moléculaire prédomine dans le monde du CPD , il existe d'autres approches.Mayo [2006] utilise une fonction empirique pour la modélisation des liaisons hydrogènes, d'une focntion d'énergie coulombienne qui contient un $\epsilon$ qui varie en fonction de la distance interatomique.Il existe des fonctions d'énergie  conportant des élements relevant de statisque sur les protéines. Il existe encore des fonctions d'énergie à gros grains notament dans la modélisation des forces de Van der Walls utiles pour les applications d'interactions protéine-protéine.
@@ -254,7 +255,7 @@ Quelque soit l'approche utilisée les calculs sont couteux pour une protéine en
 
 \subsection{modèle Born Généralisé}
 
-Le modèle de solvant GB pour \og Generalized-Born  \fg est une façon de reexpriment l'équation de Poisson-Bolztlman; ce qui ouvre la voie à une nouvelle classe d'approximations.L'objectif est alors de donner les résultats de mêmes qualités que PB avec un coût numérique bien inférieur.On procede de la façon suivante:Dans un premier temps, on cherche à évaluer l'énergie libre électrostatique d'un ensemble de N particules, de rayon de Born $R_i$ de charge $q_i$ dans une milieu de constante diélectrique $\epsilon$:
+Le modèle de solvant GB pour \og Generalized-Born  \fg se base sur une expression nouvelle  de l'équation de Poisson-Bolztlman; ce qui ouvre la voie à une nouvelle classe d'approximations.L'objectif est alors de donner les résultats de mêmes qualités que PB avec un coût numérique bien inférieur.On procede de la façon suivante:Dans un premier temps, on cherche à évaluer l'énergie libre électrostatique d'un ensemble de N particules, de rayon de Born $R_i$ de charge $q_i$ dans une milieu de constante diélectrique $\epsilon$:
 
 \begin{equation}
   \label{eq:GB}
@@ -296,7 +297,7 @@ Dans article Fran
   g_{ij}=g(r_i,r_j) = \tau q_iq_j (r²_{ij} + b_ib_j exp(-r²_{ij}/4b_ib_j)})^{-1/2} 
 \end{equation}
 
-avec $\tau = frac{1}{\epsilon_w} - frac{1}{\epsilon_p}$, $\epsilon_w$ étant la constante diélectrique du solvant,$\epsilon_p$ étant la constante diélectrique de la protéine. 
+avec $\tau = frac{1}{\epsilon_w} - frac{1}{\epsilon_p}$, $\epsilon_w$ étant la constante diélectrique du solvant,$\epsilon_p$ étant la constante diélectrique de la protéine. $bi$ et $bj$  sont les rayons de solvatations.
 
 Cette expression est exacte lorsque les rayons de Born ne se recouvrent pas. Mais les rayons de Born des différentes particules ne sont pas connus.
 Dans le cas où les rayons de Born se recouvrent, Il a été proposée une généralisation de la formule ~\ref{eq:BG} [23]:
@@ -307,10 +308,78 @@ Dans le cas où les rayons de Born se recouvrent, Il a été proposée une gén�
   \Delta G_{elec} = - frac{1}{8\pi} (1 - frac{1}{\epsilon})  \sum_{i=1}^{N} \sum_{j>i}^{N}  frac{}{q_iq_j}{\sqtr{r^2_{ij} + \alpha_i\alpha_j exp (frac{-r^2_{ij}}{4\alpha_j \alpha_j})}}
 \end{equation}
 
-Le calcul des rayons de Born $\alpha_i$ se fait par le calcul de l'énergie libre électrostatique de l'atome $i$, dans la situation où toutes les autres particules ont une charge ramenée à zéro. 
+Le calcul des rayons de Born $\alpha_i$ se fait par le calcul de l'énergie libre électrostatique de l'atome $i$, dans la situation où toutes les autres particules ont une charge ramenée à zéro.Ainsi, chaque charge  de la protéine est caractérisée par sa distance au solvant.
 
 
 \section{l'algorithme d'exploration}
+
+Après, un choix de l'espace d'état des conformations/séquences, après la construction d'une fonction d'énergie qui qualitie les états d'interét.Il reste, pour completer les ingrediants de bases du CPD, à choisir un algorithme d'exploration de l'espace d'état. Dans l'idélal,l'objectif du CPD est d'obtenir l'ensemble de séquences d'acide aminés qui sont compatibles à une structure 3D de repliment ou qui réalisent une fonction donnée.Un tel algorithme a pour grand défi de faire face à immensité de l'espace d'état. On peut classer les différentes approchent utilisées en deux groupes.
+
+\begin{enumeration}
+Le premier groupe est constitué des méthodes deterministes dans lesquelles les choix effectués sont toujours soient determiné  a priori soient determiné en fonction des éléments obtenus au court de l'execution du programme qui l'implement. On trouve par exemple dans ce groupe, les méthodes exhaustives qui peuvent être appliqué à de petites espaces conformationnels ou encore les méthodes dites semi-exhaustives dans lesquels la complexité combinatoire est réduite en autorisant uniquement  certaines conformation à certain moments de l'exploration.Un classe interessante de ce groupe est consituté des algorithmes exactes qui se focalise non pas sur l'objectif du  CPD , mais sur l'obtention  de la conformation  de meilleure  énergie on parle alors de \og Global Minimum Energy Cost \fg (GMEC)
+\end{enumeration}
+
+\begin{enumeration}
+  Le second groupe est celui des méthodes stochastiques et/ou heuristiques. Elles ont vocation à determiner des solutions réalistes sans obtenir de garantie sur l'optimum en énergie des solutions. Elles sont non-deterministes c'est à dire qu'elles choisisent certains éléments de facon aléatoire, en pratique quasi-aléatoire dans les implemantations via des générateurs de nombre pseudo-aléatoire.Elles ont l'avantage d'être utilisables sur les espaces d'états non-discretisé, par exemple [154], les rotamére peuvent varier de façon continue.
+
+\end{enumeration}
+
+
+Pour rendre possible l'utilisation de plusieurs outils algoritmique , il devient nécessaire d'imposer des contraintes sur la structure de la fonction d' l'énergie. Il existe alors en CPD doit être décomposable en une energie dite propre qui rassemble les effets de la chaîne latérale et du bakbone, d'une part et une énergie d'interaction rotamère-rotamère qui se decompose comme une somme sur des interactions sur les couples de chaines latérales prises deux à deux.
+
+on a alors la formule suivante:
+
+\begin{équation}
+E{c} = \sum_i E_i(r_i) + \sum_{i\neqj} E_{ij}(r_i,r_j)
+\end{équation}
+
+
+Nous présentons quelques algorithme parmis les plus utilisés.
+
+\subsection{Algorithme du champ moyen}
+Le principe de la méthode du champ moyen est le substituer l'ensembles des interactions d'un rotamère $r_0$ avec les autres rotamères par une interaction unique moyenne. Pour calculer une interaction moyenne, la probabilité de Boltzmann est utilisée de la façon suivante, on note $P(r_{i})$ la probabilité que la chaîne latérale à la position $i$ soit dans l'état rotamère $r_i$, on a:
+\begin{equation}
+P(r_i) = frac{\exp(-\betaE(r_{i})})}{\sum_{l_i=1}^{N_i} \exp{-\beta E(l_i)}}
+\end{equation}
+avec $N_i$ le nombre total de rotamère à la position $i$ , et $\beta = frac{1}{RT}$,  $R$ étant la constante des gas parfaits et T la température.
+
+Si l'on ne limite au cas où une énergie d'interaction pour un résidu est la somme des interactions avec les autres positions de la chaîne, alors l'énergie d'interaction moyenne en $i$ est la somme des interactions impliquant le rotamère $r_i$ pondéré par le poids de Boltzmann de l'autre rotamère, c'est à dire
+
+\begin{equation}
+E(r_i) = \sum_{i \neq j} \sum_l_j^N_j E(r_i,l_j)P(l_j)
+\end{equation}  
+
+avec $l_j$ parcourant tous les rotamères aux positions autres que $i$.
+
+Les formules () et (), constitue un système itératif.Ainsi, l'algorithme debute
+
+
+\begin{enumeration}
+\item  Etape 0 à chaque position, les rotamères sont équiprobable.
+\item  Etape 1 Les énergies moyennes sont calculées grâce à la formule ().
+\item  Etape 2 De nouvelles probabilités de Boltzmann sont calculées à partir des énergies moyennes precedentes   
+\end{enumeration}
+
+
+Les étapes 1 et 2 sont répétée jusqu'à convergence des énergies.Cette méthode garantit la convergence vers un ensemble de rotamère un plus stable à chaque position placé dans son \og environnement moyen\fg .Le temps de calculs avec cet algorithme augmente  de façon linéaire avec le nombre de résidus de la protéine.Ce qui en fait un des algorithmes les plus rapides.
+
+\subsection{Dead-End Elimination}
+
+Le \og Dead End Elimination\fg (DEE)  consite à éliminer des mauvais rotamères , ou des mauvaises combinaisons de rotamères qui ne peuvent pas aboutir à la combianisons de rotamère qui minimisent de façon global, l'énergie.Comme pour le champ moyen, l'énergie doit être décomposable en une energie propre et une énergie de paires.
+
+Il existe plusieurs critères d'élimination (Goldstein [1994]),(Desmet [1992])
+
+
+
+
+\subsection{le CFN}
+
+\subsection{l'heuristique de Wernisch}
+\subsection{Algorithme  génétique}
+\subsection{Monte-Carlo}
+
+
+
 
 \section{Les programmes CPD}
 \section{Les succès}
