@@ -415,15 +415,20 @@ si E^{r_i,r_j} + \sum_{k=1}^N min_{r_k} (E_{ik}(r_i,r_k) + E_{jk}(r_j,r_k)) >  E
 L'élimination d'un couple $(r_i,r_j)$, n'exclue pas pour autant la présence de $r_i$ ou de $r_j$ dans la solution optimale. 
 
 \item le critère de Goldstein \ref{}
-  Il s'agit d'une amélioration du critère simple du DEE. Il existe de nombreuses situations dans lequel l'énergie avec un rotamère $r_i$  est toujours diminuée en la remplaçant par un autre rotamère $r'_i$. On peut donc l'éliminer. Or, cela n'implique pas forcement la condition du critère simple.Ce critère peut s'expirmer de la façon suivante:
+  Il s'agit d'une amélioration du critère simple du DEE. Il peut existe des situations dans lesquelles l'énergie avec un rotamère $r_i$  est toujours diminuée en la remplaçant par un autre rotamère $r'_i$. On peut donc l'éliminer. Or, cela n'implique pas forcement la condition du critère simple.Ce critère peut s'expirmer de la façon suivante:
 
 \begin{equation}
 si E_i^{r_i} - E_i^{r_j}+ \sum_{k=1}^N min_{r_k} (E_{ik}(r_i,r_k) + E_{jk}(r_j,r_k)) > 0, alors $r_i$ est éliminé.
 \end{equation}
 
+Voir la figure ....
   
 \end{enumeration}
+Au court de l'optimisation, les deux critéres peuvent être utilisé alternativement, jusqu'à qu'il n'y est plus de rotamère à éliminer.Il est alors possible d'utiliser une approche hexausitve sur l'espace d'états réduit obtenu, pour obtenir le GMEC.
 
+Cette méthode permet dans les bons cas ( par exemple pour les petits systèmes) de converger en un temps raisonnable[26].Beaucoup de variantes du DEE [158,152] ont été proposé Pierce NA, Spriet JA, Desmet J, Mayo SL. (2000). Conformational splitting: a more powerful criterion for dead-end elimination. J Comput Chem 21: 999-1009. Notament en travaillant sur des ensembles de plus de deux rotamère.
+
+figure figure...
 
 \subsection{le CFN}
 
