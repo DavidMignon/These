@@ -48,7 +48,7 @@ Lorsque la stabilité d'une protéine est évalué par une variation de l'énerg
 
 \section{l'énegie de conformation}
 
-La fonction d'énergie (ou fonction de score) de conformation permet d'évaluer la stabilité ( ou une affinité avec un ligand) de chaque conformation de la protéine. Cette fonction doit être capable de prendre en compte les détails des interactions entre les atomes de la protéine, les effets de l'environnement aqueux  dans lequel elle se trouve et en même temps être suffisament rapide pour évaluer en un temps raisonnable une partie la plus significative possible de l'espace des conformations.Une classe importante est constitué des fonctions d'énergie basée sur la mécanique moléculaire.
+La fonction d'énergie ou fonction de score,  de conformation permet d'évaluer la stabilité ( ou une affinité avec un ligand) de chaque conformation de la protéine. Cette fonction doit être capable de prendre en compte les détails des interactions entre les atomes de la protéine, les effets de l'environnement aqueux  dans lequel elle se trouve et en même temps être suffisament rapide pour évaluer en un temps raisonnable une partie la plus significative possible de l'espace des conformations.Une classe importante est constitué des fonctions d'énergie basée sur la mécanique moléculaire.
 
 \subsection{La mécanique moléculaire}
 La mécanique moléculaire représente les atomes comme des particules sphériques ayant une charge électrique nette fixe et chaque liaison est modélisé par ressort.
@@ -317,17 +317,18 @@ Le calcul des rayons de Born $\alpha_i$ se fait par le calcul de l'énergie libr
 
 \section{l'algorithme d'exploration}
 
-Après, un choix de l'espace d'état des conformations/séquences, après la construction d'une fonction d'énergie qui qualitie les états d'interét.Il reste, pour completer les ingrediants de bases du CPD, à choisir un algorithme d'exploration de l'espace d'état. Dans l'idélal,l'objectif du CPD est d'obtenir l'ensemble de séquences d'acide aminés qui sont compatibles à une structure 3D de repliment ou qui réalisent une fonction donnée.Un tel algorithme a pour grand défi de faire face à immensité de l'espace d'état. On peut classer les différentes approchent utilisées en deux groupes.
+Après, un choix de l'espace d'état des conformations/séquences, après la construction d'une fonction d'énergie qui qualitie les états d'interét.Il reste, pour completer les ingrediants de bases du CPD, à choisir un algorithme d'exploration de l'espace d'état qui permet la sélection d'un sous-ensemble de séquences selon la pertinance établi par la fonction de score. Dans l'idélal,l'objectif du CPD est d'obtenir l'ensemble de séquences d'acide aminés qui sont compatibles à une structure 3D de repliment ou qui réalisent une fonction donnée.Un tel algorithme a pour grand défi de faire face à immensité de l'espace d'état. On peut classer les différentes approchent utilisées en deux groupes.
 
 \begin{enumeration}
-Le premier groupe est constitué des méthodes deterministes dans lesquelles les choix effectués sont toujours soient determiné  a priori soient determiné en fonction des éléments obtenus au court de l'execution du programme qui l'implement. On trouve par exemple dans ce groupe, les méthodes exhaustives qui peuvent être appliqué à de petites espaces conformationnels ou encore les méthodes dites semi-exhaustives dans lesquels la complexité combinatoire est réduite en autorisant uniquement  certaines conformation à certain moments de l'exploration.Un classe interessante de ce groupe est consituté des algorithmes exactes qui se focalise non pas sur l'objectif du  CPD , mais sur l'obtention  de la conformation  de meilleure  énergie on parle alors de \og Global Minimum Energy Cost \fg (GMEC)
+  Le premier groupe est constitué des méthodes deterministes dans lesquelles les choix effectués sont toujours soient determiné  a priori soient determiné en fonction des éléments obtenus au court de l'execution du programme qui l'implement. On trouve par exemple dans ce groupe, les méthodes exhaustives qui peuvent être appliqué à de petites espaces conformationnels ou encore les méthodes dites semi-exhaustives dans lesquels la complexité combinatoire est réduite en autorisant uniquement  certaines conformation à certain moments de l'exploration.Un classe interessante de ce groupe est consituté des algorithmes exactes qui se focalise non pas sur l'objectif du  CPD , mais sur l'obtention  de la conformation  de meilleure  énergie on parle alors de \og Global Minimum Energy Cost \fg (GMEC).
+Typiquement, ces algorithme nécessite que la fonction d'énergie soit  additifs par paires de rotamères, ce que nécessite un pré-calcul des énergies et le stockage de celles-ci , ce qui peut être problématique , par exemple dans les situations où le backbone est reflixe, un nombre d'état possible de la chaîne latérale vient multiplié par autant la taille de l'espace de phase. Or parmi les états qu'il faut calculer le nombre de ceux qui ne seront pas visité pendant l'exploration de l'espace peut devenir considérable. Ce qui constitut un facteur de ralentissement . Alors que lorsque les algorithmes de nécessite de connaissance a priori sur la totalisé de l'espace, il est possible de mettre en place un systeme simple qui stocke un jeu déénergie après une premiere utilisation, pour le réutiliser lors de futurs necessités. 
+  
 \end{enumeration}
 
 \begin{enumeration}
-  Le second groupe est celui des méthodes stochastiques et/ou heuristiques. Elles ont vocation à determiner des solutions réalistes sans obtenir de garantie sur l'optimum en énergie des solutions. Elles sont non-deterministes c'est à dire qu'elles choisisent certains éléments de facon aléatoire, en pratique quasi-aléatoire dans les implemantations via des générateurs de nombre pseudo-aléatoire.Elles ont l'avantage d'être utilisables sur les espaces d'états non-discretisé, par exemple [154], les rotamére peuvent varier de façon continue.
+  Le second groupe est celui des méthodes stochastiques et/ou heuristiques. Elles ont vocation à determiner des solutions réalistes sans obtenir de garantie sur l'optimum en énergie des solutions. Elles sont non-deterministes c'est à dire qu'elles choisisent certains éléments de facon aléatoire, en pratique quasi-aléatoire dans les implemantations via des générateurs de nombre pseudo-aléatoire.Elles ont l'avantage d'être utilisables sur les espaces d'états non-discretisé, par exemple [154], les rotamére peuvent varier de façon continue.Elle ne néssecite pas de connaissance a proiri sur l'espace des phases.Par contre la convergence bien qu'elle puisse être etablie en théorie, reste en pratique difficile à cerner et n'offre pas la possibilité de reconnaitre le GMEC.Ce qui conduit au besoin de choisir une condition d'arret de l'execution sans liant direct avec ce minimum.  
 
 \end{enumeration}
-
 
 Pour rendre possible l'utilisation de plusieurs outils algoritmique , il devient nécessaire d'imposer des contraintes sur la structure de la fonction d' l'énergie. Il existe alors en CPD doit être décomposable en une energie dite propre qui rassemble les effets de la chaîne latérale et du bakbone, d'une part et une énergie d'interaction rotamère-rotamère qui se decompose comme une somme sur des interactions sur les couples de chaines latérales prises deux à deux.
 
@@ -415,17 +416,65 @@ si E^{r_i,r_j} + \sum_{k=1}^N min_{r_k} (E_{ik}(r_i,r_k) + E_{jk}(r_j,r_k)) >  E
 L'élimination d'un couple $(r_i,r_j)$, n'exclue pas pour autant la présence de $r_i$ ou de $r_j$ dans la solution optimale. 
 
 \item le critère de Goldstein \ref{}
-  Il s'agit d'une amélioration du critère simple du DEE. Il existe de nombreuses situations dans lequel l'énergie avec un rotamère $r_i$  est toujours diminuée en la remplaçant par un autre rotamère $r'_i$. On peut donc l'éliminer. Or, cela n'implique pas forcement la condition du critère simple.Ce critère peut s'expirmer de la façon suivante:
+  Il s'agit d'une amélioration du critère simple du DEE. Il peut existe des situations dans lesquelles l'énergie avec un rotamère $r_i$  est toujours diminuée en la remplaçant par un autre rotamère $r'_i$. On peut donc l'éliminer. Or, cela n'implique pas forcement la condition du critère simple.Ce critère peut s'expirmer de la façon suivante:
 
 \begin{equation}
 si E_i^{r_i} - E_i^{r_j}+ \sum_{k=1}^N min_{r_k} (E_{ik}(r_i,r_k) + E_{jk}(r_j,r_k)) > 0, alors $r_i$ est éliminé.
 \end{equation}
 
+Voir la figure ....
   
 \end{enumeration}
+Au court de l'optimisation, les deux critéres peuvent être utilisé alternativement, jusqu'à qu'il n'y est plus de rotamère à éliminer.Il est alors possible d'utiliser une approche hexausitve sur l'espace d'états réduit obtenu, pour obtenir le GMEC.
 
+Cette méthode permet dans les bons cas ( par exemple pour les petits systèmes) de converger en un temps raisonnable[26].Beaucoup de variantes du DEE [158,152] ont été proposé Pierce NA, Spriet JA, Desmet J, Mayo SL. (2000). Conformational splitting: a more powerful criterion for dead-end elimination. J Comput Chem 21: 999-1009. Notament en travaillant sur des ensembles de plus de deux rotamère.
+
+figure figure...
 
 \subsection{le CFN}
+
+La méthode des réseaux de fonction de coût est issue du domaine de l'optimisation combinatoire. Il s'agît ici encore d'une méthode utilisable si la fonction d'énergie est décomposable par paires.De plus elle nécessite un pré-calcul des énergies.
+Il s'agît avant tout d'une recherche de la séquence-conformation qui minimise l'énergie globale, mais qui dans certaines conditions peut également fournir un ensemble de séquence-conformation proche du GMEC.
+
+Un réseau de fonction de coût , ou cost function network (CFN) , est défini par un triplet {X,D,C} tel que:
+
+\begin{enumeration}
+\item X un ensemble de variables à valeurs dans \mathbb{N}
+\item D_X, un ensemble de domaines pour les variables de X
+ \item C, un ensemble de fonctions, dont chaque élément porte sur un sous-ensemble S de X et donne un coût strictement positif pour chaque combinaison  de valeurs des variables de S.
+
+\end{enumeration}  
+
+
+Un problème CPD peut alors être représenté sous la forme d'un CFN, en associant chaque résidu $i$ variable d'une protéine par une variable $v_i$ du CFN, L'ensemble des rotamères possible en $i$ definissant le domaine de $v_i$.Le terme E_i représentant l'énergie \og self \fg correspond à une fonction de C tel que $S={v_i}$ et le terme E_{ij} à ne fonction de C avec $S={v_i,v_j}$.La recherche du minimum globale d'énergie revient alors à trouver une valeur pour toutes les variables qui miminise la somme de toutes les fonctions de coût.
+  
+La résolution est alors tenté généralement par un algorithme de type  \og Depth-First Branch and Bound \fg ( ou DFBB).
+les ingrédients sont les suivants:
+\begin{enumeration}
+\item un principe de séparation
+
+L'ensemble des solutions peut être vu comme l'unique sommet $S_0$ d'une arborescence sans branche.  
+La séparation est l'action de partager, selon certain critère, ce sommet initial en sous-ensembles  qui devient les sommets fils du sommet initial,ce partage devant constituer une partition de $S_0$.
+Le critère de séparation classique est d'énumérer les valeurs possible d'une variable $v_i$ du  CFN.A chacune des valeurs $x$ de $v_i$ on définit le sous-ensemble de $S_0$ ayant dans tous ces éléments $v_i$ égale à $x$.voir exemple en \ref{}. Ainso, si $v_i$ à N valeurs possible, N fils de $S_0$ sont créés.
+\item un majorant
+  Le majorant correspond à une valeur que l'on sait être supérieur ou égale au GMEC.
+\item un minorant
+Le minorant correspond à une valeur que l'on sait dépasser ou égaler par une solution du problème  
+\item un principe d'évaluation
+L'évaluation d'un sommet , c'est déterminer un majorant de l'ensemble des valeurs des solutions du sommet.Donc si un sommet est évalué on sait que pour toutes solutions de S on ne peut pas faire mieux que $M$. 
+
+  
+\item un majorant et un minorant
+\item une statégie de développement  
+\end{enumeration}  
+
+
+
+
+, qui énumere les valeurs possibles des variables récursirvement en remontant par des algorithmes incrémentales de cohérence d'arc qui améliore  un minorant du problème et qui permet d'élaguer l'arbre de recherche en éliminant des rotamères incompatibles
+
+
+
 
 \subsection{l'heuristique de Wernisch}
 \subsection{Algorithme  génétique}
