@@ -4,7 +4,7 @@
 \contentsline {chapter}{Abreviations}{xv}{chapter*.7}
 \contentsline {chapter}{Introduction}{1}{chapter*.8}
 \contentsline {chapter}{\numberline {1}le \FB@og CPD\FB@fg \xspace : Conception de prot\IeC {\'e}ine par ordinateur}{5}{chapter.1}
-\contentsline {section}{\numberline {1.1}l'espace de conformation d'une prot\IeC {\'e}ine}{6}{section.1.1}
+\contentsline {section}{\numberline {1.1}l'espace des s\IeC {\'e}quences-conformations}{6}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}l'\IeC {\'e}tat repli\IeC {\'e} }{6}{subsection.1.1.1}
 \contentsline {subsubsection}{les cha\IeC {\^\i }nes lat\IeC {\'e}rales}{7}{section*.10}
 \contentsline {subsubsection}{Le squelette}{7}{section*.11}
@@ -13,81 +13,88 @@
 \contentsline {subsection}{\numberline {1.2.1}La m\IeC {\'e}canique mol\IeC {\'e}culaire}{8}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Les interactions li\IeC {\'e}es }{9}{subsection.1.2.2}
 \contentsline {subsection}{\numberline {1.2.3}Les interactions non li\IeC {\'e}es}{10}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}D' autres approches}{11}{subsection.1.2.4}
 \contentsline {section}{\numberline {1.3}Mod\IeC {\'e}lisation du solvant}{11}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}mod\IeC {\`e}le CASA}{11}{subsection.1.3.1}
-\contentsline {subsection}{\numberline {1.3.2}mod\IeC {\`e}le Poisson Boltzmann}{11}{subsection.1.3.2}
-\contentsline {subsection}{\numberline {1.3.3}mod\IeC {\`e}le Born G\IeC {\'e}n\IeC {\'e}ralis\IeC {\'e}}{11}{subsection.1.3.3}
-\contentsline {subsubsection}{l'approximation NEA}{11}{section*.12}
-\contentsline {subsubsection}{l'approximation FDB}{11}{section*.13}
-\contentsline {subsubsection}{l'algorithme d'exploration}{11}{section*.14}
-\contentsline {section}{\numberline {1.4}Les programmes CPD}{11}{section.1.4}
-\contentsline {section}{\numberline {1.5}Les succ\IeC {\`e}s}{11}{section.1.5}
-\contentsline {chapter}{\numberline {2}proteus}{13}{chapter.2}
-\contentsline {chapter}{\numberline {3}Comparing stochastic search algorithms for computational protein design}{15}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introduction}{17}{section.3.1}
-\contentsline {section}{\numberline {3.2}Methods}{19}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Monte Carlo: general framework}{19}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}MC and REMC: implementation details}{21}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Heuristic sequence optimization}{22}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Cost function network method}{22}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Energy function}{22}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Test systems and preparation}{23}{subsection.3.2.6}
-\contentsline {subsection}{\numberline {3.2.7}Sequence characterization}{23}{subsection.3.2.7}
-\contentsline {section}{\numberline {3.3}Results}{24}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Quality of the designed sequences}{25}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Finding the GMEC}{25}{subsection.3.3.2}
-\contentsline {subsubsection}{CPU and memory limits for each method}{25}{section*.16}
-\contentsline {subsubsection}{Optimal sequences/structures with up to 10 designed positions}{26}{section*.17}
-\contentsline {subsubsection}{Optimal sequences with 20 or 30 designed positions}{28}{section*.18}
-\contentsline {subsection}{\numberline {3.3.3}Density of states above the GMEC}{29}{subsection.3.3.3}
-\contentsline {section}{\numberline {3.4}Conclusions}{30}{section.3.4}
-\contentsline {chapter}{\numberline {4}PDZ}{41}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction}{41}{section.4.1}
-\contentsline {section}{\numberline {4.2}Le mod\IeC {\`e}le d'\IeC {\'e}tat d\IeC {\'e}pli\IeC {\'e}}{42}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Les \IeC {\'e}nergies de r\IeC {\'e}f\IeC {\'e}rence}{42}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}La vraisemblance des \IeC {\'e}nergies de r\IeC {\'e}f\IeC {\'e}rence}{43}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Recherche du maximum de vraisemblance}{44}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}M\IeC {\'e}thodes de calcul}{46}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Fonction \IeC {\'e}nerg\IeC {\'e}tique efficace pour l'\IeC {\'e}tat repli\IeC {\'e}}{46}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Les \IeC {\'e}nergies de r\IeC {\'e}f\IeC {\'e}rence de l'\IeC {\'e}tat d\IeC {\'e}pli\IeC {\'e}}{47}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Outils d'analyse de s\IeC {\'e}quences}{49}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Superfamily/SCOP}{49}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Taux d'identit\IeC {\'e} de s\IeC {\'e}quences}{49}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Taux d'identit\IeC {\'e} par position}{50}{subsection.4.4.3}
-\contentsline {subsection}{\numberline {4.4.4}Alignements Pfam}{50}{subsection.4.4.4}
-\contentsline {subsection}{\numberline {4.4.5}Score BLOSUM}{50}{subsection.4.4.5}
-\contentsline {subsection}{\numberline {4.4.6}Similarit\IeC {\'e} d'un ensemble \IeC {\`a} un alignement Pfam}{51}{subsection.4.4.6}
-\contentsline {subsection}{\numberline {4.4.7}Entropie par position}{51}{subsection.4.4.7}
-\contentsline {section}{\numberline {4.5}S\IeC {\'e}quences exp\IeC {\'e}rimentales et mod\IeC {\`e}les structurels}{52}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}L'ensemble des prot\IeC {\'e}ines PDZ}{52}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Alignements Blast crois\IeC {\'e}s}{52}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}S\IeC {\'e}lection des homologues}{52}{subsection.4.5.3}
-\contentsline {subsection}{\numberline {4.5.4}Aligmements des prot\IeC {\'e}ines exp\IeC {\'e}rimentales et leurs homologues}{54}{subsection.4.5.4}
-\contentsline {subsection}{\numberline {4.5.5}Similarit\IeC {\'e} des homologues}{54}{subsection.4.5.5}
-\contentsline {subsection}{\numberline {4.5.6}Les fr\IeC {\'e}quences d'acides amin\IeC {\'e}s}{56}{subsection.4.5.6}
-\contentsline {section}{\numberline {4.6}S\IeC {\'e}quences calcul\IeC {\'e}es}{69}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}simulation Monte-Carlo}{69}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}G\IeC {\'e}n\IeC {\'e}ration de s\IeC {\'e}quence Rosetta}{70}{subsection.4.6.2}
-\contentsline {subsection}{\numberline {4.6.3}Caract\IeC {\'e}risation des s\IeC {\'e}quences calcul\IeC {\'e}es}{70}{subsection.4.6.3}
-\contentsline {section}{\numberline {4.7}R\IeC {\'e}sultats du mod\IeC {\`e}le NEA}{71}{section.4.7}
-\contentsline {subsection}{\numberline {4.7.1}optimisation du mod\IeC {\`e}le de l'\IeC {\'e}tat d\IeC {\'e}pli\IeC {\'e}}{71}{subsection.4.7.1}
-\contentsline {subsection}{\numberline {4.7.2}Tests de reconnaissance de famille}{73}{subsection.4.7.2}
-\contentsline {subsection}{\numberline {4.7.3}S\IeC {\'e}quences et diversit\IeC {\'e} de s\IeC {\'e}quences}{73}{subsection.4.7.3}
-\contentsline {subsection}{\numberline {4.7.4}Scores de similarit\IeC {\'e} Blosum}{74}{subsection.4.7.4}
-\contentsline {subsection}{\numberline {4.7.5}Tests de validation crois\IeC {\'e}e}{75}{subsection.4.7.5}
-\contentsline {section}{\numberline {4.8}R\IeC {\'e}sultats du mod\IeC {\`e}le FDB}{77}{section.4.8}
-\contentsline {subsection}{\numberline {4.8.1}optimisation du mod\IeC {\`e}le de l'\IeC {\'e}tat d\IeC {\'e}pli\IeC {\'e}}{77}{subsection.4.8.1}
-\contentsline {subsection}{\numberline {4.8.2}Tests de reconnaissance de famille}{78}{subsection.4.8.2}
-\contentsline {subsection}{\numberline {4.8.3}Scores de similarit\IeC {\'e} Blosum}{78}{subsection.4.8.3}
-\contentsline {subsection}{\numberline {4.8.4}Taux d'identit\IeC {\'e} \IeC {\`a} la s\IeC {\'e}quence native}{81}{subsection.4.8.4}
-\contentsline {subsection}{\numberline {4.8.5}Logos des s\IeC {\'e}quences obtenues}{81}{subsection.4.8.5}
-\contentsline {section}{\numberline {4.9}Application: Croissance du noyau hydrophobe}{82}{section.4.9}
-\contentsline {section}{\numberline {4.10}Conclusion}{87}{section.4.10}
-\contentsline {subsection}{\numberline {4.10.1}mod\IeC {\`e}le mis en \IeC {\oe }uvre}{87}{subsection.4.10.1}
-\contentsline {subsection}{\numberline {4.10.2}tests et application}{91}{subsection.4.10.2}
-\contentsline {chapter}{Conclusion}{93}{chapter*.69}
+\contentsline {subsection}{\numberline {1.3.1}mod\IeC {\`e}le de solvant explicite}{11}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}mod\IeC {\`e}le implicite}{13}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}mod\IeC {\`e}le CASA}{14}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}mod\IeC {\`e}le Poisson Boltzmann}{14}{subsection.1.3.4}
+\contentsline {subsection}{\numberline {1.3.5}mod\IeC {\`e}le Born G\IeC {\'e}n\IeC {\'e}ralis\IeC {\'e}}{15}{subsection.1.3.5}
+\contentsline {section}{\numberline {1.4}l'algorithme d'exploration}{16}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Algorithme du champ moyen}{18}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Dead-End Elimination}{18}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}le CFN}{20}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.4}l'heuristique Multistart Steepest Descent (MSD)}{22}{subsection.1.4.4}
+\contentsline {subsection}{\numberline {1.4.5}Algorithme g\IeC {\'e}n\IeC {\'e}tique}{23}{subsection.1.4.5}
+\contentsline {subsection}{\numberline {1.4.6}Monte-Carlo}{23}{subsection.1.4.6}
+\contentsline {section}{\numberline {1.5}Les programmes CPD}{23}{section.1.5}
+\contentsline {section}{\numberline {1.6}Les succ\IeC {\`e}s}{23}{section.1.6}
+\contentsline {chapter}{\numberline {2}proteus}{25}{chapter.2}
+\contentsline {chapter}{\numberline {3}Comparing stochastic search algorithms for computational protein design}{27}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{29}{section.3.1}
+\contentsline {section}{\numberline {3.2}Methods}{31}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Monte Carlo: general framework}{31}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}MC and REMC: implementation details}{33}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Heuristic sequence optimization}{34}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Cost function network method}{34}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Energy function}{34}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Test systems and preparation}{35}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.7}Sequence characterization}{35}{subsection.3.2.7}
+\contentsline {section}{\numberline {3.3}Results}{36}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Quality of the designed sequences}{37}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Finding the GMEC}{37}{subsection.3.3.2}
+\contentsline {subsubsection}{CPU and memory limits for each method}{37}{section*.16}
+\contentsline {subsubsection}{Optimal sequences/structures with up to 10 designed positions}{38}{section*.17}
+\contentsline {subsubsection}{Optimal sequences with 20 or 30 designed positions}{40}{section*.18}
+\contentsline {subsection}{\numberline {3.3.3}Density of states above the GMEC}{41}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Conclusions}{42}{section.3.4}
+\contentsline {chapter}{\numberline {4}PDZ}{53}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{53}{section.4.1}
+\contentsline {section}{\numberline {4.2}Le mod\IeC {\`e}le d'\IeC {\'e}tat d\IeC {\'e}pli\IeC {\'e}}{54}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Les \IeC {\'e}nergies de r\IeC {\'e}f\IeC {\'e}rence}{54}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}La vraisemblance des \IeC {\'e}nergies de r\IeC {\'e}f\IeC {\'e}rence}{55}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Recherche du maximum de vraisemblance}{56}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}M\IeC {\'e}thodes de calcul}{58}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Fonction \IeC {\'e}nerg\IeC {\'e}tique efficace pour l'\IeC {\'e}tat repli\IeC {\'e}}{58}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Les \IeC {\'e}nergies de r\IeC {\'e}f\IeC {\'e}rence de l'\IeC {\'e}tat d\IeC {\'e}pli\IeC {\'e}}{59}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Outils d'analyse de s\IeC {\'e}quences}{61}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Superfamily/SCOP}{61}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Taux d'identit\IeC {\'e} de s\IeC {\'e}quences}{61}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Taux d'identit\IeC {\'e} par position}{62}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}Alignements Pfam}{62}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.5}Score BLOSUM}{62}{subsection.4.4.5}
+\contentsline {subsection}{\numberline {4.4.6}Similarit\IeC {\'e} d'un ensemble \IeC {\`a} un alignement Pfam}{63}{subsection.4.4.6}
+\contentsline {subsection}{\numberline {4.4.7}Entropie par position}{63}{subsection.4.4.7}
+\contentsline {section}{\numberline {4.5}S\IeC {\'e}quences exp\IeC {\'e}rimentales et mod\IeC {\`e}les structurels}{64}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}L'ensemble des prot\IeC {\'e}ines PDZ}{64}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Alignements Blast crois\IeC {\'e}s}{64}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}S\IeC {\'e}lection des homologues}{64}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.4}Aligmements des prot\IeC {\'e}ines exp\IeC {\'e}rimentales et leurs homologues}{66}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.5.5}Similarit\IeC {\'e} des homologues}{66}{subsection.4.5.5}
+\contentsline {subsection}{\numberline {4.5.6}Les fr\IeC {\'e}quences d'acides amin\IeC {\'e}s}{68}{subsection.4.5.6}
+\contentsline {section}{\numberline {4.6}S\IeC {\'e}quences calcul\IeC {\'e}es}{81}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}simulation Monte-Carlo}{81}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}G\IeC {\'e}n\IeC {\'e}ration de s\IeC {\'e}quence Rosetta}{82}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.3}Caract\IeC {\'e}risation des s\IeC {\'e}quences calcul\IeC {\'e}es}{82}{subsection.4.6.3}
+\contentsline {section}{\numberline {4.7}R\IeC {\'e}sultats du mod\IeC {\`e}le NEA}{83}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}optimisation du mod\IeC {\`e}le de l'\IeC {\'e}tat d\IeC {\'e}pli\IeC {\'e}}{83}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.2}Tests de reconnaissance de famille}{85}{subsection.4.7.2}
+\contentsline {subsection}{\numberline {4.7.3}S\IeC {\'e}quences et diversit\IeC {\'e} de s\IeC {\'e}quences}{85}{subsection.4.7.3}
+\contentsline {subsection}{\numberline {4.7.4}Scores de similarit\IeC {\'e} Blosum}{86}{subsection.4.7.4}
+\contentsline {subsection}{\numberline {4.7.5}Tests de validation crois\IeC {\'e}e}{87}{subsection.4.7.5}
+\contentsline {section}{\numberline {4.8}R\IeC {\'e}sultats du mod\IeC {\`e}le FDB}{89}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}optimisation du mod\IeC {\`e}le de l'\IeC {\'e}tat d\IeC {\'e}pli\IeC {\'e}}{89}{subsection.4.8.1}
+\contentsline {subsection}{\numberline {4.8.2}Tests de reconnaissance de famille}{90}{subsection.4.8.2}
+\contentsline {subsection}{\numberline {4.8.3}Scores de similarit\IeC {\'e} Blosum}{90}{subsection.4.8.3}
+\contentsline {subsection}{\numberline {4.8.4}Taux d'identit\IeC {\'e} \IeC {\`a} la s\IeC {\'e}quence native}{93}{subsection.4.8.4}
+\contentsline {subsection}{\numberline {4.8.5}Logos des s\IeC {\'e}quences obtenues}{93}{subsection.4.8.5}
+\contentsline {section}{\numberline {4.9}Application: Croissance du noyau hydrophobe}{94}{section.4.9}
+\contentsline {section}{\numberline {4.10}Conclusion}{99}{section.4.10}
+\contentsline {subsection}{\numberline {4.10.1}mod\IeC {\`e}le mis en \IeC {\oe }uvre}{99}{subsection.4.10.1}
+\contentsline {subsection}{\numberline {4.10.2}tests et application}{103}{subsection.4.10.2}
+\contentsline {chapter}{Conclusion}{105}{chapter*.69}
 \select@language {frenchb}
 \select@language {english}
-\contentsline {chapter}{Bibliographie}{101}{section*.75}
+\contentsline {chapter}{Bibliographie}{113}{section*.75}
 \select@language {english}
 \select@language {frenchb}
