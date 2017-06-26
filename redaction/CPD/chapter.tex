@@ -321,12 +321,12 @@ Après, un choix de l'espace d'état des conformations/séquences, après la con
 
 \begin{enumerate}
   Le premier groupe est constitué des méthodes deterministes dans lesquelles les choix effectués sont toujours soient determiné  a priori soient determiné en fonction des éléments obtenus au court de l'execution du programme qui l'implement. On trouve par exemple dans ce groupe, les méthodes exhaustives qui peuvent être appliqué à de petites espaces conformationnels ou encore les méthodes dites semi-exhaustives dans lesquels la complexité combinatoire est réduite en autorisant uniquement  certaines conformation à certain moments de l'exploration.Un classe interessante de ce groupe est consituté des algorithmes exactes qui se focalise non pas sur l'objectif du  CPD , mais sur l'obtention  de la conformation  de meilleure  énergie on parle alors de \og Global Minimum Energy Cost \fg (GMEC).
-Typiquement, ces algorithme nécessite que la fonction d'énergie soit  additifs par paires de rotamères, ce que nécessite un pré-calcul des énergies et le stockage de celles-ci , ce qui peut être problématique , par exemple dans les situations où le backbone est reflixe, un nombre d'état possible de la chaîne latérale vient multiplié par autant la taille de l'espace de phase. Or parmi les états qu'il faut calculer le nombre de ceux qui ne seront pas visité pendant l'exploration de l'espace peut devenir considérable. Ce qui constitut un facteur de ralentissement . Alors que lorsque les algorithmes de nécessite de connaissance a priori sur la totalisé de l'espace, il est possible de mettre en place un systeme simple qui stocke un jeu déénergie après une premiere utilisation, pour le réutiliser lors de futurs necessités. 
+Typiquement, ces algorithmes exploitent les structures de la fonction d'énergie et de l'espace d'état.Si elle est additifs par paires de rotamères,un type particulier de méthodes est alors exploitable.Bien souvent, ces algorithmes  nécessitent un pré-calcul des énergies et le stockage de celles-ci , ce qui peut être problématique , par exemple dans les situations où le backbone est reflixe, un nombre d'état possible de la chaîne latérale vient multiplié par autant la taille de l'espace de phase. Or parmi les états qu'il faut calculer le nombre de ceux qui ne sont sans intérêt pour l'exploration de l'espace peut devenir considérable. Ce qui constitut un facteur de ralentissement . 
   
 \end{enumerate}
 
 \begin{enumerate}
-  Le second groupe est celui des méthodes stochastiques et/ou heuristiques. Elles ont vocation à determiner des solutions réalistes sans obtenir de garantie sur l'optimum en énergie des solutions. Elles sont non-deterministes c'est à dire qu'elles choisisent certains éléments de facon aléatoire, en pratique quasi-aléatoire dans les implemantations via des générateurs de nombre pseudo-aléatoire.Elles ont l'avantage d'être utilisables sur les espaces d'états non-discretisé, par exemple [154], les rotamére peuvent varier de façon continue.Elle ne néssecite pas de connaissance a proiri sur l'espace des phases.Par contre la convergence bien qu'elle puisse être etablie en théorie, reste en pratique difficile à cerner et n'offre pas la possibilité de reconnaitre le GMEC.Ce qui conduit au besoin de choisir une condition d'arret de l'execution sans liant direct avec ce minimum.  
+  Le second groupe est celui des méthodes stochastiques et/ou heuristiques. Elles ont vocation à determiner des solutions de qualité sans obtenir de garantie sur l'optimum en énergie des solutions, dans un temps d'éxecution réaliste. Elles sont non-deterministes c'est à dire qu'elles choisisent certains éléments de facon aléatoire, en pratique la \og source de hasard\fg est constituée par des générateurs de nombre pseudo-aléatoire.Elles ont l'avantage d'être utilisables sur les espaces d'états non-discretisé, par exemple [154], les rotamére peuvent varier de façon continue.Elle ne néssecite pas de connaissance a proiri sur l'espace des phases.il est souvent possible de mettre en place un systeme simple qui stocke un jeu d'énergie après une premiere utilisation, pour le réutiliser lors de futurs necessités. Par contre la convergence bien qu'elle puisse être etablie en théorie, reste en pratique difficile à cerner et n'offre pas la possibilité de reconnaitre le GMEC.Ce qui conduit au besoin de choisir une condition d'arret de l'execution sans liant direct avec ce minimum.  
 
 \end{enumerate}
 
@@ -469,11 +469,36 @@ Dans le DFBB, la statégie consiste à descendre dans les branches jusqu'à trou
 de limiter l'utitlisation de la mémoire, parce qu'il n'est nécessaire de conserver que la description de la branche qui a été exploirée.  
 \end{enumerate}  
 
+
+\begin{figure}[t]
+  \centering
+  \begin{tabular}{c}
+    \includegraphics[width=10cm]{figure/DFBB.png} \\
+  \end{tabular}
+  \caption{Principe du l'algorithme du Depth-First Branch and Bound}
+  \label{algo_gene}
+\end{figure}
+
+
+
 Il est alors nécesaire de trouver de bons minorants.
 
 Equivalence Preserving Transformation
 
 L'idée principale des cohérences locales est transformer le CFN en un CFN dans lequel le coût des affectations complètes sont identique (elles sont appelées EPT pour \og Equivalence Preserving Transformation\fg), de façon à faire apparaître de bons minorants Schiex,2000. Le principe est de déplacer les coûts entre fonctions dans le but de les attribuer aux fonctions qui portent sur une seule variable au plus (les coûts unitaires et les coûts constants) .l'avantage ici, est de pouvoir conserver les transformations dans un chemin de l'arbre de recherche tout au long de l'optimisation.Le principe est présenté sur un exemple inspiré de la thèse de Seydou Traoré.la figure {\ref ...} représente 6 CFN équivalents.Il existe deux types de transformation la première appelé projection consiste à tranféré un cout de l'ensemble des couts unaires vers le cout constant $C_0$ , c'est la transition $A\arrow B$,des coûts binaires vers le coût constant $C_0$, (transition $B\arrow C$ ) ou encore des des coût binaires vers les coûts unaires (transition $D\arrow E$). Le second type de transformation fait l'inverse, c'est à dire transfert un cout d'une fonction unaire vers les fonction bianres impliquant la même valeur de variable transition $C \arrow D$.Une telle transformation permettant une augmentation du transfert total vers $C_0$ , CFN F.
+
+
+
+\begin{figure}[t]
+  \centering
+  \begin{tabular}{c}
+    \includegraphics[width=10cm]{figure/coherences_local.png} \\
+  \end{tabular}
+  \caption{Exemple de transformation EPT}
+  \label{EPT}
+\end{figure}
+
+
 
 
 Cet approche a montré sa supériorité dans le domaine du CPD , avec l'outil toulbar2 par rapport à tout un ensemble de resolveur de CFN parmi les plus réputé actuellement qui exploitent notament l'approche DEE/A* ou le backtracking \ref{}. toulbar2 en combinant FFBB,EPT et DEE a était capable de trouver le GMEC dans le plus grand nombre de problèmes proposés aux differents outils.
@@ -485,7 +510,7 @@ En 2000,M Wernisch, Hery et Wodak partent du constat que l'espace des phases et 
 Un cycle heuristique se déroule de la façon suivante:
 Au départ, une séquence-conformation est construite en attribuant de façon aléatoire un type d'acide aminé et un rotamère à chaque position de la chaîne.Ensuite,En parcourant la séquence du début jusqu'à la fin,l'algorithme procede par des ajustements succesif à chaque position.Pour chaque position $i$ de la séquence, toutes les états possibles sont évalué, le reste de la séquence et des rotamères etant fixé.Le meilleur rotamère est alors fixé en $i$.La séquence est ainsi, ajuster par plusieurs passage successif, jusqu'à convergence de l'énergie, voir (\ref{}).
 
-Un cycle est très rapide, ce qui permet de produite dans les cas usuels, plusieurs milliers de séquences par heures.L'utilisation mémoire est quasiment réduite au stockage des énergies.Il n'impose pas que la fonction d'énergie soit pairwise, mais il s'en accommode très bien, en rendant possible l'utilisation de la mémoire par bloc des énergies impliquant une position $i$ donnée.
+Un cycle est très rapide, ce qui permet de produite dans les cas usuels, plusieurs milliers de séquences par heures.L'utilisation mémoire hormis la gestion du stockage des énergies est quasi-nulle.Il n'impose pas que la fonction d'énergie soit pairwise, mais il s'en accommode très bien, en rendant possible l'utilisation de la mémoire par bloc des énergies impliquant une position $i$ donnée.
 
 \begin{algorithm}
   \For{chaque cycle heuristique}{ 
@@ -504,7 +529,58 @@ Un cycle est très rapide, ce qui permet de produite dans les cas usuels, plusie
 
 
 \subsection{Algorithme  génétique}
+
+
+Holland et ces collaborateurs introduisent une nouvelle approche inspirée des principes biologique de la sélection naturelles, avec des opérations comme les mutations, les croisements et la sélection.L'algorithme génétique a pour objectif d'obtenir un ensemble de solution proche de l'optimum en un temps raisonnable.Le shéma générale du déroulement est le suivant.Une population de séquences-conformations est générée de façon aléatoire.L'énergie de tous les membres de la population est évaluée.Un critère de sélection basée sur l'énergie est appliqué à la population, qui donc diminue.Un ensemble de mutations aléatoires et un ensemble de croisement  sont appliqués sur la nouvelle population. Donc la population augmente.Alors,une condition d'arrêt est évaluée, si elle n'est pas réalisé l'algorithme retourne à l'étape d'évaluation.
+\end{enumerate}
+
+
+\begin{figure}[t]
+  \centering
+  \begin{tabular}{c}
+    \includegraphics[width=10cm]{figure/algo_genetique.png} \\
+  \end{tabular}
+  \caption{L'algorithle génétique}
+  \label{algo_gene}
+\end{figure}
+
+
+Le membre de meilleure énergie de la population tend à se reproduire le plus vite dans la population. 
+Donc la valeur moyenne de l'énergie de l'ensemble des séquences-conformations converge.
+On peut voir ici, que le nombre de membres de la population est un paramètre de l'algorithme.Plus ce nombre est faible plus la convergence va être rapide.A contrario, plus ce nombre est grand, plus l'exploration de l'espace d'état est meilleure.
+Les atouts de l'algorithme génétique sont sa capacité à franchir des barrières énergitiques par des changements de séquences rapides via le mécanisme des croisements et sa capacité à optimiser en parallèle différents secteurs de la structure.
+
+
 \subsection{Monte-Carlo}
+
+Dans son acceptation la plus générale, un algorithme Monte-Carlo est un algorithme stochastique ( il utilise une source de hasard) dont le temps d'exéction est déterminable a priori.Mais dans le reste de ce texte  comme dans beaucoup de domaine, le terme fait référence à l'algorithme de Metropolis-Hastings qui est l'un des premier Monte-Carlo au sens large a avoir été proposé \ref{}.
+
+
+C'est une méthodes d'échntinnonnage à partir de distributions de probabilité
+Elles se basent sur le parcours de chaînes de Markov qui ont pour lois stationnaires les distributions à échantillonner.certaines méthodes utilisent des marches aléatoires sur les chaînes de Markov (Metropolis-Hastings).
+
+On veut générer des vecteurs x suivant une distribution de probabilité \pi , telle que la distribution des xi approche \pi.
+
+les méthodes de MC par CM consistent à générer un vecteur x_i uniquement à partir de la donnée du vecteur x_i-1 , c'est donc un processus sans mémoire ce qui caractériqe les chaînes de Markov.L faut donc trouver un générateur aléatoire avec une distribution deprobabilité qx_i-1 q xiii qui permettre de générer x_i  à partir de x_{i-1} On remplace ainsi le problème  de génération avec une distribution \pi  par N problèmes de génération avec des distributions x_i , que l'on espère plus simples.
+
+On veut simuler une loi \pi sur un espace d'états général (\Omega, \Epsilon),
+Une transition sur (\Omega, \Epsilon)  est une application P telle que P(x,.) est une probabilité sur (\Omega, \Epsilon) , Soit X = (X_k, k \in \Natural) une chaîne de Markov de transition P et de loi initiale X_0
+
+Pour simuler \pi , on veut construire une transition P telle que vPk-> \pi
+
+si une transition P est \pi-réduc , \pi-invariante , apériodique Harris-récurrente , alors P_k(x,.)-> \pi.
+
+____
+La condition de la balance détaillée:
+
+
+p(i)\pi_{ij} = p(j)\pi_{ji} implique que p(i)/||p(i)|| est une distribution stationnaire.
+
+
+
+
+
+Une chaîne de Markov est irréductible si et seulement si son graphe est fortement connexe, i.e. si pour tout couple   i ≠ j   {\displaystyle \scriptstyle \ i\neq j\ } \scriptstyle \ i\neq j\ de sommets du graphe il existe un chemin de   i   {\displaystyle \scriptstyle \ i\ } \scriptstyle \ i\ à   j   {\displaystyle \scriptstyle \ j\ } \scriptstyle \ j\ et un chemin de   j   {\displaystyle \scriptstyle \ j\ } \scriptstyle \ j\ à   i . {\displaystyle \scriptstyle \ i.} \scriptstyle \ i.
 
 \begin{algorithm}
   Une séquence-conformation $S_0$ est choisie aléatoirement\;

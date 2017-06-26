@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.6.23)  23 JUN 2017 18:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.6.23)  26 JUN 2017 12:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -931,6 +931,9 @@ LaTeX Warning: Label `eq:GB' multiply defined.
 
 LaTeX Warning: Label `eq:GB' multiply defined.
 
+
+LaTeX Warning: Label `algo_gene' multiply defined.
+
 ) (./proteus/chapter.aux) (./comparaisons/chapter.aux) (./PDZ/chapter.aux
 
 LaTeX Warning: Label `eq:unfolded' multiply defined.
@@ -1171,7 +1174,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \openout4 = `these.toc'.
 
  [8] (./these.lof
-Overfull \hbox (0.3287pt too wide) in paragraph at lines 14--14
+Overfull \hbox (0.3287pt too wide) in paragraph at lines 17--17
  \T1/lmr/m/n/12 (-20) 閚er-gie, ob-te-nues avec le back-bone de la pro-t閕ne NH
 -REF (code PDB :1G9O), 
  []
@@ -2103,12 +2106,18 @@ $
 
 LaTeX Warning: Reference `' on page 21 undefined on input line 458.
 
-[21]
+[21] <./CPD/figure/DFBB.png, id=931, 173.2071pt x 110.5731pt>
+File: ./CPD/figure/DFBB.png Graphic file (type png)
 
-LaTeX Warning: Reference `.' on page 22 undefined on input line 476.
+<use ./CPD/figure/DFBB.png>
+Package pdftex.def Info: ./CPD/figure/DFBB.png used on input line 476.
+(pdftex.def)             Requested size: 284.52756pt x 181.65822pt.
+
+
+LaTeX Warning: Reference `.' on page 22 undefined on input line 488.
 
 ! Undefined control sequence.
-l.476 ...tant $C_0$ , c'est la transition $A\arrow
+l.488 ...tant $C_0$ , c'est la transition $A\arrow
                                                    B$,des co没ts binaires ve...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2117,7 +2126,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.476 ...o没t constant $C_0$, (transition $B\arrow
+l.488 ...o没t constant $C_0$, (transition $B\arrow
                                                    C$ ) ou encore des des co...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2126,7 +2135,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.476 ...s les co没ts unaires (transition $D\arrow
+l.488 ...s les co没ts unaires (transition $D\arrow
                                                    E$). Le second type de tr...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2135,7 +2144,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.476 ...e valeur de variable transition $C \arrow
+l.488 ...e valeur de variable transition $C \arrow
                                                    D$.Une telle transformati...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2143,14 +2152,94 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+<./CPD/figure/coherences_local.png, id=933, 861.4584pt x 557.6835pt>
+File: ./CPD/figure/coherences_local.png Graphic file (type png)
 
-LaTeX Warning: Reference `' on page 22 undefined on input line 479.
+<use ./CPD/figure/coherences_local.png>
+Package pdftex.def Info: ./CPD/figure/coherences_local.png used on input line 4
+95.
+(pdftex.def)             Requested size: 284.52756pt x 184.1978pt.
 
-[22]
+
+LaTeX Warning: Reference `' on page 22 undefined on input line 504.
+
+[22 <./CPD/figure/DFBB.png>]
+
+LaTeX Warning: Reference `' on page 23 undefined on input line 511.
+
+[23 <./CPD/figure/coherences_local.png>]
+
+! LaTeX Error: \begin{document} ended by \end{enumerate}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.535 \end{enumerate}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.535 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.535 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.535 \end{enumerate}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+
+LaTeX Warning: File `figures/algo_genetique.png' not found on input line 541.
+
+
+! Package pdftex.def Error: File `figures/algo_genetique.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.541 ...s[width=10cm]{figures/algo_genetique.png}
+                                                   \\
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 541.
+
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [24]
 ! Extra }, or forgotten $.
 <recently read> \egroup 
                         
-l.526 
+l.611 
       
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -2161,7 +2250,7 @@ deleted material, e.g., by typing `I$}'.
 ! Extra }, or forgotten $.
 <recently read> \egroup 
                         
-l.526 
+l.611 
       
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -2172,7 +2261,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.526 
+l.611 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2180,7 +2269,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.527 \end{algorithm}
+l.612 \end{algorithm}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2189,14 +2278,14 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 10000) detected at line 527
+Underfull \hbox (badness 10000) detected at line 612
 [][]
  []
 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.527 \end{algorithm}
+l.612 \end{algorithm}
                      
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2204,17 +2293,17 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-) [23] [24]
+) [25] [26]
 \openout2 = `proteus/chapter.aux'.
 
  (./proteus/chapter.tex
 Chapitre 2.
-) [25
+) [27
 
 
 
 
-] [26
+] [28
 
 
 ]
@@ -2222,205 +2311,10 @@ Chapitre 2.
 
  (./comparaisons/chapter.tex
 Chapitre 3.
-[27
+[29
 
 
 ]
-
-Package Fancyhdr Warning: \headheight is too small (14.5pt): 
- Make it at least 27.23862pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[28]
-
-Package natbib Warning: Citation `Dantas03' on page 29 undefined on input line 
-35.
-
-
-Package natbib Warning: Citation `Kuhlman06' on page 29 undefined on input line
- 35.
-
-
-Package natbib Warning: Citation `Lippow07' on page 29 undefined on input line 
-35.
-
-
-Package natbib Warning: Citation `Saven11' on page 29 undefined on input line 3
-5.
-
-
-Package natbib Warning: Citation `Feldmeier13' on page 29 undefined on input li
-ne 35.
-
-
-Package natbib Warning: Citation `Tinberg13' on page 29 undefined on input line
- 35.
-
-
-Package natbib Warning: Citation `Pokala04' on page 29 undefined on input line 
-40.
-
-
-Package natbib Warning: Citation `Samish11' on page 29 undefined on input line 
-40.
-
-
-Package natbib Warning: Citation `Li13' on page 29 undefined on input line 40.
-
-
-Package natbib Warning: Citation `Ponder87' on page 29 undefined on input line 
-48.
-
-
-Package natbib Warning: Citation `Koehl02' on page 29 undefined on input line 4
-8.
-
-
-Package natbib Warning: Citation `Larson02' on page 29 undefined on input line 
-48.
-
-
-Package natbib Warning: Citation `Schmidt09' on page 29 undefined on input line
- 48.
-
-
-Package natbib Warning: Citation `Schmidt10' on page 29 undefined on input line
- 48.
-
-
-Package natbib Warning: Citation `Druart15' on page 29 undefined on input line 
-51.
-
-
-Package natbib Warning: Citation `Aleksandrov10b' on page 29 undefined on input
- line 53.
-
-
-Package natbib Warning: Citation `Polydorides13' on page 29 undefined on input 
-line 53.
-
-
-Package natbib Warning: Citation `Kilambi12' on page 29 undefined on input line
- 53.
-
-
-Package natbib Warning: Citation `Looger01' on page 29 undefined on input line 
-58.
-
-
-Package natbib Warning: Citation `Georgiev08' on page 29 undefined on input lin
-e 58.
-
-
-Package natbib Warning: Citation `Gordon99' on page 29 undefined on input line 
-59.
-
-
-Package natbib Warning: Citation `Hong09' on page 29 undefined on input line 59
-.
-
-
-Package natbib Warning: Citation `Traore13' on page 29 undefined on input line 
-59.
-
-
-Package natbib Warning: Citation `Allouche14' on page 29 undefined on input lin
-e 59.
-
-
-Package natbib Warning: Citation `Zou03' on page 29 undefined on input line 62.
-
-
-
-Package natbib Warning: Citation `Samish11' on page 29 undefined on input line 
-62.
-
-
-Package natbib Warning: Citation `FrenkelBK' on page 29 undefined on input line
- 64.
-
-
-Package natbib Warning: Citation `ChipotBK' on page 29 undefined on input line 
-64.
-
-
-Package natbib Warning: Citation `Wernisch00' on page 29 undefined on input lin
-e 68.
-
-
-Package natbib Warning: Citation `Schmidt09' on page 29 undefined on input line
- 68.
-
-
-Package natbib Warning: Citation `Schmidt10' on page 29 undefined on input line
- 68.
-
-
-Package natbib Warning: Citation `Metropolis53' on page 29 undefined on input l
-ine 69.
-
-
-Package natbib Warning: Citation `FrenkelBK' on page 29 undefined on input line
- 69.
-
-
-Package natbib Warning: Citation `GrimmetBK' on page 29 undefined on input line
- 69.
-
-
-Package natbib Warning: Citation `Sugita99' on page 29 undefined on input line 
-70.
-
-
-Package natbib Warning: Citation `Kofke02' on page 29 undefined on input line 7
-0.
-
-
-Package natbib Warning: Citation `Earl05' on page 29 undefined on input line 70
-.
-
-
-Package natbib Warning: Citation `Traore13' on page 29 undefined on input line 
-73.
-
-
-Package natbib Warning: Citation `Allouche14' on page 29 undefined on input lin
-e 73.
-
-[29]
-
-Package natbib Warning: Citation `Schmidt08b' on page 30 undefined on input lin
-e 84.
-
-
-Package natbib Warning: Citation `Schmidt08' on page 30 undefined on input line
- 84.
-
-
-Package natbib Warning: Citation `Simonson13b' on page 30 undefined on input li
-ne 84.
-
-
-Package natbib Warning: Citation `Dahiyat97' on page 30 undefined on input line
- 86.
-
-
-Package natbib Warning: Citation `Schmidt08' on page 30 undefined on input line
- 88.
-
-
-Package natbib Warning: Citation `Simonson13b' on page 30 undefined on input li
-ne 88.
-
-
-Package natbib Warning: Citation `Gough01' on page 30 undefined on input line 9
-6.
-
-
-Package natbib Warning: Citation `Wilson07' on page 30 undefined on input line 
-96.
-
 
 Package Fancyhdr Warning: \headheight is too small (14.5pt): 
  Make it at least 27.23862pt.
@@ -2429,45 +2323,192 @@ Package Fancyhdr Warning: \headheight is too small (14.5pt):
 
 [30]
 
-Package natbib Warning: Citation `Metropolis53' on page 31 undefined on input l
-ine 118.
+Package natbib Warning: Citation `Dantas03' on page 31 undefined on input line 
+35.
+
+
+Package natbib Warning: Citation `Kuhlman06' on page 31 undefined on input line
+ 35.
+
+
+Package natbib Warning: Citation `Lippow07' on page 31 undefined on input line 
+35.
+
+
+Package natbib Warning: Citation `Saven11' on page 31 undefined on input line 3
+5.
+
+
+Package natbib Warning: Citation `Feldmeier13' on page 31 undefined on input li
+ne 35.
+
+
+Package natbib Warning: Citation `Tinberg13' on page 31 undefined on input line
+ 35.
+
+
+Package natbib Warning: Citation `Pokala04' on page 31 undefined on input line 
+40.
+
+
+Package natbib Warning: Citation `Samish11' on page 31 undefined on input line 
+40.
+
+
+Package natbib Warning: Citation `Li13' on page 31 undefined on input line 40.
+
+
+Package natbib Warning: Citation `Ponder87' on page 31 undefined on input line 
+48.
+
+
+Package natbib Warning: Citation `Koehl02' on page 31 undefined on input line 4
+8.
+
+
+Package natbib Warning: Citation `Larson02' on page 31 undefined on input line 
+48.
+
+
+Package natbib Warning: Citation `Schmidt09' on page 31 undefined on input line
+ 48.
+
+
+Package natbib Warning: Citation `Schmidt10' on page 31 undefined on input line
+ 48.
+
+
+Package natbib Warning: Citation `Druart15' on page 31 undefined on input line 
+51.
+
+
+Package natbib Warning: Citation `Aleksandrov10b' on page 31 undefined on input
+ line 53.
+
+
+Package natbib Warning: Citation `Polydorides13' on page 31 undefined on input 
+line 53.
+
+
+Package natbib Warning: Citation `Kilambi12' on page 31 undefined on input line
+ 53.
+
+
+Package natbib Warning: Citation `Looger01' on page 31 undefined on input line 
+58.
+
+
+Package natbib Warning: Citation `Georgiev08' on page 31 undefined on input lin
+e 58.
+
+
+Package natbib Warning: Citation `Gordon99' on page 31 undefined on input line 
+59.
+
+
+Package natbib Warning: Citation `Hong09' on page 31 undefined on input line 59
+.
+
+
+Package natbib Warning: Citation `Traore13' on page 31 undefined on input line 
+59.
+
+
+Package natbib Warning: Citation `Allouche14' on page 31 undefined on input lin
+e 59.
+
+
+Package natbib Warning: Citation `Zou03' on page 31 undefined on input line 62.
+
+
+
+Package natbib Warning: Citation `Samish11' on page 31 undefined on input line 
+62.
 
 
 Package natbib Warning: Citation `FrenkelBK' on page 31 undefined on input line
- 118.
+ 64.
+
+
+Package natbib Warning: Citation `ChipotBK' on page 31 undefined on input line 
+64.
+
+
+Package natbib Warning: Citation `Wernisch00' on page 31 undefined on input lin
+e 68.
+
+
+Package natbib Warning: Citation `Schmidt09' on page 31 undefined on input line
+ 68.
+
+
+Package natbib Warning: Citation `Schmidt10' on page 31 undefined on input line
+ 68.
+
+
+Package natbib Warning: Citation `Metropolis53' on page 31 undefined on input l
+ine 69.
+
+
+Package natbib Warning: Citation `FrenkelBK' on page 31 undefined on input line
+ 69.
 
 
 Package natbib Warning: Citation `GrimmetBK' on page 31 undefined on input line
- 118.
+ 69.
+
+
+Package natbib Warning: Citation `Sugita99' on page 31 undefined on input line 
+70.
+
+
+Package natbib Warning: Citation `Kofke02' on page 31 undefined on input line 7
+0.
+
+
+Package natbib Warning: Citation `Earl05' on page 31 undefined on input line 70
+.
+
+
+Package natbib Warning: Citation `Traore13' on page 31 undefined on input line 
+73.
+
+
+Package natbib Warning: Citation `Allouche14' on page 31 undefined on input lin
+e 73.
 
 [31]
 
-Package natbib Warning: Citation `Metropolis53' on page 32 undefined on input l
-ine 155.
+Package natbib Warning: Citation `Schmidt08b' on page 32 undefined on input lin
+e 84.
 
 
-Package natbib Warning: Citation `FrenkelBK' on page 32 undefined on input line
- 155.
+Package natbib Warning: Citation `Schmidt08' on page 32 undefined on input line
+ 84.
 
 
-Package natbib Warning: Citation `GrimmetBK' on page 32 undefined on input line
- 155.
+Package natbib Warning: Citation `Simonson13b' on page 32 undefined on input li
+ne 84.
 
 
-Package natbib Warning: Citation `Metropolis53' on page 32 undefined on input l
-ine 162.
+Package natbib Warning: Citation `Dahiyat97' on page 32 undefined on input line
+ 86.
 
 
-Package natbib Warning: Citation `FrenkelBK' on page 32 undefined on input line
- 162.
+Package natbib Warning: Citation `Schmidt08' on page 32 undefined on input line
+ 88.
 
 
-Package natbib Warning: Citation `GrimmetBK' on page 32 undefined on input line
- 162.
+Package natbib Warning: Citation `Simonson13b' on page 32 undefined on input li
+ne 88.
 
 
-Package natbib Warning: Citation `Metropolis53' on page 32 undefined on input l
-ine 172.
+Package natbib Warning: Citation `Gough01' on page 32 undefined on input line 9
+6.
+
+
+Package natbib Warning: Citation `Wilson07' on page 32 undefined on input line 
+96.
 
 
 Package Fancyhdr Warning: \headheight is too small (14.5pt): 
@@ -2477,45 +2518,45 @@ Package Fancyhdr Warning: \headheight is too small (14.5pt):
 
 [32]
 
-Package natbib Warning: Citation `Kofke02' on page 33 undefined on input line 2
-02.
+Package natbib Warning: Citation `Metropolis53' on page 33 undefined on input l
+ine 118.
 
 
-Package natbib Warning: Citation `Earl05' on page 33 undefined on input line 20
-2.
+Package natbib Warning: Citation `FrenkelBK' on page 33 undefined on input line
+ 118.
 
 
-Package natbib Warning: Citation `Kofke02' on page 33 undefined on input line 2
-08.
+Package natbib Warning: Citation `GrimmetBK' on page 33 undefined on input line
+ 118.
 
 [33]
 
-Package natbib Warning: Citation `Wernisch00' on page 34 undefined on input lin
-e 213.
+Package natbib Warning: Citation `Metropolis53' on page 34 undefined on input l
+ine 155.
 
 
-Package natbib Warning: Citation `Schmidt08' on page 34 undefined on input line
- 213.
+Package natbib Warning: Citation `FrenkelBK' on page 34 undefined on input line
+ 155.
 
 
-Package natbib Warning: Citation `Traore13' on page 34 undefined on input line 
-224.
+Package natbib Warning: Citation `GrimmetBK' on page 34 undefined on input line
+ 155.
 
 
-Package natbib Warning: Citation `Allouche14' on page 34 undefined on input lin
-e 224.
+Package natbib Warning: Citation `Metropolis53' on page 34 undefined on input l
+ine 162.
 
 
-Package natbib Warning: Citation `Charmm' on page 34 undefined on input line 23
-8.
+Package natbib Warning: Citation `FrenkelBK' on page 34 undefined on input line
+ 162.
 
 
-Package natbib Warning: Citation `Lopes07' on page 34 undefined on input line 2
-39.
+Package natbib Warning: Citation `GrimmetBK' on page 34 undefined on input line
+ 162.
 
 
-Package natbib Warning: Citation `Schmidt08b' on page 34 undefined on input lin
-e 239.
+Package natbib Warning: Citation `Metropolis53' on page 34 undefined on input l
+ine 172.
 
 
 Package Fancyhdr Warning: \headheight is too small (14.5pt): 
@@ -2525,80 +2566,128 @@ Package Fancyhdr Warning: \headheight is too small (14.5pt):
 
 [34]
 
-Package natbib Warning: Citation `Schmidt08b' on page 35 undefined on input lin
-e 244.
+Package natbib Warning: Citation `Kofke02' on page 35 undefined on input line 2
+02.
 
 
-Package natbib Warning: Citation `Lee71' on page 35 undefined on input line 248
-.
+Package natbib Warning: Citation `Earl05' on page 35 undefined on input line 20
+2.
 
 
-Package natbib Warning: Citation `Street98' on page 35 undefined on input line 
-249.
-
-
-Package natbib Warning: Citation `Lopes07' on page 35 undefined on input line 2
-49.
-
-
-Package natbib Warning: Citation `Xplor' on page 35 undefined on input line 250
-.
-
-
-Package natbib Warning: Citation `Simonson13b' on page 35 undefined on input li
-ne 250.
-
-
-Package natbib Warning: Citation `Schmidt08' on page 35 undefined on input line
- 253.
-
-
-Package natbib Warning: Citation `Schmidt09' on page 35 undefined on input line
- 259.
-
-
-Package natbib Warning: Citation `Schmidt10' on page 35 undefined on input line
- 259.
-
-
-Package natbib Warning: Citation `Tuffery91' on page 35 undefined on input line
- 263.
+Package natbib Warning: Citation `Kofke02' on page 35 undefined on input line 2
+08.
 
 [35]
 
-Package natbib Warning: Citation `Gough01' on page 36 undefined on input line 2
+Package natbib Warning: Citation `Wernisch00' on page 36 undefined on input lin
+e 213.
+
+
+Package natbib Warning: Citation `Schmidt08' on page 36 undefined on input line
+ 213.
+
+
+Package natbib Warning: Citation `Traore13' on page 36 undefined on input line 
+224.
+
+
+Package natbib Warning: Citation `Allouche14' on page 36 undefined on input lin
+e 224.
+
+
+Package natbib Warning: Citation `Charmm' on page 36 undefined on input line 23
+8.
+
+
+Package natbib Warning: Citation `Lopes07' on page 36 undefined on input line 2
+39.
+
+
+Package natbib Warning: Citation `Schmidt08b' on page 36 undefined on input lin
+e 239.
+
+
+Package Fancyhdr Warning: \headheight is too small (14.5pt): 
+ Make it at least 27.23862pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[36]
+
+Package natbib Warning: Citation `Schmidt08b' on page 37 undefined on input lin
+e 244.
+
+
+Package natbib Warning: Citation `Lee71' on page 37 undefined on input line 248
+.
+
+
+Package natbib Warning: Citation `Street98' on page 37 undefined on input line 
+249.
+
+
+Package natbib Warning: Citation `Lopes07' on page 37 undefined on input line 2
+49.
+
+
+Package natbib Warning: Citation `Xplor' on page 37 undefined on input line 250
+.
+
+
+Package natbib Warning: Citation `Simonson13b' on page 37 undefined on input li
+ne 250.
+
+
+Package natbib Warning: Citation `Schmidt08' on page 37 undefined on input line
+ 253.
+
+
+Package natbib Warning: Citation `Schmidt09' on page 37 undefined on input line
+ 259.
+
+
+Package natbib Warning: Citation `Schmidt10' on page 37 undefined on input line
+ 259.
+
+
+Package natbib Warning: Citation `Tuffery91' on page 37 undefined on input line
+ 263.
+
+[37]
+
+Package natbib Warning: Citation `Gough01' on page 38 undefined on input line 2
 76.
 
 
-Package natbib Warning: Citation `Wilson07' on page 36 undefined on input line 
+Package natbib Warning: Citation `Wilson07' on page 38 undefined on input line 
 276.
 
 
-Package natbib Warning: Citation `Andreeva04' on page 36 undefined on input lin
+Package natbib Warning: Citation `Andreeva04' on page 38 undefined on input lin
 e 277.
 
 
-Package natbib Warning: Citation `DurbinBK' on page 36 undefined on input line 
+Package natbib Warning: Citation `DurbinBK' on page 38 undefined on input line 
 283.
 
 
-Package natbib Warning: Citation `Murphy02' on page 36 undefined on input line 
+Package natbib Warning: Citation `Murphy02' on page 38 undefined on input line 
 290.
 
 
-Package natbib Warning: Citation `Launay07' on page 36 undefined on input line 
+Package natbib Warning: Citation `Launay07' on page 38 undefined on input line 
 291.
 
 
-Package natbib Warning: Citation `Schmidt09' on page 36 undefined on input line
+Package natbib Warning: Citation `Schmidt09' on page 38 undefined on input line
  317.
 
 
-Package natbib Warning: Citation `Schmidt10' on page 36 undefined on input line
+Package natbib Warning: Citation `Schmidt10' on page 38 undefined on input line
  317.
 
 
-Package natbib Warning: Citation `Pfam' on page 36 undefined on input line 320.
+Package natbib Warning: Citation `Pfam' on page 38 undefined on input line 320.
 
 
 
@@ -2607,27 +2696,7 @@ Package Fancyhdr Warning: \headheight is too small (14.5pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[36] [37]
-
-Package Fancyhdr Warning: \headheight is too small (14.5pt): 
- Make it at least 27.23862pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[38]
-
-Package natbib Warning: Citation `Lopes07' on page 39 undefined on input line 3
-90.
-
-
-Package natbib Warning: Citation `Schmidt08b' on page 39 undefined on input lin
-e 390.
-
-
-Package natbib Warning: Citation `Gaillard14' on page 39 undefined on input lin
-e 390.
-
-[39]
+[38] [39]
 
 Package Fancyhdr Warning: \headheight is too small (14.5pt): 
  Make it at least 27.23862pt.
@@ -2636,64 +2705,84 @@ Package Fancyhdr Warning: \headheight is too small (14.5pt):
 
 [40]
 
-Package natbib Warning: Citation `Schmidt09' on page 41 undefined on input line
- 439.
+Package natbib Warning: Citation `Lopes07' on page 41 undefined on input line 3
+90.
 
 
-Package natbib Warning: Citation `Schmidt10' on page 41 undefined on input line
- 439.
+Package natbib Warning: Citation `Schmidt08b' on page 41 undefined on input lin
+e 390.
 
 
-Package natbib Warning: Citation `Schmidt09' on page 41 undefined on input line
- 441.
-
-
-Package natbib Warning: Citation `Schmidt10' on page 41 undefined on input line
- 441.
+Package natbib Warning: Citation `Gaillard14' on page 41 undefined on input lin
+e 390.
 
 [41]
 
-Package natbib Warning: Citation `Fung08' on page 42 undefined on input line 45
+Package Fancyhdr Warning: \headheight is too small (14.5pt): 
+ Make it at least 27.23862pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[42]
+
+Package natbib Warning: Citation `Schmidt09' on page 43 undefined on input line
+ 439.
+
+
+Package natbib Warning: Citation `Schmidt10' on page 43 undefined on input line
+ 439.
+
+
+Package natbib Warning: Citation `Schmidt09' on page 43 undefined on input line
+ 441.
+
+
+Package natbib Warning: Citation `Schmidt10' on page 43 undefined on input line
+ 441.
+
+[43]
+
+Package natbib Warning: Citation `Fung08' on page 44 undefined on input line 45
 9.
 
 
-Package natbib Warning: Citation `Mandell09' on page 42 undefined on input line
+Package natbib Warning: Citation `Mandell09' on page 44 undefined on input line
  459.
 
 
-Package natbib Warning: Citation `Huang11' on page 42 undefined on input line 4
+Package natbib Warning: Citation `Huang11' on page 44 undefined on input line 4
 59.
 
 
-Package natbib Warning: Citation `Ng11' on page 42 undefined on input line 461.
+Package natbib Warning: Citation `Ng11' on page 44 undefined on input line 461.
 
 
 
-Package natbib Warning: Citation `Lucore15' on page 42 undefined on input line 
+Package natbib Warning: Citation `Lucore15' on page 44 undefined on input line 
 461.
 
 
-Package natbib Warning: Citation `Georgiev08' on page 42 undefined on input lin
+Package natbib Warning: Citation `Georgiev08' on page 44 undefined on input lin
 e 461.
 
 
-Package natbib Warning: Citation `Hallen15' on page 42 undefined on input line 
+Package natbib Warning: Citation `Hallen15' on page 44 undefined on input line 
 461.
 
 
-Package natbib Warning: Citation `Schmidt09' on page 42 undefined on input line
+Package natbib Warning: Citation `Schmidt09' on page 44 undefined on input line
  474.
 
 
-Package natbib Warning: Citation `Schmidt10' on page 42 undefined on input line
+Package natbib Warning: Citation `Schmidt10' on page 44 undefined on input line
  474.
 
 
-Package natbib Warning: Citation `Polydorides11' on page 42 undefined on input 
+Package natbib Warning: Citation `Polydorides11' on page 44 undefined on input 
 line 475.
 
 
-Package natbib Warning: Citation `Simonson15' on page 42 undefined on input lin
+Package natbib Warning: Citation `Simonson15' on page 44 undefined on input lin
 e 475.
 
 
@@ -2702,9 +2791,9 @@ Package Fancyhdr Warning: \headheight is too small (14.5pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[42]
+[44]
 No file these.bbl.
-[43]
+[45]
 Overfull \hbox (8.2185pt too wide) in paragraph at lines 545--559
  [] 
  []
@@ -2715,31 +2804,28 @@ Package Fancyhdr Warning: \headheight is too small (14.5pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[44] [45]
+[46] [47]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 618.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 618.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 618.
- [46
+ [48
 
 ]
 Overfull \vbox (44.83983pt too high) has occurred while \output is active []
 
 
-[47] [48
+[49] [50
 
-] [49
+] [51
 
 ]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) [50] [51] [52
+) [52] [53] [54
 
 
 ]
@@ -2748,164 +2834,164 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
  (./PDZ/chapter.tex
 Chapitre 4.
 
-Package natbib Warning: Citation `Harris01' on page 53 undefined on input line 
+Package natbib Warning: Citation `Harris01' on page 55 undefined on input line 
 6.
 
 
-Package natbib Warning: Citation `Hung02' on page 53 undefined on input line 6.
+Package natbib Warning: Citation `Hung02' on page 55 undefined on input line 6.
 
 
 
-Package natbib Warning: Citation `Tonikian08' on page 53 undefined on input lin
+Package natbib Warning: Citation `Tonikian08' on page 55 undefined on input lin
 e 6.
 
 
-Package natbib Warning: Citation `Gfeller11' on page 53 undefined on input line
+Package natbib Warning: Citation `Gfeller11' on page 55 undefined on input line
  6.
 
 
-Package natbib Warning: Citation `Subbaiah11' on page 53 undefined on input lin
+Package natbib Warning: Citation `Subbaiah11' on page 55 undefined on input lin
 e 6.
 
 
-Package natbib Warning: Citation `Sheperd11r' on page 53 undefined on input lin
+Package natbib Warning: Citation `Sheperd11r' on page 55 undefined on input lin
 e 6.
 
 
-Package natbib Warning: Citation `Bach12' on page 53 undefined on input line 6.
+Package natbib Warning: Citation `Bach12' on page 55 undefined on input line 6.
 
 
 
-Package natbib Warning: Citation `Roberts12' on page 53 undefined on input line
+Package natbib Warning: Citation `Roberts12' on page 55 undefined on input line
  6.
 
 
-Package natbib Warning: Citation `Zheng15' on page 53 undefined on input line 6
+Package natbib Warning: Citation `Zheng15' on page 55 undefined on input line 6
 .
 
 
-Package natbib Warning: Citation `Socolich05' on page 53 undefined on input lin
+Package natbib Warning: Citation `Socolich05' on page 55 undefined on input lin
 e 6.
 
 
-Package natbib Warning: Citation `Kong09' on page 53 undefined on input line 6.
+Package natbib Warning: Citation `Kong09' on page 55 undefined on input line 6.
 
 
 
-Package natbib Warning: Citation `Mclaughlin12' on page 53 undefined on input l
+Package natbib Warning: Citation `Mclaughlin12' on page 55 undefined on input l
 ine 6.
 
 
-Package natbib Warning: Citation `Melero14' on page 53 undefined on input line 
+Package natbib Warning: Citation `Melero14' on page 55 undefined on input line 
 6.
 
 
-Package natbib Warning: Citation `Reina02' on page 53 undefined on input line 6
+Package natbib Warning: Citation `Reina02' on page 55 undefined on input line 6
 .
 
 
-Package natbib Warning: Citation `Schmidt10' on page 53 undefined on input line
+Package natbib Warning: Citation `Schmidt10' on page 55 undefined on input line
  6.
 
 
-Package natbib Warning: Citation `Smith10' on page 53 undefined on input line 6
+Package natbib Warning: Citation `Smith10' on page 55 undefined on input line 6
 .
 
 
-LaTeX Warning: Reference `(' on page 53 undefined on input line 7.
+LaTeX Warning: Reference `(' on page 55 undefined on input line 7.
 
 
-Package natbib Warning: Citation `Baker06b' on page 53 undefined on input line 
+Package natbib Warning: Citation `Baker06b' on page 55 undefined on input line 
 7.
 
-[53
+[55
 
 
-] [54]
+] [56]
 
-Package natbib Warning: Citation `Kleinman06' on page 55 undefined on input lin
+Package natbib Warning: Citation `Kleinman06' on page 57 undefined on input lin
 e 52.
-
-[55]
-
-Package natbib Warning: Citation `Kleinman06' on page 56 undefined on input lin
-e 99.
-
-[56]
-
-Package natbib Warning: Citation `Schmidt08' on page 57 undefined on input line
- 115.
-
-
-Package natbib Warning: Citation `Simonson13b' on page 57 undefined on input li
-ne 115.
 
 [57]
 
-Package natbib Warning: Citation `Cornell95' on page 58 undefined on input line
+Package natbib Warning: Citation `Kleinman06' on page 58 undefined on input lin
+e 99.
+
+[58]
+
+Package natbib Warning: Citation `Schmidt08' on page 59 undefined on input line
+ 115.
+
+
+Package natbib Warning: Citation `Simonson13b' on page 59 undefined on input li
+ne 115.
+
+[59]
+
+Package natbib Warning: Citation `Cornell95' on page 60 undefined on input line
  138.
 
 
-Package natbib Warning: Citation `Hawkins95' on page 58 undefined on input line
+Package natbib Warning: Citation `Hawkins95' on page 60 undefined on input line
  144.
 
 
-Package natbib Warning: Citation `Lopes07' on page 58 undefined on input line 1
+Package natbib Warning: Citation `Lopes07' on page 60 undefined on input line 1
 44.
 
 
 LaTeX Warning: Command \r invalid in math mode on input line 144.
 
 
-Package natbib Warning: Citation `Lee71' on page 58 undefined on input line 147
+Package natbib Warning: Citation `Lee71' on page 60 undefined on input line 147
 .
 
 
-Package natbib Warning: Citation `Xplor' on page 58 undefined on input line 147
+Package natbib Warning: Citation `Xplor' on page 60 undefined on input line 147
 .
 
 
-Package natbib Warning: Citation `Hawkins95' on page 58 undefined on input line
+Package natbib Warning: Citation `Hawkins95' on page 60 undefined on input line
  149.
 
 
-Package natbib Warning: Citation `Lopes07' on page 58 undefined on input line 1
+Package natbib Warning: Citation `Lopes07' on page 60 undefined on input line 1
 49.
 
 
-Package natbib Warning: Citation `Hawkins95' on page 58 undefined on input line
+Package natbib Warning: Citation `Hawkins95' on page 60 undefined on input line
  149.
 
 
-Package natbib Warning: Citation `Villa01' on page 58 undefined on input line 1
+Package natbib Warning: Citation `Villa01' on page 60 undefined on input line 1
 50.
 
 
-Package natbib Warning: Citation `Simonson13b' on page 58 undefined on input li
+Package natbib Warning: Citation `Simonson13b' on page 60 undefined on input li
 ne 152.
 
 
-Package natbib Warning: Citation `Gaillard14' on page 58 undefined on input lin
+Package natbib Warning: Citation `Gaillard14' on page 60 undefined on input lin
 e 152.
 
-[58]
+[60]
 
-Package natbib Warning: Citation `Street98' on page 59 undefined on input line 
+Package natbib Warning: Citation `Street98' on page 61 undefined on input line 
 156.
 
 
-Package natbib Warning: Citation `Lopes07' on page 59 undefined on input line 1
+Package natbib Warning: Citation `Lopes07' on page 61 undefined on input line 1
 56.
 
 
-Package natbib Warning: Citation `Gaillard14' on page 59 undefined on input lin
+Package natbib Warning: Citation `Gaillard14' on page 61 undefined on input lin
 e 156.
 
 
-Package natbib Warning: Citation `Aleksandrov10b' on page 59 undefined on input
+Package natbib Warning: Citation `Aleksandrov10b' on page 61 undefined on input
  line 158.
 
-[59]
+[61]
 ! Undefined control sequence.
 l.164 ...en classes homologues (voir table \reftab
                                                   {AAgroups}). Dans chaque c...
@@ -2915,17 +3001,17 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[60]
+[62]
 
-Package natbib Warning: Citation `refSuperfamily' on page 61 undefined on input
+Package natbib Warning: Citation `refSuperfamily' on page 63 undefined on input
  line 216.
 
 
-Package natbib Warning: Citation `refSam' on page 61 undefined on input line 22
+Package natbib Warning: Citation `refSam' on page 63 undefined on input line 22
 3.
 
 
-Package natbib Warning: Citation `refHmmer' on page 61 undefined on input line 
+Package natbib Warning: Citation `refHmmer' on page 63 undefined on input line 
 223.
 
 LaTeX Font Info:    Try loading font information for U+dsrom on input line 231.
@@ -2942,7 +3028,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-[61]
+[63]
 ! Extra }, or forgotten $.
 l.240 ...{1}{m}\sum_{1<j<m} \mathds{1}(s_i^j,n_i)}
                                                    \times 100
@@ -2953,44 +3039,34 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 
-Package natbib Warning: Citation `refPfam' on page 62 undefined on input line 2
+Package natbib Warning: Citation `refPfam' on page 64 undefined on input line 2
 48.
 
 
-Package natbib Warning: Citation `refPfam' on page 62 undefined on input line 2
+Package natbib Warning: Citation `refPfam' on page 64 undefined on input line 2
 48.
 
 
-Package natbib Warning: Citation `refBLOSUM' on page 62 undefined on input line
+Package natbib Warning: Citation `refBLOSUM' on page 64 undefined on input line
  252.
 
 
-Package natbib Warning: Citation `refBLAST' on page 62 undefined on input line 
+Package natbib Warning: Citation `refBLAST' on page 64 undefined on input line 
 258.
 
-[62]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 260.
+[64]
 
- (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic settings for font family
-(microtype)             `lmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
-
-Package natbib Warning: Citation `DurbinBK' on page 63 undefined on input line 
+Package natbib Warning: Citation `DurbinBK' on page 65 undefined on input line 
 269.
 
 
-Package natbib Warning: Citation `Launay07' on page 63 undefined on input line 
+Package natbib Warning: Citation `Launay07' on page 65 undefined on input line 
 276.
 
 
-LaTeX Warning: Reference `PDZaligned' on page 63 undefined on input line 282.
+LaTeX Warning: Reference `PDZaligned' on page 65 undefined on input line 282.
 
-[63]
+[65]
 ! Missing $ inserted.
 <inserted text> 
                 $
@@ -3011,45 +3087,45 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-LaTeX Warning: Reference `{align_homo:1G9O}' on page 64 undefined on input line
+LaTeX Warning: Reference `{align_homo:1G9O}' on page 66 undefined on input line
  346.
 
 
-LaTeX Warning: Reference `{align_homo:1IHJ}' on page 64 undefined on input line
+LaTeX Warning: Reference `{align_homo:1IHJ}' on page 66 undefined on input line
  346.
 
 
-LaTeX Warning: Reference `{align_homo:1R6J}' on page 64 undefined on input line
+LaTeX Warning: Reference `{align_homo:1R6J}' on page 66 undefined on input line
  346.
 
 
-LaTeX Warning: Reference `{align_homo:1N7E}' on page 64 undefined on input line
+LaTeX Warning: Reference `{align_homo:1N7E}' on page 66 undefined on input line
  346.
 
 
-LaTeX Warning: Reference `{align_homo:2BYG}' on page 64 undefined on input line
+LaTeX Warning: Reference `{align_homo:2BYG}' on page 66 undefined on input line
  346.
 
 
-LaTeX Warning: Reference `{align_homo:3K82}' on page 64 undefined on input line
+LaTeX Warning: Reference `{align_homo:3K82}' on page 66 undefined on input line
  346.
 
-[64]
+[66]
 
-LaTeX Warning: Reference `PDZaligned' on page 65 undefined on input line 380.
+LaTeX Warning: Reference `PDZaligned' on page 67 undefined on input line 380.
 
 
 Package caption Warning: \label without proper reference on input line 427.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `tab:corePDZ' on page 65 undefined on input line 380.
+LaTeX Warning: Reference `tab:corePDZ' on page 67 undefined on input line 380.
 
-[65]
+[67]
 
-LaTeX Warning: Reference `PDZaligned' on page 66 undefined on input line 411.
+LaTeX Warning: Reference `PDZaligned' on page 68 undefined on input line 411.
 
-[66] <./PDZ/images/natives_alignees.png, id=1240, 1219.16348pt x 181.86626pt>
+[68] <./PDZ/images/natives_alignees.png, id=1260, 1219.16348pt x 181.86626pt>
 File: ./PDZ/images/natives_alignees.png Graphic file (type png)
 
 <use ./PDZ/images/natives_alignees.png>
@@ -3057,7 +3133,7 @@ Package pdftex.def Info: ./PDZ/images/natives_alignees.png used on input line 4
 19.
 (pdftex.def)             Requested size: 512.1496pt x 76.39995pt.
 
-<./PDZ/images/corePDZ2.png, id=1242, 1313.3868pt x 1252.68pt>
+<./PDZ/images/corePDZ2.png, id=1261, 1313.3868pt x 1252.68pt>
 File: ./PDZ/images/corePDZ2.png Graphic file (type png)
 
 <use ./PDZ/images/corePDZ2.png>
@@ -3068,10 +3144,10 @@ Overfull \hbox (68.90549pt too wide) in paragraph at lines 418--422
  [][] 
  []
 
-[67
+[69
 
- <./PDZ/images/natives_alignees.png> <./PDZ/images/corePDZ2.png>] [68]
-<./PDZ/homologues/1G9O.png, id=1254, 662.9987pt x 541.62791pt>
+ <./PDZ/images/natives_alignees.png> <./PDZ/images/corePDZ2.png>] [70]
+<./PDZ/homologues/1G9O.png, id=1272, 662.9987pt x 541.62791pt>
 File: ./PDZ/homologues/1G9O.png Graphic file (type png)
 
 <use ./PDZ/homologues/1G9O.png>
@@ -3082,7 +3158,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 439--442
  [][] 
  []
 
-<./PDZ/proteus/1G9O.png, id=1255, 644.14565pt x 696.4922pt>
+<./PDZ/proteus/1G9O.png, id=1273, 644.14565pt x 696.4922pt>
 File: ./PDZ/proteus/1G9O.png Graphic file (type png)
 
 <use ./PDZ/proteus/1G9O.png>
@@ -3093,8 +3169,8 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 448--451
  [][] 
  []
 
-[69 <./PDZ/homologues/1G9O.png>] [70 <./PDZ/proteus/1G9O.png (PNG copy)>]
-<./PDZ/homologues/1IHJ.png, id=1265, 677.13847pt x 463.79868pt>
+[71 <./PDZ/homologues/1G9O.png>] [72 <./PDZ/proteus/1G9O.png (PNG copy)>]
+<./PDZ/homologues/1IHJ.png, id=1283, 677.13847pt x 463.79868pt>
 File: ./PDZ/homologues/1IHJ.png Graphic file (type png)
 
 <use ./PDZ/homologues/1IHJ.png>
@@ -3105,7 +3181,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 459--462
  [][] 
  []
 
-<./PDZ/proteus/1IHJ.png, id=1266, 669.28305pt x 697.28638pt>
+<./PDZ/proteus/1IHJ.png, id=1284, 669.28305pt x 697.28638pt>
 File: ./PDZ/proteus/1IHJ.png Graphic file (type png)
 
 <use ./PDZ/proteus/1IHJ.png>
@@ -3116,8 +3192,8 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 468--471
  [][] 
  []
 
-[71 <./PDZ/homologues/1IHJ.png>] [72 <./PDZ/proteus/1IHJ.png (PNG copy)>]
-<./PDZ/homologues/1R6J.png, id=1276, 595.44196pt x 532.09781pt>
+[73 <./PDZ/homologues/1IHJ.png>] [74 <./PDZ/proteus/1IHJ.png (PNG copy)>]
+<./PDZ/homologues/1R6J.png, id=1295, 595.44196pt x 532.09781pt>
 File: ./PDZ/homologues/1R6J.png Graphic file (type png)
 
 <use ./PDZ/homologues/1R6J.png>
@@ -3128,7 +3204,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 478--481
  [][] 
  []
 
-<./PDZ/proteus/1R6J.png, id=1277, 582.08772pt x 694.90384pt>
+<./PDZ/proteus/1R6J.png, id=1296, 582.08772pt x 694.90384pt>
 File: ./PDZ/proteus/1R6J.png Graphic file (type png)
 
 <use ./PDZ/proteus/1R6J.png>
@@ -3139,8 +3215,8 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 487--490
  [][] 
  []
 
-[73 <./PDZ/homologues/1R6J.png>] [74 <./PDZ/proteus/1R6J.png (PNG copy)>]
-<./PDZ/homologues/1N7E.png, id=1288, 680.28065pt x 525.7444pt>
+[75 <./PDZ/homologues/1R6J.png>] [76 <./PDZ/proteus/1R6J.png (PNG copy)>]
+<./PDZ/homologues/1N7E.png, id=1306, 680.28065pt x 525.7444pt>
 File: ./PDZ/homologues/1N7E.png Graphic file (type png)
 
 <use ./PDZ/homologues/1N7E.png>
@@ -3151,7 +3227,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 497--500
  [][] 
  []
 
-<./PDZ/proteus/1N7E.png, id=1289, 678.70956pt x 694.10966pt>
+<./PDZ/proteus/1N7E.png, id=1307, 678.70956pt x 694.10966pt>
 File: ./PDZ/proteus/1N7E.png Graphic file (type png)
 
 <use ./PDZ/proteus/1N7E.png>
@@ -3162,8 +3238,8 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 506--509
  [][] 
  []
 
-[75 <./PDZ/homologues/1N7E.png>] [76 <./PDZ/proteus/1N7E.png (PNG copy)>]
-<./PDZ/homologues/2BYG.png, id=1299, 701.49033pt x 471.74043pt>
+[77 <./PDZ/homologues/1N7E.png>] [78 <./PDZ/proteus/1N7E.png (PNG copy)>]
+<./PDZ/homologues/2BYG.png, id=1317, 701.49033pt x 471.74043pt>
 File: ./PDZ/homologues/2BYG.png Graphic file (type png)
 
 <use ./PDZ/homologues/2BYG.png>
@@ -3174,7 +3250,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 516--519
  [][] 
  []
 
-<./PDZ/proteus/2BYG.png, id=1300, 689.70717pt x 694.90384pt>
+<./PDZ/proteus/2BYG.png, id=1318, 689.70717pt x 694.90384pt>
 File: ./PDZ/proteus/2BYG.png Graphic file (type png)
 
 <use ./PDZ/proteus/2BYG.png>
@@ -3185,8 +3261,8 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 525--528
  [][] 
  []
 
-[77 <./PDZ/homologues/2BYG.png>] [78 <./PDZ/proteus/2BYG.png (PNG copy)>]
-<./PDZ/homologues/3K82.png, id=1310, 696.77707pt x 546.39296pt>
+[79 <./PDZ/homologues/2BYG.png>] [80 <./PDZ/proteus/2BYG.png (PNG copy)>]
+<./PDZ/homologues/3K82.png, id=1330, 696.77707pt x 546.39296pt>
 File: ./PDZ/homologues/3K82.png Graphic file (type png)
 
 <use ./PDZ/homologues/3K82.png>
@@ -3197,7 +3273,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 535--538
  [][] 
  []
 
-<./PDZ/proteus/3K82.png, id=1311, 688.1361pt x 697.28638pt>
+<./PDZ/proteus/3K82.png, id=1331, 688.1361pt x 697.28638pt>
 File: ./PDZ/proteus/3K82.png Graphic file (type png)
 
 <use ./PDZ/proteus/3K82.png>
@@ -3208,47 +3284,47 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 544--547
  [][] 
  []
 
-[79 <./PDZ/homologues/3K82.png>] [80 <./PDZ/proteus/3K82.png (PNG copy)>]
+[81 <./PDZ/homologues/3K82.png>] [82 <./PDZ/proteus/3K82.png (PNG copy)>]
 
-Package natbib Warning: Citation `Schmidt09' on page 81 undefined on input line
+Package natbib Warning: Citation `Schmidt09' on page 83 undefined on input line
  576.
 
 
-Package natbib Warning: Citation `Schmidt10' on page 81 undefined on input line
+Package natbib Warning: Citation `Schmidt10' on page 83 undefined on input line
  576.
 
 
-Package natbib Warning: Citation `Modeller' on page 81 undefined on input line 
+Package natbib Warning: Citation `Modeller' on page 83 undefined on input line 
 576.
 
 
-Package natbib Warning: Citation `Tuffery91' on page 81 undefined on input line
+Package natbib Warning: Citation `Tuffery91' on page 83 undefined on input line
  576.
 
 
-Package natbib Warning: Citation `Gaillard14' on page 81 undefined on input lin
+Package natbib Warning: Citation `Gaillard14' on page 83 undefined on input lin
 e 576.
 
 
-Package natbib Warning: Citation `Krivov09' on page 81 undefined on input line 
+Package natbib Warning: Citation `Krivov09' on page 83 undefined on input line 
 576.
 
 
-Package natbib Warning: Citation `Gaillard16' on page 81 undefined on input lin
+Package natbib Warning: Citation `Gaillard16' on page 83 undefined on input lin
 e 576.
 
 
-Package natbib Warning: Citation `Simonson13b' on page 81 undefined on input li
+Package natbib Warning: Citation `Simonson13b' on page 83 undefined on input li
 ne 582.
 
 
-LaTeX Warning: Reference `para:REMC' on page 81 undefined on input line 584.
+LaTeX Warning: Reference `para:REMC' on page 83 undefined on input line 584.
 
 
-Package natbib Warning: Citation `Baker06b' on page 81 undefined on input line 
+Package natbib Warning: Citation `Baker06b' on page 83 undefined on input line 
 589.
 
-[81
+[83
 
 
 
@@ -3263,27 +3339,33 @@ Overfull \hbox (14.05612pt too wide) in paragraph at lines 593--593
  []
 
 
-Package natbib Warning: Citation `Gough01' on page 82 undefined on input line 6
+Package natbib Warning: Citation `Gough01' on page 84 undefined on input line 6
 04.
 
 
-Package natbib Warning: Citation `Wilson07' on page 82 undefined on input line 
+Package natbib Warning: Citation `Wilson07' on page 84 undefined on input line 
 604.
 
 
-Package natbib Warning: Citation `Andreeva04' on page 82 undefined on input lin
+Package natbib Warning: Citation `Andreeva04' on page 84 undefined on input lin
 e 604.
 
-[82] [83]
+[84] [85]
 
-LaTeX Warning: Reference `{subsection:Superfamily}' on page 84 undefined on inp
+LaTeX Warning: Reference `{subsection:Superfamily}' on page 86 undefined on inp
 ut line 707.
 
-[84]
+[86]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[85] <./PDZ/graphes/modelB6+/1G9O_simil_full.png, id=1366, 722.7pt x 433.62pt>
+! Too many }'s.
+l.753 ... impl茅ment茅 dans Jalview~cite\{Jalview}
+                                                  ). Comme on l'a vu dans de...
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+[87] <./PDZ/graphes/modelB6+/1G9O_simil_full.png, id=1384, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1G9O_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1G9O_simil_full.png>
@@ -3291,7 +3373,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1G9O_simil_full.png used on inp
 ut line 791.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/1IHJ_simil_full.png, id=1367, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/1IHJ_simil_full.png, id=1385, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1IHJ_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1IHJ_simil_full.png>
@@ -3299,7 +3381,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1IHJ_simil_full.png used on inp
 ut line 792.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/1R6J_simil_full.png, id=1368, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/1R6J_simil_full.png, id=1386, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1R6J_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1R6J_simil_full.png>
@@ -3307,7 +3389,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1R6J_simil_full.png used on inp
 ut line 793.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/1N7E_simil_full.png, id=1369, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/1N7E_simil_full.png, id=1387, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1N7E_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1N7E_simil_full.png>
@@ -3315,7 +3397,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1N7E_simil_full.png used on inp
 ut line 794.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/2BYG_simil_full.png, id=1370, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/2BYG_simil_full.png, id=1388, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/2BYG_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/2BYG_simil_full.png>
@@ -3323,7 +3405,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/2BYG_simil_full.png used on inp
 ut line 795.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/3K82_simil_full.png, id=1371, 963.6pt x 578.16pt>
+<./PDZ/graphes/modelB6+/3K82_simil_full.png, id=1389, 963.6pt x 578.16pt>
 File: ./PDZ/graphes/modelB6+/3K82_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/3K82_simil_full.png>
@@ -3335,7 +3417,7 @@ Overfull \hbox (46.76184pt too wide) in paragraph at lines 790--798
  [][] 
  []
 
-[86] <./PDZ/graphes/modelB6+/1G9O_simil_core.png, id=1376, 722.7pt x 433.62pt>
+[88] <./PDZ/graphes/modelB6+/1G9O_simil_core.png, id=1394, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1G9O_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1G9O_simil_core.png>
@@ -3343,7 +3425,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1G9O_simil_core.png used on inp
 ut line 807.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/1IHJ_simil_core.png, id=1377, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/1IHJ_simil_core.png, id=1395, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1IHJ_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1IHJ_simil_core.png>
@@ -3351,7 +3433,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1IHJ_simil_core.png used on inp
 ut line 808.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/1R6J_simil_core.png, id=1378, 722.7pt x 449.2785pt>
+<./PDZ/graphes/modelB6+/1R6J_simil_core.png, id=1396, 722.7pt x 449.2785pt>
 File: ./PDZ/graphes/modelB6+/1R6J_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1R6J_simil_core.png>
@@ -3359,7 +3441,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1R6J_simil_core.png used on inp
 ut line 809.
 (pdftex.def)             Requested size: 239.00298pt x 148.5777pt.
 
-<./PDZ/graphes/modelB6+/1N7E_simil_core.png, id=1379, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/1N7E_simil_core.png, id=1397, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1N7E_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1N7E_simil_core.png>
@@ -3367,7 +3449,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1N7E_simil_core.png used on inp
 ut line 810.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/2BYG_simil_core.png, id=1380, 722.7pt x 448.7967pt>
+<./PDZ/graphes/modelB6+/2BYG_simil_core.png, id=1398, 722.7pt x 448.7967pt>
 File: ./PDZ/graphes/modelB6+/2BYG_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/2BYG_simil_core.png>
@@ -3375,7 +3457,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/2BYG_simil_core.png used on inp
 ut line 811.
 (pdftex.def)             Requested size: 239.00298pt x 148.41837pt.
 
-<./PDZ/graphes/modelB6+/3K82_simil_core.png, id=1381, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/3K82_simil_core.png, id=1399, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/3K82_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/3K82_simil_core.png>
@@ -3388,17 +3470,17 @@ Overfull \hbox (46.76184pt too wide) in paragraph at lines 806--814
  []
 
 
-Package natbib Warning: Citation `mignon2017' on page 87 undefined on input lin
+Package natbib Warning: Citation `mignon2017' on page 89 undefined on input lin
 e 819.
 
-[87]
+[89]
 
-LaTeX Warning: Reference `Tab:FreqAA3' on page 88 undefined on input line 831.
+LaTeX Warning: Reference `Tab:FreqAA3' on page 90 undefined on input line 831.
 
-[88 <./PDZ/graphes/modelB6+/1G9O_simil_full.png> <./PDZ/graphes/modelB6+/1IHJ_s
+[90 <./PDZ/graphes/modelB6+/1G9O_simil_full.png> <./PDZ/graphes/modelB6+/1IHJ_s
 imil_full.png> <./PDZ/graphes/modelB6+/1R6J_simil_full.png> <./PDZ/graphes/mode
 lB6+/1N7E_simil_full.png> <./PDZ/graphes/modelB6+/2BYG_simil_full.png> <./PDZ/g
-raphes/modelB6+/3K82_simil_full.png>] [89 <./PDZ/graphes/modelB6+/1G9O_simil_co
+raphes/modelB6+/3K82_simil_full.png>] [91 <./PDZ/graphes/modelB6+/1G9O_simil_co
 re.png> <./PDZ/graphes/modelB6+/1IHJ_simil_core.png> <./PDZ/graphes/modelB6+/1R
 6J_simil_core.png> <./PDZ/graphes/modelB6+/1N7E_simil_core.png> <./PDZ/graphes/
 modelB6+/2BYG_simil_core.png> <./PDZ/graphes/modelB6+/3K82_simil_core.png>]
@@ -3406,10 +3488,10 @@ modelB6+/2BYG_simil_core.png> <./PDZ/graphes/modelB6+/3K82_simil_core.png>]
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `{graph:Simil_3prot}' on page 90 undefined on input li
+LaTeX Warning: Reference `{graph:Simil_3prot}' on page 92 undefined on input li
 ne 965.
 
-[90] [91] <./PDZ/graphes/FDB/1G9O_simil_cut.png, id=1420, 722.7pt x 433.62pt>
+[92] [93] <./PDZ/graphes/FDB/1G9O_simil_cut.png, id=1438, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/FDB/1G9O_simil_cut.png Graphic file (type png)
 
 <use ./PDZ/graphes/FDB/1G9O_simil_cut.png>
@@ -3417,7 +3499,7 @@ Package pdftex.def Info: ./PDZ/graphes/FDB/1G9O_simil_cut.png used on input lin
 e 970.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/FDB/1G9O_simil_core.png, id=1421, 722.7pt x 433.62pt>
+<./PDZ/graphes/FDB/1G9O_simil_core.png, id=1439, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/FDB/1G9O_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/FDB/1G9O_simil_core.png>
@@ -3425,7 +3507,7 @@ Package pdftex.def Info: ./PDZ/graphes/FDB/1G9O_simil_core.png used on input li
 ne 971.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/FDB/1R6J_simil_cut.png, id=1422, 722.7pt x 433.62pt>
+<./PDZ/graphes/FDB/1R6J_simil_cut.png, id=1440, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/FDB/1R6J_simil_cut.png Graphic file (type png)
 
 <use ./PDZ/graphes/FDB/1R6J_simil_cut.png>
@@ -3433,7 +3515,7 @@ Package pdftex.def Info: ./PDZ/graphes/FDB/1R6J_simil_cut.png used on input lin
 e 972.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/FDB/1R6J_simil_core.png, id=1423, 722.7pt x 433.62pt>
+<./PDZ/graphes/FDB/1R6J_simil_core.png, id=1441, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/FDB/1R6J_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/FDB/1R6J_simil_core.png>
@@ -3441,7 +3523,7 @@ Package pdftex.def Info: ./PDZ/graphes/FDB/1R6J_simil_core.png used on input li
 ne 973.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/FDB/2BYG_simil_cut.png, id=1424, 722.7pt x 433.62pt>
+<./PDZ/graphes/FDB/2BYG_simil_cut.png, id=1442, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/FDB/2BYG_simil_cut.png Graphic file (type png)
 
 <use ./PDZ/graphes/FDB/2BYG_simil_cut.png>
@@ -3449,7 +3531,7 @@ Package pdftex.def Info: ./PDZ/graphes/FDB/2BYG_simil_cut.png used on input lin
 e 974.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/FDB/2BYG_simil_core.png, id=1425, 722.7pt x 433.62pt>
+<./PDZ/graphes/FDB/2BYG_simil_core.png, id=1443, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/FDB/2BYG_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/FDB/2BYG_simil_core.png>
@@ -3461,27 +3543,27 @@ Overfull \hbox (46.76184pt too wide) in paragraph at lines 969--977
  [][] 
  []
 
-[92]
+[94]
 
-LaTeX Warning: Reference `logo:' on page 93 undefined on input line 1007.
+LaTeX Warning: Reference `logo:' on page 95 undefined on input line 1007.
 
-<./PDZ/logos/core.png, id=1433, 1571.8725pt x 1887.6924pt>
+<./PDZ/logos/core.png, id=1452, 1571.8725pt x 1887.6924pt>
 File: ./PDZ/logos/core.png Graphic file (type png)
 
 <use ./PDZ/logos/core.png>
 Package pdftex.def Info: ./PDZ/logos/core.png used on input line 1014.
 (pdftex.def)             Requested size: 512.1496pt x 615.04817pt.
- [93]
-<./PDZ/logos/exposed.png, id=1438, 1648.9605pt x 1351.6899pt>
+ [95]
+<./PDZ/logos/exposed.png, id=1457, 1648.9605pt x 1351.6899pt>
 File: ./PDZ/logos/exposed.png Graphic file (type png)
 
 <use ./PDZ/logos/exposed.png>
 Package pdftex.def Info: ./PDZ/logos/exposed.png used on input line 1024.
 (pdftex.def)             Requested size: 512.1496pt x 419.82391pt.
- [94 <./PDZ/graphes/FDB/1G9O_simil_cut.png> <./PDZ/graphes/FDB/1G9O_simil_core.
+ [96 <./PDZ/graphes/FDB/1G9O_simil_cut.png> <./PDZ/graphes/FDB/1G9O_simil_core.
 png> <./PDZ/graphes/FDB/1R6J_simil_cut.png> <./PDZ/graphes/FDB/1R6J_simil_core.
 png> <./PDZ/graphes/FDB/2BYG_simil_cut.png> <./PDZ/graphes/FDB/2BYG_simil_core.
-png>] [95 <./PDZ/logos/core.png>]
+png>] [97 <./PDZ/logos/core.png>]
 
 ! Package caption Error: \caption outside float.
 
@@ -3498,7 +3580,7 @@ section about errors.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<./PDZ/titration/alignTiam1.png, id=1455, 1847.703pt x 772.0845pt>
+<./PDZ/titration/alignTiam1.png, id=1474, 1847.703pt x 772.0845pt>
 File: ./PDZ/titration/alignTiam1.png Graphic file (type png)
 
 <use ./PDZ/titration/alignTiam1.png>
@@ -3510,8 +3592,8 @@ Overfull \hbox (125.811pt too wide) in paragraph at lines 1039--1044
  [][] 
  []
 
-[96 <./PDZ/logos/exposed.png>] [97 <./PDZ/titration/alignTiam1.png>]
-<./PDZ/titration/structure_Tiam1.png, id=1468, 4701.565pt x 3523.1625pt>
+[98 <./PDZ/logos/exposed.png>] [99 <./PDZ/titration/alignTiam1.png>]
+<./PDZ/titration/structure_Tiam1.png, id=1486, 4701.565pt x 3523.1625pt>
 File: ./PDZ/titration/structure_Tiam1.png Graphic file (type png)
 
 <use ./PDZ/titration/structure_Tiam1.png>
@@ -3522,16 +3604,16 @@ Package pdftex.def Info: ./PDZ/titration/structure_Tiam1.png used on input line
 
 LaTeX Warning: Float too large for page by 13.3528pt on input line 1057.
 
-[98 <./PDZ/titration/structure_Tiam1.png>]
+[100 <./PDZ/titration/structure_Tiam1.png>]
 
 Package caption Warning: \label without proper reference on input line 1042.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `titrationAlignTiam1' on page 99 undefined on input li
-ne 1061.
+LaTeX Warning: Reference `titrationAlignTiam1' on page 101 undefined on input l
+ine 1061.
 
-<./PDZ/titration/alignCASK.png, id=1477, 1919.0094pt x 1406.856pt>
+<./PDZ/titration/alignCASK.png, id=1495, 1919.0094pt x 1406.856pt>
 File: ./PDZ/titration/alignCASK.png Graphic file (type png)
 
 <use ./PDZ/titration/alignCASK.png>
@@ -3547,88 +3629,88 @@ Overfull \hbox (268.07478pt too wide) in paragraph at lines 1071--1074
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Package natbib Warning: Citation `Gaillard16' on page 99 undefined on input lin
-e 1084.
+Package natbib Warning: Citation `Gaillard16' on page 101 undefined on input li
+ne 1084.
 
 
-Package natbib Warning: Citation `Krivov09' on page 99 undefined on input line 
-1084.
+Package natbib Warning: Citation `Krivov09' on page 101 undefined on input line
+ 1084.
 
-[99
+[101
 
 
 ]
 
-LaTeX Warning: Text page 100 contains only floats.
+LaTeX Warning: Text page 102 contains only floats.
 
-[100 <./PDZ/titration/alignCASK.png>]
+[102 <./PDZ/titration/alignCASK.png>]
 
-Package natbib Warning: Citation `Schmidt08' on page 101 undefined on input lin
+Package natbib Warning: Citation `Schmidt08' on page 103 undefined on input lin
 e 1089.
 
 
-Package natbib Warning: Citation `Simonson13' on page 101 undefined on input li
+Package natbib Warning: Citation `Simonson13' on page 103 undefined on input li
 ne 1089.
 
 
-Package natbib Warning: Citation `Simonson13' on page 101 undefined on input li
+Package natbib Warning: Citation `Simonson13' on page 103 undefined on input li
 ne 1089.
 
 
-Package natbib Warning: Citation `Simonson13' on page 101 undefined on input li
+Package natbib Warning: Citation `Simonson13' on page 103 undefined on input li
 ne 1089.
 
 
-Package natbib Warning: Citation `Druart17' on page 101 undefined on input line
+Package natbib Warning: Citation `Druart17' on page 103 undefined on input line
  1090.
 
-[101]
+[103]
 
-Package natbib Warning: Citation `26' on page 102 undefined on input line 1093.
-
-
-
-Package natbib Warning: Citation `76' on page 102 undefined on input line 1093.
-
-
-[102]
-
-Package natbib Warning: Citation `74' on page 103 undefined on input line 1095.
+Package natbib Warning: Citation `26' on page 104 undefined on input line 1093.
 
 
 
-Package natbib Warning: Citation `76' on page 103 undefined on input line 1095.
+Package natbib Warning: Citation `76' on page 104 undefined on input line 1093.
+
+
+[104]
+
+Package natbib Warning: Citation `74' on page 105 undefined on input line 1095.
 
 
 
-Package natbib Warning: Citation `Polydorides13' on page 103 undefined on input
+Package natbib Warning: Citation `76' on page 105 undefined on input line 1095.
+
+
+
+Package natbib Warning: Citation `Polydorides13' on page 105 undefined on input
  line 1095.
 
 
-Package natbib Warning: Citation `30' on page 103 undefined on input line 1099.
+Package natbib Warning: Citation `30' on page 105 undefined on input line 1099.
 
 
 
-Package natbib Warning: Citation `72' on page 103 undefined on input line 1099.
+Package natbib Warning: Citation `72' on page 105 undefined on input line 1099.
 
 
 
-Package natbib Warning: Citation `15' on page 103 undefined on input line 1099.
+Package natbib Warning: Citation `15' on page 105 undefined on input line 1099.
 
 
 
-Package natbib Warning: Citation `50' on page 103 undefined on input line 1099.
+Package natbib Warning: Citation `50' on page 105 undefined on input line 1099.
 
 
-[103]) [104]
+[105]) [106]
 \openout2 = `conc.aux'.
 
- (./conc.tex) [105
+ (./conc.tex) [107
 
 
 
 
-] [106
+] [108
 
 
 ]
@@ -3644,17 +3726,17 @@ Overfull \hbox (34.69362pt too wide) in paragraph at lines 253--254
  [][] 
  []
 
-) [107
+) [109
 
 
-] [108] [109] [110] [111] [112
+] [110] [111] [112] [113] [114
 
 
 ]
 No file these.bbl.
 \openout2 = `resume.aux'.
 
-(./resume.tex) [113
+(./resume.tex) [115
 
 
 
@@ -3671,7 +3753,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 341.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 341.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 341.
 Package rerunfilecheck Info: File `these.out' has not changed.
-(rerunfilecheck)             Checksum: EE1986DC9D8F9686CEB3CBA94D13875F;7847.
+(rerunfilecheck)             Checksum: 59C8241F34C67AF40D7E6A8EF53CCDA6;7847.
 
 
 LaTeX Warning: There were undefined references.
@@ -3680,41 +3762,36 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 341.
- )
-(\end occurred inside a group at level 1)
-
-### simple group (level 1) entered at line 449 ({)
-### bottom level 
+ ) 
 Here is how much of TeX's memory you used:
- 14337 strings out of 494875
- 217643 string characters out of 6178748
- 417890 words of memory out of 5000000
- 16616 multiletter control sequences out of 15000+600000
- 122541 words of font info for 185 fonts, out of 8000000 for 9000
+ 14370 strings out of 494875
+ 218208 string characters out of 6178748
+ 418014 words of memory out of 5000000
+ 16627 multiletter control sequences out of 15000+600000
+ 122628 words of font info for 186 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 46i,18n,48p,2565b,736s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texm
-f/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.e
-nc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/e
-nc/dvips/lm/lm-mathex.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/dou
-blestroke/dsrom12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/
-share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxo10.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/tex
-mf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmm
-i6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/font
-s/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb><
-/usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/
-public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm
-/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12
-.pfb>
-Output written on these.pdf (131 pages, 25228380 bytes).
+ 46i,18n,48p,2565b,698s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share
+/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
+-mathex.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsro
+m12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmbxo10.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1
+/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/tex
+mf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
+Output written on these.pdf (133 pages, 25676536 bytes).
 PDF statistics:
- 1717 PDF objects out of 1728 (max. 8388607)
- 1478 compressed objects within 15 object streams
- 443 named destinations out of 1000 (max. 500000)
- 33255 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 1737 PDF objects out of 2073 (max. 8388607)
+ 1492 compressed objects within 15 object streams
+ 448 named destinations out of 1000 (max. 500000)
+ 33265 words of extra memory for PDF output out of 35830 (max. 10000000)
 
