@@ -553,30 +553,86 @@ Les atouts de l'algorithme génétique sont sa capacité à franchir des barriè
 
 \subsection{Monte-Carlo}
 
-Dans son acceptation la plus générale, un algorithme Monte-Carlo est un algorithme stochastique ( il utilise une source de hasard) dont le temps d'exéction est déterminable a priori.Mais dans le reste de ce texte  comme dans beaucoup de domaine, le terme fait référence à l'algorithme de Metropolis-Hastings qui est l'un des premier Monte-Carlo au sens large a avoir été proposé \ref{}.
+Dans son acceptation la plus générale, un algorithme Monte-Carlo est un algorithme stochastique ( il utilise une source de hasard) qui donne approche probablement la solution exacte en un temps d'exéction déterminable a priori.Cela le distingue, parmi les algorithmes stochastiques , d'un algorithme de Las Vegas qui donne un résult
+at exact dans un temps d'éxecution non deterministe , et d'un algorithme D'Atlantic City qui donne des résultats probablement correct dans un temps probablement rapide.
+Parmi les algorithmes Monte-Carlo, les algorithmes Monte-Carlo par Chaînes de Markov (MCMC) ont été particulierement étudiés.
+Ce ne sont pas des algorithmes d'optimisation, mais des algorithmes d'échantillonnage d'une distribution de probabilité \pi: On veut générer des éléments x_i de l'espace des phases tels que la distribution que constitue $D={x_i, i \in T \inclus \natural}$ converge vers $\pi$.
+
+Il existe de nombreuses méthodes pour répondre à cette question, algorithme de Newton-Cotes \ref{} , algorithme du rejet \ref{} les résultats sont bons lorsque la dimension est relativement petite \ref{} tandis que les MCMC sont bien adapté dans les situations où l'espace de états est de grande dimension.Un autre avantage des algorithmes MCMC est qu'elles ne nécéssité pas la connaissance de la constante de normalisation de \pi. Cela constitué un attrait important parce que dans beaucoup de situation cette constante de normalisation est particulierement difficile à calculer.Pour ces raisons, l'échantillonnage par MCMC sont très populaire depuis plus de cinquante ans.
+
+Dans la suite, nous donnons des conditions suffissantes pour que ce type l'algorithme converge dans le cadre d'un espace d'état $E$ fini, puis nous detaillons le plus célèbre d'entre-eux, l'algorithme de Metropolis-Hasting.
+
+L'idée générale,est de générer un élément x_i en utilisant dans les états déjà visités uniquement x_{i-1}.Ce type de processus , où la mémoire utilisée est réduite à l'état précédent caratérise les processus de Markov.
 
 
-C'est une méthodes d'échntinnonnage à partir de distributions de probabilité
-Elles se basent sur le parcours de chaînes de Markov qui ont pour lois stationnaires les distributions à échantillonner.certaines méthodes utilisent des marches aléatoires sur les chaînes de Markov (Metropolis-Hastings).
+On appelle processus stochastique, une suite de variable aléatoire {X_n}n\gep 0 à valeurs dans $E$.
+Une chaîne de Markov est une processus stochastique tel que:
 
-On veut générer des vecteurs x suivant une distribution de probabilité \pi , telle que la distribution des xi approche \pi.
+\begin{equation}
+\forall n \gep 0 , \forall (i_0,i_1,...,i_{n-1},i) \in E^{n+1}, P(X_n=i|X_{n-1}=i_0,X_{n-2}=i_1,,,X_{1}=i_{n-2},X_{0}=i_{n-1},) = P(X_n=i|X_{n-1}=i_0) 
+\end{equation}
+Une chaîne de Markov est homogène si:
 
-les méthodes de MC par CM consistent à générer un vecteur x_i uniquement à partir de la donnée du vecteur x_i-1 , c'est donc un processus sans mémoire ce qui caractériqe les chaînes de Markov.L faut donc trouver un générateur aléatoire avec une distribution deprobabilité qx_i-1 q xiii qui permettre de générer x_i  à partir de x_{i-1} On remplace ainsi le problème  de génération avec une distribution \pi  par N problèmes de génération avec des distributions x_i , que l'on espère plus simples.
+\begin{equation}
+  \label{eq_homog}
+\forall n \gep 0 , \forall (i,j) \in E^2, P(X_n=i|X_{n-1}=j)= P(X_{n+1}=i|X_n=j) 
+\end{equation}
 
-On veut simuler une loi \pi sur un espace d'états général (\Omega, \Epsilon),
-Une transition sur (\Omega, \Epsilon)  est une application P telle que P(x,.) est une probabilité sur (\Omega, \Epsilon) , Soit X = (X_k, k \in \Natural) une chaîne de Markov de transition P et de loi initiale X_0
-
-Pour simuler \pi , on veut construire une transition P telle que vPk-> \pi
-
-si une transition P est \pi-réduc , \pi-invariante , apériodique Harris-récurrente , alors P_k(x,.)-> \pi.
-
-____
-La condition de la balance détaillée:
+C'est à dire que la probabilité de transition P est indépendante de n.Dans la suite, on ne consitère que des chaînes de Markov homogènes.Et on note P(X_n=b | X_{n-1}=a) = P(b|a)
 
 
-p(i)\pi_{ij} = p(j)\pi_{ji} implique que p(i)/||p(i)|| est une distribution stationnaire.
+Comme E est fini, on peut utiliser l'écriture matricielle avec
+$\mu_0 =(p(X_0=i))_{i \in E},$
+on a alors
 
-demonstration
+$\mu_1 =\mu_0 . P$   , avec . le produit matriciel.
+et
+
+$\mu_k =\mu_0 . P^k$
+
+
+
+Le problème revient alors à trouver une application de probabilité de transition P \muP^k -> \pi
+
+Pour cela introduisons deux conditions supplémentaires:
+
+
+Le principe de la balance détaillée:
+
+Le principe de la balance détaillée  est un principe générale de comportement des systèmes dynamiques, il a été utilisé par Boltzmann pour la construction de la physique statistique et Cercignani et Lampis ont montré qu'il était vrai pour les gaz polyatomiques. Il peut s'exprimer de la façon suivante:
+
+Pour un système dynamique à l'équilibre $S$ , $a$ et $b$ deux élèments de l'espace des phases, la probabilité de transition de a vers b est égale à la probabilité de transition de b vers a, ou encore: 
+
+\begin{equation}
+\forall a,b \in S
+\mathcal{P}(a \rightarrow b) = \mathcal{P}(b \rightarrow a) 
+\end{equation}
+
+Pour pouvoir appliquer ce principe aux chaînes de Markov, introduisons une définition proche:
+
+Soit q une probabilité sur E, une chaîne de Markov est dîte reversible si
+
+\begin{equation}
+\forall a,b \in E, q(b)P(a|b)=q(a)P(b|a)
+\end{equation}
+
+Dans ce cas, on a alors:
+
+\begin{equation}
+\froall a \in E, q.P (a) = \sum_{b \in E} q(b)P(a|b) = \sum_{b \in E} q(a)P(b|a) = q(a) \sum_{a \in E}P(b|a) = q(a)
+\end{equation}
+
+Ainsi, la probabilité q avant la transition P vaut la probabilité après, la chaîne est dîte stationnaire pour q.Il faut alors construire une chaîne de Markov reversible pour la cible \pi.
+
+Mais cela une suffit pas, en effet même si une distribution stationnaire est connue,rien ne dit que la chaîne va entrer dedans 
+
+
+
+
+Mais dans le reste de ce texte  comme dans beaucoup de domaine, le terme fait référence à l'algorithme de Metropolis-Hastings qui est l'un des premier Monte-Carlo au se
+ns large a avoir été proposé \ref{}.
+
+
 
 
 Une chaîne de Markov est irréductible si et seulement si pour tout couple   $i \neq j$   d'élémment de l'espace d'état il existe un chemin de   $i$  à   $j$   et un chemin de   $j$ à $i$ 
