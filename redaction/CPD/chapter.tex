@@ -565,7 +565,7 @@ Dans la suite, nous donnons des conditions suffissantes pour que ce type l'algor
 L'idée générale,est de générer un élément x_i en utilisant dans les états déjà visités uniquement x_{i-1}.Ce type de processus , où la mémoire utilisée est réduite à l'état précédent caratérise les processus de Markov.
 
 
-On appelle processus stochastique, une suite de variable aléatoire {X_n}n\gep 0 à valeurs dans $E$.
+On appelle processus stochastique, une suite de variable aléatoire {X_n}_{n\gep 0} à valeurs dans $E$.
 Une chaîne de Markov est une processus stochastique tel que:
 
 \begin{equation}
@@ -581,7 +581,8 @@ Une chaîne de Markov est homogène si:
 C'est à dire que la probabilité de transition P est indépendante de n.Dans la suite, on ne consitère que des chaînes de Markov homogènes.Et on note P(X_n=b | X_{n-1}=a) = P(b|a)
 
 
-Comme E est fini, on peut utiliser l'écriture matricielle avec
+dans la suite, pour simplifier les notations, on utilise l'écriture matricielle avec
+
 $\mu_0 =(p(X_0=i))_{i \in E},$
 on a alors
 
@@ -604,41 +605,107 @@ Le principe de la balance détaillée  est un principe générale de comportemen
 Pour un système dynamique à l'équilibre $S$ , $a$ et $b$ deux élèments de l'espace des phases, la probabilité de transition de a vers b est égale à la probabilité de transition de b vers a, ou encore: 
 
 \begin{equation}
-\forall a,b \in S
-\mathcal{P}(a \rightarrow b) = \mathcal{P}(b \rightarrow a) 
+\forall i,j \in S
+\mathcal{P}(i \rightarrow j) = \mathcal{P}(j \rightarrow i) 
 \end{equation}
 
 Pour pouvoir appliquer ce principe aux chaînes de Markov, introduisons une définition proche:
 
-Soit q une probabilité sur E, une chaîne de Markov est dîte reversible si
+Soit q une probabilité sur E, une chaîne de Markov est dîte reversible par rapport à q si
 
 \begin{equation}
-\forall a,b \in E, q(b)P(a|b)=q(a)P(b|a)
+\forall i,j \in E, q(j)P(i|j)=q(j)P(j|i)
 \end{equation}
 
 Dans ce cas, on a alors:
 
 \begin{equation}
-\froall a \in E, q.P (a) = \sum_{b \in E} q(b)P(a|b) = \sum_{b \in E} q(a)P(b|a) = q(a) \sum_{a \in E}P(b|a) = q(a)
+\forall i \in E, q.P (i) = \sum_{j \in E} q(j)P(i|j) = \sum_{j \in E} q(i)P(j|i) = q(i) \sum_{i \in E}P(j|i) = q(i)
 \end{equation}
 
 Ainsi, la probabilité q avant la transition P vaut la probabilité après, la chaîne est dîte stationnaire pour q.Il faut alors construire une chaîne de Markov reversible pour la cible \pi.
 
-Mais cela une suffit pas, en effet même si une distribution stationnaire est connue,rien ne dit que la chaîne va entrer dedans 
+Mais cela une suffit pas, en effet même si une distribution stationnaire est connue,rien ne dit que la chaîne va entrer dedans. 
+
+Si E est discret, une chaîne de Markov reversible est dîtes ergodique si et seulement si:
+
+\begin{enumerate}
+  \label{crit_ergo}
+\item pour tous $i, j$ de l'espace d'état il existe un chemin de   $i$  vers   $j$  de probabilité non nulle. 
+\item Il existe aucun x de E, tel que la chaîne revient en x périodiquement.
+\item  Au court du temps,tout les états sont visités par la chaîne avec une probabilités non nulle. 
+\end{enumerate}
+
+On a alors, le résultat suivant:
+Une chaîne ergodique converge vers son unique distribition stationnaire.
+
+l'algorithme de Metropolis
+
+Nous pouvons maintenant decrire l'algorithme de Metropolis-Hastings, L'idée initiale de Metropolis a été de construire un l'agorithme qui échantille la distribution de Boltzmann, qui donne la probabilité d'un état x_i du système en fonction son énergie et de la température:
 
 
+\begin{equation}
+\pi^B(i) = fraq{1}{\sum_{j \in E}E_j/kT \exp(E_i/kT)
+\end{equation}
+
+avec $E_{x_i}$  l'énergie de $x_i$, T la température et k la constante de Boltzmann. La constante ne normalisation de la probabilté s'appelle la fonction de partition du système. Elle est particulierement difficile à calculer.
+
+On défnit, alors la probabilité de transition P comme le produit de deux probabilités:
+
+\begin{equation}
+  \label{decomp_Metro}
+P (j|i) = sel(j|i)acc(j|i)
+\end{equation}
+
+avec sel une probabilié de selectionner l'état j de E lorsque le système est dans l'état i et acc la probabilité d'accepter l'état j étant en i.Si l'on souhaite une chaîne respectant le principe de la balance détaillée par rapport à $\pi^B$, on a:
+
+\begin{equation}
+  \label{balance}
+\pi^B(i)sel(j|i)acc(j|i) = \pi^B(j)sel(i|j)acc(i|j) 
+\end{equation}
+
+Si on se limite à une probabilité de selection symétrique:
 
 
-Mais dans le reste de ce texte  comme dans beaucoup de domaine, le terme fait référence à l'algorithme de Metropolis-Hastings qui est l'un des premier Monte-Carlo au se
-ns large a avoir été proposé \ref{}.
+\begin{equation}
+\pi^B(i)acc(j|i) = \pi^B(j)acc(i|j) 
+\end{equation}
+
+ce que équivaut à
+
+\begin{equation}
+  \label{fraq_Metropolis}
+fraq{acc(j|i)}{acc(i|j)} = frac{\pi^B(j)}{\pi^B(j)} = fraq{\exp(E_i/kT)}{\exp(E_j/kT)} = \exp(\delta E/kT) 
+\end{equation}
+
+avec $\delta E =  E_j - E_i$.
+
+Ainsi,le calcul de la fonction de partition est évité.
+
+Métropolis propose alors la probabilité d'acceptation suivante:
+
+\begin{equation}
+si $\delta E >0$ alors acc(i|j) = \exp(\delta E/kT)
+sinon 
+acc(i|j)=1
+\end{equation}
+
+On voit que , si $\delta E >0$ alors acc(j|i)=1 , et donc  on a bien:
+
+\forall i,j \in E ,fraq{acc(j|i)}{acc(i|j)} = \exp(\delta E/kT)
+
+Il suffit alors de choisir une probabilité de selection symétrique et ne violant pas \ref{crit_ergo} pour obtenir notre convergence.
 
 
+Par la suite Hastings, généralise l'algorithme à une probabilité $sel()$ non symetrique avec acc() telle que:
 
+\begin{equation}
+si $\delta E >0$ alors acc(i|j) = \exp(\delta E/kT) \fraq{sel(j|i)}{sel(i|j)}
+sinon 
+acc(i|j)=1
+\end{equation}
 
-Une chaîne de Markov est irréductible si et seulement si pour tout couple   $i \neq j$   d'élémment de l'espace d'état il existe un chemin de   $i$  à   $j$   et un chemin de   $j$ à $i$ 
-
-
-
+Si l'on injecte cette nouvelle probabilité dans ~\ref{balance}, on a encore le respect de la balance détaillée et la convergence.
 
 
 \begin{algorithm}
@@ -660,6 +727,31 @@ Une chaîne de Markov est irréductible si et seulement si pour tout couple   $i
     }
   
 \end{algorithm}
+
+
+Dans toute la suite, on désigne l'algorithme de Metropolis-Hastings comme l'algorithme Monte-Carlo (MC).  
+
+
+Monte-Carlo avec échanges de répliques (REMC)
+
+
+Une amélioration de l'algorithme de Métropolis-Hastings, connu sous le nom de \og Replica Exchange Monte-Carlo\fg a été introduite par Swendsen and Wang (Swendsen RH and Wang JS (1986) Replica Monte Carlo simulation of spin glasses Physical Review Letters 57 : 2607-2609). L'objectif est d'accélerer la convergence en permettant au processus stochastique de visiter plusieurs zone énergitique simultanément. Ainsi, l'algorithme couple l'exploiration dans les basins de basses énergies , importante pour la recherche des solutions optimum avec, l'exploiration dans des zones de plus hautes énergies, ce qui facilite la sortie des minimum locaux.
+
+On considére $ N$ simulations MC du système à différentes températures. On associe La chaîne de Markov sur l'espace d'état E^N, constitué des $N$-uplet $(x_1,...,x_n)$ avec les $x_i$ éléments de $E$, et $1<i<N$  indexant les températures.On ajoute alors un nouveau type de déplacement , celui qui consiste a intervertir au temps $t$, l'état $x_t^i$ de la simulation à la température $i$ avec l'état $x_t^{i+1}$ à la temérature $i+1$.On a alors:
+
+\begin{equation}
+  \label{REMC_move}
+X_{t+1}=(x_{t+1}^1,...,x_{t+1}^i,x_{t+1}^{i+1},...,x_{t+1}^n) = (x_t^1,...,x_t^i,x_t^{i+1},...,x_t^n)
+\end{equation}
+
+
+Pour que $X$ respecte la balance détaillée il est nécessaire d'utiliser ce nouveau mouvement dans certains conditions.
+
+Pour
+
+
+
+
 
 \begin{algorithm}
   Lancement en parallèle de $N$ marcheurs MC aux températures ordonnées $(t_1,...,t_n)$ \;
