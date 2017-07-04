@@ -645,7 +645,7 @@ Nous pouvons maintenant decrire l'algorithme de Metropolis-Hastings, L'idée ini
 
 
 \begin{equation}
-\pi^B(i) = fraq{1}{\sum_{j \in E}E_j/kT \exp(E_i/kT)
+\pi^B(i) = fraq{1}{\sum_{j \in E}E_j/kT} \exp(E_i/kT)
 \end{equation}
 
 avec $E_{x_i}$  l'énergie de $x_i$, T la température et k la constante de Boltzmann. La constante ne normalisation de la probabilté s'appelle la fonction de partition du système. Elle est particulierement difficile à calculer.
@@ -675,7 +675,7 @@ ce que équivaut à
 
 \begin{equation}
   \label{fraq_Metropolis}
-fraq{acc(j|i)}{acc(i|j)} = frac{\pi^B(j)}{\pi^B(j)} = fraq{\exp(E_i/kT)}{\exp(E_j/kT)} = \exp(\delta E/kT) 
+fraq{acc(j|i)}{acc(i|j)} = frac{\pi^B(j)}{\pi^B(i)} = fraq{-\exp(E_j/kT)}{\exp(E_i/kT)} = \exp(-\delta E/kT) 
 \end{equation}
 
 avec $\delta E =  E_j - E_i$.
@@ -685,7 +685,7 @@ Ainsi,le calcul de la fonction de partition est évité.
 Métropolis propose alors la probabilité d'acceptation suivante:
 
 \begin{equation}
-si $\delta E >0$ alors acc(i|j) = \exp(\delta E/kT)
+si $\delta E >0$ alors acc(i|j) = \exp(- \delta E/kT)
 sinon 
 acc(i|j)=1
 \end{equation}
@@ -700,7 +700,7 @@ Il suffit alors de choisir une probabilité de selection symétrique et ne viola
 Par la suite Hastings, généralise l'algorithme à une probabilité $sel()$ non symetrique avec acc() telle que:
 
 \begin{equation}
-si $\delta E >0$ alors acc(i|j) = \exp(\delta E/kT) \fraq{sel(j|i)}{sel(i|j)}
+si $\delta E >0$ alors acc(i|j) = \exp(- \delta E/kT) \fraq{sel(j|i)}{sel(i|j)}
 sinon 
 acc(i|j)=1
 \end{equation}
@@ -735,25 +735,52 @@ Dans toute la suite, on désigne l'algorithme de Metropolis-Hastings comme l'alg
 Monte-Carlo avec échanges de répliques (REMC)
 
 
-Une amélioration de l'algorithme de Métropolis-Hastings, connu sous le nom de \og Replica Exchange Monte-Carlo\fg a été introduite par Swendsen and Wang (Swendsen RH and Wang JS (1986) Replica Monte Carlo simulation of spin glasses Physical Review Letters 57 : 2607-2609). L'objectif est d'accélerer la convergence en permettant au processus stochastique de visiter plusieurs zone énergitique simultanément. Ainsi, l'algorithme couple l'exploiration dans les basins de basses énergies , importante pour la recherche des solutions optimum avec, l'exploiration dans des zones de plus hautes énergies, ce qui facilite la sortie des minimum locaux.
+Une amélioration de l'algorithme de Métropolis-Hastings, connu sous le nom de \og Replica Exchange Monte-Carlo\fg a été introduite par Swendsen and Wang (Swendsen RH and Wang JS (1986) Replica Monte Carlo simulation of spin glasses Physical Review Letters 57 : 2607-2609). La méthode est également connu sont les noms \og parallel tempering\fg.L'objectif est d'accélerer la convergence en permettant au processus stochastique de visiter plusieurs zones énergitiques simultanément. Ainsi, l'algorithme couple l'exploiration dans les basins de basses énergies , importante pour la recherche des solutions optimum avec, l'exploiration dans des zones de plus hautes énergies, ce qui facilite la sortie des minimum locaux.
 
-On considére $ N$ simulations MC du système à différentes températures. On associe La chaîne de Markov sur l'espace d'état E^N, constitué des $N$-uplet $(x_1,...,x_n)$ avec les $x_i$ éléments de $E$, et $1<i<N$  indexant les températures.On ajoute alors un nouveau type de déplacement , celui qui consiste a intervertir au temps $t$, l'état $x_t^i$ de la simulation à la température $i$ avec l'état $x_t^{i+1}$ à la temérature $i+1$.On a alors:
+On considére $N$ simulations MC du système à $N$ différentes températures.Ces répliques du système sont indépendantes les-unes des autres. On note $T^m$ avec $m=1,..,N$ les differentes températures.Toutes ces temperatures sont différentes et il y a toujours exactement une replique à chaque temperature.Ainsi, nous nous placons dans un ensemble généralisé noté $E^N$, constitué des $N$-uplet $(x^1,...,x^n)$ avec les $x_i$ éléments de $E$, et $1<i<N$  indexant les répliques.On travaille alors avec une chaîne de Markov ${X_t}_{1<t}$ , avec $X_t=(x^1_t,...,x^n_t)$ sur l'espace d'état $E^N$.On ajoute alors, un nouveau type de déplacement , celui qui consiste a intervertir au temps $t$, l'état $x^i$ de la simulation à la température $T^i$ avec l'état $x^{i+1}$ à la température $T^{i+1}$.On a alors:
 
 \begin{equation}
   \label{REMC_move}
 X_{t+1}=(x_{t+1}^1,...,x_{t+1}^i,x_{t+1}^{i+1},...,x_{t+1}^n) = (x_t^1,...,x_t^i,x_t^{i+1},...,x_t^n)
 \end{equation}
 
+L'algorithme consiste alors a effectuer de façon itérative:
+\begin{enumerate}
+\item un ensemble de $D$ déplacements, avec $D$ une constante, de type MC 
 
-Pour que $X$ respecte la balance détaillée il est nécessaire d'utiliser ce nouveau mouvement dans certains conditions.
+\item puis,une tentative de déplacement de type ~\ref{REMC_move}  est effectuée.
+\end{enumerate}
 
-Pour
+En effet,Pour que $X$ respecte la balance détaillée il est nécessaire d'utiliser ce nouveau mouvement dans certains conditions.Il est donc associé à une probabilité d'acceptation $acc_{swap}$ spécifique. Pour la déterminer nous reprenons la même démarche que pour le Monte-Carlo simple. Comme les repliques sont sans interactions, la distribution cible de la chaîne de Markov est égale aux produits des distributions cibles aux differentes températures:
+
+\begin{equation}
+\pi^B((x^1,...,x^n))=fraq{1}{Z}\exp(-\sum_{i=1}^N E_{x^i}/kT^i)
+\end{equation}
 
 
+En injectant cette expression de $\pi^B$ et ~\ref{REMC_move} dans ~\ref{frac_Metropolis} on a:
 
 
+\begin{equation}
+  \label{fraq_swap}
+
+fraq{acc_{swap}(X_{t+1}|X_t}{acc_{swap}(X_t|X_{t+1})} = frac{\pi^B(X_t)}{\pi^B(X_{t+1})} = fraq{-\exp(E_{x^j}/kT^i) -\exp(E_{x^i}/kT^j)}{-\exp(E_{x^i}/kT^i) -\exp(E_{x^j}/kT^j)} = \exp(-\delta) 
+\end{equation}
+
+avec $\delta = (frac{1}{kT^i} - frac{1}{kT^j})(E_{x^i} - E_{x^j})$
+
+Ceci peut être satisfait par le critère de Metropolis:
+
+\begin{equation}
+si $\delta E >0$ alors acc_{swap} (X_{t+1}|X_t} = \exp(- \delta)
+sinon 
+acc_{swap} (X_{t+1}|X_t} = 1
+\end{equation}
+
+On peut alors décrire l'algorithme comme en ~\ref{REMC_algo}
 
 \begin{algorithm}
+  \label{REMC_algo}
   Lancement en parallèle de $N$ marcheurs MC aux températures ordonnées $(t_1,...,t_n)$ \;
 \For{ les pas $p$ multiples d'une constante $P$}{
 choisir aléatoirement $i$ compris entre $1$ et $N-1$, ce qui sélectionne les marcheurs aux températures $t_i$ et $t_{i+1}$ \;
@@ -768,7 +795,7 @@ la probabilité d'acceptation suivante est calculée acc=... \;
 \end{algorithm}
 
 
-
+Il reste au simulateur à adapter le nombre de réplique, les températures utilisées et la fréquence des tentatives d'echange à sa problématique. La capacité de REMC à être executé sur des machines parallèles à entrainer sa grande popularité, en particulier dans le domaine de la modélisation moléculaire.Et son utilisation en physique, biologie, chimie,intelligence artificielle, etc augmente rapidement.
 
 
 \section{Les programmes CPD}
