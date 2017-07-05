@@ -60,6 +60,9 @@
   citecolor=black
 }
 
+\usepackage{pdfpages}
+
+
 % Titlepage adjustment
 \addtolength{\textheight}{+3cm}
 \addtolength{\topmargin}{-1.5cm}
@@ -299,11 +302,11 @@ Examinateurs : & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 
 \clearplaindoublepage{}
 
-\graphicspath{{./PDZ/}{./PDZ/graphes/}{./CPD/}{./CPD/figure/}}
+\graphicspath{{./PDZ/}{./PDZ/graphes/}{./CPD/}{./CPD/figure/}{./comparaisons/figure/}}
 
 \include{CPD/chapter}
 \clearplaindoublepage{}
-\include{proteus/chapter}
+\include{methodes/chapter}
 %\clearplaindoublepage{}
 %\include{methodes/chapter}
 \clearplaindoublepage{}
