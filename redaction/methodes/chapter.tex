@@ -2,7 +2,178 @@
 \label{chap:resultats_comparaisons}
 
 
-\section{Les méthodes pratiques} 
+\section{Proteus}
+
+\subsection{La matrice d'énergie}
+
+Proteus utlise d'une part un backbone fixe, une espace discrét de rotamère et une fonction d'énergie décomposable par paires. Ces trois élèment permetent de pré-calculer toutes les énergies interactions possibles. A cet ensemble d'interactions , il faut ajouter les interactions des résidues avec le backbone ceci pour chacun des rotamères possibles, pour constituer un ensemble complet de valeur énergétiques qui permet d'obtenir la valeur de la fonction d''énergie pour chaque sequence/conformation.Cet ensemble peut être organisée sans le format d'une matrice symétrique dans laquelle chaque couple de position dans la chaîne polypeptidique, apparait avec sa multiplicité de couples de rotamères possibles voir ~\ref{Graph:mat_ener}.      
+
+Le calcul de la matrice d'énergie, sont executer à l'aide du pogramme X-plor; il se déroule de la façon suivante:
+
+à partir d'une fichier PDB, 
+
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=6cm]{graphe/proteus/CPD.png} &
+     \end{tabular}
+     
+     \caption{Le CPD dans proteus}
+\label{graph:struct_Phy}
+   \end{figure}
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=12cm]{graphe/proteus/grp_matrix.png} &
+     \end{tabular}
+     
+     \caption{Les principales structrures \og physiques\fg dans proteus}
+\label{graph:struct_Phy}
+   \end{figure}
+   
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=12cm]{graphe/proteus/matrice.png} &
+     \end{tabular}
+     
+     \caption{\textbf{La matrice d'énergies}Sur cet exemple, un polypeptide de 6 résidues, chaque position posséde type d'acide aminés possibles et 3 rotamères possibles (2 pour le type A et 1 pour le type B). La matrice organise toutes les interactions de paires de chaîen latérales possibles. Les interactions impliquant le résidu numéro 2 sont dans la bande jaune de la matrice, les interactions impliquant le résidu numéro 3 sont dans la bande bleue.Les points rouge et vert correspondent aux interactions  noté par les flèches rouge et verte à gauche(La matrice est symétrique , ici les interactions sont reprrésentées qu'une seule fois).}
+\label{graph:MAt_ener}
+   \end{figure}
+   
+
+   
+
+\subsection{modèle de données} 
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=12cm]{graphe/proteus/structures_physique.png} &
+     \end{tabular}
+     
+     \caption{Les principales structrures \og physiques\fg dans proteus}
+\label{graph:struct_Phy}
+   \end{figure}
+
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=12cm]{graphe/proteus/structures_modele_logique.png} &
+     \end{tabular}
+     
+     \caption{Les principales structrures \og logiques\fg dans proteus}
+\label{graph:struct_log}
+   \end{figure}
+
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=12cm]{graphe/proteus/structures_dynamiques.png} &
+     \end{tabular}
+     
+     \caption{Les principales structrures \og dynamiques\fg dans proteus}
+\label{graph:struct_Dyna}
+   \end{figure}
+
+   
+
+
+\subsection{Les entrées\_sorties} 
+
+
+\paragraph{Le fichier de configuration}
+
+
+
+
+    \begin{table}[!htbp]
+      \centering
+
+
+      \begin{tabular}{|p{0.2\linewidth}|p{0.35\linewidth}|p{0.45\linewidth}|}
+
+        \hline
+        Type   & nom & Description \\
+        \hline
+          methode  d'exploration & Mode &  determine  le mode d'exécution, les valeurs possibles sont HEURISTIC,MONTECARLO,MEANFIELD et POSTPROCESS  \\  \hline    
+                        & Trajectory\_Length  &  la longueur de la trajectoire MC ou REMC\\  \cline{2-3}
+        nombre de pas & Trajectory\_Number  &  le nombre de trajectoire  MC ou REMC  \\  \cline{2-3}
+                        & Cycle\_Number  &    le nombre de cycle en mode HEURISTIC   \\ \cline{2-3}  
+                        & Sequence\_Pass\_Number  &  le nombre maximum d'iteration sur  la structure à chaque cycle(mode HEURISTIC)    \\ \hline  
+
+        fonction d'énergie &  Optimization\_Configuration &   definition de la fonction d'énergie\\               \cline{2-3}
+                        &  Group\_definition &   groupes  d'energies et d'énergies d'interactions,ce sont les éléments de base de la fonction d'énergie\\  \hline  
+        restrictions de l'espace de  sequence/rotamer & Space\_Constraints   &  restraint les états visités \\ \hline                
+                         
+     paramètre du modèle & Temperature & attribue les températures aux marcheurs MC  \\          \hline     
+                         & Random\_Generator &  Le générateur de nombre aléatoire de la \og GNU Scientific Library \fg \\ \cline{2-3}
+                         & Rot\_Proba &  probabilité d'avoir un changement de rotamère à chaque pas \\              
+        Configuration    & Rot\_Rot\_Proba &  probabilité d'avoir un double changement de rotamère à chaque pas\\          
+        Monte Carlo      & Mut\_Proba &  ... \\              
+                         & Mut\_Mut\_Proba & ... \\              
+                         & Mut\_Rot\_Proba & ... (ancienne version de Proteus)\\             \cline{2-3}  
+                         & Position\_Weights  & probabilité de tirage de chaque position, lors de la première choix\\  
+                         & Step\_Definition\_Proba  & probabilté de changer un rotamère ou un type d'aa\\   \cline{2-3}
+        
+                         & Neighbor\_Threshold & à chaque pas les changement se font dans le même voisinnage énergétiques.Cette balise définit la taille des voisinnages.\\   \hline
+        
+                         & Fasta\_File & le nom du fichier produit par le mode POSTPROCESS\\    \cline{2-3}             
+        Input/Output     & Seq\_Output\_File & le nom  du fichier de séquences produit par le mode HEURISTIC ou MONTECARLO\\    \cline{2-3}             
+                         & Energy\_Output\_File & le nom du fichier d'énergie produit par le mode  HEURISTIC ou MONTECARLO\\   \hline              
+
+      \end{tabular} 
+
+      \caption{ Une partie des balises possibles dans le fichiers de configuration de Proteus}      
+
+      \label{table1}
+
+  \end{table}
+
+
+
+
+
+\paragraph{Les fichiers \og backbone\fg et \og parwise\fg}
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=12cm]{graphe/proteus/inputener.png} &
+     \end{tabular}
+     
+     \caption{Les fichiers en entrée}
+\label{graph:struct_Phy}
+   \end{figure}
+
+
+
+\paragraph{Les fichiers de sortie}
+   
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=12cm]{graphe/proteus/output.png} &
+     \end{tabular}
+     
+     \caption{Les fichiers en sortie de proteus}
+\label{graph:struct_Phy}
+   \end{figure}
+   
+
+\section{Description des tests de comparaisons d'algorithme} 
 \label{sec:methodes_pratiques}
 Nous cherchons maintenant à déterminer les performances et les qualités des différents algorithmes de proteus.
 Pour évaluer les différents algorithmes de proteus, comme pour leur établir un paramétrage, nous effectuons des séries de tests. 
@@ -11,111 +182,14 @@ Grâce à l'algorithme de type toulbar2 il est possible d'obtenir la séquence/c
 Dans la suite, on appelle «position active», une position pour laquelle, tous les types d'acides et tous les rotamères de chaque type d'acide aminé sont autorisés, au court de la recherche de proteus. On désigne «séquence/conformation» une séquence d'acides aminés munie à chaque position d'un rotamère (le backbone étant de toute façon fixé).Tandis ce que le terme simple «séquence»  sans plus de précision désigne une séquence d'acides aminés.
 
 
-\subsection{les protéines}
- 
-Les tests sont effectués sur neuf protéines choisies pour avoir des longueurs de backbone variées, plusieurs domaines représentés, mais aussi plusieurs structures pour chaque famille présente. Ainsi l'ensemble se décompose en deux protéines SH3 de 56 et 57 résidus, de trois protéines PDZ de longueur comprise entre 82 et 97 résidus  et enfin de trois protéines SH2 longues de 105 ou 109 résidus.L'ensemble a une moyenne, arrondie à l'unité inférieure, de quatre-vingt-neuf positions, voir les détails en table~\ref{tab:protéines}. 
-  
+\subsection{Sélection des positions}
 
-    \begin{table}[!htbp]
-      \centering
+Nous cherchons à déterminer les performances et les qualités des différents algorithmes d'exploration de proteus.
+Pour évaluer les différents algorithmes, comme pour leur établir un paramétrage, nous effectuons des séries de tests. 
+Grâce à l'algorithme de type toulbar2 il est possible d'obtenir la séquence/conformation qui possède la plus haute énergie de dépliement. Cela constitue une information important qui va nous servir d'élément de comparaison.Le facteur temps est également un élément déterminant. Il est dans certain cas limitant, nous ne savons pas à l'avance quand toulbar2 termine. Et il apparaît d'emblée illusoire d'espérer voir ce programme converger dans toutes les situations intéressantes dans un temps raisonnable.D'autres métriques qui caractérisent les séquences d'acides aminés de meilleurs énergies obtenues seront également utilisées pour les évaluations et pour les paramétrages.   
 
-      \begin{tabular}{cccc}
+Dans la suite, on appelle «position active», une position pour laquelle, tous les types d'acides et tous les rotamères de chaque type d'acide aminé sont autorisés, au court de la recherche de proteus. On désigne «séquence/conformation» une séquence d'acides aminés munie à chaque position d'un rotamère (le backbone étant de toute façon fixé).Tandis ce que le terme simple «séquence»  sans plus de précision désigne une séquence d'acides aminés.
 
-        \toprule
-        Code PDB & résidus & nombre de positions & domaine\\
-        \cmidrule{1-4}
-        1ABO & 	64-119	 & 	56	 & SH3 \\
-        1CKA & 	134-190	 & 	57	 & SH3 \\
-        1R6J & 	192-273	 & 	82	 & PDZ \\
-        1G9O & 	9-99	 & 	91	 & PDZ \\
-        2BYG & 	186-282	 & 	97	 & PDZ \\
-        1BM2 & 	55-152	 & 	98	 & SH2 \\
-        1O4C & 	1-105	 & 	105	 & SH2 \\
-        1M61 & 	4-112	 & 	109	 & SH2 \\
-        1A81 & 	9-117	 & 	109	 & SH2 \\
-        \bottomrule
-
-      \end{tabular}      
-      \caption{Les protéines}
-\label{tab:protéines}      
-    \end{table}
-
-
-
-
-\paragraph{Alignements Blast croisés}
-
-
-    \begin{table}[!htbp]
-      \centering
-
-      \begin{tabular}{ccc}
-
-        \toprule
-     Protein & 1ABO  & 1CKA  \\
-        \cmidrule{1-3}
-        1ABO & 100 (6e-42) &  26 (1e-07) \\     
-        1CKA &  26 (1e-07) & 100 (2e-41) \\
-        \bottomrule
-
-
-      \end{tabular}      
-      \caption{Pourcentage d'identité et e-value des alignements Blast native vs native pour nos protéine SH3.}
-\label{tab:Xblast_SH3}      
-    \end{table}
-
-    \begin{table}[!htbp]
-      \centering
-
-      \begin{tabular}{cccc}
-
-        \toprule
-     Protein & 1R6J & 1G9O & 2BYG  \\
-        \cmidrule{1-4}
-        1R6J & 100(1e-59) & 25 (3e-07) & no          \\ 
-        1G9O & 25 (3e-07) & 100(2e-66) & 35 (2e-11)  \\
-        2BYG & no         & 35 (2e-11) & 100(7e-71)  \\
-        \bottomrule
-
-
-      \end{tabular}      
-      \caption{Pourcentage d'identité et e-value des alignements Blast native vs native pour nos protéine PDZ (no= pas de touche avec une e-value inférieure à 10).}
-\label{tab:Xblast_PDZ}      
-    \end{table}
-
-
-    \begin{table}[!htbp]
-      \centering
-
-      \begin{tabular}{ccccc}
-
-        \toprule
-     Protein & 1BM2  & 1O4C  & 1M61 & 1A81 \\
-        \cmidrule{1-5}
-        1BM2 & 100 (7e-74) &  36 (2e-16) &  38(6e-10) &  35 (1e-13) \\
-        1O4C & 36  (2e-16) &  100(2e-79) &  27(3e-10) &  33 (2e-12) \\
-        1M61 & 38  (6e-10) &  27 (3e-10) & 100(6e-81) &  57 (2e-47) \\
-        1A81 & 35  (1e-13) &  33 (2e-12) &  57(2e-47) &  100(5e-83)  \\
-        \bottomrule
-      \end{tabular}
-      \caption{Pourcentage d'identité et e-value des alignements Blast native vs native pour nos protéine SH2.}      
-\label{tab:Xblast_SH2}      
-    \end{table}
-
-
-    \begin{figure}[h]
-      \centering
-      \begin{tabular}{cc}
-        \includegraphics[width=18cm]{images/align_clustalo_1R6Jvs2BYG.png} 
-      \end{tabular}
-      
-      \caption{alignement de 1R6J et 2BYG obtenu avec Clustal Omega version 1.2.1}
-\label{graph:all_result}
-    \end{figure}
-
-\clearpage
-
-\subsection{Description des tests}
 \label{sec:description_tests}
 Les tests sont répartis en deux ensembles:
 \begin{enumerate}
@@ -213,26 +287,6 @@ Nous pouvons donc négliger la durée du tri dans le temps total d'exécution.
 Pour l'algorithme heuristique, il n'y a dans notre situation qu'un seul paramètre à renseigner: le nombre de cycles à effectuer. Quelques essais préliminaires sur la plus grosse protéine (Table~\ref{tab:protéines}) avec toute les positions actives, montre que la version utilisée de proteus peut effectuer jusqu'à environ 110000 cycles sur nos machines de calculs en l'espace de vingt-quatre heures. Ainsi, le protocole H est défini comme le protocole qui utilise le mode heuristique de proteus et qui effectue cent dix mille cycles. Sont également définis les variantes H-, H+ et H++ comme des protocoles plus courts ou plus longs à facteur entier près (Table~\ref{tab:protoH}). Par ailleurs, certaines comparaisons de l'heuristique avec le Monte-Carlo ont été faites avec une version précédente du programme proteus.Ce protocole sera noté h. Il diffère aussi de H par le fait que l'option d'optimisation du compilateur Intel utilisé est -O2 contre -O3 pour H.    
 
 
-    \begin{table}[!htbp]
-      \centering
-
-      \begin{tabular}{lr}
-
-        \toprule
-        Nom & nombre de cycles \\
-        \cmidrule{1-2}
-        H   & 110000 \\  
-        H-  & 1100   \\  
-        H+  & 330000 \\  
-        H++ & 990000 \\  
-        h   & 100000 \\  
-        \bottomrule
-
-      \end{tabular}      
-      \caption{Les protocoles heuristiques}
-\label{tab:protoH}      
-    \end{table}
-
    \paragraph{Protocoles Monte-Carlo}
 \label{para:MC}
 On distingue deux ensembles de protocoles Monte-Carlo.Dans le premier, les noms  sont de la forme "mc*". Il rassemble les protocoles utilisés pour le paramétrage du Monte-Carlo.Le second est constitué des protocoles utilisés lors des comparaisons.     
@@ -262,43 +316,6 @@ Le protocole mc2e s'intéresse aux probabilités de changement de la trajectoire
 La table~\ref{tab:protoMC} donne les probabilités utilisées par ces cinq paramètres dans l'ordre de la liste précédente. 
 
 Enfin, mc4b se distingue des autres par un seuil de voisinage plus grand ((Table~\ref{tab:protoMC})).
-
-\paragraph{Seconde version de proteus}
-Pour la partie comparaison avec les autres algorithmes, quatre protocoles sont utilisés. Les protocoles MCa et MCb s'inspirent fortement de mc2d et mc2e , en étant adapté à la contrainte du temps de calcul de la comparaison et en utilisant la nouvelle version de proteus (les lettres capitales dans le nom des protocoles signifient l'utilisation de la dernière version de proteus). MCa- est une variante de MCa avec une trajectoire six fois plus courte.Enfin, MC0 s'inspire de mc0 dans le sens où la température est suffisamment froide pour que nous puissions considérer qu'il n'y a pas de baisse de l'énergie au cours d'une trajectoire.
-  
-
-    \begin{table}[!htbp]
-      \centering
-
-      \begin{tabular}{llrrcc}
-
-        \toprule
-        Nom & Temp & Long. de trajectoire(mega) & Nb de trajectoires  & Voisin & Proba \\
-        \cmidrule{1-6}
-        mc0   & 0.001 &  3  &  1000  & 10 & 0; 1; 0.1; 0 ;0 \\      
-        mc1   & 0.1   &  3  &  1000  & 10 & 0; 1; 0.1; 0 ;0 \\  
-        mc2   & 0.2   &  3  &  1000  & 10 & 0; 1; 0.1; 0 ;0 \\ 
-        mc3   & 0.3   &  3  &  1000  & 10 & 0; 1; 0.1; 0 ;0 \\               
-        mc4   & 0.5   &  3  &  1000  & 10 & 0; 1; 0.1; 0 ;0 \\  
-        mc5   & 0.7   &  3  &  1000  & 10 & 0; 1; 0.1; 0 ;0 \\  
-        mc1b  & 0.1   &  6  &  1000  & 10 & 1; 1;   1; 1 ;0 \\  
-        mc2b  & 0.2   &  6  &  1000  & 10 & 0; 1; 0.1; 0 ;0 \\      
-        mc2c  & 0.2   &  3  & 10000  & 10 & 0; 1; 0.1; 0 ;0 \\   
-        mc2d  & 0.2   &  3000  &  1 & 10  & 0; 1; 0.1; 0 ;0 \\ 
-        mc2e  & 0.2   &  3  &  1000  & 10 & 1; 0; 0.1; 0 ;0 \\     
-        mc4b  & 0.5   & 10  &   100  & 10 & 0; 1;   0; 1 ;0 \\
-        \cmidrule{1-6}
-        MC0   & 0.01  &  1000  &  1  & 10 & 1; 0; 0.1; 0 ;0 \\            
-        MCa   & 0.2   &  6000  &  1  & 10 & 1; 0; 0.1; 0 ;0 \\   
-        MCa-  & 0.2   &  1000  &  1  & 10 & 1; 0; 0.1; 0 ;0 \\   
-        MCb   & 0.2   &  6000  &  1  & 10 & 0; 1; 0.1; 0 ;0 \\      
-
-        \bottomrule   
-        
-      \end{tabular}      
-      \caption{Les protocoles Monte-Carlo}
-\label{tab:protoMC}      
-    \end{table}
 
    \paragraph{Protocoles "Replica Exchange"} 
 
@@ -330,30 +347,41 @@ Voici les températures pour le RE quatre marcheurs:
 Ici les protocoles ne se font qu'avec une seule trajectoire par marcheur. Et la contrainte du temps de calcul se comprend comme vingt-quatre heures de calculs cumulées sur tous les marcheurs.
 Ainsi les longueurs de trajectoire sont définit pour le RE à quatre marcheurs comme le quart d'une trajectoire MC, pour le RE à huit marcheurs comme le huitième.
 
-La table~\ref{tab:protoRE} donne les probabilités utilisées par les cinq balises qui contrôlent les modifications de la séquence/conformation à chaque pas, dans l'ordre de la liste de la section~\ref{para:MC}. 
-    
-    \begin{table}[!htbp]
-      \centering
 
-      \begin{tabular}{llrrrcc}
+\paragraph{Distribution des énergies en fonction des températures}
 
-        \toprule
-        Nom & marcheurs &Temp & Traj (mega)& seuil voisin  & Proba & swap period (mega)\\
-        \cmidrule{1-7}
-        RE4a   & 4 & 10<->0.01    &  1500 & 10 & 1; 0; 0.1; 0 ;0 &  7.5\\  
-        RE4b   & 4 & 1<->0.125    &  1500 & 10 & 1; 0; 0.1; 0 ;0 &  7.5\\  
-        RE4c   & 4 & 2<->0.25     &  1500 & 10 & 1; 0; 0.1; 0 ;0 &  7.5\\  
-        RE8a1  & 8 & 10<->0.00316 &  750  & 0  & 1; 0; 0.1; 0 ;0 &  2.5\\  
-        RE8a2  & 8 & 10<->0.00316 &  750  & 10 & 1; 0; 0.1; 0 ;0 &  2.5\\  
-        RE8b1  & 8 & 3<->0.175    &  750  & 10 & 0; 1; 0.1; 0 ;0 &  7.5\\
-        RE8b2  & 8 & 3<->0.175    &  750  & 10 & 1; 0; 0.1; 0 ;0 &  7.5\\
-        RE8b3  & 8 & 3<->0.175    &  750  & 10 & 1; 0; 0.1; 0 ;0 &  1\\
-        \bottomrule
+Regardons plus en détail le comportement du programme pour l'algorithme "Replica Exchange". Notre implémentation de cet algorithme consiste à modifier la température de certains marcheurs à certains moments voir~\ref{???}.Pour examiner la trajectoire à une température donnée t ( c'est à dire le graphe dans l'espace les séquences/conformations selon les pas du marcheur lorsqu'ils sont à la température t), nous découpons les trajectoires des marcheurs  selon la température. Puis nous collons les segments de trajectoires de même température en respectant l'ordre des pas.Comme les changements de températures se font de façon synchrone , c’est-à-dire un échange entre deux marcheurs, nous obtenons autant de trajectoires selon la température qu'il y a de marcheurs et ces nouvelles trajectoires sont de mêmes longueurs que les trajectoires obtenues par proteus. La figure~\ref{graph:Distrib_E_T} représente la distribution en énergie des trajectoires selon la température sur le test utilisant le protocole RE8b1 sur la protéine 1A81. Nous observons une courbe en cloche pour chaque température, retrouvant ainsi l'allure d'une distribution de Boltzman.  L'espace de recouvrement entre deux courbes consécutives, représente la partie de la distribution dans laquelle les échanges de température vont être se concentrer, parce que cette zone recouvre les situations où la température peut augmente sans dégradation de l'énergie. En effet, le critère de Metropolis-Hasting peut accepter un réchauffement de marcheur (respectivement un refroidissement) si son énergie diminue  (respectivement, augmente) , mais uniquement avec une probabilité qui décroît exponentiellement en fonction de la différence d'énergie.À l'inverse si les recouvrements des distributions consécutives sont trop importants le marcheur peut difficilement s'éloigner de la plage d'énergie d'une température.Le graphique nous confirme que le choix d'une plage de température entre 3.0 et 0.175 pour les protocoles huit marcheurs rend possibles les échanges de températures et permet également l'exploration d'une vaste zone d'énergie.   
 
-      \end{tabular}      
-      \caption{Les protocoles «Replica Exchange»}
-\label{tab:protoRE}      
-    \end{table}
+
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=12cm]{graphe/1A81_RE8b1.png} &
+     \end{tabular}
+     
+     \caption{Distribution des énergies selon la température (1A81 protocole RE8b1).}
+\label{graph:Distrib_E_T}
+   \end{figure}
+
+\paragraph{Trajectoires dans l'espace des températures}
+
+Un critère de performance souvent utilisé est la proportion de changements de températures effectivement acceptés. Pour examiner ces changements, nous représentons la trajectoire dans l'espace des températures pour quatre tests sur la protéine 1A81. Il s'agit des tests effectués avec deux protocoles à quatre marcheurs, le RE4a et le RE4b et deux protocoles à huit marcheurs, le RE8a2 et le REb1, voir figure~\ref{graph:TRAJ_T}.Les deux graphiques quatre marcheurs représentent seulement la moitié des trajectoires de 1,5 million de pas , tandis que les graphiques huit marcheurs représentent la totalité de trajectoires de 750 millions de pas.Comme prévu, le protocole RE4a , qui possède des températures plus écartées , brasse assez mal les températures. En particulier, le marcheur w4 ne quitte presque pas la température la plus froide, et ce malgré une période de swap assez faible et un nombre d'échanges effectifs assez important. On voit que pour RE4b, protocole avec les températures plus proches , la répartition des échanges est nettement plus uniforme. Le fait de double le nombre de températures pour le même intervalle que RE4a ne suffit pas à résoudre le problème et les trois marcheurs les plus froids en début de trajectoire pour le RE8a2 restent froids. Les bons résultats obtenus pour RE4b sont confirmés pour RE8b1 qui utilise également des températures proches.     
+
+
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=8.45cm]{graphe/1A81-RE4a-T_traj.png} &
+       \includegraphics[width=8.45cm]{graphe/1A81-RE4b-T_traj.png} \\
+       \includegraphics[width=8.45cm]{graphe/1A81-RE8a2-T_traj.png} &
+       \includegraphics[width=8.45cm]{graphe/1A81-RE8b1-T_traj.png} \\
+     \end{tabular}
+     \caption{Variation de la température pendant la trajectoire de chaque marcheur (cas exemple de protocoles).}
+\label{graph:TRAJ_T}
+   \end{figure}
+
 
    \paragraph{Protocoles Toulbar2} 
 \label{proto_toulbar2}
@@ -411,17 +439,6 @@ Afin de calculer un score de similarité d'un ensemble de nos séquences par rap
 \item L'alignement blast est alors utilisé pour positionner la native par rapport à $S_0$ et les gaps nécessaires pour aligner la native à $S_0$ sont ajoutés.
 \item Le positionnement et les gaps sont alors appliqués tels quels à la liste de nos séquences.
 
-\end{enumerate}
-
-
-\paragraph{Répartition de l'énergie selon les centiles }
-
-Pour étudier différentes distributions d'ensemble de séquences/conformations selon l'énergie,nous déterminons les centiles de la façon suivante: 
-
-\begin{enumerate}
-\item L'ensemble de séquences/conformations est trié selon l'énergie.
-\item L'intervalle entre la meilleure énergie et la moins bonne est divisé en cent intervalles consécutifs contenant le même nombre de séquences/conformations (un centième du cardinal de l'ensemble).
-\item Les quatre-vingt-dix-neuf valeurs d'énergie obtenues par ce découpage sont les centiles.   
 \end{enumerate}
 
 
