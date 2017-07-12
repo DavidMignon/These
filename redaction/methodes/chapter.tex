@@ -4,15 +4,89 @@
 
 \section{Proteus}
 
+Notre logiciel Proteus est capable d'utilisée plusieurs type de fonction d'énergie.Dans le type le plus simple \ogMMCASA\fg, est combinée l'approche de la mécanique moléculaire pour le traitement de la protéine et un modèle de solvant implicite de type CASA (voir  ~\ref{}). Deux types \ogLLGBSA\fg sont égalament possible , dans lesquels le traitement du solvant est effectuée par un modèle Born Genéralisé, avec soit une approximation NEA pour les rayons de sovatation, soit une approximation FDB.
+Comme il a était vu précédement, avoir une fonction d'énergie décomposable par paire a plusieurs avantages, en particulier le calcul des énergies des paires de résidues avant l'étape d'exploration permet de reduire le calcul de l'énergie d'une séquence conformation pendant celle-ci à une somme d'énergies pré-calculées. Cependant les termes GB et SA ne sont pas décomposable par paire. Il faut alors introduite de nouvelles approximation pour le permettre.Nous allons dans la suite comment ces problèmes sont résolues dans Proteus.
+\subsection{décomposotion en paire du terme de surface}
+Le terme surfacique présenté en (~\ref{0}) ce défini comme:
+
+\begin{equation}
+E_{solv}^\surf = \sum_i \sigma_{t_i} A_i 
+\end{equation}
+avec $A_i$ la surface accessible au solvant de l'atome $i$, et $\sigma_{t_i}$ un coefficient d'hydrophobicité du type de l'atome $i$.
+Ce terme n'est pas décomposable par paire de résidu, parce que  la surface enfouie d'une première chaîne latérale par une chdeuxième  peut aussi être enfuie par troisième chaîne latérale. Pour rendre ce terme décomposable, nous utilisons la méthode de Street et al (~\ref[41]), dans laquelle la surface enfuie d'une chaîne est calculée à partir d'une somme sur les chaîne et les groupes du backbone voisins.Puis pour chaque groupe voisins, la zone de contact avec notre chaîne est calculée indépendament des autres groupes. Ces zones sont sommées et un facteur de contraction est appliqué mimant l'élimination des zones comptée à plusieurs reprise.Des travaux précédents effectuée dans notre laboratoire ont montré qu'un facteur de 0,65 fonctionne bien (37, 40).   
+
+\subsection{\og Native Environnement Approximation\fg (NEA)}
+
+Dans le terme GB de l'énergie de solvatation, le rayon de solvatation $b_i$ approche la distance de l'atome $i$ à la surface de la protéine, et donc c'est une fonction de la position relative à $i$ de tous les atomes de la protéine.Et ce rayon n'est pas décomposable par paire.Pour qu'il ne devienne, Proteus utilise l'approximation  \og Native Environnement Approximation\fg ou NEA, dans laquelle le rayon de solvatation de chaque chaîne latérale est calculé avant l'étape d'exploration, en fixant tout le reste du système dans sa séquence native et sa conformation native[27,40]. 
+
+
+\subsection{\og Fluctuating Dielectric Boundary\fg (FDB)}
+
+Une nouvelle approximation du GB a récement été introduite dans Proteus, toujours avec l'objectif, de transformer ce terme en en terme additif par paire.Elle exploite le fait que dans le GB, l'environement dielectrique  d'une paire de résidue est completement caractérisé pour un petit ensemble de rayon de solvatation d'atome.Ces rayons sont eux-mêmes sommes de paire sur les atomes de la protéines voir 14 16.La méthode s'appelle Fluctuating Dielectric Boundary\fg ou FDB  et comporte les deux étapes suivantes:
+
+La premiere consiste à définir un rayon de solvatation $B_I$ pour chauqe résidu $I$ de la protéine.
+
+On commence par définir une énergie propre à chaque paire de résidus I,J par la somme suivante:
+
+  \begin{equation}
+    E_\IJ^{self} = \sum_{i\in I,j\in J} E_\ij^\self
+  \end{equation}
+  puis l'énergie propre d'un résidu I:
+
+  \begin{equation}
+    E_\I^{self} = \sum_J E_\ij^\self
+  \end{equation}
+    
+  Alors le rayon de solvatation moyen $B_I$ est défini par:
+\begin{equation}
+    E^{self}_I \stackrel{def}{=} \tau \sum_{i \in I} \frac{q_i^2}{2 B_I}.
+\end{equation} 
+
+Nous avons, alors
+
+\begin{equation}
+\left( \sum_{i \in I} q_i^2 \right) \frac{1}{B_I} = \sum_{i \in I} \frac{q_i^2}{b_i}.
+\end{equation}
+
+Donc, $B_I$ est la moyenne harmonique des $b_i$, avec $i \in I$, pondéré par les charges au carré.
+
+Il et alors possible de définir la contribution $g_\IJ$ de la paire de résidu I et J à l'énergie d'écrantage total $\Delta^\solv$, par:
+
+\begin{equation} 
+g_{IJ} = \sum_{i \in I, j \in J} \tau q_i q_j \left( r_{ij}^2 + B_I B_J \exp[-r_{ij}^2/4 B_I B_J] \right)^{-1/2}
+\label{eq:screen}
+\end{equation}
+
+Avec, la somme pour $I=J$ excluant le cas $i \neq j$.
+On peut noter qu' aux distances fixes $r_\ij$, et avec $B=B_IBJ$, $ g_\IJ (B)$ varie faiblemement en fonction de B. Simonson et al (dans 54), propose alors d'approximer cette fonction par:
+
+\begin{equation}
+  \label{eq:approx}
+g_{IJ}(B) \approx c_1^{IJ} + c_2^{IJ} B + c_3^{IJ} B^2 + c_4^{IJ} B^{-1/2} + c_5^{IJ} B^{-3/2}  \label{eq:approx}
+\end{equation}
+
+Les coefficients $c_n^{IJ}$ peuvent alors être pré-calculé est stocké dans la matrice d'énergie, puisque les distances $r_\ij$ ne sont pas des variables pour un couple de chaîne latérale I,J donné. 
+Comme les rayons de solvatation d'un résidu sont eux-mêmes des sommes sur les paires, le calcul de l'énergie GB à l'aide de \ref{eq:approx} est maintenant décomposable par paire.
+
+
 \subsection{La matrice d'énergie}
 
 Proteus utlise d'une part un backbone fixe, une espace discrét de rotamère et une fonction d'énergie décomposable par paires. Ces trois élèment permetent de pré-calculer toutes les énergies interactions possibles. A cet ensemble d'interactions , il faut ajouter les interactions des résidues avec le backbone ceci pour chacun des rotamères possibles, pour constituer un ensemble complet de valeur énergétiques qui permet d'obtenir la valeur de la fonction d''énergie pour chaque sequence/conformation.Cet ensemble peut être organisée sans le format d'une matrice symétrique dans laquelle chaque couple de position dans la chaîne polypeptidique, apparait avec sa multiplicité de couples de rotamères possibles voir ~\ref{Graph:mat_ener}.      
 
-Le calcul de la matrice d'énergie, sont executer à l'aide du pogramme X-plor; il se déroule de la façon suivante:
+Le calcul de la matrice d'énergie, sont executer à l'aide du programme X-plor; il se déroule de la façon suivante:
 
-à partir d'une fichier PDB, 
+à partir d'une fichier PDB,
 
 
+- Les atomes du squelette , c'est à dire les N,H,$C_\alpha$ ,C et O , sont fixés une fois pour toute. 
+- Les atomes des chaînes latérales sont placés avec les angles dièdres issue de la bibliothèque de rotamères de Tuféry (~\ref{20}).
+- La fonction d'énergie qui utilise le champ de force Amber \ref{..} de la forme:
+
+\begin{equation} \label{eq:energy}
+E = E_{bonds} + E_{angles} + E_{dihe} + E_{impr} + E_{vdw} + E_{Coul} + E_{solv} 
+\end{equation}
+
+avec $E_{solv}$ pouvant être obtenu par le modèle CASA , le modèle GBNEASA ou GBFDBSA , correspondant respectivement à la formule \ref{eq:CASA},\ref{eq:NEA} et \ref{eq:FDB}, ceci selon la configuration de l'utilisateur.
 
    \begin{figure}[t]
      \centering
@@ -88,7 +162,6 @@ Le calcul de la matrice d'énergie, sont executer à l'aide du pogramme X-plor; 
    \end{figure}
 
    
-
 
 \subsection{Les entrées\_sorties} 
 
