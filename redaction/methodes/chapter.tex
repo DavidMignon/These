@@ -4,7 +4,20 @@
 
 \section{Proteus}
 
-Notre logiciel Proteus est capable d'utilisée plusieurs type de fonction d'énergie.Dans le type le plus simple \ogMMCASA\fg, est combinée l'approche de la mécanique moléculaire pour le traitement de la protéine et un modèle de solvant implicite de type CASA (voir  ~\ref{}). Deux types \ogLLGBSA\fg sont égalament possible , dans lesquels le traitement du solvant est effectuée par un modèle Born Genéralisé, avec soit une approximation NEA pour les rayons de sovatation, soit une approximation FDB.
+
+Proteus est constitué de deux parties:
+
+\begin{enumerate}
+\item un ensemble de scripts XPLOR, qui controle le calcul de la matrice d'énergie. (XPLOR est un programme de simulation moléuclaire (\ref{}), disponible en téléchargement sur le site de l'université de Yale).
+\item un programme écrit en C ,que nous appelons \og proteus\fg dans la suite de ce texte, qui explore l'espace de sequence/conformation
+\end{enumerate}
+
+Le logiciel est flexible et largement configurable; Il permet l'utilisation de plusieurs champ de force, de plusieurs modèle de solvant, et de plusieurs librairie de rotamer.La partie en C, proteus, propose plusieurs algorithme d'exploration comme l'heuristique, MC ou REMC .Le programme proteus permet de diviser le système en plusieurs groupes ou d'en dupliqué une partie , ceux-ci pouvant alors être combiné dans la fonction d'énergie afin de favoriser la stabilité de certains sous-ensembles du système ou certaines affinités.
+Plusieurs succès ont déjà était obtenue avec Proteus par exemple de redesign de la tyrosyl-tARN synthetase (\ref{}) ou sur la D-tyrosine ref{}, sur les cacluls de pK_a \ref{31}.
+
+Nous detaillons les points importants de Proteus.
+
+Notre logiciel Proteus autorise le choix entre plusieurs type de fonction d'énergie.Dans le type le plus simple \ogMMCASA\fg, est combinée l'approche de la mécanique moléculaire pour le traitement de la protéine et un modèle de solvant implicite de type CASA (voir  ~\ref{}). Deux types \ogLLGBSA\fg sont égalament possible , dans lesquels le traitement du solvant est effectuée par un modèle Born Genéralisé, avec soit une approximation NEA pour les rayons de sovatation, soit une approximation FDB.
 Comme il a était vu précédement, avoir une fonction d'énergie décomposable par paire a plusieurs avantages, en particulier le calcul des énergies des paires de résidues avant l'étape d'exploration permet de reduire le calcul de l'énergie d'une séquence conformation pendant celle-ci à une somme d'énergies pré-calculées. Cependant les termes GB et SA ne sont pas décomposable par paire. Il faut alors introduite de nouvelles approximation pour le permettre.Nous allons dans la suite comment ces problèmes sont résolues dans Proteus.
 \subsection{décomposotion en paire du terme de surface}
 Le terme surfacique présenté en (~\ref{0}) ce défini comme:
@@ -75,8 +88,17 @@ Proteus utlise d'une part un backbone fixe, une espace discrét de rotamère et 
 
 Le calcul de la matrice d'énergie, sont executer à l'aide du programme X-plor; il se déroule de la façon suivante:
 
-à partir d'une fichier PDB,
 
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=12cm]{graphe/proteus/matrice.png} &
+     \end{tabular}
+     
+     \caption{\textbf{La matrice d'énergies}Sur cet exemple, un polypeptide de 6 résidues, chaque position posséde type d'acide aminés possibles et 3 rotamères possibles (2 pour le type A et 1 pour le type B). La matrice organise toutes les interactions de paires de chaîen latérales possibles. Les interactions impliquant le résidu numéro 2 sont dans la bande jaune de la matrice, les interactions impliquant le résidu numéro 3 sont dans la bande bleue.Les points rouge et vert correspondent aux interactions  noté par les flèches rouge et verte à gauche(La matrice est symétrique , ici les interactions sont reprrésentées qu'une seule fois).}
+\label{graph:MAt_ener}
+   \end{figure}
+   
 
 - Les atomes du squelette , c'est à dire les N,H,$C_\alpha$ ,C et O , sont fixés une fois pour toute. 
 - Les atomes des chaînes latérales sont placés avec les angles dièdres issue de la bibliothèque de rotamères de Tuféry (~\ref{20}).
@@ -88,17 +110,46 @@ E = E_{bonds} + E_{angles} + E_{dihe} + E_{impr} + E_{vdw} + E_{Coul} + E_{solv}
 
 avec $E_{solv}$ pouvant être obtenu par le modèle CASA , le modèle GBNEASA ou GBFDBSA , correspondant respectivement à la formule \ref{eq:CASA},\ref{eq:NEA} et \ref{eq:FDB}, ceci selon la configuration de l'utilisateur.
 
-   \begin{figure}[t]
-     \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=6cm]{graphe/proteus/CPD.png} &
-     \end{tabular}
-     
-     \caption{Le CPD dans proteus}
-\label{graph:struct_Phy}
-   \end{figure}
+
+\subsection{l'état déplié}
+
+le $\Delta \Delta G$ du chapitre précédent, s'applique entre l'état replié de la protéine et un état déplié. Nous avons donc besoin d'attribuer une énergie à l'état déplié.Cet état ne correspond pas à une structure précise pour une certaine séquence d'acide aminé. de même on peut considérer que pour un résidu donné la position les deux résidues immédiatement de doit pas impacter fortement l'énergie.Cela inspire une definition indépendante la structure telle que:
+\begin{equation}
+E_u(S) = \sum_i^N E(t_i)  
+\end{equation}
+
+avec $E(t_i)$ une énergie du type d'acide aminé $t_i$.
+
+Ces énergies est prise en entrée dans Proteus, et donc sa détermination ne fait pas encore partir des fonctionnalité intégré à notre logiciel.Il apparaît clairement dans la suite que la determination doit être fonction du système étudier. Nous detaillerons dans le chapitre PDZ, plusieurs méthodes dont de nouvelles et plusieurs exemple de determination qui seront exploitées.
 
 
+
+\subsection{déroulemement de la construction de la matrice}
+
+A partir un fichier PDB, une série de script XPLOR va préparer le système, ce système peut contenir un ligand.
+
+\begin{enumerate}
+-1- L'utilisateur configure l'execution:
+Il determine:
+\begin{itemize}
+\item un champ de force. Les champs AMBER ff99SB ou CHARMM toph19 sont tous les deux supportés.
+\item un modèle de solvant parmi CA GBNEA GBFDB
+\item un jeu de coefficients \sigma_i pour la pondération de la surface accessible au solvant dans le terme hydrophobe.
+\item l'ensemble des résidus dans le backbone autorisé à muter
+\item l'ensemble des chaînes laterales autorisé à se déplacer 
+\end{itemize}
+
+
+-2- Pour chaque résidu, un ensemble de conformation est défini à partir d'une librairie de rotamer. Cet ensemble est sauvegardé dans un fichier PDB par position.
+
+-3- Les rayons de solvatation de Born sont calculé selon l'approximation GB demandé. Ces rayons sont sauvegardé dans un fichier dédié.
+-4- pour chaque rotamére de chaque type, après une petite minimisation, est calculée ou lui seul peut se déplacer, l'énergie d'interaction avec le squelette.Elle est stocké dans une fichier.Ce sont les énergies de la diagonale de matrice.l'objectif de la minimisation est d'adapter le rotamère à son environement natif.
+-5- Pour chaque paire de rotamère possible,comme pour la diagonale de ma matrice, une petite minimisation est effectuée avec uniquement la paire courante qui peut se deplacer.Puis les termes d'énergie d'interaction du couple sont  calculés et enregistrés dans du fichiers.  
+\end{enumerate}
+  
+Ensuite , les differents fichiers d'énergies seront lu par proteus voir \ref{} pour construire la matrice.
+
+\subsection{les groupes dans proteus}
    \begin{figure}[t]
      \centering
      \begin{tabular}{cc}
@@ -107,18 +158,6 @@ avec $E_{solv}$ pouvant être obtenu par le modèle CASA , le modèle GBNEASA ou
      
      \caption{Les principales structrures \og physiques\fg dans proteus}
 \label{graph:struct_Phy}
-   \end{figure}
-   
-
-
-   \begin{figure}[t]
-     \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=12cm]{graphe/proteus/matrice.png} &
-     \end{tabular}
-     
-     \caption{\textbf{La matrice d'énergies}Sur cet exemple, un polypeptide de 6 résidues, chaque position posséde type d'acide aminés possibles et 3 rotamères possibles (2 pour le type A et 1 pour le type B). La matrice organise toutes les interactions de paires de chaîen latérales possibles. Les interactions impliquant le résidu numéro 2 sont dans la bande jaune de la matrice, les interactions impliquant le résidu numéro 3 sont dans la bande bleue.Les points rouge et vert correspondent aux interactions  noté par les flèches rouge et verte à gauche(La matrice est symétrique , ici les interactions sont reprrésentées qu'une seule fois).}
-\label{graph:MAt_ener}
    \end{figure}
    
 
