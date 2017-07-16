@@ -149,90 +149,94 @@ avec $D_0$ et $r_0$ des constantes, r_{ij} la distance entre l'atome $i$ et l'at
 \end{enumerate}
 
 
-\subsection{D' autres approches}
+\subsection{d' autres approches}
 
 Même si la mécanique moléculaire prédomine dans le monde du CPD , il existe d'autres approches.Mayo [2006] utilise une fonction empirique pour la modélisation des liaisons hydrogènes, d'une focntion d'énergie coulombienne qui contient un $\epsilon$ qui varie en fonction de la distance interatomique.Il existe des fonctions d'énergie  conportant des élements relevant de statisque sur les protéines. Il existe encore des fonctions d'énergie à gros grains notament dans la modélisation des forces de Van der Walls utiles pour les applications d'interactions protéine-protéine.
 
 \section{Modélisation du solvant}
-Les protéines sont étudiées dans un solvant aqueux.C'est à dire que la solution qui est considérée dans les calculs est une mélange dans laquelle l'eau est présente en quantité largement plus importante que la quantité de protéine (les solutés). Bien qu'il existe d'autres type de solvant, ils ne seront pas abordé ici. Les interactions entre solutés et le solvant jouent un  rôle clé dans le structure de la protéine mais également dans sa fonction. La modélisation du solvant est alors un point capital dans le CPD.Dès 1933, Bernal et Fowler [127] proposent une modélisation de l'eau liquide au niveau atomique.Depuis, de nombreuses méthodes ont été développées tentant de faire face à la difficilté que cela représente. La connaissance des positions et les vitesses de toutes les molécules d'eau est biensur la donnée contenant le maximum d'information dans le cadre de la mécanique moléculaire , mais difficilement gérable compte tenue de la quantité de molécules d'eau qu'il faut considérer.
+Les protéines sont étudiées dans un solvant aqueux.C'est à dire que la solution qui est considérée dans les calculs est une mélange dans laquelle l'eau est présente en quantité largement plus importante que la quantité de protéine (les solutés). Bien qu'il existe d'autres type de solvant, ils ne sont pas abordé ici. Les interactions entre solutés et le solvant jouent un rôle clé dans le structure de la protéine mais également dans sa fonction. La modélisation du solvant est alors un point capital dans le CPD.
+
+Une molécule d'eau a une charge électrique nette nulle.Mais il existe une dissymétrie du nuage électronique: Les électrons se situent de façon preferenciel au voisinnafe de l'atome d'oxygène par rapport au voisinnage des noyaux d'hydrogènes.
+On dit que la molécule est polaire, et cette polarisation peut être approximée par un moment dipolaire.Cette polarité facilite la formation de liaisons hydrogènes entre molécules d'eau et avec tous autres groupes polaires. 
+Ainsi, l'eau a état liquide possède beaucoup de liaisons hydrogènes. Lorsqu'une protéine est solvaté, les molécules du solvent se place de tel façon que le nombre de liaisons hydrogène soit maximal.Les molécules de la première couche de solvatation forme alors des liaisons avec les groupes polaires de la protéines ou pour les groupes non-polaires s'oriente pour former des liasons avec d'autres molécules d'eau. Cette reorganisation de la structure moléculaire de d'eau a trois conséquences importantes:
+
+\begin{itemize}
+\item une diminution de l'entropie au voisinnage de la protéine 
+\item la creation de polarisation à la surface du soluté
+\item  l'eau crée une couche de charges partielles opposées à celles de la protéine qui atténue le champ de celle-ci. ce phénomène s'appelle l'écrantage.
+\end{itemize}
+  
+Il a été démontré d'une protéine et une molécule d'eau peuvent intéragir de façon non négligable jusqu'à une distance de 15 angstroms.Cela implique que pour solvaté correctement une protéine il faut prendre au compte l'effet de plusieurs milliers d'atomes du solvant.
+De nombreuses méthodes ont été développées tentant de faire face à la difficilté que cela représente.
+La connaissance des positions et les vitesses de toutes les molécules d'eau nécessaire dans le cadre de la mécanique moléculaire, apparaît alors comme une gageure. Des approches moins fines vont devoir être utilisées. 
 
 \subsection{modèle de solvant explicite}
 
-Les modèles qui abordent le problème sous cet angle, c'est à dire celle d'une représentation type mécanique moléculaire dans laquelle l'eau apparait comme une collection de molécules. Ces molécules sintéragissent au travers d'une énergie potentielle, ou autrement dit au travers d'un champ de force que décrivent les interactions.
-Deux composantes de cette énergie potentielle peuvent être considérée:
-\begin{enumerate}
-\item un terme intramoléculaire, qui modélise les interactions entre les atomes d'une même molécule.
-\item un terme intermoléculaire, qui modélise les interactions entre les atomes de molécule différentes.
-\end{enumerate}
+Les modèles de solvant explicite sont ceux d'une représentation type mécanique moléculaire dans laquelle l'eau apparait comme une collection de molécules. Ces molécules intéragissent au travers d'une énergie potentielle, ou autrement dit au travers d'un champ de force que décrivent les interactions.
 
-Il est alors assez courant de considérer que l'energie intramoléculaire n'est jamais modifiée, cela revient à considérer que les mongeurs et les angles de liaison des molécules restent fixe au court du temps.
 
-De même pour le terme intermoléculaire, on trouve le plus souvent une modélisation que se limite à considérer uniquement deux types d'énergies:
-
-\begin{enumerate}
-\item l'interation de Coulomb, d'énergie potentielle:
-\begin{equation}
-  E_C = frac{q_1q_2}{4\pi\epsilon_0r}
-
-avec $q_1$ $q_2$ les charges, $\epsilon_0$ la permittivité du vide  
-\end{equation}  
-\item Le potentiel de Lennard-Jones, qui modélise les interactions de Van der Waals, (voir \ref{VdW}).
-\end{enumerate}
-
-Pour avoir la possibilité de calculer les grandeurs d'intérêt du solvant, il faut pouvoir situer le systeme dans l'espace des phases, c'est la dire l'espace à $6N$ dimensions pour une simulation du solvant avec N molécules d'eau tel que chaque élément de cet espace décrive une configuration des positions et des vitesses de la collection de molécules.
-Une première méthode est la dynamique moléculaire dans laquelle,  à partir d'une configuration initial des molécules d'eau , les équations de la mécanique classique sont résolues pour déterminer les positions et les vitesses au court du temps. Une seconde méthode consiste à échantilloné d'espace des phases par la méthode Monte-carlo dans laquelle l'espace des phases est visité grace à une serie de  déplacements  aléatoires qui sont acceptés ou non en fonction de contraintes basées sur l'energie (voir chapitre \ref{méthodes}).
-
-Mais, quelque soit la méthode utilisé , pour pouvoir obtenir une représentation de qualité des effets du solvant dur la protéine, échantillonner correctement les états du solvant dans l'espace des phases, ce qui demande de mutiplier les dynamiques moléculaires avec différentes configurations initiales ou de calculer des trajectoires Monte-Carlo suffisament longue.D'autrepart, une immersion réaliste du soluté dans de l'eau demande l'utilisation d'un grand nombre de molécules, typiquement plusieurs milliers.
-
-les utilisateurs d' un modèle de solvant explicite se trouvent alors dans la situation où une simulation très coutese et qui en plus consomme la plus grande partie de la puissance de calcul à evaluer les interactions des molécules d'eau entre-elles.Il apparaît alors naturellement la nécessité d'utiliser les méthodes numériques moins couteuses et plus efficaces.
+Pour calculer les grandeurs d'intérêt du solvant, il faut pouvoir situer le systeme dans l'espace des phases, c'est la dire l'espace à $6N$ dimensions pour une simulation du solvant avec N molécules d'eau tel que chaque élément de cet espace décrive une configuration des positions et des vitesses de la collection de molécules.
+Une première méthode est la dynamique moléculaire dans laquelle,  à partir d'une configuration initial des molécules d'eau , les équations de la mécanique classique sont résolues pour déterminer les positions et les vitesses au court du temps. Une seconde méthode consiste à échantilloné d'espace des phases par la méthode Monte-carlo dans laquelle l'espace est visité grace à une serie de  déplacements  aléatoires qui sont acceptés ou non en fonction de contraintes basées sur l'energie (voir chapitre \ref{méthodes}).
+Mais, quelque soit la méthode utilisée, pour pouvoir obtenir une représentation de qualité des effets du solvant dur la protéine, il faut échantillonner correctement les états du solvant dans l'espace des phases, ce qui demande de mutiplier les dynamiques moléculaires avec différentes configurations initiales ou de calculer des trajectoires Monte-Carlo suffisament longue.
+Les utilisateurs d'un modèle de solvant explicite se trouvent alors dans la situation où une simulation très couteuse en terme de puissance de calculs consacre la plus grande partie du temps à evaluer des interactions entre molécules d'eau.Ce qui ne constitue pas un objectif pour le CPD.
 
 \subsection{modèle implicite}
 
-Le principe des modèles implicites du solvant est de tenter de representer l'effet moyen du solvant sur la protéinepar l'utilisation d'un milieu continue dans lequel la protéine serait immergé.
-
-l'effet du solvant sur la protéine peut être vu comme la différence entre l'énergie libre  de la solution solvant/soluté avec l'énergie libre  d'un système dans lequel le solvant et le soluté sont séparés. Notons cette difference $\Delta G_{solv}$, elle est appelé l'énergie de solvatation.
+Le principe des modèles implicites du solvant est de tenter de representer l'effet moyen du solvant sur la protéine par l'utilisation d'un milieu continue dans lequel la protéine serait immergé.Le solvant et la protéine sont représenté par un milieu dielectrqieu uniforme.
+Pour mesurer l'effet de la solvatation la bonne quantité est l'énergie libre de solvatation mise en jeu pendant ce processus.Elle se défini comme la différence de l'énergie libre de la solution et l'énérgie libre d'un système dans lequel le solvant et le solutés sont séparés et à l'état pur. Notons cette difference $\Delta G_{solv}$.
 
 On peut décrire $\Delta G_{solv}$ comme la somme de trois termes:
 
 \begin{equation}
-  \Delta G_{solv} = \Delta G_{solv}^{elec} + \Delta G_{solv}^{VdW} + \Delta G_{solv}^{cav}
+  \label{eq:enersolv}
+  \Delta G_{solv} = \delta g_{solv}^{elec} + \delta g_{solv}^{vdw} + \delta g_{solv}^{cav}
 \end{equation}
 avec:
 
 \begin{enumerate}
-\item $\Delta G{elec}$ l'effet électrostatique, qui correspond à la reorganisation des charges de la protéine dans le solvant
-\item $\Delta G{VdW}$ est l'effet des forces de Van der Waals.
-  \item $\Delta G{cav}$ est l'effet qui correspond au coût de la création de la cavité pour le solvant, en terme d'entropie et de pression.
+\item $\delta g{elec}$ l'effet électrostatique, qui correspond à la reorganisation des charges de la protéine dans le solvant,y compris ses charges partielles (polarisation).
+\item $\delta g{vdw}$ est l'effet des forces de van der waals.
+  \item $\delta g{cav}$ est l'effet qui correspond au coût de la création de la cavité pour le solvant, en terme d'entropie et de pression.il inclus le coût de reorganisation des molécules du solvant.
 \end{enumerate}
 
-Il est d'usage de réunir les deux derniers termes en une contribution non polaire , dites hydrophobe.Il possible de d'approximer ce  terme hydrophobe en utilisant la surface accessible au solvant de la protéine (voir figure \ref{...}):
-
+une méthode standard pour approcher $\delta g_{solv}$ est de traiter le premier terme separément des autres.en effet, il est possible d'approximer la somme des deux derniers termes de l'équation  \ref{eq:enersolv} en utilisant la surface accessible au solvant de la protéine. la surface accessible au solvant est l'ensemble des points par lesquels peut passer une sphére, modélisant une molécule d'eau, qui roule sur la surface de van der vaals de la protéine, voir figure \ref{graph:surface}.
+l'aproximation s'écrit:
 \begin{equation}
-\Delta G_{solv}^{VdW} + \Delta G_{solv}^{cav} \approx \Delta G_{solv}^{SA} = \sum_i \sigma_{t_i} A_i
+\delta g_{solv}^{vdw} + \delta g_{solv}^{cav} \approx \delta g_{solv}^{sa} = \sum_i \sigma_{t_i} a_i
 \end{equation}
 
-avec $A_i$ la surface accessible au solvant  de l'atome $i$ et $\sigma_{t_i}$ un facteur pour chaque type atomique $t_i$ ajusté pour retrouver les énergies de solvatation obtenue par experience ou autres.Ce facteur figure la propension de chaque type d'atomes à être enfui ou exposé au solvant (Wesson & Eisenberg [1992]).
+avec $a_i$ la surface accessible au solvant  de l'atome $i$  et $\sigma_{t_i}$ un facteur pour chaque type atomique $t_i$ ajusté pour retrouver les énergies de solvatation obtenue par experience .
+dans la suite, on appelle cette somme, le terme surfacique de l'energie de solvatation, et on le note $e_{solv}^{surf}$.
 
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=12cm]{figure/surface.png} &
+     \end{tabular}
+     
+     \caption{\textbf{les trois types classiques de surfaces pour une molécule} à gauche et en rouge la surface de van der waals (svdw), au centre et en bleu, la surface accessible au solvant (sa), à droite et en vert  la surface de connolly ou surface moléculaire (sm).la surface sa est l'ensemble des positions pouvant être occupées par le centre d'une sphère (figurant une molécule du solvant) roulant sur svdw.la surface sm est la plus petite enveloppe de svdw dont chaque point peut être en contact avec la sphère. } 
+\label{graph:surface}
+   \end{figure}
+   
 
-\subsection{modèle CASA}
+\subsection{modèle casa}
 
+nous pouvons remarquer que les dipoles du solvant s'oriente , au moins pour les plus proches du soluté, selon les lignes du champ électrique crée par la protéine, voir figure \ref{graph:ecrantage}.l'idée du modèle \og coulomb accessible surface area\fg (casa)  est alors de considérer que l'effet induit par les dipoles est proportionnel à l'effet du champ électrostatique produit par la protéine qui est supposée fixe. 
 
-La présence des molécules d'eau qui sont très fortement polarisé induit une aténuation des interactions électostatiques entre atomes de la protéine. On parle de l'écrantage induit par l'eau.
-
-
-Le modèle \og Coulomb Accessible Surface Area\fg (CASA) réduit l'effet électrostatique du solvant à l'écrantage subit par la protéine. 
+on a  alors, en utilisant le modèle sa pour le terme non polaire:
 
 \begin{equation}
-\Delta G_{solv} \approx E_{screen} + \sum_i \sigma_{t_i} A_i
+\delta g_{solv} \approx e_{screen} + \sum_i \sigma_{t_i} a_i
 \end{equation}
 
 avec 
 
 \begin{equation}
-E_{screen} =  (\frac{1}{\epsilon} -1 )E_{coul}
+e_{screen} =  (\frac{1}{\epsilon} -1 )e_{coul}
 \end{equation}
 
-Ainsi, l'ecrantage est décrit par un facteur unique pour toutes les interactions électrstatiques.La simplicité de ce modèle proposé par Wesson et Einsenberg [212]fait de lui un modèle fréquement utilisée. Cependant, il est en difficulté pour le traitement de la surface des protéines.
+avec $ \epsilon $ la constante diélectrique du solvant.
+ainsi, l'ecrantage est décrit par un facteur unique pour toutes les interactions électrstatiques.la simplicité de ce modèle proposé par wesson et einsenberg [212] fait de lui un modèle fréquement utilisée. cependant, il est en difficulté pour le traitement de la surface des protéines.
 
 
    \begin{figure}[t]
@@ -247,99 +251,103 @@ Ainsi, l'ecrantage est décrit par un facteur unique pour toutes les interaction
    
 
 
-
-\subsection{modèle Poisson Boltzmann}
-La méthode de Poisson Boltzmann est très utilisés parce qu'elle fournit des résultats de grande précision,prend en compte l'effet ionique et toute la forme de la protéine. Dans cette méthode, la protéine est supposée fixe, elle forme une cavité dans un milieu continu diélectrique qui peut est polarisé (on parle de continuum), Il s'agit donc encore d'un modèle de solvant implicite.Par contre les charges de la  proteine sont traitées de façon explicite. Ainsi ce modèle est capable de prendre en compte l'écrantage du solvant sur les interactions intrasoluté, mais aussi les interactions électrostatiques entre groupes chargés  de la proteine et solvant polarisé.Le continuum est munie d'une distribution de charge \rho_P , alors le potentiel électrostatique dans ce milieu est donnée par l'équation de Poisson:
-
-\begin{equation}
-  -\nabla . \epsilon(x)\nabla \phi(x) = \rho(x)  
-\end{equation}
-
-avec $\epsilon(x)$ le coefficient diélectrique qui depend du milieu, \phi (x) le potentiel électrostatique .Typiquement \epsilon prend des valeurs faibles , entre 1 à 8 pour les protéines, et élevè pour l'eau à 80.
-
-L'équation de Poisson-Boltzmann est une expension de l'équation de Poisson dans laquelle les charges d'ions mobiles sont pris en compte.La théorie de Debys-Hückel donne la distribution des ions comme suivant une loi de Boltzmann ( d'où son nom):
-
+\subsection{modèle poisson boltzmann}
+la méthode de poisson boltzmann est très utilisés parce qu'elle fournit des résultats de grande précision,prend en compte l'effet ionique et toute la forme de la protéine. dans cette méthode, la protéine est supposée fixe, elle forme une cavité dans un milieu continu diélectrique qui peut est polarisé (on parle de continuum), il s'agit donc encore d'un modèle de solvant implicite.par contre les charges de la  proteine sont traitées de façon explicite par une distribution de charge. ainsi ce modèle est capable de prendre en compte l'écrantage du solvant et les interactions électrostatiques entre groupes chargés de la proteine et solvant polarisé.si le continuum est munie d'une distribution de charge $\rho$ , alors le potentiel électrostatique dans ce milieu est donnée par l'équation de poisson:
 
 \begin{equation}
-  \rho_i =  C_i \exp{-q_i(\psi(x)+ V_i(x))}
+  \label{eq:poisson}
+  \nabla [ \epsilon(x) \phi(x)] = - 4 \pi \rho(x)   
 \end{equation}
 
-avec $C_i$ une constante pour chaque type d'ion $i$, $q_i$ la charge partielle en dans le potentoel $\psi(x)$ , et  $V_i(x)$ une fonction d'énergie stérique représente la difficulté des charges mobiles à pénetrer dans le soluté.
+avec $\epsilon(x)$ la constante dielectrique (ici fonction du milieu, à deux valeurs possibles) , \phi (x) le potentiel électrostatique,$\nabla \phi(x)$ la divergence de $\phi$ en $x$ .
 
-La distributions de charge devient:
+typiquement \epsilon prend des valeurs faibles , entre 1 à 8 pour la protéine et élévée pour le solvant, proche de 80 pour l'eau.
+
+l'équation de poisson-boltzmann est une extension de l'équation de poisson dans laquelle les charges d'ions mobiles sont pris en compte.la théorie de debye-hückel donne la distribution des ions comme suivant une loi de boltzmann (d'où son nom):
 
 \begin{equation}
-  \rho_{PB} = -\nabla . \epsilon(x)\nabla \phi(x) + C_i \exp{-q_i(\psi(x)+ V_i(x))}
+  \nabla [ \epsilon (x) \phi(x)] = -4 \pi ( \rho(x) - \epsilon(x) \kappa^2 \phi(x))
 \end{equation}
 
-Malheureusement, il n'existe pas , pour les protéines , de solution analytique à \ref eq. Il faut effectué une résolution numérique. Plusieurs programmes sont à la disposition de la communauté, DelPhi[], APBS[] qui sont basés sur la méthodes des différences finies [][] et des éléments finis [][][].
+avec $ \kappa $ le paramètre de debye-hückel qui tient compte de la concentration des ions en solution.
 
-Une fois le potentiel électrostatique calculé, l'énergie libre électrostatique  est donné par:
+
+malheureusement, il n'existe pas , pour les protéines , de solution analytique à \ref{eq:poisson}. il faut effectué une résolution numérique. plusieurs programmes sont à la disposition de la communauté, delphi \ref{}, apbs \ref{}  qui sont basés sur la méthodes des différences finies \ref{} et des éléments finis \ref{}.
+
+une fois l'équation résolue, le terme électrostatique de l'énergie de solvatation est donnée par:
 
 \begin{equation}
-\Delta G_{elec} = frac{1}{2} \int \rho \phi dx
+\Delta G_{solv}^{elec} = \frac{1}{2} \int \rho(x)\phi(x)dx  
 \end{equation}
-
 
 Quelque soit l'approche utilisée les calculs sont couteux pour une protéine entière.
 
 
-\subsection{modèle Born Généralisé}
 
-Le modèle de solvant GB pour \og Generalized-Born  \fg se base sur une expression nouvelle  de l'équation de Poisson-Bolztlman; ce qui ouvre la voie à une nouvelle classe d'approximations.L'objectif est alors de donner les résultats de mêmes qualités que PB avec un coût numérique bien inférieur.On procede de la façon suivante:Dans un premier temps, on cherche à évaluer l'énergie libre électrostatique d'un ensemble de N particules, de rayon de Born $R_i$ de charge $q_i$ dans une milieu de constante diélectrique $\epsilon$:
-
-\begin{equation}
-  \label{eq:GB}
-  \Delta G_{elec} = - frac{1}{8\pi} (1 - frac{1}{\epsilon}) \sum_{i=1}^{N} frac{}{q_i^2}{\alpha_i}
-\end{equation}
-
-
-
-\begin{equation}
-  \label{eq:GB}
-  E_{elec} =  E_{Coul} + \Delta G_{solv}
-\end{equation}
-
-
-\begin{equation}
-  \label{eq:GB}
-  E_{elec} = \sum_{i\neq j}^{N} frac{q_iq_j}{r_{ij}} + \Delta G_{solv}
-\end{equation}
+   \begin{figure}[t]
+     \centering
+     \begin{tabular}{c}
+       \includegraphics[width=8cm]{figure/rayon_Born.png} &
+     \end{tabular}
+     
+     \caption{\textbf{Des rayons de Born de deux atomes dans une protéine} Le rayon de Born pour l'atome enfui est environ le rayon de la protéine, alors que le rayon de Born d'un atome à la surface est environ son rayon de Ver der Vaals.} 
+\label{graph:surface}
+   \end{figure}
 
 
 
-chez Najette
-\begin{equation}
-  \label{eq:GB}
-  \Delta G_{solv} = \sum_i \Delta E_i^{self} + \sum_{i<j} \Delta E_{ij}^{int}  
-\end{equation}
+\subsection{modèle de Born Généralisé}
 
-Dans article Fran
+Dans le cas d'un soluté spérique de rayon $b$ et de charge pontuelle q portée par le centre de la sphére, Born en 1930  parvient à établir des expressions analytiques des solutions de l'équation de Poisson-Boltzmann et de $ \Delta G_{solv}^{elec}$:
 
 
 \begin{equation}
-  \label{eq:GB}
-  \Delta G_{solv} = \sum_{ij} g_{ij} 
+  \label{eq:Born}
+  \Delta G_{solv}^{elec} = - \tau \frac{q^2}{2b}
 \end{equation}
+
+
+avec $ \tau = \frac{1}{\epsilon_p} - \frac{1}{\epsilon_s}$ , $\epsilon_p$ la constante diélectrque dela sphère et $\epsilon_s$ celle du solvant.
+
+Partant de cette solution Still et al (1990), propose une généralisation à un ensemble d'atomes chargés formant une cavité de forme quelconque.L'objectif est alors de donner les résultats de  qualité proche de celles de PB avec un coût numérique bien inférieur.
+
+Dans un premier temps, on évalue l'énergie libre électrostatique totale d'un ensemble de $N$ particules, de rayon $a_i$ de charge $q_i$ séparés deux à deux d'une distance $d_{ij}$ dans une milieu de constante diélectrique $\epsilon$:
 
 
 \begin{equation}
   \label{eq:GB}
-  g_{ij}=g(r_i,r_j) = \tau q_iq_j (r²_{ij} + b_ib_j exp(-r²_{ij}/4b_ib_j)})^{-1/2} 
+  G_{elec} =  E_{Coul} + \Delta G_{solv}
 \end{equation}
 
-avec $\tau = frac{1}{\epsilon_w} - frac{1}{\epsilon_p}$, $\epsilon_w$ étant la constante diélectrique du solvant,$\epsilon_p$ étant la constante diélectrique de la protéine. $bi$ et $bj$  sont les rayons de solvatations.
-
-Cette expression est exacte lorsque les rayons de Born ne se recouvrent pas. Mais les rayons de Born des différentes particules ne sont pas connus.
-Dans le cas où les rayons de Born se recouvrent, Il a été proposée une généralisation de la formule ~\ref{eq:BG} [23]:
-
+ce qui donne;
 
 \begin{equation}
   \label{eq:GB}
-  \Delta G_{elec} = - frac{1}{8\pi} (1 - frac{1}{\epsilon})  \sum_{i=1}^{N} \sum_{j>i}^{N}  frac{}{q_iq_j}{\sqtr{r^2_{ij} + \alpha_i\alpha_j exp (frac{-r^2_{ij}}{4\alpha_j \alpha_j})}}
+ G_{elec} =  \frac[1}[2}  \sum_{i \neq j} \frac{q_iq_j}{d_{ij}}- \frac[1}[2}  \tau \sum_i frac{q_i^2}{\a_i}
 \end{equation}
 
-Le calcul des rayons de Born $\alpha_i$ se fait par le calcul de l'énergie libre électrostatique de l'atome $i$, dans la situation où toutes les autres particules ont une charge ramenée à zéro.Ainsi, chaque charge  de la protéine est caractérisée par sa distance au solvant.
+avec $ \tau = \frac{1}{\epsilon_p} - \frac{1}{\epsilon_s}$, $\epsilon_p$ la constante diélectrqiue pour les atomes et $ \epsilon_s$ celle du solvant.
+
+
+L'idée consiste alors a etendre le somme sur les atomes $i$ du dernire terme en une double somme sur les paires d'atomes:
+
+
+\begin{equation}
+  G_{elec} = \frac[1}[2} \sum_{i \neq j} \frac{q_iq_j}{d_{ij}} - \tau \frac[1}[2} \sum_{i,j} g_{ij}
+\end{equation}
+
+avec
+
+\begin{equation}
+  \label{eq:GB}
+  g_{ij}= \tau q_iq_j (r²_{ij} + b_ib_j exp(-r²_{ij}/4b_ib_j)})^{-1/2} 
+\end{equation}
+
+avec $b_i$ et $b_j$  ,nouveaux paramètres , que l'on nomme les rayons de solvatations de l'atome $i$ et $j$.
+Dans le cas où $i=j$, $g_{ij}$ est égale à deux fois l'énergie de solvatation de Born pour un ion de rayon $b_i$.
+Lorsque $r_{ij}$ tend vers l'infini $g_{ij}$ la loi de Coulomb dans le solvant: $frac{q_iq_j}{\epsilon_s r_{ij}}$.
+
+La méthode classique d'approximation des rayons de Born se fait par l'énergie libre électrostatique de l'atome $i$, dans la situation où toutes les autres particules ont une charge ramenée à zéro.Ainsi, chaque charge  de la protéine est caractérisée par sa distance au solvant.Alors, ce modèle permet le calcul de l'énergie libre de solvatation électrostatique à partir de la seule connaissance du volume de la protéine contrairement à PD qui nécessite intégration du solvant dans les calculs.
 
 
 \section{l'algorithme d'exploration}
@@ -576,7 +584,6 @@ Le membre de meilleure énergie de la population tend à se reproduire le plus v
 Donc la valeur moyenne de l'énergie de l'ensemble des séquences-conformations converge.
 On peut voir ici, que le nombre de membres de la population est un paramètre de l'algorithme.Plus ce nombre est faible plus la convergence va être rapide.A contrario, plus ce nombre est grand, plus l'exploration de l'espace d'état est meilleure.
 Les atouts de l'algorithme génétique sont sa capacité à franchir des barrières énergitiques par des changements de séquences rapides via le mécanisme des croisements et sa capacité à optimiser en parallèle différents secteurs de la structure.
-
 
 \subsection{Monte-Carlo}
 
