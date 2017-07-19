@@ -49,13 +49,16 @@ E_{solv}^\surf = \sum_i \sigma_{t_i} A_i
 avec $A_i$ la surface accessible au solvant de l'atome $i$, et $\sigma_{t_i}$ un coefficient d'hydrophobicité du type de l'atome $i$.
 Ce terme n'est pas décomposable par paire de résidu, parce que  la surface enfouie d'une première chaîne latérale par une chdeuxième  peut aussi être enfuie par troisième chaîne latérale. Pour rendre ce terme décomposable, nous utilisons la méthode de Street et al (~\ref[41]), dans laquelle la surface enfuie d'une chaîne est calculée à partir d'une somme sur les chaîne et les groupes du backbone voisins.Puis pour chaque groupe voisins, la zone de contact avec notre chaîne est calculée indépendament des autres groupes. Ces zones sont sommées et un facteur de contraction est appliqué mimant l'élimination des zones comptée à plusieurs reprise.Des travaux précédents effectuée dans notre laboratoire ont montré qu'un facteur de 0,65 fonctionne bien (37, 40).   
 
+La contribution de l'énergie de surface $E_{surf}$ n'est pas non plus additive par paire, car dans la structure de la protéine, la surface enfouie par une chaîne latérale peut également être enfuie par une autre chaîne. Alors, nous avons utilisé la méthode de Street et al \cite{Street98}. Dans laquelle, la surface enfuie d'une chaîne latérale est calculée en additionnant la chaîne latérale voisine et les groupes backbones. Pour chaque groupe voisin, la zone de contact avec la chaîne latérale en question est calculée indépendamment des autres groupes. Les zones de contact sont additionnées. Pour éviter de sur évaluer la surface enfuie, un facteur est appliqué aux zones de contact des chaînes latérales impliquées. Des études précédentes ont montré qu'un facteur de 0,65 fonctionne bien \cite{Lopes07,Gaillard14}.  
+
 \subsection{\og Native Environnement Approximation\fg (NEA)}
 
 Dans le terme GB de l'énergie de solvatation, le rayon de solvatation $b_i$ approche la distance de l'atome $i$ à la surface de la protéine, et donc c'est une fonction de la position relative à $i$ de tous les atomes de la protéine.Et ce rayon n'est pas décomposable par paire.Pour qu'il ne devienne, Proteus utilise l'approximation  \og Native Environnement Approximation\fg ou NEA, dans laquelle le rayon de solvatation de chaque chaîne latérale est calculé avant l'étape d'exploration, en fixant tout le reste du système dans sa séquence native et sa conformation native[27,40]. 
 
+Dans le modèle NEA, le rayon de solvatation $b_i$ de chaque groupe (backbone, chaîne latérale ou ligand) est calculé à l'avance , le reste du système étant fixé à sa séquence et sa conformation native \cite{Simonson13b,Gaillard14}, voir le chapitre CPD.
 
 \subsection{\og Fluctuating Dielectric Boundary\fg (FDB)}
-
+\label{FDB}
 Une nouvelle approximation du GB a récement été introduite dans Proteus, toujours avec l'objectif, de transformer ce terme en en terme additif par paire.Elle exploite le fait que dans le GB, l'environement dielectrique  d'une paire de résidue est completement caractérisé pour un petit ensemble de rayon de solvatation d'atome.Ces rayons sont eux-mêmes sommes de paire sur les atomes de la protéines voir 14 16.La méthode s'appelle Fluctuating Dielectric Boundary\fg ou FDB  et comporte les deux étapes suivantes:
 
 La premiere consiste à définir un rayon de solvatation $B_I$ pour chauqe résidu $I$ de la protéine.
@@ -101,6 +104,8 @@ g_{IJ}(B) \approx c_1^{IJ} + c_2^{IJ} B + c_3^{IJ} B^2 + c_4^{IJ} B^{-1/2} + c_5
 
 Les coefficients $c_n^{IJ}$ peuvent alors être pré-calculé est stocké dans la matrice d'énergie, puisque les distances $r_\ij$ ne sont pas des variables pour un couple de chaîne latérale I,J donné. 
 Comme les rayons de solvatation d'un résidu sont eux-mêmes des sommes sur les paires, le calcul de l'énergie GB à l'aide de \ref{eq:approx} est maintenant décomposable par paire.
+
+Dans le modèle FDB, est exploité le fait que dans le GB , l'environnement diélectrique d'une paire de résidus est complètement caractérisé par un petit ensemble de rayons de solvatation atomique et ces rayons sont eux-mêmes sommes de paires sur les atomes de la protéine. Cette méthode est composée de deux étapes. La première est le calcul de rayon de solvatation moyen $B_I$ pour chaque résidu $I$ et la seconde est l'expression de l'interaction énergétique GB de chaque paire de résidus $I$ , $J$, comme une serie de puissance des  $B_I$  et $B_J$, voir le chapitre CPD. 
 
 
 \subsection{La matrice d'énergie}
@@ -573,6 +578,76 @@ Afin de calculer un score de similarité d'un ensemble de nos séquences par rap
 \item Le positionnement et les gaps sont alors appliqués tels quels à la liste de nos séquences.
 
 \end{enumerate}
+
+
+
+
+\section{Outils d'analyse de séquences} 
+\subsection{Superfamily/SCOP}
+\label{subsection:Superfamily}
+
+Superfamily~\citep{refSuperfamily} est un ensemble composé: 
+
+\begin{itemize}
+\item D'une base de données de modèles de Markov cachés, où chaque modèle représente une structure 3D d'un domaine de la classification SCOP.
+\item D'une série de scripts qui annotent à partir des informations de la base,les séquences données en entrée. Ici, nous utilisons uniquement l'association au modèle 3D le plus vraisemblable. 
+\end{itemize}
+
+Nous travaillons avec la base de données à la version 1.75, et en conjonction, nous utilisons SAM (version 3.5)~\citep{refSam} et HMMER (version 3.0)~\citep{refHmmer} recommandés par l'équipe de Superfamily. Le paramétrage utilisé est celui par défaut. La base SCOP contient 15 438 modèles.
+
+\subsection{Taux d'identité de séquences}
+
+Soient $S$ et $N$ deux séquences d'acides aminés de même longueur $l$.
+
+Le Taux d'identité $Id(S,N)$ de $S$ par rapport $N$ est égal au pourcentage de position où l'acide aminé est identique dans $S$ et $N$. C'est-à-dire:
+\begin{equation}
+Id(S,N) =\frac{1}{l}\sum_{1<i<l} \mathds{1}(s_i,n_i)} \times 100
+\end{equation}
+avec $s_i$ et $n_i$ l'acide animé en $i$ de $S$ et de $N$ respectivement, et $\mathds{1}(x,y)$ la fonction qui vaut $1$ lorsque $x=y$ et $0$ sinon. 
+
+\subsection{Taux d'identité par position}
+\label{TauxID}
+Le taux d'identité d'un alignement $A_S$ à la position i par rapport à une séquence N de même longueur se définit comme:
+
+\begin{equation}
+Id(A_{S},i) = \frac{1}{m}\sum_{1<j<m} \mathds{1}(s_i^j,n_i)} \times 100
+\end{equation}
+
+avec $m$ le nombre de séquences de $A_S$.
+
+\subsection{Alignements Pfam}
+\label{subsection:Align_Pfam}
+Ce taux d'identité donne une mesure de la ressemblance entre un alignement et une séquence. Cela nous permet de comparer nos séquences calculées à la séquence native. Mais cela n'est pas notre seul objectif.Et nous voulons les évaluer par rapport à l'ensemble des séquences du domaine protéique de la native.  
+La base de données Pfam (Protein families database)~\citep{refPfam} regroupe les domaines protéiques connus en famille. Chaque famille étant représentée par des alignements multiples de séquences et des profiles de modèles de Markov cachés~\citep{refPfam}. Dans la suite, nous utilisons l'alignement dit \og RP55 \fg du domaine PDZ,qui se base sur un petit alignement de membres représentatifs de la famille ,l'alignement \og seed \fg qui contient 45 séquences, et qui est augmenté grâce  aux modèles de Markov cachés construits à partir de \og seed \fg , jusqu'à contenir 12 255 séquences protéiques naturelles.
+
+\subsection{Score BLOSUM}
+
+Pour tenir compte des ressemblances et des différences entre les acides aminés lors d'une substitution, nous avons besoin d'une matrice de coût.Nous utilisons les matrices BLOSUM40 et BLOSUM62 (BLOcks SUbstitution Matrix)~\citep{refBLOSUM} qui sont construites à partir de blocs d'alignement très conservés (plus de 40\% et 62\% d'identités respectivement).Les fréquences des mutations y sont calculées.Le score BLOSUM d'une substitution est alors le logarithme de la fréquence de la mutation correspondante.À cela est ajouté un score de pénalités pour l'insertion d'un gap (c'est-à-dire un saut dans l'alignement).
+
+On définit alors simplement un score de similarité de deux séquences de même longueur comme la somme des scores BLOSUM62 sur toutes les positions. De même le score de similarité d'un alignement par rapport à une séquence sera défini comme la moyenne des scores de similarité sur ensemble des séquences de l'alignement. Et enfin un score de similarité de deux ensembles de séquences alignés entre eux comme la moyenne des scores de similarité du premier ensemble par rapport aux séquences du second.  
+
+\subsection{Similarité d'un ensemble à un alignement Pfam}
+\label{SimPfam}
+Afin de calculer un score de similarité d'un ensemble de nos séquences par rapport à une famille Pfam, il faut commencer par aligner nos séquences avec l'alignement de la famille.Pour cela nous utilisons le programme d'alignement BLAST ~\citep{refBLAST}.Il implémente une heuristique qui recherche puis étend les meilleurs alignements locaux. Nous procédons comme suit:
+\begin{enumerate}
+\item La commande \verb!blastp! est utilisée avec comme base de données (paramètre \verb!-db! ) l'alignement Pfam et comme séquence en entrée ( paramètre \verb! -query !) la séquence native. 
+\item Dans la sortie blast, la séquence qui produit l'alignement le plus significatif avec la native est collectée, notons-la $S_0$. 
+\item L'alignement blast est alors utilisé pour positionner la native par rapport à $S_0$ et les gaps nécessaires pour aligner la native à $S_0$ sont ajoutés.
+\item Le positionnement et les gaps sont alors appliqués tels quels à la liste de nos séquences.
+
+\end{enumerate}
+
+\subsection{Entropie par position}
+\label{subsection:Entropie}
+Pour comparer la diversité des séquences produites avec la diversité des séquences naturelles, nous utilisons l'entropie par position \cite{DurbinBK}, à partir de la formule:
+
+\begin{equation} \label{eq:entropy}
+  S_i = - \sum_{j=1}^6 f_j(i)lnf_j(i)
+\end{equation} 
+
+
+avec $f_j(i)$ la fréquence du type de résidu $j$ à la position $i$, au lieu de distingué les 20 types d'acide aminé, nous utilisons six classes de résidus, correspondant à  aux groupes suivants: \{LVIMC\}, \{FYW\}, \{G\}, \{ASTP\}, \{EDNQ\} et \{KRH\}. Cette classification est a été obtenu par une analyste de cluster  sur la matrice BLOSUM 62 \label{eq:entropy} et une analyse  des énergies de contact entre résidus dans les protéines \cite{Launay07} . Pour obtenir une mesure du nombre de types d'acide aminé apparaissant à une position, on utilise l'exponentielle de l'entropie des résidus $\exp(S)$ ( qui varie de 1 à 6 ), moyenner sur l'ensemble des résidus de la chaîne protéique.Ce qui correspond à un nombre moyen de classes de séquence échantillonnées par position. Par exemple, une valeur de 2 à une position particulière indique que les acides aminés de deux des six classes sont présents à cette position au sein de l'ensemble des séquences analysées. Une valeur moyenne globale de deux indique qu'en moyenne, deux classes d'acides aminés sont présentes à n'importe quelle position dans les séquences analysées.
+
 
 
 \clearpage

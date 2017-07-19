@@ -135,38 +135,36 @@ La matrice énergétique d'une protéine est calculée avec la fonction d'énerg
   \label{eq:energy} 
 \end{equation}
 
-$E_{MM}$ représentent l'énergie interne de la protéine se compose de six termes, ils sont détaillé en \ref{sub:mecamol}. Ils sont tirés de la fonction d'énergie empirique Amber ff99SB \cite{Cornell95}, légèrement modifiée pour le CPD.
-
+$E_{MM}$ représentent l'énergie interne de la protéine se compose de six termes, ils sont détaillés en \ref{sub:mecamol}. 
 Les autres termes de l'équation \ref{eq:energy}, représente la contribution du solvant.Nous utilisons un modèle de solvant implicite \og Generalized Born + Surface Area\fg ou GBSA (\ref{sub:GB},\ref{eq:SA}):
 
-Ici, $A_i$ est la surface exposée accessible au solvant de l'atome $i$.$\sigma_i$ est un paramètre qui représente la préférence de chaque atome à être exposé ou caché du solvant. Les atomes du soluté sont divisés en quatre groupes avec pour chacun une valeur $\sigma_i$ spécifique en $cal/mol/Å^2$.Nous travaillons avec deux jeux différents pour les $\sigma_i$. Le premier et un jeu d'après utilisé dans differentes études (\cite{Mignon16},\cite{Druart16b}):
+Ici, $A_i$ est la surface exposée accessible au solvant de l'atome $i$.$\sigma_i$ est un paramètre qui représente la préférence de chaque atome à être exposé ou caché du solvant. Les atomes du soluté sont divisés en quatre groupes avec pour chacun une valeur $\sigma_i$ spécifique en $cal/mol/Å^2$.Nous travaillons avec deux jeux différents pour les $\sigma_i$. Le premier et un jeu déjà utilisé dans differentes études (\cite{Mignon16},\cite{Druart16b}):
 non polaire -5,aromatique -40,polaire -80,ionique -100.
-et second proviennent d'une étude plus récente de notre labotoire, dans laquelle le jeu à était optimizer
-sur un ensemble de proteins PZD \ref{Gaillard17}:
+et le second proviennent d'une étude plus récente de notre laboratoire, dans laquelle il a été optimizé
+sur un ensemble de proteins PDZ \ref{Gaillard17}:
 
+??????
 
-On attribue aux atomes d'hydrogène un coefficient de surface de 0. Les surfaces sont calculées par l'algorithme de Lee et Richards \cite{Lee71},  qui est implémenté dans le programme XPLOR \cite{Xplor}, en utilisant un rayon de \og probe radius\fg de 1,5 {AA}. Les simulations MC utilisent une constante diélectrique $\epsilon_p = 4$ où $8$ (voir la partie Résultats).
+On attribue aux atomes d'hydrogène un coefficient de surface de 0. Les surfaces sont calculées par l'algorithme de Lee et Richards \cite{Lee71},  qui est implémenté dans le programme XPLOR \cite{Xplor}. Les simulations MC utilisent une constante diélectrique pour la protéine $\epsilon_p = 4$ où $8$ (voir la partie Résultats).
+%La forme $b_i$ correspond à une variante GB que nous appelons GB/HCT, d'après ses auteurs \cite{Hawkins95}, avec les paramètres du modèle optimisés pour une utilisation avec le champ de force Amber \cite{Lopes07}.Comme $b_i$ dépend des coordonnées de tous les atomes du soluté \cite{Hawkins95}, une approximation supplémentaire est nécessaire pour rendre le terme énergétique GB additif par paire et pour rendre la matrice d'énergie définissable.
+Nous utilisons deux variantes du modèle  GB, la méthode NEA pour \og Nativce Environment Approxition\fg et la méthode FDB \og Fluctuating Dielectric Boundary\fg \cite{Villa01}.Elles sont présentées respectivement en \ref{NEA} et \ref{FDB}.
 
-Dans le terme énergétique GB, le rayon de solvatation atomique $b_i$ approxime la distance de $i$ à la surface de la protéine.C'est une fonction des coordonnées de tous les atomes de protéines. La forme $b_i$ correspond à une variante GB que nous appelons GB/HCT, d'après ses auteurs \cite{Hawkins95}, avec les paramètres du modèle optimisés pour une utilisation avec le champ de force Amber \cite{Lopes07}.Comme $b_i$ dépend des coordonnées de tous les atomes du soluté \cite{Hawkins95}, une approximation supplémentaire est nécessaire pour rendre le terme énergétique GB additif par paire et pour rendre la matrice d'énergie définissable.
-Pour cela, nous utilisons deux approximations, la méthode NEA pour \og Nativce Environment Approxition\fg et la méthode FDB \og Fluctuating Dielectric Boundary\fg \cite{Villa01}.
-
-Dans le modèle NEA, le rayon de solvatation $b_i$ de chaque groupe (backbone, chaîne latérale ou ligand) est calculé à l'avance , le reste du système étant fixé à sa séquence et sa conformation native \cite{Simonson13b,Gaillard14}, voir le chapitre CPD.
-
-Dans le modèle FDB, est exploité le fait que dans le GB , l'environnement diélectrique d'une paire de résidus est complètement caractérisé par un petit ensemble de rayons de solvatation atomique et ces rayons sont eux-mêmes sommes de paires sur les atomes de la protéine. Cette méthode est composée de deux étapes. La première est le calcul de rayon de solvatation moyen $B_I$ pour chaque résidu $I$ et la seconde est l'expression de l'interaction énergétique GB de chaque paire de résidus $I$ , $J$, comme une serie de puissance des  $B_I$  et $B_J$, voir le chapitre CPD. 
-
-La contribution de l'énergie de surface $E_{surf}$ n'est pas non plus additive par paire, car dans la structure de la protéine, la surface enfouie par une chaîne latérale peut également être enfuie par une autre chaîne. Alors, nous avons utilisé la méthode de Street et al \cite{Street98}. Dans laquelle, la surface enfuie d'une chaîne latérale est calculée en additionnant la chaîne latérale voisine et les groupes backbones. Pour chaque groupe voisin, la zone de contact avec la chaîne latérale en question est calculée indépendamment des autres groupes. Les zones de contact sont additionnées. Pour éviter de sur évaluer la surface enfuie, un facteur est appliqué aux zones de contact des chaînes latérales impliquées. Des études précédentes ont montré qu'un facteur de 0,65 fonctionne bien \cite{Lopes07,Gaillard14}.  
-
-La fonction d'énergie empirique Amber ff99SB (42), légèrement modifiée pour le CPD, en remplaceant les charges du backbone par un ensemble unifié, obtenu en faisant la moyenne sur l'ensemble des types  d'acides aminés et ajuster légèrement pour rendre la partie backbone de chaque acide aminé neutre \cite{Aleksandrov10b}.
+Le champ de force utilisé ,Amber ff99SB \cite{Cornell95}, est légèrement modifié pour le CPD, en remplaceant les charges du backbone par un ensemble unifié, obtenu en faisant la moyenne sur l'ensemble des types d'acides aminés et ajuster légèrement pour rendre la partie backbone de chaque acide aminé neutre \cite{Aleksandrov10b}.
 
 \subsection{Les énergies de référence de l'état déplié}
 
-Dans le modèle CPD, l'énergie de l'état dépliée dépend de la composition de la séquence par l'ensemble des énergies de référence $E^r_t$ (équation \ref{eq:unfolded}). Ici, les énergies de référence ont été attribuées en fonction des types d'acides aminés t, mais aussi de la position de chaque acide aminé dans la structure repliée à travers son caractère enfoui ou exposé au solvant. Ainsi, pour un type donné (Ala, par exemple), il y a deux valeurs distinctes de $E^r_t$ , une enfuie et une exposée. Cette approche se justifie par trois éléments. Tout d'abord, nous supposons que la structure résiduelle est présente dans l' état déplié, de sorte que les acides aminés conservent en partie leur caractère enfui/exposé. Deuxièmement, nous supposons que le modèle d'état déplié compense de manière systématique des erreurs dans la fonction d'énergie de l'état plié, de sorte que  la structure pliée contribue indirectement aux énergies de référence. Troisièmement, cette stratégie rend le modèle moins sensible aux variations de la longueur des boucles de surface et au ratio  de résidus de surface sur  enterrés, qui peut varier considérablement selon les homologues (voir plus bas).  
-
-Par conséquent, le modèle devrait être transférable à l'intérieur d'une famille de protéines. Distinguer les positions enfouies / exposées double le nombre de paramètres $E^r_t$ à ajuster. Inversement, pour réduire le nombre de paramètres, nous groupons les acides aminés en classes homologues (voir table \reftab{AAgroups}). Dans chaque classe c , et pour chaque type de position (enfoui ou exposé), les énergies de référence ont la forme
+Dans le modèle CPD, l'énergie de l'état dépliée dépend de la composition de la séquence par l'ensemble des énergies de référence $E^r_t$ (équation \ref{eq:unfolded}). Ici, les énergies de référence sont attribuées en fonction des types d'acides aminés t, mais aussi de la position de chaque acide aminé dans la structure repliée à travers son caractère enfoui ou exposé au solvant. Ainsi, pour un type donné, il y a deux valeurs distinctes de $E^r_t$ , une enfuie et une exposée. Cette approche se justifie par les trois éléments suivants.
+\begin{itemize}
+  
+\item Nous supposons que la structure résiduelle est présente dans l'état déplié, de sorte que les acides aminés conservent en partie leur caractère enfui/exposé.
+\item Nous supposons que le modèle d'état déplié compense de manière systématique des erreurs dans la fonction d'énergie de l'état plié, de sorte que  la structure pliée contribue indirectement aux énergies de référence.
+\item Cette stratégie rend le modèle moins sensible aux variations de la longueur des boucles de surface et au ratio  de résidus de surface sur  enterrés, qui peut varier considérablement selon les homologues (voir plus bas).  
+\end{itemize}
+Par conséquent, le modèle devrait être transférable à l'intérieur d'une famille de protéines. Distinguer les positions enfouies / exposées double le nombre de paramètres $E^r_t$ à ajuster. Inversement, pour réduire le nombre de paramètres, nous groupons les acides aminés en classes homologues (voir table \ref{tab;AAgroups}). Dans chaque classe c , et pour chaque type de position (enfoui ou exposé), les énergies de référence ont la forme
 \begin{displaymath}
 E^r_t = E^r_c + \delta E^r_t
 \end{displaymath}
-avec $E^r_c$ est un paramètre ajustable,tandis que $\delta E^r_t$ est une constante, calculée comme la différence d'énergie de mécanique moléculaire entre les types d'acides aminés de classe c,supposé en conformation dépliée où chaque acide aminé interagit uniquement avec lui-même et avec le solvant.
+$E^r_c$ est un paramètre ajustable,tandis que $\delta E^r_t$ est une constante, calculée comme la différence d'énergie de mécanique moléculaire entre les types d'acides aminés de classe c, supposé en conformation dépliée où chaque acide aminé interagit uniquement avec lui-même et avec le solvant.
 
     \begin{table}[!htbp]
       \centering
@@ -205,82 +203,13 @@ avec $E^r_c$ est un paramètre ajustable,tandis que $\delta E^r_t$ est une const
     \end{table}
 
 
-Plus précisément, nous effectuons des simulations MC d'un peptide étendu (le peptide Syndecan1 ) et calculons les énergies moyennes pour chaque type d'acide aminé à chaque position peptidique (à l'exclusion des positions terminales). Nous prenons les différences entre les types d'acides aminés et les moyennons sur les positions peptidiques.
-Pendant, la maximisation de la vraisemblance, $E_c$ est optimisé tandis que $\delta E_t$ est fixe. Pour optimiser les valeurs $E^r_t$, nous utilisons une trois méthodes (\ref{enumMeth}) avec des fréquences cibles correspondent aux fréquences expérimentales soient des classes d'acides aminés, soient des types d'acides aminés. Le choix se faisant par un début d'optimisation sur les classes, puis lorsque la convergence est correctement établie, c'est à dire  lorsque la fonction proxy $C$ calculée sur ces classes fournit des valeurs stable et faibles,nous relâchons cette contrainte pour optimiser sur l'ensemble des types d'acide aminés mutables.Typiquement, vingt cycles d'optimisation sont effectués sur les classes, puis encore vingt cycles sur les types.  
-
-
-
-\section{Outils d'analyse de séquences} 
-\subsection{Superfamily/SCOP}
-\label{subsection:Superfamily}
-
-Superfamily~\citep{refSuperfamily} est un ensemble composé: 
-
-\begin{itemize}
-\item D'une base de données de modèles de Markov cachés, où chaque modèle représente une structure 3D d'un domaine de la classification SCOP.
-\item D'une série de scripts qui annotent à partir des informations de la base,les séquences données en entrée. Ici, nous utilisons uniquement l'association au modèle 3D le plus vraisemblable. 
-\end{itemize}
-
-Nous travaillons avec la base de données à la version 1.75, et en conjonction, nous utilisons SAM (version 3.5)~\citep{refSam} et HMMER (version 3.0)~\citep{refHmmer} recommandés par l'équipe de Superfamily. Le paramétrage utilisé est celui par défaut. La base SCOP contient 15 438 modèles.
-
-\subsection{Taux d'identité de séquences}
-
-Soient $S$ et $N$ deux séquences d'acides aminés de même longueur $l$.
-
-Le Taux d'identité $Id(S,N)$ de $S$ par rapport $N$ est égal au pourcentage de position où l'acide aminé est identique dans $S$ et $N$. C'est-à-dire:
-\begin{equation}
-Id(S,N) =\frac{1}{l}\sum_{1<i<l} \mathds{1}(s_i,n_i)} \times 100
-\end{equation}
-avec $s_i$ et $n_i$ l'acide animé en $i$ de $S$ et de $N$ respectivement, et $\mathds{1}(x,y)$ la fonction qui vaut $1$ lorsque $x=y$ et $0$ sinon. 
-
-\subsection{Taux d'identité par position}
-\label{TauxID}
-Le taux d'identité d'un alignement $A_S$ à la position i par rapport à une séquence N de même longueur se définit comme:
-
-\begin{equation}
-Id(A_{S},i) = \frac{1}{m}\sum_{1<j<m} \mathds{1}(s_i^j,n_i)} \times 100
-\end{equation}
-
-avec $m$ le nombre de séquences de $A_S$.
-
-\subsection{Alignements Pfam}
-\label{subsection:Align_Pfam}
-Ce taux d'identité donne une mesure de la ressemblance entre un alignement et une séquence. Cela nous permet de comparer nos séquences calculées à la séquence native. Mais cela n'est pas notre seul objectif.Et nous voulons les évaluer par rapport à l'ensemble des séquences du domaine protéique de la native.  
-La base de données Pfam (Protein families database)~\citep{refPfam} regroupe les domaines protéiques connus en famille. Chaque famille étant représentée par des alignements multiples de séquences et des profiles de modèles de Markov cachés~\citep{refPfam}. Dans la suite, nous utilisons l'alignement dit \og RP55 \fg du domaine PDZ,qui se base sur un petit alignement de membres représentatifs de la famille ,l'alignement \og seed \fg qui contient 45 séquences, et qui est augmenté grâce  aux modèles de Markov cachés construits à partir de \og seed \fg , jusqu'à contenir 12 255 séquences protéiques naturelles.
-
-\subsection{Score BLOSUM}
-
-Pour tenir compte des ressemblances et des différences entre les acides aminés lors d'une substitution, nous avons besoin d'une matrice de coût.Nous utilisons les matrices BLOSUM40 et BLOSUM62 (BLOcks SUbstitution Matrix)~\citep{refBLOSUM} qui sont construites à partir de blocs d'alignement très conservés (plus de 40\% et 62\% d'identités respectivement).Les fréquences des mutations y sont calculées.Le score BLOSUM d'une substitution est alors le logarithme de la fréquence de la mutation correspondante.À cela est ajouté un score de pénalités pour l'insertion d'un gap (c'est-à-dire un saut dans l'alignement).
-
-On définit alors simplement un score de similarité de deux séquences de même longueur comme la somme des scores BLOSUM62 sur toutes les positions. De même le score de similarité d'un alignement par rapport à une séquence sera défini comme la moyenne des scores de similarité sur ensemble des séquences de l'alignement. Et enfin un score de similarité de deux ensembles de séquences alignés entre eux comme la moyenne des scores de similarité du premier ensemble par rapport aux séquences du second.  
-
-\subsection{Similarité d'un ensemble à un alignement Pfam}
-\label{SimPfam}
-Afin de calculer un score de similarité d'un ensemble de nos séquences par rapport à une famille Pfam, il faut commencer par aligner nos séquences avec l'alignement de la famille.Pour cela nous utilisons le programme d'alignement BLAST ~\citep{refBLAST}.Il implémente une heuristique qui recherche puis étend les meilleurs alignements locaux. Nous procédons comme suit:
-\begin{enumerate}
-\item La commande \verb!blastp! est utilisée avec comme base de données (paramètre \verb!-db! ) l'alignement Pfam et comme séquence en entrée ( paramètre \verb! -query !) la séquence native. 
-\item Dans la sortie blast, la séquence qui produit l'alignement le plus significatif avec la native est collectée, notons-la $S_0$. 
-\item L'alignement blast est alors utilisé pour positionner la native par rapport à $S_0$ et les gaps nécessaires pour aligner la native à $S_0$ sont ajoutés.
-\item Le positionnement et les gaps sont alors appliqués tels quels à la liste de nos séquences.
-
-\end{enumerate}
-
-\subsection{Entropie par position}
-\label{subsection:Entropie}
-Pour comparer la diversité des séquences produites avec la diversité des séquences naturelles, nous utilisons l'entropie par position \cite{DurbinBK}, à partir de la formule:
-
-\begin{equation} \label{eq:entropy}
-  S_i = - \sum_{j=1}^6 f_j(i)lnf_j(i)
-\end{equation} 
-
-
-avec $f_j(i)$ la fréquence du type de résidu $j$ à la position $i$, au lieu de distingué les 20 types d'acide aminé, nous utilisons six classes de résidus, correspondant à  aux groupes suivants: \{LVIMC\}, \{FYW\}, \{G\}, \{ASTP\}, \{EDNQ\} et \{KRH\}. Cette classification est a été obtenu par une analyste de cluster  sur la matrice BLOSUM 62 \label{eq:entropy} et une analyse  des énergies de contact entre résidus dans les protéines \cite{Launay07} . Pour obtenir une mesure du nombre de types d'acide aminé apparaissant à une position, on utilise l'exponentielle de l'entropie des résidus $\exp(S)$ ( qui varie de 1 à 6 ), moyenner sur l'ensemble des résidus de la chaîne protéique.Ce qui correspond à un nombre moyen de classes de séquence échantillonnées par position. Par exemple, une valeur de 2 à une position particulière indique que les acides aminés de deux des six classes sont présents à cette position au sein de l'ensemble des séquences analysées. Une valeur moyenne globale de deux indique qu'en moyenne, deux classes d'acides aminés sont présentes à n'importe quelle position dans les séquences analysées.
-
+Plus précisément, nous effectuons des simulations MC d'un peptide étendu (le peptide \textit{Syndecan1} ) et calculons les énergies moyennes pour chaque type d'acide aminé à chaque position peptidique (à l'exclusion des positions terminales). Nous prenons les différences entre les types d'acides aminés et les moyennons sur les positions peptidiques.
+Pendant, la maximisation de la vraisemblance, $E_c$ est optimisé tandis que $\delta E_t$ est fixe. Pour optimiser les valeurs $E^r_t$, nous utilisons une trois méthodes de (\ref{enumMeth}) avec comme fréquences cibles les fréquences expérimentales soient des classes d'acides aminés, soient des types d'acides aminés. Le  début d'optimisation se fait sur les classes, puis lorsque la convergence est correctement établie, c'est à dire  lorsque la fonction proxy $C$ calculée sur ces classes fournit des valeurs stable et faibles,nous relâchons cette contrainte pour optimiser sur l'ensemble des types d'acide aminés mutables.Typiquement, vingt cycles d'optimisation sont effectués sur les classes, puis encore vingt cycles sur les types.  
 
 \section{Séquences expérimentales et modèles structurels}
 \subsection{L'ensemble des protéines PDZ}
 
-Nous sélectionnons huit protéines de la famille PDZ dont les structures cristallographiques sont connues. Aux les trois présentes dans l'ensemble étudié au chapitre précédent:  NHREF,Syntenin et DLG2, sont ajoutés les protéines INAD, GRIP, PSD95 et Cask , Tiam1.Leur séquence est présenté à la figure \ref{PDZaligned}. Cela constitue un ensemble dont le nombre de positions actives, c'est-à-dire les positions qui vont être mutées , est du même ordre pour chaque séquence d'acide aminé des protéines ( voir le tableau \ref{tab:protéines_PDZ}).
+Nous sélectionnons huit protéines de la famille PDZ dont les structures cristallographiques sont connues. Aux les trois présentes dans l'ensemble étudié au chapitre précédent:  NHREF,Syntenin et DLG2, sont ajoutés les protéines INAD, GRIP, PSD95, Cask et Tiam1.Leur séquence est présenté à la figure \ref{PDZaligned}. Cela constitue un ensemble dont le nombre de positions actives, c'est-à-dire les positions qui vont être mutées , est du même ordre pour chaque séquence d'acide aminé des protéines ( voir le tableau \ref{tab:protéines_PDZ}).
 
 
 \begin{table}[!htbp]
@@ -306,7 +235,7 @@ Nous sélectionnons huit protéines de la famille PDZ dont les structures crista
 
 \subsection{Alignements Blast croisés}
    
-Pour caractériser les homologies dans cet ensemble, une série de requêtes BLAST est effectuée sur chaque paire de séquences en utilisant le programme \verb!blastp! avec les options comme indiqué en \ref{SimPfam}. Il apparaît que Syntenin et Tiam1 sont atypiques dans l'ensemble avec, aucun homologue avec une E-value inférieure à $10^{-7}$ et plusieurs E-value supérieur à 10. PSD95 est la protéine la plus consensuelle, ayant d'une part une homologie avec toutes les autres à au plus 6 $10^{-4}$ , et d'autre part ayant 4 homologues à moins de 2 $10^{-10}$, pour un pourcentage d'identité compris entre 30 et 46.Globalement, il n'y a que peu d'homologies, la plus forte n'étant que de 3 $10^{-15}$ entre PSD95 et DLG2 pour un pourcentage d'identité de 37. Les détails sont dans le tableau \ref{tab:Xblast}.
+Pour caractériser les homologies dans cet ensemble, une série de requêtes BLAST est effectuée sur chaque paire de séquences en utilisant le programme \verb!blastp! avec les options comme indiqué en \ref{SimPfam}. Il apparaît que Syntenin et Tiam1 sont atypiques dans l'ensemble avec, aucun homologue avec une E-value inférieure à $10^{-7}$ et plusieurs E-value supérieur à 10. PSD95 est la protéine la plus consensuelle, ayant d'une part une homologie avec toutes les autres à au plus $6$ $10^{-4}$ , et d'autre part ayant $4$ homologues à moins de $2$ $10^{-10}$, pour un pourcentage d'identité compris entre $30$ et $46$.Globalement, il n'y a que peu d'homologies, la plus forte n'étant que de $3$ $10^{-15}$ entre PSD95 et DLG2 pour un pourcentage d'identité de $37$. Les détails sont dans le tableau \ref{tab:Xblast}.
 
 
 
@@ -373,8 +302,6 @@ Pour définir les fréquences d'acides aminés cibles pour maximiser nos vraisem
 
 \subsection{Aligmements des protéines expérimentales et leurs homologues}
 
-%Les structures tridimensionnelles (3D) des quatre domaines PDZ de test sont représentées sur la Fig. 1A.
-%Quatorze résidus de noyau (identifiés visuellement) des différentes structures se superposent bien.
 %Tandis que les boucles et les chaînes terminales affichent de grands écarts. L'hélice $\alpha_2$ de Tiam1 est tournée légèrement vers l'extérieur par rapport aux trois autres structures (70). La figure 1b illustre la similarité structurale entre les paires de domaines PDZ. Cette similarité est déterminée par l'écart de rms (root mean square) entre  les atomes $C\alpha$ alignés structurellement et par ailleurs les identités des paires de séquences. Les écarts se situent entre $1,0$ et $2,1 \AA$  des identités de séquences entre 17 et 33 \%.La paire Tiam1/Cask on observe une identité de séquence de 33\% et et leur écart structurel de $1,7 \AA$ calculé sur 42 carbones. Les structures de syntenine et GLG2 sont plus similaires, avec une déviation structurale de $1,0 \AA$ calculé sur 60 C $\alpha$ alignés.
 
 
