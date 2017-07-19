@@ -38,7 +38,7 @@
 \usepackage{float}
 
 \bibpunct{[}{]}{\,;}{a}{}{,}
-\bibliographystyle{my}
+\bibliographystyle{mystyle}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{multirow}
@@ -61,7 +61,8 @@
 }
 
 \usepackage{pdfpages}
-
+%natbib cite configuration
+\bibpunct{[}{]}{,}{a}{}{;}
 
 % Titlepage adjustment
 \addtolength{\textheight}{+3cm}
@@ -307,8 +308,8 @@ Examinateurs : & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 \include{CPD/chapter}
 \clearplaindoublepage{}
 \include{methodes/chapter}
-%\clearplaindoublepage{}
-%\include{methodes/chapter}
+\clearplaindoublepage{}
+\include{developpements/chapter}
 \clearplaindoublepage{}
 \include{comparaisons/chapter}
 \clearplaindoublepage{}
@@ -325,7 +326,7 @@ Examinateurs : & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 \phantomsection{}
 \addcontentsline{toc}{chapter}{Bibliographie}
 \markboth{Bibliographie}{Bibliographie}
-\selectlanguage{english}
+\selectlanguage{english} 
 \renewcommand{\bibname}{Bibliographie}
 \singlespacing{}
 \bibliography{biblio}

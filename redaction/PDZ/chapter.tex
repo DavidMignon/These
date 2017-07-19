@@ -3,75 +3,76 @@
 
 \section{Introduction}
 
-Nous cherchons maintenant, à évaluer la performance de notre modèle CPD sur un ensemble de protéines. Les domaines PDZ (\og Postynaptic density-95 / Discs large / Zonula occludens-1\fg) sont de petits domaines globulaires qui établissent des réseaux d'interactions entre protéines dans la cellule \cite{Harris01,Hung02,Tonikian08,Gfeller11,Subbaiah11,Sheperd11r}.   Ils forment des interactions spécifiques avec des protéines cibles, généralement en reconnaissant quelques acides aminés à l'extrémité C-terminale. En raison de leur importance biologique, les domaines PDZ et leur interaction avec les protéines cibles ont été largement étudiés et utilisés en conception in sillico. Des ligands ont été conçus  pour moduler l'activité de domaines PDZ impliqués dans diverses pathologies \cite{Bach12,Roberts12,Zheng15}. Des domaines  PDZ et leurs  ligands redessinés ont été utilisés pour élucider les principes du repliement des protéines et de l'évolution \cite{Socolich05,Kong09,Mclaughlin12,Melero14}. Ainsi, ces domaines avec leurs ligands peptidiques fournissent des \og benchmarks\fg pour tester les méthodes informatiques elles-mêmes \cite{Reina02,Schmidt10,Smith10}.
-À partir d'une sélection de domaines PDZ,nous optimisons  les énergies de référence ,paramètres essentiels dans notre modèle, $E^r_t$  grâce à la méthode du maximum de vraisemblance. La performance du modèle est testée en générant des séquences par Proteus pour chaque protéine de la sélection. Pour cela, nous nous basons sur les résultats précédents, en particulier ceux de la section \ref(12), pour définir les valeurs des paramètres de l'optimisation du Monte-Carlo. Nous confrontons nos résultats à ceux de la fonction d'énergie de Rosetta , fonction, qui a connu le plus de succès\cite{Baker06b}. Elle comprend un terme de répulsion de Lennard-Jones, un terme Coulomb, un terme de liaison hydrogène,un terme de solvatation Lazaridis-Karplus et des énergies de référence d'état dépliées, mais est plus empirique que la notre. Il y a
-un grand nombre de paramètres spécifiquement optimisés pour CPD, qui offrent des performances optimales, mais une interprétation physique moins transparente que Proteus qui lui offre la capacité de calculer les énergies libres.
+Nous cherchons maintenant, à évaluer la performance de notre modèle CPD sur un ensemble de protéines. Les domaines PDZ (\og Postynaptic density-95 / Discs large / Zonula occludens-1\fg) sont de petits domaines globulaires qui établissent des réseaux d'interactions entre protéines dans la cellule ,voir \citep{Harris01,Hung02,Tonikian08,Gfeller11,Subbaiah11}. Ils forment des interactions spécifiques avec des protéines cibles, généralement en reconnaissant quelques acides aminés à l'extrémité C-terminale. En raison de leur importance biologique, les domaines PDZ et leur interaction avec les protéines cibles ont été largement étudiés et utilisés en conception \texit{in sillico}. Des ligands ont été conçus  pour moduler l'activité de domaines PDZ impliqués dans diverses pathologies \citep{Roberts12,Zheng15}. Des domaines  PDZ et leurs  ligands redessinés ont été utilisés pour élucider les principes du repliement des protéines et de l'évolution \cite{Kong09,Mclaughlin12,Melero14}. Ainsi, ces domaines avec leurs ligands peptidiques fournissent des \og benchmarks\fg pour tester les méthodes informatiques elles-mêmes \cite{Reina02,Schmidt10,Smith10}.
+
+À partir d'une sélection de domaines PDZ, nous optimisons les énergies de référence, paramètres essentiels dans notre modèle, grâce à la méthode du maximum de vraisemblance. La performance du modèle est testée en générant des séquences par Proteus pour chaque protéine de la sélection. Pour cela, nous nous basons sur les résultats précédents, en particulier ceux de la section \ref{BESTprotocol}, pour définir les valeurs des paramètres de l'optimisation du Monte-Carlo. Nous confrontons nos résultats à ceux de la fonction d'énergie de Rosetta , fonction, qui a connu le plus de succès et qui est la plus souvent citée \cite{Baker06b}. Elle comprend un terme de répulsion de Lennard-Jones, un terme Coulomb, un terme de liaison hydrogène,un terme de solvatation Lazaridis-Karplus et des énergies de référence d'état dépliées, mais est plus empirique que la notre. Il y a un grand nombre de paramètres spécifiquement optimisés pour CPD, qui offrent des performances optimales, mais une interprétation physique moins transparente que Proteus qui lui offre la capacité de calculer les énergies libres.
    
-La production de nos séquences calculées a été effectuée par des simulations Monte-Carlo où toutes les positions de la chaîne polypeptidique ont été autorisées à muter librement, excepté celles occupées par une glycine ou une proline qui conservent leur type d'acide aminé.Ces exceptions sur ces deux types d'acide aminé découlent de la contrainte du backbone fixe.Nous avons alors des milliers de variantes pour chaque domaine étudié. Nos tests comprennent une validation croisée où les énergies de référence optimisées sur un sous-ensemble de notre sélection sont utilisées sur un entre sous-ensembles de cette même sélection. Nous, réalisons également,une série de simulations Monte-Carlo de deux domaines PDZ où le potentiel chimique hydrophobe des types d'acides aminés est progressivement augmenté, polarisant artificiellement la composition de la protéine. Comme le biais hydrophobe augmente, les acides aminés hydrophobes envahissent progressivement la protéine de l'intérieur,formant, à partir d'un certain seuil, un noyau hydrophobe devenu plus grand que le naturel.
-La propension de chaque position du noyau à devenir hydrophobe à un niveau de biais plus ou moins élevé peut être considéré comme un indice d'hydrophobicité déterminé en fonction de la structure qui nous renseigne sur la propension du cœur à supporter des mutations.
+La production de nos séquences calculées est effectuée par des simulations Monte-Carlo où toutes les positions de la chaîne polypeptidique sont autorisées à muter librement, excepté celles occupées par une glycine ou une proline qui conservent leur type d'acide aminé.Ces exceptions découlennt de la contrainte du backbone fixe, puisque ces deux types d'acides aminés influent sur la structure du squelette.Nous avons alors des milliers de variantes pour chaque domaine étudié. Nos tests comprennent une validation directe et une validation croisée dans laquelle les énergies de référence optimisées sur un sous-ensemble de notre sélection sont utilisées sur un autre sous-ensembles de cette même sélection.
+
+Nous, réalisons également,une série de simulations Monte-Carlo de deux domaines PDZ où le potentiel chimique hydrophobe des types d'acides aminés est progressivement augmenté, polarisant artificiellement la composition de la protéine. Comme le biais hydrophobe augmente, les acides aminés hydrophobes envahissent progressivement la protéine de l'intérieur,formant, à partir d'un certain seuil, un noyau hydrophobe devenu plus grand que naturel.La propension de chaque position du noyau à devenir hydrophobe à un niveau de biais plus ou moins élevé peut être considéré comme un indice d'hydrophobicité déterminé en fonction de la structure qui nous renseigne sur la capacité du cœur à supporter des mutations.
 
 \section{Le modèle d'état déplié}
 \subsection{Les énergies de référence}
 
-L'énergie utilisée est ici l'énergie de pliage de la protéine, c'est-à-dire la différence entre
+Nous travaillons avec l'énergie de pliage de la protéine, c'est-à-dire la différence entre
 son énergie à l'état replié et son énergie à l'état déplié. Un mouvement élémentaire possible est une \og mutation\fg:
-Nous modifions le type de chaîne latérale $t \rightarrow t'$ à une position choisie $i$ dans la protéine pliée, en assignant
-un rotamère $r'$ particulier à la nouvelle chaîne latérale. Nous considérons la même mutation dans
-l'état déplié. Pour une séquence $S$ particulière, l'énergie d'état dépliée est de la forme:
+Il s'agit d'une modification du type de chaîne latérale à une position choisie $i$ dans la protéine pliée, en assignant un rotamère particulier à la nouvelle chaîne latérale et de la même modification dans l'état déplié voir les détails au chapitre \ref{chap:methodes}. Pour une séquence $S$ particulière,nous avons introduit l'énergie de l'état dépliée comme:
 \begin{equation}
-  E^u=\sum_{i\in S}E^r(t_i)
+  E^u=\sum_{i\in S}E^r_{t_i}
   \label{eq:unfolded}
 \end{equation} 
 
-Ici,$i$ est la position dans la séquence et $t_i$ le type en $i$,la somme se faisant sur tous les acides aminés de $S$.
+Avec, $i$ est la position dans la séquence et $t_i$ le type en $i$,la somme se faisant sur tous les résidus de $S$.
 
-Les grandeurs $E^r(t)$, que nous noterons également $E_t^r$ sont appelées \og énergies de référence\fg. Ils peuvent être considérés comme des potentiels chimiques effectifs de chaque type d'acide aminé. Le changement d'énergie de repliement d'une mutation a donc la forme:
-\begin{equation} \label{eq:deltaE}
-  \Delta E=\Delta E^f - \Delta E^u=(E^f(...t'_i,r'_i...) - E^f(...t_i,r_i...)) -(E^r(t'_i) - E^r(t_i))
-\end{equation} 
-avec $\Delta E^f$ et  $\Delta E^u$ les changements d'énergie dans l'état replié et déplié, respectivement.
+Les grandeurs $E_t^r$ sont les  \og énergies de référence\fg (voir section \ref{sec:theo}). Ainsi,Les énergies de référence sont des paramètres essentiels dans le modèle de simulation. 
 
 \subsection{La vraisemblance des énergies de référence}
-Les énergies de référence sont des paramètres essentiels dans le modèle de simulation. Notre objectif ici
-est de les déterminer empiriquement afin que la simulation produise des fréquences d'acides aminés
-qui correspondent à un ensemble de valeurs cibles, notamment des valeurs expérimentales.
 
-Pour cela, nous choisissons $E_t^r$ qui maximisent la probabilité de Boltzmann d'un ensemble de séquences expérimentales.
+Notre objectif maintenant est de  déterminer les énergies de référence empiriquement afin que les simulations produisent des fréquences d'acides aminés qui correspondent à un ensemble de valeurs cibles, notamment des valeurs expérimentales.Pour cela, nous choisissons les $E_t^r$ qui maximisent la probabilité de Boltzmann d'un ensemble de séquences expérimentales.
 C'est à dire, nous retenons les $E_t^r$ les plus vraisemblables étant donnée l'observation des séquences expérimentales.
 
 Soit $S$ une séquence particulière. Sa probabilité de Boltzmann est:
 \begin{equation}
-  p(S)=\frac{1}{Z}\exp(-\beta \Delta G_S),
+  \label{eq:PDZ_Bolt}
+  p(S)=\frac{1}{Z}\exp(-\beta \Delta G_S)
 \end{equation}
-où $\Delta G_S=G_S^f - E^u_S $ est l'énergie libre de repliement de $S$, $G^f_S$ est de l'énergie libre de l'état replié,$\beta =\frac{1}{kT}$ est la température inverse et $Z$ une constante de normalisation (la fonction de partition). Nous avons alors
+
+avec
+
 \begin{equation}
-kTln p(S) = \sum_{i\in S} E^r(t_i) - G^f_S - kT \ln Z = \sum_{t\in aa}n_S(t)E^r_t - G^f_S - kT\ln Z,
+  \label{eq:PDZ_enerpli}
+  \Delta G_S=G_S^f - E^u_S
+\end{equation}
+
+Où, $\Delta G_S$ est l'énergie libre de repliement de $S$, $G^f_S$ est de l'énergie libre de l'état replié,$\beta =\frac{1}{kT}$ est la température inverse et $Z$ une constante de normalisation (la fonction de partition). En injectant \ref{eq:PDZ_enerpli} dans \ref{eq:PDZ_Bolt}, nous avons alors:
+\begin{equation}
+kT \ln p(S) = \sum_{i\in S} E^r(t_i) - G^f_S - kT \ln Z = \sum_{t\in aa}n_S(t)E^r_t - G^f_S - kT\ln Z,
 \end{equation}
 où la somme à droite se fait sur l'ensemble des types d'acides aminés et $n_S(t)$ est le nombre d'acides aminés de type $t$ dans $S$.
 
-Nous considérons maintenant un ensemble $\mathcal{S}$ de $N$ séquences cibles; on appelle $\mathcal{L}$ la probabilité d'observer l'ensemble entier. $\mathcal{L}$ est fonction des paramètres du modèle $E_t^r$.Comme nous voulons le maximum de $\mathcal{L}$ sur les $E_t^r$ , nous nous référons  à  $\mathcal{L}$ comme la vraisemblance des $E_t^r$ \cite{Kleinman06}.
+Nous considérons maintenant un ensemble $\mathcal{S}$ de $N$ séquences cibles; on appelle $\mathcal{L}$ la probabilité d'observer l'ensemble $\mathcal{S}$ en entier. $\mathcal{L}$ est fonction des paramètres du modèle $E_t^r$.Comme nous voulons le maximum de $\mathcal{L}$ sur les $E_t^r$ , nous nous référons  à  $\mathcal{L}$ comme la vraisemblance des $E_t^r$ \cite{Kleinman06}.
 
 Nous avons:
 \begin{equation}
-kT \ln \mathcal{L} = \sum_S\sum_{i \in aa} n_S(t) E^r_t - \sum_S G^f_S - N kT \ln Z = \sum_{t \in aa} N(t) E^r_t - \sum_S G^f_S - N kT \ln Z,
+kT \ln \mathcal{L} = \sum_S}\sum_{i \in aa} n_S(t) E^r_t - \sum_S} G^f_S - N kT \ln Z = \sum_{t \in aa} N(t) E^r_t - \sum_S} G^f_S - N kT \ln Z,
 \end{equation}
-avec $N(t)$ le nombre d'acides aminés de type $t$ dans l'ensemble $\mathcal{S}$.Le facteur de normalisation $Z$ est une somme sur l'ensemble les séquences possibles $R$:
+avec $N(t)$ le nombre d'acides aminés de type $t$ dans l'ensemble $\mathcal{S}$.Le facteur de normalisation $Z$ est une somme sur l'ensemble les séquences possibles $\mathcal{R}$:
 \begin{equation}
-  Z=\sum_R \exp(-\beta \Delta G_R) = \sum_R \exp(-\beta\Delta G^f_R)\Pi_{t\in aa}\exp(\beta n_R (t) E^r_t)
+  Z=\sum_{\mathcal{R}} \exp(-\beta \Delta G_{\mathcal{R}}) = \sum_{\mathcal{R}} \exp(-\beta\Delta G^f_{\mathcal{R}}) \Pi_{t\in aa}\exp(\beta n_{\mathcal{R}} (t) E^r_t)
 \end{equation} 
 Pour maximiser $\mathcal{L}$, nous considérons la dérivé de $Z$ selon chacune des $E_t$:
 \begin{equation}
 \frac{ \partial Z }{ \partial E^r_t } = 
-   \sum_R \beta n_R(t) \exp (-\beta \Delta G^f_R) \prod_{s \in aa} \exp(\beta n_R(s) E^r_s) 
+   \sum_{\mathcal{R}} \beta n_{\mathcal{R}}(t) \exp (-\beta \Delta G^f_{\mathcal{R}}) \Pi_{s \in aa} \exp(\beta n_{\mathcal{R}}(s) E^r_s) 
 \end{equation}
 
 Nous avons alors:
 \begin{equation}
 \frac{kT}{Z} \frac{ \partial Z }{ \partial E^r_t }
-   = \frac{ \sum_R n_R(t) \exp(-\beta \Delta G_R) }{ \sum_R \exp(-\beta \Delta G_R) } = \langle n(t) \rangle.
+   = \frac{ \sum_{\mathcal{R}} n_{\mathcal{R}}(t) \exp(-\beta \Delta G_{\mathcal{R}}) }{ \sum_{\mathcal{R}} \exp(-\beta \Delta G_{\mathcal{R}}) } = \langle n(t) \rangle.
 \end{equation}
 
-La quantité à droite est la moyenne de Boltzmann du nombre n(t) des acides aminés t sur toutes les séquences possibles. C'est à dire l'espérance mathématique de n(t) selon la probabilité de Boltzman. Mais comme une simulation Monte-Carlo converge vers la distribution de Boltzman, la population moyenne de t que nous obtenons dans nos simulations converge vers la moyenne de Boltzman de n(t).En pratique, nous obtenons cette quantité comme la population moyenne de t dans une simulation Monte-Carlo assez longue. 
+La quantité à droite est la moyenne de Boltzmann du nombre $n(t)$ des acides aminés de type $t$ sur toutes les séquences possibles. C'est à dire l'espérance mathématique de $n(t)$ selon la probabilité de Boltzman. Mais comme une simulation Monte-Carlo converge vers la distribution de Boltzman, la population moyenne de t que nous obtenons dans nos simulations converge vers la moyenne de Boltzman de $n(t)$.En pratique, nous obtenons cette quantité comme la population moyenne de $t$ dans une simulation Monte-Carlo assez longue. 
 
 Pour que $ln \mathcal{L}$ soit maximal il faut que ses dérivées par rapport à $E_t^r$ soient nulles.
 
@@ -94,15 +95,15 @@ Ainsi, pour maximiser $\mathcal{L}$, nous choisissons les ${E^r_t}$ tels qu'une 
 
 Nous utilisons trois méthodes pour approcher les valeurs ${E^r_t}$.
 
-\begin{enumerate}
+\begin{itemize}
   \label{enumMeth}
-\item La première consiste à avancer dans la direction du gradient de $ln(\mathcal{L})$ en utilisant la règle itérative suivante \cite{Kleinman06}, nous l'appelons méthode linéaire:
-\begin{equation} \label {eq: linear}
+\item La première consiste à avancer dans la direction du gradient de $ln(\mathcal{L})$ en utilisant la règle itérative suivante (voir \cite{Kleinman06}), nous l'appelons méthode linéaire:
+\begin{equation} \label {eq:linear}
   E^r_t(n+1) = E^r_t(n) + \alpha \frac{\partial}{\partial E^r_t} \ln(\mathcal{L})=E^r_t(n) + \delta E (n^{exp}_t - \langle n(t)\rangle_n)
 \end{equation} 
 
 avec $\alpha$ une constante, $n^{exp}_t = \frac{N(t)}{N}$ la population moyenne d'acide aminé de type t dans l'ensemble ciblé,
-$\langle\rangle_n$ indique une moyenne sur une simulation effectuée en utilisant les énergies de références courantes ${E^r_t(n)}$, et $\delta E$ une constante empirique avec la dimension d'une énergie,correspondant à l'amplitude de mise à jour. Cette procédure de mise à jour est répétée jusqu'à convergence. Nous appelons cette méthode, la méthode de mise à jour linéaire.
+$\langle\rangle_n$ indique une moyenne sur une simulation effectuée en utilisant les énergies de références courantes ${E^r_t(n)}$, et $\delta E$ une constante empirique avec la dimension d'une énergie, correspondant à l'amplitude de mise à jour. Cette procédure de mise à jour est répétée jusqu'à convergence. Nous appelons cette méthode, la méthode de mise à jour linéaire.
 
 \item La deuxième méthode est une variante de la première dans laquelle le $\delta E$ n'est pas constant, mais ajusté au cours de la simulation de la façon suivante. On introduit une fonction proxy $C$ comme outil de mesure rapide de l'état de l'optimisation, de la façon suivante:
 
@@ -110,7 +111,7 @@ $\langle\rangle_n$ indique une moyenne sur une simulation effectuée en utilisan
 C =\sum_{t \in aa}(n^{exp}_t - \langle n(t)\rangle_n )^2
 \end{equation} 
 
-  Alors, la règle (11) est utilisée trois fois avec trois valeurs différentes pour le $\delta E$ ceci avec un jeu d'énergie de références identiques. Une interpolation parabolique est effectuée sur les trois valeurs de la fonction $C$ obtenues, le minimum de la parabole est calculé et est utilisé comme $\delta E$ pour le cycle suivant, au terme duquel les énergies sont mises à jour.
+  Alors, la règle \ref{eq:linear} est utilisée trois fois avec trois valeurs différentes pour le $\delta E$ ceci avec un jeu d'énergie de références identiques. Une interpolation parabolique est effectuée sur les trois valeurs de la fonction $C$ obtenues, le minimum de la parabole est calculé et est utilisé comme $\delta E$ pour le cycle suivant, au terme duquel les énergies sont mises à jour.
 
 \item La troisième méthode, utilisée précédemment \cite{Schmidt08,Simonson13b}, utilise une règle de mise à jour logarithmique:
 
@@ -118,31 +119,31 @@ C =\sum_{t \in aa}(n^{exp}_t - \langle n(t)\rangle_n )^2
 E^r_t (n+1) = E^r_t (n) + kT \, \ln \frac{\langle n(t) \rangle_n}{n_t^{\rm exp}}
 \end{equation}
 
-  avec $kT$ l'énergie thermique, fixée empiriquement à 0,5 kcal/mol. Nous l'appelons la méthode logarithmique. Dans les dernières itérations, certaines valeurs ont tendance à converger lentement,avec des oscillations. Par conséquent, une règle modifiée où une énergie au cycle n et l'énergie au cycle  n-1 sont moyenenée avec un poids respectif de 2/3 et 1/3.
+  avec $kT$ l'énergie thermique, fixée empiriquement à $0,5 kcal/mol$. Nous l'appelons la méthode logarithmique. Dans les dernières itérations, certaines valeurs ont tendance à converger lentement,avec des oscillations. Par conséquent, une règle modifiée est ajoutée dans laquelle une énergie au cycle $n$ et l'énergie au cycle  $n-1$ sont moyennée avec un poids respectif de 2/3 et 1/3 afin d'attenuer les vibrations.
 
-\end{enumerate}
- 
+\end{itemize}
+???? 
 Chaque itération, pour le modèle NEA (voir plus bas), a été effectuée avec 500 millions de pas par réplique de REMC, et 100 millions de pas pour le modèle FDB.
 
 \section{Méthodes de calcul}
   
 \subsection{Fonction énergétique efficace pour l'état replié}
 
-La matrice énergétique a été calculée avec la fonction d'énergie suivante pour
-État plié:
+La matrice énergétique d'une protéine est calculée avec la fonction d'énergie suivante:
 \begin{equation}
-  E = E_{bonds} + E_{angles} + E_{dihe} + E_{impr} + E_{vdw} + E_{Coul} + E_{solv}
+  E = E_{MM} + E_{GB} + \sum_i \sigma_iA_i
   \label{eq:energy} 
 \end{equation}
 
-Les six premiers termes de l'équation Eq.\ (\ref{eq:energy})  représentent l'énergie interne de la protéine. Ils sont tirés de la fonction d'énergie empirique Amber ff99SB \cite{Cornell95}, légèrement modifiée pour le CPD.
+$E_{MM}$ représentent l'énergie interne de la protéine se compose de six termes, ils sont détaillé en \ref{sub:mecamol}. Ils sont tirés de la fonction d'énergie empirique Amber ff99SB \cite{Cornell95}, légèrement modifiée pour le CPD.
 
-Le dernier terme à droite de l'équation (13), $E_{solv}$, représente la contribution du solvant.Nous avons utilisé un modèle de solvant implicite \og Generalized Born + Surface Area\fg ou GBSA (44):
-\begin{displaymath}
-E_{solv} = E_{GB} + E_{surf} = \frac{1}{2}(\frac{1}{\epsilon_w} - \frac{1}{\epsilon_p})\sum_{i,j} q_iq_j (r^2_{ij} + b_ib_jexp[-\frac{r^2_{ij}}{4b_ib_j}])^{-\frac{1}{2}} + \sum_i \sigma_iA_i
-\end{displaymath} 
-Ici, $\epsilon_w$ et $\epsilon_p$ sont les constantes diélectriques du solvant et de la protéine; $r_{ij}$ est la distance entre les atomes $i$, $j$ et $b_i$ est le \og rayon de solvatation\fg de l'atome $i$ \cite{Hawkins95,Lopes07}. $A_i$ est la surface exposée accessible au solvant de l'atome $i$.$\sigma_i$ est un paramètre qui représente la préférence de chaque atome à être exposé ou caché du solvant. Les atomes du soluté sont divisés en quatre groupes avec pour chacun une valeur $\sigma_i$ spécifique en $cal/mol/Å^2$:
+Les autres termes de l'équation \ref{eq:energy}, représente la contribution du solvant.Nous utilisons un modèle de solvant implicite \og Generalized Born + Surface Area\fg ou GBSA (\ref{sub:GB},\ref{eq:SA}):
+
+Ici, $A_i$ est la surface exposée accessible au solvant de l'atome $i$.$\sigma_i$ est un paramètre qui représente la préférence de chaque atome à être exposé ou caché du solvant. Les atomes du soluté sont divisés en quatre groupes avec pour chacun une valeur $\sigma_i$ spécifique en $cal/mol/Å^2$.Nous travaillons avec deux jeux différents pour les $\sigma_i$. Le premier et un jeu d'après utilisé dans differentes études (\cite{Mignon16},\cite{Druart16b}):
 non polaire -5,aromatique -40,polaire -80,ionique -100.
+et second proviennent d'une étude plus récente de notre labotoire, dans laquelle le jeu à était optimizer
+sur un ensemble de proteins PZD \ref{Gaillard17}:
+
 
 On attribue aux atomes d'hydrogène un coefficient de surface de 0. Les surfaces sont calculées par l'algorithme de Lee et Richards \cite{Lee71},  qui est implémenté dans le programme XPLOR \cite{Xplor}, en utilisant un rayon de \og probe radius\fg de 1,5 {AA}. Les simulations MC utilisent une constante diélectrique $\epsilon_p = 4$ où $8$ (voir la partie Résultats).
 

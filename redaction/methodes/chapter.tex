@@ -1,5 +1,26 @@
 \chapter{Méthodes}
-\label{chap:resultats_comparaisons}
+\label{chap:methodes}
+
+\section{Theorie}
+\label{sec:theo}
+L'énergie utilisée est ici l'énergie de pliage de la protéine, c'est-à-dire la différence entre
+son énergie à l'état replié et son énergie à l'état déplié. Un mouvement élémentaire possible est une \og mutation\fg:
+Nous modifions le type de chaîne latérale $t \rightarrow t'$ à une position choisie $i$ dans la protéine pliée, en assignant
+un rotamère $r'$ particulier à la nouvelle chaîne latérale, voir les détails au chapitre \ref{chap:methodes}. Nous considérons la même mutation dans
+l'état déplié. Pour une séquence $S$ particulière, l'énergie d'état dépliée est de la forme:
+\begin{equation}
+  E^u=\sum_{i\in S}E^r(t_i)
+  \label{eq:unfolded}
+\end{equation} 
+
+Ici, $i$ est la position dans la séquence et $t_i$ le type en $i$,la somme se faisant sur tous les résidus de $S$.
+
+Les grandeurs $E^r(t)$, que nous noterons également $E_t^r$ sont appelées \og énergies de référence\fg. Ils peuvent être considérés comme des potentiels chimiques effectifs de chaque type d'acide aminé. Le changement d'énergie de repliement d'une mutation a donc la forme:
+\begin{equation} \label{eq:deltaE}
+  \Delta E=\Delta E^f - \Delta E^u=(E^f(...t'_i,r'_i...) - E^f(...t_i,r_i...)) -(E^r(t'_i) - E^r(t_i))
+\end{equation} 
+avec $\Delta E^f$ et  $\Delta E^u$ les changements d'énergie dans l'état replié et déplié, respectivement.
+
 
 
 \section{Proteus}

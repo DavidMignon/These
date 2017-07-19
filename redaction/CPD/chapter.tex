@@ -8,7 +8,7 @@ Dans ce domaine, existe la mutagénèse dirigée dans laquelle sont une premièr
 
    \begin{figure}[t]
      \centering
-     \begin{tabular}{cc}
+     \begin{tabular}{c}
        \includegraphics[width=6cm]{graphe/proteus/CPD.png} &
      \end{tabular}
      
@@ -64,6 +64,7 @@ Lorsque la stabilité d'une protéine est évalué par une variation de l'énerg
 La fonction d'énergie ou fonction de score,  de conformation permet d'évaluer la stabilité ( ou une affinité avec un ligand) de chaque conformation de la protéine. Cette fonction doit être capable de prendre en compte les détails des interactions entre les atomes de la protéine, les effets de l'environnement aqueux  dans lequel elle se trouve et en même temps être suffisament rapide pour évaluer en un temps raisonnable une partie la plus significative possible de l'espace des conformations.Une classe importante est constitué des fonctions d'énergie basée sur la mécanique moléculaire.
 
 \subsection{La mécanique moléculaire}
+\label{sub:mecamol}
 La mécanique moléculaire représente les atomes comme des particules sphériques ayant une charge électrique nette fixe et chaque liaison est modélisé par ressort.
 Cette mécanique consiste à intégrer les équations du mouvement de la mécanique classique dans un champ de force propre aux molécules étudiés.Ce champ de force décrit les interactions inter-atomiques du point de vue énergétique et est invariant au cours d'une simulation.
 Dans la suite, nous appelons $E_{MM}$ l'énergie qui dérive d'un tel champs de force.
@@ -149,7 +150,7 @@ avec $D_0$ et $r_0$ des constantes, $r_{ij}$ la distance entre l'atome $i$ et l'
 \end{enumerate}
 
 
-\subsection{d' autres approches}
+\subsection{d'autres approches}
 
 Même si la mécanique moléculaire prédomine dans le monde du CPD , il existe d'autres approches.Mayo [2006] utilise une fonction empirique pour la modélisation des liaisons hydrogènes, d'une focntion d'énergie coulombienne qui contient un $\epsilon$ qui varie en fonction de la distance interatomique.Il existe des fonctions d'énergie  conportant des élements relevant de statisque sur les protéines. Il existe encore des fonctions d'énergie à gros grains notament dans la modélisation des forces de Van der Walls utiles pour les applications d'interactions protéine-protéine.
 
@@ -223,7 +224,7 @@ dans la suite, on appelle cette somme, le terme surfacique de l'energie de solva
 
 nous pouvons remarquer que les dipoles du solvant s'oriente , au moins pour les plus proches du soluté, selon les lignes du champ électrique crée par la protéine, voir figure \ref{graph:ecrantage}.l'idée du modèle \og coulomb accessible surface area\fg (casa)  est alors de considérer que l'effet induit par les dipoles est proportionnel à l'effet du champ électrostatique produit par la protéine qui est supposée fixe. 
 
-on a  alors, en utilisant le modèle sa pour le terme non polaire:
+on a  alors, en utilisant le modèle \texblt{SA} pour le terme non polaire:
 
 \begin{equation}
 \delta g_{solv} \approx e_{screen} + \sum_i \sigma_{t_i} a_i
@@ -297,7 +298,7 @@ Quelque soit l'approche utilisée les calculs sont couteux pour une protéine en
 
 
 \subsection{modèle de Born Généralisé}
-
+\label{sub:GB}
 Dans le cas d'un soluté spérique de rayon $b$ et de charge pontuelle q portée par le centre de la sphére, Born en 1930  parvient à établir des expressions analytiques des solutions de l'équation de Poisson-Boltzmann et de $ \Delta G_{solv}^{elec}$:
 
 

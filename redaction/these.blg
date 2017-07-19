@@ -1,7 +1,7 @@
 This is BibTeX, Version 0.99d (TeX Live 2016/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: these.aux
-The style file: my.bst
+The style file: mystyle.bst
 A level-1 auxiliary file: merci.aux
 A level-1 auxiliary file: dedicace.aux
 A level-1 auxiliary file: glossaire.aux
@@ -10,23 +10,25 @@ A level-1 auxiliary file: contexte.aux
 A level-1 auxiliary file: CPD/chapter.aux
 A level-1 auxiliary file: methodes/chapter.aux
 A level-1 auxiliary file: comparaisons/chapter.aux
-I couldn't open database file /home/simonson/tex/bibtex/current.bib
----line 109 of file comparaisons/chapter.aux
- : \bibdata{/home/simonson/tex/bibtex/current
- :                                           }
-I'm skipping whatever remains of this command
 A level-1 auxiliary file: PDZ/chapter.aux
 A level-1 auxiliary file: conc.aux
 A level-1 auxiliary file: annexe_posi.aux
-Illegal, another \bibdata command---line 41 of file these.aux
- : \bibdata
- :         {biblio}
-I'm skipping whatever remains of this command
 A level-1 auxiliary file: resume.aux
-I found no database files---while reading file these.aux
+Database file #1: biblio.bib
+Repeated entry---line 105 of file biblio.bib
+ : @article{Andreeva04
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 778 of file biblio.bib
+ : @article{Dantas03
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2122 of file biblio.bib
+ : @article{Launay07
+ :                  ,
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "refRE1"
 Warning--I didn't find a database entry for "refRE2"
-Warning--I didn't find a database entry for "ref4"
 Warning--I didn't find a database entry for "refRE3"
 Warning--I didn't find a database entry for "reftoulbar1"
 Warning--I didn't find a database entry for "reftoulbar2"
@@ -36,90 +38,34 @@ Warning--I didn't find a database entry for "refHmmer"
 Warning--I didn't find a database entry for "refPfam"
 Warning--I didn't find a database entry for "refBLOSUM"
 Warning--I didn't find a database entry for "refBLAST"
-Warning--I didn't find a database entry for "Dantas03"
 Warning--I didn't find a database entry for "Kuhlman06"
-Warning--I didn't find a database entry for "Lippow07"
-Warning--I didn't find a database entry for "Saven11"
-Warning--I didn't find a database entry for "Feldmeier13"
-Warning--I didn't find a database entry for "Tinberg13"
-Warning--I didn't find a database entry for "Pokala04"
-Warning--I didn't find a database entry for "Samish11"
-Warning--I didn't find a database entry for "Li13"
-Warning--I didn't find a database entry for "Ponder87"
-Warning--I didn't find a database entry for "Koehl02"
-Warning--I didn't find a database entry for "Larson02"
-Warning--I didn't find a database entry for "Schmidt09"
 Warning--I didn't find a database entry for "Schmidt10"
 Warning--I didn't find a database entry for "Druart15"
 Warning--I didn't find a database entry for "Aleksandrov10b"
-Warning--I didn't find a database entry for "Polydorides13"
-Warning--I didn't find a database entry for "Kilambi12"
-Warning--I didn't find a database entry for "Looger01"
-Warning--I didn't find a database entry for "Georgiev08"
 Warning--I didn't find a database entry for "Gordon99"
 Warning--I didn't find a database entry for "Hong09"
 Warning--I didn't find a database entry for "Traore13"
-Warning--I didn't find a database entry for "Allouche14"
-Warning--I didn't find a database entry for "Zou03"
 Warning--I didn't find a database entry for "FrenkelBK"
 Warning--I didn't find a database entry for "ChipotBK"
-Warning--I didn't find a database entry for "Wernisch00"
-Warning--I didn't find a database entry for "Metropolis53"
 Warning--I didn't find a database entry for "GrimmetBK"
-Warning--I didn't find a database entry for "Sugita99"
-Warning--I didn't find a database entry for "Kofke02"
-Warning--I didn't find a database entry for "Earl05"
-Warning--I didn't find a database entry for "Schmidt08b"
-Warning--I didn't find a database entry for "Schmidt08"
-Warning--I didn't find a database entry for "Simonson13b"
-Warning--I didn't find a database entry for "Dahiyat97"
-Warning--I didn't find a database entry for "Gough01"
-Warning--I didn't find a database entry for "Wilson07"
 Warning--I didn't find a database entry for "Charmm"
-Warning--I didn't find a database entry for "Lopes07"
-Warning--I didn't find a database entry for "Lee71"
-Warning--I didn't find a database entry for "Street98"
 Warning--I didn't find a database entry for "Xplor"
-Warning--I didn't find a database entry for "Tuffery91"
-Warning--I didn't find a database entry for "Andreeva04"
 Warning--I didn't find a database entry for "DurbinBK"
 Warning--I didn't find a database entry for "Murphy02"
-Warning--I didn't find a database entry for "Launay07"
-Warning--I didn't find a database entry for "Gaillard14"
 Warning--I didn't find a database entry for "Fung08"
-Warning--I didn't find a database entry for "Mandell09"
 Warning--I didn't find a database entry for "Huang11"
 Warning--I didn't find a database entry for "Ng11"
 Warning--I didn't find a database entry for "Lucore15"
 Warning--I didn't find a database entry for "Hallen15"
-Warning--I didn't find a database entry for "Polydorides11"
 Warning--I didn't find a database entry for "Simonson15"
-Warning--I didn't find a database entry for "Harris01"
-Warning--I didn't find a database entry for "Hung02"
-Warning--I didn't find a database entry for "Tonikian08"
-Warning--I didn't find a database entry for "Gfeller11"
-Warning--I didn't find a database entry for "Subbaiah11"
 Warning--I didn't find a database entry for "Sheperd11r"
 Warning--I didn't find a database entry for "Bach12"
-Warning--I didn't find a database entry for "Roberts12"
-Warning--I didn't find a database entry for "Zheng15"
 Warning--I didn't find a database entry for "Socolich05"
-Warning--I didn't find a database entry for "Kong09"
-Warning--I didn't find a database entry for "Mclaughlin12"
-Warning--I didn't find a database entry for "Melero14"
-Warning--I didn't find a database entry for "Reina02"
-Warning--I didn't find a database entry for "Smith10"
 Warning--I didn't find a database entry for "Baker06b"
-Warning--I didn't find a database entry for "Kleinman06"
 Warning--I didn't find a database entry for "Cornell95"
-Warning--I didn't find a database entry for "Hawkins95"
 Warning--I didn't find a database entry for "Villa01"
 Warning--I didn't find a database entry for "Modeller"
-Warning--I didn't find a database entry for "Krivov09"
-Warning--I didn't find a database entry for "Gaillard16"
 Warning--I didn't find a database entry for "mignon2017"
-Warning--I didn't find a database entry for "Simonson13"
-Warning--I didn't find a database entry for "Druart17"
 Warning--I didn't find a database entry for "26"
 Warning--I didn't find a database entry for "76"
 Warning--I didn't find a database entry for "74"
@@ -127,45 +73,203 @@ Warning--I didn't find a database entry for "30"
 Warning--I didn't find a database entry for "72"
 Warning--I didn't find a database entry for "15"
 Warning--I didn't find a database entry for "50"
-You've used 0 entries,
-            2951 wiz_defined-function locations,
-            805 strings with 6532 characters,
-and the built_in function-call counts, 34 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 1
-* -- 2
-:= -- 11
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 1
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
-int.to.chr$ -- 1
-int.to.str$ -- 1
-missing$ -- 0
-newline$ -- 7
-num.names$ -- 0
-pop$ -- 0
+Too many commas in name 1 of "Lopes A., Aleksandrov A., Bathelt C., Archontis G., Simonson T." for entry Lopes07
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Lopes A., Aleksandrov A., Bathelt C., Archontis G., Simonson T." for entry Lopes07
+while executing---line 1324 of file mystyle.bst
+Name 1 in "Dantas, G., Kuhlman, B., Callender, D., Wong, M., and Baker, D." has a comma at the end for entry Dantas03
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Dantas, G., Kuhlman, B., Callender, D., Wong, M., and Baker, D." for entry Dantas03
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Dantas, G., Kuhlman, B., Callender, D., Wong, M., and Baker, D." for entry Dantas03
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Dantas, G., Kuhlman, B., Callender, D., Wong, M., and Baker, D." for entry Dantas03
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Dantas, G., Kuhlman, B., Callender, D., Wong, M., and Baker, D." for entry Dantas03
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Dantas, G., Kuhlman, B., Callender, D., Wong, M., and Baker, D." for entry Dantas03
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Tinberg CE, Khare SD, Dou J, Doyle L, Nelson JW, Schena A, et al" for entry Tinberg13
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Tinberg CE, Khare SD, Dou J, Doyle L, Nelson JW, Schena A, et al" for entry Tinberg13
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Tinberg CE, Khare SD, Dou J, Doyle L, Nelson JW, Schena A, et al" for entry Tinberg13
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Tinberg CE, Khare SD, Dou J, Doyle L, Nelson JW, Schena A, et al" for entry Tinberg13
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Samish I, MacDermaid CM, Perez-Aguilar JM, Saven JG" for entry Samish11
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Li Z., Yang Y., Zhan J., Dai L., Zhou Y." for entry Li13
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Li Z., Yang Y., Zhan J., Dai L., Zhou Y." for entry Li13
+while executing---line 1324 of file mystyle.bst
+Name 1 in "Koehl, P., and Levitt, M." has a comma at the end for entry Koehl02
+while executing---line 1324 of file mystyle.bst
+Name 1 in "Larson, S. M., England, J. E., Desjarlais, J. R., and Pande, V. S." has a comma at the end for entry Larson02
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Larson, S. M., England, J. E., Desjarlais, J. R., and Pande, V. S." for entry Larson02
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Larson, S. M., England, J. E., Desjarlais, J. R., and Pande, V. S." for entry Larson02
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Larson, S. M., England, J. E., Desjarlais, J. R., and Pande, V. S." for entry Larson02
+while executing---line 1324 of file mystyle.bst
+Name 1 in "Georgiev, I., Lilien, R. H., and Donald, B. R." has a comma at the end for entry Georgiev08
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Georgiev, I., Lilien, R. H., and Donald, B. R." for entry Georgiev08
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Allouche D., André I., Barbe S., Davies J., Givry S., Katsirelos G., O’Sullivan B., Prestwich S., Schiex T. & Traoré S." for entry Allouche14
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Allouche D., André I., Barbe S., Davies J., Givry S., Katsirelos G., O’Sullivan B., Prestwich S., Schiex T. & Traoré S." for entry Allouche14
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Allouche D., André I., Barbe S., Davies J., Givry S., Katsirelos G., O’Sullivan B., Prestwich S., Schiex T. & Traoré S." for entry Allouche14
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Allouche D., André I., Barbe S., Davies J., Givry S., Katsirelos G., O’Sullivan B., Prestwich S., Schiex T. & Traoré S." for entry Allouche14
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Allouche D., André I., Barbe S., Davies J., Givry S., Katsirelos G., O’Sullivan B., Prestwich S., Schiex T. & Traoré S." for entry Allouche14
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Allouche D., André I., Barbe S., Davies J., Givry S., Katsirelos G., O’Sullivan B., Prestwich S., Schiex T. & Traoré S." for entry Allouche14
+while executing---line 1324 of file mystyle.bst
+Name 1 in "Zou, J., and Saven, J. G." has a comma at the end for entry Zou03
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Metropolis N., Rosenbluth A., Rosenbluth M., Teller A. & Teller E." for entry Metropolis53
+while executing---line 1324 of file mystyle.bst
+Name 1 in "Sugita, Y., and Okamoto, Y." has a comma at the end for entry Sugita99
+while executing---line 1324 of file mystyle.bst
+Name 1 in "Earl, D., and Deem, M. W." has a comma at the end for entry Earl05
+while executing---line 1324 of file mystyle.bst
+Name 1 in "Schmidt am Busch, M., Lopes, A., Amara, N., Bathelt, C., and Simonson, T." has a comma at the end for entry Schmidt08
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Schmidt am Busch, M., Lopes, A., Amara, N., Bathelt, C., and Simonson, T." for entry Schmidt08
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Schmidt am Busch, M., Lopes, A., Amara, N., Bathelt, C., and Simonson, T." for entry Schmidt08
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Schmidt am Busch, M., Lopes, A., Amara, N., Bathelt, C., and Simonson, T." for entry Schmidt08
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Schmidt am Busch, M., Lopes, A., Amara, N., Bathelt, C., and Simonson, T." for entry Schmidt08
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Schmidt am Busch, M., Lopes, A., Amara, N., Bathelt, C., and Simonson, T." for entry Schmidt08
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Wilson D, Madera M, Vogel C, Chothia C, Gough J" for entry Wilson07
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Wilson D, Madera M, Vogel C, Chothia C, Gough J" for entry Wilson07
+while executing---line 1324 of file mystyle.bst
+Name 1 in "Tuffery P., Etchebest C., Hazout S., and Lavery R" has a comma at the end for entry Tuffery91
+while executing---line 1324 of file mystyle.bst
+Name 1 in "Andreeva, A., Howorth, D., Brenner, S. E., Hubbard, J. J., Chothia, C., and Murzin, A. G." has a comma at the end for entry Andreeva04
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Andreeva, A., Howorth, D., Brenner, S. E., Hubbard, J. J., Chothia, C., and Murzin, A. G." for entry Andreeva04
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Andreeva, A., Howorth, D., Brenner, S. E., Hubbard, J. J., Chothia, C., and Murzin, A. G." for entry Andreeva04
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Andreeva, A., Howorth, D., Brenner, S. E., Hubbard, J. J., Chothia, C., and Murzin, A. G." for entry Andreeva04
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Andreeva, A., Howorth, D., Brenner, S. E., Hubbard, J. J., Chothia, C., and Murzin, A. G." for entry Andreeva04
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Andreeva, A., Howorth, D., Brenner, S. E., Hubbard, J. J., Chothia, C., and Murzin, A. G." for entry Andreeva04
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Andreeva, A., Howorth, D., Brenner, S. E., Hubbard, J. J., Chothia, C., and Murzin, A. G." for entry Andreeva04
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Andreeva, A., Howorth, D., Brenner, S. E., Hubbard, J. J., Chothia, C., and Murzin, A. G." for entry Andreeva04
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Polydorides S., Amara N., Aubard C., Plateau P., Simonson T. & Archontis G." for entry Polydorides11
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Polydorides S., Amara N., Aubard C., Plateau P., Simonson T. & Archontis G." for entry Polydorides11
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Tonikian R, Zhang YN, Sazinsky SL, Currell B, Yeh JH, Reva B, et al" for entry Tonikian08
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Tonikian R, Zhang YN, Sazinsky SL, Currell B, Yeh JH, Reva B, et al" for entry Tonikian08
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Tonikian R, Zhang YN, Sazinsky SL, Currell B, Yeh JH, Reva B, et al" for entry Tonikian08
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Tonikian R, Zhang YN, Sazinsky SL, Currell B, Yeh JH, Reva B, et al" for entry Tonikian08
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Gfeller D, Butty F, Wierzbicka M, Verschueren E, Vanhee P, Huang H, et al" for entry Gfeller11
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Gfeller D, Butty F, Wierzbicka M, Verschueren E, Vanhee P, Huang H, et al" for entry Gfeller11
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Gfeller D, Butty F, Wierzbicka M, Verschueren E, Vanhee P, Huang H, et al" for entry Gfeller11
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Gfeller D, Butty F, Wierzbicka M, Verschueren E, Vanhee P, Huang H, et al" for entry Gfeller11
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Subbaiah VK, Kranjec C, Thomas M, Ban L" for entry Subbaiah11
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Roberts KE, Cushing PR, Boisguerin P, Madden DR, Donald BR" for entry Roberts12
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Roberts KE, Cushing PR, Boisguerin P, Madden DR, Donald BR" for entry Roberts12
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Zheng F, Jewell H, Fitzpatrick J, Zhang J, Mierke DF, Grigoryan G" for entry Zheng15
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Zheng F, Jewell H, Fitzpatrick J, Zhang J, Mierke DF, Grigoryan G" for entry Zheng15
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Zheng F, Jewell H, Fitzpatrick J, Zhang J, Mierke DF, Grigoryan G" for entry Zheng15
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "McLaughlin Jr RN, Poelwijk FJ, Raman A, Gosal WS, Ranganathan R" for entry Mclaughlin12
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "McLaughlin Jr RN, Poelwijk FJ, Raman A, Gosal WS, Ranganathan R" for entry Mclaughlin12
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Melero C, Ollikainen N, Harwood I, Karpiak J, Kortemme T" for entry Melero14
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Melero C, Ollikainen N, Harwood I, Karpiak J, Kortemme T" for entry Melero14
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Reina J, Lacroix E, Hobson SD, Fernandez-Ballester G, Rybin V, Schwab MS, et al" for entry Reina02
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Reina J, Lacroix E, Hobson SD, Fernandez-Ballester G, Rybin V, Schwab MS, et al" for entry Reina02
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Reina J, Lacroix E, Hobson SD, Fernandez-Ballester G, Rybin V, Schwab MS, et al" for entry Reina02
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Reina J, Lacroix E, Hobson SD, Fernandez-Ballester G, Rybin V, Schwab MS, et al" for entry Reina02
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Kleinman CL, Rodrigue N, Bonnard C, Philippe H, Lartillot N" for entry Kleinman06
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Kleinman CL, Rodrigue N, Bonnard C, Philippe H, Lartillot N" for entry Kleinman06
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Simonson T, Gaillard T, Mignon D, Schmidt am Busch M, Lopes A, Amara N, et al" for entry Simonson13
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Simonson T, Gaillard T, Mignon D, Schmidt am Busch M, Lopes A, Amara N, et al" for entry Simonson13
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Simonson T, Gaillard T, Mignon D, Schmidt am Busch M, Lopes A, Amara N, et al" for entry Simonson13
+while executing---line 1324 of file mystyle.bst
+Too many commas in name 1 of "Simonson T, Gaillard T, Mignon D, Schmidt am Busch M, Lopes A, Amara N, et al" for entry Simonson13
+while executing---line 1324 of file mystyle.bst
+You've used 58 entries,
+            2427 wiz_defined-function locations,
+            1027 strings with 15229 characters,
+and the built_in function-call counts, 33910 in all, are:
+= -- 3123
+> -- 283
+< -- 116
++ -- 133
+- -- 75
+* -- 1608
+:= -- 3091
+add.period$ -- 174
+call.type$ -- 58
+change.case$ -- 58
+chr.to.int$ -- 0
+cite$ -- 58
+duplicate$ -- 3419
+empty$ -- 3105
+format.name$ -- 88
+if$ -- 8319
+int.to.chr$ -- 0
+int.to.str$ -- 58
+missing$ -- 539
+newline$ -- 300
+num.names$ -- 58
+pop$ -- 898
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1
+skip$ -- 1956
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 2788
+swap$ -- 2607
+text.length$ -- 116
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 6
-(There were 3 error messages)
+while$ -- 174
+width$ -- 60
+write$ -- 647
+(There were 82 error messages)
