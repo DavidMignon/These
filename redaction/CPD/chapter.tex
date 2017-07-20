@@ -203,6 +203,7 @@ avec:
 une méthode standard pour approcher $\delta g_{solv}$ est de traiter le premier terme separément des autres.en effet, il est possible d'approximer la somme des deux derniers termes de l'équation  \ref{eq:enersolv} en utilisant la surface accessible au solvant de la protéine. la surface accessible au solvant est l'ensemble des points par lesquels peut passer une sphére, modélisant une molécule d'eau, qui roule sur la surface de van der vaals de la protéine, voir figure \ref{graph:surface}.
 l'aproximation s'écrit:
 \begin{equation}
+  \label{eq:SA}
 \delta g_{solv}^{vdw} + \delta g_{solv}^{cav} \approx \delta g_{solv}^{sa} = \sum_i \sigma_{t_i} a_i
 \end{equation}
 
@@ -350,6 +351,10 @@ Lorsque $r_{ij}$ tend vers l'infini $g_{ij}$ la loi de Coulomb dans le solvant: 
 
 La méthode classique d'approximation des rayons de Born se fait par l'énergie libre électrostatique de l'atome $i$, dans la situation où toutes les autres particules ont une charge ramenée à zéro.Ainsi, chaque charge  de la protéine est caractérisée par sa distance au solvant.Alors, ce modèle permet le calcul de l'énergie libre de solvatation électrostatique à partir de la seule connaissance du volume de la protéine contrairement à PD qui nécessite intégration du solvant dans les calculs.
 \label{NEA}
+
+%La forme $b_i$ correspond à une variante GB que nous appelons GB/HCT, d'après ses auteurs \cite{Hawkins95}, avec les paramètres du modèle optimisés pour une utilisation avec le champ de force Amber \cite{Lopes07}.Comme $b_i$ dépend des coordonnées de tous les atomes du soluté \cite{Hawkins95}, une approximation supplémentaire est nécessaire pour rendre le terme énergétique GB additif par paire et pour rendre la matrice d'énergie définissable.
+
+
 
 \section{l'algorithme d'exploration}
 

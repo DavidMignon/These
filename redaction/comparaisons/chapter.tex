@@ -196,6 +196,7 @@ where $\beta_i$, $\beta_j$ are the inverse temperatures of the two walkers and $
 are their folding energies \cite{Kofke02,Earl05}.
 
 \subsection{MC and REMC: implementation details}
+\label{sub:REMCdetails}
 For plain MC, we use one- and two-position moves, where either rotamers, types, or both are changed. For two-position
 moves, the second position is selected among those that have a significant interaction energy with the first
 one, 10 kcal/mol or more. For REMC, we use four or eight walkers, with thermal energies $kT_i$ that range from 0.125

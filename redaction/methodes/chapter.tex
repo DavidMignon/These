@@ -41,6 +41,8 @@ Nous detaillons les points importants de Proteus.
 Notre logiciel Proteus autorise le choix entre plusieurs type de fonction d'énergie.Dans le type le plus simple \ogMMCASA\fg, est combinée l'approche de la mécanique moléculaire pour le traitement de la protéine et un modèle de solvant implicite de type CASA (voir  ~\ref{}). Deux types \ogLLGBSA\fg sont égalament possible , dans lesquels le traitement du solvant est effectuée par un modèle Born Genéralisé, avec soit une approximation NEA pour les rayons de sovatation, soit une approximation FDB.
 Comme il a était vu précédement, avoir une fonction d'énergie décomposable par paire a plusieurs avantages, en particulier le calcul des énergies des paires de résidues avant l'étape d'exploration permet de reduire le calcul de l'énergie d'une séquence conformation pendant celle-ci à une somme d'énergies pré-calculées. Cependant les termes GB et SA ne sont pas décomposable par paire. Il faut alors introduite de nouvelles approximation pour le permettre.Nous allons dans la suite comment ces problèmes sont résolues dans Proteus.
 \subsection{décomposotion en paire du terme de surface}
+\label{sub:surpairwise}
+
 Le terme surfacique présenté en (~\ref{0}) ce défini comme:
 
 \begin{equation}
@@ -151,7 +153,7 @@ Ces énergies est prise en entrée dans Proteus, et donc sa détermination ne fa
 
 
 \subsection{déroulemement de la construction de la matrice}
-
+\label{sub:matrix}
 A partir un fichier PDB, une série de script XPLOR va préparer le système, ce système peut contenir un ligand.
 
 \begin{enumerate}
@@ -172,7 +174,10 @@ Il determine:
 -4- pour chaque rotamére de chaque type, après une petite minimisation, est calculée ou lui seul peut se déplacer, l'énergie d'interaction avec le squelette.Elle est stocké dans une fichier.Ce sont les énergies de la diagonale de matrice.l'objectif de la minimisation est d'adapter le rotamère à son environement natif.
 -5- Pour chaque paire de rotamère possible,comme pour la diagonale de ma matrice, une petite minimisation est effectuée avec uniquement la paire courante qui peut se deplacer.Puis les termes d'énergie d'interaction du couple sont  calculés et enregistrés dans du fichiers.  
 \end{enumerate}
-  
+
+Pour chaque paire d'acides aminés, l'énergie d'interaction a été obtenue après 15 pas de minimisation de l'énergie, avec le backbone fixé,seules les interactions de la paire entre les autres chaînes et le backbone sont prises en compte. Cette courte minimisation simplifie l' approximation discrète. Les rotamères de chaînes latérales utilisés sont une version légèrement étendue de la librairie de Tuffery et col \cite{Tuffery91}, qui possède un total de 254 rotamères (sur l'ensemble des types d'acides aminés).Cette extension comprend des orientations d'hydrogène supplémentaires pour les groupes OH et SH \cite{Gaillard14}. Cette bibliothèque de rotamères a été choisie pour sa simplicité et parce qu'elle a donné de très bonnes performances dans les tests de placement de chaînes en comparaison au programme spécialisé scwlr4 qui utilise une bibliothèque beaucoup plus grande \cite{Krivov09,Gaillard16}.
+
+
 Ensuite , les differents fichiers d'énergies seront lu par proteus voir \ref{} pour construire la matrice.
 
 \subsection{les groupes dans proteus}

@@ -6,7 +6,7 @@
 \usepackage[T1]{fontenc}      % encodage des fonts latex         
 \usepackage{lmodern}                                             
 \usepackage{microtype}        % typo supplémentaires             
-\usepackage{booktabs}
+
 
 \usepackage{multirow}  %  pour des tableaux multilignes/multicolonnes
 
@@ -30,96 +30,19 @@
    \begin{figure}[t]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=8.4cm]{rapport/resultats/PDZ/graphe/exactGB/1G9O_simil_cut.png} &
-       \includegraphics[width=8.4cm]{rapport/resultats/PDZ/graphe/exactGB/1G9O_simil_core.png} \\
-       \includegraphics[width=8.4cm]{rapport/resultats/PDZ/graphe/exactGB/1R6J_simil_cut.png} &
-       \includegraphics[width=8.4cm]{rapport/resultats/PDZ/graphe/exactGB/1R6J_simil_core.png} \\
-       \includegraphics[width=8.4cm]{rapport/resultats/PDZ/graphe/exactGB/2BYG_simil_cut.png} &
-       \includegraphics[width=8.4cm]{rapport/resultats/PDZ/graphe/exactGB/2BYG_simil_core.png} \\
+       \includegraphics[width=8.4cm]{rapport/resultats/PDZ/graphe/modelB/1R6J_simil_core.png} &
+       \includegraphics[width=8.4cm]{rapport/resultats/PDZ/graphe/modelB/2BYG_simil_core.png} \\
+       \includegraphics[width=8.4cm]{rapport/resultats/PDZ/graphe/modelB/1R6J_simil_cut.png} &
+       \includegraphics[width=8.4cm]{rapport/resultats/PDZ/graphe/modelB/2BYG_simil_cut.png} \\
+       \includegraphics[width=8.4cm]{rapport/resultats/PDZ/graphe/modelB6+/1R6J_simil_core.png} &
+       \includegraphics[width=8.4cm]{rapport/resultats/PDZ/graphe/modelB6+/2BYG_simil_core.png} \\
+       \includegraphics[width=8.4cm]{rapport/resultats/PDZ/graphe/modelB6+/1R6J_simil_cut.png} &
+       \includegraphics[width=8.4cm]{rapport/resultats/PDZ/graphe/modelB6+/2BYG_simil_cut.png} \\
+
      \end{tabular}
-\label{graph:Simil_Proteus_PDZ}
+\label{graph:Simil_histo}
    \end{figure}
-
-
-
-   \clearpage
-   
-    \begin{table}[!htbp]
-      \centering
-
-      \begin{tabular}{ccccc}
-
-        \toprule
-        \toprule
-        \multirow{2}{*}{Residues}  & \multicolumn{2}{c}{NEA} & \multicolumn{2}{c}{FDB} \\
-        \cmidrule(l{2pt}r{2pt}){2-3} \cmidrule(l{2pt}r{2pt}){4-5}
-         & Buried & Exposed & Buried & Exposed \\
-        \cmidrule{1-5}
-
-        ALA &   0.00     &  0.00    &   0.00  &   0.00       \\
-        CYS &  -0.89     &  -2.57   &  -1.06  &   -1.64      \\
-        THR &  -5.31     &  -8.075  &  -4.84  &   -6.68      \\
-        SER &  -5.55     &  -6.55   &  -4.45  &   -5.24      \\
-        ASP &  -17.26    &  -22.06  &  -14.56 &   -18.82     \\
-        GLU &  -16.12    &  -20.68  &  -14.52 &   -18.21     \\
-        ASN &  -16.38    &  -20.41  &  -14.02 &   -17.80     \\
-        GLN &  -14.00    &  -18.41  &  -13.14 &   -16.61     \\
-        HID &   11.21    &  6.95    &  10.85  &   8.13       \\
-        HIE &   10.63    &  6.15    &  10.41  &   7.37       \\
-        HIP &   15.17    &  10.72   &  12.86  &   10.98      \\
-        ARG &  -53.40    &  -57.36  &  -51.37 &   -54.76     \\
-        LYS &  -8.20     &  -12.34  &  -8.24  &   -11.35     \\
-        ILE &   6.76     &  3.44    &  5.50   &   3.06       \\
-        VAL &   0.43     &  -2.19   &  -0.05  &   -1.66      \\
-        LEU &   0.52     &  -3.72   &  0.00   &   -2.94      \\
-        MET &  -1.61     &  -3.21   &  -2.85  &   -3.09      \\
-        PHE &   1.86     &  -2.68   &  0.17   &   -3.18      \\
-        TRP &  -0.23     &  -7.67   &  -1.94  &   -5.53      \\
-        TYR &  -5.10     &  -10.90  &  -5.91  &   -10.14     \\
-
-        \bottomrule
-
-
-      \end{tabular}      
-      \caption{Les énergies de référence obtenues avec l'optimisation 6 protéines.}
-\label{tab:RefEner_groupes}      
-    \end{table}
-
-
-    \clearpage
-
-
-           \begin{tabular}{ccccccccccccccc}
-         
-         \toprule
-         
-         \cmidrule{1-15}
-         
-          
-         NHREF & Y & F & L & I & A & L & L & V & V & V & I & V & L & V \\
-         & 24 & 26 & 28 & 39 & 48 & 53 & 59 & 62 & 67 & 75 & 79 & 86 & 88 & 90 \\ 
-         INAD & F & I & I & I & A & L & I & L & V & V & I & I & L & I \\ 
-         & 28 & 30 & 32 & 50 & 59 & 65 & 71 & 74 & 79 & 87 & 91 & 98 & 100 & 102 \\ 
-         GRIP & L & I & I & I & A & I & I & I & L & A & L & V & L & I \\
-         & 682 & 684 & 686 & 698 & 707 & 713 & 719 & 722 & 727 & 735 & 739 & 746 & 748 & 750 \\ 
-         Syntenin & V & F & F & I & A & L & I & I & V & I & L & V & I & I \\ 
-         & 209 & 211 & 213 & 218 & 227 & 232 & 238 & 241 & 246 & 254 & 258 & 265 & 267 & 269 \\ 
-         DLG2 & L & F & I & V & A & L & L & V & L & A & L & V & L & V \\ 
-         & 203 & 205 & 207 & 224 & 233 & 239 & 245 & 248 & 253 & 261 & 265 & 272 & 274 & 276 \\ 
-         PSD95 & L & F & I & I & A & L & I & V & L & A & L & V & I & A \\ 
-         & 323 & 325 & 327 & 338 & 347 & 353 & 359 & 362 & 367 & 375 & 379 & 386 & 388 & 390 \\ 
-         CASK & M & I & L & V & I & L & I & I & V & L & L & I & F & I \\ 
-         & 501 & 503 & 505 & 515 & 524 & 530 & 536 & 539 & 544 & 552 & 556 & 563 & 565 & 567 \\ 
-         Tiam1 & Y & F & L & V & A & L & I & I & A & L & L & L & L & V \\ 
-         & 858 & 860 & 862 & 875 & 884 & 889 & 895 & 898 & 903 & 911 & 915 & 920 & 922 & 924 \\
-         
-         \bottomrule
-         
-       \end{tabular}
-
-   
 \thispagestyle{empty}
 
 \end{document}
  
-
