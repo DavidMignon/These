@@ -9,8 +9,13 @@ A level-1 auxiliary file: intro.aux
 A level-1 auxiliary file: contexte.aux
 A level-1 auxiliary file: CPD/chapter.aux
 A level-1 auxiliary file: methodes/chapter.aux
+A level-1 auxiliary file: developpements/chapter.aux
 A level-1 auxiliary file: comparaisons/chapter.aux
 A level-1 auxiliary file: PDZ/chapter.aux
+White space in argument---line 125 of file PDZ/chapter.aux
+ : \citation{\protect
+ :                    \T1\textbraceleft }
+I'm skipping whatever remains of this command
 A level-1 auxiliary file: conc.aux
 A level-1 auxiliary file: annexe_posi.aux
 A level-1 auxiliary file: resume.aux
@@ -23,7 +28,7 @@ Repeated entry---line 778 of file biblio.bib
  : @article{Dantas03
  :                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 2122 of file biblio.bib
+Repeated entry---line 2133 of file biblio.bib
  : @article{Launay07
  :                  ,
 I'm skipping whatever remains of this entry
@@ -38,6 +43,7 @@ Warning--I didn't find a database entry for "refHmmer"
 Warning--I didn't find a database entry for "refPfam"
 Warning--I didn't find a database entry for "refBLOSUM"
 Warning--I didn't find a database entry for "refBLAST"
+Warning--I didn't find a database entry for "DurbinBK"
 Warning--I didn't find a database entry for "Kuhlman06"
 Warning--I didn't find a database entry for "Schmidt10"
 Warning--I didn't find a database entry for "Druart15"
@@ -50,7 +56,6 @@ Warning--I didn't find a database entry for "ChipotBK"
 Warning--I didn't find a database entry for "GrimmetBK"
 Warning--I didn't find a database entry for "Charmm"
 Warning--I didn't find a database entry for "Xplor"
-Warning--I didn't find a database entry for "DurbinBK"
 Warning--I didn't find a database entry for "Murphy02"
 Warning--I didn't find a database entry for "Fung08"
 Warning--I didn't find a database entry for "Huang11"
@@ -58,12 +63,8 @@ Warning--I didn't find a database entry for "Ng11"
 Warning--I didn't find a database entry for "Lucore15"
 Warning--I didn't find a database entry for "Hallen15"
 Warning--I didn't find a database entry for "Simonson15"
-Warning--I didn't find a database entry for "Sheperd11r"
-Warning--I didn't find a database entry for "Bach12"
-Warning--I didn't find a database entry for "Socolich05"
 Warning--I didn't find a database entry for "Baker06b"
 Warning--I didn't find a database entry for "Cornell95"
-Warning--I didn't find a database entry for "Villa01"
 Warning--I didn't find a database entry for "Modeller"
 Warning--I didn't find a database entry for "mignon2017"
 Warning--I didn't find a database entry for "26"
@@ -76,6 +77,8 @@ Warning--I didn't find a database entry for "50"
 Too many commas in name 1 of "Lopes A., Aleksandrov A., Bathelt C., Archontis G., Simonson T." for entry Lopes07
 while executing---line 1324 of file mystyle.bst
 Too many commas in name 1 of "Lopes A., Aleksandrov A., Bathelt C., Archontis G., Simonson T." for entry Lopes07
+while executing---line 1324 of file mystyle.bst
+Name 1 in "Tuffery P., Etchebest C., Hazout S., and Lavery R" has a comma at the end for entry Tuffery91
 while executing---line 1324 of file mystyle.bst
 Name 1 in "Dantas, G., Kuhlman, B., Callender, D., Wong, M., and Baker, D." has a comma at the end for entry Dantas03
 while executing---line 1324 of file mystyle.bst
@@ -153,8 +156,6 @@ Too many commas in name 1 of "Wilson D, Madera M, Vogel C, Chothia C, Gough J" f
 while executing---line 1324 of file mystyle.bst
 Too many commas in name 1 of "Wilson D, Madera M, Vogel C, Chothia C, Gough J" for entry Wilson07
 while executing---line 1324 of file mystyle.bst
-Name 1 in "Tuffery P., Etchebest C., Hazout S., and Lavery R" has a comma at the end for entry Tuffery91
-while executing---line 1324 of file mystyle.bst
 Name 1 in "Andreeva, A., Howorth, D., Brenner, S. E., Hubbard, J. J., Chothia, C., and Murzin, A. G." has a comma at the end for entry Andreeva04
 while executing---line 1324 of file mystyle.bst
 Too many commas in name 1 of "Andreeva, A., Howorth, D., Brenner, S. E., Hubbard, J. J., Chothia, C., and Murzin, A. G." for entry Andreeva04
@@ -223,7 +224,9 @@ Too many commas in name 1 of "Kleinman CL, Rodrigue N, Bonnard C, Philippe H, La
 while executing---line 1324 of file mystyle.bst
 Too many commas in name 1 of "Kleinman CL, Rodrigue N, Bonnard C, Philippe H, Lartillot N" for entry Kleinman06
 while executing---line 1324 of file mystyle.bst
-Too many commas in name 1 of "Simonson T, Gaillard T, Mignon D, Schmidt am Busch M, Lopes A, Amara N, et al" for entry Simonson13
+Too many commas in name 1 of "Druart K, Palmai Z, Omarjee E, Simonson T" for entry Druart16b
+while executing---line 1324 of file mystyle.bst
+Name 1 in "Villa V., Mignon D., Polydorides S., and Thomas Simonson T." has a comma at the end for entry Villa17
 while executing---line 1324 of file mystyle.bst
 Too many commas in name 1 of "Simonson T, Gaillard T, Mignon D, Schmidt am Busch M, Lopes A, Amara N, et al" for entry Simonson13
 while executing---line 1324 of file mystyle.bst
@@ -231,45 +234,47 @@ Too many commas in name 1 of "Simonson T, Gaillard T, Mignon D, Schmidt am Busch
 while executing---line 1324 of file mystyle.bst
 Too many commas in name 1 of "Simonson T, Gaillard T, Mignon D, Schmidt am Busch M, Lopes A, Amara N, et al" for entry Simonson13
 while executing---line 1324 of file mystyle.bst
-You've used 58 entries,
+Too many commas in name 1 of "Simonson T, Gaillard T, Mignon D, Schmidt am Busch M, Lopes A, Amara N, et al" for entry Simonson13
+while executing---line 1324 of file mystyle.bst
+You've used 60 entries,
             2427 wiz_defined-function locations,
-            1027 strings with 15229 characters,
-and the built_in function-call counts, 33910 in all, are:
-= -- 3123
-> -- 283
-< -- 116
-+ -- 133
-- -- 75
-* -- 1608
-:= -- 3091
-add.period$ -- 174
-call.type$ -- 58
-change.case$ -- 58
+            1030 strings with 15609 characters,
+and the built_in function-call counts, 35058 in all, are:
+= -- 3227
+> -- 294
+< -- 120
++ -- 138
+- -- 78
+* -- 1664
+:= -- 3196
+add.period$ -- 180
+call.type$ -- 60
+change.case$ -- 60
 chr.to.int$ -- 0
-cite$ -- 58
-duplicate$ -- 3419
-empty$ -- 3105
-format.name$ -- 88
-if$ -- 8319
+cite$ -- 60
+duplicate$ -- 3536
+empty$ -- 3210
+format.name$ -- 92
+if$ -- 8599
 int.to.chr$ -- 0
-int.to.str$ -- 58
-missing$ -- 539
-newline$ -- 300
-num.names$ -- 58
-pop$ -- 898
+int.to.str$ -- 60
+missing$ -- 558
+newline$ -- 310
+num.names$ -- 60
+pop$ -- 930
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1956
+skip$ -- 2020
 stack$ -- 0
-substring$ -- 2788
-swap$ -- 2607
-text.length$ -- 116
+substring$ -- 2878
+swap$ -- 2696
+text.length$ -- 120
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 174
-width$ -- 60
-write$ -- 647
-(There were 82 error messages)
+while$ -- 180
+width$ -- 62
+write$ -- 669
+(There were 85 error messages)
