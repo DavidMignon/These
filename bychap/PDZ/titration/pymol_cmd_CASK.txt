@@ -1,0 +1,47 @@
+set_color  c1, [ 144, 12, 32]
+set_color  c2, [ 233, 12, 3]
+set_color  c3, [ 237, 132, 28]
+set_color  c4, [ 237, 201, 28]
+set_color  c5, [ 132, 255, 0]
+
+color white, all
+
+color c5, resi 488+491+493+495+496+501+503+505+506+507+510+514+515+518+523+524+525+529+530+532+535+536+537+539+540+542+544+547+549+551+552+555+556+559+562+563+565+566+567
+
+color c4, resi 488+489+490+493+495+496+501+503+505+506+507+510+514+515+518+523+524+529+532+535+536+537+539+540+542+547+551+552+555+556+559+562+563+565+567
+
+
+color c3, resi 491+493+495+496+501+503+505+510+514+515+518+529+530+535+536+537+539+542+547+551+552+555+556+559+562+563+567
+
+color c2, resi 489+493+495+496+501+503+505+510+514+515+518+529+530+535+536+539+542+547+551+552+555+556+559+563+565+566+567
+
+color c1, resi 491+493+495+503+505+510+514+515+518+529+530+535+536+539+544+547+552+555+556+563+565+567
+
+select bb, name c+o+n+ca
+
+color gray50, bb
+set cartoon_transparency, 0.78
+
+
+set cartoon_rect_width, 0.5
+
+
+set cartoon_oval_width, 0.8
+
+set cartoon_oval_width, 1
+
+stereo on
+
+stereo walleye
+
+ray 4685,3510
+
+save modelB2/CASK.png
+
+save modelB2/CASK.pse
+
+
+save CASK.png
+cmd.select('sele','none')
+cmd.select('sele',"byresi((((sele) or byresi((CASK`651))) and not ((byresi((CASK`651))) and byresi(sele))))",enable=1)
+
