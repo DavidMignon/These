@@ -1,8 +1,34 @@
 \chapter{Proteus}
 \label{chap:methodes}
 
-\section{Theorie}
-\label{sec:theo}
+Il existe plusieurs logiciels de CPD.Parmi les plus connus, On peut citer ORBIT (Optimisation of Rotamers By Iterative Techniques) \cite{Dahiyat96}, OSPREY (Open Source Protein REdesign for You) \cite{Gainza13}, Rosetta (le CPD n'est qu'une partie des fonctionnalités proposés par cette suite logiciel) \cite{Kuhlman03} et Proteus \cite{Simonson13}. Proteus est le logiciel développé par notre équipe au laboratoire de Biologie de l'Ecole Polytechnique. Dans ce chapitre, nous détaillons quelques points importants de notre logiciel.  
+
+\section{Un modèle fondé sur la Physique}
+\label{sec:Phy}
+Proteus se base sur la théorie de la mécanique statistique pour ses définitions de la stabilité d'un système, de l'affinité entre deux groupes et pour guider sa sélection de meilleures séquences-conformations. A partir d'un postulat fondamental et de l'hypothèse ergodique, la mécanique statistique \og redécouvre \fg la thermodynamique classique et en plus établi une relation à l'équilibre entre l'énergie d'un état $i$ d'un système et la probabilité que le système soit dans l'état $i$ via la probabilité de Boltzmann \ref{eq:Boltzmann}.
+
+Ainsi, si l'on considére deux états A et B d'un système S à l'équilibre, la probabilité que S soit plus souvent dans l'état A que dans l'état B s'exprime comme une différence de l'énergie de A et de B. Pour le CPD, l'énergie qui est pertinante est celle qui prend en compte l'énergie interme de la protéine mais aussi son environement via l'entropie et la température. Il s'agît de l'énergie libre de Gibbs $G$.
+
+Nous introduisons alors un cycle thermodynamique pour définir la stabilité d'une séquence-conformation, voir figure \ref{fig:cycleThermo}.Le cycle considére la stabilité de deux séquences A et B. La transformation de A en B correspond aux deux flèches horizontales. Le dépliement est figuré par les deux flches verticals . La difference de stabilité entre les deux séquences correspond à la différence d'énergie libre des transformations horizontales (comme verticales).
+
+\begin{equation}
+\Delta \Delta G = (G(S^p_B)- G(S^P_A)) - (G(S^D_B)- G(S^D_A))
+\end{equation}  
+avec $S^p_A$ le système avec la séquence $A$ pliée, $D$ une séquence déplié.
+
+Maximiser la stabilité d'une séquence-conformation correspond alors à minimiser $\Delta \Delta G$.
+
+   \begin{figure}[!htbp]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=5cm]{figure/cycleThermo.png} &
+     \end{tabular}
+     
+     \caption{Le cycle thermodynamique qui définit la stabilité}
+\label{graph:struct_Phy}
+   \end{figure}
+
+On a alors la différence 
 
 
 \section{Organisation générale}
