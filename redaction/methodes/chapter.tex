@@ -14,7 +14,7 @@ Proteus est constitué de deux parties:
 \item un programme écrit en C ,que nous appelons \og proteus\fg dans la suite de ce texte, qui explore l'espace de sequence/conformation
 \end{enumerate}
 
-Le logiciel est flexible et largement configurable; Il permet l'utilisation de plusieurs champ de force, de plusieurs modèle de solvant, et de plusieurs librairie de rotamer.La partie en C, proteus, propose plusieurs algorithme d'exploration comme l'heuristique, MC ou REMC .Le programme proteus permet de diviser le système en plusieurs groupes ou d'en dupliqué une partie , ceux-ci pouvant alors être combiné dans la fonction d'énergie afin de favoriser la stabilité de certains sous-ensembles du système ou certaines affinités.
+Le logiciel est flexible et largement configurable; Il permet l'utilisation de plusieurs champ de force, de plusieurs modèle de solvant, et de plusieurs librairie de rotamer.La partie en C, proteus, propose plusieurs algorithme d'exploration comme l'heuristique, MC ou REMC . Le programme proteus permet de diviser le système en plusieurs groupes ou d'en dupliqué une partie , ceux-ci pouvant alors être combiné dans une fonction de score basée sur la fonction d'énergie physique afin de favoriser la stabilité de certains sous-ensembles du système ou certaines affinités.
 Plusieurs succès ont déjà était obtenue avec Proteus par exemple de redesign de la tyrosyl-tARN synthetase (\ref{}) ou sur la D-tyrosine ref{}, sur les cacluls de pK_a \ref{31}.
 
 Nous detaillons les points importants de Proteus.
@@ -32,7 +32,7 @@ Le terme surfacique présenté en \ref{eq:SA} ce défini comme:
 E_{solv}^\surf = \sum_i \sigma_{t_i} A_i 
 \end{equation}
 avec $A_i$ la surface accessible au solvant de l'atome $i$, et $\sigma_{t_i}$ un coefficient d'hydrophobicité du type de l'atome $i$.
-Ce terme n'est pas décomposable par paire de résidu, parce que  la surface enfouie d'une première chaîne latérale par une deuxième  peut aussi être enfuie par troisième chaîne latérale , voir la figure \ref{fig:MAt_ener}. Pour rendre ce terme décomposable, nous utilisons la méthode de Street et al. \ref{Street98}, dans laquelle la surface enfuie d'une chaîne est calculée à partir d'une somme sur les chaîne et les groupes du backbone voisins.Puis pour chaque groupe voisins, la zone de contact avec notre chaîne est calculée indépendament des autres groupes. Ces zones sont sommées et un facteur de contraction est appliqué mimant l'élimination des zones comptée à plusieurs reprise.Des travaux précédents effectuée dans notre laboratoire ont montré qu'un facteur de 0,65 fonctionne bien (37, 40).   
+Ce terme n'est pas décomposable par paire de résidu, parce que la surface enfouie d'une première chaîne latérale par une deuxième  peut aussi être enfuie par une troisième chaîne latérale, voir la figure \ref{fig:intersurf}.
 
    \begin{figure}[!htbp]
      \centering
@@ -41,12 +41,12 @@ Ce terme n'est pas décomposable par paire de résidu, parce que  la surface enf
      \end{tabular}
      
      \caption{\textbf{Une représentation de la surface accessible de trois résidus} Les résidues A et B réduisent mutuellement leur surface exposée au solvant: c'est la zone verte. De même pour B,C : la zone rouge et  A,C, la zone bleue. Un calcul par paire de résidues naïf surestime la surface accessible en comptant deux choix la zone noire. }
-\label{fig:MAt_ener}
+\label{fig:intersurf}
    \end{figure}
 
 
+Pour rendre ce terme décomposable, nous utilisons la méthode de Street et al. \ref{Street98}, dans laquelle la surface enfuie d'une chaîne est calculée à partir d'une somme sur les chaîne et les groupes du backbone voisins. Puis pour chaque groupe voisins, la zone de contact avec notre chaîne est calculée indépendament des autres groupes. Ces zones sont sommées et un facteur de contraction est appliqué mimant l'élimination des zones comptée à plusieurs reprise. Des travaux précédents effectuée dans notre laboratoire ont montré qu'un facteur de 0,65 fonctionne bien \cite{Lopes07,Gaillard14}.   
 
-La contribution de l'énergie de surface $E_{surf}$ n'est pas non plus additive par paire, car dans la structure de la protéine, la surface enfouie par une chaîne latérale peut également être enfuie par une autre chaîne. Alors, nous avons utilisé la méthode de Street et al \cite{Street98}. Dans laquelle, la surface enfuie d'une chaîne latérale est calculée en additionnant la chaîne latérale voisine et les groupes backbones. Pour chaque groupe voisin, la zone de contact avec la chaîne latérale en question est calculée indépendamment des autres groupes. Les zones de contact sont additionnées. Pour éviter de sur évaluer la surface enfuie, un facteur est appliqué aux zones de contact des chaînes latérales impliquées. Des études précédentes ont montré qu'un facteur de $0,65$ fonctionne bien \cite{Lopes07,Gaillard14}.  
 
 \subsection{\og Native Environnement Approximation\fg (NEA)}
 
@@ -122,7 +122,7 @@ Le calcul de la matrice d'énergie, sont executer à l'aide du programme X-plor 
 
 \subsection{Les énergies de l'état déplié}
 
-le $\Delta \Delta G$ du chapitre précédent, s'applique entre l'état replié de la protéine et un état déplié. Nous avons donc besoin d'attribuer une énergie à l'état déplié. Proteus exploite une definition indépendante la structure telle que:
+le $\Delta \Delta G$ s'applique entre l'état replié de la protéine et un état déplié. Nous avons donc besoin d'attribuer une énergie à l'état déplié. Proteus exploite une definition indépendante la structure telle que:
 \begin{equation}
 E_u(S) = \sum_i^N E(t_i)  
 \end{equation}
@@ -143,7 +143,7 @@ Il determine:
 \begin{itemize}
 \item un champ de force. Les champs AMBER ff99SB ou CHARMM toph19 sont tous les deux supportés.
 \item un traitement de l'électrostatique du solvant parmi CA GB/NEA GB/FDB
-\item un jeu de coefficients \sigma_i pour la pondération de la surface accessible au solvant dans le terme hydrophobe.
+\item un jeu de coefficients $\sigma_i$ pour la pondération de la surface accessible au solvant dans le terme hydrophobe.
 \item l'ensemble des résidus dans le backbone autorisé à muter
 \item l'ensemble des chaînes laterales autorisé à se déplacer 
 \end{itemize}
@@ -157,9 +157,9 @@ Il determine:
 -5- Pour chaque rotamére de chaque type, après une petite minimisation, où lui seul peut se déplacer, l'énergie d'interaction avec le squelette est calculée. Elle est stocké dans une fichier. Ce sont les énergies de la diagonale de matrice. l'objectif de la minimisation est d'adapter le rotamère à son environement natif.
 
 -6- Pour chaque paire de rotamère possible,comme pour la diagonale de ma matrice, une petite minimisation est effectuée avec uniquement la paire courante qui peut se deplacer. Puis les termes d'énergie d'interaction du couple sont  calculés et enregistrés dans du fichiers.  
-\end{enumerate}
+\end{itemize}
 
-Pour chaque paire d'acides aminés, l'énergie d'interaction a été obtenue après 15 pas de minimisation de l'énergie, seules les interactions de la paire entre les autres chaînes et le backbone sont prises en compte. Cette courte minimisation simplifie l' approximation discrète. Les rotamères de chaînes latérales utilisés sont une version légèrement étendue de la librairie de Tuffery et col \cite{Tuffery91}, qui possède un total de 254 rotamères (sur l'ensemble des types d'acides aminés).Cette extension comprend des orientations d'hydrogène supplémentaires pour les groupes OH et SH \cite{Gaillard14}. Cette bibliothèque de rotamères a été choisie pour sa simplicité et parce qu'elle a donné de très bonnes performances dans les tests de placement de chaînes en comparaison au programme spécialisé scwlr4 qui utilise une bibliothèque beaucoup plus grande \cite{Krivov09,Gaillard16}.
+Pour chaque paire d'acides aminés, l'énergie d'interaction a été obtenue après 15 pas de minimisation de l'énergie, seules les interactions de la paire entre les autres chaînes et le backbone sont prises en compte. Cette courte minimisation simplifie l' approximation discrète. Les rotamères de chaînes latérales utilisés sont une version légèrement étendue de la librairie de Tuffery et al. \cite{Tuffery91}, qui possède un total de 254 rotamères (sur l'ensemble des types d'acides aminés).Cette extension comprend des orientations d'hydrogène supplémentaires pour les groupes OH et SH \cite{Gaillard14}. Cette bibliothèque de rotamères a été choisie pour sa simplicité et parce qu'elle a donné de très bonnes performances dans les tests de placement de chaînes en comparaison au programme spécialisé scwlr4 qui utilise une bibliothèque beaucoup plus grande \cite{Krivov09,Gaillard16}.
 
 Les scripts sont concus pour pouvoir distribuer les calculs sur différentes architectures matérielles allant du PC mono- processeur au cluster de calculs hétérogènes.
 
@@ -177,7 +177,7 @@ Ensuite , les differents fichiers d'énergies seront lu par proteus voir \ref{}
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=12cm]{figure/inputener.png} 
+       \includegraphics[width=12cm]{figure/proteus/inputener.png} 
      \end{tabular}     
      \caption{\textbt{Les fichiers d'énergies en mode CA}}
 \label{fig:CAenerfile}
@@ -187,72 +187,35 @@ Ensuite , les differents fichiers d'énergies seront lu par proteus voir \ref{}
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=12cm]{figure/inputenerGB.png} 
+       \includegraphics[width=12cm]{figure/proteus/inputenerGB.png} 
      \end{tabular}     
      \caption{\textbt{Les fichiers d'énergies en mode GB NEA et FDB}}
 \label{fig:GBenerfile}
    \end{figure}
    
 
+\subsection{Configuration de l'exploration }
 
+L'étape suivante est l'exploration à l'aide des énergies obtenues. Elle s'effectue avec le programme proteus écrit en C. Ce programme se contrôle par une fichier de configuration de type XML sans imbrication de balise, Il y a actuellement près de quarante balises possibles, une partie est présentée table \ref{tab:balise_proteus}. Nous en détaillons quelques unes ici.
 
+L'utilisateur peut choisir la méthodes d'exploration (MSD, MC/REMC ou champ moyen).
 
-\subsection{les groupes dans proteus}
-   \begin{figure}[!htbp]
-     \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=12cm]{graphe/proteus/grp_matrix.png} &
-     \end{tabular}
-     
-     \caption{Les principales structrures \og physiques\fg dans proteus}
-\label{graph:struct_Phy}
-   \end{figure}
-   
+Pour le MSD, il peut paramètrer le nombre de cycle et le nombre de passage sur la séquence, voir section \ref{MSD}.
+Pour le MC/REMC, le fichier de configuration détermine le nombre de marcheurs, la taille de chaque trajectoire, la période de \og swap \fg, c'est-à-dire la période, en nombre de pas, à laquelle une tentative d'échange de répliques est effectuée ( voir \ref{REMC_move} ) (si elle est non-nulle, l'exploration est de type REMC).
 
-   
+Pour controler les déplacements des marcheurs, il existe 
+\begin{itemize}
+\item un ensemble de cinq  balises pour définir les modifications à effectuer dans la séquence-conformation courante, voir le chapitre \ref{chap:developpement}
+\item une balise qui definit un voisinnage de la première position modifié dans lequel sera choisi une autre position pour une seconde modification.
+\end{itemize}
+Un voisinnage dans la séquence-conformation se définit de la façon suivante:
 
-\subsection{modèle de données} 
-
-
-   \begin{figure}[!htbp]
-     \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=12cm]{graphe/proteus/structures_physique.png} &
-     \end{tabular}
-     
-     \caption{Les principales structrures \og physiques\fg dans proteus}
-\label{graph:struct_Phy}
-   \end{figure}
-
-
-
-   \begin{figure}[!htbp]
-     \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=12cm]{graphe/proteus/structures_modele_logique.png} &
-     \end{tabular}
-     
-     \caption{Les principales structrures \og logiques\fg dans proteus}
-\label{graph:struct_log}
-   \end{figure}
-
-
-
-   \begin{figure}[!htbp]
-     \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=12cm]{graphe/proteus/structures_dynamiques.png} &
-     \end{tabular}
-     
-     \caption{Les principales structrures \og dynamiques\fg dans proteus}
-\label{graph:struct_Dyna}
-   \end{figure}
-
-   
-
-
-
-\paragraph{Le fichier de configuration}
+Deux positions $p_i$ et $p_j$ sont voisines s'il existe un rotamère $r_P_i$ de $p_i$ et un rotamère $r_p_j$ de $p_j$ tels que:
+\begin{displaymath}
+ | E(r_P_i_,r_p_j) | > S_{vois}
+\end{displaymath} 
+avec $S_{vois}$ le seuil donné par l'utilisateur dans la balise.
+Le voisinnage d'une position $p$ est l'ensemble de ses voisins.
 
 
 
@@ -260,13 +223,12 @@ Ensuite , les differents fichiers d'énergies seront lu par proteus voir \ref{}
     \begin{table}[!htbp]
       \centering
 
-
       \begin{tabular}{|p{0.2\linewidth}|p{0.35\linewidth}|p{0.45\linewidth}|}
 
         \hline
         Type   & nom & Description \\
         \hline
-          methode  d'exploration & Mode &  determine  le mode d'exécution, les valeurs possibles sont HEURISTIC,MONTECARLO,MEANFIELD et POSTPROCESS  \\  \hline    
+          methode  d'exploration & Mode &  determine  le mode d'exécution, les valeurs possibles sont HEURISTIC(MSD),MONTECARLO,MEANFIELD et POSTPROCESS  \\  \hline    
                         & Trajectory\_Length  &  la longueur de la trajectoire MC ou REMC\\  \cline{2-3}
         nombre de pas & Trajectory\_Number  &  le nombre de trajectoire  MC ou REMC  \\  \cline{2-3}
                         & Cycle\_Number  &    le nombre de cycle en mode HEURISTIC   \\ \cline{2-3}  
@@ -296,24 +258,78 @@ Ensuite , les differents fichiers d'énergies seront lu par proteus voir \ref{}
 
       \caption{ Une partie des balises possibles dans le fichiers de configuration de Proteus}      
 
-      \label{table1}
+      \label{tab:balise_proteus}
 
   \end{table}
 
 
 
 
+ \subsection{Configuration de la fonction de score }
 
-\paragraph{Les fichiers \og backbone\fg et \og parwise\fg}
+ Le cycle thermodynamique \ref{fig:cycleThermo} peut sans difficultés être adapter pour exprimer d'autres problèmatiques que celle de la recherche de séquences stables. C'est le cas des calculs de $pK_a$ par l'expression d'une différence d'énergie libre de protonation. La problèmatique CPD de la reconnaissance d'un ligand par une protéine peut également être traitée. Cela peut se faire par un critère d'affinité via l'énergie libre d'interaction ou par un critère de spécificité. Ce dernier combine une augmentation de l'interaction avec de nouveaux ligands et une dégradation de l'interaction avec le ligand naturel. L'équation \ref{eq:deltaG} peut être décomposé pour faire apparaître l'énergie protéine-ligand et l'énergie propre à la protéine et au ligand.
+(fonction décomposable par paire?? quelque part?)
+Proteus permet ce type de décomposition du $\Delta \Delta G$ et autorise une pondération des differents termes. Il pemet également de duplicer des parties du système, ouvrant la voie à des optimisations simultanées de deux conformations d'un sous-système à séquences identiques, mais non fixées.   
+
+   
+   \begin{figure}[!htbp]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=12cm]{figure/proteus/grp_matrix.png} &
+     \end{tabular}
+     
+     \caption{Les principales structrures \og physiques\fg dans proteus}
+\label{graph:struct_Phy}
+   \end{figure}
+   
+
+   
+
+\subsection{modèle de données} 
 
 
+   \begin{figure}[!htbp]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=12cm]{figure/proteus/structures_physique.png} &
+     \end{tabular}
+     
+     \caption{Les principales structrures \og physiques\fg dans proteus}
+\label{graph:struct_Phy}
+   \end{figure}
+
+
+
+   \begin{figure}[!htbp]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=12cm]{figure/proteus/structures_modele_logique.png} &
+     \end{tabular}
+     
+     \caption{Les principales structrures \og logiques\fg dans proteus}
+\label{graph:struct_log}
+   \end{figure}
+
+
+
+   \begin{figure}[!htbp]
+     \centering
+     \begin{tabular}{cc}
+       \includegraphics[width=12cm]{figure/proteus/structures_dynamiques.png} &
+     \end{tabular}
+     
+     \caption{Les principales structrures \og dynamiques\fg dans proteus}
+\label{graph:struct_Dyna}
+   \end{figure}
+
+   
 
 \paragraph{Les fichiers de sortie}
    
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=12cm]{graphe/proteus/output.png} &
+       \includegraphics[width=12cm]{figure/proteus/output.png} &
      \end{tabular}
      
      \caption{Les fichiers en sortie de proteus}
@@ -406,190 +422,6 @@ Pour chacune des neuf protéines, nous exécutons proteus avec $S_{Vois}$ égal 
 Ensuite,un script dédié recherche dans ces listes, les n-uplets en interaction, en partant de la liste de voisins au sens le plus fort, c'est-à-dire dix, vers celle  au sens le plus faible ($0.1$).La recherche s'arrête lorsque cinq n-uplets au moins sont trouvés.
 
 Nous obtenons quarante-cinq n-uplets pour le groupe à cinq (respectivement dix, vingt et trente ) positions actives pour un seuil $S_{Vois}$ égal à dix (respectivement dix, un et un). Les positions actives de tous les tests sont en annexe~\ref{chap:annexe1 }).Pour chaque n-uplet, un fichier de configuration de proteus est créé dans lequel la balise <Space\_Constraints> fixe les positions inactives en utilisant le type d'acide aminé présent dans la séquence native. 
-
-
-\subsection{Définition de protocole comparable}
-\label{sec:proto_compa}
-Nous voulons comparer les algorithmes très différents. Un algorithme peut garantir l'obtention du minimum global en énergie (GMEC) si l'exécution se termine, mais ne garantit pas qu'elle se termine. Un autre permet un contrôle très fin du temps d'exécution sans garantie du GMEC, et d'autres enfin ont des objectifs plus large que la seule obtention du GMEC.
-Mais le GMEC reste le meilleur point de commun. Nous allons donc y concentrer une part importante des comparaisons.
-
-Nous devons noter également que l'obtention du GMEC est théorique, en pratique nous n'avons pas de preuve que le code de l'algorithme exact que nous utilisons n'a pas de bogue. Cependant,nous mettons de côté cette éventualité et dans toute la suite GMEC désigne aussi bien le minimum global en énergie que le résultat de toulbar2 lorsqu'il se termine.  
-Le Monte-Carlo et le «Replica exchange» possèdent de nombreux paramètres de configuration, ce qui rend l'ensemble des protocoles possibles très grand. Se pose alors la question de l'optimisation du protocole. L'objectif fixé ici,n'est pas la recherche d'un protocole optimal pour chacun des tests, mais d'évaluer, avec les tests, un protocole optimisé par algorithme.
-Nous allons alors dans un premier temps, recherche les meilleurs paramétrages pour le Monte-Carlo et le «Replica Exchange» sur l'ensemble de tests «tout actif».
-Puis, sur la base des résultats obtenus, les protocoles seront fixés pour effectuer les comparaisons sur l'ensemble  «tout actif» et celui à «nombre d'actifs limité».
-Le programme toulbar2 possède aussi de nombreuses options. Deux paramétrages différents seront utilisés.
-
-Pour rendre les protocoles comparables, le temps d'exécution maximum est fixé à vingt-quatre heures pour tous les exécutions.
-Toulbar2 donne sa meilleure séquence/conformation en dernier, il n'y a donc pas post-traitement nécessaire.
-C'est également le cas pour le Monte-Carlo à condition de configurer l'impression de la trajectoire avec la balise $Print\_Threshold=0$. dans le fichier de configuration.
-Pour le "Replica Exchange" et l'heuristique, un tri des séquences selon l'énergie est nécessaire. Mais il n'y a pas beaucoup de séquences: 
-\begin{enumerate}
-\item L' Heuristique fournit une séquence/conformation à chaque cycle.
-\item Le "Replica Exchange avec $Print\_Threshold=0$ produit autant de fichiers de séquences/rotamères que de marcheurs.Chacun ne contenant pas plus de quelques dizaines de séquences/rotamères. 
- \end{enumerate}
-
-Nous pouvons donc négliger la durée du tri dans le temps total d'exécution.    
-
-\paragraph{Protocole heuristique}
-
-Pour l'algorithme heuristique, il n'y a dans notre situation qu'un seul paramètre à renseigner: le nombre de cycles à effectuer. Quelques essais préliminaires sur la plus grosse protéine (Table~\ref{tab:protéines}) avec toute les positions actives, montre que la version utilisée de proteus peut effectuer jusqu'à environ 110000 cycles sur nos machines de calculs en l'espace de vingt-quatre heures. Ainsi, le protocole H est défini comme le protocole qui utilise le mode heuristique de proteus et qui effectue cent dix mille cycles. Sont également définis les variantes H-, H+ et H++ comme des protocoles plus courts ou plus longs à facteur entier près (Table~\ref{tab:protoH}). Par ailleurs, certaines comparaisons de l'heuristique avec le Monte-Carlo ont été faites avec une version précédente du programme proteus.Ce protocole sera noté h. Il diffère aussi de H par le fait que l'option d'optimisation du compilateur Intel utilisé est -O2 contre -O3 pour H.    
-
-
-   \paragraph{Protocoles Monte-Carlo}
-\label{para:MC}
-On distingue deux ensembles de protocoles Monte-Carlo.Dans le premier, les noms  sont de la forme "mc*". Il rassemble les protocoles utilisés pour le paramétrage du Monte-Carlo.Le second est constitué des protocoles utilisés lors des comparaisons.     
-
-Les éléments à paramétrer pour l'algorithme Monte-Carlo sont les suivants:
-
-\begin{enumerate}
-\item la température
-\item le nombre de pas (avec le nombre de trajectoires et la longueur de trajectoire )
-\item Le seuil de voisinage
-\item Les probabilités de changements de la séquence/conformation
-\end{enumerate}
-
-Ce qui représente un ensemble de protocoles trop grand pour une approche exhaustive. Pour l'essentiel, nous allons faire varier les paramètres un par un, en prenant comme point de départ un protocole qui rend le comportement de marcheur Monte-Carlo «proche» de l'heuristique.
-
-La température est le paramètre principal du Monte-Carlo, c'est elle qui contrôle le taux d'acceptation du critère de Metropolis.Alors,la première étape de cette optimisation va consister à faire varier la température , entre 0.001 et 0.5 , en conservant les autres paramètres fixés (protocoles de mc0 à mc5).Le nombre de pas total effectué est le produit de deux paramètres, le nombre de trajectoires et la longueur de trajectoire. Les protocoles mc1b et mc2b testent l'effet d'une augmentation du nombre de pas. Tandis que mc2c et mc2d testent l'effet de la variation du nombre de trajectoires par rapport à la longueur.
-Le protocole mc2e s'intéresse aux probabilités de changement de la trajectoire. Il y a cinq balises dans proteus qui contrôle ces changements:
-
-\begin{description}
-\item[<Prot>] donne la probabilité de modifications de  rotamère à une position.
-\item[<Prot\_Prot>] donne la probabilité de modifications de  rotamère à deux positions.
-\item[<Mut>] donne la probabilité de modifications de type de résidu à une position.
-\item[<Mut\_Prot>] donne la probabilité de modifications de  rotamères à deux positions.
-\item[<Mut\_Mut>] donne la probabilité de modifications de type de résidu à deux positions.
-\end{description}
-
-La table~\ref{tab:protoMC} donne les probabilités utilisées par ces cinq paramètres dans l'ordre de la liste précédente. 
-
-Enfin, mc4b se distingue des autres par un seuil de voisinage plus grand ((Table~\ref{tab:protoMC})).
-
-   \paragraph{Protocoles "Replica Exchange"} 
-
-L'algorithme «Replica Exchange» (RE) est une extension du Monte-Carlo. Les paramètres d'un protocole RE sont ceux d'un protocole Monte-Carlo plus trois autres:
-
-\begin{itemize}
-\item le nombre de marcheurs
-\item la température pour chaque marcheur
-\item la période de «swap», c'est-à-dire la période (en nombre de pas) à laquelle le test de Hasting sur l'échange de température est effectué.
-\end{itemize}
-Pour avoir des exécutions en parallèle avec au plus un marcheur par coeur du processeur, nous limiter nos tests à quatre ou huit marcheurs.
-La distribution des températures est un élément déterminant dans le comportement des marcheurs, car c'est elle qui pilote en grande partie le taux d'acceptation des échanges de températures. Nous suivons l'idée proposée par Kofke de lui faire suivre une progression géométrique ( $ \frac{T_i}{T_{i+1}}=C $ , avec C une constante)~\citep{refRE1,refRE2,refRE3}. Ceci garantie alors que le taux d'acceptation d'échange entre $T_i et T_{i+1}$ soit égale pour tout nos i.De plus, nous souhaitons centrer approximativement, nos distributions sur la température ambiante (environ 0.6 kcal/mol). Dans toute la suite, les températures et les énergies sont exprimées en kcal/mol.
-
-Voici les températures pour le RE quatre marcheurs:
-
-\begin{itemize} 
-\item 10, 1, 0.1 et 0.01
-\item 2, 1, 0.5 et 0.25 
-\item 1, 0.5, 0.25 et 0.125
-\end{itemize} 
-
-,et celles pour le RE huit marcheurs:
-
-\begin{itemize} 
-\item 3 , 2 , 1.333 , 0.888 , 0.592 , 0.395 , 0.263 et 0.175 
-\item 10 , 3.16 , 1 , 0.316 , 0.1 , 0.0316 , 0.01 et 0.00316
-\end{itemize} 
-
-Ici les protocoles ne se font qu'avec une seule trajectoire par marcheur. Et la contrainte du temps de calcul se comprend comme vingt-quatre heures de calculs cumulées sur tous les marcheurs.
-Ainsi les longueurs de trajectoire sont définit pour le RE à quatre marcheurs comme le quart d'une trajectoire MC, pour le RE à huit marcheurs comme le huitième.
-
-
-\paragraph{Distribution des énergies en fonction des températures}
-
-Regardons plus en détail le comportement du programme pour l'algorithme "Replica Exchange". Notre implémentation de cet algorithme consiste à modifier la température de certains marcheurs à certains moments voir~\ref{???}.Pour examiner la trajectoire à une température donnée t ( c'est à dire le graphe dans l'espace les séquences/conformations selon les pas du marcheur lorsqu'ils sont à la température t), nous découpons les trajectoires des marcheurs  selon la température. Puis nous collons les segments de trajectoires de même température en respectant l'ordre des pas.Comme les changements de températures se font de façon synchrone , c’est-à-dire un échange entre deux marcheurs, nous obtenons autant de trajectoires selon la température qu'il y a de marcheurs et ces nouvelles trajectoires sont de mêmes longueurs que les trajectoires obtenues par proteus. La figure~\ref{graph:Distrib_E_T} représente la distribution en énergie des trajectoires selon la température sur le test utilisant le protocole RE8b1 sur la protéine 1A81. Nous observons une courbe en cloche pour chaque température, retrouvant ainsi l'allure d'une distribution de Boltzman.  L'espace de recouvrement entre deux courbes consécutives, représente la partie de la distribution dans laquelle les échanges de température vont être se concentrer, parce que cette zone recouvre les situations où la température peut augmente sans dégradation de l'énergie. En effet, le critère de Metropolis-Hasting peut accepter un réchauffement de marcheur (respectivement un refroidissement) si son énergie diminue  (respectivement, augmente) , mais uniquement avec une probabilité qui décroît exponentiellement en fonction de la différence d'énergie.À l'inverse si les recouvrements des distributions consécutives sont trop importants le marcheur peut difficilement s'éloigner de la plage d'énergie d'une température.Le graphique nous confirme que le choix d'une plage de température entre 3.0 et 0.175 pour les protocoles huit marcheurs rend possibles les échanges de températures et permet également l'exploration d'une vaste zone d'énergie.   
-
-
-
-
-   \begin{figure}[!htbp]
-     \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=12cm]{graphe/1A81_RE8b1.png} &
-     \end{tabular}
-     
-     \caption{Distribution des énergies selon la température (1A81 protocole RE8b1).}
-\label{graph:Distrib_E_T}
-   \end{figure}
-
-\paragraph{Trajectoires dans l'espace des températures}
-
-Un critère de performance souvent utilisé est la proportion de changements de températures effectivement acceptés. Pour examiner ces changements, nous représentons la trajectoire dans l'espace des températures pour quatre tests sur la protéine 1A81. Il s'agit des tests effectués avec deux protocoles à quatre marcheurs, le RE4a et le RE4b et deux protocoles à huit marcheurs, le RE8a2 et le REb1, voir figure~\ref{graph:TRAJ_T}.Les deux graphiques quatre marcheurs représentent seulement la moitié des trajectoires de 1,5 million de pas , tandis que les graphiques huit marcheurs représentent la totalité de trajectoires de 750 millions de pas.Comme prévu, le protocole RE4a , qui possède des températures plus écartées , brasse assez mal les températures. En particulier, le marcheur w4 ne quitte presque pas la température la plus froide, et ce malgré une période de swap assez faible et un nombre d'échanges effectifs assez important. On voit que pour RE4b, protocole avec les températures plus proches , la répartition des échanges est nettement plus uniforme. Le fait de double le nombre de températures pour le même intervalle que RE4a ne suffit pas à résoudre le problème et les trois marcheurs les plus froids en début de trajectoire pour le RE8a2 restent froids. Les bons résultats obtenus pour RE4b sont confirmés pour RE8b1 qui utilise également des températures proches.     
-
-
-   \begin{figure}[!htbp]
-     \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=8.45cm]{graphe/1A81-RE4a-T_traj.png} &
-       \includegraphics[width=8.45cm]{graphe/1A81-RE4b-T_traj.png} \\
-       \includegraphics[width=8.45cm]{graphe/1A81-RE8a2-T_traj.png} &
-       \includegraphics[width=8.45cm]{graphe/1A81-RE8b1-T_traj.png} \\
-     \end{tabular}
-     \caption{Variation de la température pendant la trajectoire de chaque marcheur (cas exemple de protocoles).}
-\label{graph:TRAJ_T}
-   \end{figure}
-
-
-   \paragraph{Protocoles Toulbar2} 
-\label{proto_toulbar2}
-
-Après avoir converti nos matrices au format «wcsp» grâce à un script dédié,nous pouvons utiliser toulbar2.
-Le protocole de recherche du GMEC est le suivant:
-L'exécutable toulbar2 de version 0.9.7.0 est lancé avec les options « -l=3 -m -d: -s», ce qui correspond au paramétrage conseillé dans la documentation CDP~\citep{reftoulbar1,reftoulbar2}. Si l'exécution se termine en moins de vingt-quatre heures, le protocole est achevé. Sinon le programme est arrêté et une seconde version (la 0.9.6.0) est lancée avec les options «-l=1 -dee=1 -m -d: -s». Au bout de vingt-quatre heures si le programme n'est pas terminé, il est arrêté. La dernière séquence/conformation imprimée en sortie est collectée. Le choix de la seconde version et du paramétrage fait suite à une discussion avec monsieur Seydou Traoré.  
-
-Toulbar2 offre également la possibilité de fournir la liste des séquences/conformations dont l'énergie est comprise entre celle qui correspond au GMEC, $E_{GMEC}$ et une autre $E_{upper\_bound}$ donnée en paramètre. Pour utiliser cette fonctionnalité nous utilisons le paramétrage:  «-d: -a -s -ub=$E_{upper\_bound}$ ».Cependant, il s'avère que cette utilisation peut utiliser une quantité de mémoire vive importante.Alors, pour eviter tout plantage de nos machines, la mémoire que toulbar2 peut allouer est limité à 30 Go.
-
-\subsection{Outils d'analyse des données} 
-   \paragraph{Superfamily/SCOP} 
-
-Superfamily~\citep{refSuperfamily} est un ensemble composé: 
-
-\begin{itemize}
-\item D'une base de données de modèles de Markov cachés, où chaque modèle représente une structure 3D d'un domaine de la classification SCOP.
-\item D'une série de scripts qui annotent à partir des informations de la base,les séquences données en entrée. Ici, nous utilisons uniquement l'association au modèle 3D le plus vraisemblable. 
-\end{itemize}
-
-Nous travaillons avec la base de données à la version 1.75, et en conjonction, nous utilisons SAM (version 3.5)~\citep{refSam} et HMMER (version 3.0)~\citep{refHmmer} recommandés par l'équipe de Superfamily. Le paramétrage utilisé est celui par défaut.
-
-\paragraph{Taux d'identité de séquences}
-
-Soient S et N deux séquences d'acides aminés de même longueur l.
-
-Le Taux d'identité $Id(S,N)$ de S par rapport N est égal au pourcentage de position où l'acide aminé est identique dans S et N. C'est-à-dire
-
-  $ Id(S,N) =\frac{\sum_{1<i<l} \mathds{1}(s_i,n_i)}{l} \times 100$ 
-
-avec $s_i$ et $n_i$ l'acide animé en i de S et de N respectivement, et $\mathds{1}(x,y)$ la fonction qui vaut 1 lorsque x=y et 0 sinon. 
-
-\paragraph{Taux d'identité par position}
-
-Le taux d'identité d'un alignement $A_S$ à la position i par rapport à une séquence N de même longueur se définit comme:
-
-$Id(A_{S},i) = \frac{\sum_{1<j<m} \mathds{1}(s_i^j,n_i)}{m} \times 100$ , avec m le nombre de séquences de $A_S$.
-
-\paragraph{Alignements Pfam} 
-Ce taux d'identité donne une mesure de la ressemblance entre un alignement et une séquence. Cela nous permet de comparer nos séquences calculées à la séquence native. Mais cela n'est pas notre seule objectif.Et nous voulons les évaluer par rapport à l'ensemble des séquences du domaine protéique de la native.  
-La base de données Pfam (Protein families database)~\citep{refPfam} regroupe les domaines protéiques connus en famille. Chaque famille étant représentée par des alignements multiples de séquences et des profiles de modèles de Markov cachés~\citep{refPfam}. Dans la suite, nous n'utiliserons l'alignement dit « seed» qui se base sur un petit ensemble de membres représentatifs de la famille et l'alignement « full» , plus large, qui est généré par modèle de Markov caché à partir de l'alignement «seed». Les alignements correspondent pour nous aux familles PF00017 (domaine SH2), PF00018  (domaine SH3) et PF00595 (domaine PDZ).
-
-\paragraph{Score BLOSUM}
-
-Pour tenir compte des ressemblances et des différences entre les acides aminés lors d'une substitution, nous avons besoin d'une matrice de coût.Nous utilisons la matrice BLOSUM62 (BLOcks SUbstitution Matrix)~\citep{refBLOSUM} qui est construite à partir de blocs d'alignement très conservés (ici plus de 62\% d'identités).Les fréquences des mutations y sont calculées.Le score BLOSUM d'une substitution est alors le logarithme de la fréquence de la mutation correspondante.À cela est ajouté un score de pénalités pour l'insertion d'un gap (c'est-à-dire un saut dans l'alignement).
-
-On définit alors simplement un score de similarité de deux séquences de même longueur comme la somme des scores BLOSUM62 sur toutes les positions. De même le score de similarité d'un alignement par rapport à une séquence sera défini comme la moyenne des scores de similarité sur ensemble des séquences de l'alignement. Et enfin un score de similarité de deux ensembles de séquences alignés entre eux comme la moyenne des scores de similarité du premier ensemble par rapport aux séquences du second.  
-
-\paragraph{similarité d'un ensemble à une famille Pfam}
-
-Afin de calculer un score de similarité d'un ensemble de nos séquences par rapport à une famille Pfam, il faut commencer par aligner nos séquences avec l'alignement de la famille.Pour cela nous utilisons le programme d'alignement BLAST~\citep{refBLAST}.Il implémente une heuristique qui recherche puis étend les meilleurs alignements locaux. Nous procédons comme suit:
-\begin{enumerate}
-\item La commande blastpgp est utilisée avec comme database (paramètre -d ) l'alignement Pfam et comme séquence en entrée ( paramètre -i ) la séquence native. 
-\item Dans la sortie blast, la séquence qui produit l'alignement le plus significatif avec la native est collectée, notons-la $S_0$. 
-\item L'alignement blast est alors utilisé pour positionner la native par rapport à $S_0$ et les gaps nécessaires pour aligner la native à $S_0$ sont ajoutés.
-\item Le positionnement et les gaps sont alors appliqués tels quels à la liste de nos séquences.
-
-\end{enumerate}
-
-
 
 
 \section{Outils d'analyse de séquences} 

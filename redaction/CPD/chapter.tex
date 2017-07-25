@@ -13,7 +13,7 @@ Une autre approche qui exploite la capacité de calculs des ordinateurs est appa
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=5cm]{graphe/proteus/CPD.png} &
+       \includegraphics[width=5cm]{figure/CPD.png} &
      \end{tabular}
      
      \caption{Le CPD pour \og \textbt{Computational Protein Design}\fg recherche les séquences d'acides aminés compatibles avec une protéine dont la structure 3D  est connue, c'est-à-dire compatibles avec un repliement et éventuellement une affinité à un ligand.}
@@ -362,7 +362,7 @@ la forme des $g_{ij}$ la plus communément utilisées est la forme paramétrique
 
 \begin{equation}
   \label{eq:GBg}
-  g_{ij}= \tau q_iq_j (r²_{ij} + b_ib_j exp(\frac{-r^2_{ij}}{4b_ib_j})^{-1/2} 
+  g_{ij}= \tau q_iq_j (r²_{ij} + b_ib_j exp(\frac{-r^2_{ij}}{4b_ib_j}))^{-1/2} 
 \end{equation}
 
 avec $b_i$ et $b_j$  , de nouveaux paramètres , que l'on nomme les rayons de solvatations de l'atome $i$ et $j$.
@@ -413,7 +413,7 @@ avec $r_i$ et $r_j$ les rotamères de la conformation C aux positions $i$ et $j$
 Le principe de la méthode du champ moyen est de substituer l'ensemble des interactions d'un rotamère $r_0$ avec les autres rotamères par une interaction unique moyenne. Pour calculer une interaction moyenne, la probabilité de Boltzmann est utilisée de la façon suivante, on note $P(r_{i})$ la probabilité que la chaîne latérale à la position $i$ soit dans le rotamère $r_i$, on a:
 \begin{equation}
   \label{eq:CM1}
-P(r_i) =\frac{\exp(-\beta E(r_{i})}{\sum_{l_i=1}^{N_i} \exp{-\beta E(l_i)}}
+P(r_i) =\frac{\exp(-\beta E(r_{i})}{\sum_{l_i=1}^{N_i} \exp(-\beta E(l_i))}}
 \end{equation}
 avec $N_i$ le nombre total de rotamères à la position $i$ , et $\beta = \frac{1}{RT}$,  $R$ étant la constante des gaz parfaits et $T$ la température.
 
@@ -461,7 +461,11 @@ E(c) = \sum_i E_i (r_i) + \sum_{i\neq j} E_{ij} (r_i, r_j)
 
 Le critère peut s'écrire:
 
-Si   $E_i(r_i) + \sum_{j\neq i} min_{r_j} E_{ij}(r_i,r_j) > E_i(r_i') + \sum_{j\neq i}^{N} max_{r_j}E_{ij}(r_i',r_j)$ , alors $r_i$ est éliminé. 
+Si
+
+$E_i(r_i) + \sum_{j\neq i} min_{r_j} E_{ij}(r_i,r_j) > E_i(r_i') + \sum_{j\neq i}^{N} max_{r_j}E_{ij}(r_i',r_j)$
+
+alors $r_i$ est éliminé. 
 
 avec, $N$ le nombre de positions .
 
@@ -477,7 +481,11 @@ avec, $N$ le nombre de positions .
 On a alors,
 
 
-si $E^{r_i,r_j} + \sum_{k=1}^N min_{r_k} (E_{ik}(r_i,r_k) + E_{jk}(r_j,r_k)) >  E^{r_i',r_j'} + \sum_{k=1}^N min_{r_k} (E_{ik}(r_i',r_k) + E_{jk}(r_j',r_k))$ , alors la paire $r_i$,$r_j$ est éliminé.
+si
+
+$E^{r_i,r_j} + \sum_{k=1}^N min_{r_k} (E_{ik}(r_i,r_k) + E_{jk}(r_j,r_k)) >  E^{r_i',r_j'} + \sum_{k=1}^N min_{r_k} (E_{ik}(r_i',r_k) + E_{jk}(r_j',r_k))$
+
+alors la paire $r_i$,$r_j$ est éliminé.
 
 L'élimination d'un couple $(r_i,r_j)$, n'exclut pas pour autant la présence de $r_i$ ou de $r_j$ dans la solution optimale. 
 
@@ -572,7 +580,7 @@ Il existe deux types de transformation:
 \item Le second type de transformation fait l'inverse, c'est à dire transfert un coût d'une fonction unaire vers les fonctions binaires impliquant la même valeur de variable. Une telle transformation permettant une augmentation du transfert total vers le coût constant.
 \end{itemize}
 
-Un exemple inspiré de la thèse de Seydou Traoré est présenté à  la figure \ref{fig:EPT} représente 6 CFNs équivalents. Il existe deux types de transformation la première appelée projection consiste à transférer un coût de l'ensemble des coûts unaires vers le coût constant $C_0$ , c'est la transition $A\arrow B$, des coûts binaires vers le coût constant $C_0$, (transition $B\arrow C$ ) ou encore des coût binaires vers les coûts unaires (transition $D\arrow E$). Le second type de transformation fait l'inverse, c'est à dire transfert un coût d'une fonction unaire vers les fonctions binaires impliquant la même valeur de variable transition $C \arrow D$. Une telle transformation permettant une augmentation du transfert total vers $C_0$ , CFN F.
+Un exemple inspiré de la thèse de Seydou Traoré est présenté à  la figure \ref{fig:EPT}.
 
 
 
@@ -590,7 +598,7 @@ Un exemple inspiré de la thèse de Seydou Traoré est présenté à  la figure 
 
 Cette approche a montré sa supériorité , avec l'outil toulbar2 (\cite{Allouche14},\cite{Traoré13}), par rapport à un ensemble de résolveurs de CFN parmi les plus réputés actuellement qui exploitent notamment l'approche DEE/A* ou le backtracking. toulbar2 en combinant FFBB, EPT et DEE a était capable de trouver le GMEC dans le plus grand nombre de problèmes issu du CPD, proposés aux différents outils.
 \subsection{L'heuristique Multistart Steepest Descent (MSD)}
-
+\label{MSD}
 En 2000, Wernisch, Hery et Wodak  (\cite{Wernisch00}) partent du constat que l'espace des phases et les fonctions d'énergies qu'il est possible d'utiliser ne capturent que partiellement la réalité des protéines in vivo. Ainsi, d'une part, le GMEC ne correspond par forcement à la séquence la plus stable. D'autre part, il est bien connu que des protéines homologues éloignées avec des taux d'identité à moins de $50\%$ peuvent conserver quasiment la même structure 3D. Ce qui révèle l'immensité des séquences-conformations compatibles à un pli.
 
 Ainsi, leur objectif n'est pas de résoudre un problème d'optimisation, mais d'exhiber un ensemble de séquences de basse énergie. Ils proposent alors une heuristique conçue pour le CPD. Il s'agit d'une procédure simple qui a pour objectif de produire très facilement une grande quantité de séquences-conformations de basse énergie, sans se focaliser sur l'optimum.
@@ -628,7 +636,7 @@ Le schéma général du déroulement est le suivant. Une population de séquence
 \begin{figure}[!htbp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=4cm]{figure/algo_genetique.png} \\
+    \includegraphics[width=6cm]{figure/algo_genetique.png} \\
   \end{tabular}
   \caption{L'algorithme génétique}
   \label{fig:algo_gene}
@@ -647,7 +655,7 @@ Dans son acceptation la plus générale, un algorithme Monte-Carlo est un algori
 Parmi les algorithmes Monte-Carlo, les algorithmes Monte-Carlo par Chaînes de Markov (MCMC) ont été particulièrement étudiés.
 Ce ne sont pas des algorithmes d'optimisation, mais des algorithmes d'échantillonnage d'une distribution de probabilité $\pi$: On veut générer des éléments $x_i$ de l'espace des phases tels que la distribution que constitue $D=\{x_i, i \in T \natural \}$ converge vers $\pi$.
 
-Il existe plusieurs méthodes pour répondre à cette question, mais les MCMC sont bien adaptés dans les situations où l'espace des états est de grande dimension. Un autre avantage des algorithmes MCMC est qu'elles ne nécessitent pas la connaissance de la constante de normalisation de \pi. Cela constitue un attrait important parce que dans beaucoup de situations cette constante de normalisation est particulièrement difficile à calculer. Pour ces raisons, l'échantillonnage par MCMC est très populaire depuis plus de cinquante ans.
+Il existe plusieurs méthodes pour répondre à cette question, mais les MCMC sont bien adaptés dans les situations où l'espace des états est de grande dimension. Un autre avantage des algorithmes MCMC est qu'elles ne nécessitent pas la connaissance de la constante de normalisation de $\pi$. Cela constitue un attrait important parce que dans beaucoup de situations cette constante de normalisation est particulièrement difficile à calculer. Pour ces raisons, l'échantillonnage par MCMC est très populaire depuis plus de cinquante ans.
 
 Dans la suite, nous donnons des conditions suffisantes pour que ce type l'algorithme converge dans le cadre d'un espace d'état $E$ fini, puis nous détaillons le plus célèbre d'entre eux, l'algorithme de Metropolis-Hasting.
 
@@ -731,7 +739,7 @@ Une chaîne ergodique converge vers son unique distribution stationnaire.
 Nous pouvons maintenant décrire l'algorithme de Metropolis-Hastings. L'idée initiale de Metropolis a été de construire un l'algorithme qui échantillonne la distribution de Boltzmann. Elle donne la probabilité d'un état $x_i$ du système en fonction son énergie et de la température:
 
 \begin{equation}
-\pi^B(i) = fraq{1}{\sum_{j \in E}\exp(frac{E_j}{kT})} \exp(frac{E_j}{kT})
+\pi^B(i) = \fraq{1}{\sum_{j \in E}\exp(\frac{E_j}{kT})} \exp(\frac{E_i}{kT})
 \end{equation}
 
 avec $E_{x_i}$  l'énergie de $x_i$, $T$ la température et $k$ la constante de Boltzmann. La constante de normalisation de la probabilité s'appelle la fonction de partition du système. Elle est particulièrement difficile à calculer.
@@ -760,26 +768,26 @@ ce que équivaut à
 
 \begin{equation}
   \label{fraq_Metropolis}
-\fraq{acc(j|i)}{acc(i|j)} =\frac{\pi^B(j)}{\pi^B(i)} = \fraq{-\exp(E_j/kT)}{\exp(E_i/kT)} = \exp(-\delta E/kT) 
+\frac{acc(j|i)}{acc(i|j)} =\frac{\pi^B(j)}{\pi^B(i)} = \frac{-\exp(E_j/kT)}{\exp(E_i/kT)} = \exp(-\Delta E/kT) 
 \end{equation}
 
-avec $\delta E =  E_j - E_i$.
+avec $\Delta E =  E_j - E_i$.
 
 Ainsi,le calcul de la fonction de partition est évité!
 
 Métropolis propose alors la probabilité d'acceptation suivante:
 
 
-si $\delta E >0$
+si $\Delta E >0$
 
-alors $acc(i|j) = \exp(- \delta E/kT)$
+alors $acc(i|j) = \exp(- \Delta E/kT)$
 sinon
 
 $acc(i|j)=1$
 
-On voit que, si $\delta E >0$ alors $acc(j|i)=1$ , et donc  on a bien:
+On voit que, si $\Delta E >0$ alors $acc(j|i)=1$ , et donc  on a bien:
 \begin{equation}
-\forall i,j \in E ,\fraq{acc(j|i)}{acc(i|j)} = \exp(\delta E/kT)
+\forall i,j \in E ,\frac{acc(j|i)}{acc(i|j)} = \exp(\Delta E/kT)
 \end{equation}
 
 Il suffit alors de choisir une probabilité de sélection symétrique et ne violant pas \ref{crit_ergo} pour obtenir notre convergence.
@@ -850,27 +858,29 @@ Pour que $X$ respecte la balance détaillée, il est nécessaire d'utiliser ce n
 Comme les répliques sont sans interactions, la distribution cible de la chaîne de Markov est égale aux produits des distributions cibles aux différentes températures:
 
 \begin{equation}
-\pi^B((x^1,...,x^n))=\fraq{1}{Z}\exp(-\sum_{i=1}^N E_{x^i}/kT^i)
+\pi^B((x^1,...,x^n))=\frac{1}{Z} \exp(-\sum_{i=1}^N \frac{E_{x^i}}{kT^i})
 \end{equation}
 
 
 En injectant cette expression de $\pi^B$ et ~\ref{REMC_move} dans ~\ref{frac_Metropolis} on a:
 
 
-\begin{equation}
-  \label{fraq_swap}
 
-\fraq{acc_{swap}(X_{t+1}|X_t}{acc_{swap}(X_t|X_{t+1})} =\frac{\pi^B(X_t)}{\pi^B(X_{t+1})} = \fraq{-\exp(E_{x^j}/kT^i) -\exp(E_{x^i}/kT^j)}{-\exp(E_{x^i}/kT^i) -\exp(E_{x^j}/kT^j)} = \exp(-\Delta) 
+\begin{equation}
+\frac{acc_{swap}(X_{t+1}|X_t)}{acc_{swap}(X_t|X_{t+1})} =\frac{\pi^B(X_t)}{\pi^B(X_{t+1})}  = \frac{ -\exp(\frac{E_{x^j}}{kT^i}) -\exp(\frac{E_{x^i}}{kT^j})}{-\exp(\frac{E_{x^i}}{kT^i}) -\exp(\frac{E_{x^j}}{kT^j})} = \exp(-\Delta) 
 \end{equation}
 
+
 avec $\Delta = (\frac{1}{kT^i} -\frac{1}{kT^j})(E_{x^i} - E_{x^j})$
+
 
 Ceci peut être satisfait par le critère de Metropolis:
 
 si
-$\delta E >0$
+$\Delta >0$
 alors
-$acc_{swap} (X_{t+1}|X_t} = \exp(- \delta)$
+
+$acc_{swap} (X_{t+1}|X_t} = \exp(- \Delta)$
 sinon 
 $acc_{swap} (X_{t+1}|X_t} = 1$
 
@@ -894,7 +904,6 @@ la probabilité d'acceptation suivante est calculée acc=... \;
 
 
 Il reste au simulateur à adapter le nombre de répliques, les températures utilisées et la fréquence des tentatives d'échange à sa problématique. La capacité de REMC à être exécuté sur des machines parallèles à entrainer sa grande popularité, en particulier dans le domaine de la modélisation moléculaire, mais aussi en physique, chimie, intelligence artificielle, etc.
-
 
 %%% Local Variables:
 %%% mode: latex
