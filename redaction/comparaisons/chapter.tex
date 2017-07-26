@@ -1,9 +1,8 @@
-\chapter{Comparing stochastic search algorithms for computational protein design}
+\chapter{Comparing three stochastic search algorithms for CPD}
 \label{chap:Comparaison}
 
 
-Ce chapitre reprend l'article publié dans \og Journal of Chemical Theory and Computation\fg (~\ref{...}).
-
+Ce chapitre reprend l'article publié dans \og Journal of Chemical Theory and Computation\fg (\ref{Mignon16}).
 
 
 \subsection*{Abstract}
@@ -357,7 +356,8 @@ between methods. Table \ref{tab:quality} summarizes results for our 9 test prote
 positions were allowed to change types. All mutations were allowed, except mutations to/from Gly and Pro, since these
 are likely to change the backbone structure.
 
-    \begin{figure}[!htbp]
+\begin{figure}[!htbp]
+  \centering
       \begin{tabular}{c}
         \includegraphics[width=16cm]{align0.png} 
       \end{tabular}
@@ -368,7 +368,7 @@ experimental sequences. Positions shown correspond to the hydrophobic core of ea
 protein; residue numbers are indicated (PDB numbering).
 }
       \label{fig:logos}
-    \end{figure}
+\end{figure}
 
 
 
@@ -406,8 +406,8 @@ For the same PDZ domain, the lowest energy sequence/structure combination is sho
     \begin{figure}[!htbp]
       \centering
       \begin{tabular}{c}
-        \includegraphics[width=16cm]{1ABO_core_simil_byseq.png} \\
-        \includegraphics[width=16cm]{1BM2_core_simil_byseq.png} \\
+        \includegraphics[width=10cm]{1ABO_core_simil_byseq.png} \\
+        \includegraphics[width=10cm]{1BM2_core_simil_byseq.png} \\
       \end{tabular}
       \caption[width=1cm]{\small 
 Histogram of Blosum40 similarity scores to Pfam sequences for the core region of two
@@ -520,7 +520,7 @@ and the REMCd replica exchange protocol, which are generally good but not necess
 
 \subsubsection{Optimal sequences/structures with up to 10 designed positions}
 As our first series of tests, we did calculations for each test protein with zero, one, or five designed positions.
-Results are summarized in Fig.\ \ref{fig:errors}. With zero positions, only rotamers are optimized (at all positions
+Results are summarized in Fig.\ \ref{fig:delta}. With zero positions, only rotamers are optimized (at all positions
 in the protein). With one, we systematically designed each position of each protein in turn (plus rotamers at all
 positions). With 5, we picked the positions randomly, close together in the structure, in 5 different ways, for a
 total of 45 tests. Two positions were considered close by if they have at least one rotamer combination that gives
@@ -532,7 +532,7 @@ As a second series of tests, we chose randomly for each protein a set of ten pos
 had fixed types but explored all possible rotamers. The selected positions were close by in the protein structure. For
 each protein, we made five separate choices of positions to design, for a total of 45 test cases. The CFN, heuristic,
 and MC methods were run for all 45 cases; REMC was run only when MC gave a poor result (6 cases, involving 5 proteins).
-Results are summarized in Fig.\ \ref{fig:errors} and Table \ref{tab:10act}. 20 cases where all methods found the GMEC
+Results are summarized in Fig.\ \ref{fig:delta} and Table \ref{tab:10act}. 20 cases where all methods found the GMEC
 are not listed in the Table, leaving 25 where at least one method did not find the GMEC. CFN performed very well: only
 in one case did it not find the GMEC. The lowest energy was sampled in this case with the heuristic, and the best CFN
 energy was 5.7 kcal/mol higher (despite using the more aggressive CFN protocol). 

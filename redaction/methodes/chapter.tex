@@ -133,7 +133,6 @@ Comme les rayons de solvatation d'un résidu sont eux-mêmes des sommes sur les 
 
 Proteus utlise d'une part un backbone fixe, une espace discrét de rotamère et une fonction d'énergie décomposable par paires. Ces trois élèments permettent de pré-calculer toutes les énergies interactions possibles. A cet ensemble d'interactions, il faut ajouter les interactions des résidues avec le backbone ceci pour chacun des rotamères possibles, pour constituer un ensemble complet de valeur énergétiques qui permet d'obtenir la valeur de la fonction d'énergie pour chaque sequence/conformation. Cet ensemble peut être organisée sans le format d'une matrice symétrique dans laquelle chaque couple de position dans la chaîne polypeptidique, apparait avec sa multiplicité de couples de rotamères possibles voir ~\ref{Graph:mat_ener}.      
 
-Le calcul de la matrice d'énergie, sont executer à l'aide du programme X-plor \cite{Brünger92}; il se déroule de la façon suivante:
 
    \begin{figure}[!htbp]
      \centering
@@ -160,7 +159,12 @@ Ces énergies sont prises en entrée dans Proteus, et donc sa détermination ne 
 
 \subsection{Déroulemement de la construction de la matrice}
 \label{sub:matrix}
-Le déroulement de la construction de la matrice s'effectue de la suivante.
+
+Dans la suite, on appelle \og position active \fg, une position pour laquelle, tous les types d'acides et tous les rotamères de chaque type d'acide aminé sont autorisés, au court de la recherche de proteus.
+
+Lorsqu'une position n'est pas active, l'acide aminé de la position est fixé en utilisant l'acide aminé de la séquence native. Si la chaîne latérale n'est pas fixé on dit que la position est \og non-active\fg. Si la position n'est pas active et qu'en plus la chaîne latérale est fixé on dit que la position est gelée.
+
+Le calcul de la matrice d'énergie, sont executer à l'aide du programme X-plor \cite{Brünger92}. il se déroule de la façon suivante:
 A partir d'un fichier PDB, une série de script XPLOR va préparer le système. Il peut contenir un ligand.
 
 \begin{enumerate}
@@ -235,7 +239,7 @@ Pour controler les déplacements des marcheurs, il existe
 \item une balise qui definit un voisinnage de la première position modifié dans lequel sera choisi une autre position pour une seconde modification.
 \end{itemize}
 Un voisinnage dans la séquence-conformation se définit de la façon suivante:
-
+\label{\ref{para:voisin}}
 Deux positions $p_i$ et $p_j$ sont voisines s'il existe un rotamère $r_P_i$ de $p_i$ et un rotamère $r_p_j$ de $p_j$ tels que:
 \begin{displaymath}
  | E(r_P_i_,r_p_j) | > S_{vois}
@@ -362,92 +366,6 @@ Proteus permet ce type de décomposition du $\Delta \Delta G$ et autorise une po
 \label{graph:struct_Phy}
    \end{figure}
    
-
-\section{Description des tests de comparaisons d'algorithme} 
-\label{sec:methodes_pratiques}
-Nous cherchons maintenant à déterminer les performances et les qualités des différents algorithmes de proteus.
-Pour évaluer les différents algorithmes de proteus, comme pour leur établir un paramétrage, nous effectuons des séries de tests. 
-Grâce à l'algorithme de type toulbar2 il est possible d'obtenir la séquence/conformation qui possède la plus haute énergie de dépliement. Cela constitue une information important qui va nous servir d'élément de comparaison.Le facteur temps est également un élément déterminant. Il est dans certain cas limitant, nous ne savons pas à l'avance quand toulbar2 termine. Et il apparaît d'emblée illusoire d'espérer voir ce programme converger dans toutes les situations intéressantes dans un temps raisonnable.D'autres métriques qui caractérisent les séquences d'acides aminés de meilleurs énergies obtenues seront également utilisées pour les évaluations et pour les paramétrages.   
-
-Dans la suite, on appelle «position active», une position pour laquelle, tous les types d'acides et tous les rotamères de chaque type d'acide aminé sont autorisés, au court de la recherche de proteus. On désigne «séquence/conformation» une séquence d'acides aminés munie à chaque position d'un rotamère (le backbone étant de toute façon fixé).Tandis ce que le terme simple «séquence»  sans plus de précision désigne une séquence d'acides aminés.
-
-
-\subsection{Sélection des positions}
-
-Nous cherchons à déterminer les performances et les qualités des différents algorithmes d'exploration de proteus.
-Pour évaluer les différents algorithmes, comme pour leur établir un paramétrage, nous effectuons des séries de tests. 
-Grâce à l'algorithme de type toulbar2 il est possible d'obtenir la séquence/conformation qui possède la plus haute énergie de dépliement. Cela constitue une information important qui va nous servir d'élément de comparaison.Le facteur temps est également un élément déterminant. Il est dans certain cas limitant, nous ne savons pas à l'avance quand toulbar2 termine. Et il apparaît d'emblée illusoire d'espérer voir ce programme converger dans toutes les situations intéressantes dans un temps raisonnable.D'autres métriques qui caractérisent les séquences d'acides aminés de meilleurs énergies obtenues seront également utilisées pour les évaluations et pour les paramétrages.   
-
-Dans la suite, on appelle «position active», une position pour laquelle, tous les types d'acides et tous les rotamères de chaque type d'acide aminé sont autorisés, au court de la recherche de proteus. On désigne «séquence/conformation» une séquence d'acides aminés munie à chaque position d'un rotamère (le backbone étant de toute façon fixé).Tandis ce que le terme simple «séquence»  sans plus de précision désigne une séquence d'acides aminés.
-
-\label{sec:description_tests}
-Les tests sont répartis en deux ensembles:
-\begin{enumerate}
-\item un ensemble de tests où toutes les positions de la séquence sont actives (cela correspond aux situations de design complet de protéines) 
-\item un ensemble de tests où le nombre de positions actives est gardé sous contrôle de façon à maîtriser la taille de l'espace d'exploration
-\end{enumerate}
-
-
-\paragraph{Ensemble «Tout actif»}
-\label{methode_TTactif}
-Pour le premier ensemble de tests,la totalité de la matrice d'énergie est exploitée et pour chaque position l'espace d'exploration correspond à l'espace d'état déclaré dans le fichier ".bb".C'est-à-dire que tous les types de résidu et tous les rotamères sont possibles à chaque position.
-Comme l'espace des séquences/conformations à explorer est gigantesque, nous ne faisons pas de tentatives de recherche du GMEC  par méthode exacte. 
-
-Nous effectuons des recherches avec les algorithmes suivants:
-
-\begin{itemize}
-\item heuristique, noté H par la suite;
-\item Monte-Carlo, noté MC;
-\item «Replica Exchange», noté RE);
-\end{itemize}
-
-
-\paragraph{L'ensemble «nombre d'actifs limité»}
-
-L'ensemble «Nombre d'actifs limité» est composé de six groupes de tests avec un nombre de positions actives fixe définit de la façon suivante:  
-
-
-\begin{enumerate}
-\item aucune position active
-\item une position active 
-\item cinq positions 
-\item dix  positions 
-\item vingt positions 
-\item trente positions 
-\end{enumerate}
-
-Lorsqu'une position n'est pas active,l'acide aminé de la position est fixé en utilisant l'acide aminé de la séquence native. La chaîne latérale est, elle, laissée libre. Il n'y a donc jamais dans nos tests de position où l'état est complètement fixé.
-
-Le groupe «aucune position active» n'est constitué que d'un test par algorithme pour chaque protéine. Il y a donc neuf tests par algorithme.
-Ce sont les tests pendant lesquels la séquence d'acides aminés est fixe et correspond à la séquence native de la protéine.
-
-Pour les tests avec une seule position active, comme des temps de calcul le permettent, nous décidons d'être exhaustifs:
-Toutes les positions sont testées, il y a alors huit cent quatre tests par algorithme.
-Pour tous les autres groupes de tests (cinq,dix,vingt et trente positions actives), cinq tests sont effectués par protéine, c'est-à-dire quarante-cinq tests par algorithme.
-
-\paragraph{le choix des positions actives}
-\label{para:choix_posi}
-Pour définir complètement les tests, il reste maintenant à décrire le choix des positions actives pour les groupes de numéro trois jusqu'à six.
-Il y a peu d'intérêt à tester des situations avec des positions actives sans interaction entre-elles.
-En effet, s'il existe une position active P dont chaque résidu est sans interaction avec tous les résidus possibles des autres positions actives, déterminer le meilleur état pour P est proche du test du groupe 2 avec P comme position active. Toutefois, cela n'est pas exactement la même question, parce que les positions actives différentes de P peuvent influencer la position de la chaîne latérale de positions inactives qui à leur tour peuvent influencer l'état de P.
-Ainsi, le choix des positions actives ne se fait non pas par tirage aléatoire, car le risque d'obtenir des positions avec peu d'interactions est trop grand. Il se fait sous contrainte d'interaction.
-
-\paragraph{positions en interactions}
-Pour cela, nous utilisons la notion de voisinage de proteus. Elle se définit de la façon suivante:  
-Deux positions P et Q sont en interactions s'il existe un rotamère $r_P$ de P et un rotamère $r_Q$ de Q tels que:
-\begin{displaymath}
- | E(r_P,r_Q) | > S_{Vois}
-\end{displaymath} 
-avec $S_{Vois}$ un seuil donné par l'utilisateur à la configuration de proteus (voir chap. ?? pour les détails).
-
-Alors on appelle «n-uplet en interaction» la donnée de n positions avec $n \in \{5,10,20,30\}$ et d'un seuil  $S_{Vois}$  tels que pour toute paire de positions (P,Q) du n-uplet, P et Q sont en interactions.
-\paragraph{choix des  positions actives}
-Pour définir les positions actives,nous exécutons proteus en mode verbeux, sans effectuer d'optimisation.Pour cela,
-il existe plusieurs façons de procéder, ici nous utilisons le mode Monte-Carlo avec une trajectoire de zéro pas. Ces exécutions produisent en sortie standard la liste des voisins pour chaque position au seuil donnée en paramètre.
-Pour chacune des neuf protéines, nous exécutons proteus avec $S_{Vois}$ égal à dix, cinq et un à tour de rôle; trois listes de voisins sont obtenues. 
-Ensuite,un script dédié recherche dans ces listes, les n-uplets en interaction, en partant de la liste de voisins au sens le plus fort, c'est-à-dire dix, vers celle  au sens le plus faible ($0.1$).La recherche s'arrête lorsque cinq n-uplets au moins sont trouvés.
-
-Nous obtenons quarante-cinq n-uplets pour le groupe à cinq (respectivement dix, vingt et trente ) positions actives pour un seuil $S_{Vois}$ égal à dix (respectivement dix, un et un). Les positions actives de tous les tests sont en annexe~\ref{chap:annexe1 }).Pour chaque n-uplet, un fichier de configuration de proteus est créé dans lequel la balise <Space\_Constraints> fixe les positions inactives en utilisant le type d'acide aminé présent dans la séquence native. 
 
 
 \section{Outils d'analyse de séquences} 

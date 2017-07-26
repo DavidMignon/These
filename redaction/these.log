@@ -1,9 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.14)  25 JUL 2017 22:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.6.23)  26 JUL 2017 10:14
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**\input these.tex
+**\nonstopmode\input these.tex
 (./these.tex (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo
@@ -946,6 +945,9 @@ LaTeX Warning: Label `graph:struct_Phy' multiply defined.
 LaTeX Warning: Label `graph:struct_Phy' multiply defined.
 
 
+LaTeX Warning: Label `graph:struct_Phy' multiply defined.
+
+
 LaTeX Warning: Label `eq:entropy' multiply defined.
 
 ) (./developpements/chapter.aux) (./comparaisons/chapter.aux
@@ -985,8 +987,8 @@ LaTeX Warning: Label `logo:corePDZ' multiply defined.
 
 ) (./conc.aux) (./annexe_posi.aux) (./resume.aux)
 
-./these.aux:124: Package natbib Error: Bibliography not compatible with author-
-year citations.
+! Package natbib Error: Bibliography not compatible with author-year citations.
+
 (natbib)                Press <return> to continue in numerical citation style.
 
 
@@ -994,7 +996,7 @@ See the natbib package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.124 ...and\NAT@force@numbers{}\NAT@force@numbers
+l.127 ...and\NAT@force@numbers{}\NAT@force@numbers
                                                   
 Check the bibliography entries for non-compliant syntax,
 or select author-year BibTeX style, e.g. plainnat
@@ -1224,11 +1226,11 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [9
 
 
-] [10] [11])
+] [10] [11] [12])
 \tf@lof=\write5
 \openout5 = `these.lof'.
 
- [12] [13] [14
+ [13] [14
 
 ] (./these.lot [15
 
@@ -1249,7 +1251,7 @@ Underfull \hbox (badness 6412) in paragraph at lines 12--13
 []\T1/lmr/m/n/12 (+20) Coulomb Ac-ces-sible Sur-face
  []
 
-./glossaire.tex:26: Undefined control sequence.
+! Undefined control sequence.
 <recently read> \Beta 
                       
 l.26 \item [$\Beta $]
@@ -1296,14 +1298,14 @@ Package natbib Warning: Author undefined for citation`Aguilar11'
 
  (./CPD/chapter.tex
 Chapitre 1.
-<./CPD/figure/CPD.png, id=1047, 433.25865pt x 645.73245pt>
+<./CPD/figure/CPD.png, id=1049, 433.25865pt x 645.73245pt>
 File: ./CPD/figure/CPD.png Graphic file (type png)
 
 <use ./CPD/figure/CPD.png>
 Package pdftex.def Info: ./CPD/figure/CPD.png used on input line 16.
 (pdftex.def)             Requested size: 142.26378pt x 212.02823pt.
 
-./CPD/chapter.tex:16: Extra alignment tab has been changed to \cr.
+! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
 l.16 ...cludegraphics[width=5cm]{figure/CPD.png} &
@@ -1312,7 +1314,7 @@ You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
-./CPD/chapter.tex:19: Undefined control sequence.
+! Undefined control sequence.
 <argument> ...gnorespaces Le CPD pour \og \textbt 
                                                   {Computational Protein Des...
 l.19 ...ventuellement une affinité à un ligand.}
@@ -1323,7 +1325,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./CPD/chapter.tex:19: Undefined control sequence.
+! Undefined control sequence.
 <argument> Le CPD pour \og \textbt 
                                    {Computational Protein Design}\fg recherc...
 l.19 ...ventuellement une affinité à un ligand.}
@@ -1334,7 +1336,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./CPD/chapter.tex:19: Undefined control sequence.
+! Undefined control sequence.
 <argument> Le CPD pour \og \textbt 
                                    {Computational Protein Design}\fg recherc...
 l.19 ...ventuellement une affinité à un ligand.}
@@ -1345,7 +1347,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./CPD/chapter.tex:26: Undefined control sequence.
+! Undefined control sequence.
 <recently read> \textbt 
                         
 l.26 \item \textbt
@@ -1356,7 +1358,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./CPD/chapter.tex:29: Undefined control sequence.
+! Undefined control sequence.
 <recently read> \textbt 
                         
 l.29 \item \textbt
@@ -1372,7 +1374,7 @@ and I'll forget about whatever was undefined.
 
 
 ]
-./CPD/chapter.tex:32: Undefined control sequence.
+! Undefined control sequence.
 <recently read> \textbt 
                         
 l.32 \item \textbt
@@ -1475,7 +1477,7 @@ LaTeX Warning: Command \` invalid in math mode on input line 114.
 LaTeX Warning: Command \` invalid in math mode on input line 129.
 
 
-./CPD/chapter.tex:131: LaTeX Error: Bad math environment delimiter.
+! LaTeX Error: Bad math environment delimiter.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -1487,28 +1489,28 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[10] <./CPD/figure/liaison.png, id=1098, 522.45187pt x 310.91156pt>
+[10] <./CPD/figure/liaison.png, id=1100, 522.45187pt x 310.91156pt>
 File: ./CPD/figure/liaison.png Graphic file (type png)
 
 <use ./CPD/figure/liaison.png>
 Package pdftex.def Info: ./CPD/figure/liaison.png used on input line 146.
 (pdftex.def)             Requested size: 113.81102pt x 67.72708pt.
 
-<./CPD/figure/angle.png, id=1099, 528.47438pt x 462.22687pt>
+<./CPD/figure/angle.png, id=1101, 528.47438pt x 462.22687pt>
 File: ./CPD/figure/angle.png Graphic file (type png)
 
 <use ./CPD/figure/angle.png>
 Package pdftex.def Info: ./CPD/figure/angle.png used on input line 147.
 (pdftex.def)             Requested size: 113.81102pt x 99.53905pt.
 
-<./CPD/figure/dihedre.png, id=1100, 1014.79124pt x 1020.81375pt>
+<./CPD/figure/dihedre.png, id=1102, 1014.79124pt x 1020.81375pt>
 File: ./CPD/figure/dihedre.png Graphic file (type png)
 
 <use ./CPD/figure/dihedre.png>
 Package pdftex.def Info: ./CPD/figure/dihedre.png used on input line 148.
 (pdftex.def)             Requested size: 113.81102pt x 114.48611pt.
 
-<./CPD/figure/impropre.png, id=1101, 1005.7575pt x 635.37375pt>
+<./CPD/figure/impropre.png, id=1103, 1005.7575pt x 635.37375pt>
 File: ./CPD/figure/impropre.png Graphic file (type png)
 
 <use ./CPD/figure/impropre.png>
@@ -1529,14 +1531,14 @@ LaTeX Warning: Reference `Pokala05' on page 12 undefined on input line 184.
 
 LaTeX Warning: Reference `Korkut09' on page 12 undefined on input line 184.
 
-[12] [13] [14] <./CPD/figure/surface.png, id=1136, 939.51pt x 309.3156pt>
+[12] [13] [14] <./CPD/figure/surface.png, id=1138, 939.51pt x 309.3156pt>
 File: ./CPD/figure/surface.png Graphic file (type png)
 
 <use ./CPD/figure/surface.png>
 Package pdftex.def Info: ./CPD/figure/surface.png used on input line 248.
 (pdftex.def)             Requested size: 341.43306pt x 112.41075pt.
 
-./CPD/chapter.tex:248: Extra alignment tab has been changed to \cr.
+! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
 l.248 ...raphics[width=12cm]{figure/surface.png} &
@@ -1545,7 +1547,7 @@ You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
-./CPD/chapter.tex:260: Undefined control sequence.
+! Undefined control sequence.
 l.260 On a  alors, en utilisant le modèle \texblt
                                                   {SA} pour le terme surfaci...
 The control sequence at the end of the top line
@@ -1558,14 +1560,14 @@ and I'll forget about whatever was undefined.
 LaTeX Warning: Reference `Wesson92' on page 15 undefined on input line 274.
 
 [15 <./CPD/figure/surface.png>]
-<./CPD/figure/ecrantage.png, id=1146, 284.481pt x 280.539pt>
+<./CPD/figure/ecrantage.png, id=1148, 284.481pt x 280.539pt>
 File: ./CPD/figure/ecrantage.png Graphic file (type png)
 
 <use ./CPD/figure/ecrantage.png>
 Package pdftex.def Info: ./CPD/figure/ecrantage.png used on input line 280.
 (pdftex.def)             Requested size: 170.71652pt x 168.35464pt.
 
-./CPD/chapter.tex:280: Extra alignment tab has been changed to \cr.
+! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
 l.280 ...aphics[width=6cm]{figure/ecrantage.png} &
@@ -1589,7 +1591,7 @@ LaTeX Warning: Reference `Still90' on page 17 undefined on input line 334.
 
 [17]
 
-./CPD/chapter.tex:365: Package inputenc Error: Unicode char ² (U+B2)
+! Package inputenc Error: Unicode char ² (U+B2)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -1603,14 +1605,14 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<./CPD/figure/rayon_Born.png, id=1163, 496.10344pt x 606.76688pt>
+<./CPD/figure/rayon_Born.png, id=1165, 496.10344pt x 606.76688pt>
 File: ./CPD/figure/rayon_Born.png Graphic file (type png)
 
 <use ./CPD/figure/rayon_Born.png>
 Package pdftex.def Info: ./CPD/figure/rayon_Born.png used on input line 376.
 (pdftex.def)             Requested size: 170.71652pt x 208.7978pt.
 
-./CPD/chapter.tex:376: Extra alignment tab has been changed to \cr.
+! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
 l.376 ...phics[width=6cm]{figure/rayon_Born.png} &
@@ -1638,7 +1640,7 @@ LaTeX Warning: Reference `Gaillard14' on page 19 undefined on input line 387.
 
 LaTeX Warning: Reference `Perry12' on page 20 undefined on input line 399.
 
-./CPD/chapter.tex:416: Extra }, or forgotten $.
+! Extra }, or forgotten $.
 l.416 ...{\sum_{l_i=1}^{N_i} \exp(-\beta E(l_i))}}
                                                   
 I've deleted a group-closing symbol because it seems to be
@@ -1648,18 +1650,18 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 [20]
-./CPD/chapter.tex:424: Double subscript.
+! Double subscript.
 l.424 E(r_i) = \sum_{i \neq j} \sum_l_
                                       j^N_j E(r_i,l_j)P(l_j)
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./CPD/chapter.tex:424: Double subscript.
+! Double subscript.
 l.424 E(r_i) = \sum_{i \neq j} \sum_l_j^N_
                                           j E(r_i,l_j)P(l_j)
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 [21]
-./CPD/chapter.tex:477: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.477 
@@ -1667,7 +1669,7 @@ l.477
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./CPD/chapter.tex:477: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.477 
@@ -1678,7 +1680,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./CPD/chapter.tex:477: Display math should end with $$.
+! Display math should end with $$.
 <to be read again> 
                    \@@par 
 l.477 
@@ -1686,7 +1688,7 @@ l.477
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
-./CPD/chapter.tex:477: Extra }, or forgotten \endgroup.
+! Extra }, or forgotten \endgroup.
 \par ...m \@noitemerr {\@@par }\fi \else {\@@par }
                                                   \fi 
 l.477 
@@ -1697,7 +1699,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./CPD/chapter.tex:478: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.478  E^
@@ -1705,7 +1707,7 @@ l.478  E^
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./CPD/chapter.tex:479: You can't use `\eqno' in math mode.
+! You can't use `\eqno' in math mode.
 \endmathdisplay@a ...\df@tag \@empty \else \veqno 
                                                   \alt@tag \df@tag \fi \ifx ...
 l.479 \end{equation}
@@ -1715,7 +1717,7 @@ I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./CPD/chapter.tex:479: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.479 \end{equation}
@@ -1729,14 +1731,14 @@ my insertion and my current dilemma will both disappear.
 
 LaTeX Warning: Reference `fig:DEE' on page 22 undefined on input line 493.
 
-<./CPD/figure/DEE.png, id=1199, 499.8675pt x 335.75438pt>
+<./CPD/figure/DEE.png, id=1201, 499.8675pt x 335.75438pt>
 File: ./CPD/figure/DEE.png Graphic file (type png)
 
 <use ./CPD/figure/DEE.png>
 Package pdftex.def Info: ./CPD/figure/DEE.png used on input line 502.
 (pdftex.def)             Requested size: 227.62204pt x 152.89143pt.
 
-./CPD/chapter.tex:502: Extra alignment tab has been changed to \cr.
+! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
 l.502 ...ludegraphics[width=8cm]{figure/DEE.png} &
@@ -1746,14 +1748,14 @@ in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
 [22] [23 <./CPD/figure/DEE.png>]
-<./CPD/figure/DFBB.png, id=1222, 173.2071pt x 110.5731pt>
+<./CPD/figure/DFBB.png, id=1224, 173.2071pt x 110.5731pt>
 File: ./CPD/figure/DFBB.png Graphic file (type png)
 
 <use ./CPD/figure/DFBB.png>
 Package pdftex.def Info: ./CPD/figure/DFBB.png used on input line 563.
 (pdftex.def)             Requested size: 284.52756pt x 181.65822pt.
 
-./CPD/chapter.tex:565: Undefined control sequence.
+! Undefined control sequence.
 <argument> ...{thefigure}}}{\ignorespaces \textbt 
                                                   {Principe du l'algorithme ...
 l.565 ...n peut élaguer l'arbre au sommet $S_3$.}
@@ -1764,7 +1766,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./CPD/chapter.tex:565: Undefined control sequence.
+! Undefined control sequence.
 <argument> \textbt 
                    {Principe du l'algorithme du Depth-First Branch and Bound...
 l.565 ...n peut élaguer l'arbre au sommet $S_3$.}
@@ -1775,7 +1777,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./CPD/chapter.tex:565: Undefined control sequence.
+! Undefined control sequence.
 <argument> \textbt 
                    {Principe du l'algorithme du Depth-First Branch and Bound...
 l.565 ...n peut élaguer l'arbre au sommet $S_3$.}
@@ -1790,7 +1792,7 @@ and I'll forget about whatever was undefined.
 Package natbib Warning: Citation `Schiex00' on page 24 undefined on input line 
 575.
 
-[24] <./CPD/figure/coherences_local.png, id=1228, 861.4584pt x 557.6835pt>
+[24] <./CPD/figure/coherences_local.png, id=1230, 861.4584pt x 557.6835pt>
 File: ./CPD/figure/coherences_local.png Graphic file (type png)
 
 <use ./CPD/figure/coherences_local.png>
@@ -1803,7 +1805,7 @@ Package natbib Warning: Citation `Traor�13' on page 25 undefined on input line
 599.
 
 [25 <./CPD/figure/DFBB.png>] [26 <./CPD/figure/coherences_local.png>]
-<./CPD/figure/algo_genetique.png, id=1247, 423.5022pt x 906.0249pt>
+<./CPD/figure/algo_genetique.png, id=1249, 423.5022pt x 906.0249pt>
 File: ./CPD/figure/algo_genetique.png Graphic file (type png)
 
 <use ./CPD/figure/algo_genetique.png>
@@ -1811,7 +1813,7 @@ Package pdftex.def Info: ./CPD/figure/algo_genetique.png used on input line 639
 .
 (pdftex.def)             Requested size: 170.71652pt x 365.2238pt.
  [27] [28 <./CPD/figure/algo_genetique.png>]
-./CPD/chapter.tex:669: Undefined control sequence.
+! Undefined control sequence.
 l.669   \forall n \gep
                        0 , \forall (i_0,i_1,...,i_{n-1},i) \in E^{n+1},
 The control sequence at the end of the top line
@@ -1820,7 +1822,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./CPD/chapter.tex:670: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.670 
@@ -1828,7 +1830,7 @@ l.670
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./CPD/chapter.tex:670: Display math should end with $$.
+! Display math should end with $$.
 <to be read again> 
                    \par 
 l.670 
@@ -1836,7 +1838,7 @@ l.670
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
-./CPD/chapter.tex:671: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.671   P(X_
@@ -1844,7 +1846,7 @@ l.671   P(X_
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./CPD/chapter.tex:672: You can't use `\eqno' in math mode.
+! You can't use `\eqno' in math mode.
 \endmathdisplay@a ...\df@tag \@empty \else \veqno 
                                                   \alt@tag \df@tag \fi \ifx ...
 l.672 \end{equation}
@@ -1854,7 +1856,7 @@ I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./CPD/chapter.tex:672: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.672 \end{equation}
@@ -1865,7 +1867,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./CPD/chapter.tex:678: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.678 
@@ -1873,7 +1875,7 @@ l.678
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./CPD/chapter.tex:678: Display math should end with $$.
+! Display math should end with $$.
 <to be read again> 
                    \par 
 l.678 
@@ -1881,7 +1883,7 @@ l.678
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
-./CPD/chapter.tex:679: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.679   P(X_
@@ -1889,7 +1891,7 @@ l.679   P(X_
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./CPD/chapter.tex:680: You can't use `\eqno' in math mode.
+! You can't use `\eqno' in math mode.
 \endmathdisplay@a ...\df@tag \@empty \else \veqno 
                                                   \alt@tag \df@tag \fi \ifx ...
 l.680 \end{equation}
@@ -1899,7 +1901,7 @@ I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./CPD/chapter.tex:680: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.680 \end{equation}
@@ -1910,7 +1912,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./CPD/chapter.tex:695: Undefined control sequence.
+! Undefined control sequence.
 l.695 \textbt
              {Le principe de la balance détaillée}
 The control sequence at the end of the top line
@@ -1920,7 +1922,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [29]
-./CPD/chapter.tex:703: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.703 
@@ -1928,7 +1930,7 @@ l.703
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./CPD/chapter.tex:703: Display math should end with $$.
+! Display math should end with $$.
 <to be read again> 
                    \par 
 l.703 
@@ -1937,7 +1939,7 @@ The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
 
-./CPD/chapter.tex:704: LaTeX Error: \mathcal allowed only in math mode.
+! LaTeX Error: \mathcal allowed only in math mode.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -1948,7 +1950,7 @@ l.704 \mathcal
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./CPD/chapter.tex:704: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.704 \mathcal{P}(i \rightarrow
@@ -1956,7 +1958,7 @@ l.704 \mathcal{P}(i \rightarrow
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./CPD/chapter.tex:705: You can't use `\eqno' in math mode.
+! You can't use `\eqno' in math mode.
 \endmathdisplay@a ...\df@tag \@empty \else \veqno 
                                                   \alt@tag \df@tag \fi \ifx ...
 l.705 \end{equation}
@@ -1966,7 +1968,7 @@ I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./CPD/chapter.tex:705: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.705 \end{equation}
@@ -1977,7 +1979,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./CPD/chapter.tex:721: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.721 ...e de Markov réversible pour la cible \pi
@@ -1985,7 +1987,7 @@ l.721 ...e de Markov réversible pour la cible \pi
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./CPD/chapter.tex:722: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.722 
@@ -1994,7 +1996,7 @@ I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 [30]
-./CPD/chapter.tex:742: Undefined control sequence.
+! Undefined control sequence.
 l.742 \pi^B(i) = \fraq
                       {1}{\sum_{j \in E}\exp(\frac{E_j}{kT})} \exp(\frac{E_i...
 The control sequence at the end of the top line
@@ -2004,7 +2006,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [31]
-./CPD/chapter.tex:803: Undefined control sequence.
+! Undefined control sequence.
 l.803 $acc(i|j) = \exp(- \delta E/kT) \fraq
                                            {sel(j|i)}{sel(i|j)}$
 The control sequence at the end of the top line
@@ -2029,7 +2031,7 @@ e 840.
 LaTeX Warning: Reference `frac_Metropolis' on page 33 undefined on input line 8
 65.
 
-./CPD/chapter.tex:883: Extra }, or forgotten $.
+! Extra }, or forgotten $.
 l.883 $acc_{swap} (X_{t+1}|X_t}
                                 = \exp(- \Delta)$
 I've deleted a group-closing symbol because it seems to be
@@ -2038,7 +2040,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./CPD/chapter.tex:885: Extra }, or forgotten $.
+! Extra }, or forgotten $.
 l.885 $acc_{swap} (X_{t+1}|X_t}
                                 = 1$
 I've deleted a group-closing symbol because it seems to be
@@ -2060,18 +2062,6 @@ LaTeX Warning: Reference `REMC_algo' on page 33 undefined on input line 887.
  (./methodes/chapter.tex
 Chapitre 2.
 
-Package natbib Warning: Citation `Dahiyat96' on page 35 undefined on input line
- 4.
-
-
-Package natbib Warning: Citation `Gainza13' on page 35 undefined on input line 
-4.
-
-
-Package natbib Warning: Citation `Kuhlman03' on page 35 undefined on input line
- 4.
-
-
 LaTeX Warning: Reference `eq:Boltzmann' on page 35 undefined on input line 8.
 
 
@@ -2083,7 +2073,7 @@ LaTeX Warning: Reference `fig:cycleThermo' on page 35 undefined on input line 1
 
 
 
-] <./methodes/figure/cycleThermo.png, id=1352, 381.49081pt x 278.4172pt>
+] <./methodes/figure/cycleThermo.png, id=1360, 381.49081pt x 278.4172pt>
 File: ./methodes/figure/cycleThermo.png Graphic file (type png)
 
 <use ./methodes/figure/cycleThermo.png>
@@ -2097,7 +2087,7 @@ LaTeX Warning: Reference `' on page 36 undefined on input line 39.
 
 LaTeX Warning: Reference `' on page 36 undefined on input line 44.
 
-./methodes/chapter.tex:44: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.44 ...a D-tyrosine ref{}, sur les cacluls de pK_
@@ -2108,7 +2098,7 @@ you left one out. Proceed, with fingers crossed.
 
 LaTeX Warning: Reference `31' on page 36 undefined on input line 44.
 
-./methodes/chapter.tex:45: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.45 
@@ -2116,7 +2106,7 @@ l.45
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./methodes/chapter.tex:48: Undefined control sequence.
+! Undefined control sequence.
 l.48 ...rgie.Dans le type le plus simple \ogMMCASA
                                                   \fg, est combinée l'appro...
 The control sequence at the end of the top line
@@ -2128,7 +2118,7 @@ and I'll forget about whatever was undefined.
 
 LaTeX Warning: Reference `' on page 36 undefined on input line 48.
 
-./methodes/chapter.tex:48: Undefined control sequence.
+! Undefined control sequence.
 l.48 ...CASA (voir  ~\ref{}). Deux types \ogLLGBSA
                                                   \fg sont égalament possib...
 The control sequence at the end of the top line
@@ -2138,7 +2128,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [36 <./methodes/figure/cycleThermo.png>]
-./methodes/chapter.tex:58: Undefined control sequence.
+! Undefined control sequence.
 l.58 E_{solv}^\surf
                     = \sum_i \sigma_{t_i} A_i
 The control sequence at the end of the top line
@@ -2147,7 +2137,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<./methodes/figure/intersurface.png, id=1363, 960.68pt x 850.45pt>
+<./methodes/figure/intersurface.png, id=1371, 960.68pt x 850.45pt>
 File: ./methodes/figure/intersurface.png Graphic file (type png)
 
 <use ./methodes/figure/intersurface.png>
@@ -2159,7 +2149,7 @@ Package pdftex.def Info: ./methodes/figure/intersurface.png used on input line
 LaTeX Warning: Reference `Street98' on page 37 undefined on input line 74.
 
 [37]
-./methodes/chapter.tex:91: Missing { inserted.
+! Missing { inserted.
 <to be read again> 
                    \begingroup 
 l.91     E_\IJ
@@ -2172,7 +2162,7 @@ so that I will find a matching right brace soon.
 
 LaTeX Warning: Command \IJ invalid in math mode on input line 91.
 
-./methodes/chapter.tex:91: Missing { inserted.
+! Missing { inserted.
 <to be read again> 
                    \begingroup 
 l.91     E_\IJ^{self} = \sum_{i\in I,j\in J} E_\ij
@@ -2185,7 +2175,7 @@ so that I will find a matching right brace soon.
 
 LaTeX Warning: Command \ij invalid in math mode on input line 91.
 
-./methodes/chapter.tex:91: Undefined control sequence.
+! Undefined control sequence.
 l.91 ...^{self} = \sum_{i\in I,j\in J} E_\ij^\self
                                                   
 The control sequence at the end of the top line
@@ -2194,7 +2184,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./methodes/chapter.tex:92: Missing { inserted.
+! Missing { inserted.
 <to be read again> 
                    \gdef 
 l.92   \end{equation}
@@ -2204,7 +2194,7 @@ You might want to delete and/or insert some corrections
 so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
-./methodes/chapter.tex:92: You can't use `\eqno' in math mode.
+! You can't use `\eqno' in math mode.
 \endmathdisplay@a ...\df@tag \@empty \else \veqno 
                                                   \alt@tag \df@tag \fi \ifx ...
 l.92   \end{equation}
@@ -2214,7 +2204,7 @@ I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./methodes/chapter.tex:92: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.92   \end{equation}
@@ -2225,7 +2215,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./methodes/chapter.tex:92: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.92   \end{equation}
@@ -2236,7 +2226,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./methodes/chapter.tex:92: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.92   \end{equation}
@@ -2247,7 +2237,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./methodes/chapter.tex:96: Undefined control sequence.
+! Undefined control sequence.
 l.96     E_\I
              ^{self} = \sum_J E_\ij^\self
 The control sequence at the end of the top line
@@ -2256,7 +2246,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./methodes/chapter.tex:96: Missing { inserted.
+! Missing { inserted.
 <to be read again> 
                    ^
 l.96     E_\I^
@@ -2266,7 +2256,7 @@ You might want to delete and/or insert some corrections
 so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
-./methodes/chapter.tex:96: Missing { inserted.
+! Missing { inserted.
 <to be read again> 
                    \begingroup 
 l.96     E_\I^{self} = \sum_J E_\ij
@@ -2279,7 +2269,7 @@ so that I will find a matching right brace soon.
 
 LaTeX Warning: Command \ij invalid in math mode on input line 96.
 
-./methodes/chapter.tex:96: Undefined control sequence.
+! Undefined control sequence.
 l.96     E_\I^{self} = \sum_J E_\ij^\self
                                          
 The control sequence at the end of the top line
@@ -2288,7 +2278,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./methodes/chapter.tex:97: Missing { inserted.
+! Missing { inserted.
 <to be read again> 
                    \gdef 
 l.97   \end{equation}
@@ -2298,7 +2288,7 @@ You might want to delete and/or insert some corrections
 so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
-./methodes/chapter.tex:97: You can't use `\eqno' in math mode.
+! You can't use `\eqno' in math mode.
 \endmathdisplay@a ...\df@tag \@empty \else \veqno 
                                                   \alt@tag \df@tag \fi \ifx ...
 l.97   \end{equation}
@@ -2308,7 +2298,7 @@ I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./methodes/chapter.tex:97: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.97   \end{equation}
@@ -2319,7 +2309,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./methodes/chapter.tex:97: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.97   \end{equation}
@@ -2330,7 +2320,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./methodes/chapter.tex:97: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.97   \end{equation}
@@ -2342,7 +2332,7 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 [38 <./methodes/figure/intersurface.png>]
-./methodes/chapter.tex:112: Missing { inserted.
+! Missing { inserted.
 <to be read again> 
                    \begingroup 
 l.112 ...ssible de définir la contribution $g_\IJ
@@ -2355,7 +2345,7 @@ so that I will find a matching right brace soon.
 
 LaTeX Warning: Command \IJ invalid in math mode on input line 112.
 
-./methodes/chapter.tex:112: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.112 ...sible de définir la contribution $g_\IJ$
@@ -2366,7 +2356,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./methodes/chapter.tex:112: Undefined control sequence.
+! Undefined control sequence.
 l.112 ...énergie d'écrantage total $\Delta^\solv
                                                   $, par:
 The control sequence at the end of the top line
@@ -2375,7 +2365,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./methodes/chapter.tex:112: Missing { inserted.
+! Missing { inserted.
 <to be read again> 
                    $
 l.112 ...�nergie d'écrantage total $\Delta^\solv$
@@ -2385,7 +2375,7 @@ You might want to delete and/or insert some corrections
 so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
-./methodes/chapter.tex:112: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.112 ...�nergie d'écrantage total $\Delta^\solv$
@@ -2396,7 +2386,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./methodes/chapter.tex:120: Missing { inserted.
+! Missing { inserted.
 <to be read again> 
                    \begingroup 
 l.120 On peut noter qu'aux distances fixes $r_\ij
@@ -2409,7 +2399,7 @@ so that I will find a matching right brace soon.
 
 LaTeX Warning: Command \ij invalid in math mode on input line 120.
 
-./methodes/chapter.tex:120: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.120 On peut noter qu'aux distances fixes $r_\ij$
@@ -2420,7 +2410,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./methodes/chapter.tex:120: Missing { inserted.
+! Missing { inserted.
 <to be read again> 
                    \begingroup 
 l.120 ...fixes $r_\ij$, et avec $B=B_IBJ$, $ g_\IJ
@@ -2433,7 +2423,7 @@ so that I will find a matching right brace soon.
 
 LaTeX Warning: Command \IJ invalid in math mode on input line 120.
 
-./methodes/chapter.tex:120: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.120 ... $r_\ij$, et avec $B=B_IBJ$, $ g_\IJ (B)$
@@ -2445,8 +2435,7 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./methodes/chapter.tex:124: Package amsmath Error: Multiple \label's: label 'eq
-:approx' will be lost.
+! Package amsmath Error: Multiple \label's: label 'eq:approx' will be lost.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
@@ -2458,7 +2447,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./methodes/chapter.tex:127: Missing { inserted.
+! Missing { inserted.
 <to be read again> 
                    \begingroup 
 l.127 ... d'énergie, puisque les distances $r_\ij
@@ -2471,7 +2460,7 @@ so that I will find a matching right brace soon.
 
 LaTeX Warning: Command \ij invalid in math mode on input line 127.
 
-./methodes/chapter.tex:127: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.127 ...d'énergie, puisque les distances $r_\ij$
@@ -2491,8 +2480,8 @@ LaTeX Warning: Reference `Graph:mat_ener' on page 39 undefined on input line 13
 Package natbib Warning: Citation `Br�nger92' on page 40 undefined on input line
  136.
 
-<./methodes/figure/matrice.png, id=1397, 0.7191pt x 64.0003pt>
-./methodes/chapter.tex:141: Dimension too large.
+<./methodes/figure/matrice.png, id=1405, 0.7191pt x 64.0003pt>
+! Dimension too large.
 <recently read> \Gin@nat@height 
                                 
 l.141 ...egraphics[width=15cm]{figure/matrice.png}
@@ -2505,7 +2494,7 @@ File: ./methodes/figure/matrice.png Graphic file (type png)
 Package pdftex.def Info: ./methodes/figure/matrice.png used on input line 141.
 (pdftex.def)             Requested size: 426.79134pt x 16383.99998pt.
 
-./methodes/chapter.tex:141: Dimension too large.
+! Dimension too large.
 \Gscale@box ...#2\ht \z@ \else \ht \tw@ #2\ht \z@ 
                                                   \dp \tw@ #2\dp \z@ \fi \if...
 l.141 ...egraphics[width=15cm]{figure/matrice.png}
@@ -2513,7 +2502,7 @@ l.141 ...egraphics[width=15cm]{figure/matrice.png}
 I can't work with sizes bigger than about 19 feet.
 Continue and I'll use the largest value I can.
 
-./methodes/chapter.tex:146: Dimension too large.
+! Dimension too large.
 \@currbox ->\bx@O 
                   
 l.146    \end{figure}
@@ -2521,7 +2510,7 @@ l.146    \end{figure}
 I can't work with sizes bigger than about 19 feet.
 Continue and I'll use the largest value I can.
 
-./methodes/chapter.tex:146: Dimension too large.
+! Dimension too large.
 \@currbox ->\bx@O 
                   
 l.146    \end{figure}
@@ -2533,8 +2522,7 @@ Continue and I'll use the largest value I can.
 LaTeX Warning: Float too large for page by 15733.99998pt on input line 146.
 
 
-./methodes/chapter.tex:169: LaTeX Error: Something's wrong--perhaps a missing \
-item.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2546,8 +2534,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./methodes/chapter.tex:170: LaTeX Error: Something's wrong--perhaps a missing \
-item.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2560,8 +2547,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./methodes/chapter.tex:170: LaTeX Error: Something's wrong--perhaps a missing \
-item.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2574,8 +2560,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./methodes/chapter.tex:170: LaTeX Error: Something's wrong--perhaps a missing \
-item.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2588,8 +2573,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./methodes/chapter.tex:171: LaTeX Error: Something's wrong--perhaps a missing \
-item.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2602,8 +2586,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./methodes/chapter.tex:171: LaTeX Error: Something's wrong--perhaps a missing \
-item.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2616,8 +2599,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./methodes/chapter.tex:171: LaTeX Error: Something's wrong--perhaps a missing \
-item.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2630,8 +2612,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./methodes/chapter.tex:172: LaTeX Error: Something's wrong--perhaps a missing \
-item.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2644,8 +2625,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./methodes/chapter.tex:172: LaTeX Error: Something's wrong--perhaps a missing \
-item.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2658,8 +2638,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./methodes/chapter.tex:172: LaTeX Error: Something's wrong--perhaps a missing \
-item.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2672,8 +2651,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./methodes/chapter.tex:173: LaTeX Error: Something's wrong--perhaps a missing \
-item.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2685,8 +2663,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./methodes/chapter.tex:173: LaTeX Error: Something's wrong--perhaps a missing \
-item.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2698,8 +2675,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./methodes/chapter.tex:173: LaTeX Error: Something's wrong--perhaps a missing \
-item.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2711,8 +2687,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./methodes/chapter.tex:174: LaTeX Error: Something's wrong--perhaps a missing \
-item.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2724,8 +2699,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./methodes/chapter.tex:174: LaTeX Error: Something's wrong--perhaps a missing \
-item.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2737,8 +2711,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./methodes/chapter.tex:174: LaTeX Error: Something's wrong--perhaps a missing \
-item.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2750,8 +2723,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-./methodes/chapter.tex:175: LaTeX Error: Something's wrong--perhaps a missing \
-item.
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2764,8 +2736,7 @@ If that doesn't work, type  X <return>  to quit.
 
 [40] [41 <./methodes/figure/matrice.png>]
 
-./methodes/chapter.tex:186: LaTeX Error: \begin{enumerate} on input line 166 en
-ded by \end{itemize}.
+! LaTeX Error: \begin{enumerate} on input line 166 ended by \end{itemize}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2781,7 +2752,7 @@ or  <return>  to continue without it.
 
 LaTeX Warning: Reference `' on page 43 undefined on input line 200.
 
-<./methodes/figure/proteus/inputener.png, id=1425, 746.79pt x 329.23pt>
+<./methodes/figure/proteus/inputener.png, id=1433, 746.79pt x 329.23pt>
 File: ./methodes/figure/proteus/inputener.png Graphic file (type png)
 
 <use ./methodes/figure/proteus/inputener.png>
@@ -2789,7 +2760,7 @@ Package pdftex.def Info: ./methodes/figure/proteus/inputener.png used on input
 line 206.
 (pdftex.def)             Requested size: 341.43306pt x 150.52328pt.
 
-./methodes/chapter.tex:208: Undefined control sequence.
+! Undefined control sequence.
 <argument> ...{thefigure}}}{\ignorespaces \textbt 
                                                   {Les fichiers d'énergies ...
 l.208 ...tbt{Les fichiers d'énergies en mode CA}}
@@ -2800,7 +2771,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./methodes/chapter.tex:208: Undefined control sequence.
+! Undefined control sequence.
 <argument> \textbt 
                    {Les fichiers d'énergies en mode CA}
 l.208 ...tbt{Les fichiers d'énergies en mode CA}}
@@ -2811,7 +2782,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./methodes/chapter.tex:208: Undefined control sequence.
+! Undefined control sequence.
 <argument> \textbt 
                    {Les fichiers d'énergies en mode CA}
 l.208 ...tbt{Les fichiers d'énergies en mode CA}}
@@ -2822,7 +2793,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<./methodes/figure/proteus/inputenerGB.png, id=1426, 404.712pt x 188.705pt>
+<./methodes/figure/proteus/inputenerGB.png, id=1434, 404.712pt x 188.705pt>
 File: ./methodes/figure/proteus/inputenerGB.png Graphic file (type png)
 
 <use ./methodes/figure/proteus/inputenerGB.png>
@@ -2830,7 +2801,7 @@ Package pdftex.def Info: ./methodes/figure/proteus/inputenerGB.png used on inpu
 t line 216.
 (pdftex.def)             Requested size: 341.43306pt x 159.20792pt.
 
-./methodes/chapter.tex:218: Undefined control sequence.
+! Undefined control sequence.
 <argument> ...{thefigure}}}{\ignorespaces \textbt 
                                                   {Les fichiers d'énergies ...
 l.218 ...hiers d'énergies en mode GB NEA et FDB}}
@@ -2841,7 +2812,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./methodes/chapter.tex:218: Undefined control sequence.
+! Undefined control sequence.
 <argument> \textbt 
                    {Les fichiers d'énergies en mode GB NEA et FDB}
 l.218 ...hiers d'énergies en mode GB NEA et FDB}}
@@ -2852,7 +2823,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./methodes/chapter.tex:218: Undefined control sequence.
+! Undefined control sequence.
 <argument> \textbt 
                    {Les fichiers d'énergies en mode GB NEA et FDB}
 l.218 ...hiers d'énergies en mode GB NEA et FDB}}
@@ -2869,27 +2840,27 @@ nerGB.png>]
 LaTeX Warning: Reference `chap:developpement' on page 44 undefined on input lin
 e 234.
 
-./methodes/chapter.tex:239: Double subscript.
+! Double subscript.
 l.239 ...t voisines s'il existe un rotamère $r_P_
                                                   i$ de $p_i$ et un rotamèr...
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./methodes/chapter.tex:239: Double subscript.
+! Double subscript.
 l.239 ...re $r_P_i$ de $p_i$ et un rotamère $r_p_
                                                   j$ de $p_j$ tels que:
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./methodes/chapter.tex:241: Double subscript.
+! Double subscript.
 l.241  | E(r_P_
                i_,r_p_j) | > S_{vois}
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./methodes/chapter.tex:241: Double subscript.
+! Double subscript.
 l.241  | E(r_P_i_
                  ,r_p_j) | > S_{vois}
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./methodes/chapter.tex:241: Double subscript.
+! Double subscript.
 l.241  | E(r_P_i_,r_p_
                       j) | > S_{vois}
 I treat `x_1_2' essentially like `x_1{}_2'.
@@ -2934,7 +2905,7 @@ LaTeX Warning: Reference `fig:cycleThermo' on page 44 undefined on input line 2
 
 LaTeX Warning: Reference `eq:deltaG' on page 44 undefined on input line 296.
 
-<./methodes/figure/proteus/grp_matrix.png, id=1437, 692.989pt x 505.89pt>
+<./methodes/figure/proteus/grp_matrix.png, id=1445, 692.989pt x 505.89pt>
 File: ./methodes/figure/proteus/grp_matrix.png Graphic file (type png)
 
 <use ./methodes/figure/proteus/grp_matrix.png>
@@ -2942,7 +2913,7 @@ Package pdftex.def Info: ./methodes/figure/proteus/grp_matrix.png used on input
  line 304.
 (pdftex.def)             Requested size: 341.43306pt x 249.25456pt.
 
-<./methodes/figure/proteus/structures_physique.png, id=1438, 602.7318pt x 754.4
+<./methodes/figure/proteus/structures_physique.png, id=1446, 602.7318pt x 754.4
 988pt>
 File: ./methodes/figure/proteus/structures_physique.png Graphic file (type png)
 
@@ -2951,7 +2922,7 @@ Package pdftex.def Info: ./methodes/figure/proteus/structures_physique.png used
  on input line 320.
 (pdftex.def)             Requested size: 341.43306pt x 427.40935pt.
 
-<./methodes/figure/proteus/structures_modele_logique.png, id=1439, 736.1904pt x
+<./methodes/figure/proteus/structures_modele_logique.png, id=1447, 736.1904pt x
  537.207pt>
 File: ./methodes/figure/proteus/structures_modele_logique.png Graphic file (typ
 e png)
@@ -2960,7 +2931,7 @@ Package pdftex.def Info: ./methodes/figure/proteus/structures_modele_logique.pn
 g used on input line 332.
 (pdftex.def)             Requested size: 341.43306pt x 249.1429pt.
 
-<./methodes/figure/proteus/structures_dynamiques.png, id=1440, 755.9442pt x 654
+<./methodes/figure/proteus/structures_dynamiques.png, id=1448, 755.9442pt x 654
 .7662pt>
 File: ./methodes/figure/proteus/structures_dynamiques.png Graphic file (type pn
 g)
@@ -2969,7 +2940,7 @@ Package pdftex.def Info: ./methodes/figure/proteus/structures_dynamiques.png us
 ed on input line 344.
 (pdftex.def)             Requested size: 341.43306pt x 295.73108pt.
 
-<./methodes/figure/proteus/output.png, id=1441, 712.45483pt x 381.00966pt>
+<./methodes/figure/proteus/output.png, id=1449, 712.45483pt x 381.00966pt>
 File: ./methodes/figure/proteus/output.png Graphic file (type png)
 
 <use ./methodes/figure/proteus/output.png>
@@ -3016,7 +2987,7 @@ LaTeX Font Info:    Try loading font information for U+dsrom on input line 472.
  (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
-./methodes/chapter.tex:472: Extra }, or forgotten $.
+! Extra }, or forgotten $.
 l.472 ...ac{1}{l}\sum_{1<i<l} \mathds{1}(s_i,n_i)}
                                                    \times 100
 I've deleted a group-closing symbol because it seems to be
@@ -3025,7 +2996,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./methodes/chapter.tex:481: Extra }, or forgotten $.
+! Extra }, or forgotten $.
 l.481 ...{1}{m}\sum_{1<j<m} \mathds{1}(s_i^j,n_i)}
                                                    \times 100
 I've deleted a group-closing symbol because it seems to be
@@ -3229,7 +3200,7 @@ Package Fancyhdr Warning: \headheight is too small (14.5pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[66] <./comparaisons/figure/align0.png, id=1678, 1666.18484pt x 1421.5509pt>
+[66] <./comparaisons/figure/align0.png, id=1680, 1666.18484pt x 1421.5509pt>
 File: ./comparaisons/figure/align0.png Graphic file (type png)
 
 <use ./comparaisons/figure/align0.png>
@@ -3249,7 +3220,7 @@ Package natbib Warning: Citation `Schmidt10' on page 67 undefined on input line
 LaTeX Warning: Reference `fig:logo' on page 67 undefined on input line 387.
 
 [67 <./comparaisons/figure/align0.png>]
-<./comparaisons/figure/2BYG_bestall_core3D.pdf, id=1687, 796.9775pt x 597.23125
+<./comparaisons/figure/2BYG_bestall_core3D.pdf, id=1689, 796.9775pt x 597.23125
 pt>
 File: ./comparaisons/figure/2BYG_bestall_core3D.pdf Graphic file (type pdf)
  <use ./comparaisons/figure/2BYG_bestall_core3D.pdf>
@@ -3266,14 +3237,14 @@ LaTeX Warning: Reference `fig:3Dstruct' on page 68 undefined on input line 403.
 
 
 
-<./comparaisons/figure/1ABO_core_simil_byseq.png, id=1688, 578.16pt x 433.62pt>
+<./comparaisons/figure/1ABO_core_simil_byseq.png, id=1690, 578.16pt x 433.62pt>
 File: ./comparaisons/figure/1ABO_core_simil_byseq.png Graphic file (type png)
 <use ./comparaisons/figure/1ABO_core_simil_byseq.png>
 Package pdftex.def Info: ./comparaisons/figure/1ABO_core_simil_byseq.png used o
 n input line 409.
 (pdftex.def)             Requested size: 455.24408pt x 341.43124pt.
 
-<./comparaisons/figure/1BM2_core_simil_byseq.png, id=1689, 578.16pt x 433.62pt>
+<./comparaisons/figure/1BM2_core_simil_byseq.png, id=1691, 578.16pt x 433.62pt>
 File: ./comparaisons/figure/1BM2_core_simil_byseq.png Graphic file (type png)
 <use ./comparaisons/figure/1BM2_core_simil_byseq.png>
 Package pdftex.def Info: ./comparaisons/figure/1BM2_core_simil_byseq.png used o
@@ -3383,7 +3354,7 @@ Package natbib Warning: Citation `Schmidt10' on page 78 undefined on input line
 Package natbib Warning: Citation `Schmidt10' on page 78 undefined on input line
  747.
 
-<./comparaisons/figure/1CKA_entropy_seqnb.png, id=1771, 578.16pt x 433.62pt>
+<./comparaisons/figure/1CKA_entropy_seqnb.png, id=1766, 578.16pt x 433.62pt>
 File: ./comparaisons/figure/1CKA_entropy_seqnb.png Graphic file (type png)
 
 <use ./comparaisons/figure/1CKA_entropy_seqnb.png>
@@ -3458,7 +3429,7 @@ Package Fancyhdr Warning: \headheight is too small (14.5pt):
 
  (./PDZ/chapter.tex
 Chapitre 5.
-./PDZ/chapter.tex:6: Undefined control sequence.
+! Undefined control sequence.
 l.6 ...étudiés et utilisés en conception \texit
                                                   {in sillico}. Des ligands ...
 The control sequence at the end of the top line
@@ -3473,8 +3444,12 @@ and I'll forget about whatever was undefined.
 
 
 
-] [86]
-./PDZ/chapter.tex:57: Extra }, or forgotten $.
+]
+
+LaTeX Warning: Reference `sec:theo' on page 86 undefined on input line 27.
+
+[86]
+! Extra }, or forgotten $.
 l.57 kT \ln \mathcal{L} = \sum_S}
                                  \sum_{i \in aa} n_S(t) E^r_t - \sum_S} G^f_...
 I've deleted a group-closing symbol because it seems to be
@@ -3483,7 +3458,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./PDZ/chapter.tex:57: Extra }, or forgotten $.
+! Extra }, or forgotten $.
 l.57 ...m_S}\sum_{i \in aa} n_S(t) E^r_t - \sum_S}
                                                    G^f_S - N kT \ln Z = \sum...
 I've deleted a group-closing symbol because it seems to be
@@ -3492,7 +3467,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./PDZ/chapter.tex:57: Extra }, or forgotten $.
+! Extra }, or forgotten $.
 l.57 ...n Z = \sum_{t \in aa} N(t) E^r_t - \sum_S}
                                                    G^f_S - N kT \ln Z,
 I've deleted a group-closing symbol because it seems to be
@@ -3529,7 +3504,7 @@ See the caption package documentation for explanation.
 
 LaTeX Warning: Reference `tab:corePDZ' on page 92 undefined on input line 208.
 
-./PDZ/chapter.tex:261: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.261       }
@@ -3537,7 +3512,7 @@ l.261       }
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./PDZ/chapter.tex:261: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.261       }
@@ -3596,7 +3571,7 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `tab:corePDZ' on page 94 undefined on input line 337.
 
 [94] [95]
-<./PDZ/images/natives_alignees.png, id=1939, 1219.16348pt x 181.86626pt>
+<./PDZ/images/natives_alignees.png, id=1930, 1219.16348pt x 181.86626pt>
 File: ./PDZ/images/natives_alignees.png Graphic file (type png)
 
 <use ./PDZ/images/natives_alignees.png>
@@ -3604,7 +3579,7 @@ Package pdftex.def Info: ./PDZ/images/natives_alignees.png used on input line 3
 45.
 (pdftex.def)             Requested size: 512.1496pt x 76.39995pt.
 
-<./PDZ/images/corePDZ2.png, id=1940, 1313.3868pt x 1252.68pt>
+<./PDZ/images/corePDZ2.png, id=1931, 1313.3868pt x 1252.68pt>
 File: ./PDZ/images/corePDZ2.png Graphic file (type png)
 
 <use ./PDZ/images/corePDZ2.png>
@@ -3618,7 +3593,7 @@ Overfull \hbox (68.90549pt too wide) in paragraph at lines 344--348
 [96
 
  <./PDZ/images/natives_alignees.png> <./PDZ/images/corePDZ2.png>] [97]
-<./PDZ/homologues/1G9O.png, id=1953, 662.9987pt x 541.62791pt>
+<./PDZ/homologues/1G9O.png, id=1942, 662.9987pt x 541.62791pt>
 File: ./PDZ/homologues/1G9O.png Graphic file (type png)
 
 <use ./PDZ/homologues/1G9O.png>
@@ -3629,7 +3604,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 365--368
  [][] 
  []
 
-<./PDZ/proteus/1G9O.png, id=1954, 644.14565pt x 696.4922pt>
+<./PDZ/proteus/1G9O.png, id=1943, 644.14565pt x 696.4922pt>
 File: ./PDZ/proteus/1G9O.png Graphic file (type png)
 
 <use ./PDZ/proteus/1G9O.png>
@@ -3641,7 +3616,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 374--377
  []
 
 [98 <./PDZ/homologues/1G9O.png>] [99 <./PDZ/proteus/1G9O.png (PNG copy)>]
-<./PDZ/homologues/1IHJ.png, id=1964, 677.13847pt x 463.79868pt>
+<./PDZ/homologues/1IHJ.png, id=1953, 677.13847pt x 463.79868pt>
 File: ./PDZ/homologues/1IHJ.png Graphic file (type png)
 
 <use ./PDZ/homologues/1IHJ.png>
@@ -3652,7 +3627,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 385--388
  [][] 
  []
 
-<./PDZ/proteus/1IHJ.png, id=1965, 669.28305pt x 697.28638pt>
+<./PDZ/proteus/1IHJ.png, id=1954, 669.28305pt x 697.28638pt>
 File: ./PDZ/proteus/1IHJ.png Graphic file (type png)
 
 <use ./PDZ/proteus/1IHJ.png>
@@ -3664,7 +3639,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 394--397
  []
 
 [100 <./PDZ/homologues/1IHJ.png>] [101 <./PDZ/proteus/1IHJ.png (PNG copy)>]
-<./PDZ/homologues/1R6J.png, id=1976, 595.44196pt x 532.09781pt>
+<./PDZ/homologues/1R6J.png, id=1965, 595.44196pt x 532.09781pt>
 File: ./PDZ/homologues/1R6J.png Graphic file (type png)
 
 <use ./PDZ/homologues/1R6J.png>
@@ -3675,7 +3650,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 404--407
  [][] 
  []
 
-<./PDZ/proteus/1R6J.png, id=1977, 582.08772pt x 694.90384pt>
+<./PDZ/proteus/1R6J.png, id=1966, 582.08772pt x 694.90384pt>
 File: ./PDZ/proteus/1R6J.png Graphic file (type png)
 
 <use ./PDZ/proteus/1R6J.png>
@@ -3687,7 +3662,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 413--416
  []
 
 [102 <./PDZ/homologues/1R6J.png>] [103 <./PDZ/proteus/1R6J.png (PNG copy)>]
-<./PDZ/homologues/1N7E.png, id=1987, 680.28065pt x 525.7444pt>
+<./PDZ/homologues/1N7E.png, id=1976, 680.28065pt x 525.7444pt>
 File: ./PDZ/homologues/1N7E.png Graphic file (type png)
 
 <use ./PDZ/homologues/1N7E.png>
@@ -3698,7 +3673,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 423--426
  [][] 
  []
 
-<./PDZ/proteus/1N7E.png, id=1988, 678.70956pt x 694.10966pt>
+<./PDZ/proteus/1N7E.png, id=1977, 678.70956pt x 694.10966pt>
 File: ./PDZ/proteus/1N7E.png Graphic file (type png)
 
 <use ./PDZ/proteus/1N7E.png>
@@ -3710,7 +3685,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 432--435
  []
 
 [104 <./PDZ/homologues/1N7E.png>] [105 <./PDZ/proteus/1N7E.png (PNG copy)>]
-<./PDZ/homologues/2BYG.png, id=1998, 701.49033pt x 471.74043pt>
+<./PDZ/homologues/2BYG.png, id=1987, 701.49033pt x 471.74043pt>
 File: ./PDZ/homologues/2BYG.png Graphic file (type png)
 
 <use ./PDZ/homologues/2BYG.png>
@@ -3721,7 +3696,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 442--445
  [][] 
  []
 
-<./PDZ/proteus/2BYG.png, id=1999, 689.70717pt x 694.90384pt>
+<./PDZ/proteus/2BYG.png, id=1988, 689.70717pt x 694.90384pt>
 File: ./PDZ/proteus/2BYG.png Graphic file (type png)
 
 <use ./PDZ/proteus/2BYG.png>
@@ -3733,7 +3708,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 451--454
  []
 
 [106 <./PDZ/homologues/2BYG.png>] [107 <./PDZ/proteus/2BYG.png (PNG copy)>]
-<./PDZ/homologues/3K82.png, id=2010, 696.77707pt x 546.39296pt>
+<./PDZ/homologues/3K82.png, id=1999, 696.77707pt x 546.39296pt>
 File: ./PDZ/homologues/3K82.png Graphic file (type png)
 
 <use ./PDZ/homologues/3K82.png>
@@ -3744,7 +3719,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 461--464
  [][] 
  []
 
-<./PDZ/proteus/3K82.png, id=2011, 688.1361pt x 697.28638pt>
+<./PDZ/proteus/3K82.png, id=2000, 688.1361pt x 697.28638pt>
 File: ./PDZ/proteus/3K82.png Graphic file (type png)
 
 <use ./PDZ/proteus/3K82.png>
@@ -3787,7 +3762,7 @@ put line 630.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-./PDZ/chapter.tex:676: Missing \endcsname inserted.
+! Missing \endcsname inserted.
 <to be read again> 
                    \protect 
 l.676 ...lustalX implémenté dans Jalview \cite\{
@@ -3795,7 +3770,7 @@ l.676 ...lustalX implémenté dans Jalview \cite\{
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-./PDZ/chapter.tex:676: Extra \endcsname.
+! Extra \endcsname.
 \@ifundefined ...dafter \ifx \csname #1\endcsname 
                                                   \relax \expandafter \@firs...
 l.676 ...lustalX implémenté dans Jalview \cite\{
@@ -3811,7 +3786,7 @@ LaTeX Warning: Reference `subsection:AlignPfam' on page 114 undefined on input
 line 676.
 
 [114] [115]
-<./PDZ/graphes/modelB6+/1G9O_simil_full.png, id=2079, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/1G9O_simil_full.png, id=2067, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1G9O_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1G9O_simil_full.png>
@@ -3819,7 +3794,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1G9O_simil_full.png used on inp
 ut line 712.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/1IHJ_simil_full.png, id=2080, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/1IHJ_simil_full.png, id=2068, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1IHJ_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1IHJ_simil_full.png>
@@ -3827,7 +3802,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1IHJ_simil_full.png used on inp
 ut line 713.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/1R6J_simil_full.png, id=2081, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/1R6J_simil_full.png, id=2069, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1R6J_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1R6J_simil_full.png>
@@ -3835,7 +3810,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1R6J_simil_full.png used on inp
 ut line 714.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/1N7E_simil_full.png, id=2082, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/1N7E_simil_full.png, id=2070, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1N7E_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1N7E_simil_full.png>
@@ -3843,7 +3818,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1N7E_simil_full.png used on inp
 ut line 715.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/2BYG_simil_full.png, id=2083, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/2BYG_simil_full.png, id=2071, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/2BYG_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/2BYG_simil_full.png>
@@ -3851,7 +3826,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/2BYG_simil_full.png used on inp
 ut line 716.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/3K82_simil_full.png, id=2084, 963.6pt x 578.16pt>
+<./PDZ/graphes/modelB6+/3K82_simil_full.png, id=2072, 963.6pt x 578.16pt>
 File: ./PDZ/graphes/modelB6+/3K82_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/3K82_simil_full.png>
@@ -3863,7 +3838,7 @@ Overfull \hbox (46.76184pt too wide) in paragraph at lines 711--719
  [][] 
  []
 
-<./PDZ/graphes/modelB6+/1G9O_simil_core.png, id=2085, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/1G9O_simil_core.png, id=2073, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1G9O_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1G9O_simil_core.png>
@@ -3871,7 +3846,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1G9O_simil_core.png used on inp
 ut line 728.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/1IHJ_simil_core.png, id=2086, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/1IHJ_simil_core.png, id=2074, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1IHJ_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1IHJ_simil_core.png>
@@ -3879,7 +3854,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1IHJ_simil_core.png used on inp
 ut line 729.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/1R6J_simil_core.png, id=2087, 722.7pt x 449.2785pt>
+<./PDZ/graphes/modelB6+/1R6J_simil_core.png, id=2075, 722.7pt x 449.2785pt>
 File: ./PDZ/graphes/modelB6+/1R6J_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1R6J_simil_core.png>
@@ -3887,7 +3862,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1R6J_simil_core.png used on inp
 ut line 730.
 (pdftex.def)             Requested size: 239.00298pt x 148.5777pt.
 
-<./PDZ/graphes/modelB6+/1N7E_simil_core.png, id=2088, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/1N7E_simil_core.png, id=2076, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1N7E_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1N7E_simil_core.png>
@@ -3895,7 +3870,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1N7E_simil_core.png used on inp
 ut line 731.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/2BYG_simil_core.png, id=2089, 722.7pt x 448.7967pt>
+<./PDZ/graphes/modelB6+/2BYG_simil_core.png, id=2077, 722.7pt x 448.7967pt>
 File: ./PDZ/graphes/modelB6+/2BYG_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/2BYG_simil_core.png>
@@ -3903,7 +3878,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/2BYG_simil_core.png used on inp
 ut line 732.
 (pdftex.def)             Requested size: 239.00298pt x 148.41837pt.
 
-<./PDZ/graphes/modelB6+/3K82_simil_core.png, id=2090, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/3K82_simil_core.png, id=2078, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/3K82_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/3K82_simil_core.png>
@@ -3934,7 +3909,7 @@ graphes/modelB6+/3K82_simil_core.png>] [119] [120]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[121] <./PDZ/graphes/FDB/1G9O_simil_cut.png, id=2138, 722.7pt x 433.62pt>
+[121] <./PDZ/graphes/FDB/1G9O_simil_cut.png, id=2124, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/FDB/1G9O_simil_cut.png Graphic file (type png)
 
 <use ./PDZ/graphes/FDB/1G9O_simil_cut.png>
@@ -3942,7 +3917,7 @@ Package pdftex.def Info: ./PDZ/graphes/FDB/1G9O_simil_cut.png used on input lin
 e 890.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/FDB/1G9O_simil_core.png, id=2139, 722.7pt x 433.62pt>
+<./PDZ/graphes/FDB/1G9O_simil_core.png, id=2125, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/FDB/1G9O_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/FDB/1G9O_simil_core.png>
@@ -3950,7 +3925,7 @@ Package pdftex.def Info: ./PDZ/graphes/FDB/1G9O_simil_core.png used on input li
 ne 891.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/FDB/1R6J_simil_cut.png, id=2140, 722.7pt x 433.62pt>
+<./PDZ/graphes/FDB/1R6J_simil_cut.png, id=2126, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/FDB/1R6J_simil_cut.png Graphic file (type png)
 
 <use ./PDZ/graphes/FDB/1R6J_simil_cut.png>
@@ -3958,7 +3933,7 @@ Package pdftex.def Info: ./PDZ/graphes/FDB/1R6J_simil_cut.png used on input lin
 e 892.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/FDB/1R6J_simil_core.png, id=2141, 722.7pt x 433.62pt>
+<./PDZ/graphes/FDB/1R6J_simil_core.png, id=2127, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/FDB/1R6J_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/FDB/1R6J_simil_core.png>
@@ -3966,7 +3941,7 @@ Package pdftex.def Info: ./PDZ/graphes/FDB/1R6J_simil_core.png used on input li
 ne 893.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/FDB/2BYG_simil_cut.png, id=2142, 722.7pt x 433.62pt>
+<./PDZ/graphes/FDB/2BYG_simil_cut.png, id=2128, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/FDB/2BYG_simil_cut.png Graphic file (type png)
 
 <use ./PDZ/graphes/FDB/2BYG_simil_cut.png>
@@ -3974,7 +3949,7 @@ Package pdftex.def Info: ./PDZ/graphes/FDB/2BYG_simil_cut.png used on input lin
 e 894.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/FDB/2BYG_simil_core.png, id=2143, 722.7pt x 433.62pt>
+<./PDZ/graphes/FDB/2BYG_simil_core.png, id=2129, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/FDB/2BYG_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/FDB/2BYG_simil_core.png>
@@ -4001,21 +3976,21 @@ LaTeX Warning: Text page 123 contains only floats.
 [123 <./PDZ/graphes/FDB/1G9O_simil_cut.png> <./PDZ/graphes/FDB/1G9O_simil_core.
 png> <./PDZ/graphes/FDB/1R6J_simil_cut.png> <./PDZ/graphes/FDB/1R6J_simil_core.
 png> <./PDZ/graphes/FDB/2BYG_simil_cut.png> <./PDZ/graphes/FDB/2BYG_simil_core.
-png>] <./PDZ/logos/core.png, id=2165, 1571.8725pt x 1887.6924pt>
+png>] <./PDZ/logos/core.png, id=2148, 1571.8725pt x 1887.6924pt>
 File: ./PDZ/logos/core.png Graphic file (type png)
 
 <use ./PDZ/logos/core.png>
 Package pdftex.def Info: ./PDZ/logos/core.png used on input line 934.
 (pdftex.def)             Requested size: 426.79134pt x 512.53534pt.
 
-<./PDZ/logos/exposed.png, id=2166, 1648.9605pt x 1351.6899pt>
+<./PDZ/logos/exposed.png, id=2149, 1648.9605pt x 1351.6899pt>
 File: ./PDZ/logos/exposed.png Graphic file (type png)
 
 <use ./PDZ/logos/exposed.png>
 Package pdftex.def Info: ./PDZ/logos/exposed.png used on input line 945.
 (pdftex.def)             Requested size: 426.79134pt x 349.84296pt.
  [124 <./PDZ/logos/core.png>]
-<./PDZ/titration/alignTiam1.png, id=2172, 838.67615pt x 441.19115pt>
+<./PDZ/titration/alignTiam1.png, id=2156, 838.67615pt x 441.19115pt>
 File: ./PDZ/titration/alignTiam1.png Graphic file (type png)
 
 <use ./PDZ/titration/alignTiam1.png>
@@ -4023,7 +3998,7 @@ Package pdftex.def Info: ./PDZ/titration/alignTiam1.png used on input line 961.
 
 (pdftex.def)             Requested size: 426.79134pt x 224.51979pt.
  [125 <./PDZ/logos/exposed.png>] [126 <./PDZ/titration/alignTiam1.png>]
-<./PDZ/titration/structure_Tiam1.png, id=2185, 4701.565pt x 3523.1625pt>
+<./PDZ/titration/structure_Tiam1.png, id=2168, 4701.565pt x 3523.1625pt>
 File: ./PDZ/titration/structure_Tiam1.png Graphic file (type png)
 
 <use ./PDZ/titration/structure_Tiam1.png>
@@ -4035,14 +4010,14 @@ Package pdftex.def Info: ./PDZ/titration/structure_Tiam1.png used on input line
 LaTeX Warning: Float too large for page by 13.3528pt on input line 978.
 
 [127 <./PDZ/titration/structure_Tiam1.png>]
-<./PDZ/titration/alignCASK.png, id=2194, 798.94485pt x 490.35194pt>
+<./PDZ/titration/alignCASK.png, id=2177, 798.94485pt x 490.35194pt>
 File: ./PDZ/titration/alignCASK.png Graphic file (type png)
 
 <use ./PDZ/titration/alignCASK.png>
 Package pdftex.def Info: ./PDZ/titration/alignCASK.png used on input line 993.
 (pdftex.def)             Requested size: 426.79134pt x 261.94289pt.
 
-<./PDZ/publicationPDZ.pdf, id=2195, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2178, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf>
@@ -4053,7 +4028,7 @@ File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./PDZ/publicationPDZ.pdf used on input line 1001.
 (pdftex.def)             Requested size: 609.7977pt x 803.44675pt.
 
-<./PDZ/publicationPDZ.pdf, id=2198, page=1, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2181, page=1, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 1>
@@ -4088,7 +4063,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page1 used on input line 100
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 
 [129 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2283, page=2, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2266, page=2, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 2>
@@ -4107,7 +4082,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page2 used on input line 100
 1.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [130 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2347, page=3, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2330, page=3, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 3>
@@ -4126,7 +4101,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page3 used on input line 100
 1.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [131 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2388, page=4, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2371, page=4, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 4>
@@ -4145,7 +4120,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page4 used on input line 100
 1.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [132 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2409, page=5, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2392, page=5, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 5>
@@ -4164,7 +4139,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page5 used on input line 100
 1.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [133 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2428, page=6, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2411, page=6, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 6>
@@ -4183,7 +4158,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page6 used on input line 100
 1.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [134 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2442, page=7, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2425, page=7, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 7>
@@ -4202,7 +4177,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page7 used on input line 100
 1.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [135 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2451, page=8, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2434, page=8, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 8>
@@ -4221,7 +4196,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page8 used on input line 100
 1.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [136 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2456, page=9, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2439, page=9, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 9>
@@ -4240,7 +4215,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page9 used on input line 100
 1.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [137 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2463, page=10, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2446, page=10, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 10>
@@ -4260,7 +4235,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page10 used on input line 10
 01.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [138 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2469, page=11, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2452, page=11, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 11>
@@ -4280,7 +4255,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page11 used on input line 10
 01.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [139 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2475, page=12, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2458, page=12, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 12>
@@ -4300,7 +4275,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page12 used on input line 10
 01.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [140 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2483, page=13, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2466, page=13, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 13>
@@ -4320,7 +4295,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page13 used on input line 10
 01.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [141 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2489, page=14, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2472, page=14, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 14>
@@ -4340,7 +4315,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page14 used on input line 10
 01.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [142 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2495, page=15, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2478, page=15, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 15>
@@ -4360,7 +4335,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page15 used on input line 10
 01.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [143 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2501, page=16, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2484, page=16, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 16>
@@ -4380,7 +4355,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page16 used on input line 10
 01.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [144 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2506, page=17, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2489, page=17, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 17>
@@ -4400,7 +4375,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page17 used on input line 10
 01.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [145 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2520, page=18, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2503, page=18, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 18>
@@ -4420,7 +4395,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page18 used on input line 10
 01.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [146 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2525, page=19, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2508, page=19, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 19>
@@ -4502,7 +4477,7 @@ Overfull \hbox (34.69362pt too wide) in paragraph at lines 253--254
 \openout7 = `these.brf'.
 
 
-./these.bbl:22: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Schmidt Am Busch M. &
                                   Simonson~T. Lopes~A. (\textbf {2010}). \ne...
 l.22 
@@ -4515,7 +4490,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./these.bbl:22: Package inputenc Error: Unicode char ﬁ (U+FB01)
+! Package inputenc Error: Unicode char ﬁ (U+FB01)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -4528,7 +4503,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./these.bbl:34: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Hazes B. &
                        Lasters~I. Desmet~J., Mayer M.~D. (\textbf {1992}). \...
 l.34 
@@ -4541,7 +4516,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./these.bbl:40: Package inputenc Error: Unicode char ﬃ (U+FB03)
+! Package inputenc Error: Unicode char ﬃ (U+FB03)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -4554,7 +4529,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./these.bbl:47: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Leach A. &
                       ~Lemon A. (\textbf {1998}). \newblock \enquote {Explor...
 l.47 
@@ -4566,7 +4541,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:60: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Anderson A. &
                           Donald~B. Lilien~R., Stevens~B. (\textbf {2005}). ...
 l.60 
@@ -4579,7 +4554,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./these.bbl:60: Package inputenc Error: Unicode char ﬁ (U+FB01)
+! Package inputenc Error: Unicode char ﬁ (U+FB01)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -4595,7 +4570,7 @@ or  <return>  to continue without it.
 [161
 
 ]
-./these.bbl:66: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument> ...Sullivan B. Prestwich S. Schiex T. &
                                                    Traoré~S. Allouche~D., A...
 l.66 
@@ -4607,7 +4582,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:72: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Hery S. &
                       Wodak~S. Wernisch~L. (\textbf {2000}). \newblock \enqu...
 l.72 
@@ -4620,7 +4595,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./these.bbl:72: Package inputenc Error: Unicode char ﬁ (U+FB01)
+! Package inputenc Error: Unicode char ﬁ (U+FB01)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -4633,11 +4608,11 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./these.bbl:101: Misplaced alignment tab character &.
-<argument>  Cramer C.J. &
-                          Truhlar~D. Hawkins~G. (\textbf {1995}). \newblock ...
-l.101 
-      
+! Misplaced alignment tab character &.
+<argument>  Dahiyat B. &
+                        ~Mayo S. (\textbf {1996}). \newblock \enquote {Prote...
+l.82 
+     
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -4645,9 +4620,47 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:120: Misplaced alignment tab character &.
-<argument> Journal of Biomolecular Structure &
-                                               Dynamics
+! Misplaced alignment tab character &.
+<argument> ...son A. Richardson D. Richardson J. &
+                                                   Donald~B. Gainza~P., Robe...
+l.89 
+     
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+! Package inputenc Error: Unicode char ﬂ (U+FB02)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.89 
+     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Misplaced alignment tab character &.
+<argument>  Varani G. Stoddard B. &
+                                    Baker~D. Kuhlman~B., Ireton~G. (\textbf ...
+l.95 
+     
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+<argument>  Cramer C.J. &
+                          Truhlar~D. Hawkins~G. (\textbf {1995}). \newblock ...
 l.120 
       
 I can't figure out why you would want to use a tab mark
@@ -4658,10 +4671,10 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 [162]
-./these.bbl:191: Misplaced alignment tab character &.
-<argument>  Ponder J. &
-                       ~Richards F. (\textbf {1987}). \newblock \enquote {Te...
-l.191 
+! Misplaced alignment tab character &.
+<argument> Journal of Biomolecular Structure &
+                                               Dynamics
+l.139 
       
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4671,10 +4684,10 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 [163]
-./these.bbl:228: Misplaced alignment tab character &.
-<argument>  Looger L. &
-                       ~Hellinga H. (\textbf {2001}). \newblock \enquote {Ge...
-l.228 
+! Misplaced alignment tab character &.
+<argument>  Ponder J. &
+                       ~Richards F. (\textbf {1987}). \newblock \enquote {Te...
+l.210 
       
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4683,9 +4696,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:247: Misplaced alignment tab character &.
-<argument>  Rosenbluth M. Teller A. &
-                                      Teller~E. Metropolis~N., Rosenbluth~A....
+! Misplaced alignment tab character &.
+<argument>  Looger L. &
+                       ~Hellinga H. (\textbf {2001}). \newblock \enquote {Ge...
 l.247 
       
 I can't figure out why you would want to use a tab mark
@@ -4696,10 +4709,10 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 [164]
-./these.bbl:272: Misplaced alignment tab character &.
-<argument>  Mignon D. &
-                        Simonson~T. Schmidt Am Busch~M., Lopes~A. (\textbf {...
-l.272 
+! Misplaced alignment tab character &.
+<argument>  Rosenbluth M. Teller A. &
+                                      Teller~E. Metropolis~N., Rosenbluth~A....
+l.266 
       
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4708,9 +4721,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:291: Misplaced alignment tab character &.
-<argument>  Gordon D. &
-                        Mayo~S. Dahiyat~B. (\textbf {1997}). \newblock \enqu...
+! Misplaced alignment tab character &.
+<argument>  Mignon D. &
+                        Simonson~T. Schmidt Am Busch~M., Lopes~A. (\textbf {...
 l.291 
       
 I can't figure out why you would want to use a tab mark
@@ -4720,22 +4733,10 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:308: Misplaced alignment tab character &.
-<argument>  Lee B. &
-                    ~Richards F. (\textbf {1971}). \newblock \enquote {The i...
-l.308 
-      
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./these.bbl:321: Misplaced alignment tab character &.
-<argument>  Coutsias E. &
-                          Kortemme~T. Mandell~D. (\textbf {2009}). \newblock...
-l.321 
+! Misplaced alignment tab character &.
+<argument>  Gordon D. &
+                        Mayo~S. Dahiyat~B. (\textbf {1997}). \newblock \enqu...
+l.310 
       
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4745,10 +4746,34 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 [165]
-./these.bbl:328: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
+<argument>  Lee B. &
+                    ~Richards F. (\textbf {1971}). \newblock \enquote {The i...
+l.327 
+      
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+<argument>  Coutsias E. &
+                          Kortemme~T. Mandell~D. (\textbf {2009}). \newblock...
+l.346 
+      
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
 <argument>  Aubard C. Plateau P. Simonson T. &
                                                Archontis~G. Polydorides~S., ...
-l.328 
+l.353 
       
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4757,11 +4782,11 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[166]
-./these.bbl:446: Misplaced alignment tab character &.
+[166] [167]
+! Misplaced alignment tab character &.
 <argument>  Palmai Z. &
                         Simonson~T. Druart~K., Le Guennec~M. (\textbf {2017}...
-l.446 
+l.464 
       
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -4771,25 +4796,24 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./these.bbl:446: Package inputenc Error: Unicode char ﬁ (U+FB01)
+! Package inputenc Error: Unicode char ﬁ (U+FB01)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.446 
+l.464 
       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-) [167] [168
-
-]
+) [168]
 \openout2 = `resume.aux'.
 
  (./resume.tex) [169
+
 
 
 ]
@@ -4804,22 +4828,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 345.
 (./conc.aux) (./annexe_posi.aux) (./resume.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 345.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 345.
+Package rerunfilecheck Info: File `these.out' has not changed.
+(rerunfilecheck)             Checksum: 6C0BE3AAE345E6E7B8F4882B78E8A6DB;10684.
 
-
-Package rerunfilecheck Warning: File `these.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `these.out':
-(rerunfilecheck)             Before: 39F237459B7BC2D23D7B06F0E9CFA0E3;10654
-(rerunfilecheck)             After:  6C0BE3AAE345E6E7B8F4882B78E8A6DB;10684.
 
 Package rerunfilecheck Warning: File `these.brf' has changed.
 (rerunfilecheck)                Rerun to get bibliographical references right.
 
 Package rerunfilecheck Info: Checksums for `these.brf':
-(rerunfilecheck)             Before: D853C85B7A91E179C8E8B8FEC9E01C32;6274
-(rerunfilecheck)             After:  28808E0CE5F1591F4FFEE4DE61E4625A;6317.
+(rerunfilecheck)             Before: 28808E0CE5F1591F4FFEE4DE61E4625A;6317
+(rerunfilecheck)             After:  EE9A975D9123E004130230A8C7D3A241;6442.
 
 LaTeX Warning: There were undefined references.
 
@@ -4833,118 +4851,38 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 345.
 ### simple group (level 1) entered at line 403 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 16058 strings out of 494875
- 247247 string characters out of 6178748
- 448336 words of memory out of 5000000
- 18026 multiletter control sequences out of 15000+600000
+ 16053 strings out of 494875
+ 247155 string characters out of 6178748
+ 448414 words of memory out of 5000000
+ 18045 multiletter control sequences out of 15000+600000
  115470 words of font info for 194 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 46i,18n,48p,1986b,992s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{table.caption.73} has been referenc
-ed but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.105} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.97} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.93} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.86} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.62} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.59} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.57} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.52} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.34} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.98} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.96} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.91} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.74} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.72} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.61} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.47} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.54} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.49} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.35} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section*.109} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter*.103} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{section*.58} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section*.56} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section*.53} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section*.41} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.40} has been referenced but does not
- exist, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvip
-s/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/t
-exmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-m
-athex.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-It
-alic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-Reg
-ular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsrom12
-.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts
-/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb><
-/usr/share/texmf/fonts/type1/public/lm/lmbxo10.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></us
-r/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm
-/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/
-fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pf
-b></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on these.pdf (189 pages, 36650427 bytes).
+ 46i,18n,48p,1998b,1019s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texm
+f/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.e
+nc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/e
+nc/dvips/lm/lm-mathex.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/sti
+x/STIXGeneral-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix
+/STIXGeneral-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doub
+lestroke/dsrom12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxo10.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi
+6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
+fb>
+Output written on these.pdf (189 pages, 36652480 bytes).
 PDF statistics:
- 2986 PDF objects out of 3580 (max. 8388607)
- 2493 compressed objects within 25 object streams
- 659 named destinations out of 1000 (max. 500000)
+ 2960 PDF objects out of 2984 (max. 8388607)
+ 2467 compressed objects within 25 object streams
+ 635 named destinations out of 1000 (max. 500000)
  32742 words of extra memory for PDF output out of 35830 (max. 10000000)
 
