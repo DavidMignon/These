@@ -147,7 +147,7 @@ Dans le modèle CPD, l'énergie de l'état dépliée dépend de la composition d
 \item Nous supposons que le modèle d'état déplié compense de manière systématique des erreurs dans la fonction d'énergie de l'état plié, de sorte que  la structure pliée contribue indirectement aux énergies de référence.
 \item Cette stratégie rend le modèle moins sensible aux variations de la longueur des boucles de surface et au ratio  de nombre de résidus de surface sur  celui des enfouis, qui peut varier considérablement selon les homologues (voir plus bas).  
 \end{itemize}
-Par conséquent, le modèle devrait être transférable à l'intérieur d'une famille de protéines. Distinguer les positions enfouies / exposées double le nombre de paramètres $E^r_t$ à ajuster. Inversement, pour réduire le nombre de paramètres, nous groupons les acides aminés en classes homologues (voir table \ref{tab;AAgroups}). Dans chaque classe c , et pour chaque type de position (enfoui ou exposé), les énergies de référence ont la forme
+Par conséquent, ce modèle devrait être plus transférable à l'intérieur d'une famille de protéines. Distinguer les positions enfouies / exposées double le nombre de paramètres $E^r_t$ à ajuster. Inversement, pour réduire le nombre de paramètres, nous groupons les acides aminés en classes homologues (voir table \ref{tab;AAgroups}). Dans chaque classe c , et pour chaque type de position (enfoui ou exposé), les énergies de référence ont la forme
 \begin{displaymath}
 E^r_t = E^r_c + \delta E^r_t
 \end{displaymath}
@@ -190,13 +190,13 @@ $E^r_c$ est un paramètre ajustable, tandis que $\delta E^r_t$ est une constante
     \end{table}
 
 
-Plus précisément, nous effectuons des simulations MC d'un peptide étendu (le peptide \textit{Syndecan1} ) et calculons les énergies moyennes pour chaque type d'acide aminé à chaque position peptidique (à l'exclusion des positions terminales). Nous prenons les différences entre les types d'acides aminés et les moyennons sur les positions peptidiques.
-Pendant, la maximisation de la vraisemblance, $E_c$ est optimisé tandis que $\delta E_t$ est fixe. Pour optimiser les valeurs $E^r_t$, nous utilisons une des trois méthodes de la section (\ref{enumMeth}) avec comme fréquences cibles les fréquences expérimentales soient des classes d'acides aminés, soient des types d'acides aminés. Le  début d'optimisation se fait sur les classes, puis lorsque la convergence est correctement établie, c'est à dire lorsque la fonction Proxy $C$ calculée sur ces classes retourne des valeurs stables et faibles, nous relâchons cette contrainte pour optimiser sur l'ensemble des types d'acide aminé mutables.Typiquement, vingt cycles d'optimisation sont effectués sur les classes, puis encore vingt cycles sur les types.  
+Plus précisément, nous effectuons des simulations MC d'un peptide étendu (le peptide \textit{Syndecan1}) et calculons les énergies moyennes pour chaque type d'acide aminé à chaque position peptidique (à l'exclusion des positions terminales). Nous prenons les différences entre les types d'acides aminés et les moyennons sur les positions peptidiques.
+Pendant, la maximisation de la vraisemblance, $E_c$ est optimisé tandis que $\delta E_t$ est fixe. Pour optimiser les valeurs $E^r_t$, nous utilisons une des trois méthodes de la section (\ref{enumMeth}) avec comme fréquences cibles les fréquences expérimentales soient des classes d'acides aminés, soient des types d'acides aminés. Le  début d'optimisation se fait sur les classes, puis lorsque la convergence est correctement établie, c'est à dire lorsque la fonction Proxy $C$ calculée sur ces classes retourne des valeurs stables et faibles, nous relâchons cette contrainte pour optimiser sur l'ensemble des types d'acide aminé mutables. Typiquement, vingt cycles d'optimisation sont effectués sur les classes, puis encore vingt cycles sur les types.  
 
 \section{Séquences expérimentales et modèles structurels}
 \subsection{L'ensemble des protéines PDZ}
 
-Nous sélectionnons huit protéines de la famille PDZ dont les structures cristallographiques sont connues. Aux trois présentes dans l'ensemble étudié au chapitre précédent:  NHREF, Syntenin et DLG2, sont ajoutés les protéines INAD, GRIP, PSD95, Cask et Tiam1. Leur séquence est présenté à la figure \ref{tab:corePDZ}. Cela constitue un ensemble dont le nombre de positions actives, c'est-à-dire les positions qui vont être mutées, est du même ordre pour chaque séquence d'acide aminé (voir le tableau \ref{tab:protéines_PDZ}).
+Nous sélectionnons huit protéines de la famille PDZ dont les structures cristallographiques sont connues. Aux trois présentes dans l'ensemble étudié au chapitre précédent:  NHREF, Syntenin et DLG2, sont ajoutés les protéines INAD, GRIP, PSD95, Cask et Tiam1. Leur séquence est présenté à la figure \ref{tab:corePDZ}. Le nombre de positions actives, c'est-à-dire les positions qui vont être mutées, est du même ordre pour chaque protéine (voir le tableau \ref{tab:protéines_PDZ}).
 
 
 \begin{table}[!htbp]
@@ -222,20 +222,20 @@ Nous sélectionnons huit protéines de la famille PDZ dont les structures crista
 
 \subsection{Alignements Blast croisés}
    
-Pour caractériser les homologies dans cet ensemble, une série de requêtes BLAST est effectuée sur chaque paire de séquences en utilisant le programme \verb!blastp! avec les options comme indiqué en \ref{SimPfam}. Il apparaît que Syntenin et Tiam1 sont atypiques dans l'ensemble: Il n'y a pas d'homologues avec une E-value inférieure à $10^{-7}$ et plusieurs E-value supérieur à 10. PSD95 est la protéine la plus consensuelle, ayant d'une part une homologie avec toutes les autres à au plus $6$ $10^{-4}$ , et d'autre part ayant $4$ homologues à moins de $2$ $10^{-10}$, pour un pourcentage d'identité compris entre $30$ et $46$. Globalement, il n'y a que peu d'homologies, la plus forte n'étant que de $3$ $10^{-15}$ entre PSD95 et DLG2 pour un pourcentage d'identité de $37$. Les détails sont dans le tableau \ref{tab:Xblast}.
+Pour caractériser les homologies dans cet ensemble, une série de requêtes BLAST est effectuée sur chaque paire de séquences en utilisant le programme \verb!blastp! avec les options comme indiqué en \ref{SimPfam}. Il apparaît que Syntenin et Tiam1 sont atypiques dans l'ensemble: Il n'y a pas d'homologues avec une E-value inférieure à $10^{-7}$ et plusieurs E-value supérieur à 10. PSD95 est la protéine la plus consensuelle, ayant d'une part une homologie avec toutes les autres à au plus $6$ $10^{-4}$ , et d'autre part ayant quatre homologues à moins de $2$ $10^{-10}$, pour un pourcentage d'identité compris entre $30$ et $46$. Globalement, il n'y a que peu d'homologies, la plus forte n'étant que de $3$ $10^{-15}$ entre PSD95 et DLG2 pour un pourcentage d'identité de $37$. Les détails sont dans le tableau \ref{tab:Xblast}.
 
 
 
     \begin{table}[!htbp]
 %       \raggedleft{}
-       \caption{E-value et pourcentage d'identité des alignements Blast native versus native pour nos séquences PDZ.}
+       \caption{E-value et pourcentage d'identité des alignements Blast native versus native pour nos séquences PDZ}
        \resizebox{\linewidth}{!}{%
 
 %       \scalebox{0.99}{
       \begin{tabular}{ccccccccc}
 
         \toprule
-        Protein & NHREF        & INAD      & GRIP        & Syntenin        & DLG2       & PSD95       & CASK       & TIAM1 \\
+        Proteine & NHREF        & INAD      & GRIP        & Syntenin        & DLG2       & PSD95       & CASK       & TIAM1 \\
         \cmidrule{1-9}
 
         NHREF    & 2 $10^{-66}$ (100) & 5 $10^{-10}$ (40) & 2 10^{-3} (25)        & 3 $ 10^{-7}$ (25) & 2 $ 10^{-11}$ (35)     & 1 $ 10^{-12}$ (30) & 5 $ 10^{-5}$ (25) & 9 $ 10^{-7}$(35)\\     
@@ -260,9 +260,9 @@ Pour caractériser les homologies dans cet ensemble, une série de requêtes BLA
 \subsection{Sélection des homologues}
 
 
-Pour définir les fréquences d'acides aminés cibles nécessaires à la maximiser nos vraisemblances, nous sélectionnons un ensemble de séquences homologues pour chacune des 6 premières protéines de notre sélection. En effet, nous excluons Cask et Tiam1 pour le calcul des énergies de références. Pour cela, nous effectuons des recherches BLAST avec comme requête la séquence extraite du fichier PDB sur la base de données \og siwwprot + trEmBL \fg d'Uniprot avec la matrice BLOSUM62 et l'option \og Gapped\fg et sans l'option \og filtre\fg.
+Pour définir les fréquences d'acides aminés cibles nécessaires pour maximiser nos vraisemblances, nous sélectionnons un ensemble de séquences homologues pour chacune des six premières protéines de notre sélection. En effet, nous excluons Cask et Tiam1 pour le calcul des énergies de références. Pour cela, nous effectuons des recherches BLAST avec comme requête la séquence extraite du fichier PDB sur la base de données \og Siwwprot + trEmBL \fg d'Uniprot avec la matrice BLOSUM62 et l'option \og Gapped\fg et sans l'option \og filtre\fg.
 
-Nous obtenons un premier ensemble pour chaque cas en nous limitant aux homologues de bonne qualité au regard de la E-value et du pourcentage d'identité, tout en conservant  en même temps une certaine diversité. Cela oblige pour certaines protéines à accepter des E-values plus haute que  $10^{-40}$, notamment INAD et NHREF , respectivement $10^{-32}$ et $10^{-10}$ , pour avoir un nombre d'homologues suffisant. Ensuite, les redondances les plus flagrantes sont enlevées manuellement. Finalement, les ensembles se composent de 42 à 126 homologues, avec des pourcentages d'identité supérieurs à 66\% excepté pour INAD où il a fallu descendre jusqu'à 38\%. Voir le tableau pour les détails \ref{tab:select_homo}. Les alignements des séquences homologues retenues pour un groupe constitué des 6 premières protéines sont représentés aux figures \ref{{align_homo:NHREF}},\ref{{align_homo:INAD}},\ref{{align_homo:Syntenin}},\ref{{align_homo:GRIP}},\ref{{align_homo:DLG2}} et \ref{{align_homo:PSD95}}.
+Nous obtenons un premier ensemble pour chaque cas en nous limitant aux homologues de bonne qualité au regard de la E-value et du pourcentage d'identité, tout en conservant  en même temps une certaine diversité. Cela oblige pour certaines protéines à accepter des E-values plus hautes que  $10^{-40}$, notamment INAD et NHREF, respectivement $10^{-32}$ et $10^{-10}$ , pour avoir un nombre d'homologues suffisant. Ensuite, les redondances les plus flagrantes sont enlevées manuellement. Finalement, les ensembles se composent de 42 à 126 homologues, avec des pourcentages d'identité supérieurs à 66\% excepté pour INAD où il a fallu descendre jusqu'à 38\%, voir \ref{tab:select_homo}. Les alignements des séquences homologues retenues pour un groupe constitué des six premières protéines sont représentés aux figures \ref{{align_homo:NHREF}},\ref{{align_homo:INAD}},\ref{{align_homo:Syntenin}},\ref{{align_homo:GRIP}},\ref{{align_homo:DLG2}} et \ref{{align_homo:PSD95}}.
 
 
     \begin{table}[!htbp]
@@ -271,7 +271,7 @@ Nous obtenons un premier ensemble pour chaque cas en nous limitant aux homologue
       \begin{tabular}{cccc}
 
         \toprule
-        protéines & \% identité & &\\
+        protéines & nombre & E-value & \% identité \\
         \cmidrule{1-4}
      NHREF  & 62  &    1 $10^{-32}$  &  67-95 \\
      INAD  & 42  &    1 $10^{-10}$  &  38-95 \\
@@ -291,10 +291,7 @@ Nous obtenons un premier ensemble pour chaque cas en nous limitant aux homologue
 
 \subsection{Alignements des protéines expérimentales et leurs homologues}
 
-%Tandis que les boucles et les chaînes terminales affichent de grands écarts. L'hélice $\alpha_2$ de Tiam1 est tournée légèrement vers l'extérieur par rapport aux trois autres structures (70). La figure 1b illustre la similarité structurale entre les paires de domaines PDZ. Cette similarité est déterminée par l'écart de rms (root mean square) entre  les atomes $C\alpha$ alignés structurellement et par ailleurs les identités des paires de séquences. Les écarts se situent entre $1,0$ et $2,1 \AA$  des identités de séquences entre 17 et 33 \%.La paire Tiam1/Cask on observe une identité de séquence de 33\% et et leur écart structurel de $1,7 \AA$ calculé sur 42 carbones. Les structures de syntenine et GLG2 sont plus similaires, avec une déviation structurale de $1,0 \AA$ calculé sur 60 C $\alpha$ alignés.
-
-
-Afin d'obtenir une caractérisation structurale de notre sélection de protéines. Nous réalisons en alignement des huit séquences natives, présentées en haut de \ref{tab:corePDZ}. Cet alignement nous sert de base pour la définition d'un alignement structural. Nous pouvons alors définir un cœur hydrophobe de nos protéines \og PDZ \fg , il est représenté au centre de \ref{tab:corePDZ}. Les 14 positions utilisées pour définir le cœur hydrophobe sont bien conservées dans l'alignement \og seed \fg de Pfam, mais pas totalement. L'Arg, Lys et Gln apparaissent à certaines positions, puisque dans de petites protéines comme des domaines PDZ, la longue partie hydrophobe  de ces chaînes latérales peut être enfui dans le noyau tout en permettant à la pointe polaire de la chaîne d'être exposé au solvant. Quelques résidus Asp et Glu apparaissent aussi, dans les endroits où l'alignement des séquences peut ne pas très bien refléter la superposition 3D les chaînes latérales.
+Afin d'obtenir une caractérisation structurale de notre sélection de protéines, nous réalisons un alignement des huit séquences natives, présentées en haut de \ref{tab:corePDZ}. Cet alignement nous sert de base pour la définition d'un alignement structural. Nous pouvons alors définir un cœur hydrophobe de nos protéines \og PDZ \fg , il est représenté au centre de \ref{tab:corePDZ}. Les 14 positions utilisées pour définir le cœur hydrophobe sont bien conservées dans l'alignement \og seed \fg de Pfam, mais pas totalement. L'Arg, Lys et Gln apparaissent à certaines positions, puisque dans de petites protéines comme des domaines PDZ, la longue partie hydrophobe  de ces chaînes latérales peut être enfouie dans le noyau tout en permettant à la pointe polaire de la chaîne d'être exposé au solvant. Quelques résidus Asp et Glu apparaissent aussi, dans les endroits où l'alignement des séquences peut ne pas très bien refléter la superposition 3D les chaînes latérales.
 
     
 
@@ -319,14 +316,13 @@ Afin d'obtenir une caractérisation structurale de notre sélection de protéine
 
 
       \end{tabular} 
-      \caption{Similarité des séquences expérimentales homologues, pour les 8 protéines PDZ.}
+      \caption{Similarité des séquences expérimentales homologues des huit protéines PDZ.}
 \label{tab:XSIMIL}      
     \end{table}
 
     \subsection{Similarité des homologues}
 
-Comme nous avons caractérisé les homologies des séquences natives, nous calculons également la similarité des séquences expérimentales homologues pour chaque couple aligné comme en \ref{tab:corePDZ}. Et apparaissent des situations où les similarités sont négatives, c'est le cas chez les homologues à Cask et Syntenine protéines déjà repérées comme éloignées en termes de séquences, avec une valeur de -26 entre DLG2 et Syntenine, -18 entre Tiam1  et Syntenin. Les plus hautes valeurs, excepté les valeurs d'auto similarité, sont à  112, entre PSD95 et NREF, et 110 pour la similarité entre les protéines PSD95 et DLG2. La similarité moyenne entre deux protéines différentes de notre sélection se situe aux environs de 50. 
-
+Comme nous avons caractérisé les homologies des séquences natives, nous calculons également la similarité des séquences expérimentales homologues pour chaque couple aligné comme en \ref{tab:corePDZ}. Apparaissent des situations où les similarités sont négatives, c'est le cas chez les homologues de Cask et Syntenine, protéines déjà repérées comme éloignées en termes de séquences, avec une valeur de -26 entre DLG2 et Syntenine et -18 entre Tiam1  et Syntenin. Les plus hautes valeurs (excepté les valeurs d'auto similarité) sont  112 entre PSD95 et NREF et 110 entre PSD95 et DLG2. La similarité moyenne entre deux protéines différentes de notre sélection se situe aux environs de 50. 
     
     \clearpage
 
@@ -336,7 +332,7 @@ Comme nous avons caractérisé les homologies des séquences natives, nous calcu
        \includegraphics[width=18cm]{images/natives_alignees.png} \\
        \includegraphics[width=16cm]{images/corePDZ2.png} \\
      \end{tabular}
-     \caption{le cœur PDZ sélectionné}
+     \caption{\textbt{le cœur PDZ sélectionné} En haut, l'alignement des huits séquences sauvages étudiés, les positions du coeur sont en jaunes. Au contre, la structure 3D des huit coeurs superposés. En bas, La séquence et les resids de chaque coeur.}
    \end{figure}
     \begin{table}[!htbp]
       \centering
@@ -346,7 +342,7 @@ Comme nous avons caractérisé les homologies des séquences natives, nous calcu
 
 \subsection{Les fréquences d'acides aminés}
 
-Pour chaque ensemble d'homologues, notons-le $\mathcal{H}$, nous calculons des fréquences globales de chaque type d'acide aminé sur toutes les séquences. Les fréquences sont déterminées séparément pour les positions enfouies et pour les positions exposées. Notons les ${f^b_t(\mathcal{H}), f^e_t(\mathcal{H})}$ , où l'indice t représente un type d'acide aminé et les exposants e et b désignent respectivement les ensembles de positions exposés et enfuis. Les ensembles de fréquences moyennes des huit protéines sont divisées selon deux groupes de protéines, d'une part le sous-ensemble $\mathcal{S}_1 = \{NHREF, INAD, GRIP, Syntenin, DLG2, PSD95\}$ et d'autre part le groupe $\mathcal{S}_2 =\{Cask, Tiam1\}$. Enfin, nous calculons la moyenne des $f^e_t(\mathcal{H})$ et des $f^b_t(\mathcal{H})$ sur $\mathcal{S}_1$ et sur $\mathcal{S}_2$. Cela donne deux jeux de deux ensembles cibles de fréquences d'acides aminés $f^b_t$ et $f^e_t$. Nous faisons la même chose pour chaque classe de type. Cette partition en deux sous-ensembles de protéines va nous permettre d'estimer la transférabilité des énergies de références obtenues à partir d'un sous-ensemble de protéines sur un l'autre.
+Pour chaque ensemble d'homologues, noté $\mathcal{H}$, nous calculons des fréquences globales de chaque type d'acide aminé sur toutes les séquences. Les fréquences sont déterminées séparément pour les positions enfouies et pour les positions exposées. Notons les ${f^b_t(\mathcal{H}), f^e_t(\mathcal{H})}$, où l'indice t représente un type d'acide aminé et les exposants e et b désignent respectivement les ensembles de positions exposés et enfouis. Les ensembles de fréquences moyennes des huit protéines sont divisées selon deux groupes de protéines, d'une part le sous-ensemble $\mathcal{S}_1$ = {NHREF,INAD,GRIP,Syntenin,DLG2,PSD95} et d'autre part le groupe $\mathcal{S}_2$ ={Cask, Tiam1}. Enfin, nous calculons la moyenne des $f^e_t(\mathcal{H})$ et des $f^b_t(\mathcal{H})$ sur $\mathcal{S}_1$ et sur $\mathcal{S}_2$. Cela donne deux jeux de deux ensembles cibles de fréquences d'acides aminés $f^b_t$ et $f^e_t$. Nous faisons la même chose pour chaque classe de type. Cette partition en deux sous-ensembles va nous permettre d'estimer la transférabilité des énergies de références obtenues à partir d'un sous-ensemble de protéines sur l'autre.
 \label{subsection:freqaa}
         
 \clearpage
