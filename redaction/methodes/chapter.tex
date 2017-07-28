@@ -137,8 +137,9 @@ Proteus utlise d'une part un backbone fixe, une espace discrét de rotamère et 
 
    \begin{figure}[!htbp]
      \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=15cm]{figure/matrice.png} &
+     \begin{tabular}{c}
+       \includegraphics[width=15cm]{figure/matrice.png}
+       \label{Graph:mat_ener}
      \end{tabular}
      
      \caption{\textbf{La matrice d'énergies} Sur cet exemple, un polypeptide de 6 résidues, chaque position posséde type d'acide aminés possibles et 3 rotamères possibles (2 pour le type A et 1 pour le type B). La matrice organise toutes les interactions de paires de chaîen latérales possibles. Les interactions impliquant le résidu numéro 2 sont dans la bande jaune de la matrice, les interactions impliquant le résidu numéro 3 sont dans la bande bleue. Les points rouge et vert correspondent aux interactions  noté par les flèches rouge et verte à gauche(La matrice est symétrique , ici les interactions sont reprrésentées qu'une seule fois).}
@@ -208,7 +209,7 @@ Ensuite , les differents fichiers d'énergies seront lu par proteus voir \ref{}
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=12cm]{figure/proteus/inputener.png} 
+       \includegraphics[width=12cm]{figure/inputener.png} 
      \end{tabular}     
      \caption{\textbt{Les fichiers d'énergies en mode CA}}
 \label{fig:CAenerfile}
@@ -218,14 +219,14 @@ Ensuite , les differents fichiers d'énergies seront lu par proteus voir \ref{}
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=12cm]{figure/proteus/inputenerGB.png} 
+       \includegraphics[width=12cm]{figure/inputenerGB.png} 
      \end{tabular}     
      \caption{\textbt{Les fichiers d'énergies en mode GB NEA et FDB}}
 \label{fig:GBenerfile}
    \end{figure}
    
 
-\subsection{Configuration de l'exploration }
+\section{Configuration de l'exploration}
 
 L'étape suivante est l'exploration à l'aide des énergies obtenues. Elle s'effectue avec le programme proteus écrit en C. Ce programme se contrôle par une fichier de configuration de type XML sans imbrication de balise, Il y a actuellement près de quarante balises possibles, une partie est présentée table \ref{tab:balise_proteus}. Nous en détaillons quelques unes ici.
 
@@ -237,19 +238,10 @@ Pour le MC/REMC, le fichier de configuration détermine le nombre de marcheurs, 
 Pour controler les déplacements des marcheurs, il existe 
 \begin{itemize}
 \item un ensemble de cinq  balises pour définir les modifications à effectuer dans la séquence-conformation courante, voir le chapitre \ref{chap:developpement}
-\item une balise qui definit un voisinnage de la première position modifié dans lequel sera choisi une autre position pour une seconde modification.
+\item une balise qui definit un voisinnage de la première position modifié dans lequel sera choisi une autre position pour une seconde modification, voir la section \ref{sub:MC_move}.
 \end{itemize}
-Un voisinnage dans la séquence-conformation se définit de la façon suivante:
-\label{\ref{para:voisin}}
-Deux positions $i$ et $j$ sont voisines s'il existe un rotamère $r_i$ de $i$ et un rotamère $r_j$ de $j$ tels que:
-\begin{displaymath}
- | E(r_P_i_,r_p_j) | > s_{vois}
-\end{displaymath} 
-avec $s_{vois}$ le seuil donné par l'utilisateur dans la balise.
-Le voisinnage d'une position $i$ est l'ensemble de ses voisins.
 
-
-
+Il est possible de réduire l'espace des états que peut prendre une séquence-conformation. Les explications sous en \ref{sub:restric}.Il existe deux balises pour définir un système de groupes et déclarer une fonction de score. Ceux-ci permettent de définir une optimisation non plus uniquement du type de l'équation \ref{deltaG}, mais répondant un ensemble de problématique nettement plus large. Nous détaillons ce système  en \ref{sub:group} et \ref{sub:score}.
 
     \begin{table}[!htbp]
       \centering
@@ -293,10 +285,44 @@ Le voisinnage d'une position $i$ est l'ensemble de ses voisins.
 
   \end{table}
 
+\subsection{Les déplacements Monte-Carlo}
+
+\label{sub:MC_move}
+
+Dans l'algorithme de metropolis, il est nécessaire de définir une probabilité de sélectionner un état $B$ lorsque le système est dans l'état $A$. Pour proteus, une transition se définit par des modifications à certaines positions de la séquence-conformation courante. Il y a deux types de modification élémentaires: une mutation et un chagement de rotamère qui peuvent être combinés. Cinq balises permettent de définir des probabilités associées à ces modifications:
+
+\verb!<Rot_Proba>! \\
+\verb!<Mut_Proba>! \\
+\verb!<Rot_Rot_Proba>! \\
+\verb!<Mut_Rot_Proba>! \\
+\verb!<Mut_MuT_Proba>!  \\
+chacune prend en paramètre une valeur comprise entre $0$ et $1$. Les deux premières fixent la probabilité des deux modifications élémentaires. Les trois autres fixent la probabilité de modifier deux positions simultanement, c'est à dire au court du même pas Monte-Carlo.
+Le choix d'un première position à modifier se fait toujours par tirage aléaoite sur l'ensemble des positions du système. En revanche, le choix de la seconde position à modifier se fait par tirage aléatoire dans le voisinnage de la première position. Le voisinnage d'une position se définit de la façon suivante.
+
+Deux positions $i$ et $j$ sont voisines s'il existe un rotamère $r_i$ de $i$ et un rotamère $r_j$ de $j$ tels que:
+\begin{displaymath}
+  \label{\ref{para:voisin}}
+ | E(r_P_i_,r_p_j) | > s_{vois}
+\end{displaymath} 
+avec $s_{vois}$ le seuil donné par l'utilisateur dans la balise \verb!!.
+Le voisinnage d'une position $i$ est l'ensemble de ses voisins.
 
 
+Ce système de déplacements MC a été revu pendant ma thèse, voir section \ref{}.
 
- \subsection{Configuration de la fonction de score }
+\subsection{Restriction de l'espace séquence-conformation}
+\label{sub:restric}
+
+Dans proteus, l'espace des états possibles se définit par le contenue du fichier \og backbone \fg. Cependant, l'utilisateur a la posibillité de restrainte cet espace sans modification des fichiers d'énergie. Il peut le faire un utilisant la balise \verb!<Space_Constraints>! de la façon suivante:
+
+\verb!<Space_Constraints>! \\
+\verb!489  LYS TRP! \\
+\verb!490  ASN ARG{1,8,12}! \\
+\verb!</Space_Constraints>! \\
+
+Cela signifie qu'à la position 489 seules les types LYS et TRP sont possibles et qu'à la position 490, les deux types ASN et ARG sont possibles, mais que pour ARG seule les rotamères 1 , 8  et 12, selon l'indexation fourni dans fichier \og backbone \fg, sont autorisés. Cette balise permet d'autres classes de restrictions qui sont exposées plus loin.
+
+ \subsection{Définition de la fonction de score }
 
  Le cycle thermodynamique \ref{fig:cycleThermo} peut être adapter pour exprimer d'autres problèmatiques que celle de la recherche de séquences stables. C'est le cas des calculs de $pK_a$ par l'expression d'une différence d'énergie libre de protonation. La problèmatique CPD de la reconnaissance d'un ligand par une protéine peut également être traitée. Cela peut se faire par un critère d'affinité via l'énergie libre d'interaction ou par un critère de spécificité. Le critère d'affinité se base sur le cycle thermodynamique  \ref{fig:cycleThermoLignad} qui permet d'écrire l'équation:
 
@@ -324,29 +350,38 @@ Proteus permet l'utilisation de ce type de critère via la décomposition des é
 Nous détaillons maintenant la façon dont ce dispositif fonctionne.
 
 \subsubsection{Définition de groupes}
+\label{sub:group}
+L'utilisateur a la possibilité de définir des groupes sur le système étudier. Un groupe est associé à une partie du système. Il se définit en donnant la liste des positions qu'il contient dans la balise \verb!<Group_Definition>! du fichier de configuration. Par exemple:
 
-L'utilisateur a la possibilité de définir des groupes sur le système étudier. Un groupe est associé à une partie du système. Il se définit en donnant la liste des positions qu'il contient dans la balise <Group\_Definition> du fichier de configuration. Par exemple:
-
-\textttt{<Group\_Definition>}
-\textttt{grp_1 1−3}
-\textttt{grp_2 4 5}
-\textttt{grp_3 6-8}
-\textttt{</Group\_Definition>}
+\verb!<Group_Definition>! \\
+\verb!grp1 1−3! \\
+\verb!grp2 4 5! \\
+\verb!grp3 6-8! \\
+\verb!</Group_Definition>! \\
 
 Chaque groupe représente une conformation-séquence de sa partie. Il est possible de définir plusieurs groupes associés à un même ensemble de position:
 
-\textttt{<Group\_Definition>}
-\textttt{grp_1 1−3}
-\textttt{grp_2 4 5}
-\textttt{grp_3 6-8}
-\textttt{grp_4 6-8}
-\textttt{</Group\_Definition>}
+\verb!<Group_Definition>! \\
+... \\
+\verb!grp3 6-8! \\
+\verb!grp4 6-8! \\
+\verb!</Group_Definition>! \\
 
-\textttt{<Space_Constraints>}
-\textttt{grp_4.TYPE grp3}
-\textttt{</Space_Constraints>}
+Dans l'exemple précédent le groupe grp4 représente une seconde conformation-séquence des résidus compris entre les numéros 6 et 8 du fichier backbone. Ces conformations-séquences possède toutes deux leur propre espace d'états. L'utilisateur peut les reduires differements l'un de l'aute:
 
-Dans l'exemple précédent le groupe \textttt{grp_4} représente une seconde conformation-séquence des résidus compris entre les numéros 6 et 8 du fichier backbone. La déclaration dans la balise  <Space\_Constraints> garantie que les groupes \textttt{grp_3} et \textttt{grp_4} auront des séquences identiques tout au long de l'exploration. 
+
+\verb!<Space_Constraints>! \\
+\verb!grp3.6  LEU TRP! \\
+\verb!grp4.6  ASN ARG!  \\
+\verb!</Space_Constraints>! \\
+
+Il peut au contraire relier leurs états respectifs:
+
+\verb!<Space_Constraints>! \\
+\verb!grp4.TYPE grp3! \\
+\verb!</Space_Constraints>! \\
+
+La déclaration précédente garantie que les groupes grp3 et grp4 auront des séquences identiques tout au long de l'exploration. 
 
 En tirant partie de la décomposition par paires de la fonction d'énergie, il est possible d'exprimer simplement l'énergie d'un groupe et l'interaction entre deux groupes. On a:
 
@@ -369,60 +404,57 @@ Il est possible de visualiser les énergies de groupes sur la matrice d'énergie
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=12cm]{figure/proteus/grp_matrix.png} &
+       \includegraphics[width=12cm]{figure/grp_matrix.png} &
      \end{tabular}
      
      \caption{\textbf{Les repartitions des contributions aux énergies de groupes et d'interaction entre groupes dans la matrice d'énergie} L'énergie des groupes orange bleu et vert est la sommme de termes des carrés de même couleur dans la matrice d'énergie. L'interaction entre le groupe bleu et le groupe vert est la somme de tous les termes du rectangle rouge.}
 \label{fig:matrix_grp}
    \end{figure}
    
-   
 
-\subsection{modèle de données} 
-
-
-   \begin{figure}[!htbp]
-     \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=12cm]{figure/proteus/structures_physique.png} &
-     \end{tabular}
-     
-     \caption{Les principales structrures \og physiques\fg dans proteus}
-\label{graph:struct_Phy}
-   \end{figure}
+\subsubsection{Déclaration de la fonction de score}
+\label{sub:score}
+Il est alors possible d'introduire une nouvelle matrice qui rassemble les énergies de groupes et les énergies d'interaction entre les groupes, voir la figure \ref{fig:group_matrix}. Dans cette petite matrice l'énergie propre d'un groupe est sur la diagonale, celles d'interaction hors de la diagonale.
 
 
 
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=12cm]{figure/proteus/structures_modele_logique.png} &
+       \includegraphics[width=8cm]{figure/group_matrix.png} &
      \end{tabular}
      
-     \caption{Les principales structrures \og logiques\fg dans proteus}
-\label{graph:struct_log}
+     \caption{\textbt{La matrice des énergie de groupe} Les énergies des groupes grp1, grp2, grp3 et grp4 et leurs interactions présentées sont forment de matrice. Il n'y a pas d'interaction entre grp3 et grp4 parce qu'ils sont associés à une même partie du système.}
+\label{fig:group_matrix}
    \end{figure}
 
+La fonction de score peut se définir alors comme une combinaison linéaire des élèments de cette matrice. Pour cela il fait utiliser la balise  \verb!<Optimization_Configuration>!:
 
 
-   \begin{figure}[!htbp]
-     \centering
-     \begin{tabular}{cc}
-       \includegraphics[width=12cm]{figure/proteus/structures_dynamiques.png} &
-     \end{tabular}
-     
-     \caption{Les principales structrures \og dynamiques\fg dans proteus}
-\label{graph:struct_Dyna}
-   \end{figure}
 
-   
+\verb!<Optimization_Configuration>! \\
+\verb!m(0.2grp1+0.2grp2+0.3grp2~grp3-0.3grp2~grp4)! \\
+\verb!</Optimization_Configuration>! \\
 
-\paragraph{Les fichiers de sortie}
+
+ici la notation de l'énergie entre deux groupes \verb!grp2! et \verb!grp3! est \verb!grp2~grp3!, et  l'énergie propre d'un groupe \verb!grp1! simplement \verb!grp1!. Les nombres sont des pondérations des énergies. La notation \verb!m(E)! indique que la fonction de score demandée est une minimisation de la somme déclarée entre les parenthèses. Cela signifie que pour deux séquences-conformations A et B, A est meilleure que B si $E(A) < E(B)$.
+
+
+Il est également possible d'utiliser \verb!t(...)! pour indiquer une fonction de seuil:
+
+\verb!<Optimization_Configuration>! \\
+\verb!t(grp1)<125.8! \\
+\verb!</Optimization_Configuration>! \\
+
+Ici A est meilleure que B si $E(A)<125,8$. C'est utile dans le cas d'une utilisation de l'algorithme MSD, cela elle permet d'obtenir un ensemble de conformations-séquences avec une énergie inférieur à un seuil.
+
+
+\section{Les fichiers de sortie}
    
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=12cm]{figure/proteus/output.png} &
+       \includegraphics[width=12cm]{figure/output.png} &
      \end{tabular}
      
      \caption{Les fichiers en sortie de proteus}
