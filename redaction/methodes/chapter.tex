@@ -450,17 +450,27 @@ Ici A est meilleure que B si $E(A)<125,8$. C'est utile dans le cas d'une utilisa
 
 
 \section{Les fichiers de sortie}
-   
+
+Dans le mode HEURISTIC (algorithme MSD), proteus produit en sortie deux fichiers. Un fichier de conformations-séquences dans lequel chaque ligne donne la meilleure séquence-conformation d'un cycle, son énergie au sens de la fonction de score, le nombre de passage sur la séquence nécessaire à son obtention, voir \ref{MSD}. Le second fichier est un fichier d'énergies qui donne résultat de la fonctoin de score, l'énergie de chaque groupe ou interaction de groupe utilisée, ceci pour chaqune des séquences-conformations du premier fichier. Le lien entre les deux fichiers se fait par l'identifiant de résultats situé dans la première colonne des fichiers.
+
+Dans le mode MONTECARLO (algorithme MC et REMC), sont produits un fichier de conformations-séquences et un ficier d'énergies par marcheurs utilisés. Le format de ces fichiers sont les même que celui du mode HEURISTIC, excepté pour le champ contenant le nombre de passage sur la séquence. Ici, il est occupé par le nombre de pas pendant lequel le marcheur est resté dans la séquence-conformation avant un déplacement. Les fichiers d'énergies contiennentt la température dans l'entête.
+
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{cc}
        \includegraphics[width=12cm]{figure/output.png} &
      \end{tabular}
      
-     \caption{Les fichiers en sortie de proteus}
-\label{graph:struct_Phy}
+     \caption{Les fichiers en sortie de proteus, en haut pour le mode MONTECARLO, en bas pour le mode POSTPROCESS}
+\label{proteusoutput}
    \end{figure}
-   
+
+
+
+
+Dans les fichiers précédents, les séquences-conformations sont présentées sont forme de liste de nombres qui correspondent au nième rotamère de chaque position selon le fichier backbone. Le mode POSTPROCESS propose une conversion de ce format vers un format de type FASTA. Dans lequel,  apparaîssent la séquence d'acides aminés, la liste des rotamères donnée par leur numéro et les positions PDB pour chaque séquences-conformations.
+
+Le format de ces fichiers est présenté à la figure \ref{proteusoutput}.
 
 
 \section{Outils d'analyse de séquences} 
