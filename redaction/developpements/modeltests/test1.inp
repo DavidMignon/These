@@ -1,0 +1,19 @@
+
+struct @example.psf end
+coor disp=main @example.pdb 
+
+
+!! model and idx, simple case
+coor copy extended=true from=main to=MODEL idx=2 end 
+
+!! model to model  (extended=false ==> only x, y and z cols)
+coor copy extended=false from=MODEL to=MODEL IDX=2=3 end
+
+
+!! write coor with idx=3
+write coor from=MODEL  idx=3  output=output1a.pdb end
+
+!! write all the models
+write coor from=MODEL output=output1b.pdb end
+
+stop
