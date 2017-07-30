@@ -835,7 +835,7 @@ Si l'on injecte cette nouvelle probabilité dans ~\ref{balance}, on a encore le 
 Dans toute la suite, l'algorithme Monte-Carlo (MC) désigne l'algorithme de Metropolis-Hastings, ce qui est un usage courant.
 
 \subsection{Le Monte-Carlo avec échanges de répliques (REMC)}
-
+\label{REMC}
 
 Une amélioration de l'algorithme de Métropolis-Hastings, connu sous le nom de \og Replica Exchange Monte-Carlo\fg a été introduite par Swendsen and Wang (\cite{Swendsen82}). La méthode est également connue sont les noms \og parallel tempering\fg. L'objectif est d'accélérer la convergence en permettant au processus stochastique de visiter plusieurs zones énergétiques simultanément. Ainsi, l'algorithme couple l'exploration dans des basins de basses énergies, importante pour la recherche des solutions proche de l'optimum avec, l'exploration dans des zones de plus hautes énergies, ce qui facilite la sortie des minimums locaux.
 

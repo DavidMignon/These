@@ -1,0 +1,72 @@
+Modifications Xplor
+Pour permettre la gestion de
+multiples jeux de
+coordonnées pour chaque
+résidu
+David Mignon,le 17/12/13
+
+.
+
+.
+
+Introduction des notions de
+resclass et de modèle
+Une resclass identifie un résidu par le
+resid,le resname et le segid.
+Un modèle est un jeu de coordonnées par
+resclass.
+L'utilisateur ne manipule que les modèles.
+Le lien modèle resclass se fait via la
+sélection d'atomes.
+
+Lecture des modèles
+deux possibilités
+coor disp=model @file.pdb
+Tous les modèles de file.pdb sont ajoutés dans un tableau
+en mémoire.
+Un nombre est lu à la colonne 67-71.
+Il représente l'indice des modèles pour une resclass.
+Coor disp=model @true.pdb push=true
+Ici, un seul modèle par resclass est ajouté à la fin du
+tableau.L'indice n'est pas lu dans true.pdb mais calculé
+« plus grand indice existant» + 1.
+
+Copie des modèles
+La commande coor copy a évolué:
+coor copy from=A to=B idx=i=j end
+avec A,B=main,comp,xref ou model
+Par défaut:
+idx=1 pour from=model
+idx=nb modèles +1 pour to=model
+L'ancienne syntaxe est toujours supportée.
+
+Écriture des modèles
+Write coor from=model output=my.pdb end
+Cette commande imprime tous les modèles dans le fichier.
+Write coor from=model idx=i output=my.pdb end
+Ici,seul le modèle i de chaque resclass est imprimé.
+La colonne 67-71 est renseignée dans les deux cas avec l'indice du modèle.
+
+Exemple d'utilisation
+les modèles stockent les coordonnées de
+rotamères
+write coor sele=(resid $1 and resn $aa1 and not store9)
+from=main to=model idx=$rot1 end
+Remplace :
+eval ($rotafile1 = "local/Rota/" + encode($1) + "_" + $aa1 +
+"_" + encode($rot1) + ".pdb")
+write coor output=$rotafile1 sele=(resid $1 and resn $aa1 and
+not store9) end
+Et
+coor copy sele=(resid $2 and resn $aa2 and not store9)
+from=model idx=$rot2 to=main end
+Remplace :
+eval ($rotafile2 = "local/Rota/" + encode($2) + "_" + $aa2 +
+"_" + encode($rot2) + ".pdb")
+coor sele=(resid $2 and resn $aa2 and not store9) @@$rotafile2
+
+Les modèles en mémoire
+
+tableau de modèles pour une resclass
+
+

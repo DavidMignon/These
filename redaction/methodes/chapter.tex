@@ -188,7 +188,7 @@ Il determine:
 
 -5- Pour chaque rotamére de chaque type, après une petite minimisation, où lui seul peut se déplacer, l'énergie d'interaction avec le squelette est calculée. Elle est stocké dans une fichier. Ce sont les énergies de la diagonale de matrice. l'objectif de la minimisation est d'adapter le rotamère à son environement natif.
 
--6- Pour chaque paire de rotamère possible,comme pour la diagonale de ma matrice, une petite minimisation est effectuée avec uniquement la paire courante qui peut se deplacer. Puis les termes d'énergie d'interaction du couple sont  calculés et enregistrés dans du fichiers.  
+-6- Pour chaque paire de rotamère possible,comme pour la diagonale de ma matrice, une petite minimisation est effectuée avec uniquement la paire courante qui peut se deplacer. Puis les termes d'énergie d'interaction du couple sont  calculés et enregistrés dans des fichiers.  
 \end{itemize}
 
 Pour chaque paire d'acides aminés, l'énergie d'interaction a été obtenue après 15 pas de minimisation de l'énergie, seules les interactions de la paire entre les autres chaînes et le backbone sont prises en compte. Cette courte minimisation simplifie l' approximation discrète. Les rotamères de chaînes latérales utilisés sont une version légèrement étendue de la librairie de Tuffery et al. \cite{Tuffery91}, qui possède un total de 254 rotamères (sur l'ensemble des types d'acides aminés).Cette extension comprend des orientations d'hydrogène supplémentaires pour les groupes OH et SH \cite{Gaillard14}. Cette bibliothèque de rotamères a été choisie pour sa simplicité et parce qu'elle a donné de très bonnes performances dans les tests de placement de chaînes en comparaison au programme spécialisé scwlr4 qui utilise une bibliothèque beaucoup plus grande \cite{Krivov09,Gaillard16}.
@@ -450,8 +450,8 @@ Ici A est meilleure que B si $E(A)<125,8$. C'est utile dans le cas d'une utilisa
 
 
 \section{Les fichiers de sortie}
-
-Dans le mode HEURISTIC (algorithme MSD), proteus produit en sortie deux fichiers. Un fichier de conformations-séquences dans lequel chaque ligne donne la meilleure séquence-conformation d'un cycle, son énergie au sens de la fonction de score, le nombre de passage sur la séquence nécessaire à son obtention, voir \ref{MSD}. Le second fichier est un fichier d'énergies qui donne résultat de la fonctoin de score, l'énergie de chaque groupe ou interaction de groupe utilisée, ceci pour chaqune des séquences-conformations du premier fichier. Le lien entre les deux fichiers se fait par l'identifiant de résultats situé dans la première colonne des fichiers.
+\label{proteusIO}
+Dans le mode HEURISTIC (algorithme MSD), proteus produit en sortie deux fichiers. Un fichier de conformations-séquences dans lequel chaque ligne donne la meilleure séquence-conformation d'un cycle, son énergie au sens de la fonction de score, le nombre de passage sur la séquence nécessaire à son obtention, voir \ref{MSD}. Le second fichier est un fichier d'énergies qui donne résultat de la fonctoin de score, l'énergie de chaque groupe ou interaction de groupe utilisée, ceci pour chaqune des séquences-conformations du premier fichier. Le lien entre les deux fichiers se fait par l'identifiant unique de résultats situé dans la première colonne des fichiers.
 
 Dans le mode MONTECARLO (algorithme MC et REMC), sont produits un fichier de conformations-séquences et un ficier d'énergies par marcheurs utilisés. Le format de ces fichiers sont les même que celui du mode HEURISTIC, excepté pour le champ contenant le nombre de passage sur la séquence. Ici, il est occupé par le nombre de pas pendant lequel le marcheur est resté dans la séquence-conformation avant un déplacement. Les fichiers d'énergies contiennentt la température dans l'entête.
 
