@@ -5,7 +5,7 @@ Ce chapitre expose les modifications faites dans le logiciel Proteus et dans X-p
 
 X-plor est un logiciel concue pour la biologie struturale et developpé à l'origine par Axel T. Brünger à l'université de Yale , \cite{Brünger92}. Il propose un language de script permettant d'exploiter ses Pour adapter X-plor au CPD nous y ajoutons la gestion de jeux de coordonnées multiples pour chaque résidu.
 
-Le REMC est par nature un algorthme parallèle, nous présentons l'implementation de cet algorithme dans proteus avec notre gestion du parallèlisme. Le schéma proposé par et Metropolis et Hasting constitue un cadre général dans lequel il est possible d'apadpter les probabilités utilisées au système étudier. Nous expliquons comment le critère d'acceptation a été amélioré en tenant compte de la spécificité de notre modèle et de nos objectifs. Enfin, sont présenté quelques nouvelles fonctionnalité dans proteus.  
+Le REMC est par nature un algorthme parallèle, nous présentons l'implementation de cet algorithme dans proteus avec notre gestion du parallèlisme. Le schéma proposé par et Metropolis et Hasting constitue un cadre général dans lequel il est possible d'apadpter les probabilités utilisées au système étudier. Nous expliquons comment le critère d'acceptation a été amélioré en tenant compte de la spécificité de notre modèle et de nos objectifs. Enfin, sont présenté quelques nouvelles fonctionnalité dans proteus:Un nouveau mode de sélection des séquences à imprimer, basé sur la meilleure énergie courante,un système de probabilité de sélection qui permet une pondération à chaque position du taux de mutations et de changements de rotamères, une gestion dynamique de la mémoire en fonction du fichier de configuration, un système de creation de label qui simplifie la configuration.  
 
 
 \section{Les Modèles }
@@ -93,23 +93,63 @@ Pendant l'exécution, le fil d'exécution crée les autres fils. Il possède un 
 \subsection{REMC dans proteus}
 
 Comme nous l'avons vu en \ref{REMC} l'algorithme REMC considère plusieurs simulations indépendantes d'un même système. Cela fait de lui un algorithme bien adapté à la programmation parallèle. Deux points demandent une attention particulière l'échange de réplique et la création de l'identifiant unique d'impression, voir \ref{proteusIO}. Le schéma génnéral de REMC dans proteus est présenté à la figure  \ref{fig:openMP}. Une région parallèle est initiée par la directive \og #pragma omp parallel\fg: les différents marcheurs sont créés. Chacuns réalise une trajectoire de type MC jusqu'à un nombre de pas multiple de la période d'échange. A priori l'avancée des marcheurs n'est pas simutanée. Donc une directive \og #pragma omp barrier\fg est placée avant le test d'échange, elle garantie que chacun a effectué le même bon nombre de pas. Une fois tous les marcheurs bloqué par cette directive, ils sont libérés. La directive \og #pragma omp master\fg dédie l'execution du test et de l'échange de réplique au seul marcheur maître. Pour empêché les autres de marcher avant un echange éventuel, une seconde directive \og barrier\fg est placée après les instructions d'échanges. Tout au long d'une trajectoire, des séquences-conformations sont imprimées. Pour facilité le post-traitement, un identifiant unique sur toute l'exécution est attribuée à chacunes. Pour que tous les marcheurs puissent l'incrémenter, l'index qui sert d'identifiant est déclaré comme variable partagée. Pour garantir que chaque passage sur cette instruction retourne une valeur unique une directive \og#pragma omp atomic cpture \fg est utilisée.
- 
+
+
+Pour terminer cette section, nous donnons deux représentations graphiques du comportement des marcheurs REMC dans proteus à la figure \ref{fig:proteusREMC}.  
+
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{cc}
        \includegraphics[width=8cm]{figure/re8_Ttraj.png}  &
        \includegraphics[width=8cm]{figure/re8_distri.png}  &
      \end{tabular}     
-     \caption{\textbt{}}
-\label{fig:PDB}
+     \caption{\textbt{Comportement de proteus pour un REMC à huit marcheurs.} A gauche, la trajectoire des marcheurs dans l'ensemble des huit températures. A droite, La distribution des énergies par marcheurs. On peut imaginer la distribution cumulée des marcheurs et remarquer que son graphe serai proche de celle d'une distribution de Boltzmann}
+\label{fig:proteusREMC}
    \end{figure}
    
 
-\section{affinage de la fonction de test MC}
-\section{fonction plus mieux}
-\section{constraintes dans les résidues}
+   \section{Amélioration de la fonction d'acceptation MC}
+
+   Deux améliorations ont été apportées à la fonction d'acceptation MC de proteus. Pour réaliser une mutation du type $t$ vers $t'$, nous effectuons un changement de type d'acide aminé dans la structure replié et le changement inverse dans la structure déplié, voir le cycle thermodynamique en \ref{fig:cycleThermo}. La probabilité d'une mutation est donc le produit de la probabilite de choisir $t'$ par la probabilité de choisir la structure replié avec $t'$ et la structure déplié avec $t$. Dans proteus, ces changements sont sélectionnés par tirage aléatoire uniforme sur l'ensemble des états possibles. 
+
+   Ce pose alors la question des différents états possibles des chaînes latérales à l'état déplié. Plusieurs point de vue sont possibles. On peut considérer qu'il existe autant de rotamères à l'état replié qu'à état déplié et que ces derniers ont tous la même énergie. Cette possibilité a l'avantage de rendre la probabilité de mutation symètrique, c'est-à-dire que le passage du type $t$ vers $t'$ est aussi probable que le passage de $t'$ vers $t$. Mais elle a l'inconvéniant d'être peu réaliste parce que les roamères sont des positionnements préferentiels à l'état replié et non à l'état deplié.
+
+   Nous avons fait évaluer proteus vers autre point de vue, en considérant qu'une chaîne latérale à l'état déplié n'a qu'un seul rotamère dominant. Cela induit une disymétrie dans la probabilité de sélection qui est corrigé par une probabilité d'acceptation du type \ref{eq:Hasting}. Cette nouvelle probabiliité d'acceptation est décrite en détail en \ref{eq:rule}.
+
+   \section{Seuil d'impression}
+\label{sec:dev}
+La quantité de séquences-conformations écrite dans les fichiers de sortie peut devenir importante surtout en REMC. Pour limiter la taille des fichiers et facilité le post-traitement, nous introduisons la balise    \verb!<Print_Threshold>!. Elle prend en paramètre un seuil $s$ qui conditionne l'impression d'une séquence-conformation de la façon suivante. Chaque marcheur conserve au court d'une simulation la meilleure énergie obtenue $E_{best}$. A tout moment une séquence-conformation est imprimée seulement si l'écart entre son énergie et $E_{best}$  est strictement plus petit que $s$. Ainsi, un seuil à $0$ limite les impressions aux seules séquences-conformations qui améliorent l'énergie durant la simulation.
+
 \section{Nouveau système de Déplacement}
-\section{Print\_threshold}
+
+Le système de déplacement expliqué en \ref{sub:MC_move}  à des défaults. Il ne permet pas de distribuer les modifications selon les positions dans la chaîne polypeptidique. Il souffre d'une certaine rigidiré, notement lorsque l'on souhaite repartir alternativement les mouvements entre mutations et changement de rotamères.
+
+Alors, nous introduisons deux nouvelles balises, \verb!<Position_Weights>!  et \verb!<Step_Definition_Proba>!. La première permet la définition de deux poids à chaque position (dupliquée ou non). Il y en a un pour pondérer la sélection d'une position lors d'une mutation, et l'autre pour pondérer la sélection d'une position lors d'un changement de rotamères.
+par exemple:
+
+\verb!<Position_Weights>! \\
+\verb!Rot 489 0.50 ! \\
+\verb!Rot 495 490-493 0.05 ! \\
+\verb!Mut 489-491  G2.492 G3.489-491 0.052 ! \\
+\verb!</Position_Weights>! \\
+
+donne un exemple d'utilisation de la balise. Les poids sont ensuite avant d'être utilisé losrs de la sélection de position. Ainsi si proteus prépare un changement de rotamère lors de la modification de la première position, la position $489$ a dix fois plus de chance d'être modifiée que $495$.
+
+
+
+La balise \verb!<Step_Definition_Proba>! permet la construction en terme de probabilité du mouvement effectué à chaque pas. La syntaxe est la suivante:
+
+\verb!<Step_Definition_Proba>! \\
+\verb!Rot 1.0! \\
+\verb!Mut Mut 0.1! \\
+\verb!</Step_Definition_Proba>! \\
+
+Chaque ligne à l'intérieur de la balise défini un type de pas , le nombre à la fin de la ligne fixe la probabilité du chois par proteus de ce type. Les probabilités sont normalisées avant de début de la similation. Ici, le changmement de rotamère est probable à $\frac{10}{11}$ et une double mutation à $\frac{1}{11}$.
+
+Le choix de la seconde position à modifier se fait, comme précédement, par un tirage uniforme sur l'ensemble des voisins de la première position.
+
+
+
 \section{Label}
 \section{allocation variable de la matrice}
 
