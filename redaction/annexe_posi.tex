@@ -1,26 +1,21 @@
 \chapter*{Annexe du chapitre \ref{chap:Comparaison}: Sélection des positions }
 \label{chap:annexeposi}
-Cette annexe détaille la sélection des positions actives employée dans le chapitre \ref{chap:Comparaison}.
-Pour les tests avec une seule position active, comme des temps de calcul le permettent toutes les positions sont testées. Il y a huit cent quatre tests par algorithme.
-Pour les autres groupes de tests (cinq, dix, vingt et trente positions actives), cinq tests sont effectués par protéine, c'est-à-dire quarante-cinq tests par algorithme.
+Cette annexe détaille la méthode de sélection des positions actives employée dans le chapitre \ref{chap:Comparaison}.
+Pour les tests avec une seule position active, comme les temps de calcul le permettent toutes les positions sont testées. Il y a huit cent quatre tests par algorithme. Pour les autres groupes de tests (cinq, dix, vingt et trente positions actives), cinq sélections sont effectués pour chacune  des neuf protéines, c'est-à-dire quarante-cinq tests par algorithme.
 
-Pour définir complètement les tests, il reste à décrire le choix des positions actives.
-Il y a peu d'intérêt à tester des situations avec des positions actives qui n'interagissent pas ou faiblement entre elles.
-En effet, s'il existe une position active i dont chaque résidu est sans interaction avec tous les résidus possibles aux autres positions actives, déterminer le meilleur état pour i est proche d'un test dans lequel i est la seule position active. Ce qui nous ramène vers les tests à une seule position active. Toutefois, cela n'est pas exactement la même question, parce que les positions actives différentes de i peuvent influencer la position de la chaîne latérale de positions inactives qui à leur tour peuvent influencer l'état en i.
+Pour définir complètement les tests, il faut décrire le choix des positions actives.
+Il y a peu d'intérêt à tester des situations dans lesquels les positions actives n'interagissent pas ou faiblement entre elles.
+En effet, s'il existe une position active i dont chaque résidu est sans interaction avec tous les résidus possibles aux autres positions actives, déterminer le meilleur état pour i est proche du test dans lequel i est la seule position active de la sélection. Ce qui nous ramène vers les tests à une seule position active. Toutefois, cela n'est pas exactement la même question, parce que les positions actives différentes de i peuvent influencer la position de la chaîne latérale de positions inactives qui à leur tour peuvent influencer l'état en i. Ainsi, le choix des positions actives ne se fait pas par tirage aléatoire, car le risque d'obtenir des positions avec peu d'interactions est trop grand. Il se fait sous contrainte d'interaction. Pour cela, nous utilisons la notion de voisinage de proteus, introduite en \ref{para:voisin}. On dit qu'un ensemble de $N$ positions $\mathcla{V}$ est un \og voisinage fort \fg  pour le seuil $s_{vois}$ si toutes les paires de positions $(i$ et $j)$ de $\mathcla{V}$ sont voisines pour $s_{vois}$ .
 
-Ainsi, le choix des positions actives ne se fait pas par tirage aléatoire, car le risque d'obtenir des positions avec peu d'interactions est trop grand. Il se fait sous contrainte d'interaction. Pour cela, nous utilisons la notion de voisinage de proteus, voir \ref{para:voisin}.
-
-On dit qu'un ensemble de $N$ positions $\mathcla{V}$ est un \og voisinage fort \fg  pour le seuil $s_{vois}$ si pour toutes les paires de positions $(i,j)$ de $\mathcla{V}$, $i$ et $j$ sont voisines pour $s_{vois}$ .
-
-Pour sélectionner les positions actives, nous nous basons sur la liste des voisins de chaque position à un seuil donné. Le programme proteus peut fournir ces listes en mode verbeux, sans effectuer d'optimisation. Pour cela, nous utilisons le mode Monte-Carlo avec une trajectoire de zéro pas. 
+Pour sélectionner les positions actives, nous nous basons sur la liste des voisins de chaque position à un seuil donné. Le programme proteus peut fournir ces listes en mode verbeux, sans effectuer d'optimisation. Pour cela, nous utilisons le mode MONTECARLO avec une trajectoire de zéro pas. 
 
 La recherche de voisinages forts se fait alors de la façon suivante:
 
 \begin{enumerate}
 \item $s_{vois}$ est initialisé à $10$.
 \item construction des listes de voisins au seuil $s_{vois}$  
-\item recherche de cinq voisinages forts , par extension progressive d'une paire de positions voisines si succès pour les neuf protéines arrêt.
-\item sinon , les listes de voisins sont reconstruites avec $s_{vois}$  diminué de 1 kcal/mol. 
+\item recherche de cinq voisinages forts, par extension progressive d'une paire de positions voisines, si succès pour les neuf protéines arrêt.
+\item sinon, les listes de voisins sont reconstruites avec $s_{vois}$  diminué de 1 kcal/mol. 
 \item si $ s_{vois} \gep 1 $ retour à l'étape 2 sinon arrêt.  
 \end{enumerate}
 

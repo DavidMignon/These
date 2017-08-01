@@ -70,6 +70,7 @@ Puis récemment, Dantas et al. \ref{Dantas07} font des simulations avec minimisa
 Enfin, citons l'utilisation d'une classe particulière de mouvement des squelettes protéiques appelé \og backrub \fg. Ce sont des mouvements naturels du backbone mis en évidence par David et al. \ref{Davis06}, à partir de structures cristallographiques. Ces mouvements consistent en des déplacements de l'ensemble $C_{\alpha}-C_{\beta}$ à une position i donnée de la chaîne, sans déplacement des carbones $C_{\alpha_{i+1}}$ et $C_{\alpha_{i-1}}$ . Ces mouvements backrub ont permis à Georgiev et al. , Smith et Kortemme (\ref{Georgiev08},\ref{Smith08}) d'améliorer la qualité des prédictions des mutants par rapport à des simulations à squelette rigide.
 
 \subsection{L'état déplié }
+\label{sub:deplie}
 En général, la stabilité d'une protéine est évaluée par une variation de l'énergie libre entre son état déplié et son état replié. Il faut alors, connaître l'énergie de l'état déplié. Mais cet état est déstructuré par définition et ne correspond pas à une conformation unique; la modélisation exhaustive est difficile. Une approche simple consiste à représenter cet état par une chaîne étendue dans laquelle un résidu de la protéine est en interaction principalement avec le solvant et avec le backbone. Ainsi l'énergie libre de l'état déplié dépend de la séquence uniquement par la composition en acide aminé de celle-ci. En pratique, on peut utiliser pour chaque type d'acide aminé X de la protéine  un tripeptide ALA--X--ALA , et on identifie son exposition au solvant à celle de X dans l'état déplié \ref{Dahiyat96}. On en déduit une énergie définie par type X que l'on somme sur la séquence pour obtenir l'énergie de la protéine dépliée. 
 
 \section{L'énergie d'une protéine}
@@ -254,7 +255,7 @@ Dans la suite, on appelle cette somme, le terme surfacique de l'énergie de solv
    
 
 \subsection{Le modèle CASA}
-
+\label{sub:CASA}
 Pendant la réorganisation du solvant,les molécules d'eau s'orientent, au moins pour les plus proches du soluté, selon les lignes du champ électrique crée par la protéine, voir figure \ref{graph:ecrantage}. L'idée du modèle \og coulomb accessible surface area\fg (CASA) est alors de considérer que l'effet électrostatique induit par le solvant est proportionnel à l'effet électrostatique produit par la protéine. 
 
 On a  alors, en utilisant le modèle \texblt{SA} pour le terme surfacique:
