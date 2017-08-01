@@ -5,26 +5,26 @@ Pour les tests avec une seule position active, comme des temps de calcul le perm
 Pour les autres groupes de tests (cinq, dix, vingt et trente positions actives), cinq tests sont effectués par protéine, c'est-à-dire quarante-cinq tests par algorithme.
 
 Pour définir complètement les tests, il reste à décrire le choix des positions actives.
-Il y a peu d'intérêt à tester des situations avec des positions actives qui n'interagissent pas ou faiblement entre-elles.
-En effet, s'il existe une position active i dont chaque résidu est sans interaction avec tous les résidus possibles des autres positions actives, déterminer le meilleur état pour i est proche d'un test dans lequel i est la seule position active. Ce qui nous ramène vers les tests à une seule positoin active. Toutefois, cela n'est pas exactement la même question, parce que les positions actives différentes de i peuvent influencer la position de la chaîne latérale de positions inactives qui à leur tour peuvent influencer l'état en i.
+Il y a peu d'intérêt à tester des situations avec des positions actives qui n'interagissent pas ou faiblement entre elles.
+En effet, s'il existe une position active i dont chaque résidu est sans interaction avec tous les résidus possibles aux autres positions actives, déterminer le meilleur état pour i est proche d'un test dans lequel i est la seule position active. Ce qui nous ramène vers les tests à une seule position active. Toutefois, cela n'est pas exactement la même question, parce que les positions actives différentes de i peuvent influencer la position de la chaîne latérale de positions inactives qui à leur tour peuvent influencer l'état en i.
 
 Ainsi, le choix des positions actives ne se fait pas par tirage aléatoire, car le risque d'obtenir des positions avec peu d'interactions est trop grand. Il se fait sous contrainte d'interaction. Pour cela, nous utilisons la notion de voisinage de proteus, voir \ref{para:voisin}.
 
-On dit qu'un ensemble de $N$ positions $\mathcla{V}$ est un \og voisinnage fort \fg  pour le seuil $s_{vois}$ si pour toutes les paires de positions $(i,j)$ de $\mathcla{V}$, $i$ et $j$ sont voisines pour $s_{vois}$ .
+On dit qu'un ensemble de $N$ positions $\mathcla{V}$ est un \og voisinage fort \fg  pour le seuil $s_{vois}$ si pour toutes les paires de positions $(i,j)$ de $\mathcla{V}$, $i$ et $j$ sont voisines pour $s_{vois}$ .
 
-Pour sélectionner les positions actives, nous nous basons sur la liste des voisins de chaque position à un seuil donné. le programme proteus peut fournir ces listes en mode verbeux, sans effectuer d'optimisation. Pour cela, nous utilisons le mode Monte-Carlo avec une trajectoire de zéro pas. 
+Pour sélectionner les positions actives, nous nous basons sur la liste des voisins de chaque position à un seuil donné. Le programme proteus peut fournir ces listes en mode verbeux, sans effectuer d'optimisation. Pour cela, nous utilisons le mode Monte-Carlo avec une trajectoire de zéro pas. 
 
-La recherche de voisinnages forts se fait alors de la façon suivante:
+La recherche de voisinages forts se fait alors de la façon suivante:
 
 \begin{enumerate}
 \item $s_{vois}$ est initialisé à $10$.
 \item construction des listes de voisins au seuil $s_{vois}$  
-\item recherche de cinq voisinnages forts , par extention progressive d'une paire de position voisine si succès pour les neuf protéines arrêt.
-\item sinon , les liste de voisins sont reconstruites avec $s_{vois}$  diminué de 1 kcal/mol. 
+\item recherche de cinq voisinages forts , par extension progressive d'une paire de positions voisines si succès pour les neuf protéines arrêt.
+\item sinon , les listes de voisins sont reconstruites avec $s_{vois}$  diminué de 1 kcal/mol. 
 \item si $ s_{vois} \gep 1 $ retour à l'étape 2 sinon arrêt.  
 \end{enumerate}
 
-Nous obtenons les 45 voisinages forts, qui constitue notre sélection pour le groupe à 5 et 10 positions actives en utilisant un seuil égal à 10, ils sont dans les tableaux \ref{tab:select5} et \ref{tab:select10}. Pour les sélections 20-actives et 30-actives, il a fallu descendre le seuil à 1 pour obtenir les 45 voisinnages forts proches de l'objectif, il manque une ou deux positions dans quelques cas, voir les tables \ref{tab:select20} et \ref{tab:select30}.
+Nous obtenons les 45 voisinages forts, qui constitue notre sélection pour le groupe à 5 et 10 positions actives en utilisant un seuil égal à 10, ils sont dans les tableaux \ref{tab:select5} et \ref{tab:select10}. Pour les sélections 20-actives et 30-actives, il a fallu descendre le seuil à 1 pour obtenir les 45 voisinages forts proches de l'objectif, il manque une ou deux positions dans quelques cas, voir les tables \ref{tab:select20} et \ref{tab:select30}.
 
 \begin{table}[!htbp]
   \centering

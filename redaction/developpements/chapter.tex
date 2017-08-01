@@ -3,16 +3,16 @@
 
 Ce chapitre expose les modifications faites dans le logiciel Proteus et dans X-plor pendant la préparation de cette thèse.
 
-X-plor est un logiciel concue pour la biologie struturale et developpé à l'origine par Axel T. Brünger à l'université de Yale , \cite{Brünger92}. Il propose un language de script permettant d'exploiter ses Pour adapter X-plor au CPD nous y ajoutons la gestion de jeux de coordonnées multiples pour chaque résidu.
+X-plor est un logiciel conçu pour la biologie structurale développé à l'origine par Axel T. Brünger à l'université de Yale , \cite{Brünger92}. Il propose un langage de script permettant d'exploiter ses Pour adapter X-plor au CPD nous y ajoutons la gestion de jeux de coordonnées multiples pour chaque résidu.
 
-Le REMC est par nature un algorthme parallèle, nous présentons l'implementation de cet algorithme dans proteus avec notre gestion du parallèlisme. Le schéma proposé par et Metropolis et Hasting constitue un cadre général dans lequel il est possible d'apadpter les probabilités utilisées au système étudier. Nous expliquons comment le critère d'acceptation a été amélioré en tenant compte de la spécificité de notre modèle et de nos objectifs. Enfin, sont présenté quelques nouvelles fonctionnalité dans proteus:Un nouveau mode de sélection des séquences à imprimer, basé sur la meilleure énergie courante,un système de probabilité de sélection qui permet une pondération à chaque position du taux de mutations et de changements de rotamères, une gestion dynamique de la mémoire en fonction du fichier de configuration, un système de creation de label qui simplifie la configuration.  
+Le REMC est par nature un algorithme parallèle, nous présentons l'implémentation de cet algorithme dans proteus avec notre gestion du parallélisme. Le schéma proposé par et Metropolis et Hasting constitue un cadre général dans lequel il est possible d'adapter les probabilités utilisées au système étudier. Nous expliquons comment le critère d'acceptation a été amélioré en tenant compte de la spécificité de notre modèle et de nos objectifs. Enfin, sont présentées quelques nouvelles fonctionnalité dans proteus:Un nouveau mode de sélection des séquences à imprimer, basé sur la meilleure énergie courante,un système de probabilité de sélection qui permet une pondération à chaque position du taux de mutations et de changements de rotamères, une gestion dynamique de la mémoire en fonction du fichier de configuration, un système de création de labels qui simplifie la configuration.  
 
 
 \section{Les Modèles }
 
-Proteus , lors de la préparation du système, place chaque chaîne latérale possible aux différentes positions de la chaîne polypeptidique selon la librairie de rotamère de Tufery. Ces placements sont utilisés à de nombreuses reprises pendant le calcul des énergies d'interactions. X-plor ne permettait qu'une gestion de quatres jeux de coordonnées pour une chaîne latérale simulatement. Cela oblige l'utilisaton de nombreux fichiers qui stockent les jeux de coordonnées.
+Proteus , lors de la préparation du système, place chaque chaîne latérale possible aux différentes positions de la chaîne polypeptidique selon la librairie de rotamère de Tuffery. Ces placements sont utilisés à de nombreuses reprises pendant le calcul des énergies d'interactions. X-plor ne permettait qu'une gestion de quatre jeux de coordonnées pour une chaîne latérale simultanément. Cela oblige l'utilisation de nombreux fichiers qui stockent les jeux de coordonnées.
 
-Afin de remédier à ce problème, nous modifions le code source d'X-plor pour y introduite deux nouvelles notions. Une resclass identifie un résidu par un triplet composé du resid , du resname et du segid. Ces trois notions, existantes dans le format PDB et X-plor, représentent respectivement la position dans une chaîne polypeptidique , le type d'acide aliné, la chaîne. Un modèle est un jeu de coordonnées d'une resclass. Une resclass peut avoir plusieurs modèles.
+Afin de remédier à ce problème, nous modifions le code source d'X-plor pour y introduite deux nouvelles notions. Une resclass identifie un résidu par un triplet composé du resid , du resname et du segid. Ces trois notions, existantes dans le format PDB et X-plor, représentent respectivement la position dans une chaîne polypeptidique , le type d'acides aminés, la chaîne. Un modèle est un jeu de coordonnées d'une resclass. Une resclass peut avoir plusieurs modèles.
 
 
    \begin{figure}[!htbp]
@@ -26,19 +26,19 @@ Afin de remédier à ce problème, nous modifions le code source d'X-plor pour y
 
 
 L'utilisateur ne manipule que les modèles; les resclass n'apparaissent ni dans les fichiers d'entrée/sortie ni dans les commandes. Un modèle se déclare par des lignes ATOM d'un fichier PDB. 
-Il y a deux possiblités de lecture des modèles.
+Il y a deux possibilités de lecture des modèles.
 
 La commande:
 
 \verb!coor disp=model @file.pdb!
 
-ajoute chaque modèle de file.pdb dans un tableau en mémoire, Un nombre est lu à la colonne 67-71, Il représente l'indice du modèle pour une resclass. Le lien avec la resclass se fait via la listes des atomes contenant l'indice, voir une exemple à la figure \ref{fig:PDB}.
+ajoute chaque modèle de file.pdb dans un tableau en mémoire. Un nombre est lu à la colonne 67-71, il représente l'indice du modèle pour une resclass. Le lien avec la resclass se fait par la liste des atomes contenant l'indice, voir un exemple à la figure \ref{fig:PDB}.
 
 La commande:
 
 \verb!coor disp=model @file.pdb push=true!
 
-ajoute un seul modèle par resclass. L'indice d'un modèle n'est pas lu mais calculé comme le plus grand indice plus un. 
+ajoute un seul modèle par resclass. L'indice d'un modèle n'est pas lu, mais calculé comme le plus grand indice plus un. 
 
 La copie de modèle se fait par la commande:
 
@@ -64,7 +64,7 @@ Il est possible de limiter l'impression au modèle i par une commande du type:
 \section{OpenMP pour le REMC}
 \subsection{présentation d' OpenMP}
 
-Pour l'implementation du \og Replica Exchange Monte Carlo\fg nous devons parallèliser la partie Monte-Carlo de proteus. Comme à ce stade, la matrice d'énergie parallèle n'est pas envisagée nous nous orientons vers une programmation à mémoire partagé. Dans ce domaine, l'interface de programmation OpenMP pour \og Open Multi-Processing\fg  offre un standard mature, bien supporté par les compilateurs C/C++, Fortran et simple à mettre en oeuvre. Il s'agît d'une spécification qui décrit une collection de directives au compilateur, une bibliothèques de routines et un ensembles de variables d'environnement. 
+Pour l'implémentation du \og Replica Exchange Monte Carlo\fg nous devons paralléliser la partie Monte-Carlo de proteus. Comme à ce stade, la matrice d'énergie parallèle n'est pas envisagée, nous nous orientons vers une programmation à mémoire partagé. Dans ce domaine, l'interface de programmation OpenMP pour \og Open Multi-Processing\fg  offre un standard mature, bien supporté par les compilateurs C/C++, Fortran et simple à mettre en oeuvre. Il s'agit d'une spécification qui décrit une collection de directives au compilateur, une bibliothèque de routines et un ensemble de variables d'environnement. 
 
 
 Le principe est d'ajouter à un code existant des directives pour définir:
@@ -72,27 +72,27 @@ Le principe est d'ajouter à un code existant des directives pour définir:
 \begin{itemize}
 \item les instructions à exécuter en parallèle (création de fils d'exécution)
 \item les situations de synchronisations entre fils d'exécution
-\item le status des variables (partagé entre fils, privé,etc) 
+\item le statut des variables (partagé entre fils, privé,etc.) 
 \end{itemize}
 
-La bibliothèque OpenMP permet la configuration de l'exécution et son contrôle par un ensemble de fonctons et de macros. Il existe des fonctions qui gèrent le nombre de fils d'exécutioin, qui fixent la politique de l'ordonnancement, qui retourne un identifiant du fils d'exécution, etc. La définition de la macro \_OPENMP garantie la compatibilité de l'éxécutable.
-Les variables d'environnement contrôle les mêmes informations que les fonctions openMP et doivent définis avant l'éxecution. Elles sont prises en compte avec une priorité plus faible que les fonctions de la bibliothèque elles-mêmes de priorité plus faible que les directives en cas de conflit.
+La bibliothèque OpenMP permet la configuration de l'exécution et son contrôle par un ensemble de fonctions et de macros. Il existe des fonctions qui gèrent le nombre de fils d'exécution, qui fixent la politique de l'ordonnancement, qui retourne un identifiant du fils d'exécution, etc. La définition de la macro \_OPENMP garantit la compatibilité de l'exécutable.
+Les variables d'environnement contrôlent les mêmes informations que les fonctions openMP et doivent définis avant l'exécution. Elles sont prises en compte avec une priorité plus faible que les fonctions de la bibliothèque elles-mêmes de priorité plus faible que les directives en cas de conflit.
 
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
        \includegraphics[width=14cm]{figure/openMP.png} 
      \end{tabular}     
-     \caption{\textbt{La correspondance entre les directives OpenMP à doite et le conportement des fils d'exécution à gauche sur un REMC simplifié} Sont chématisés, la création d'une région parallèle, deux synchronisations, un région executé uniquement par un fil maître, une affectation séquentielle }
+     \caption{\textbt{La correspondance entre les directives OpenMP à droite et le comportement des fils d'exécution à gauche sur un REMC simplifié} Sont schématisés, la création d'une région parallèle, deux synchronisations, une région exécutée uniquement par un fil maître, une affectation séquentielle }
 \label{fig:openMP}
    \end{figure}
 
-Pendant l'exécution, le fil d'exécution crée les autres fils. Il possède un statut particulier, il devient le fil maître. Les autres fils se terminent avec la région parallèle; Le maître continue son exécution. Tous les fils ont accès à la même mémoire partagée, notamenent aux variables définis avant la région parrallèle. La déclaration d'une variable dans une région parralèle engemdre la création d'une variable pour chaque fil accessible uniquement par lui. 
+Pendant l'exécution, le fil d'exécution crée les autres fils. Il possède un statut particulier, il devient le fil maître. Les autres fils se terminent avec la région parallèle; le maître continue son exécution. Tous les fils ont accès à la même mémoire partagée, notamment aux variables définies avant la région parallèle. La déclaration d'une variable dans une région parallèle engendre la création d'une variable pour chaque fil accessible uniquement par lui. 
    
 
 \subsection{REMC dans proteus}
 
-Comme nous l'avons vu en \ref{REMC} l'algorithme REMC considère plusieurs simulations indépendantes d'un même système. Cela fait de lui un algorithme bien adapté à la programmation parallèle. Deux points demandent une attention particulière l'échange de réplique et la création de l'identifiant unique d'impression, voir \ref{proteusIO}. Le schéma génnéral de REMC dans proteus est présenté à la figure  \ref{fig:openMP}. Une région parallèle est initiée par la directive \og #pragma omp parallel\fg: les différents marcheurs sont créés. Chacuns réalise une trajectoire de type MC jusqu'à un nombre de pas multiple de la période d'échange. A priori l'avancée des marcheurs n'est pas simutanée. Donc une directive \og #pragma omp barrier\fg est placée avant le test d'échange, elle garantie que chacun a effectué le même bon nombre de pas. Une fois tous les marcheurs bloqué par cette directive, ils sont libérés. La directive \og #pragma omp master\fg dédie l'execution du test et de l'échange de réplique au seul marcheur maître. Pour empêché les autres de marcher avant un echange éventuel, une seconde directive \og barrier\fg est placée après les instructions d'échanges. Tout au long d'une trajectoire, des séquences-conformations sont imprimées. Pour facilité le post-traitement, un identifiant unique sur toute l'exécution est attribuée à chacunes. Pour que tous les marcheurs puissent l'incrémenter, l'index qui sert d'identifiant est déclaré comme variable partagée. Pour garantir que chaque passage sur cette instruction retourne une valeur unique une directive \og#pragma omp atomic cpture \fg est utilisée.
+Comme nous l'avons vu en \ref{REMC} l'algorithme REMC considère plusieurs simulations indépendantes d'un même système. Cela fait de lui un algorithme bien adapté à la programmation parallèle. Deux points demandent une attention particulière l'échange de répliques et la création de l'identifiant unique d'impression, voir \ref{proteusIO}. Le schéma général de REMC dans proteus est présenté à la figure  \ref{fig:openMP}. Une région parallèle est initiée par la directive \og #pragma omp parallel\fg: les différents marcheurs sont créés. Chacun réalise une trajectoire de type MC jusqu'à un nombre de pas multiple de la période d'échange. A priori l'avancée des marcheurs n'est pas simultanée. Donc une directive \og #pragma omp barrier\fg est placée avant le test d'échange, elle garantit que chacun a effectué le même bon nombre de pas. Une fois tous les marcheurs bloqués par cette directive, ils sont libérés. La directive \og #pragma omp master\fg dédie l'exécution du test et de l'échange de répliques au seul marcheur maître. Pour empêcher les autres de marcher avant un échange éventuel, une seconde directive \og barrier\fg est placée après les instructions d'échanges. Tout au long d'une trajectoire, des séquences-conformations sont imprimées. Pour faciliter le post-traitement, un identifiant unique sur toute l'exécution est attribué à chacune. Pour que tous les marcheurs puissent l'incrémenter, l'index qui sert d'identifiant est déclaré comme variable partagée. Pour garantir que chaque passage sur cette instruction retourne une valeur unique, une directive \og#pragma omp atomic cpture \fg est utilisée.
 
 
 Pour terminer cette section, nous donnons deux représentations graphiques du comportement des marcheurs REMC dans proteus à la figure \ref{fig:proteusREMC}.  
@@ -103,26 +103,26 @@ Pour terminer cette section, nous donnons deux représentations graphiques du co
        \includegraphics[width=8cm]{figure/re8_Ttraj.png}  &
        \includegraphics[width=8cm]{figure/re8_distri.png}  &
      \end{tabular}     
-     \caption{\textbt{Comportement de proteus pour un REMC à huit marcheurs.} A gauche, la trajectoire des marcheurs dans l'ensemble des huit températures. A droite, La distribution des énergies par marcheurs. On peut imaginer la distribution cumulée des marcheurs et remarquer que son graphe serai proche de celle d'une distribution de Boltzmann}
+     \caption{\textbt{Comportement de proteus pour un REMC à huit marcheurs.} À gauche, la trajectoire des marcheurs dans l'ensemble des huit températures. À droite, la distribution des énergies par marcheurs. On peut imaginer la distribution cumulée des marcheurs et remarquer que son graphe serait proche de celle d'une distribution de Boltzmann}
 \label{fig:proteusREMC}
    \end{figure}
    
 
    \section{Amélioration de la fonction d'acceptation MC}
 
-   Deux améliorations ont été apportées à la fonction d'acceptation MC de proteus. Pour réaliser une mutation du type $t$ vers $t'$, nous effectuons un changement de type d'acide aminé dans la structure replié et le changement inverse dans la structure déplié, voir le cycle thermodynamique en \ref{fig:cycleThermo}. La probabilité d'une mutation est donc le produit de la probabilite de choisir $t'$ par la probabilité de choisir la structure replié avec $t'$ et la structure déplié avec $t$. Dans proteus, ces changements sont sélectionnés par tirage aléatoire uniforme sur l'ensemble des états possibles. 
+   Deux améliorations ont été apportées à la fonction d'acceptation MC de proteus. Pour réaliser une mutation du type $t$ vers $t'$, nous effectuons un changement de type d'acide aminé dans la structure replié et le changement inverse dans la structure déplié, voir le cycle thermodynamique en \ref{fig:cycleThermo}. La probabilité d'une mutation est donc le produit de la probabilité de choisir $t'$ par la probabilité de choisir la structure repliée avec $t'$ et la structure dépliée avec $t$. Dans proteus, ces changements sont sélectionnés par tirage aléatoire uniforme sur l'ensemble des états possibles. 
 
-   Ce pose alors la question des différents états possibles des chaînes latérales à l'état déplié. Plusieurs point de vue sont possibles. On peut considérer qu'il existe autant de rotamères à l'état replié qu'à état déplié et que ces derniers ont tous la même énergie. Cette possibilité a l'avantage de rendre la probabilité de mutation symètrique, c'est-à-dire que le passage du type $t$ vers $t'$ est aussi probable que le passage de $t'$ vers $t$. Mais elle a l'inconvéniant d'être peu réaliste parce que les roamères sont des positionnements préferentiels à l'état replié et non à l'état deplié.
+   Se pose alors la question des différents états possibles des chaînes latérales à l'état déplié. Plusieurs points de vue sont possibles. On peut considérer qu'il existe autant de rotamères à l'état replié qu'à état déplié et que ces derniers ont tous la même énergie. Cette possibilité a l'avantage de rendre la probabilité de mutation symétrique, c'est-à-dire que le passage du type $t$ vers $t'$ est aussi probable que le passage de $t'$ vers $t$. Mais elle a l'inconvénient d'être peu réaliste parce que les rotamères sont des positionnements préférentiels à l'état replié et non à l'état déplié.
 
-   Nous avons fait évaluer proteus vers autre point de vue, en considérant qu'une chaîne latérale à l'état déplié n'a qu'un seul rotamère dominant. Cela induit une disymétrie dans la probabilité de sélection qui est corrigé par une probabilité d'acceptation du type \ref{eq:Hasting}. Cette nouvelle probabiliité d'acceptation est décrite en détail en \ref{eq:rule}.
+   Nous avons fait évaluer proteus vers autre point de vue, en considérant qu'une chaîne latérale à l'état déplié n'a qu'un seul rotamère dominant. Cela induit une dissymétrie dans la probabilité de sélection qui est corrigée par une probabilité d'acceptation du type \ref{eq:Hasting}. Cette nouvelle probabilité d'acceptation est décrite en détail en \ref{eq:rule}.
 
    \section{Seuil d'impression}
 \label{sec:dev}
-La quantité de séquences-conformations écrite dans les fichiers de sortie peut devenir importante surtout en REMC. Pour limiter la taille des fichiers et facilité le post-traitement, nous introduisons la balise    \verb!<Print_Threshold>!. Elle prend en paramètre un seuil $s$ qui conditionne l'impression d'une séquence-conformation de la façon suivante. Chaque marcheur conserve au court d'une simulation la meilleure énergie obtenue $E_{best}$. A tout moment une séquence-conformation est imprimée seulement si l'écart entre son énergie et $E_{best}$  est strictement plus petit que $s$. Ainsi, un seuil à $0$ limite les impressions aux seules séquences-conformations qui améliorent l'énergie durant la simulation.
+La quantité de séquences-conformations écrite dans les fichiers de sortie peut devenir importante surtout en REMC. Pour limiter la taille des fichiers et faciliter le post-traitement, nous introduisons la balise    \verb!<Print_Threshold>!. Elle prend en paramètre un seuil $s$ qui conditionne l'impression d'une séquence-conformation de la façon suivante. Chaque marcheur conserve au cours d'une simulation la meilleure énergie obtenue $E_{best}$. À tout moment une séquence-conformation est imprimée seulement si l'écart entre son énergie et $E_{best}$  est strictement plus petit que $s$. Ainsi, un seuil à $0$ limite les impressions aux seules séquences-conformations qui améliorent l'énergie durant la simulation.
 
-\section{Nouveau système de Déplacement}
+\section{Nouveau système de déplacement}
 
-Le système de déplacement expliqué en \ref{sub:MC_move}  à des défaults. Il ne permet pas de distribuer les modifications selon les positions dans la chaîne polypeptidique. Il souffre d'une certaine rigidiré, notement lorsque l'on souhaite repartir alternativement les mouvements entre mutations et changement de rotamères.
+Le système de déplacement expliqué en \ref{sub:MC_move}  à des défauts. Il ne permet pas de distribuer les modifications selon les positions dans la chaîne polypeptidique. Il souffre d'une certaine rigidité, notamment lorsque l'on souhaite répartir alternativement les mouvements entre mutations et changement de rotamères.
 
 Alors, nous introduisons deux nouvelles balises, \verb!<Position_Weights>!  et \verb!<Step_Definition_Proba>!. La première permet la définition de deux poids à chaque position (dupliquée ou non). Il y en a un pour pondérer la sélection d'une position lors d'une mutation, et l'autre pour pondérer la sélection d'une position lors d'un changement de rotamères.
 par exemple:
@@ -133,20 +133,21 @@ par exemple:
 \verb!Mut 489-491  G2.492 G3.489-491 0.052 ! \\
 \verb!</Position_Weights>! \\
 
-donne un exemple d'utilisation de la balise. Les poids sont ensuite avant d'être utilisé losrs de la sélection de position. Ainsi si proteus prépare un changement de rotamère lors de la modification de la première position, la position $489$ a dix fois plus de chance d'être modifiée que $495$.
+donne un exemple d'utilisation de la balise. Les poids sont ensuite avant d'être utilisés lors de la sélection de positions. Ainsi si proteus prépare un changement de rotamère lors de la modification de la première position, la position $489$ a dix fois plus de chance d'être modifiée que $495$.
 
 
 
-La balise \verb!<Step_Definition_Proba>! permet la construction en terme de probabilité du mouvement effectué à chaque pas. La syntaxe est la suivante:
+La balise \verb!<Step_Definition_Proba>! permet la construction en termes de probabilité du mouvement effectué à chaque pas. La syntaxe est la suivante:
 
 \verb!<Step_Definition_Proba>! \\
 \verb!Rot 1.0! \\
 \verb!Mut Mut 0.1! \\
 \verb!</Step_Definition_Proba>! \\
 
-Chaque ligne à l'intérieur de la balise défini un type de pas , le nombre à la fin de la ligne fixe la probabilité du chois par proteus de ce type. Les probabilités sont normalisées avant de début de la similation. Ici, le changmement de rotamère est probable à $\frac{10}{11}$ et une double mutation à $\frac{1}{11}$.
+Chaque ligne à l'intérieur de la balise défini un type de pas , le nombre à la fin de la ligne fixe la probabilité du chois par proteus de ce type. Les probabilités sont normalisées avant de début de la simulation. Ici, le changement de rotamère est probable à $\frac{10}{11}$ et une double mutation à $\frac{1}{11}$.
 
-Le choix de la seconde position à modifier se fait, comme précédement, par un tirage uniforme sur l'ensemble des voisins de la première position.
+Le choix de la seconde position à modifier se fait, comme précédemment, par un tirage uniforme sur l'ensemble des voisins de la première position.
+
 
 
 
