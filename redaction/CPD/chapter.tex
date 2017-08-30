@@ -330,65 +330,55 @@ Il reste, pour compléter les ingrédients de bases du CPD, à déterminer un al
 
 Le premier groupe est constitué des méthodes déterministes dans lesquelles les choix effectués sont toujours déterminés a priori ou déterminés en fonction des éléments obtenus au cours de l'exécution du programme. On trouve par exemple dans ce groupe, les méthodes exhaustives qui exhibent la totalité des solutions du problème. Elles peuvent être appliquées à de petites espaces conformationnels. On trouve aussi des méthodes dites semi-exhaustives dans lesquelles la complexité combinatoire est réduite en autorisant uniquement certaines conformations à certains moments de l'exploration.
 
-Une classe intéressante du groupe déterministe est constituée des algorithmes exacts qui se focalise non pas sur l'objectif du CPD, mais sur l'obtention de la conformation de meilleure énergie on parle alors de \og Global Minimum Energy Cost \fg (GMEC).
-Typiquement, ces algorithmes exploitent les structures de la fonction d'énergie et de l'espace d'état. Un type particulier de méthodes est alors exploitable pour un certain type de fonction d'énergie. Bien souvent, ces algorithmes nécessitent également la discrétisation de l'espace des phases. Ce qui peut devenir problématique dans les situations où le backbone est flexible.
+Une classe intéressante du groupe déterministe est constituée des algorithmes exacts qui se focalisent non pas sur l'objectif du CPD, mais sur l'obtention de la conformation de meilleure énergie ou \og Global Minimum Energy Conformation \fg (GMEC). Typiquement, ces algorithmes exploitent les structures de la fonction d'énergie et de l'espace d'états. Un type particulier de méthodes est alors exploitable pour un certain type de fonction d'énergie. Bien souvent, ces algorithmes nécessitent également la discrétisation de l'espace des phases. Cela peut devenir problématique dans les situations où le backbone est flexible.
   
-Le second groupe est celui des méthodes stochastiques et/ou heuristiques. Elles ont vocation à déterminer des solutions de qualité sans obtenir de garantie sur l'optimum en termes d'énergie, dans un temps d'exécution réaliste. Elles sont non-déterministes c'est-à-dire qu'elles choisissent certains éléments de façon aléatoire, en pratique la \og source de hasard\fg est constituée de générateurs de nombre pseudo-aléatoire. Elles permettent utilisation des espaces d'états non discrétisés, par exemple \cite{Perry12} où les rotamères peuvent varier de façon continue. Plusieurs peuvent s'utiliser sans exiger de structure particulière sur la fonction d'énergie. Par contre la convergence bien qu'elle puisse être établie en théorie, reste en pratique difficile à cerner et n'offre pas la possibilité de reconnaître le GMEC. Ce qui conduit au besoin de choisir une condition d'arrêt de l'exécution sans liant direct avec ce minimum.  
+Le second groupe est celui des méthodes stochastiques et/ou heuristiques. Elles ont vocation à déterminer des solutions de qualité sans obtenir de garantie sur l'optimum en termes d'énergie, dans un temps d'exécution réaliste. Elles sont non-déterministes c'est-à-dire qu'elles choisissent certains éléments de façon aléatoire, en pratique la \og source de hasard\fg est constituée de générateurs de nombres pseudo-aléatoires. Elles permettent l'utilisation des espaces d'états non discrétisés, par exemple \cite{Perry12} où les rotamères peuvent varier de façon continue. Plusieurs peuvent s'utiliser sans exiger de structure particulière pour la fonction d'énergie. Par contre, la convergence bien qu'elle puisse être établie en théorie, reste en pratique difficile à cerner et n'offre pas la possibilité de reconnaître le GMEC. Ce qui conduit au besoin de choisir une condition d'arrêt de l'exécution sans lien direct avec ce minimum.  
 
-Pour rendre possible l'utilisation de plusieurs outils algorithmique, La fonction d'énergie doit être décomposable par paires, c'est-à-dire qu'elle doit être décomposable en une énergie dite propre qui rassemble les effets de la chaîne latérale et du backbone d'une part, et en une énergie d'interaction rotamère-rotamère qui se compose d'une somme sur les couples de chaînes latérales prises deux à deux.
-
-L'énergie d'une conformation C a alors la forme:
+Pour rendre possible l'utilisation de plusieurs outils algorithmiques, la fonction d'énergie doit être décomposable par paires, c'est-à-dire qu'elle doit être décomposable en une somme sur des paires de résidus. L'énergie d'une conformation C a alors la forme:
 
 \begin{equation}
 E{C} = \sum_i E_i(r_i) + \sum_{i\neq j} E_{ij}(r_i,r_j)
 \end{equation}
-avec $r_i$ et $r_j$ les rotamères de la conformation C aux positions $i$ et $j$.
+avec $r_i$ et $r_j$ les rotamères de la conformation C aux positions $i$ et $j$, $E_i(r_i)$ l'énergie propre de $r_i$ et $E_{ij}(r_i,r_j)$ l'énergie d'interaction entre $r_i$ et $r_j$.
 
 À présent, nous présentons quelques algorithmes parmi les plus utilisés.
 
 \subsection{L'algorithme du champ moyen}
-Le principe de la méthode du champ moyen est de substituer l'ensemble des interactions d'un rotamère $r_0$ avec les autres rotamères par une interaction unique moyenne. Pour calculer une interaction moyenne, la probabilité de Boltzmann est utilisée de la façon suivante, on note $P(r_{i})$ la probabilité que la chaîne latérale à la position $i$ soit dans le rotamère $r_i$, on a:
+Le principe de la méthode du champ moyen est de substituer l'ensemble des interactions entre un rotamère $r_0$ et les autres rotamères par une interaction unique moyenne. Pour calculer une interaction moyenne, la probabilité de Boltzmann est utilisée de la façon suivante, on note $P(r_{i})$ la probabilité que la chaîne latérale à la position $i$ soit dans le rotamère $r_i$, on a:
 \begin{equation}
   \label{eq:CM1}
 P(r_i) =\frac{\exp(-\beta E(r_{i})}{\sum_{l_i=1}^{N_i} \exp(-\beta E(l_i))}}
 \end{equation}
-avec $N_i$ le nombre total de rotamères à la position $i$ , et $\beta = \frac{1}{RT}$,  $R$ étant la constante des gaz parfaits et $T$ la température.
+avec $N_i$ le nombre total de rotamères à la position $i$, et $\beta = \frac{1}{RT}$,  $R$ étant la constante des gaz parfaits et $T$ la température.
 
-Si on se limite au cas où une énergie d'interaction pour un résidu est la somme des interactions avec les autres résidus de la chaîne, alors l'énergie d'interaction moyenne en $i$ est la somme des interactions impliquant le rotamère $r_i$ pondéré par le poids de Boltzmann de l'autre rotamère, c'est à dire:
+Si on se limite au cas où une énergie d'interaction pour un résidu est la somme des interactions avec les autres résidus de la chaîne (énergie décomposable par paires), alors l'énergie d'interaction moyenne en $i$ est la somme des interactions impliquant le rotamère $r_i$ pondéré par le poids de Boltzmann de l'autre rotamère, c'est à dire:
 
 \begin{equation}
     \label{eq:CM2}
-E(r_i) = \sum_{i \neq j} \sum_l_j^N_j E(r_i,l_j)P(l_j)
+E(r_i) = \sum_{i \neq j} \sum_{l_j}^{N_j} E(r_i,l_j)P(l_j)
 \end{equation}  
-
 avec $l_j$ parcourant tous les rotamères aux positions autres que $i$.
 
-Les formules \ref{eq:CM1} et \ref{eq:CM2}, constitue un système itératif. Ainsi, l'algorithme se déroule de la façon suivante:
+Les formules \ref{eq:CM1} et \ref{eq:CM2}, constituent un système itératif. Ainsi, l'algorithme se déroule de la façon suivante:
 
 
 \begin{enumerate}
-\item  A chaque position, les rotamères sont équiprobable.
+\item  A chaque position, les rotamères sont équiprobables.
 \item  Les énergies moyennes sont calculées grâce à la formule \ref{eq:CM2}.
 \item  De nouvelles probabilités de Boltzmann sont calculées à partir des énergies moyennes précédentes et la formule \ref{eq:CM1}.
-\item  retour à l'étape 2 jusqu'à convergence des énergies.
+\item  Retour à l'étape 2 jusqu'à convergence des énergies.
 \end{enumerate}
 
-Cette méthode garantit la convergence vers un ensemble de rotamères plus stables à chaque position placée dans son \og environnement moyen\fg . Le temps de calcul avec cet algorithme augmente  de façon linéaire avec le nombre de résidus de la protéine. Ce qui en fait un des algorithmes les plus rapides.
+Cette méthode garantit la convergence vers un ensemble de rotamères stables à chaque position placée dans son \og environnement moyen\fg . Le temps de calcul avec cet algorithme augmente  de façon linéaire avec le nombre de résidus de la protéine, ce qui en fait un des algorithmes les plus rapides.
 
 \subsection{Le Dead-End Elimination}
 
-Le \og Dead End Elimination\fg (DEE)  consiste à éliminer des rotamères ou des combinaisons de rotamères qui ne peuvent pas faire partie de la conformation qui minimise l'énergie de toutes les autres. Comme pour le champ moyen, l'énergie doit être décomposable par paires.
+Le \og Dead End Elimination\fg (DEE)  consiste à éliminer des rotamères ou des combinaisons de rotamères qui ne peuvent pas faire partie de la conformation qui minimise l'énergie. Comme pour le champ moyen, l'énergie doit être décomposable par paires. Il y a deux critères d'élimination \cite{Desmet92}:
 
-Il y a deux critères d'élimination (\cite{Desmet92}):
 
-\begin{itemize}
-\item Le critère simple:
-  Le rotamère $r_i$ du résidu $i$ est éliminé si la meilleure énergie (la plus faible) qu'il est possible d'obtenir pour une conformation comprenant ce rotamère est moins bonne que la pire énergie obtenue avec un rotamère $r_i'$  à la même position.
-Une expression mathématique de ce critère peut être:
+\textbf{Le critère simple:} le rotamère $r_i$ du résidu $i$ est éliminé si la meilleure énergie (la plus faible) qu'il est possible d'obtenir pour une conformation comprenant ce rotamère est moins bonne que la pire énergie obtenue avec un rotamère $r_i'$  à la même position. Notons $E(c)$, l'énergie d'une séquence-conformation $C$. Une expression mathématique de ce critère peut être:
 
-avec $E(c)$, l'énergie d'une séquence-conformation $C$.
-
-Si $min_{r_i \in C }E(C) > max_{r_i' \in C} E(C)$ , alors $r_i$ est éliminé. 
+Si $min_{r_i \in C }E(C) > max_{r_i' \in C} E(C)$ , alors $r_i$ est éliminé. \\
 
 En utilisant l'expression d'une fonction d'énergie décomposée par paires:
 
@@ -398,40 +388,21 @@ E(c) = \sum_i E_i (r_i) + \sum_{i\neq j} E_{ij} (r_i, r_j)
 
 Le critère peut s'écrire:
 
-Si
-
-$E_i(r_i) + \sum_{j\neq i} min_{r_j} E_{ij}(r_i,r_j) > E_i(r_i') + \sum_{j\neq i}^{N} max_{r_j}E_{ij}(r_i',r_j)$
-
-alors $r_i$ est éliminé. 
-
+Si $E_i(r_i) + \sum_{j\neq i} \min_{r_j} E_{ij}(r_i,r_j) > E_i(r_i') + \sum_{j\neq i}^{N} \max_{r_j}E_{ij}(r_i',r_j)$ alors $r_i$ est éliminé. 
 avec, $N$ le nombre de positions .
 
-
-\item Le critère double:
-  Il exprime une condition analogue sur un couple de rotamères $(r_i,r_j)$ pour qu'il ne puisse pas faire partie du GMEC. Pour son expression on introduit l'énergie d'une paire $(r_i,r_j)$:
-
+\textbf{Le critère double:}\\ il exprime une condition analogue sur un couple de rotamères $(r_i,r_j)$ suffisante pour qu'il ne puisse pas faire partie du GMEC. Pour son expression on introduit l'énergie d'une paire $(r_i,r_j)$:
 \begin{equation}
-
- E^{r_i,r_j} = E_i(r_i) + E_j(r_j) + E_{ij}(r_i,r_j)  
+E^{r_i,r_j} = E_i(r_i) + E_j(r_j) + E_{ij}(r_i,r_j)  
 \end{equation}
-
-On a alors,
-
-
-si
-
-$E^{r_i,r_j} + \sum_{k=1}^N min_{r_k} (E_{ik}(r_i,r_k) + E_{jk}(r_j,r_k)) >  E^{r_i',r_j'} + \sum_{k=1}^N min_{r_k} (E_{ik}(r_i',r_k) + E_{jk}(r_j',r_k))$
-
-alors la paire $r_i$,$r_j$ est éliminé.
-
+On a,
+si $\exits (r_i,r_j)$ tel que $E^{r_i,r_j} + \sum_{k=1}^N \min_{r_k} (E_{ik}(r_i,r_k) + E_{jk}(r_j,r_k)) >  E^{r_i',r_j'} + \sum_{k=1}^N \max_{r_k} (E_{ik}(r_i',r_k) + E_{jk}(r_j',r_k))$ alors la paire $r_i$,$r_j$ est éliminée.\\
 L'élimination d'un couple $(r_i,r_j)$, n'exclut pas pour autant la présence de $r_i$ ou de $r_j$ dans la solution optimale. 
 
-\item le critère de Goldstein, (\cite{Goldstein94}) 
-  Il s'agit d'une amélioration du critère simple du DEE, voir la figure \ref{fig:DEE}. Il peut existe des situations dans lesquelles l'énergie avec un rotamère $r_i$  est toujours diminuée en la remplaçant par un autre rotamère $r'_i$. On peut donc l'éliminer. Or, cela n'implique pas forcément la condition du critère simple. Ce critère peut s'exprimer de la façon suivante:
+\textbf{Le critère de Goldstein,\cite{Goldstein94}:} il s'agit d'une amélioration du critère simple du DEE, voir la figure \ref{fig:DEE}. Il peut exister des situations dans lesquelles l'énergie avec un rotamère $r_i$  est toujours diminuée en la remplaçant par un autre rotamère $r'_i$. On peut donc l'éliminer. Or, cela n'implique pas forcément la condition du critère simple. Ce critère peut s'exprimer de la façon suivante:
 
-Si $E_i^{r_i} - E_i^{r_j}+ \sum_{k=1}^N min_{r_k} (E_{ik}(r_i,r_k) + E_{jk}(r_j,r_k)) > 0$, alors $r_i$ est éliminé.
+Si $\exists r_{i'} tel que E_i^{r_i} - E_i^{r_{i'}}+ \sum_{k=1}^N \min_{r_k} (E_{ik}(r_i,r_k) - E_{i'k}(r_i',r_k)) > 0$, alors $r_i$ est éliminé.
 
-\end{itemize}
 
    \begin{figure}[!htbp]
      \centering
@@ -439,111 +410,76 @@ Si $E_i^{r_i} - E_i^{r_j}+ \sum_{k=1}^N min_{r_k} (E_{ik}(r_i,r_k) + E_{jk}(r_j,
        \includegraphics[width=8cm]{figure/DEE.png} &
      \end{tabular}
      
-     \caption{DEE, graphes de la fonction d'énergie pour des rotamères fixés à la position $i$: Le critère simple permet l'élimination $r^1_i$ parce que l'énergie rouge est toujours moins bonne que la noire.Mais seul de critère de Goldstein permet l'éliminer $r^2_i$ parce que l'écart entre le graphe bleu et le graphe noir est positif pour chaque conformation.}
-\label{fig:DDE}
+     \caption{\textbf{DEE, graphes de la fonction d'énergie pour des rotamères fixés à la position $i$} le critère simple permet l'élimination du rotamère $r^1_i$ parce que l'énergie des conformations qui le contiennent, l' énergie rouge, est toujours moins bonne que la noire. Mais seul de critère de Goldstein permet d'éliminer $r^2_i$ parce que l'écart entre le graphe bleu et le graphe noir est positif pour chaque conformation.}
+\label{fig:DEE}
    \end{figure}
 
+Au cours de l'optimisation, les deux critères peuvent être utilisés alternativement, jusqu'à ce qu'il n'y est plus de rotamère à éliminer. Il est alors possible d'utiliser une approche exhaustive sur l'espace d'états réduit pour obtenir le GMEC.
 
-
-
-Au court de l'optimisation, les deux critères peuvent être utilisés alternativement, jusqu'à ce qu'il n'y est plus de rotamère à éliminer. Il est alors possible d'utiliser une approche exhaustive sur l'espace d'états réduit, pour obtenir le GMEC.
-
-Cette méthode permet dans les bons cas ( par exemple pour les petits systèmes) de converger en un temps raisonnable \cite{Leach98}.Beaucoup de variantes du DEE (\cite{Pierce00}, \cite{Lilien05}) ont été proposées notamment en travaillant sur des combinaisons de plus de deux rotamères.
+Cette méthode permet dans les bons cas (par exemple pour les petits systèmes) de converger en un temps raisonnable \cite{Leach98}. Beaucoup de variantes du DEE \cite{Pierce00}, \cite{Lilien05} ont été proposées notamment en travaillant sur des combinaisons de plus de deux rotamères.
 
 
 \subsection{Le CFN}
 
-La méthode des réseaux de fonctions de coût est issue du domaine de l'optimisation combinatoire. Elle est utilisable si la fonction d'énergie est décomposable par paires.
-Il s'agît avant tout d'une recherche de la séquence-conformation qui minimise l'énergie globale, mais qui dans certaines conditions peut également fournir un ensemble de séquence-conformation proche du GMEC.
+La méthode des réseaux de fonctions de coût est issue du domaine de l'optimisation combinatoire. Elle est utilisable si la fonction d'énergie est décomposable par paires. Il s'agit avant tout d'une recherche de la séquence-conformation qui minimise l'énergie globale, mais qui dans certaines conditions peut également fournir un ensemble de séquences-conformations proches du GMEC.
 
-Un réseau de fonction de coût, ou \og cost function network  \fg (CFN) , est défini par un triplet $\{X,D,C$)\} avec:
+Un réseau de fonction de coût, ou \og cost function network  \fg (CFN), est constitué d'un ensemble de variables $\mathcal{X}$ et d'un ensemble $$\mathcal{C}$ de fonctions de variables de $\mathcal{X}$ (les fonctions de coûts). Ici, nous considérons uniquement des CFN avec des fonctions constantes, des fonctions d'une seule variable (dîtes fonctions unaire) ou des fonctions de deux variables (dîtes binaires). Un problème CPD est représenté par un CFN de la façon suivante:\\
+À chaque résidu $i$ de la protéine on associe une variable $v_i$ ayant comme valeurs possibles les rotamères de $i$. \\
+À chaque variable $v_i$, on définit une fonction unaire $C_1(v_i)$ représentant l'énergie \og self\fg en $i$, telle que $C_1(r_i)=E_i(r_i)$ \\   
+À chaque couple de position $i,j$, on définit une fonction binaire $C_2(v_i,v_j)$ représentant les énergies d'interactions possibles entre $i$ et $j$, telle que $C_2(r_i,r_j)=E_{ij}(r_i,r_j)$.\\
 
-\begin{itemize}
-\item $X$ un ensemble de variables à valeurs dans $\mathbb{N}$
-\item $D$, un ensemble de domaines pour les variables de $X$
- \item $C$, un ensemble de fonctions, dont chaque élément porte sur un sous-ensemble $S$ de $X$ et donne un coût strictement positif pour chaque combinaison de valeurs des variables de $S$.
+Alors, une séquence-conformation correspond à une valeur pour chaque variable de $\mathcal{X}$, on parle de solution du CFN. La recherche du minimum global d'énergie revient ainsi à trouver une solution qui minimise la somme de toutes les fonctions de coût. Pour travailler avec des fonction de coûts à valeur dans les nombres entiers positifs, il suffit de multiplier toutes les valeurs par la précision des énergies et d'introduire une fonction de coût constant $C_0$ qui permet de translater les valeurs vers les nombres positifs.
 
-\end{itemize}  
-
-
-Un problème CPD peut alors être représenté sous la forme d'un CFN, en associant à chaque résidu $i$ variable d'une protéine une variable $v_i$ du CFN, L'ensemble des rotamères possibles en $i$ définissant le domaine de $v_i$. Le terme $E_i$ représentant l'énergie \og self \fg correspond à une fonction de $C$ tel que $S=\{v_i\}$ et le terme $E_{ij}$ à une fonction de $C$ avec $S=\{v_i,v_j\}$. À une séquence-conformation correspond donc la donnée d'une valeur de $D$ pour chaque variable de $X$, on parle de solution du CFN. La recherche du minimum global d'énergie revient alors à trouver une solution qui minimise la somme de toutes les fonctions de coût.
-
+%
 \subsubsection{L'algorithme \og Depth-First Branch and Bound \fg (DFBB)}
 
-La résolution d'un CFN est tentée généralement par un algorithme de type  \og Depth-First Branch and Bound \fg (DFBB).
-les ingrédients sont les suivants:
+La résolution d'un CFN est tentée généralement par un algorithme de type  \og Depth-First Branch and Bound \fg (DFBB). Les ingrédients sont les suivants:
 \begin{itemize}
-\item un principe de séparation
-
-Un ensemble des solutions peut être vu comme un sommet $S_0$ d'une arborescence sans branche.  
-La séparation est l'action de partager, selon certain critère, ce sommet initial en sous-ensembles  qui devient les sommets fils de $S_0$, ce partage devant constituer une partition de l'ensemble des solutions du départ.
-Le critère de séparation classique est d'énumérer les valeurs possibles d'une variable $v_i$ du  CFN. À chacune des valeurs $x$ de $v_i$ on définit le sous-ensemble de $S_0$ ayant dans toutes ses solutions, $v_i$ égale à $x$. Ainsi, si $v_i$ à N valeurs possible, N fils de $S_0$ sont créés.
-\item un majorant
-  
-Le majorant du problème correspond au meilleur coût connu. Il majore le GMEC.
-\item un minorant d'un sommet
-
-Le minorant correspond à une valeur que l'on sait être inférieure ou égale au coût de toutes les solutions d'un sommet.  
-\item un principe d'évaluation
-Évaluer un sommet $S$, c'est déterminer un de ses minorants. Donc si un sommet est évalué et est supérieur au majorant courant, on sait qu'aucune solution de $S$ ne peut être le GMEC. La totalité du sous-arbre peut être élaguée, c'est-à-dire exclue de l'optimisation.  
-
-\item une stratégie de développement
-La stratégie de développement consiste à choisir une méthode de développement de l'arbre des solutions; C'est déterminer l'ordre sur les sommets de l'arborescence dans lequel on va appliquer le critère de séparation.
-Dans le DFBB, la stratégie consiste à descendre dans les branches jusqu'à trouver un sous-arbre qu'il est possible d'élaguer, alors l'algorithme remonte d'une branche pour redescendre dans une autre direction. Ce parcours en profondeur à l'avantage de limiter l'utilisation de la mémoire, parce qu'il n'est pas nécessaire de conserver que la description de la branche qui a été explorée.
+\item un principe de séparation: il est utilisé pour la construction d'un arbre qui organise les solutions. Un ensemble des solutions peut être vu comme le premier sommet $S_0$ d'une arborescence en construction. La séparation est l'action de partager, selon certain critère, cet ensemble en sous-ensembles  qui deviennent les sommets fils de $S_0$, ce partage devant constituer une partition de l'ensemble des solutions du départ. Le critère de séparation classique est d'énumérer les valeurs possibles d'une variable $v_i$ du  CFN. À chacune des valeurs $x$ possibles de $v_i$ on définit le sous-ensemble de $S_0$ ayant dans toutes ses solutions $v_i=x$. Ainsi, si $v_i$ à $N$ valeurs possible, $N$ fils de $S_0$ sont créés.
+\item un majorant: le majorant du problème correspond au meilleur coût connu. Il majore le GMEC.
+\item un minorant d'un sommet: le minorant correspond à une valeur que l'on sait être inférieure ou égale au coût de toutes les solutions d'un sommet.  
+\item un principe d'évaluation: évaluer un sommet $S$, c'est déterminer un de ses minorants. Si un sommet est évalué et est supérieur au majorant courant, on sait qu'aucune solution de $S$ ne peut être le GMEC. La totalité du sous-arbre peut être élaguée, c'est-à-dire exclue de l'optimisation.  
+\item une stratégie de développement: elle consiste à choisir une méthode de développement de l'arbre des solutions; C'est déterminer l'ordre sur les sommets de l'arborescence dans lequel on va appliquer le critère de séparation. Dans le DFBB, la stratégie consiste à descendre dans les branches jusqu'à trouver un sous-arbre qu'il est possible d'élaguer, alors l'algorithme remonte d'une branche pour redescendre dans une autre direction. Ce parcours en profondeur à l'avantage de limiter l'utilisation de la mémoire, parce qu'il n'est nécessaire de conserver que la description de la branche qui a été explorée.
 \end{itemize}  
-Un exemple est présenté à la figure \ref{fig:DFBB}.
-
+Un exemple est présenté à la figure \ref{fig:DFBB}. Il devient alors nécessaire de trouver de bons minorants.
 
 \begin{figure}[!htbp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=10cm]{figure/DFBB.png} \\
+    \includegraphics[width=12cm]{figure/DFBB.png} \\
   \end{tabular}
-  \caption{\textbt{Principe du l'algorithme du Depth-First Branch and Bound} L'ensemble des solutions est représenté sous forme d'un arbre dans lequel le sommet $S_0$ représente l'ensemble des solutions et les fils $S_1$ et $S_4$ une partition de $S_0$, avec pour chacun une première variable $v_1$ fixée. Le DFBB, descend jusqu'au sommet $S_2$ qu'il peut évaluer: un minorant de $S_2$ est 25.25 devient le nouveau majorant du GMEC. L'algorithme remonte et redescend vers $S_3$. Ici le coût constant plus le coût des affectations de $v_1$ et $v_2$ est supérieur au majorant: On peut élaguer l'arbre au sommet $S_3$.}
+  \caption{\textbf{Principe du l'algorithme du Depth-First Branch and Bound} Les solutions d'un CFN sont représentées sous forme d'un arbre dans lequel le sommet $S_0$ représente l'ensemble des solutions et les fils $S_1$ et $S_4$ une partition de $S_0$, avec pour chacun une première variable $v_1$ fixée. Le DFBB, descend jusqu'au sommet $S_2$ qu'il peut évaluer: un minorant de $S_2$ est 25. 25 devient le nouveau majorant du GMEC. L'algorithme remonte et redescend vers $S_3$. Ici le coût constant plus le coût des affectations de $v_1$ et $v_2$ est supérieur au majorant: On peut élaguer l'arbre au sommet $S_3$.}
   \label{fig:DFBB}
 \end{figure}
 
-
-
-Il devient alors nécessaire de trouver de bons minorants.
-
 \subsubsection{Equivalence Preserving Transformation}
-
-L'idée principale des cohérences locales est de transformer le CFN en un CFN dans lequel le coût des affectations complètes est identique de façon à faire apparaître de bons minorants \cite{Schiex00}. Ces transformations sont appelées EPT pour \og Equivalence Preserving Transformation\fg.  Le principe est de déplacer les coûts entre fonctions dans le but de les attribuer aux fonctions qui portent sur une seule variable au plus (les coûts unitaires et les coûts constants).L'avantage ici, est de pouvoir conserver les transformations dans un chemin de l'arbre de recherche tout au long de l'optimisation.
+Une EPT, pour \og Equivalence Preserving Transformation\fg, transforme un CFN $A$ en un second CFN $B$ dans lesquels pour chaque affectation de l'ensemble des variables, le total des coûts  est identique. $A$ et $B$ sont dits en cohérences locales. Le principe est de déplacer les coûts entre fonctions dans le but de les attribuer aux fonctions qui portent sur une seule variable au plus (les coûts unitaires et les coûts constants), l'objectif étant de faire apparaître de bons minorants \cite{schiex00}. L'avantage ici, est de pouvoir conserver les transformations dans un chemin de l'arbre de recherche tout au long de l'optimisation.
 
 Il existe deux types de transformation:
 \begin{itemize}
 \item la première appelée projection consiste à transférer un coût de l'ensemble des coûts unaires vers le coût constant, des coûts binaires vers le coût constant ou encore des coûts binaires vers les coûts unaires.
-\item Le second type de transformation fait l'inverse, c'est à dire transfert un coût d'une fonction unaire vers les fonctions binaires impliquant la même valeur de variable. Une telle transformation permettant une augmentation du transfert total vers le coût constant.
-\end{itemize}
-
+\item le second type de transformation fait l'inverse, c'est à dire transfère un coût d'une fonction unaire vers les fonctions binaires impliquant la même valeur de variable. Une telle transformation permet une augmentation du transfert total vers le coût constant.
+\end{itemize}\\
 Un exemple inspiré de la thèse de Seydou Traoré est présenté à  la figure \ref{fig:EPT}.
-
 
 
 \begin{figure}[!htbp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=10cm]{figure/coherences_local.png} \\
+    \includegraphics[width=12cm]{figure/coherences_local.png} \\
   \end{tabular}
-  \caption{Exemple de transformations EPT sur un CFN composé de 2 variables $i$ et $j$. la transformation de $A$ vers $B$ est une projection de $j$ vers le coût constant $C_0$.Puis une projection des fonctions binaires mène en $C$. La seconde valeur de $j$ est distribué sur les arcs en $D$.Cela permet deux nouvelles projections qui mène à $E$ puis à $F$. $A$ et $F$ sont en cohérence locale.}
+  \caption{\textbf{Exemple de transformations EPT sur un CFN composé de 2 variables $i$ et $j$ ayant deux valeurs possibles.} La transformation de $A$ vers $B$ est une projection de $j$ vers le coût constant $C_0$. Puis une projection des fonctions binaires mène en $C$. La seconde valeur de $j$ est distribuée sur les arcs en $D$. Cela permet deux nouvelles projections qui mènent à $E$ puis à $F$. $A$ et $F$ sont en cohérence locale.}
   \label{fig:EPT}
 \end{figure}
 
-
-
-
-Cette approche a montré sa supériorité , avec l'outil toulbar2 (\cite{Allouche14},\cite{Traoré13}), par rapport à un ensemble de résolveurs de CFN parmi les plus réputés actuellement qui exploitent notamment l'approche DEE/A* ou le backtracking. toulbar2 en combinant FFBB, EPT et DEE a était capable de trouver le GMEC dans le plus grand nombre de problèmes issu du CPD, proposés aux différents outils.
+Cette approche a montré sa supériorité, avec l'outil toulbar2 \cite{Allouche14},\cite{Traoré13}, par rapport à un ensemble de résolveurs de CFN parmi les plus réputés actuellement qui exploitent notamment l'approche DEE/A* ou le backtracking. toulbar2 en combinant FFBB, EPT et DEE a été capable de trouver le GMEC dans le plus grand nombre de problèmes issu du CPD proposés aux différents outils.
 \subsection{L'heuristique Multistart Steepest Descent (MSD)}
 \label{MSD}
-En 2000, Wernisch, Hery et Wodak  (\cite{Wernisch00}) partent du constat que l'espace des phases et les fonctions d'énergies qu'il est possible d'utiliser ne capturent que partiellement la réalité des protéines in vivo. Ainsi, d'une part, le GMEC ne correspond par forcement à la séquence la plus stable. D'autre part, il est bien connu que des protéines homologues éloignées avec des taux d'identité à moins de $50\%$ peuvent conserver quasiment la même structure 3D. Ce qui révèle l'immensité des séquences-conformations compatibles à un pli.
+En 2000, Wernisch, Hery et Wodak  (\cite{Wernisch00}) partent du constat que l'espace des phases et les fonctions d'énergies qu'il est possible d'utiliser ne capturent que partiellement la réalité des protéines in vivo. Ainsi, le GMEC ne correspond par forcement à la séquence la plus stable. D'autre part, il est bien connu que des protéines homologues éloignées avec des taux d'identité à moins de $50\%$ peuvent conserver quasiment la même structure 3D. Ce qui révèle l'immensité des séquences-conformations compatibles à un pli. Ainsi, leur objectif n'est pas de résoudre un problème d'optimisation, mais d'exhiber un ensemble de séquences de basse énergie. Ils proposent alors une heuristique conçue pour le CPD. Il s'agit d'une procédure simple qui a pour objectif de produire très facilement une grande quantité de séquences-conformations de basse énergie, sans se focaliser sur l'optimum.
 
-Ainsi, leur objectif n'est pas de résoudre un problème d'optimisation, mais d'exhiber un ensemble de séquences de basse énergie. Ils proposent alors une heuristique conçue pour le CPD. Il s'agit d'une procédure simple qui a pour objectif de produire très facilement une grande quantité de séquences-conformations de basse énergie, sans se focaliser sur l'optimum.
+Un cycle heuristique se déroule de la façon suivante. Au départ, une séquence-conformation est construite en attribuant de façon aléatoire un type d'acide aminé et un rotamère à chaque position de la chaîne. Ensuite, en parcourant la séquence du début jusqu'à la fin, l'algorithme procède par des ajustements successifs à chaque position. Pour chaque position $i$ de la séquence, tous les états possibles sont évalués, le reste de la séquence et des rotamères étant fixé. Le meilleur rotamère est alors fixé en $i$. La séquence est ainsi ajusté par plusieurs passages successifs, jusqu'à convergence de l'énergie, voir l'algorithme \ref{alg:MSD}.
 
-Un cycle heuristique se déroule de la façon suivante:
-Au départ, une séquence-conformation est construite en attribuant de façon aléatoire un type d'acide aminé et un rotamère à chaque position de la chaîne. Ensuite, en parcourant la séquence du début jusqu'à la fin,l'algorithme procède par des ajustements successifs à chaque position. Pour chaque position $i$ de la séquence, tous les états possibles sont évalués, le reste de la séquence et des rotamères étant fixé. Le meilleur rotamère est alors fixé en $i$. La séquence est ainsi, ajuster par plusieurs passages successifs, jusqu'à convergence de l'énergie, voir (\ref{alg:MSD}).
-
-Un cycle est très rapide, ce qui permet de produite dans les cas usuels, plusieurs milliers de séquences par heures. L'utilisation mémoire hormis la gestion du stockage des énergies est quasi nulle. Il n'impose pas que la fonction d'énergie soit décomposable par paires, mais il s'en accommode très bien, en rendant possible l'utilisation de la mémoire par bloc pour l'ensemble des énergies impliquant une position $i$ donnée.
+Un cycle est très rapide, ce qui permet de produire dans les cas usuels, plusieurs milliers de séquences par heure. L'utilisation mémoire hormis le stockage des énergies est quasi nulle. Il n'impose pas que la fonction d'énergie soit décomposable par paires, mais il s'en accommode très bien, en rendant possible l'utilisation de la mémoire par bloc pour l'ensemble des énergies impliquant une position $i$ donnée.
 
 \begin{algorithm}
   \For{chaque cycle heuristique}{ 
@@ -562,41 +498,35 @@ Un cycle est très rapide, ce qui permet de produite dans les cas usuels, plusie
 \end{algorithm}
 
 
-\subsection{L'algorithme  génétique}
+\subsection{L'algorithme génétique}
 
 
-Holland et ces collaborateurs (\cite{Goldberg88}) introduisent une nouvelle approche inspirée des principes biologiques de la sélection naturelle, avec des opérations comme des mutations, des croisements et la sélection. L'algorithme génétique a pour objectif d'obtenir un ensemble de solutions proche de l'optimum en un temps raisonnable.
-Le schéma général du déroulement est le suivant. Une population de séquences-conformations est générée de façon aléatoire. L'énergie de tous les membres de la population est évaluée. Un critère de sélection basé sur l'énergie est appliqué à la population, qui donc diminue la taille de la population. Un ensemble de mutations aléatoires et un ensemble de croisement sont appliqués sur la nouvelle population. Donc la population augmente. Alors, une condition d'arrêt est évaluée, si elle n'est pas réalisée l'algorithme retourne à l'étape d'évaluation (voir la figure \ref{fig:algo_gene}). 
-
-
+Holland et ces collaborateurs \cite{Goldberg88} introduisent une nouvelle approche inspirée des principes biologiques de la sélection naturelle, avec des opérations comme des mutations, des croisements et la sélection. L'algorithme génétique a pour objectif d'obtenir un ensemble de solutions proche de l'optimum en un temps raisonnable.
+Le schéma général du déroulement est le suivant. Une population de séquences-conformations est générée de façon aléatoire. L'énergie de tous les membres de la population est évaluée. Un critère de sélection basé sur l'énergie est appliqué à la population, qui donc diminue la taille de la population. Un ensemble de mutations aléatoires et un ensemble de croisements sont appliqués sur la nouvelle population ce qui permet d'augmenter. Alors, une condition d'arrêt est évaluée, si elle n'est pas réalisée l'algorithme retourne à l'étape d'évaluation (voir la figure \ref{fig:algo_gene}). 
 
 \begin{figure}[!htbp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=6cm]{figure/algo_genetique.png} \\
+    \includegraphics[width=5cm]{figure/algo_genetique.png} \\
   \end{tabular}
-  \caption{L'algorithme génétique}
+  \caption{\textbf{L'algorithme génétique}}
   \label{fig:algo_gene}
 \end{figure}
 
 
 Le membre de meilleure énergie de la population tend à se reproduire le plus vite dans la population. 
 Donc la valeur moyenne de l'énergie de l'ensemble des séquences-conformations converge.
-On peut voir ici, que le nombre de membres de la population est un paramètre de l'algorithme. Plus ce nombre est faible plus la convergence va être rapide. A contrario, plus ce nombre est grand, plus l'exploration de l'espace d'état est meilleure.
-Les atouts de l'algorithme génétique sont sa capacité à franchir des barrières énergétiques par des changements de séquences rapides via le mécanisme des croisements et sa capacité à optimiser en parallèle différents secteurs de la structure.
+On peut voir ici que le nombre de membres de la population est un paramètre de l'algorithme. Plus ce nombre est faible plus la convergence va être rapide. A contrario, plus ce nombre est grand, plus l'exploration de l'espace d'états est meilleure. Les atouts de l'algorithme génétique sont sa capacité à franchir des barrières énergétiques par des changements de séquences rapides via le mécanisme des croisements et sa capacité à optimiser en parallèle différents secteurs de la structure.
 
 \subsection{Le Monte Carlo}
 \label{sub:MC}
-Dans son acceptation la plus générale, un algorithme Monte Carlo est un algorithme stochastique ( il utilise une source de hasard) qui approche probablement la solution exacte en un temps d'exécution déterminable a priori. Cela le distingue, parmi les algorithmes stochastiques, d'un algorithme de Las Vegas qui donne un résultat exact dans un temps d'exécution non déterministe, et d'un algorithme D'Atlantic City qui donne des résultats probablement corrects dans un temps probablement rapide.
+Dans son acceptation la plus générale, un algorithme Monte Carlo est un algorithme stochastique ( il utilise une source de hasard) qui approche probablement la solution exacte en un temps d'exécution déterminable a priori. Cela le distingue, parmi les algorithmes stochastiques, d'un algorithme de Las Vegas qui donne un résultat exact dans un temps d'exécution non déterministe, et d'un algorithme d'Atlantic City qui donne des résultats probablement corrects dans un temps probablement rapide.
 
-Parmi les algorithmes Monte Carlo, les algorithmes Monte Carlo par Chaînes de Markov (MCMC) ont été particulièrement étudiés.
-Ce ne sont pas des algorithmes d'optimisation, mais des algorithmes d'échantillonnage d'une distribution de probabilité $\pi$: On veut générer des éléments $x_i$ de l'espace des phases tels que la distribution que constitue $D=\{x_i, i \in T \natural \}$ converge vers $\pi$.
+Parmi les algorithmes Monte Carlo, les algorithmes Monte Carlo par Chaînes de Markov (MCMC) ont été particulièrement étudiés. Ce ne sont pas des algorithmes d'optimisation, mais des algorithmes d'échantillonnage d'une distribution de probabilité $\pi$. On veut générer des éléments $x_i$ de l'espace des phases tels que la distribution que constitue $D=\{x_i, i \in \N \}$ converge vers $\pi$.
 
 Il existe plusieurs méthodes pour répondre à cette question, mais les MCMC sont bien adaptés dans les situations où l'espace des états est de grande dimension. Un autre avantage des algorithmes MCMC est qu'elles ne nécessitent pas la connaissance de la constante de normalisation de $\pi$. Cela constitue un attrait important parce que dans beaucoup de situations cette constante de normalisation est particulièrement difficile à calculer. Pour ces raisons, l'échantillonnage par MCMC est très populaire depuis plus de cinquante ans.
 
-Dans la suite, nous donnons des conditions suffisantes pour que ce type l'algorithme converge dans le cadre d'un espace d'état $E$ fini, puis nous détaillons le plus célèbre d'entre eux, l'algorithme de Metropolis-Hasting.
-
-L'idée générale est de générer un élément $x_i$ en utilisant dans les états déjà visités uniquement $x_{i-1}$. Ce type de processus, où la mémoire utilisée est réduite à l'état précédent caractérise les processus de Markov.
+Dans la suite, nous donnons des conditions suffisantes pour que ce type l'algorithme converge dans le cadre d'un espace d'états $E$ fini, puis nous détaillons le plus célèbre d'entre eux, l'algorithme de Metropolis-Hasting. L'idée générale est de générer un élément $x_i$ en utilisant dans les états déjà visités uniquement $x_{i-1}$. Ce type de processus, où la mémoire utilisée est réduite à l'état précédent caractérise les processus de Markov.
 
 
 On appelle processus stochastique, une suite de variables aléatoires ${X_n}_{n\geq 0}$ à valeurs dans $E$.
