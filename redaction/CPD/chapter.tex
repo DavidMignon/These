@@ -4,7 +4,7 @@ L'ingénierie des protéines est l'ensemble des techniques qui ont pour objet de
 
 Dans ce domaine existe la mutagenèse dirigée dans laquelle la première étape est l'identification des mutations intéressantes pour l'objectif fixé, puis des méthodes de génie génétique sont utilisées pour produire les mutants dont les propriétés souhaitées pourront être vérifiées a posteriori. Une deuxième approche est l'évolution dirigée, dans laquelle un ensemble de mutations aléatoires est effectué sur une séquence de protéine d'intérêt et toutes les séquences ainsi produites sont testées afin de trouver la caractéristique attendue. La sélection se fait alors, comme celle de l'évolution naturelle dont elle reprend les mécanismes, sur les séquences positives aux tests.
 
-Une autre approche qui exploite la capacité de calculs des ordinateurs est apparue avec la naissance des méthodes d'ingénierie des protéines \og in silico\fg. L'une d'elles, le \og Computational Protein Design\fg ou CPD consiste à déterminer les séquences d'acides aminés compatibles avec une structure protéique donnée, on parle également de résolution du problème inverse du repliement (voir \ref{graph:CPD}). Cela implique la connaissance de la structure tridimensionnelle de la protéine. 
+Une autre approche qui exploite la capacité de calculs des ordinateurs est apparue avec la naissance des méthodes d'ingénierie des protéines \og in silico\fg. L'une d'elles, le \og Computational Protein Design\fg ou CPD consiste à déterminer les séquences d'acides aminés compatibles avec une structure protéique donnée, on parle également de résolution du problème inverse du repliement (voir \ref{graph:CPD}). Cela implique la connaissance de la structure tridimensionnelle de la protéine. Cette méthode comporte trois éléments principaux:
 
    \begin{figure}[!htbp]
      \centering
@@ -17,20 +17,19 @@ Une autre approche qui exploite la capacité de calculs des ordinateurs est appa
    \end{figure}
 
 
-Cette méthode comporte trois éléments principaux:
-\begin{enumerate}
-\item La détermination d'un espace de conformations de la protéine\\
+\begin{enumerate} 
+\item \textbf{La détermination d'un espace de conformations de la protéine}\\
 C'est sur elle que repose la prédiction de structure des séquences considérées. Elle doit être capable de représenter une ou un petit nombre de conformations de la chaîne principale du polypeptide et un ensemble de positionnements de la chaîne latérale de chacun des résidus possibles.
-\item Une fonction d'énergie\\
+\item \textbf{Une fonction d'énergie}\\
 Elle permet d'évaluer la pertinence des conformations. 
-\item Un algorithme d'exploration de l'espace de conformation\\
+\item \textbf{Un algorithme d'exploration de l'espace de conformation}\\
 Il exploite la fonction d'énergie pour échantillonner les séquences favorables.
 \end{enumerate}
 
 Dans la suite de ce chapitre, nous détaillons les trois composantes du CPD. Nous aborderons le problème de la modélisation des protéines, de leur espace de conformation et de l'espace séquences-conformations. Puis, nous verrons les fonctions d'énergies classiques. Seront détaillé, les approches pour la modélisation du solvant qui est une partie importante de la fonction d'énergie. Plusieurs algorithmes d'exploration de l'ensemble des états possibles vont être abordés.  
 
 \section{L'espace des séquences-conformations}
-Pour faire du CPD, il faut avoir une représentation de l'ensemble des conformations que les chaînes polypeptidiques peuvent adopter. L'ensemble des cas possibles à prendre en compte, peut se concevoir comme le choix d'une séquence $S$ d'acides aminés de longueur $N$ et la détermination d'une conformation $C$ prise par $S$ dans l'espace 3D. Ainsi l'espace d'état est celui de l'ensemble de couples $(S,C)$ pour N donné. Dans toute la suite, on appelle une séquence-conformation un élément de cet ensemble de couples. L'ensemble des séquences de $N$ acides aminés se conçoit sans difficulté comme les $N$-uples de l'ensemble à $20$ éléments formé des différents types d'acide aminé. En revanche, la définition de l'ensemble des conformations d'une chaîne polypeptidique doit être développée.
+Pour faire du CPD, il faut avoir une représentation de l'ensemble des conformations que les chaînes polypeptidiques peuvent adopter. L'ensemble des cas possibles à prendre en compte, peut se concevoir comme le choix d'une séquence $S$ d'acides aminés de longueur $N$ et la détermination d'une conformation $C$ prise par $S$ dans l'espace 3D. Ainsi l'espace d'état est celui de l'ensemble de couples $(S,C)$ pour N donné. Dans toute la suite, on appelle une séquence-conformation un élément de cet ensemble de couples. L'ensemble des séquences de $N$ acides aminés se conçoit sans difficulté comme les $N$-uplets de l'ensemble à $20$ éléments formé des différents types d'acide aminé. En revanche, la définition de l'ensemble des conformations d'une chaîne polypeptidique doit être développée.
 
 \subsection{L'état replié }
 La mécanique moléculaire propose d'appliquer les représentations de la mécanique classique aux molécules. Les atomes sont représentés sous forme de sphères. La protéine dans un milieu aqueux est flexible et en permanence en mouvement. C'est en particulier le cas pour les chaînes latérales et les boucles flexibles. L'espace des d'états d'une chaîne polypeptidique, dans le cadre de la mécanique moléculaire est alors constitue d'un vaste espace continu de conformation possibles.
@@ -53,7 +52,7 @@ Partant du fait que les positionnements des chaînes latérales n'influencent qu
 Cependant, cette approximation peut avoir des conséquences importantes. Un type d'acide aminé considéré comme défavorable peut devenir favorable après une petite adaptation du backbone et il a été établi que quelques mouvements de squelettes peuvent faire varier significativement l'énergie de la conformation (\cite{Desjarlais99}).
 En réponse à ce problème, Druart et al. \cite{Druart16} proposent une méthode de type Monte Carlo hybride travaillant sur un modèle multi backbone. Une autre approche consiste à donner une certaine liberté aux angles $\Phi$, $\Psi$ en introduisant des variations aléatoires sur ceux-ci \cite{Desjarlais99}. Puis récemment, Dantas et al. \cite{Dantas07} font des simulations avec minimisation après chaque mouvement de chaîne latérale. Kuhlman et al. \cite{Kuhlman03}  optimisent alternativement la structure du squelette et la séquence d'acides aminés.
 
-Enfin, citons l'utilisation d'une classe particulière de mouvement des squelettes protéiques appelé \og backrub \fg. Ce sont des mouvements naturels du backbone mis en évidence par David et al. \cite{Davis06}, à partir de structures cristallographiques. Ces mouvements consistent en des déplacements de l'ensemble $C_{\alpha}-C_{\beta}$ à une position $i$ donnée de la chaîne, sans déplacement des carbones $C_{\alpha_{i+1}}$ et $C_{\alpha_{i-1}}$ . Ces mouvements backrub ont permis à Georgiev et al., Smith et Kortemme (\cite{Georgiev08},\cite{Smith08}) d'améliorer la qualité des prédictions des mutants par rapport à des simulations à squelette rigide.
+Enfin, citons l'utilisation d'une classe particulière de mouvement des squelettes protéiques appelé \og backrub \fg. Ce sont des mouvements naturels du backbone mis en évidence par David et al. \cite{Davis06}, à partir de structures cristallographiques. Ces mouvements consistent en des déplacements de l'ensemble $C_{\alpha}-C_{\beta}$ à une position $i$ donnée de la chaîne, sans déplacement des carbones $C_{\alpha_{i+1}}$ et $C_{\alpha_{i-1}}$. Ces mouvements backrub ont permis à Georgiev et al., Smith et Kortemme \cite{Georgiev08},\cite{Smith08} d'améliorer la qualité des prédictions des mutants par rapport à des simulations à squelette rigide.
 
 \subsection{L'état déplié }
 \label{sub:deplie}
@@ -61,7 +60,7 @@ En général, la stabilité d'une protéine est évaluée par une variation de l
 
 \section{L'énergie d'une protéine}
 
-La fonction d'énergie ou fonction de score permet d'évaluer la stabilité de chaque conformation de la protéine. Cette fonction doit prendre en compte les détails des interactions entre les atomes de la protéine, les effets de l'environnement aqueux et en même temps, être suffisamment rapide à calculer pour évaluer en un temps raisonnable une partie la plus significative possible de l'espace des conformations. Une classe importante est constituée des fonctions d'énergie basée sur la mécanique moléculaire.
+La fonction d'énergie ou fonction de score permet d'évaluer la stabilité de chaque conformation de la protéine. Cette fonction doit prendre en compte les détails des interactions entre les atomes de la protéine, les effets de l'environnement aqueux et en même temps, être suffisamment rapide à calculer pour évaluer en un temps raisonnable une partie la plus significative possible de l'espace des conformations. Une classe importante est constituée des fonctions d'énergie basées sur la mécanique moléculaire.
 
 \subsection{La mécanique moléculaire}
 \label{sub:mecamol}
@@ -91,13 +90,12 @@ avec $E_{liée}$ l'énergie d'interactions des atomes éloignés d'au plus deux 
 L'énergie d'interaction liée comprend un terme d'élongation des liaisons, un terme de déformation des angles, de rotation des angles dièdres et un terme \og impropre\fg:
 \begin{equation}
   E_{liée} = E_{liaison} + E_{angle} +E_{dièdre} + E_{impr}
-\end{equation}\\
+\end{equation}
 L'énergie de déformations des liaisons $E_{liaison}$ s'exprime de la façon suivante:
 \begin{equation}
   E_{liaison} = \frac{1}{2} \sum_{i=1}^{n} k_{i} (r_i - r^o_i)^2
-\end{equation}\\
-avec l'ensemble des liaisons indexé par $i$, $k_{i}$ la force du ressort, $r_{i}$ la longueur de la liaison et $r^0_i$ la longueur optimale.\\
-L'énergie de déformation des angles $E_{angl}$ s'exprime:
+\end{equation}
+avec l'ensemble des liaisons indexé par $i$, $k_{i}$ la force du ressort, $r_{i}$ la longueur de la liaison et $r^0_i$ la longueur optimale. L'énergie de déformation des angles $E_{angl}$ s'exprime:
 \begin{equation}
   E_{angl} =\frac{1}{2} \sum_{ij}k_{\theta,ij}(\theta_{ij} - \theta_{ij}^0)^2
 \end{equation}
@@ -106,12 +104,11 @@ L'énergie de déformation des angles dièdres $E_{dièdre}$ s'exprime:
 \begin{equation}
 E_{dihe} = \frac{1}{2}\sum_{i} A_{i,n}[ 1 + \cos(n\Phi_i - \Phi_0\)]
 \end{equation}
-où $n$ est périodicité de la rotation, $A_{i,n}$ est la constante de torsion, $\Phi_i$ l'angle dièdre, c'est-à-dire pour 4 atomes $a_1$, $a_2$, $a_3$ et $a_4$, reliés par 3 liaisons $a_1-a_2, a_2-a_3$ et $ a_3-a_4$, l'angle formé par les plans $(a_1,a_2$,$a_3)$ et $(a_2,a_3$,$a_4)$, $\Phi^0$ est la phase.
-L'énergie de déformation des angles impropres $E_{impr}$ exprime la déformation d'un  ensemble  de 4 atomes  par rapport à une conformation planaire ou tétraédrique. Pour un atome $a_1$ relié à 3 atomes $a_2$,$a_3$ et $a_4$, elle a la forme:
+où $n$ est périodicité de la rotation, $A_{i,n}$ est la constante de torsion, $\Phi_i$ l'angle dièdre, c'est-à-dire pour 4 atomes $a_1$, $a_2$, $a_3$ et $a_4$, reliés par 3 liaisons $a_1-a_2, a_2-a_3$ et $ a_3-a_4$, l'angle formé par les plans $(a_1,a_2$,$a_3)$ et $(a_2,a_3$,$a_4)$, $\Phi^0$ est la phase. L'énergie de déformation des angles impropres $E_{impr}$ exprime la déformation d'un  ensemble  de 4 atomes  par rapport à une conformation planaire ou tétraédrique. Pour un atome $a_1$ relié à 3 atomes $a_2$,$a_3$ et $a_4$, elle a la forme:
 \begin{equation}
   E_{impr}= \frac{1}{2}A(\omega - \omega^0)^2
 \end{equation}
-Ici, $A$ est la constante de force et $\omega$ représente l'angle entre les plans ($a_1$, $a_2$, $a_3$) et ($a_2$, $a_3$, $a_4$), voir la figure \ref{graph:E_liees} pour une représentation visuelle.
+Ici, $A$ est la constante de force et $\omega$ représente l'angle entre les plans ($a_1$, $a_2$, $a_3$) et ($a_2$, $a_3$, $a_4$), voir la figure \ref{graph:Eliees} pour une représentation visuelle.
 
    \begin{figure}[!htbp]
      \centering
@@ -123,8 +120,8 @@ Ici, $A$ est la constante de force et $\omega$ représente l'angle entre les pla
 
      \end{tabular}
      
-     \caption{Représentation des énergies liées. Du haut vers le bas et de gauche à droite, sont représentés les énergies de liaison, d'angle, du dièdre et du dièdre impropre.}
-\label{graph:E_liees}
+     \caption{\textbf{Représentation des énergies liées} Du haut vers le bas et de gauche à droite, sont représentés les énergies de liaison, d'angle, du dièdre et du dièdre impropre.}
+\label{graph:Eliees}
    \end{figure}
 
 
@@ -137,7 +134,8 @@ L'énergie $E_{elec}$ pour l'énergie électrostatique est donnée par un potent
 \begin{equation}
   E_{elec}=\frac{q_iq_j}{\epsilon r_{ij}}
 \end{equation}\\
-$q_i$ et $q_j$ représentent les charges respectives des atomes $i$ et $j$ et $r_{ij}$ représente la distance entre les atomes $i$ et $j$, $\epsilon$ est la constante diélectrique du milieu.
+$q_i$ et $q_j$ représentent les charges respectives des atomes $i$ et $j$ et $r_{ij}$ la distance entre les atomes $i$ et $j$, $\epsilon$ la constante diélectrique du milieu.
+
 L'énergie  $E_{VdW}$ de Van der Waals s'explique par les interactions électriques de faible intensité entre deux atomes, dûs au fait que la répartition des charges électriques n'est pas uniforme autour des noyaux. Elle rassemble les effets des forces de Keesom, Delye, London et Pauli. Le potentiel de Lennard-Jones est l'approximation classique de cette énergie. Voici son expression:
 \begin{equation}
     \label{VdW}
@@ -158,8 +156,8 @@ Une molécule d'eau a une charge électrique nette nulle. Mais il existe une dis
 Lorsqu'une protéine est solvatée, les molécules du solvant se placent de telle façon que le nombre de liaisons hydrogène soit maximal. Les molécules de la première couche de solvatation forment alors des liaisons avec les groupes polaires de la protéine ou pour les groupes non polaires, s'orientent pour former des liaisons avec d'autres molécules d'eau. Cette réorganisation de la structure moléculaire de l'eau a trois conséquences importantes:
 
 \begin{itemize}
-\item une diminution de l'entropie au voisinage de la protéine  
-\item la création de polarisation à la surface du soluté
+\item Une diminution de l'entropie au voisinage de la protéine  
+\item La création de polarisation à la surface du soluté
 \item  L'eau crée une couche de charges partielles opposées à celles de la protéine qui atténue le champ de celle-ci. Ce phénomène s'appelle l'écrantage.
 \end{itemize}
   
@@ -170,7 +168,7 @@ La connaissance des positions et les vitesses des atomes de toutes les molécule
 \subsection{Le modèle de solvant explicite}
 
 Pour calculer les grandeurs d'intérêt du solvant, il faut pouvoir situer le système dans l'espace des phases, c'est-à-dire, l'espace à $6 N$ dimensions pour une simulation du solvant avec $N$ molécules d'eau telle que chaque élément de cet espace décrive une configuration des positions et des vitesses dans l'espace 3D de la collection de molécules.
-Une première méthode est la dynamique moléculaire dans laquelle, à partir d'une configuration initiale des molécules d'eau, les équations de la mécanique classique sont résolues pour déterminer les positions et les vitesses au court du temps. Une seconde méthode consiste à échantillonner l'espace des phases par la méthode Monte Carlo dans laquelle l'espace est visité grâce à une série de déplacements aléatoires qui sont acceptés ou non en fonction de critères basées sur l'énergie (voir la section \ref{sub:MC}).
+Une première méthode est la dynamique moléculaire dans laquelle, à partir d'une configuration initiale des molécules d'eau, les équations de la mécanique classique sont résolues pour déterminer les positions et les vitesses au cours du temps. Une seconde méthode consiste à échantillonner l'espace des phases par la méthode Monte Carlo dans laquelle l'espace est visité grâce à une série de déplacements aléatoires qui sont acceptés ou non en fonction de critères basés sur l'énergie (voir la section \ref{sub:MC}).
 
 Mais, quelle que soit la méthode utilisée, pour pouvoir obtenir une représentation de qualité des effets du solvant sur la protéine, il faut échantillonner correctement les états du solvant dans l'espace des phases, ce qui demande de multiplier les dynamiques moléculaires avec différentes configurations initiales ou de calculer des trajectoires Monte Carlo suffisamment longues.
 L'utilisation d'un modèle de solvant explicite entraîne alors une situation dans laquelle une simulation très coûteuse en termes de puissance de calculs consacre la plus grande partie du temps à évaluer des interactions entre des molécules d'eau. Ce n'est pas un objectif pour le CPD.
@@ -191,7 +189,7 @@ avec:
 \begin{enumerate}
 \item $\Delta G_{elec}$ l'effet électrostatique, qui correspond à la réorganisation des charges de la protéine dans le solvant, y compris ses charges partielles (polarisation).
 \item $\Delta G_{vdw}$ est l'effet des forces de Van der waals.
-  \item $\Delta G_{cav}$ est l'effet qui correspond au coût de la création de la cavité pour le solvant, en termes d'entropie et de pression. Il inclut le coût de réorganisation des molécules du solvant.
+\item $\Delta G_{cav}$ est l'effet qui correspond au coût de la création de la cavité pour le solvant, en termes d'entropie et de pression. Il inclut le coût de réorganisation des molécules du solvant.
 \end{enumerate}
 
 Une méthode standard pour approcher $\Delta G_{solv}$ est de traiter le premier terme séparément des autres. En effet, il est possible d'approcher la somme des deux derniers termes de l'équation  \ref{eq:enersolv} en utilisant la surface accessible au solvant de la protéine. La surface accessible au solvant est l'ensemble des points par lesquels peut passer le centre d'une sphère, modélisant une molécule d'eau, qui roule sur la surface de Van der Vaals de la protéine, voir figure \ref{graph:surface}. L'approximation s'écrit:
@@ -208,7 +206,7 @@ Dans la suite, on appelle cette somme, le terme surfacique de l'énergie de solv
        \includegraphics[width=13cm]{figure/surface.png} &
      \end{tabular}
      
-     \caption{\textbf{Les trois types classiques de surfaces pour une molécule} à gauche et en rouge la surface de Van der Waals (SVdW), au centre et en bleu, la surface accessible au solvant (SA), à droite, et en vert  la surface de Connolly ou surface moléculaire (SM). La surface SA est l'ensemble des positions pouvant être occupées par le centre d'une sphère (figurant une molécule du solvant) roulant sur SVdW. La surface SM est la plus petite enveloppe de SVdW dont chaque point peut être en contact avec la sphère. } 
+     \caption{\textbf{Les trois types classiques de surfaces pour une molécule} À gauche et en rouge la surface de Van der Waals (SVdW), au centre et en bleu, la surface accessible au solvant (SA), à droite, et en vert  la surface de Connolly ou surface moléculaire (SM). La surface SA est l'ensemble des positions pouvant être occupées par le centre d'une sphère (figurant une molécule du solvant) roulant sur SVdW. La surface SM est la plus petite enveloppe de SVdW dont chaque point peut être en contact avec la sphère. } 
 \label{graph:surface}
    \end{figure}
    
@@ -253,9 +251,7 @@ L'équation de Poisson-Boltzmann est une extension de l'équation de Poisson dan
 \end{equation}
 avec $ \kappa $ le paramètre de Debye-Hückel qui tient compte de la concentration des ions en solution.
 
-Malheureusement, il n'existe pas, pour les protéines, de solution analytique à \ref{eq:poisson}. Il faut effectuer une résolution numérique. Plusieurs programmes sont à la disposition de la communauté, on peut citer Delphi \cite{Rocchia02} et APBS \cite{Baker01}  qui sont basés sur la méthode des différences finies et des éléments finis.
-
-Une fois l'équation résolue, le terme électrostatique de l'énergie de solvatation est donné par:
+Malheureusement, il n'existe pas, pour les protéines, de solution analytique à \ref{eq:poisson}. Il faut effectuer une résolution numérique. Plusieurs programmes sont à la disposition de la communauté, on peut citer Delphi \cite{Rocchia02} et APBS \cite{Baker01}  qui sont basés sur la méthode des différences finies et des éléments finis. Une fois l'équation résolue, le terme électrostatique de l'énergie de solvatation est donné par:
 
 \begin{equation}
 \Delta G_{solv}^{elec} = \frac{1}{2} \int \rho(x)\phi(x)dx  
@@ -265,16 +261,16 @@ Quelle que soit l'approche utilisée, les calculs sont coûteux pour une protéi
 
 \subsection{Le modèle de Born Généralisé}
 \label{sub:GB}
-Dans le cas d'un soluté sphérique de rayon $a$ et de charge ponctuelle $q$ portée par le centre de la sphére, Born en 1920 ( \cite{Born20}) parvient à établir des expressions analytiques des solutions de l'équation de Poisson-Boltzmann et de $ \Delta G_{solv}^{elec}$:
+Dans le cas d'un soluté sphérique de rayon $a$ et de charge ponctuelle $q$ portée par le centre de la sphére, Born en 1920 \cite{Born20} parvient à établir des expressions analytiques des solutions de l'équation de Poisson-Boltzmann et de $ \Delta G_{solv}^{elec}$:
 
 
 \begin{equation}
   \label{eq:Born}
   \Delta G_{solv}^{elec} = - \tau \frac{q^2}{2a}
 \end{equation}
-avec $ \tau = \frac{1}{\epsilon_p} - \frac{1}{\epsilon_s}$ , $\epsilon_p$ la constante diélectrique de la sphère et $\epsilon_s$ celle du solvant. Partant de cette solution en 1990, Still et al (\cite{Still90}) proposent une généralisation à un ensemble d'atomes chargés formant une cavité de forme quelconque. L'objectif est de donner les résultats de qualité proche de celles de PB avec un coût numérique bien inférieur.
+avec $ \tau = \frac{1}{\epsilon_p} - \frac{1}{\epsilon_s}$ , $\epsilon_p$ la constante diélectrique de la sphère et $\epsilon_s$ celle du solvant. Partant de cette solution en 1990, Still et al. \cite{Still90} proposent une généralisation à un ensemble d'atomes chargés formant une cavité de forme quelconque. L'objectif est de donner les résultats de qualité proche de celles de PB avec un coût numérique bien inférieur.
 
-Dans un premier temps, on évalue l'énergie libre électrostatique totale d'une paire d'atomes $i$, $j$, de rayon $a_i$, $a_i$ de charge $q_i$, $q_j$ séparés d'une distance $r_{ij}$, en utilisant la solution de Born:
+Dans un premier temps, on évalue l'énergie libre électrostatique totale d'une paire d'atomes $i$, $j$ de rayon $a_i$, $a_i$ de charge $q_i$, $q_j$ séparés d'une distance $r_{ij}$, en utilisant la solution de Born:
 
 
 \begin{equation}
@@ -291,15 +287,14 @@ avec $ \tau = \frac{1}{\epsilon_p} - \frac{1}{\epsilon_s}$, $\epsilon_p$ la cons
 \begin{equation}
   G_{elec} = \frac{1}{2} \frac{q_iq_j}{r_{ij}} - \tau \frac{1}{2} \sum_{i,j} g_{ij}
 \end{equation}
-
-la forme des $g_{ij}$ la plus communément utilisées est la forme paramétrique suivante:
+La forme des $g_{ij}$ la plus communément utilisées est la forme paramétrique suivante:
 
 
 \begin{equation}
   \label{eq:GBg}
   g_{ij}= \tau q_iq_j (r^2_{ij} + b_ib_j exp(\frac{-r^2_{ij}}{4b_ib_j}))^{-1/2} 
 \end{equation}
-avec $b_i$ et $b_j$, de nouveaux paramètres, que l'on nomme les rayons de solvatations de l'atome $i$ et $j$. Dans le cas où $i=j$, $g_{ij}$ est égale à deux fois l'énergie de solvatation de Born pour un ion de rayon $b_i$. Lorsque $r_{ij}$ tend vers l'infini, $g_{ij}$ tend vers la loi de Coulomb dans le solvant: $\frac{q_iq_j}{\epsilon_s r_{ij}}$. On écrit finalement, pour une protéine consitutée de $N$ atomes:
+avec $b_i$ et $b_j$, de nouveaux paramètres, que l'on nomme les rayons de solvatations des atomes $i$ et $j$. Dans le cas où $i=j$, $g_{ij}$ est égale à deux fois l'énergie de solvatation de Born pour un ion de rayon $b_i$. Lorsque $r_{ij}$ tend vers l'infini, $g_{ij}$ tend vers la loi de Coulomb dans le solvant: $\frac{q_iq_j}{\epsilon_s r_{ij}}$. On écrit finalement, pour une protéine consitutée de $N$ atomes:
 
 \begin{equation}
   G_{elec} = \frac{1}{2} \sum_{i \neq j} \frac{q_iq_j}{r_{ij}} - \tau \frac{1}{2} \sum_{i,j} g_{ij}
@@ -529,65 +524,46 @@ Il existe plusieurs méthodes pour répondre à cette question, mais les MCMC so
 Dans la suite, nous donnons des conditions suffisantes pour que ce type l'algorithme converge dans le cadre d'un espace d'états $E$ fini, puis nous détaillons le plus célèbre d'entre eux, l'algorithme de Metropolis-Hasting. L'idée générale est de générer un élément $x_i$ en utilisant dans les états déjà visités uniquement $x_{i-1}$. Ce type de processus, où la mémoire utilisée est réduite à l'état précédent caractérise les processus de Markov.
 
 
-On appelle processus stochastique, une suite de variables aléatoires ${X_n}_{n\geq 0}$ à valeurs dans $E$.
+On appelle processus stochastique, une suite de variables aléatoires $\{X_n\}$ à valeurs dans $E$.
 Une chaîne de Markov est un processus stochastique tel que:
 
 \begin{equation}
-  \forall n \gep 0 , \forall (i_0,i_1,...,i_{n-1},i) \in E^{n+1},
-  
-  P(X_n=i|X_{n-1}=i_0,X_{n-2}=i_1,,,X_{1}=i_{n-2},X_{0}=i_{n-1},) = P(X_n=i|X_{n-1}=i_0) 
+  \forall n \geqslant 0 , \forall (i_0,i_1,...,i_{n-1},i) \in E^{n+1}, P(X_n=i|X_{n-1}=i_0,X_{n-2}=i_1,..,X_{1}=i_{n-2},X_{0}=i_{n-1}) = P(X_n=i|X_{n-1}=i_0) 
 \end{equation}
 Une chaîne de Markov est homogène si:
 
 \begin{equation}
   \label{eq_homog}
-  \forall n \geq 0 , \forall (i,j) \in E^2,
-  
-  P(X_n=i|X_{n-1}=j)= P(X_{n+1}=i|X_n=j) 
+  \forall n \geq 0 , \forall (i,j) \in E^2,P(X_n=i|X_{n-1}=j)= P(X_{n+1}=i|X_n=j) 
 \end{equation}
 
-C'est-à-dire que la probabilité de transition P est indépendante de n. Dans la suite, on ne considère que des chaînes de Markov homogènes. Et on note
-
+C'est-à-dire que la probabilité de transition P est indépendante de n. Dans la suite, on ne considère que des chaînes de Markov homogènes. Et on note:\\
 $P(X_n=b | X_{n-1}=a) = P(b|a)$
+dans la suite, pour simplifier les notations, on utilise l'écriture matricielle avec \\
+$\mu_0 =(p(X_0=i))_{i \in E},$\\
+on a alors\\
+$\mu_1 =\mu_0 . P$, avec . le produit matriciel.
 
+\subsubsection{Le principe de la balance détaillée}
 
-dans la suite, pour simplifier les notations, on utilise l'écriture matricielle avec
-
-$\mu_0 =(p(X_0=i))_{i \in E},$
-
-on a alors
-
-$\mu_1 =\mu_0 . P$   , avec . le produit matriciel.
-
-\textbt{Le principe de la balance détaillée}
-
-Le principe de la balance détaillée est un principe général de comportement des systèmes dynamiques, il a été utilisé par Boltzmann pour la construction de la physique statistique et Cercignani et Lampis ont montré qu'il était vrai pour les gaz polyatomiques. Il peut s'exprimer de la façon suivante:
+Le principe de la balance détaillée est un principe général de comportement des systèmes dynamiques, il a été utilisé par Boltzmann pour la construction de la physique statistique et Cercignani et Lampis ont montré qu'il était vrai pour les gaz polyatomiques \cite{Cercignani81}. Il peut s'exprimer de la façon suivante:
 
 Pour un système dynamique à l'équilibre $\mathcal{S}$ , $a$ et $b$ deux éléments de l'espace des phases associé à $\mathcal{S}$, la probabilité de transition de a vers b est égale à la probabilité de transition de b vers a, ou encore: 
 
 \begin{equation}
-  \forall i,j \in \mathcal{S}
-  
-\mathcal{P}(i \rightarrow j) = \mathcal{P}(j \rightarrow i) 
+\forall i,j \in \mathcal{S}, \mathcal{P}(i \rightarrow j) = \mathcal{P}(j \rightarrow i) 
 \end{equation}
-
-Pour pouvoir appliquer ce principe aux chaînes de Markov, introduisons une définition proche:
-
-Soit $q$ une probabilité sur $E$, une chaîne de Markov est dîtes réversible par rapport à $q$ si
+Pour pouvoir appliquer ce principe aux chaînes de Markov, introduisons une définition proche:\\
+Soit $q$ une probabilité sur $E$, une chaîne de Markov est dîte réversible par rapport à $q$ si
 
 \begin{equation}
 \forall i,j \in E, q(j)P(i|j)=q(j)P(j|i)
-\end{equation}
-
-Dans ce cas, on a alors:
-
+\end{equation}\\
+On a alors:
 \begin{equation}
 \forall i \in E, q.P (i) = \sum_{j \in E} q(j)P(i|j) = \sum_{j \in E} q(i)P(j|i) = q(i) \sum_{i \in E}P(j|i) = q(i)
 \end{equation}
-
-Ainsi, la probabilité $q$ avant la transition $P$ vaut la probabilité après, la chaîne est dîtes stationnaire pour $q$. Il nous faut alors construire une chaîne de Markov réversible pour la cible \pi.
-
-Mais cela une suffit pas, en effet, même si une distribution stationnaire est connue, rien ne dit que la chaîne va entrer dedans. 
+Ainsi, la probabilité $q$ avant la transition $P$ vaut la probabilité après, la chaîne est dîte stationnaire pour $q$. Il nous faut alors construire une chaîne de Markov réversible pour la cible \pi. Mais cela une suffit pas, en effet, même si une distribution stationnaire est connue, rien ne dit que la chaîne va entrer dedans. 
 
 Si E est discret, une chaîne de Markov réversible est dîtes ergodique si et seulement si:
 
@@ -596,85 +572,68 @@ Si E est discret, une chaîne de Markov réversible est dîtes ergodique si et s
 \item pour tous $i$ et $j$ de l'espace d'état il existe un chemin de $i$  vers $j$  de probabilité non nulle. 
 \item Il existe aucun $x$ de $E$, tel que la chaîne revient en $x$ périodiquement.
 \item  Au court du temps, tout les états sont visités par la chaîne avec une probabilité non nulle. 
-\end{enumerate}
-
+\end{enumerate}\\
 On a alors, le résultat suivant:
 Une chaîne ergodique converge vers son unique distribution stationnaire.
 
 \subsubsection{L'algorithme de Metropolis}
 
-Nous pouvons maintenant décrire l'algorithme de Metropolis-Hastings. L'idée initiale de Metropolis a été de construire un l'algorithme qui échantillonne la distribution de Boltzmann. Elle donne la probabilité d'un état $x_i$ du système en fonction son énergie et de la température:
+Nous pouvons maintenant décrire l'algorithme de Metropolis-Hastings. L'idée initiale de Metropolis est de construire un l'algorithme qui échantillonne la distribution de Boltzmann. Elle donne la probabilité d'un état $x_i$ du système en fonction de son énergie et de la température:
 
 \begin{equation}
-\pi^B(i) = \fraq{1}{\sum_{j \in E}\exp(\frac{E_j}{kT})} \exp(\frac{E_i}{kT})
+\pi^B(i) = \frac{1}{\sum_{j \in E}\exp(\frac{E_j}{kT})} \exp(\frac{E_i}{kT})
 \end{equation}
-
 avec $E_{x_i}$  l'énergie de $x_i$, $T$ la température et $k$ la constante de Boltzmann. La constante de normalisation de la probabilité s'appelle la fonction de partition du système. Elle est particulièrement difficile à calculer.
 
-On définit, alors la probabilité de transition $P$ comme le produit de deux probabilités:
+On définit alors la probabilité de transition $P$ comme le produit de deux probabilités:
 
 \begin{equation}
   \label{decomp_Metro}
 P (j|i) = sel(j|i)acc(j|i)
 \end{equation}
-
 avec $sel$ une probabilité de sélectionner l'état $j$ de $E$ lorsque le système est dans l'état $i$ et $acc$ la probabilité d'accepter l'état $j$ étant en $i$. Si la chaîne respecte le principe de la balance détaillée par rapport à $\pi^B$, on a:
 
 \begin{equation}
   \label{balance}
 \pi^B(i)sel(j|i)acc(j|i) = \pi^B(j)sel(i|j)acc(i|j) 
 \end{equation}
-
 Si on se limite à une probabilité de sélection symétrique:
 
 \begin{equation}
+    \label{bd_Metropolis}
 \pi^B(i)acc(j|i) = \pi^B(j)acc(i|j) 
 \end{equation}
 
-ce que équivaut à
+ce qui équivaut à
 
 \begin{equation}
-  \label{fraq_Metropolis}
+
 \frac{acc(j|i)}{acc(i|j)} =\frac{\pi^B(j)}{\pi^B(i)} = \frac{-\exp(E_j/kT)}{\exp(E_i/kT)} = \exp(-\Delta E/kT) 
-\end{equation}
-
-avec $\Delta E =  E_j - E_i$.
-
-Ainsi,le calcul de la fonction de partition est évité!
+\end{equation}\\
+avec $\Delta E =  E_j - E_i$. Ainsi,le calcul de la fonction de partition est évité!
 
 Métropolis propose alors la probabilité d'acceptation suivante:
 
-
-si $\Delta E >0$
-
-alors $acc(i|j) = \exp(- \Delta E/kT)$
+si $\Delta E >0$ alors $acc(i|j) = \exp(- \Delta E/kT)$ \\
 sinon
-
 $acc(i|j)=1$
 
-On voit que, si $\Delta E >0$ alors $acc(j|i)=1$ , et donc  on a bien:
+On a bien:
 \begin{equation}
-\forall i,j \in E ,\frac{acc(j|i)}{acc(i|j)} = \exp(\Delta E/kT)
-\end{equation}
-
+\forall i,j \in E, \frac{acc(j|i)}{acc(i|j)} = \exp(\Delta E/kT)
+\end{equation}\\
 Il suffit alors de choisir une probabilité de sélection symétrique et ne violant pas \ref{crit_ergo} pour obtenir notre convergence.
-
 
 Par la suite Hastings, généralise l'algorithme à une probabilité $sel()$ non symétrique avec acc() telle que:
 
+si $\delta E >0$ alors\\
 
-si
-$\delta E >0$
-alors
-
-$acc(i|j) = \exp(- \delta E/kT) \fraq{sel(j|i)}{sel(i|j)}$
+$acc(i|j) = \exp(- \delta E/kT) \fraq{sel(j|i)}{sel(i|j)}$ \\
 \label{eq:Hasting}
-sinon
-
-$acc(i|j)=1$
+sinon $acc(i|j)=1$
 
 
-Si l'on injecte cette nouvelle probabilité dans ~\ref{balance}, on a encore le respect de la balance détaillée et la convergence. L'algorithme est résumé en \ref{alg:Metro}.
+Si l'on injecte cette nouvelle probabilité dans ~\ref{balance}, on a encore le respect de la balance détaillée et la convergence. L'algorithme est résumé en \ref{alg:Metro}. Dans toute la suite, l'algorithme Monte Carlo (MC) désigne l'algorithme de Metropolis-Hastings, ce qui est un usage courant.
 
 
 \begin{algorithm}
@@ -688,7 +647,7 @@ Si l'on injecte cette nouvelle probabilité dans ~\ref{balance}, on a encore le 
       sauvegarder  $S_{i+1}$ \;
       }
     \Else{
-      alors       $S_i +1 = S_i'$ avec une probabilité acc \;
+      alors       $S_{i +1} = S_i'$ avec une probabilité acc\;
       sauvegarder  $S_{i+1}$ \;
       \Else {
         $S_{i+1} = S_i$
@@ -699,70 +658,52 @@ Si l'on injecte cette nouvelle probabilité dans ~\ref{balance}, on a encore le 
 \end{algorithm}
 
 
-Dans toute la suite, l'algorithme Monte Carlo (MC) désigne l'algorithme de Metropolis-Hastings, ce qui est un usage courant.
-
 \subsection{Le Monte Carlo avec échanges de répliques (REMC)}
 \label{REMC}
 
-Une amélioration de l'algorithme de Métropolis-Hastings, connu sous le nom de \og Replica Exchange Monte Carlo\fg a été introduite par Swendsen and Wang (\cite{Swendsen82}). La méthode est également connue sont les noms \og parallel tempering\fg. L'objectif est d'accélérer la convergence en permettant au processus stochastique de visiter plusieurs zones énergétiques simultanément. Ainsi, l'algorithme couple l'exploration dans des basins de basses énergies, importante pour la recherche des solutions proche de l'optimum avec, l'exploration dans des zones de plus hautes énergies, ce qui facilite la sortie des minimums locaux.
+Une amélioration de l'algorithme de Métropolis-Hastings, connu sous le nom de \og Replica Exchange Monte Carlo\fg a été introduite par Swendsen and Wang \cite{Swendsen86}. La méthode est également connue sont le nom \og parallel tempering\fg. L'objectif est d'accélérer la convergence en permettant au processus stochastique de visiter plusieurs zones énergétiques simultanément. Ainsi, l'algorithme couple l'exploration dans des bassins de basses énergies, importante pour la recherche des solutions proche de l'optimum, avec l'exploration dans des zones de plus hautes énergies, ce qui facilite la sortie des minimums locaux.
 
-On considère $N$ simulations MC du système à $N$ différentes températures. Ces répliques du système sont indépendantes les unes par rapport aux autres. On note $T^m$ avec $m=1,..,N$ les températures. Toutes ces températures sont différentes et il y a toujours exactement une réplique à chaque température. Ainsi, nous nous plaçons dans un ensemble généralisé noté $E^N$, constitué des $N$-uplet $(x^1,...,x^n)$ avec les $x^i$ éléments de $E$, et $1 \leq i \leq N$  indexant les répliques. On travaille avec une chaîne de Markov ${X_t}_{1<t}$ , avec $X_t=(x^1_t,...,x^n_t)$ sur l'espace d'état $E^N$. On ajoute maintenant, un nouveau type de déplacement , celui qui consiste a intervertir au temps $t$, l'état $x^i$ , avec $1 \leq i <  N$, de la simulation à la température $T^i$ avec l'état $x^{i+1}$ à la température $T^{i+1}$. On a alors:
+On considère $N$ simulations MC du système à $N$ différentes températures. Ces répliques du système sont indépendantes les unes par rapport aux autres. On note $T^m$ avec $m=1,..,N$ les températures. Toutes ces températures sont différentes et il y a toujours une réplique à chaque température. Ainsi, nous nous plaçons dans un ensemble généralisé noté $E^N$, constitué des $N$-uplets $(x^1,...,x^n)$ avec les $x^i$ éléments de $E$, et $1 \leq i \leq N$  indexant les répliques. On travaille avec une chaîne de Markov $\{X_t\}_{1<t}$ , avec $X_t=(x^1_t,...,x^n_t)$ une variable aléatoire à valeur dans $E^N$. On ajoute maintenant, un nouveau type de déplacement, celui qui consiste a intervertir au temps $t$ l'état $x^i$ de la simulation à la température $T^i$ avec l'état $x^{i+1}$ à la température $T^{i+1}$. On a alors:
 
 \begin{equation}
   \label{REMC_move}
-X_{t+1}=(x_{t+1}^1,...,x_{t+1}^i,x_{t+1}^{i+1},...,x_{t+1}^n) = (x_t^1,...,x_t^i,x_t^{i+1},...,x_t^n)
-\end{equation}
-
+X_{t+1}=(x_{t+1}^1,..,x_{t+1}^i,x_{t+1}^{i+1},..,x_{t+1}^n) = (x_t^1,..,x_t^{i+1},x_t^i,..,x_t^n)
+\end{equation}\\
 L'algorithme consiste alors a effectuer de façon itérative:
 \begin{enumerate}
 \item un ensemble de $k$ déplacements de type MC, avec $k$ une constante  
 
-\item puis, une tentative de déplacement de type ~\ref{REMC_move}  est effectuée.
+\item puis, une tentative de déplacement de type \ref{REMC_move}  est effectuée.
 \end{enumerate}
 
-Pour que $X$ respecte la balance détaillée, il est nécessaire d'utiliser ce nouveau mouvement dans certaines conditions. Il est donc associé à une probabilité d'acceptation $acc_{swap}$ spécifique. Pour la déterminer, nous reprenons la même démarche que pour le Monte Carlo simple:
-
-Comme les répliques sont sans interactions, la distribution cible de la chaîne de Markov est égale aux produits des distributions cibles aux différentes températures:
+Pour que le processus respecte la balance détaillée, il est nécessaire d'utiliser ce nouveau mouvement dans certaines conditions. Il est donc associé à une probabilité d'acceptation $acc_{swap}$ spécifique. Pour la déterminer, nous reprenons la même démarche que pour le Monte Carlo simple. Comme les répliques sont sans interactions, la distribution cible de la chaîne de Markov est égale aux produits des distributions cibles aux différentes températures:
 
 \begin{equation}
-\pi^B((x^1,...,x^n))=\frac{1}{Z} \exp(-\sum_{i=1}^N \frac{E_{x^i}}{kT^i})
-\end{equation}
-
-
-En injectant cette expression de $\pi^B$ et ~\ref{REMC_move} dans ~\ref{frac_Metropolis} on a:
-
-
-
+\pi^B(X_t)=\frac{1}{Z} \exp(-\sum_{i=1}^N \frac{E_{x^i}}{kT^i})
+\end{equation}\\
+En injectant cette expression de $\pi^B$ et ~\ref{REMC_move} dans \ref{bd_Metropolis} on a:
 \begin{equation}
-\frac{acc_{swap}(X_{t+1}|X_t)}{acc_{swap}(X_t|X_{t+1})} =\frac{\pi^B(X_t)}{\pi^B(X_{t+1})}  = \frac{ -\exp(\frac{E_{x^j}}{kT^i}) -\exp(\frac{E_{x^i}}{kT^j})}{-\exp(\frac{E_{x^i}}{kT^i}) -\exp(\frac{E_{x^j}}{kT^j})} = \exp(-\Delta) 
-\end{equation}
-
-
-avec $\Delta = (\frac{1}{kT^i} -\frac{1}{kT^j})(E_{x^i} - E_{x^j})$
-
-
+\frac{acc_{swap}(X_{t+1}|X_t)}{acc_{swap}(X_t|X_{t+1})} =\frac{\pi^B(X_t)}{\pi^B(X_{t+1})}  = \frac{ -\exp(\frac{-E_{x^i}}{kT^i}) \exp(\frac{-E_{x^{i+1}}{kT^{i+1}})}{\exp(\frac{-E_{x^{i+1}}}{kT^i}) -\exp(\frac{E_{x^i}}{kT^{i+1}})} = \exp(-\Delta) 
+\end{equation}\\
+avec $\Delta = (\frac{1}{kT^i} -\frac{1}{kT^j})(E_{x^i} - E_{x^{i+1}})$ \\
 Ceci peut être satisfait par le critère de Metropolis:
 
 si
-$\Delta >0$
-alors
-
-$acc_{swap} (X_{t+1}|X_t} = \exp(- \Delta)$
+$\Delta >0$ alors $acc_{swap} (X_{t+1}|X_t)} = \exp(- \Delta)$ \\
 sinon 
-$acc_{swap} (X_{t+1}|X_t} = 1$
-
-L'algorithme REMC peut alors se décrire comme en ~\ref{REMC_algo}
+$acc_{swap} (X_{t+1}|X_t)} = 1$\\
+L'algorithme REMC peut alors se décrire comme en \ref{algoREMC}
 
 \begin{algorithm}
-  \label{REMC_algo}
-  Lancement en parallèle de $N$ marcheurs MC aux températures ordonnées $(t_1,...,t_n)$ \;
+  \label{algoREMC}
+  Lancement en parallèle de $N$ marcheurs Monte Carlo aux températures ordonnées $(t_1,...,t_n)$ \;
 \For{ les pas $p$ multiples d'une constante $P$}{
 choisir aléatoirement $i$ compris entre $1$ et $N-1$, ce qui sélectionne les marcheurs aux températures $t_i$ et $t_{i+1}$ \;
-la probabilité d'acceptation suivante est calculée acc=... \;
-\If{$acc \geq 1$}{
+la probabilité d'acceptation acc_{swap} est calculée \;
+\If{$acc_{swap} \geq 1$}{
   Les marcheurs échangent leur température \;
   \Else
-      {Les marcheurs échangent leur température , avec la probabilité acc \;
+      {Les marcheurs échangent leur température , avec la probabilité acc_{swap} \;
       }
   }
 }
@@ -770,7 +711,7 @@ la probabilité d'acceptation suivante est calculée acc=... \;
 \end{algorithm}
 
 
-Il reste au simulateur à adapter le nombre de répliques, les températures utilisées et la fréquence des tentatives d'échange à sa problématique. La capacité de REMC à être exécuté sur des machines parallèles à entrainer sa grande popularité, en particulier dans le domaine de la modélisation moléculaire, mais aussi en physique, chimie, intelligence artificielle, etc.
+Il reste au simulateur à adapter le nombre de répliques, les températures utilisées et la fréquence des tentatives d'échange à sa problématique. La capacité de REMC à être exécuté sur des machines parallèles à entrainé sa grande popularité, en particulier dans le domaine de la modélisation moléculaire, mais aussi en physique, chimie, intelligence artificielle.
 
 %%% Local Variables:
 %%% mode: latex
