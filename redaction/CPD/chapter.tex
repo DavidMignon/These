@@ -103,7 +103,7 @@ avec l'ensemble des liaisons indexé par $i$, $k_{i}$ la force du ressort, $r_{i
 avec $\theta_{ij}$ l'angle entre les liaisons $i$ et $j$, $\theta_{ij}^0$ l'angle optimal et $k_{\theta,ij}$ la force du ressort.
 L'énergie de déformation des angles dièdres $E_{dièdre}$ s'exprime:
 \begin{equation}
-E_{dihe} = \frac{1}{2}\sum_{i} A_{i,n}[ 1 + \cos(n\Phi_i - \Phi_0\)]
+E_{dihe} = \frac{1}{2}\sum_{i} A_{i,n}[ 1 + \cos(n\Phi_i - \Phi_0)]
 \end{equation}
 où $n$ est périodicité de la rotation, $A_{i,n}$ est la constante de torsion, $\Phi_i$ l'angle dièdre, c'est-à-dire pour 4 atomes $a_1$, $a_2$, $a_3$ et $a_4$, reliés par 3 liaisons $a_1-a_2, a_2-a_3$ et $ a_3-a_4$, l'angle formé par les plans $(a_1,a_2$,$a_3)$ et $(a_2,a_3$,$a_4)$, $\Phi^0$ est la phase. L'énergie de déformation des angles impropres $E_{impr}$ exprime la déformation d'un  ensemble  de 4 atomes  par rapport à une conformation plane ou tétraédrique. Pour un atome $a_1$ relié à 3 atomes $a_2$,$a_3$ et $a_4$, elle a la forme:
 \begin{equation}
@@ -114,17 +114,16 @@ Ici, $A$ est la constante de force et $\omega$ représente l'angle entre les pla
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=4cm]{figure/liaison.png} &
-       \includegraphics[width=4cm]{figure/angle.png} \\
-       \includegraphics[width=6cm]{figure/dihedre.png} &
-       \includegraphics[width=6cm]{figure/impropre.png} \\
+       \includegraphics[width=3cm]{figure/liaison.png} &
+       \includegraphics[width=3cm]{figure/angle.png} \\
+       \includegraphics[width=5cm]{figure/dihedre.png} &
+       \includegraphics[width=5cm]{figure/impropre.png} \\
 
      \end{tabular}
      
      \caption{\textbf{Représentation des énergies liées} Du haut vers le bas et de gauche à droite, sont représentés les énergies de liaison, d'angle, du dièdre et du dièdre impropre.}
 \label{graph:Eliees}
    \end{figure}
-
 
 \subsubsection{Les interactions non liées}
 Les interactions non liées sont les interactions entre atomes séparés par plus de trois liaisons covalentes ou qui appartiennent à des molécules différentes. Les interactions sont caractérisées par les deux termes suivants:
@@ -293,10 +292,10 @@ La forme des $g_{ij}$ la plus communément utilisée est la forme paramétrique 
   \label{eq:GBg}
   g_{ij}= \tau q_iq_j (r^2_{ij} + b_ib_j exp(\frac{-r^2_{ij}}{4b_ib_j}))^{-1/2} 
 \end{equation}
-avec $b_i$ et $b_j$, de nouveaux paramètres, que l'on nomme les rayons de solvatations des atomes $i$ et $j$. Dans le cas où $i=j$, $g_{ij}$ est égale à deux fois l'énergie de solvatation de Born pour un ion de rayon $b_i$. Lorsque $r_{ij}$ tend vers l'infini, $g_{ij}$ tend vers la loi de Coulomb dans le solvant: $\frac{q_iq_j}{\epsilon_s r_{ij}}$. On écrit finalement, pour une protéine constituée de $N$ atomes:
+avec $b_i$ et $b_j$, de nouveaux paramètres, que l'on nomme les rayons de solvatations des atomes $i$ et $j$. Dans le cas où $i=j$, $g_{ij}$ est égale à deux fois l'énergie de solvatation de Born pour un ion de rayon $b_i$. Lorsque $r_{ij}$ tend vers l'infini, $g_{ij}$ tend vers la loi de Coulomb dans le solvant: $\frac{q_iq_j}{\epsilon_s r_{ij}}$. On écrit finalement pour une protéine constituée de $N$ atomes:
 
 \begin{equation}
-  G_{elec} = \frac{1}{2} \sum_{i \neq j} \frac{q_iq_j}{r_{ij}} - \tau \frac{1}{2} \sum_{i,j} g_{ij}
+  G_{elec} = \frac{1}{2} \sum_{i \neq j} \frac{q_iq_j}{\epsilon_sr_{ij}} - \tau \frac{1}{2} \sum_{i,j}^N g_{ij}
 \end{equation}
 
 
@@ -355,8 +354,6 @@ E(r_i) = \sum_{i \neq j} \sum_{l_j}^{N_j} E(r_i,l_j)P(l_j)
 avec $l_j$ parcourant tous les rotamères aux positions autres que $i$.
 
 Les formules \ref{eq:CM1} et \ref{eq:CM2}, constituent un système itératif. Ainsi, l'algorithme se déroule de la façon suivante:
-
-
 \begin{enumerate}[leftmargin=*]
 \item  A chaque position, les rotamères sont équiprobables.
 \item  Les énergies moyennes sont calculées grâce à la formule \ref{eq:CM2}.
@@ -518,9 +515,7 @@ $$\mu_1 =\mu_0 . P$$ avec . le produit matriciel.
 
 \subsubsection{Le principe de la balance détaillée}
 
-Le principe de la balance détaillée est un principe général de comportement des systèmes dynamiques, il a été utilisé par Boltzmann pour la construction de la physique statistique et Cercignani et Lampis ont montré qu'il était vrai pour les gaz polyatomiques \cite{Cercignani81}. Il peut s'exprimer de la façon suivante:
-
-Pour un système dynamique à l'équilibre $\mathcal{S}$ , $a$ et $b$ deux éléments de l'espace des phases associé à $\mathcal{S}$, la probabilité de transition de a vers b est égale à la probabilité de transition de b vers a, ou encore: 
+Le principe de la balance détaillée est un principe général de comportement des systèmes dynamiques, il a été utilisé par Boltzmann pour la construction de la physique statistique et Cercignani et Lampis ont montré qu'il était vrai pour les gaz polyatomiques \cite{Cercignani81}. Il peut s'exprimer de la façon suivante. Pour un système dynamique à l'équilibre $\mathcal{S}$, $a$ et $b$ deux éléments de l'espace des phases associé à $\mathcal{S}$, la probabilité de transition de a vers b est égale à la probabilité de transition de b vers a, ou encore: 
 
 \begin{equation}
 \forall i,j \in \mathcal{S},\ \mathcal{P}(i \rightarrow j) = \mathcal{P}(j \rightarrow i) 
@@ -578,7 +573,7 @@ ce qui équivaut à
 \begin{equation}
 \frac{acc(j|i)}{acc(i|j)} =\frac{\pi^B(j)}{\pi^B(i)} = \frac{\exp(-\beta E_j)}{\exp(-\beta E_i)} = \exp(-\beta \Delta) 
 \end{equation}\\
-avec $\Delta E =  E_j - E_i$. Ainsi,le calcul de la fonction de partition est évité! Métropolis propose alors la probabilité d'acceptation suivante:\\
+avec $\Delta E =  E_j - E_i$. Ainsi, le calcul de la fonction de partition est évité! Métropolis propose alors la probabilité d'acceptation suivante:\\
 si $\Delta E >0$ alors $acc(i|j) = \exp(- \beta \Delta E)$ \\
 sinon
 $acc(i|j)=1$\\
@@ -586,9 +581,7 @@ On a bien:
 \begin{equation}
 \forall i,j \in E,\ \frac{acc(j|i)}{acc(i|j)} = \exp(\beta \Delta E)
 \end{equation}\\
-Il suffit alors de choisir une probabilité de sélection symétrique ne violant pas les conditions ergodiques pour obtenir notre convergence.
-
-Par la suite Hastings, généralise l'algorithme à une probabilité $sel()$ non symétrique avec acc() telle que:\\
+Il suffit alors de choisir une probabilité de sélection symétrique ne violant pas les conditions ergodiques pour obtenir notre convergence. Par la suite Hastings, généralise l'algorithme à une probabilité $sel()$ non symétrique avec acc() telle que:\\
 si $\Delta E >0$ alors $acc(i|j) = \exp(- \beta \Delta E) \frac{sel(j|i)}{sel(i|j)}$ \\
 sinon $acc(i|j)=1$\\
 Si l'on injecte cette nouvelle probabilité dans l'équation ~\ref{balance}, on a encore le respect de la balance détaillée et la convergence. La séquence d'instruction est résumée par L'algorithme \ref{alg:Metro}. Dans toute la suite, l'algorithme Monte Carlo (MC) désigne l'algorithme de Metropolis-Hastings, ce qui est un usage courant.
