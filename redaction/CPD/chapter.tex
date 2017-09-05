@@ -547,9 +547,10 @@ Une chaîne ergodique converge vers son unique distribution stationnaire.
 Nous pouvons maintenant décrire l'algorithme de Metropolis-Hastings. L'idée initiale de Metropolis est de construire un l'algorithme qui échantillonne la distribution de Boltzmann. Elle donne la probabilité d'un état $x_i$ du système en fonction de son énergie et de la température:
 
 \begin{equation}
+  \label{eq:Boltzmann}
 \pi^B(i) = \frac{\exp(-\beta E_i)}{\sum_{j \in E}\exp(-\beta E_j)} 
 \end{equation}
-avec $\beta = \frac{1}{RT}$, $E_{x_i}$  l'énergie de $x_i$, $T$ la température et $k$ la constante de Boltzmann. La constante de normalisation de la probabilité s'appelle la fonction de partition du système. Elle est particulièrement difficile à calculer.
+avec $\beta = \frac{1}{kT}$, $E_{x_i}$  l'énergie de $x_i$, $T$ la température et $k$ la constante de Boltzmann. La constante de normalisation de la probabilité s'appelle la fonction de partition du système. Elle est particulièrement difficile à calculer.
 
 On définit alors la probabilité de transition $P$ comme le produit de deux probabilités:
 
@@ -571,7 +572,7 @@ Si on se limite à une probabilité de sélection symétrique:
 \end{equation}
 ce qui équivaut à
 \begin{equation}
-\frac{acc(j|i)}{acc(i|j)} =\frac{\pi^B(j)}{\pi^B(i)} = \frac{\exp(-\beta E_j)}{\exp(-\beta E_i)} = \exp(-\beta \Delta) 
+\frac{acc(j|i)}{acc(i|j)} =\frac{\pi^B(j)}{\pi^B(i)} = \frac{\exp(-\beta E_j)}{\exp(-\beta E_i)} = \exp(-\beta \Delta E) 
 \end{equation}\\
 avec $\Delta E =  E_j - E_i$. Ainsi, le calcul de la fonction de partition est évité! Métropolis propose alors la probabilité d'acceptation suivante:\\
 si $\Delta E >0$ alors $acc(i|j) = \exp(- \beta \Delta E)$ \\
@@ -638,7 +639,7 @@ En injectant cette expression de $\pi^B$ et ~\ref{REMC_move} dans \ref{bd_Metrop
                                                      = \frac{ \exp(-E_{x^i}/kT^i) \exp(-E_{x^{i+1}}/kT^{i+1})}{\exp(-E_{x^{i+1}}/kT^i) \exp(-E_{x^i}/kT^{i+1})} 
                                                        = \exp(-\Delta) 
 \end{displaymath}\\
-avec $\Delta = (\frac{1}{kT^i} -\frac{1}{kT^j})(E_{x^i} - E_{x^{i+1}})$. \\
+avec $\Delta = (\frac{1}{kT^i} -\frac{1}{kT^{i+1}})(E_{x^i} - E_{x^{i+1}})$. \\
 Ceci peut être satisfait par le critère de Metropolis:\\
 si $\Delta >0$ alors $acc_{swap} (X_{t+1}|X_t) = \exp(- \Delta)$ \\
 sinon $acc_{swap} (X_{t+1}|X_t) = 1$\\

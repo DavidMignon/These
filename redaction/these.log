@@ -1,9 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.14)  4 SEP 2017 22:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.6.23)  5 SEP 2017 15:14
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**\input these.tex
+**\nonstopmode\input these.tex
 (./these.tex (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo
@@ -948,7 +947,7 @@ File: pppdftex.def 2017/01/14 v0.5h Pdfpages driver for pdfTeX (AM)
 LaTeX Warning: Label `eq:GB' multiply defined.
 
 ) (./methodes/chapter.aux
-./methodes/chapter.aux:66: Missing \endcsname inserted.
+! Missing \endcsname inserted.
 <to be read again> 
                    \protect 
 l.66 ...acements Monte-Carlo}{subsection.2.5.1}{}}
@@ -957,7 +956,7 @@ The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
 
-./methodes/chapter.aux:66: LaTeX Error: Missing \begin{document}.
+! LaTeX Error: Missing \begin{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -975,14 +974,14 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 LaTeX Warning: Reference `para:voisin' on page 1 undefined on input line 66.
 
-./methodes/chapter.aux:66: Extra \endcsname.
+! Extra \endcsname.
 \@ifundefined ...dafter \ifx \csname #1\endcsname 
                                                   \relax \expandafter \@firs...
 l.66 ...acements Monte-Carlo}{subsection.2.5.1}{}}
                                                   
 I'm ignoring this, since I wasn't doing a \csname.
 
-./methodes/chapter.aux:66: Missing \endcsname inserted.
+! Missing \endcsname inserted.
 <to be read again> 
                    \protect 
 l.66 ...acements Monte-Carlo}{subsection.2.5.1}{}}
@@ -990,7 +989,7 @@ l.66 ...acements Monte-Carlo}{subsection.2.5.1}{}}
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-./methodes/chapter.aux:66: Extra \endcsname.
+! Extra \endcsname.
 \@namedef ...xpandafter \def \csname #1\endcsname 
                                                   
 l.66 ...acements Monte-Carlo}{subsection.2.5.1}{}}
@@ -1038,8 +1037,8 @@ LaTeX Warning: Label `logo:corePDZ' multiply defined.
 
 ) (./conc.aux) (./resume.aux)
 
-./these.aux:155: Package natbib Error: Bibliography not compatible with author-
-year citations.
+! Package natbib Error: Bibliography not compatible with author-year citations.
+
 (natbib)                Press <return> to continue in numerical citation style.
 
 
@@ -1312,7 +1311,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 Package multicol Warning: Using `1' columns doesn't seem a good idea.
  I therefore use two columns instead on input line 6.
 
-./glossaire.tex:26: Undefined control sequence.
+! Undefined control sequence.
 <recently read> \Beta 
                       
 l.26 \item [$\Beta $]
@@ -1366,7 +1365,7 @@ File: ./CPD/figure/CPD.png Graphic file (type png)
 Package pdftex.def Info: ./CPD/figure/CPD.png used on input line 12.
 (pdftex.def)             Requested size: 199.16928pt x 296.84346pt.
 
-./CPD/chapter.tex:12: Extra alignment tab has been changed to \cr.
+! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
 l.12 ...cludegraphics[width=7cm]{figure/CPD.png} &
@@ -1448,7 +1447,7 @@ File: ./CPD/figure/surface.png Graphic file (type png)
 Package pdftex.def Info: ./CPD/figure/surface.png used on input line 204.
 (pdftex.def)             Requested size: 369.88582pt x 121.77478pt.
 
-./CPD/chapter.tex:204: Extra alignment tab has been changed to \cr.
+! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
 l.204 ...raphics[width=13cm]{figure/surface.png} &
@@ -1457,7 +1456,7 @@ You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
-./CPD/chapter.tex:214: Undefined control sequence.
+! Undefined control sequence.
 l.214 ...a  alors, en utilisant le modèle \texblt
                                                   {SA} pour le terme surfaci...
 The control sequence at the end of the top line
@@ -1473,7 +1472,7 @@ File: ./CPD/figure/ecrantage.png Graphic file (type png)
 Package pdftex.def Info: ./CPD/figure/ecrantage.png used on input line 229.
 (pdftex.def)             Requested size: 170.71652pt x 168.35464pt.
 
-./CPD/chapter.tex:229: Extra alignment tab has been changed to \cr.
+! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
 l.229 ...aphics[width=6cm]{figure/ecrantage.png} &
@@ -1490,7 +1489,7 @@ File: ./CPD/figure/rayon_Born.png Graphic file (type png)
 Package pdftex.def Info: ./CPD/figure/rayon_Born.png used on input line 306.
 (pdftex.def)             Requested size: 170.71652pt x 208.7978pt.
 
-./CPD/chapter.tex:306: Extra alignment tab has been changed to \cr.
+! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
 l.306 ...phics[width=6cm]{figure/rayon_Born.png} &
@@ -1504,7 +1503,7 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 (hyperref)                than one, level fixed on input line 317.
 
 [18 <./CPD/figure/rayon_Born.png>] [19]
-./CPD/chapter.tex:344: Extra }, or forgotten $.
+! Extra }, or forgotten $.
 l.344 ...{\sum_{l_i=1}^{N_i} \exp(-\beta E(l_i))}}
                                                   
 I've deleted a group-closing symbol because it seems to be
@@ -1525,7 +1524,7 @@ File: ./CPD/figure/DEE.png Graphic file (type png)
 Package pdftex.def Info: ./CPD/figure/DEE.png used on input line 389.
 (pdftex.def)             Requested size: 227.62204pt x 152.89143pt.
 
-./CPD/chapter.tex:389: Extra alignment tab has been changed to \cr.
+! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
 l.389 ...ludegraphics[width=8cm]{figure/DEE.png} &
@@ -1543,7 +1542,7 @@ Package pdftex.def Info: ./CPD/figure/DFBB.png used on input line 422.
 (pdftex.def)             Requested size: 341.43306pt x 217.98886pt.
  [24 <./CPD/figure/DFBB.png>]
 
-./CPD/chapter.tex:434: LaTeX Error: There's no line here to end.
+! LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -1598,7 +1597,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 510--512
 
 [29]
 
-./CPD/chapter.tex:542: LaTeX Error: There's no line here to end.
+! LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -1611,7 +1610,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 [30] [31] [32]
-./CPD/chapter.tex:661: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.661 \caption
@@ -1622,7 +1621,7 @@ you left one out. Proceed, with fingers crossed.
 
 LaTeX Warning: Command \' invalid in math mode on input line 661.
 
-./CPD/chapter.tex:661: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.661 \caption
@@ -1630,7 +1629,7 @@ l.661 \caption
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./CPD/chapter.tex:661: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.661 \caption
@@ -1638,7 +1637,7 @@ l.661 \caption
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./CPD/chapter.tex:661: Extra }, or forgotten $.
+! Extra }, or forgotten $.
 \algocf@Vline ... }\vtop {\algocf@addskiptotal #1}
                                                   \Hlne }}\vskip \skiphlne \...
 l.661 \caption
@@ -1649,7 +1648,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./CPD/chapter.tex:661: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.661 \caption
@@ -1657,7 +1656,7 @@ l.661 \caption
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./CPD/chapter.tex:661: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.661 \caption
@@ -1694,7 +1693,7 @@ Package pdftex.def Info: ./methodes/figure/cycleThermo.png used on input line 2
 LaTeX Warning: Reference `Br\IeC {\"u}nger92' on page 36 undefined on input lin
 e 40.
 
-./methodes/chapter.tex:45: Use of \r@ doesn't match its definition.
+! Use of \r@ doesn't match its definition.
 \@setref ...expandafter \Hy@setref@link #1\@empty 
                                                   \@empty \@nil {#2}\fi 
 l.45 ...sign de la tyrosyl-tARN synthétase \ref{}
@@ -1706,7 +1705,7 @@ followed by the required stuff, so I'm ignoring it.
 
 Runaway argument?
 u sur la D-tyrosine ref{}, sur les calculs de pK_a \ref {31}. 
-./methodes/chapter.tex:46: Paragraph ended before \Hy@setref@link was complete.
+! Paragraph ended before \Hy@setref@link was complete.
 <to be read again> 
                    \par 
 l.46 
@@ -1716,7 +1715,7 @@ control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 [36 <./methodes/figure/cycleThermo.png>]
-./methodes/chapter.tex:57: Undefined control sequence.
+! Undefined control sequence.
 l.57 E_{solv}^\surf
                     = \sum_i \sigma_{t_i} A_i
 The control sequence at the end of the top line
@@ -1737,7 +1736,7 @@ Package pdftex.def Info: ./methodes/figure/intersurface.png used on input line
 LaTeX Warning: Reference `Street98' on page 37 undefined on input line 73.
 
 [37]
-./methodes/chapter.tex:93: Undefined control sequence.
+! Undefined control sequence.
 l.93     E_\I
              ^{self} = \sum_J E_{IJ}^{self}
 The control sequence at the end of the top line
@@ -1746,7 +1745,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./methodes/chapter.tex:93: Missing { inserted.
+! Missing { inserted.
 <to be read again> 
                    ^
 l.93     E_\I^
@@ -1756,7 +1755,7 @@ You might want to delete and/or insert some corrections
 so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
-./methodes/chapter.tex:94: You can't use `\eqno' in math mode.
+! You can't use `\eqno' in math mode.
 \endmathdisplay@a ...\df@tag \@empty \else \veqno 
                                                   \alt@tag \df@tag \fi \ifx ...
 l.94   \end{equation}
@@ -1766,7 +1765,7 @@ I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./methodes/chapter.tex:94: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.94   \end{equation}
@@ -1778,7 +1777,7 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 [38 <./methodes/figure/intersurface.png>]
-./methodes/chapter.tex:109: Missing { inserted.
+! Missing { inserted.
 <to be read again> 
                    \begingroup 
 l.109 ...ssible de définir la contribution $g_\IJ
@@ -1791,7 +1790,7 @@ so that I will find a matching right brace soon.
 
 LaTeX Warning: Command \IJ invalid in math mode on input line 109.
 
-./methodes/chapter.tex:109: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.109 ...sible de définir la contribution $g_\IJ$
@@ -1802,7 +1801,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./methodes/chapter.tex:109: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.109 ...e de résidus I et J à l'énergie \Delta
@@ -1810,7 +1809,7 @@ l.109 ...e de résidus I et J à l'énergie \Delta
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./methodes/chapter.tex:110: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.110 
@@ -1818,7 +1817,7 @@ l.110
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./methodes/chapter.tex:117: Missing { inserted.
+! Missing { inserted.
 <to be read again> 
                    \begingroup 
 l.117 On peut noter qu'aux distances fixes $r_\ij
@@ -1831,7 +1830,7 @@ so that I will find a matching right brace soon.
 
 LaTeX Warning: Command \ij invalid in math mode on input line 117.
 
-./methodes/chapter.tex:117: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.117 On peut noter qu'aux distances fixes $r_\ij$
@@ -1843,8 +1842,7 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./methodes/chapter.tex:121: Package amsmath Error: Multiple \label's: label 'eq
-:approx' will be lost.
+! Package amsmath Error: Multiple \label's: label 'eq:approx' will be lost.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
@@ -1856,7 +1854,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./methodes/chapter.tex:124: Missing { inserted.
+! Missing { inserted.
 <to be read again> 
                    \begingroup 
 l.124 ... d'énergie, puisque les distances $r_\ij
@@ -1869,7 +1867,7 @@ so that I will find a matching right brace soon.
 
 LaTeX Warning: Command \ij invalid in math mode on input line 124.
 
-./methodes/chapter.tex:124: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.124 ...d'énergie, puisque les distances $r_\ij$
@@ -1899,7 +1897,7 @@ Package pdftex.def Info: ./methodes/figure/inputener.png used on input line 204
 .
 (pdftex.def)             Requested size: 341.43306pt x 150.52328pt.
 
-./methodes/chapter.tex:206: Undefined control sequence.
+! Undefined control sequence.
 <argument> ...{thefigure}}}{\ignorespaces \textbt 
                                                   {les fichiers d'énergies ...
 l.206 ...tbt{les fichiers d'énergies en mode CA}}
@@ -1910,7 +1908,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./methodes/chapter.tex:206: Undefined control sequence.
+! Undefined control sequence.
 <argument> \textbt 
                    {les fichiers d'énergies en mode CA}
 l.206 ...tbt{les fichiers d'énergies en mode CA}}
@@ -1921,7 +1919,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./methodes/chapter.tex:206: Undefined control sequence.
+! Undefined control sequence.
 <argument> \textbt 
                    {les fichiers d'énergies en mode CA}
 l.206 ...tbt{les fichiers d'énergies en mode CA}}
@@ -1940,7 +1938,7 @@ Package pdftex.def Info: ./methodes/figure/inputenerGB.png used on input line 2
 14.
 (pdftex.def)             Requested size: 341.43306pt x 159.20792pt.
 
-./methodes/chapter.tex:216: Undefined control sequence.
+! Undefined control sequence.
 <argument> ...{thefigure}}}{\ignorespaces \textbt 
                                                   {les fichiers d'énergies ...
 l.216 ...hiers d'énergies en mode GB NEA et FDB}}
@@ -1951,7 +1949,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./methodes/chapter.tex:216: Undefined control sequence.
+! Undefined control sequence.
 <argument> \textbt 
                    {les fichiers d'énergies en mode GB NEA et FDB}
 l.216 ...hiers d'énergies en mode GB NEA et FDB}}
@@ -1962,7 +1960,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./methodes/chapter.tex:216: Undefined control sequence.
+! Undefined control sequence.
 <argument> \textbt 
                    {les fichiers d'énergies en mode GB NEA et FDB}
 l.216 ...hiers d'énergies en mode GB NEA et FDB}}
@@ -2007,17 +2005,17 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-./methodes/chapter.tex:294: Double subscript.
+! Double subscript.
 l.294  | E(r_P_
                i_,r_p_j) | > s_{vois}
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./methodes/chapter.tex:294: Double subscript.
+! Double subscript.
 l.294  | E(r_P_i_
                  ,r_p_j) | > s_{vois}
 I treat `x_1_2' essentially like `x_1{}_2'.
 
-./methodes/chapter.tex:294: Double subscript.
+! Double subscript.
 l.294  | E(r_P_i_,r_p_
                       j) | > s_{vois}
 I treat `x_1_2' essentially like `x_1{}_2'.
@@ -2035,7 +2033,7 @@ Package pdftex.def Info: ./methodes/figure/cycleThermoLigand.png used on input
 line 327.
 (pdftex.def)             Requested size: 142.26378pt x 83.14958pt.
 
-./methodes/chapter.tex:327: Extra alignment tab has been changed to \cr.
+! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
 l.327 ...idth=5cm]{figure/cycleThermoLigand.png} &
@@ -2046,7 +2044,7 @@ So I'll assume that you meant to type \cr instead.
 
 [46]
 
-./methodes/chapter.tex:344: Package inputenc Error: Unicode char − (U+2212)
+! Package inputenc Error: Unicode char − (U+2212)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -2135,7 +2133,7 @@ LaTeX Font Info:    Try loading font information for U+dsrom on input line 473.
 (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
-./methodes/chapter.tex:473: Extra }, or forgotten $.
+! Extra }, or forgotten $.
 l.473 ...ac{1}{l}\sum_{1<i<l} \mathds{1}(s_i,n_i)}
                                                    \times 100
 I've deleted a group-closing symbol because it seems to be
@@ -2144,7 +2142,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./methodes/chapter.tex:482: Extra }, or forgotten $.
+! Extra }, or forgotten $.
 l.482 ...{1}{m}\sum_{1<j<m} \mathds{1}(s_i^j,n_i)}
                                                    \times 100
 I've deleted a group-closing symbol because it seems to be
@@ -2176,7 +2174,7 @@ Package natbib Warning: Citation `DurbinBK' on page 53 undefined on input line
 514.
 
 [53])
-./these.tex:314: Extra \else.
+! Extra \else.
 \@include ...ediate \closeout \@partaux \fi \else 
                                                   \deadcycles \z@ \@nameuse ...
 l.314 \include{methodes/chapter}
@@ -2242,7 +2240,7 @@ Package pdftex.def Info: ./developpements/figure/PDB.png used on input line 17.
 
 (pdftex.def)             Requested size: 341.43306pt x 161.60312pt.
 
-./developpements/chapter.tex:19: Undefined control sequence.
+! Undefined control sequence.
 <argument> ...{thefigure}}}{\ignorespaces \textbt 
                                                   {}\relax }}{\thepage }{\@c...
 l.19      \caption{\textbt{}}
@@ -2253,7 +2251,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./developpements/chapter.tex:19: Undefined control sequence.
+! Undefined control sequence.
 <argument> \textbt 
                    {}
 l.19      \caption{\textbt{}}
@@ -2264,7 +2262,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./developpements/chapter.tex:19: Undefined control sequence.
+! Undefined control sequence.
 <argument> \textbt 
                    {}
 l.19      \caption{\textbt{}}
@@ -2289,7 +2287,7 @@ Package pdftex.def Info: ./developpements/figure/openMP.png used on input line
 65.
 (pdftex.def)             Requested size: 398.33858pt x 292.16708pt.
 
-./developpements/chapter.tex:67: Undefined control sequence.
+! Undefined control sequence.
 <argument> ...{thefigure}}}{\ignorespaces \textbt 
                                                   {La correspondance entre l...
 l.67 ... maître, une affectation séquentielle. }
@@ -2300,7 +2298,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./developpements/chapter.tex:67: Undefined control sequence.
+! Undefined control sequence.
 <argument> \textbt 
                    {La correspondance entre les directives OpenMP à droite ...
 l.67 ... maître, une affectation séquentielle. }
@@ -2311,7 +2309,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./developpements/chapter.tex:67: Undefined control sequence.
+! Undefined control sequence.
 <argument> \textbt 
                    {La correspondance entre les directives OpenMP à droite ...
 l.67 ... maître, une affectation séquentielle. }
@@ -2322,8 +2320,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./developpements/chapter.tex:76: You can't use `macro parameter character #' in
- horizontal mode.
+! You can't use `macro parameter character #' in horizontal mode.
 l.76 ...llèle est initiée par la directive \og #
                                                   pragma omp parallel\fg: le...
 Sorry, but I'm not programmed to handle this case;
@@ -2331,8 +2328,7 @@ I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./developpements/chapter.tex:76: You can't use `macro parameter character #' in
- horizontal mode.
+! You can't use `macro parameter character #' in horizontal mode.
 l.76 ... pas simultanée. Donc une directive \og #
                                                   pragma omp barrier\fg est ...
 Sorry, but I'm not programmed to handle this case;
@@ -2340,8 +2336,7 @@ I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./developpements/chapter.tex:76: You can't use `macro parameter character #' in
- horizontal mode.
+! You can't use `macro parameter character #' in horizontal mode.
 l.76 ...ve, ils sont libérés. La directive \og #
                                                   pragma omp master\fg dédi...
 Sorry, but I'm not programmed to handle this case;
@@ -2349,8 +2344,7 @@ I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./developpements/chapter.tex:76: You can't use `macro parameter character #' in
- horizontal mode.
+! You can't use `macro parameter character #' in horizontal mode.
 l.76 ...urne une valeur unique, une directive \og#
                                                   pragma omp atomic capture ...
 Sorry, but I'm not programmed to handle this case;
@@ -2375,7 +2369,7 @@ Package pdftex.def Info: ./developpements/figure/re8_distri.png used on input l
 ine 85.
 (pdftex.def)             Requested size: 227.62204pt x 170.71231pt.
 
-./developpements/chapter.tex:85: Extra alignment tab has been changed to \cr.
+! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
 l.85 ...phics[width=8cm]{figure/re8_distri.png}  &
@@ -2389,7 +2383,7 @@ Overfull \hbox (23.99997pt too wide) in paragraph at lines 83--87
  [][] 
  []
 
-./developpements/chapter.tex:87: Undefined control sequence.
+! Undefined control sequence.
 <argument> ...{thefigure}}}{\ignorespaces \textbt 
                                                   {Comportement de proteus p...
 l.87 ... de celle d'une distribution de Boltzmann}
@@ -2400,7 +2394,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./developpements/chapter.tex:87: Undefined control sequence.
+! Undefined control sequence.
 <argument> \textbt 
                    {Comportement de proteus pour un REMC à huit marcheurs.}...
 l.87 ... de celle d'une distribution de Boltzmann}
@@ -2411,7 +2405,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./developpements/chapter.tex:87: Undefined control sequence.
+! Undefined control sequence.
 <argument> \textbt 
                    {Comportement de proteus pour un REMC à huit marcheurs.}...
 l.87 ... de celle d'une distribution de Boltzmann}
@@ -2727,7 +2721,7 @@ Overfull \hbox (8.2185pt too wide) in paragraph at lines 839--853
 
 LaTeX Warning: Reference `para:voisin' on page 95 undefined on input line 8.
 
-./annexe_posi.tex:8: Undefined control sequence.
+! Undefined control sequence.
 <recently read> \mathcla 
                          
 l.8 ...t qu'un ensemble de $N$ positions $\mathcla
@@ -2738,7 +2732,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./annexe_posi.tex:8: Undefined control sequence.
+! Undefined control sequence.
 <recently read> \mathcla 
                          
 l.8 ...ires de positions $(i$ et $j)$ de $\mathcla
@@ -2756,7 +2750,7 @@ and I'll forget about whatever was undefined.
 
 
 ]
-./annexe_posi.tex:19: Undefined control sequence.
+! Undefined control sequence.
 l.19 \item si $ s_{vois} \gep
                               1 $ retour à l'étape 2 sinon arrêt.
 The control sequence at the end of the top line
@@ -2771,7 +2765,7 @@ LaTeX Warning: Float too large for page by 54.57841pt on input line 80.
 
 LaTeX Warning: Float too large for page by 54.57841pt on input line 141.
 
-./annexe_posi.tex:201: Extra alignment tab has been changed to \cr.
+! Extra alignment tab has been changed to \cr.
 <template> \endtemplate 
                         
 l.201   }
@@ -2790,7 +2784,7 @@ Overfull \hbox (81.95023pt too wide) in paragraph at lines 264--266
 
  (./PDZ/chapter.tex
 Chapitre 5.
-./PDZ/chapter.tex:6: Undefined control sequence.
+! Undefined control sequence.
 l.6 ...étudiés et utilisés en conception \texit
                                                   {in silico}. Des ligands o...
 The control sequence at the end of the top line
@@ -2809,7 +2803,7 @@ and I'll forget about whatever was undefined.
 LaTeX Warning: Reference `sec:theo' on page 102 undefined on input line 24.
 
 [102]
-./PDZ/chapter.tex:51: Extra }, or forgotten $.
+! Extra }, or forgotten $.
 l.51   kT \ln \mathcal{L} = \sum_S}
                                    \sum_{i \in aa} n_S(t
 I've deleted a group-closing symbol because it seems to be
@@ -2818,7 +2812,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./PDZ/chapter.tex:52: Extra }, or forgotten $.
+! Extra }, or forgotten $.
 l.52 ) E^r_t - \sum_S}
                        G^f_S - N kT \ln Z = \sum_{t \in aa} N(t) E^r_t - \su...
 I've deleted a group-closing symbol because it seems to be
@@ -2827,7 +2821,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./PDZ/chapter.tex:52: Extra }, or forgotten $.
+! Extra }, or forgotten $.
 l.52 ...n Z = \sum_{t \in aa} N(t) E^r_t - \sum_S}
                                                    G^f_S - N kT \ln Z,
 I've deleted a group-closing symbol because it seems to be
@@ -2837,7 +2831,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 [103] [104] [105]
-./PDZ/chapter.tex:130: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.130 ...eur $\sigma_i$ spécifique en cal/mol/Å^
@@ -2848,7 +2842,7 @@ you left one out. Proceed, with fingers crossed.
 
 LaTeX Warning: Command \' invalid in math mode on input line 130.
 
-./PDZ/chapter.tex:130: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.130 ...ec deux jeux différents pour les $\sigma
@@ -2882,7 +2876,7 @@ LaTeX Warning: Reference `tab:corePDZ' on page 108 undefined on input line 199.
 
 
 [108]
-./PDZ/chapter.tex:252: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.252       }
@@ -2890,7 +2884,7 @@ l.252       }
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./PDZ/chapter.tex:252: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.252       }
@@ -2970,7 +2964,7 @@ Overfull \hbox (68.90549pt too wide) in paragraph at lines 331--335
  [][] 
  []
 
-./PDZ/chapter.tex:335: Undefined control sequence.
+! Undefined control sequence.
 <argument> ...{thefigure}}}{\ignorespaces \textbt 
                                                   {le cœur PDZ sélectionn�...
 l.335 ...séquence et les resids de chaque coeur.}
@@ -2981,7 +2975,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./PDZ/chapter.tex:335: Undefined control sequence.
+! Undefined control sequence.
 <argument> \textbt 
                    {le cœur PDZ sélectionné} En haut, l'alignement des hu...
 l.335 ...séquence et les resids de chaque coeur.}
@@ -2992,7 +2986,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./PDZ/chapter.tex:335: Undefined control sequence.
+! Undefined control sequence.
 <argument> \textbt 
                    {le cœur PDZ sélectionné} En haut, l'alignement des hu...
 l.335 ...séquence et les resids de chaque coeur.}
@@ -3175,7 +3169,7 @@ put line 617.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-./PDZ/chapter.tex:663: Missing \endcsname inserted.
+! Missing \endcsname inserted.
 <to be read again> 
                    \protect 
 l.663 ...lustalX implémenté dans Jalview \cite\{
@@ -3183,7 +3177,7 @@ l.663 ...lustalX implémenté dans Jalview \cite\{
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
 
-./PDZ/chapter.tex:663: Extra \endcsname.
+! Extra \endcsname.
 \@ifundefined ...dafter \ifx \csname #1\endcsname 
                                                   \relax \expandafter \@firs...
 l.663 ...lustalX implémenté dans Jalview \cite\{
@@ -3871,7 +3865,7 @@ Package natbib Warning: Citation `50' on page 167 undefined on input line 1017.
 \openout7 = `these.brf'.
 
 
-./these.bbl:22: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Schmidt Am Busch M. &
                                   Simonson~T. Lopes~A. (\textbf {2010}). \ne...
 l.22 
@@ -3884,7 +3878,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./these.bbl:22: Package inputenc Error: Unicode char ﬁ (U+FB01)
+! Package inputenc Error: Unicode char ﬁ (U+FB01)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -3897,7 +3891,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./these.bbl:34: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Ponder J. &
                         Richards~F. M. (\textbf {1987}). \newblock \enquote ...
 l.34 
@@ -3909,7 +3903,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:47: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Finkelstein A. &
                             ~Ptitsyn O. (\textbf {1977}). \newblock \enquote...
 l.47 
@@ -3921,7 +3915,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:52: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Levitt M. &
                         Maigret~B. Janin~J., Wodak~S. (\textbf {1978}). \new...
 l.52 
@@ -3933,7 +3927,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:58: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Islam S. &
                        Sternberg~M. McGregor~M. (\textbf {1987}). \newblock ...
 l.58 
@@ -3945,7 +3939,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:64: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Dunbrack R. &
                          ~Karplus M. (\textbf {1993}). \newblock \enquote {B...
 l.64 
@@ -3960,7 +3954,7 @@ might try typing `S' now just to see what is salvageable.
 [171
 
 ]
-./these.bbl:70: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Dahiyat B. &
                         ~Mayo S. (\textbf {1997}). \newblock \enquote {De no...
 l.70 
@@ -3972,7 +3966,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:75: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Desjarlais J. &
                            ~Handel T. (\textbf {1999}). \newblock \enquote {...
 l.75 
@@ -3984,7 +3978,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:82: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Audit E. &
                        Simonson~T. Druart~K., Bigot~J. (\textbf {2016}). \ne...
 l.82 
@@ -3996,7 +3990,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:90: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument> ...N. Kuhlman B. Varani G. Merritt E. &
                                                    Baker~D. Dantas~G., Corre...
 l.90 
@@ -4008,7 +4002,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:96: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Varani G. Stoddard B. &
                                     Baker~D. Kuhlman~B., Ireton~G. (\textbf ...
 l.96 
@@ -4020,7 +4014,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:102: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Richardson D. &
                             Richardson~J. Davis~I., Arendall~W. (\textbf {20...
 l.102 
@@ -4032,7 +4026,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:116: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Smith C. &
                       ~Kortemme T. (\textbf {2008}). \newblock \enquote {Bac...
 l.116 
@@ -4044,7 +4038,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:121: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Dahiyat B. &
                         ~Mayo S. (\textbf {1996}). \newblock \enquote {Prote...
 l.121 
@@ -4057,7 +4051,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 [172]
-./these.bbl:144: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Jorgensen W. &
                            Rives~J. T. (\textbf {1988}). \newblock \enquote ...
 l.144 
@@ -4069,7 +4063,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:164: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Pokala N. &
                        ~Handel T. (\textbf {2005}). \newblock \enquote {Ener...
 l.164 
@@ -4081,7 +4075,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:170: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Korkut A. &
                        ~Hendrickson W. (\textbf {2009}). \newblock \enquote ...
 l.170 
@@ -4093,7 +4087,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:176: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Wesson L. &
                        ~Eisenberg D. (\textbf {1992}). \newblock \enquote {A...
 l.176 
@@ -4106,7 +4100,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 [173]
-./these.bbl:201: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Hawley R. &
                         Hendrickson~T. Still~W., Tempczyk~A. (\textbf {1990}...
 l.201 
@@ -4118,7 +4112,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:208: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Aubard C. Plateau P. Simonson T. &
                                                Archontis~G. Polydorides~S., ...
 l.208 
@@ -4130,7 +4124,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:233: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Hazes B. &
                        Lasters~I. Desmet~J., Mayer M.~D. (\textbf {1992}). \...
 l.233 
@@ -4143,7 +4137,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./these.bbl:239: Package inputenc Error: Unicode char ﬃ (U+FB03)
+! Package inputenc Error: Unicode char ﬃ (U+FB03)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -4156,7 +4150,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./these.bbl:246: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Leach A. &
                       ~Lemon A. (\textbf {1998}). \newblock \enquote {Explor...
 l.246 
@@ -4169,7 +4163,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 [174]
-./these.bbl:259: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Anderson A. &
                           Donald~B. Lilien~R., Stevens~B. (\textbf {2005}). ...
 l.259 
@@ -4182,7 +4176,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./these.bbl:259: Package inputenc Error: Unicode char ﬁ (U+FB01)
+! Package inputenc Error: Unicode char ﬁ (U+FB01)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -4195,7 +4189,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./these.bbl:271: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument> ...Sullivan B. Prestwich S. Schiex T. &
                                                    Traoré~S. Allouche~D., A...
 l.271 
@@ -4207,7 +4201,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:284: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Hery S. &
                       Wodak~S. Wernisch~L. (\textbf {2000}). \newblock \enqu...
 l.284 
@@ -4220,7 +4214,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./these.bbl:284: Package inputenc Error: Unicode char ﬁ (U+FB01)
+! Package inputenc Error: Unicode char ﬁ (U+FB01)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -4233,7 +4227,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./these.bbl:304: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument> ...son A. Richardson D. Richardson J. &
                                                    Donald~B. Gainza~P., Robe...
 l.304 
@@ -4246,7 +4240,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./these.bbl:304: Package inputenc Error: Unicode char ﬂ (U+FB02)
+! Package inputenc Error: Unicode char ﬂ (U+FB02)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -4260,7 +4254,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 [175]
-./these.bbl:316: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Cramer C.J. &
                           Truhlar~D. Hawkins~G. (\textbf {1995}). \newblock ...
 l.316 
@@ -4272,7 +4266,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:335: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument> Journal of Biomolecular Structure &
                                                Dynamics
 l.335 
@@ -4285,7 +4279,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 [176]
-./these.bbl:437: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Looger L. &
                        ~Hellinga H. (\textbf {2001}). \newblock \enquote {Ge...
 l.437 
@@ -4298,7 +4292,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 [177]
-./these.bbl:449: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Rosenbluth M. Teller A. &
                                       Teller~E. Metropolis~N., Rosenbluth~A....
 l.449 
@@ -4310,7 +4304,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:474: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Mignon D. &
                         Simonson~T. Schmidt Am Busch~M., Lopes~A. (\textbf {...
 l.474 
@@ -4322,7 +4316,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:493: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Gordon D. &
                         Mayo~S. Dahiyat~B. (\textbf {1997}). \newblock \enqu...
 l.493 
@@ -4334,7 +4328,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./these.bbl:510: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Lee B. &
                     ~Richards F. (\textbf {1971}). \newblock \enquote {The i...
 l.510 
@@ -4347,7 +4341,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 [178]
-./these.bbl:529: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Coutsias E. &
                           Kortemme~T. Mandell~D. (\textbf {2009}). \newblock...
 l.529 
@@ -4360,7 +4354,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 [179]
-./these.bbl:633: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument>  Palmai Z. &
                         Simonson~T. Druart~K., Le Guennec~M. (\textbf {2017}...
 l.633 
@@ -4373,7 +4367,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-./these.bbl:633: Package inputenc Error: Unicode char ﬁ (U+FB01)
+! Package inputenc Error: Unicode char ﬁ (U+FB01)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -4401,7 +4395,7 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 350.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 350.
 (./these.aux (./merci.aux) (./dedicace.aux) (./glossaire.aux) (./intro.aux)
 (./contexte.aux) (./CPD/chapter.aux) (./methodes/chapter.aux
-./methodes/chapter.aux:66: Missing \endcsname inserted.
+! Missing \endcsname inserted.
 <to be read again> 
                    \protect 
 l.66 ...acements Monte-Carlo}{subsection.2.5.1}{}}
@@ -4412,7 +4406,7 @@ not appear between \csname and \endcsname.
 
 LaTeX Warning: Reference `para:voisin' on page 182 undefined on input line 66.
 
-./methodes/chapter.aux:66: Extra \endcsname.
+! Extra \endcsname.
 \@newl@bel ... \bbl@tempa \csname #1@#2\endcsname 
                                                   \def \bbl@tempb {#3}\@safe...
 l.66 ...acements Monte-Carlo}{subsection.2.5.1}{}}
@@ -4461,30 +4455,30 @@ Here is how much of TeX's memory you used:
  18659 multiletter control sequences out of 15000+600000
  124866 words of font info for 204 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 46i,18n,48p,1987b,1107s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,18n,48p,1999b,1107s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/e
 nc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/
 share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/l
-m-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc} </home/david/.
-texlive2016/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk></usr/share/te
-xlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-Italic.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/doublestroke/dsrom12.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmbxo10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb>
-</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/t
-exmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lm
-r12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/font
-s/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb><
-/usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1
-/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/sh
-are/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/symbols/msbm10.pfb>
+m-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc} </home/mignon/
+.texlive2016/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk></usr/share/t
+exlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-Italic.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/doublestroke/dsrom12.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/
+type1/public/lm/lmbxo10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/pub
+lic/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/l
+mr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fon
+ts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb>
+</usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type
+1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on these.pdf (201 pages, 37768022 bytes).
 PDF statistics:
  3228 PDF objects out of 3580 (max. 8388607)
