@@ -2,22 +2,22 @@
 \label{chap:developpements}
 
 Ce chapitre expose les modifications faites dans le logiciel Proteus et dans X-plor pendant la préparation de cette thèse.
-X-plor est un logiciel conçu pour la biologie structurale développé à l'origine par Axel T. Brünger à l'université de Yale \cite{Brünger92}. Il propose un langage de script permettant d'exploiter ses fonctionnalités. Pour adapter X-plor au CPD nous y ajoutons la gestion de jeux de coordonnées multiples (rotamères) pour chaque résidu. Plusieurs modèles de solvant implicite ont également été ajoutés. Le REMC est par nature un algorithme parallèle, nous présentons l'implémentation de cet algorithme dans proteus avec notre gestion du parallélisme. Le schéma proposé par Metropolis et Hasting constitue un cadre général dans lequel il est possible d'adapter les probabilités utilisées au système à étudier. Nous expliquons comment le critère d'acceptation a été amélioré en tenant compte de la spécificité de notre modèle et de nos objectifs. Enfin, sont présentées quelques nouvelles fonctionnalités dans proteus: un système de pondération pour le choix des positions à modifier, un contrôle du taux de mutations et de changements de rotamères, une gestion dynamique de la mémoire en fonction du fichier de configuration et un système de création de labels qui simplifie la configuration.  
+X-plor est un logiciel conçu pour la biologie structurale développé à l'origine par Axel T. Brünger à l'université de Yale \cite{Brünger92}. Il propose un langage de script permettant d'exploiter ses fonctionnalités. Pour adapter X-plor au CPD nous y ajoutons la gestion de jeux de coordonnées multiples (rotamères) pour chaque résidu. Plusieurs modèles de solvant implicite ont également été ajoutés. Le REMC est par nature un algorithme parallèle, nous présentons l'implémentation de cet algorithme dans proteus avec notre gestion du parallélisme. Le schéma proposé par Metropolis et Hasting constitue un cadre général dans lequel il est possible d'adapter les probabilités utilisées au système à étudier. Nous expliquons comment le critère d'acceptation a été amélioré en tenant compte de la spécificité de notre modèle et de nos objectifs. Enfin sont présentées quelques nouvelles fonctionnalités dans proteus: un système de pondération pour le choix des positions à modifier, un contrôle du taux de mutations et de changements de rotamères, une gestion dynamique de la mémoire en fonction du fichier de configuration et un système de création de labels qui simplifie la configuration.  
 
 
 \section{Les Modèles }
 
-Proteus, lors de la préparation du système, place chaque chaîne latérale possible aux différentes positions de la chaîne polypeptidique selon la librairies de rotamère de Tuffery. Ces placements sont utilisés à de nombreuses reprises pendant le calcul des énergies d'interactions. X-plor ne permettait qu'une gestion de quatre jeux de coordonnées pour une chaîne latérale simultanément. Cela oblige l'utilisation de nombreux fichiers pour stocker l'ensemble des jeux de coordonnées. Afin de remédier à ce problème, nous modifions le code source d'X-plor pour y introduire deux nouvelles notions. Une \og resclass \fg identifie un résidu par un triplet composé du \og resid \fg, du \og resname\fg et du \og segid \fg. Ces trois notions, existent dans le format PDB et X-plor. Ils représentent respectivement la position dans une chaîne polypeptidique, le type d'acide aminé, le segment ou molécule à laquelle appartient le résidu. Un \og modèle \fg est un jeu de coordonnées d'une resclass. Une resclass peut avoir plusieurs modèles.
+Proteus, lors de la préparation du système, place chaque chaîne latérale possible aux différentes positions de la chaîne polypeptidique selon la librairie de rotamère de Tuffery. Ces placements sont utilisés à de nombreuses reprises pendant le calcul des énergies d'interactions. X-plor ne permettait qu'une gestion de quatre jeux de coordonnées pour une chaîne latérale simultanément. Cela oblige l'utilisation de nombreux fichiers pour stocker l'ensemble des jeux de coordonnées. Afin de remédier à ce problème, nous modifions le code source d'X-plor pour y introduire deux nouvelles notions. Une \og resclass \fg identifie un résidu par un triplet composé du \og resid \fg, du \og resname\fg et du \og segid \fg. Ces trois notions existent dans le format PDB et X-plor. Ils représentent respectivement la position dans une chaîne polypeptidique, le type d'acide aminé, le segment ou molécule à laquelle appartient le résidu. Un \og modèle \fg est un jeu de coordonnées d'une resclass. Une resclass peut avoir plusieurs modèles.
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
        \includegraphics[width=13cm]{figure/PDB.png} 
      \end{tabular}     
-     \caption{\textbf{Exemple de fichier PDB avec déclaration de 3 modèles.} L'avant-dernière colonne contient l'index des modèles. Par exemple, il y a un modèle pour GLY à la position 39 du segment A et un autre pour ASP position 111 segment A.}
+     \caption{\textbf{Exemple de fichier PDB avec déclaration de 3 modèles.} L'avant-dernière colonne contient l'index des modèles. Par exemple, il y a un modèle pour GLY à la position 39 du segment A et un autre pour ASP, position 111, segment A.}
 \label{fig:PDB}
    \end{figure}
 
-L'utilisateur ne manipule que les modèles; les resclass n'apparaîssent ni dans les fichiers d'entrée/sortie ni dans les commandes. Un modèle se déclare par des lignes ATOM d'un fichier PDB. Il y a deux possibilités de lecture des modèles. La commande:\\
+L'utilisateur ne manipule que les modèles; les resclass n'apparaissent ni dans les fichiers d'entrée/sortie ni dans les commandes. Un modèle se déclare par des lignes ATOM d'un fichier PDB. Il y a deux possibilités de lecture des modèles. La commande:\\
 \verb!coor disp=model @file.pdb!\\
 ajoute chaque modèle de file.pdb dans un tableau en mémoire. Un nombre est lu à la colonne 67-71, il représente l'indice du modèle pour une resclass. Le lien avec la resclass se fait par la liste des atomes contenant l'indice, voir un exemple à la figure \ref{fig:PDB}. La commande:\\
 \verb!coor disp=model @file.pdb push=true!\\
@@ -29,14 +29,14 @@ Le mot \verb!idx=i=j! n'est pas obligatoire. Par défaut, si \verb!from=model! a
 
 La commande:\\ 
 \verb!write coor sele=(resid $1 and resn $aa1) from=model output=new.pdb end!\\
-imprime les modèles de chaque resclass défini par la sélection dans un fichier PDB. On écrit une ligne par atome de la resclass avec l'indice du modèle, pour tous les modèles. 
+imprime les modèles de chacune des resclass définies par la sélection dans un fichier PDB. On écrit une ligne par atome de la resclass avec l'indice du modèle, pour tous les modèles. 
 Il est possible de limiter l'impression au modèle \verb!i! par une commande du type:\\
 \verb!write coor from=model idx=i output=new.pdb end!\\
 
 \section{OpenMP pour le REMC}
 \subsection{Présentation d'OpenMP}
 
-Pour l'implémentation de l'algorithme \og Replica Exchange Monte Carlo\fg nous devons paralléliser la partie Monte-Carlo de proteus. Nous nous orientons vers une programmation à mémoire partagé. Dans ce domaine, l'interface de programmation OpenMP pour \og Open Multi-Processing\fg  offre un standard mature, bien supporté par les compilateurs C/C++ et simple à mettre en oeuvre. Il s'agit d'une spécification qui décrit une collection de directives au compilateur, une bibliothèque de routines et un ensemble de variables d'environnement. 
+Pour l'implémentation de l'algorithme \og Replica Exchange Monte Carlo\fg nous devons paralléliser la partie Monte-Carlo de proteus. Nous nous orientons vers une programmation à mémoire partagé. Dans ce domaine, l'interface de programmation OpenMP pour \og Open Multi-Processing\fg  offre un standard mature, bien supporté par les compilateurs C/C++ et simple à mettre en œuvre. Il s'agit d'une spécification qui décrit une collection de directives au compilateur, une bibliothèque de routines et un ensemble de variables d'environnement. 
 
 Le principe est d'ajouter à un code existant des directives pour définir:
 
@@ -110,7 +110,7 @@ Chaque ligne à l'intérieur de la balise définit une forme de pas. Le nombre �
 
 
 \section{Label}
-Dans certaines situations, le fichier de configuration de proteus peut devenir particulièrement grand. C'est le cas par exemple lorsque les énergies de références y sont définies. En effet, cela nécessite la déclaration d'une énergie pour chaque type d'acide aminé à chaque position de la chaîne polypeptidique du système étudié. De manière générale, les balises qui demande la déclaration d'un ensemble de position ou d'instance de position sont source d'augmentation de la taille du fichier de confoguration. La nouvelle balise \verb!<Label>! permet de définir une étiquette représentant un ensemble de mot.
+Dans certaines situations, le fichier de configuration de proteus peut devenir particulièrement grand. C'est le cas par exemple lorsque les énergies de références y sont définies. En effet, cela nécessite la déclaration d'une énergie pour chaque type d'acide aminé à chaque position de la chaîne polypeptidique du système étudié. De manière générale, les balises qui demandent la déclaration d'un ensemble de position ou d'instance de position sont source d'augmentation de la taille du fichier de configuration. La nouvelle balise \verb!<Label>! permet de définir une étiquette représentant un ensemble de mots.
 \section{allocation variable de la matrice}
 
 \clearpage

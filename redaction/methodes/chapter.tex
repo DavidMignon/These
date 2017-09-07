@@ -53,7 +53,7 @@ Le terme surfacique présenté, en \vref{eq:SA}, se définit comme:
 E_{solv}^{surf} = \sum_i \sigma_{t_i} A_i 
 \end{equation}
 avec $A_i$ la surface accessible au solvant de l'atome $i$, et $\sigma_{t_i}$ un coefficient d'hydrophobicité de l'atome $i$.
-Ce terme n'est pas décomposable par paires de résidus, parce que la surface d'une première chaîne latérale enfouie par une deuxième peut aussi être enfui par une troisième chaîne latérale, voir la figure \ref{fig:intersurf}.
+Ce terme n'est pas décomposable par paires de résidus, parce que la surface d'une première chaîne latérale enfouie par une deuxième peut aussi être enfouie par une troisième chaîne latérale, voir la figure \ref{fig:intersurf}.
 
    \begin{figure}[!htbp]
      \centering
@@ -66,7 +66,7 @@ Ce terme n'est pas décomposable par paires de résidus, parce que la surface d'
    \end{figure}
 
 
-Pour rendre ce terme décomposable, nous utilisons la méthode de Street et al. \cite{Street98} dans laquelle la surface enfuie d'une chaîne est calculée à partir d'une somme sur les chaînes et les groupes du backbone voisins. Puis pour chaque groupe voisin, la surface de contact avec notre chaîne est calculée indépendamment des autres groupes. Ces surfaces de contact sont sommées et un facteur de reduction est appliqué mimant l'élimination des doubles comptages. Des travaux précédents effectués dans notre laboratoire ont montré qu'un facteur de 0,65 fonctionne bien \cite{Lopes07,Gaillard14}.   
+Pour rendre ce terme décomposable, nous utilisons la méthode de Street et al. \cite{Street98} dans laquelle la surface enfuie d'une chaîne est calculée à partir d'une somme sur les chaînes et les groupes du backbone voisins. Puis pour chaque groupe voisin, la surface de contact avec notre chaîne est calculée indépendamment des autres groupes. Ces surfaces de contact sont sommées et un facteur de réduction est appliqué mimant l'élimination des doubles comptages. Des travaux précédents effectués dans notre laboratoire ont montré qu'un facteur de 0,65 fonctionne bien \cite{Lopes07,Gaillard14}.   
 
 
 \subsection{\og Native Environnement Approximation\fg (NEA)}
@@ -137,7 +137,7 @@ avec $E(t_i)$ une énergie du type d'acide aminé $t_i$. Ces énergies sont pris
 
 \subsection{Déroulement de la construction de la matrice}
 \label{sub:matrix}
-Dans la suite, on appelle position active, une position pour laquelle tous les types d'acides et tous les rotamères de chaque type d'acide aminé sont autorisés au cours de l'exploration. Lorsqu'une position n'est pas active, le type de l'acide aminé de la position est fixé. Si les rotamères de la chaîne latérale ne sont pas fixés on dit que la position est inactive. Si la position n'est pas active et qu'en plus la conformation est fixée, on dit que la position est gelée.
+Dans la suite, on appelle position active, une position pour laquelle tous les types d'acides et tous les rotamères de chaque type d'acide aminé sont autorisés au cours de l'exploration. Lorsqu'une position n'est pas active, le type de l'acide aminé de la position est fixé. Si les rotamères de la chaîne latérale ne sont pas fixés, on dit que la position est inactive. Si la position n'est pas active et qu'en plus la conformation est fixée, on dit que la position est gelée.
 
 Le calcul de la matrice d'énergie est exécuté à l'aide du programme X-plor \cite{Brünger92}. il se déroule de la façon suivante. À partir d'un fichier PDB, une série de scripts X-plor prépare le système. Il peut contenir un ligand.
 
@@ -157,7 +157,7 @@ Le calcul de la matrice d'énergie est exécuté à l'aide du programme X-plor \
 \item Pour chaque paire de rotamères possible, comme pour la diagonale de la matrice, une petite minimisation est effectuée dans laquelle seule la paire courante peut se déplacer. Puis les termes d'énergie d'interaction du couple sont calculés et enregistrés dans des fichiers.  
 \end{enumerate}
 
-Pour chaque paire d'acides aminés, l'énergie d'interaction a été obtenue après 15 pas de minimisation, seules les interactions de la paire entre les autres chaînes et le backbone sont prises en compte. Cette courte minimisation réduit l'impact de l'approximation de rotamères discrets. Les rotamères de chaînes latérales utilisés sont extraits d'une version légèrement étendue de la librairie de Tuffery et al. \cite{Tuffery91} qui possède un total de 254 rotamères sur l'ensemble des types d'acides aminés. Cette extension comprend des orientations d'hydrogène supplémentaires pour les groupes OH et SH \cite{Gaillard14}. Cette bibliothèque de rotamères a été choisie pour sa simplicité et parce qu'elle a donné de très bonnes performances dans les tests de placement de chaînes en comparaison au programme spécialisé scwlr4 qui utilise une bibliothèque beaucoup plus grande \cite{Krivov09,Gaillard16}. Les scripts sont conçus pour pouvoir distribuer les calculs sur différentes architectures matérielles allant du PC mono-processeur au cluster de calculs hétérogène.
+Pour chaque paire d'acides aminés, l'énergie d'interaction a été obtenue après 15 pas de minimisation, seules les interactions de la paire entre les autres chaînes et le backbone sont prises en compte. Cette courte minimisation réduit l'impact de l'approximation de rotamères discrets. Les rotamères de chaînes latérales utilisés sont extraits d'une version légèrement étendue de la librairie de Tuffery et al. \cite{Tuffery91} qui possède un total de 254 rotamères sur l'ensemble des types d'acides aminés. Cette extension comprend des orientations d'hydrogène supplémentaires pour les groupes OH et SH \cite{Gaillard14}. Cette bibliothèque de rotamères a été choisie pour sa simplicité et parce qu'elle a donné de très bonnes performances dans les tests de placement de chaînes en comparaison au programme spécialisé scwlr4 qui utilise une bibliothèque beaucoup plus grande \cite{Krivov09,Gaillard16}. Les scripts sont conçus pour pouvoir distribuer les calculs sur différentes architectures matérielles allant du PC monoprocesseur au cluster de calculs hétérogène.
 
 \subsection{Les fichiers d'énergies}
 
@@ -269,7 +269,7 @@ Cela signifie qu'à la position 489, seuls les types LYS et TRP sont possibles e
 
 \subsection{Définition de la fonction de score }
 
- Le cycle thermodynamique \ref{fig:cycleThermo} peut être adapté pour exprimer d'autres problématiques que celle de la recherche de séquences stables. C'est le cas des calculs de $pK_a$ qui dépend d'une différence d'énergie libre de protonation. Le  problème de la reconnaissance d'un ligand par une protéine peut également être traitée. Cela peut se faire par un critère d'affinité via l'énergie libre d'interaction ou par un critère de spécificité. Le critère d'affinité se base sur le cycle thermodynamique  \ref{fig:cycleThermoLigand} qui permet d'écrire l'équation:
+ Le cycle thermodynamique \ref{fig:cycleThermo} peut être adapté pour exprimer d'autres problématiques que celle de la recherche de séquences stables. C'est le cas des calculs de $pK_a$ qui dépend d'une différence d'énergie libre de protonation. Le  problème de la reconnaissance d'un ligand par une protéine peut également être traité. Cela peut se faire par un critère d'affinité via l'énergie libre d'interaction ou par un critère de spécificité. Le critère d'affinité se base sur le cycle thermodynamique  \ref{fig:cycleThermoLigand} qui permet d'écrire l'équation:
 
  \begin{equation}
    \label{deltaG2}
@@ -286,11 +286,11 @@ avec $P$ la protéine, $L_1$ et $L_2$ deux ligands et $P:L_i$ un complexe proté
      \caption{Cycle thermodynamique qui définit l'affinité.}
 \label{fig:cycleThermoLigand}
    \end{figure}
-Le critère de spécificité combine une augmentation du poids d'un ligand et la réducion du poids d'un autre. En effet, Proteus permet la décomposition des équations \ref{deltaG} et \ref{deltaG2} en contributions intramoléculaire et intermoléculaire. De plus, il autorise une pondération des différents termes et permet de dupliquer des parties du système. Cela permet également des optimisations simultanées de deux conformations d'un sous-système à séquences identiques, mais non fixées. Nous détaillons maintenant la façon dont ce dispositif fonctionne.
+Le critère de spécificité combine une augmentation du poids d'un ligand et la réduction du poids d'un autre. En effet, Proteus permet la décomposition des équations \ref{deltaG} et \ref{deltaG2} en contributions intramoléculaire et intermoléculaire. De plus, il autorise une pondération des différents termes et permet de dupliquer des parties du système. Cela permet également des optimisations simultanées de deux conformations d'un sous-système à séquences identiques, mais non fixées. Nous détaillons maintenant la façon dont ce dispositif fonctionne.
 
 \subsubsection{Définition de groupes}
 \label{sub:group}
-L'utilisateur a la possibilité de définir des groupes au sein du le système biologique étudié. Un groupe est associé à une partie du système. Il se définit en donnant la liste des positions qu'il contient dans la balise \verb!<Group_Definition>! du fichier de configuration. Par exemple:\\
+L'utilisateur a la possibilité de définir des groupes au sein du système biologique étudié. Un groupe est associé à une partie du système. Il se définit en donnant la liste des positions qu'il contient dans la balise \verb!<Group_Definition>! du fichier de configuration. Par exemple:\\
 \verb!<Group_Definition>! \\
 \verb!grp1 1−3! \\
 \verb!grp2 4 5! \\
@@ -388,7 +388,7 @@ Superfamily \cite{Madera04} est un ensemble composé:
 \item d'une base de données de modèles de Markov cachés, où chaque modèle représente une structure 3D d'un domaine de la classification SCOP \cite{Andreeva04}.
 \item d'une série de scripts qui annotent les séquences données en entrée. Ici, nous utilisons uniquement l'association de chaque séquence au modèle 3D SCOP le plus vraisemblable. 
 \end{itemize}
-Nous travaillons avec la base de données à la version 1.75, et en conjonction, nous utilisons SAM (version 3.5) \cite{hughey95} et HMMER (version 3.0) \cite{HMMER} deux collections d'outils de manipulation de modèle de Markov cachés pour la biologie recommandés par l'équipe de Superfamily. La base SCOP contient 15 438 modèles.
+Nous travaillons avec la base de données à la version 1.75, et en conjonction, nous utilisons SAM (version 3.5) \cite{hughey95} et HMMER (version 3.0) \cite{HMMER} deux collections d'outils de manipulation de modèles de Markov cachés pour la biologie recommandées par l'équipe de Superfamily. La base SCOP contient 15 438 modèles.
 
 \subsection{Taux d'identité de séquences}
 
@@ -409,7 +409,7 @@ avec $m$ le nombre de séquences de $A_S$. Ce taux d'identité donne une mesure 
 
 \subsection{Alignements Pfam}
 \label{subsection:Align_Pfam}
-La base de données Pfam (Protein families database) \cite{Punta12,Finn14} regroupe les domaines protéiques connus en familles. Chaque famille est représentée par des alignements multiples de séquences et des profiles de modèles de Markov cachés. Dans la suite, nous utilisons l'alignement \og seed \fg qui est un petit alignement de séquences naturelles représentatives. Par exemple, il contient 45 séquences pour la famille PDZ. Nous utilisons également l'alignement \og RP55 \fg, qui se base sur l'alignement \og seed \fg et augmente le nombre de séquences grâce à des  modèles de Markov cachés construits à partir de \og seed \fg, jusqu'à contenir 12 255 séquences protéiques naturelles pour la famille PDZ.
+La base de données Pfam (Protein families database) \cite{Punta12,Finn14} regroupe les domaines protéiques connus en familles. Chaque famille est représentée par des alignements multiples de séquences et des profils de modèles de Markov cachés. Dans la suite, nous utilisons l'alignement \og seed \fg qui est un petit alignement de séquences naturelles représentatives. Par exemple, il contient 45 séquences pour la famille PDZ. Nous utilisons également l'alignement \og RP55 \fg, qui se base sur l'alignement \og seed \fg et augmente le nombre de séquences grâce à des  modèles de Markov cachés construits à partir de \og seed \fg, jusqu'à contenir 12 255 séquences protéiques naturelles pour la famille PDZ.
 
 \subsection{Score BLOSUM}
 
