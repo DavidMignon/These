@@ -5,7 +5,7 @@ Il existe plusieurs logiciels de CPD. Parmi les plus connus, on peut citer ORBIT
 
 \section{Un modèle fondé sur la Physique}
 \label{sec:Phy}
-Proteus se base sur la théorie de la mécanique statistique pour formaliser les problèmes auxquels il s'attaque et pour guider sa sélection de meilleures séquences-conformations. À partir d'un postulat fondamental et de l'hypothèse ergodique, la mécanique statistique \og redécouvre \fg la thermodynamique classique et en plus, établit une relation à l'équilibre entre l'énergie d'un état $i$ d'un système et la probabilité que le système soit en $i$ par la probabilité de Boltzmann \ref{eq:Boltzmann}.
+Proteus se base sur la théorie de la mécanique statistique pour formaliser les problèmes auxquels il s'attaque et pour guider sa sélection de meilleures séquences-conformations. À partir d'un postulat fondamental et de l'hypothèse ergodique, la mécanique statistique \og redécouvre \fg la thermodynamique classique et en plus, établit une relation à l'équilibre entre l'énergie d'un état $i$ d'un système et la probabilité que le système soit en $i$ par la probabilité de Boltzmann, voir l'équation \vref{eq:Boltzmann}.
 
 Ainsi, si l'on considère deux états A et B d'un système S à l'équilibre, le ratio des probabilités que S soit dans l'état A ou dans l'état B s'exprime en fonction de la différence entre l'énergie de A et de B. Pour le CPD, l'énergie qui est pertinente est celle qui prend en compte l'énergie interne de la protéine, mais aussi son environnement avec l'entropie et la température. Il s'agit de l'énergie libre de Gibbs $G$. De plus, on prend la différence entre états replié et déplié.
 
@@ -31,24 +31,20 @@ avec respectivement $S^P_A$, $S^P_B$, $S^D_B$ et $S^D_B$, le système avec la s�
 \section{Organisation générale}
 
 Proteus est constitué de deux parties:
-
 \begin{itemize}
-\item un ensemble de scripts X-PLOR, qui pilote le calcul de la matrice d'énergie. X-PLOR est un programme de simulation moléculaire \cite{Brünger92}, disponible en téléchargement sur le site de l'université de Yale.
+\item un ensemble de scripts X-PLOR, qui pilote le calcul de la matrice d'énergie. X-PLOR est un programme de simulation moléculaire \cite{Xplor}, disponible en téléchargement sur le site de l'université de Yale.
 \item un programme écrit en C, que nous nommons \og proteus\fg dans la suite de ce texte, qui explore l'espace des séquences-conformations
-\end{itemize}\\
-De plus, nous développons une version modifiée de X-PLOR, qui fournit plusieurs fonctionnalités spécifiques au CPD.
+\end{itemize}
+De plus, nous développons une version modifiée de X-PLOR, qui fournit plusieurs fonctionnalités spécifiques au CPD. Proteus est flexible et largement configurable. Il permet l'utilisation de plusieurs champs de force, de plusieurs modèles de solvant, et de plusieurs librairies de rotamère. La partie en C, proteus, propose plusieurs algorithmes d'exploration comme le MSD, MC ou REMC. Le programme proteus permet de diviser le système en plusieurs groupes ou d'en dupliquer une partie, ceux-ci pouvant alors être combinés dans une fonction de score basée sur la fonction d'énergie physique afin de favoriser la stabilité de certains sous-ensembles du système ou certaines affinités. Plusieurs succès ont déjà était obtenue avec Proteus par exemple de redesign de la tyrosyl-tARN synthétase \cite{Simonson16}, sur les calculs de $pK_a$ \cite{Villa17} ou la création de nouveaux domaines PDZ \cite{Mignon17}.
 
-Proteus est flexible et largement configurable. Il permet l'utilisation de plusieurs champs de force, de plusieurs modèles de solvant, et de plusieurs librairies de rotamère. La partie en C, proteus, propose plusieurs algorithmes d'exploration comme le MSD, MC ou REMC. Le programme proteus permet de diviser le système en plusieurs groupes ou d'en dupliquer une partie, ceux-ci pouvant alors être combinés dans une fonction de score basée sur la fonction d'énergie physique afin de favoriser la stabilité de certains sous-ensembles du système ou certaines affinités. Plusieurs succès ont déjà était obtenue avec Proteus par exemple de redesign de la tyrosyl-tARN synthétase \cite{Simonson16}, sur la D-tyrosine \cite{Druart17}, sur les calculs de pK_a \cite{Villa17} ou la création de nouveaux domaines PDZ \cite{Mignon17}.
-
-Notre logiciel Proteus autorise le choix entre plusieurs types de fonctions d'énergie. Le type le plus simple \og MMCASA \fg combine l'approche de la mécanique moléculaire pour le traitement de la protéine et un modèle de solvant implicite de type CASA (voir  \vref{sub:CASA}). Deux types \og MMGBSA \fg sont également possibles, dans lesquels le traitement du solvant est effectué par un modèle Born Genéralisé. Nous détaillons les points importants de Proteus dans la suite.
+Notre logiciel Proteus autorise le choix entre plusieurs types de fonctions d'énergie. Le type le plus simple \og MMCASA \fg combine l'approche de la mécanique moléculaire pour le traitement de la protéine et un modèle de solvant implicite de type CASA (voir  \vref{sub:CASA}). Deux types \og MMGBSA \fg sont également possibles, dans lesquels le traitement du solvant est effectué par un modèle de Born Genéralisé. Nous détaillons les points importants de Proteus dans la suite.
 
 \section{Décomposition par paires de la fonction d'énergie}
 Avoir une fonction d'énergie décomposable par paires a plusieurs avantages. En particulier, le calcul des énergies des paires permet de réduire le calcul de l'énergie d'une séquence-conformation pendant l'étape d'exploration à une somme d'énergies précalculées. Cependant, les termes GB et SA ne sont pas rigoureusement décomposables par paires. Il faut alors introduire de nouvelles approximations pour permettre cette décomposition. Voyons dans la suite comment ces problèmes sont résolus dans Proteus.
 \subsection{Décomposition du terme de surface}
 \label{sub:surpairwise}
 
-Le terme surfacique présenté, en \vref{eq:SA}, se définit comme:
-
+Le terme surfacique présenté en \vref{eq:SA}, se définit comme:
 \begin{equation}
 E_{solv}^{surf} = \sum_i \sigma_{t_i} A_i 
 \end{equation}
@@ -71,15 +67,13 @@ Pour rendre ce terme décomposable, nous utilisons la méthode de Street et al. 
 
 \subsection{\og Native Environnement Approximation\fg (NEA)}
 
-Dans le terme GB de l'énergie de solvatation, le rayon de solvatation $b_i$ approxime la distance de l'atome $i$ à la surface de la protéine. C'est une fonction de la position de tous les atomes de la protéine. Ce rayon n'est donc pas décomposable par paire. Pour qu'il le devienne, Proteus implémente l'approximation  NEA qui est présentée à  la section \vref{NEA}, 
-Dans cette approche, le rayon de solvatation $b_i$ de chaque groupe (backbone, chaîne latérale ou ligand) est calculé une fois pour toutes à partir de la structure native.
+Dans le terme GB de l'énergie de solvatation, le rayon de solvatation $b_i$ approxime la distance de l'atome $i$ à la surface de la protéine. C'est une fonction de la position de tous les atomes de la protéine. Ce rayon n'est donc pas décomposable par paire. Pour qu'il le devienne, Proteus implémente l'approximation  NEA qui est présentée à  la section \vref{NEA}. Dans cette approche, le rayon de solvatation $b_i$ de chaque groupe (backbone, chaîne latérale ou ligand) est calculé une fois pour toutes à partir de la structure native.
 
 \subsection{\og Fluctuating Dielectric Boundary\fg (FDB)}
 \label{FDB}
 Une nouvelle approximation du GB a récemment été introduite dans Proteus \cite{Villa17}, toujours avec l'objectif, de transformer ce terme en en terme décomposable par paires. Elle exploite le fait que dans le GB, l'environnement diélectrique d'une paire de résidus est complètement caractérisé pour un petit ensemble de rayons de solvatation d'atome. Ces rayons sont eux-mêmes sommes de paires sur les atomes de la protéine \cite{Hawkins95}, \cite{Schaefer96}. La méthode s'appelle Fluctuating Dielectric Boundary\fg ou FDB et comporte deux étapes.
 
 La première consiste à définir un rayon de solvatation $B_I$ pour chaque résidu $I$ de la protéine. On commence par définir une énergie propre à chaque paire de résidus $I$, $J$ par la somme suivante:
-
 \begin{equation}
   E_{IJ}^{self} \stackrel{def}{=} \sum_{i\in I,j\in J} E_{ij}^{self}
 \end{equation}
@@ -88,32 +82,30 @@ puis l'énergie propre d'un résidu I:
 \begin{equation}
   E_I^{self} \stackrel{def}{=} \sum_J E_{IJ}^{self}
 \end{equation}
-Alors le rayon de solvatation moyen $B_I$ est défini par:
+alors le rayon de solvatation moyen $B_I$ est défini par:
 \begin{equation}
   E^{self}_I \stackrel{def}{=} \tau \sum_{i \in I} \frac{q_i^2}{2 B_I}
 \end{equation} 
-avec $ \tau = \frac{1}{\epsilon_p} - \frac{1}{\epsilon_s}$, $q_i$ la charge de l'atome $i$. Nous avons, alors
+avec $ \tau = \frac{1}{\epsilon_p} - \frac{1}{\epsilon_s}$, $q_i$ la charge de l'atome $i$. Nous avons
 \begin{equation}
 \left( \sum_{i \in I} q_i^2 \right) \frac{1}{B_I} = \sum_{i \in I} \frac{q_i^2}{b_i}
 \end{equation}
-Donc, $B_I$ est la moyenne harmonique des $b_i$, avec $i \in I$, pondéré par les charges au carré. Il est alors possible de définir la contribution $g_\IJ$ de la paire de résidus $I$ et $J$ à l'énergie $\Delta G_{elec}$, voir \ref{eq:GB}, par:
+Donc, $B_I$ est la moyenne harmonique des $b_i$, avec $i \in I$, pondéré par les charges au carré. Il est alors possible de définir la contribution $g_\IJ$ de la paire de résidus $I$ et $J$ à l'énergie $\Delta G_{elec}$, voir \vref{eq:GB}, par:
 \begin{equation} 
 g_{IJ} = \sum_{i \in I, j \in J} \tau q_i q_j \left( r_{ij}^2 + B_I B_J \exp[-r_{ij}^2/4 B_I B_J] \right)^{-1/2}
 \label{eq:screen}
 \end{equation}
-avec, la somme pour $I=J$ excluant le cas $i \neq j$.
-On peut noter qu'aux distances fixes $r_\ij$, et avec $B=B_IBJ$, $g_{IJ} (B)$ varie faiblement en fonction de B. Archontis et Simonson \cite{Archontis05}, proposent alors d'approximer cette fonction par:
-
+avec la somme pour $I=J$ excluant le cas $i \neq j$. On peut noter qu'aux distances fixes $r_\ij$, et avec $B=B_IBJ$, $g_{IJ} (B)$ varie faiblement en fonction de B. Archontis et Simonson \cite{Archontis05}, proposent alors d'approximer cette fonction par:
 \begin{equation}
   \label{eq:approx}
 g_{IJ}(B) \approx c_1^{IJ} + c_2^{IJ} B + c_3^{IJ} B^2 + c_4^{IJ} B^{-1/2} + c_5^{IJ} B^{-3/2}  \label{eq:approx}
 \end{equation}
-Les coefficients $c_n^{IJ}$ peuvent alors être précalculés et stockés dans la matrice d'énergie, puisque les distances $r_\ij$ ne sont pas des variables pour un couple de chaînes latérales $I$, $J$ donné. 
+Les coefficients $c_n^{IJ}$ peuvent être précalculés et stockés dans la matrice d'énergie, puisque les distances $r_\ij$ ne sont pas des variables pour un couple de chaînes latérales $I$, $J$ donné. 
 Comme les rayons de solvatation d'un résidu sont eux-mêmes des sommes sur les paires, le calcul de l'énergie GB à l'aide de l'approximation \ref{eq:approx} est maintenant décomposable par paires.
 
 \section{La matrice d'énergie}
 
-Proteus utilise d'une part un backbone fixe, un espace discret de rotamères et une fonction d'énergie décomposable par paires. Ces trois éléments permettent de précalculer toutes les énergies d'interactions possibles. À cet ensemble d'interactions, il faut ajouter les interactions des résidus avec le backbone, ceci pour chacun des rotamères possibles, pour constituer un ensemble complet de valeurs énergétiques. Celui-ci  permet d'obtenir la valeur de la fonction d'énergie pour chaque séquence-conformation. Cet ensemble peut être organisé sans le format d'une matrice symétrique dans laquelle chaque couple de positions dans la chaîne polypeptidique apparaît avec sa multiplicité de couples de rotamères possibles voir la figure \ref{fig:matener}.      
+Proteus utilise un backbone fixe, un espace discret de rotamères et une fonction d'énergie décomposable par paires. Ces trois éléments permettent de précalculer toutes les énergies d'interactions possibles. À cet ensemble d'interactions, il faut ajouter les interactions des résidus avec le backbone, ceci pour chacun des rotamères possibles, pour constituer un ensemble complet de valeurs énergétiques. Celui-ci  permet d'obtenir la valeur de la fonction d'énergie pour chaque séquence-conformation. Cet ensemble peut être organisé sous la forme d'une matrice symétrique dans laquelle chaque couple de positions dans la chaîne polypeptidique apparaît avec sa multiplicité de couples de rotamères possibles voir la figure \ref{fig:matener}.      
 
    \begin{figure}[!htbp]
      \centering
@@ -133,18 +125,18 @@ $\Delta \Delta G$ est une différence entre l'état replié de la protéine et u
 \begin{equation}
 E_u(S) = \sum_i^N E(t_i)  
 \end{equation}
-avec $E(t_i)$ une énergie du type d'acide aminé $t_i$. Ces énergies sont prises en entrée dans Proteus, et donc leur détermination ne fait pas encore partir des fonctionnalités intégrées à notre logiciel. Il apparaît clairement dans la suite que la détermination doit être fonction du système étudié. Nous détaillerons dans le chapitre \ref{chap:PDZ}, plusieurs méthodes dont de nouvelles et plusieurs exemples de détermination qui seront exploités et évalués.
+avec $E(t_i)$ l'énergie du type d'acide aminé $t_i$. Ces énergies sont prises en entrée dans Proteus et donc leur détermination ne fait pas encore partir des fonctionnalités intégrées à notre logiciel. Il apparaît clairement dans la suite que la détermination doit être fonction du système étudié. Nous détaillerons dans le chapitre \ref{chap:PDZ} plusieurs méthodes dont de nouvelles et plusieurs exemples de détermination qui seront exploités et évalués.
 
 \subsection{Déroulement de la construction de la matrice}
 \label{sub:matrix}
 Dans la suite, on appelle position active, une position pour laquelle tous les types d'acides et tous les rotamères de chaque type d'acide aminé sont autorisés au cours de l'exploration. Lorsqu'une position n'est pas active, le type de l'acide aminé de la position est fixé. Si les rotamères de la chaîne latérale ne sont pas fixés, on dit que la position est inactive. Si la position n'est pas active et qu'en plus la conformation est fixée, on dit que la position est gelée.
 
-Le calcul de la matrice d'énergie est exécuté à l'aide du programme X-plor \cite{Brünger92}. il se déroule de la façon suivante. À partir d'un fichier PDB, une série de scripts X-plor prépare le système. Il peut contenir un ligand.
+Le calcul de la matrice d'énergie est exécuté à l'aide du programme X-plor \cite{Xplor}. À partir d'un fichier PDB, une série de scripts X-plor commence par préparer le système. Il peut contenir un ligand. Le déroulement est le suivant:
 
 \begin{enumerate}[leftmargin=*]
 \item L'utilisateur configure l'exécution. Il détermine:
 \begin{itemize}
-\item un champ de force. (Les champs AMBER ff99SB ou CHARMM toph19 sont tous les deux supportés.)
+\item un champ de force (Les champs AMBER ff99SB ou CHARMM toph19 sont tous les deux supportés.)
 \item un traitement de l'électrostatique du solvant parmi SA GB/NEA GB/FDB
 \item un jeu de coefficients $\sigma_i$ pour la pondération de la surface accessible au solvant dans le terme hydrophobe
 \item l'ensemble des résidus dans le backbone autorisés à muter
@@ -161,7 +153,7 @@ Pour chaque paire d'acides aminés, l'énergie d'interaction a été obtenue apr
 
 \subsection{Les fichiers d'énergies}
 
-Après le calcul de la matrice d'énergie, une étape de fusion des résultats obtenus permet d'obtenir deux fichiers d'énergies: un fichier d'énergies propres et un fichier d'énergies d'interactions. Le premier rassemble les énergies propres de chaque chaîne latérale possible et l'énergie de son interaction avec la partie fixe de la protéine c'est-à-dire le backbone et les résidus gelés. Chaque ligne de ce fichier correspond à un rotamère possible de chaque chaîne latérale possible de chaque position non fixée. Les quatre premiers champs identifient la position du résidu, son type, son rotamère. Les autres champs contiennent les termes de l'énergie. Le nombre de ces termes variant selon le traitement du solvant, les détails sont montrés aux figures \ref{fig:CAenerfile} et \ref{fig:GBenerfile}.   
+Après le calcul de la matrice d'énergie, une étape de fusion des résultats obtenus permet d'obtenir deux fichiers d'énergies: un fichier d'énergies propres et un fichier d'énergies d'interactions. Le premier rassemble les énergies propres de chaque chaîne latérale possible et l'énergie de son interaction avec la partie fixe de la protéine, c'est-à-dire le backbone et les résidus gelés. Chaque ligne de ce fichier correspond à un rotamère possible de chaque chaîne latérale possible de chaque position non fixée. Les quatre premiers champs identifient la position du résidu, son type, son rotamère. Les autres champs contiennent les termes de l'énergie. Le nombre de ces termes variant selon le traitement du solvant, les détails sont montrés aux figures \ref{fig:CAenerfile} et \ref{fig:GBenerfile}.   
 
 Le second fichier rassemble les énergies entre les paires de rotamères. Il comporte deux types de lignes. Le premier donne le couple de positions et le couple de types d'acide aminé considérés. Des lignes du second type suivent une ligne du premier type et donnent dans les deux premiers champs le couple de rotamères impliqué dans l'interaction, l'ensemble des termes énergétiques de l'interaction occupent les champs suivants, figures \ref{fig:CAenerfile} et \ref{fig:GBenerfile}. Ensuite, les différents fichiers d'énergies seront lus par proteus. 
 
@@ -184,25 +176,23 @@ Le second fichier rassemble les énergies entre les paires de rotamères. Il com
 \label{fig:GBenerfile}
    \end{figure}
    
-
 \section{Configuration de l'exploration}
-L'étape suivante est l'exploration de l'espace à l'aide des énergies obtenues. Elle s'effectue avec le programme proteus écrit en C. Ce programme se contrôle par un fichier de configuration de type XML sans imbrication de balise. Il y a actuellement près de quarante balises possibles, une partie est présentée table \ref{tab:balise_proteus}. Nous en détaillons quelques-unes ici. L'utilisateur peut choisir la méthode d'exploration entre MSD (\og Multistart Steepest Descent heuristic \fg), MC/REMC ou le champ moyen.
+L'étape suivante est l'exploration de l'espace à l'aide des énergies obtenues. Elle s'effectue avec le programme proteus écrit en C. Ce programme se contrôle par un fichier de configuration de type XML sans imbrication de balise. Il y a actuellement près de quarante balises possibles, une partie est présentée table \vref{tab:balise_proteus}. Nous en détaillons quelques-unes ici. L'utilisateur peut choisir la méthode d'exploration entre MSD (\og Multistart Steepest Descent heuristic \fg), MC/REMC ou le champ moyen.
 
 Pour le MSD, il peut paramétrer le nombre de cycles et le nombre de passages sur la séquence, voir section \vref{MSD}.
-Pour le MC/REMC, le fichier de configuration détermine le nombre de marcheurs, la taille de chaque trajectoire, la période de \og swap \fg, c'est-à-dire la période, en nombre de pas, à laquelle une tentative d'échange de répliques est effectuée, voir la section \vref{REMC_move}. Si elle est non nulle, l'exploration est de type REMC.
+Pour le MC/REMC, le fichier de configuration détermine le nombre de marcheurs, la taille de chaque trajectoire, la période de \og swap \fg, c'est-à-dire la période, en nombre de pas, à laquelle une tentative d'échange de répliques est effectuée, voir \vref{REMC_move}. Si elle est non nulle, l'exploration est de type REMC.
 
 Pour contrôler les déplacements des marcheurs, il existe 
 \begin{itemize}
 \item un ensemble de cinq  balises pour définir les modifications à effectuer dans la séquence-conformation courante
 \item une balise qui définit un voisinage de la première position modifié dans lequel sera choisi une autre position pour une seconde modification
 \end{itemize}
-
-Il est possible de réduire l'espace des états que peut prendre une séquence-conformation. Les explications sont en \ref{sub:restric}.  Il existe deux balises pour définir un système de groupes et déclarer une fonction de score. Elles permettent de définir une optimisation non plus uniquement du type de l'équation \ref{deltaG}, mais répondant à un ensemble de problématiques nettement plus large. Nous expliquons ce système en \ref{sub:group} et \ref{sub:score}.
+Il est possible de réduire l'espace des états que peut prendre une séquence-conformation. Les explications sont en \ref{sub:restric}.  Il existe deux balises pour définir un système de groupes et déclarer une fonction de score. Elles permettent de définir une optimisation non plus uniquement du type de l'équation \ref{deltaG}, mais répondant à un ensemble de problématiques nettement plus large. Nous expliquons ce système en \vref{sub:group}.
 
     \begin{table}[!htbp]
       \centering
 
-      \begin{tabular}{|p{0.2\linewidth}|p{0.35\linewidth}|p{0.45\linewidth}|}
+      \begin{tabular}{|p{0.2\linewidth}|p{0.32\linewidth}|p{0.48\linewidth}|}
 
         \hline
         Type   & nom & Description \\
@@ -215,7 +205,7 @@ Il est possible de réduire l'espace des états que peut prendre une séquence-c
 
         fonction d'énergie &  Optimization\_Configuration &   définition de la fonction d'énergie\\               \cline{2-3}
                         &  Group\_definition &   groupes  d'énergies et d'énergies d'interactions,ce sont les éléments de base de la fonction d'énergie\\  \hline  
-        restrictions de l'espace de  séquence-rotamère & Space\_Constraints   &  restreint les états visités \\ \hline                
+        restrictions de l'espace de  séquence-rotamère & Space\_Constraints   &  restreint les états pouvant être visités \\ \hline                
                          
      paramètre du modèle & Temperature & attribue les températures aux marcheurs MC  \\          \hline     
                          & Random\_Generator &  le générateur de nombre aléatoire de la \og GNU Scientific Library \fg \\ \cline{2-3}
@@ -269,7 +259,7 @@ Cela signifie qu'à la position 489, seuls les types LYS et TRP sont possibles e
 
 \subsection{Définition de la fonction de score }
 
- Le cycle thermodynamique \ref{fig:cycleThermo} peut être adapté pour exprimer d'autres problématiques que celle de la recherche de séquences stables. C'est le cas des calculs de $pK_a$ qui dépend d'une différence d'énergie libre de protonation. Le  problème de la reconnaissance d'un ligand par une protéine peut également être traité. Cela peut se faire par un critère d'affinité via l'énergie libre d'interaction ou par un critère de spécificité. Le critère d'affinité se base sur le cycle thermodynamique  \ref{fig:cycleThermoLigand} qui permet d'écrire l'équation:
+Le cycle thermodynamique figure \ref{fig:cycleThermo} peut être adapté pour exprimer d'autres problématiques que celle de la recherche de séquences stables. C'est le cas des calculs de $pK_a$ qui dépend d'une différence d'énergie libre de protonation. Le  problème de la reconnaissance d'un ligand par une protéine peut également être traité. Cela peut se faire par un critère d'affinité via l'énergie libre d'interaction ou par un critère de spécificité. Le critère d'affinité se base sur le cycle thermodynamique  \ref{fig:cycleThermoLigand} qui permet d'écrire l'équation:
 
  \begin{equation}
    \label{deltaG2}
@@ -316,13 +306,13 @@ La déclaration précédente garantie que les groupes grp3 et grp4 auront des s�
 En tirant parti de la décomposition par paires de la fonction d'énergie, il est possible d'exprimer simplement l'énergie d'un groupe et l'interaction entre deux groupes. On a:
 
 \begin{equation}
-E(grp_i) = \sum_{a \in grp_i}E_a + \sum_{a \neq b, \in grp_i}E_{a,b} \\
+E(grp_i) = \sum_{a \in grp_i}E_a + \sum_{a\in grp_i} \sum_{b\in grp_i, a < b}E_{a,b} \\
 \end{equation}
 et
 \begin{equation}
-E(grp_i,grp_j) = \sum_{a \in grp_i, b \in grp_j} E_{a,b} \\
+E(grp_i,grp_j) = \sum_{a \in grp_i} \sum_{b \in grp_j} E_{a,b} \\
 \end{equation}
-avec $E(grp_i)$ l'énergie du groupe $grp_i$, $E(grp_i,grp_j)$ l'énergie d'interaction entre les groupes $grp_i$ et $grp_j$, $E_a$ l'énergie propre du résidu à la position $a$ et $E_{a,b}$ l'énergie d'interaction entre les rotamères aux positions $a$ et $b$. Il est possible de visualiser les énergies de groupes sur la matrice d'énergies, voir \ref{fig:matrix_grp}. Les contributions à l'énergie d'un groupe se situent dans un carré sur la diagonale de la matrice et les contributions à l'énergie d'interaction entre deux groupes se situent dans un rectangle hors de la diagonale.
+avec $E(grp_i)$ l'énergie du groupe $grp_i$, $E(grp_i,grp_j)$ l'énergie d'interaction entre les groupes $grp_i$ et $grp_j$, $E_a$ l'énergie propre du résidu à la position $a$ et $E_{a,b}$ l'énergie d'interaction entre les rotamères aux positions $a$ et $b$. Il est possible de visualiser les énergies de groupes sur la matrice d'énergies, figure \ref{fig:matrix_grp}. Les contributions à l'énergie d'un groupe se situent dans un carré sur la diagonale de la matrice et les contributions à l'énergie d'interaction entre deux groupes se situent dans un rectangle hors de la diagonale.
 
 
    \begin{figure}[!htbp]
@@ -338,11 +328,11 @@ avec $E(grp_i)$ l'énergie du groupe $grp_i$, $E(grp_i,grp_j)$ l'énergie d'inte
 
 \subsubsection{Déclaration de la fonction de score}
 \label{sub:score}
-Il est alors possible d'introduire une nouvelle matrice qui rassemble les énergies des groupes et les énergies d'interaction entre les groupes, voir la figure \ref{fig:group_matrix}. Dans cette petite matrice, l'énergie propre d'un groupe est un élément de la diagonale, celle d'une interaction entre groupes, un élément hors de la diagonale. La fonction de score peut se définir alors comme une combinaison linéaire des éléments de cette matrice. Pour cela, il fait utiliser la balise  \verb!<Optimization_Configuration>!:\\
+Il est alors possible d'introduire une nouvelle matrice qui rassemble les énergies des groupes et les énergies d'interaction entre les groupes, voir la figure \ref{fig:matrix_grp}. Dans cette petite matrice, l'énergie propre d'un groupe est un élément de la diagonale, celle d'une interaction entre groupes, un élément hors de la diagonale. La fonction de score peut se définir alors comme une combinaison linéaire des éléments de cette matrice. Pour cela, il fait utiliser la balise  \verb!<Optimization_Configuration>!:\\
 \verb!<Optimization_Configuration>! \\
 \verb!m(0.2grp1+0.2grp2+0.3grp2~grp3-0.3grp2~grp4)! \\
 \verb!</Optimization_Configuration>! \\
-ici la notation de l'énergie d'interaction entre deux groupes \verb!grp2! et \verb!grp3! est \verb!grp2~grp3! et l'énergie propre du groupe \verb!grp1! est simplement \verb!grp1!. Les nombres sont des pondérations des énergies. La notation \verb!m(E)! indique que la fonction de score demandée est une minimisation de la somme déclarée entre les parenthèses. Cela signifie que pour deux séquences-conformations A et B, A est meilleure que B si $E(A) < E(B)$. Cette convention intervient dans l'exploration MSD. Il est également possible d'utiliser \verb!t(...)! pour indiquer une fonction de seuil:\\
+Ici la notation de l'énergie d'interaction entre deux groupes \verb!grp2! et \verb!grp3! est \verb!grp2~grp3! et l'énergie propre du groupe \verb!grp1! est simplement \verb!grp1!. Les nombres sont des pondérations des énergies. La notation \verb!m(E)! indique que la fonction de score demandée est une minimisation de la somme déclarée entre les parenthèses. Cela signifie que pour deux séquences-conformations A et B, A est meilleure que B si $E(A) < E(B)$. Cette convention intervient dans l'exploration MSD. Il est également possible d'utiliser \verb!t(...)! pour indiquer une fonction de seuil:\\
 \verb!<Optimization_Configuration>! \\
 \verb!t(grp1)<125.8! \\
 \verb!</Optimization_Configuration>! \\
@@ -369,7 +359,7 @@ Dans le mode MONTECARLO (algorithme MC et REMC), sont produits un fichier de con
        \includegraphics[width=14cm]{figure/output.png} &
      \end{tabular}
      
-     \caption{Les fichiers en sortie de proteus, en haut pour le mode MONTECARLO, en bas pour le mode POSTPROCESS}
+     \caption{\textbf{Les fichiers en sortie de proteus} en haut pour le mode MONTECARLO, en bas pour le mode POSTPROCESS}
 \label{proteusoutput}
    \end{figure}
 
@@ -378,12 +368,9 @@ Dans les fichiers précédents, les séquences-conformations sont présentées s
 \section{Outils d'analyse de séquences}
 
 Nous présentons maintenant, les outils d'analyse que nous utilisons pour examiner la qualité de nos résultats.
-
 \subsection{Superfamily/SCOP}
 \label{subsection:Superfamily}
-
 Superfamily \cite{Madera04} est un ensemble composé: 
-
 \begin{itemize}
 \item d'une base de données de modèles de Markov cachés, où chaque modèle représente une structure 3D d'un domaine de la classification SCOP \cite{Andreeva04}.
 \item d'une série de scripts qui annotent les séquences données en entrée. Ici, nous utilisons uniquement l'association de chaque séquence au modèle 3D SCOP le plus vraisemblable. 
@@ -397,16 +384,13 @@ Soient $S$ et $N$ deux séquences d'acides aminés de même longueur $l$. Le Tau
 Id(S,N) =\frac{1}{l}\sum_{1<i<l} \mathds{1}(s_i,n_i)} \times 100
 \end{equation}
 avec $s_i$ et $n_i$ l'acide animé en $i$ de $S$ et de $N$ respectivement, et $\mathds{1}(x,y)$ la fonction qui vaut $1$ lorsque $x=y$ et $0$ sinon. 
-
 \subsection{Taux d'identité par position}
 \label{TauxID}
-Le taux d'identité d'un alignement $A_S$ à la position i par rapport à une séquence N de même longueur se définit comme:
+Le taux d'identité d'un alignement $A_S$ à la position i par rapport à une séquence $N$ de même longueur se définit comme:
 \begin{equation}
 Id(A_{S},i) = \frac{1}{m}\sum_{1<j<m} \mathds{1}(s_i^j,n_i)} \times 100
 \end{equation}
 avec $m$ le nombre de séquences de $A_S$. Ce taux d'identité donne une mesure de la ressemblance entre un alignement et une séquence. Cela nous permet de comparer nos séquences calculées à la séquence native. Mais cela n'est pas notre seul objectif. Nous voulons également les comparer à l'ensemble des séquences naturelles de la famille de la native.  
-
-
 \subsection{Alignements Pfam}
 \label{subsection:Align_Pfam}
 La base de données Pfam (Protein families database) \cite{Punta12,Finn14} regroupe les domaines protéiques connus en familles. Chaque famille est représentée par des alignements multiples de séquences et des profils de modèles de Markov cachés. Dans la suite, nous utilisons l'alignement \og seed \fg qui est un petit alignement de séquences naturelles représentatives. Par exemple, il contient 45 séquences pour la famille PDZ. Nous utilisons également l'alignement \og RP55 \fg, qui se base sur l'alignement \og seed \fg et augmente le nombre de séquences grâce à des  modèles de Markov cachés construits à partir de \og seed \fg, jusqu'à contenir 12 255 séquences protéiques naturelles pour la famille PDZ.
