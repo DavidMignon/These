@@ -14,12 +14,12 @@ A level-1 auxiliary file: developpements/chapter.aux
 A level-1 auxiliary file: comparaisons/chapter.aux
 A level-1 auxiliary file: annexe_posi.aux
 A level-1 auxiliary file: PDZ/chapter.aux
-White space in argument---line 131 of file PDZ/chapter.aux
+White space in argument---line 133 of file PDZ/chapter.aux
  : \citation{\protect
  :                    \T1\textbraceleft }
 I'm skipping whatever remains of this command
 Case mismatch error between cite keys mignon17 and Mignon17
----line 139 of file PDZ/chapter.aux
+---line 141 of file PDZ/chapter.aux
  : \citation{mignon17
  :                   }
 I'm skipping whatever remains of this command
@@ -34,21 +34,20 @@ Repeated entry---line 861 of file biblio.bib
  : @article{Dantas03
  :                  ,
 I'm skipping whatever remains of this entry
-You're missing a field part---line 1588 of file biblio.bib
+You're missing a field part---line 1600 of file biblio.bib
  : 
  : }
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Repeated entry---line 2218 of file biblio.bib
+Repeated entry---line 2230 of file biblio.bib
  : @article{Launay07
  :                  ,
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 3757 of file biblio.bib
+I was expecting a `,' or a `}'---line 3769 of file biblio.bib
  : 
  : Author    = {Swendsen R. H. and Wang J. S.},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "Brünger92"
 Warning--I didn't find a database entry for "Kuhlman06"
 Warning--I didn't find a database entry for "Schmidt10"
 Warning--I didn't find a database entry for "Druart15"
@@ -66,9 +65,6 @@ Warning--I didn't find a database entry for "Ng11"
 Warning--I didn't find a database entry for "Lucore15"
 Warning--I didn't find a database entry for "Hallen15"
 Warning--I didn't find a database entry for "Simonson15"
-Warning--I didn't find a database entry for "Brünger"
-Warning--I didn't find a database entry for "Modeller"
-Warning--I didn't find a database entry for "Baker06b"
 Warning--I didn't find a database entry for "74"
 Warning--I didn't find a database entry for "76"
 Warning--I didn't find a database entry for "30"
@@ -527,45 +523,48 @@ Too many commas in name 1 of "Kleinman CL, Rodrigue N, Bonnard C, Philippe H, La
 while executing---line 1324 of file mystyle.bst
 Too many commas in name 1 of "Druart K, Palmai Z, Omarjee E, Simonson T" for entry Druart16b
 while executing---line 1324 of file mystyle.bst
-You've used 114 entries,
+Too many commas in name 1 of "Aleksandrov A, Polydorides S, Archontis G, Simonson T" for entry Aleksandrov10
+while executing---line 1324 of file mystyle.bst
+Warning--empty author in Eswar06
+You've used 116 entries,
             2427 wiz_defined-function locations,
-            1339 strings with 24642 characters,
-and the built_in function-call counts, 63433 in all, are:
-= -- 5688
-> -- 597
-< -- 216
-+ -- 275
-- -- 161
-* -- 3058
-:= -- 5849
-add.period$ -- 337
-call.type$ -- 114
-change.case$ -- 110
+            1342 strings with 24893 characters,
+and the built_in function-call counts, 64616 in all, are:
+= -- 5801
+> -- 602
+< -- 220
++ -- 278
+- -- 162
+* -- 3121
+:= -- 5950
+add.period$ -- 343
+call.type$ -- 116
+change.case$ -- 112
 chr.to.int$ -- 0
-cite$ -- 122
-duplicate$ -- 6465
-empty$ -- 5887
-format.name$ -- 187
-if$ -- 15462
+cite$ -- 125
+duplicate$ -- 6579
+empty$ -- 5998
+format.name$ -- 188
+if$ -- 15752
 int.to.chr$ -- 0
-int.to.str$ -- 114
-missing$ -- 1061
-newline$ -- 575
-num.names$ -- 113
-pop$ -- 1792
+int.to.str$ -- 116
+missing$ -- 1078
+newline$ -- 585
+num.names$ -- 114
+pop$ -- 1821
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 3520
+skip$ -- 3589
 stack$ -- 0
-substring$ -- 4971
-swap$ -- 4844
-text.length$ -- 216
+substring$ -- 5087
+swap$ -- 4930
+text.length$ -- 220
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 8
-while$ -- 329
-width$ -- 117
-write$ -- 1244
-(There were 229 error messages)
+warning$ -- 9
+while$ -- 335
+width$ -- 119
+write$ -- 1265
+(There were 230 error messages)

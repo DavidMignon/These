@@ -70,7 +70,7 @@ Pour rendre ce terme décomposable, nous utilisons la méthode de Street et al. 
 Dans le terme GB de l'énergie de solvatation, le rayon de solvatation $b_i$ approxime la distance de l'atome $i$ à la surface de la protéine. C'est une fonction de la position de tous les atomes de la protéine. Ce rayon n'est donc pas décomposable par paire. Pour qu'il le devienne, Proteus implémente l'approximation  NEA qui est présentée à  la section \vref{NEA}. Dans cette approche, le rayon de solvatation $b_i$ de chaque groupe (backbone, chaîne latérale ou ligand) est calculé une fois pour toutes à partir de la structure native.
 
 \subsection{\og Fluctuating Dielectric Boundary\fg (FDB)}
-\label{FDB}
+\label{sec:FDB}
 Une nouvelle approximation du GB a récemment été introduite dans Proteus \cite{Villa17}, toujours avec l'objectif, de transformer ce terme en en terme décomposable par paires. Elle exploite le fait que dans le GB, l'environnement diélectrique d'une paire de résidus est complètement caractérisé pour un petit ensemble de rayons de solvatation d'atome. Ces rayons sont eux-mêmes sommes de paires sur les atomes de la protéine \cite{Hawkins95}, \cite{Schaefer96}. La méthode s'appelle Fluctuating Dielectric Boundary\fg ou FDB et comporte deux étapes.
 
 La première consiste à définir un rayon de solvatation $B_I$ pour chaque résidu $I$ de la protéine. On commence par définir une énergie propre à chaque paire de résidus $I$, $J$ par la somme suivante:
@@ -131,7 +131,7 @@ avec $E(t_i)$ l'énergie du type d'acide aminé $t_i$. Ces énergies sont prises
 \label{sub:matrix}
 Dans la suite, on appelle position active, une position pour laquelle tous les types d'acides et tous les rotamères de chaque type d'acide aminé sont autorisés au cours de l'exploration. Lorsqu'une position n'est pas active, le type de l'acide aminé de la position est fixé. Si les rotamères de la chaîne latérale ne sont pas fixés, on dit que la position est inactive. Si la position n'est pas active et qu'en plus la conformation est fixée, on dit que la position est gelée.
 
-Le calcul de la matrice d'énergie est exécuté à l'aide du programme X-plor \cite{Xplor}. À partir d'un fichier PDB, une série de scripts X-plor commence par préparer le système. Il peut contenir un ligand. Le déroulement est le suivant:
+Le calcul de la matrice d'énergie est exécuté à l'aide du programme Xplor \cite{Xplor}. À partir d'un fichier PDB, une série de scripts Xplor commence par préparer le système. Il peut contenir un ligand. Le déroulement est le suivant:
 
 \begin{enumerate}[leftmargin=*]
 \item L'utilisateur configure l'exécution. Il détermine:
@@ -369,7 +369,7 @@ Dans les fichiers précédents, les séquences-conformations sont présentées s
 
 Nous présentons maintenant, les outils d'analyse que nous utilisons pour examiner la qualité de nos résultats.
 \subsection{Superfamily/SCOP}
-\label{subsection:Superfamily}
+\label{sec:Superfamily}
 Superfamily \cite{Madera04} est un ensemble composé: 
 \begin{itemize}
 \item d'une base de données de modèles de Markov cachés, où chaque modèle représente une structure 3D d'un domaine de la classification SCOP \cite{Andreeva04}.
@@ -392,7 +392,7 @@ Id(A_{S},i) = \frac{1}{m}\sum_{1<j<m} \mathds{1}(s_i^j,n_i)} \times 100
 \end{equation}
 avec $m$ le nombre de séquences de $A_S$. Ce taux d'identité donne une mesure de la ressemblance entre un alignement et une séquence. Cela nous permet de comparer nos séquences calculées à la séquence native. Mais cela n'est pas notre seul objectif. Nous voulons également les comparer à l'ensemble des séquences naturelles de la famille de la native.  
 \subsection{Alignements Pfam}
-\label{subsection:Align_Pfam}
+\label{sec:Align_Pfam}
 La base de données Pfam (Protein families database) \cite{Punta12,Finn14} regroupe les domaines protéiques connus en familles. Chaque famille est représentée par des alignements multiples de séquences et des profils de modèles de Markov cachés. Dans la suite, nous utilisons l'alignement \og seed \fg qui est un petit alignement de séquences naturelles représentatives. Par exemple, il contient 45 séquences pour la famille PDZ. Nous utilisons également l'alignement \og RP55 \fg, qui se base sur l'alignement \og seed \fg et augmente le nombre de séquences grâce à des  modèles de Markov cachés construits à partir de \og seed \fg, jusqu'à contenir 12 255 séquences protéiques naturelles pour la famille PDZ.
 
 \subsection{Score BLOSUM}
@@ -413,7 +413,7 @@ Afin de calculer un score de similarité d'un ensemble de séquences CPD par rap
 \end{enumerate}
 
 \subsection{Entropie par position}
-\label{subsection:Entropie}
+\label{sec:Entropie}
 Pour comparer la diversité des séquences CPD avec la diversité des séquences naturelles, nous utilisons l'entropie par position \cite{DurbinBK}, à partir de la formule:
 
 \begin{equation} \label{eq:entropy}
