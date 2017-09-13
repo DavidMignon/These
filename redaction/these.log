@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.6.23)  12 SEP 2017 14:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.6.23)  13 SEP 2017 18:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -942,62 +942,8 @@ File: pppdftex.def 2017/01/14 v0.5h Pdfpages driver for pdfTeX (AM)
 \AM@templatesizebox=\box66
 ) (./these.aux
 (./merci.aux) (./dedicace.aux) (./glossaire.aux) (./intro.aux) (./contexte.aux)
-(./CPD/chapter.aux
-
-LaTeX Warning: Label `eq:GB' multiply defined.
-
-) (./methodes/chapter.aux
-! Missing \endcsname inserted.
-<to be read again> 
-                   \protect 
-l.98 ...acements Monte Carlo}{subsection.2.5.1}{}}
-                                                  
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.98 ...acements Monte Carlo}{subsection.2.5.1}{}}
-                                                  
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 98.
-(/usr/share/texmf/tex/latex/lm/t1lmr.fd
-File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-
-LaTeX Warning: Reference `para:voisin' on page 1 undefined on input line 98.
-
-! Extra \endcsname.
-\@ifundefined ...dafter \ifx \csname #1\endcsname 
-                                                  \relax \expandafter \@firs...
-l.98 ...acements Monte Carlo}{subsection.2.5.1}{}}
-                                                  
-I'm ignoring this, since I wasn't doing a \csname.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \protect 
-l.98 ...acements Monte Carlo}{subsection.2.5.1}{}}
-                                                  
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Extra \endcsname.
-\@namedef ...xpandafter \def \csname #1\endcsname 
-                                                  
-l.98 ...acements Monte Carlo}{subsection.2.5.1}{}}
-                                                  
-I'm ignoring this, since I wasn't doing a \csname.
-
-) (./annexe_proteus.aux) (./developpements/chapter.aux)
-(./comparaisons/chapter.aux
+(./CPD/chapter.aux) (./methodes/chapter.aux) (./annexe_proteus.aux)
+(./developpements/chapter.aux) (./comparaisons/chapter.aux
 
 LaTeX Warning: Label `eq:entropy' multiply defined.
 
@@ -1026,12 +972,6 @@ LaTeX Warning: Label `eq:unfolded' multiply defined.
 
 LaTeX Warning: Label `eq:energy' multiply defined.
 
-
-LaTeX Warning: Label `enumMeth' multiply defined.
-
-
-LaTeX Warning: Label `logo:corePDZ' multiply defined.
-
 ) (./conc.aux) (./resume.aux)
 
 ! Package natbib Error: Bibliography not compatible with author-year citations.
@@ -1043,7 +983,7 @@ See the natbib package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.168 ...and\NAT@force@numbers{}\NAT@force@numbers
+l.172 ...and\NAT@force@numbers{}\NAT@force@numbers
                                                   
 Check the bibliography entries for non-compliant syntax,
 or select author-year BibTeX style, e.g. plainnat
@@ -1065,7 +1005,10 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 263.
 LaTeX Font Info:    ... okay on input line 263.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 263.
 LaTeX Font Info:    ... okay on input line 263.
-
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 263.
+ (/usr/share/texmf/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1120,24 +1063,6 @@ LaTeX Info: Redefining \dots on input line 263.
 LaTeX Info: Redefining \up on input line 263.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-Overfull \hbox (1547.44563pt too wide) in paragraph at lines 98--13
-[][]\T1/cmr/m/n/12 2.5.144Les d�-pla-ce-ments Monte Car-lo-sub-sec-tion.2.5.1  
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                  [][][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 98--13
-
- []
-
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count153
 \scratchdimen=\dimen173
@@ -1480,7 +1405,7 @@ in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
 [15 <./CPD/figure/surface.png>] [16 <./CPD/figure/ecrantage.png>] [17]
-<./CPD/figure/rayon_Born.png, id=1255, 496.10344pt x 606.76688pt>
+<./CPD/figure/rayon_Born.png, id=1256, 496.10344pt x 606.76688pt>
 File: ./CPD/figure/rayon_Born.png Graphic file (type png)
 
 <use ./CPD/figure/rayon_Born.png>
@@ -1496,13 +1421,14 @@ You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
+[18 <./CPD/figure/rayon_Born.png>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 318.
+(hyperref)                than one, level fixed on input line 321.
 
-[18 <./CPD/figure/rayon_Born.png>] [19]
+[19]
 ! Extra }, or forgotten $.
-l.345 ...{\sum_{l_i=1}^{N_i} \exp(-\beta E(l_i))}}
+l.346 ...{\sum_{l_i=1}^{N_i} \exp(-\beta E(l_i))}}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1511,7 +1437,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 372--376
+Underfull \hbox (badness 10000) in paragraph at lines 369--373
 
  []
 
@@ -1519,110 +1445,83 @@ Underfull \hbox (badness 10000) in paragraph at lines 372--376
 File: ./CPD/figure/DEE.png Graphic file (type png)
 
 <use ./CPD/figure/DEE.png>
-Package pdftex.def Info: ./CPD/figure/DEE.png used on input line 390.
+Package pdftex.def Info: ./CPD/figure/DEE.png used on input line 386.
 (pdftex.def)             Requested size: 227.62204pt x 152.89143pt.
 
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.390 ...ludegraphics[width=8cm]{figure/DEE.png} &
+l.386 ...ludegraphics[width=8cm]{figure/DEE.png} &
                                                   
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
 [22 <./CPD/figure/DEE.png>] [23]
-<./CPD/figure/DFBB.png, id=1319, 173.2071pt x 110.5731pt>
+<./CPD/figure/DFBB.png, id=1320, 173.2071pt x 110.5731pt>
 File: ./CPD/figure/DFBB.png Graphic file (type png)
 
 <use ./CPD/figure/DFBB.png>
-Package pdftex.def Info: ./CPD/figure/DFBB.png used on input line 423.
+Package pdftex.def Info: ./CPD/figure/DFBB.png used on input line 419.
 (pdftex.def)             Requested size: 341.43306pt x 217.98886pt.
  [24 <./CPD/figure/DFBB.png>]
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.435 U
-       n exemple inspiré de la thèse de Seydou Traoré est présenté à  ...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 <./CPD/figure/coherences_local.png, id=1328, 861.4584pt x 557.6835pt>
 File: ./CPD/figure/coherences_local.png Graphic file (type png)
 
 <use ./CPD/figure/coherences_local.png>
 Package pdftex.def Info: ./CPD/figure/coherences_local.png used on input line 4
-40.
+39.
 (pdftex.def)             Requested size: 398.33858pt x 257.87352pt.
- [25 <./CPD/figure/coherences_local.png>]
-Overfull \hbox (8.48373pt too wide) in paragraph at lines 451--452
+
+Overfull \hbox (8.48373pt too wide) in paragraph at lines 450--451
 []\T1/lmr/m/n/12 (-20) Un cycle heu-ris-tique se d�-roule de la fa-�on sui-vant
 e. Au d�-part, une s�quence-conformation
  []
 
-[26] <./CPD/figure/algo_genetique.png, id=1359, 423.5022pt x 906.0249pt>
+[25] [26 <./CPD/figure/coherences_local.png>]
+<./CPD/figure/algo_genetique.png, id=1350, 423.5022pt x 906.0249pt>
 File: ./CPD/figure/algo_genetique.png Graphic file (type png)
 
 <use ./CPD/figure/algo_genetique.png>
-Package pdftex.def Info: ./CPD/figure/algo_genetique.png used on input line 480
+Package pdftex.def Info: ./CPD/figure/algo_genetique.png used on input line 479
 .
 (pdftex.def)             Requested size: 142.26378pt x 304.35316pt.
- [27 <./CPD/figure/algo_genetique.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 502--504
+ [27] [28 <./CPD/figure/algo_genetique.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 501--503
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 504--506
-
- []
-
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 509--511
+Underfull \hbox (badness 10000) in paragraph at lines 503--505
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 511--513
+Underfull \hbox (badness 10000) in paragraph at lines 508--510
 
  []
 
-[29]
 
-! LaTeX Error: There's no line here to end.
+Underfull \hbox (badness 10000) in paragraph at lines 510--512
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.543 O
-       n a alors, le résultat suivant:
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+ []
 
-[30] [31] [32]
+[29] [30] [31] [32]
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.663 \caption
+l.662 \caption
               {L'algorithme REMC}\label{algoREMC}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 663.
+LaTeX Warning: Command \' invalid in math mode on input line 662.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.663 \caption
+l.662 \caption
               {L'algorithme REMC}\label{algoREMC}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1630,7 +1529,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.663 \caption
+l.662 \caption
               {L'algorithme REMC}\label{algoREMC}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1638,7 +1537,7 @@ you left one out. Proceed, with fingers crossed.
 ! Extra }, or forgotten $.
 \algocf@Vline ... }\vtop {\algocf@addskiptotal #1}
                                                   \Hlne }}\vskip \skiphlne \...
-l.663 \caption
+l.662 \caption
               {L'algorithme REMC}\label{algoREMC}
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1649,7 +1548,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.663 \caption
+l.662 \caption
               {L'algorithme REMC}\label{algoREMC}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1657,7 +1556,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.663 \caption
+l.662 \caption
               {L'algorithme REMC}\label{algoREMC}
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1676,7 +1575,7 @@ Chapitre 2.
 [35
 
 
-] <./methodes/figure/cycleThermo.png, id=1458, 381.49081pt x 278.4172pt>
+] <./methodes/figure/cycleThermo.png, id=1459, 381.49081pt x 278.4172pt>
 File: ./methodes/figure/cycleThermo.png Graphic file (type png)
 
 <use ./methodes/figure/cycleThermo.png>
@@ -1684,7 +1583,7 @@ Package pdftex.def Info: ./methodes/figure/cycleThermo.png used on input line 2
 3.
 (pdftex.def)             Requested size: 142.26378pt x 103.82417pt.
  [36 <./methodes/figure/cycleThermo.png>] <./methodes/figure/intersurface.png, 
-id=1476, 960.68pt x 850.45pt>
+id=1477, 960.68pt x 850.45pt>
 File: ./methodes/figure/intersurface.png Graphic file (type png)
 
 <use ./methodes/figure/intersurface.png>
@@ -1692,67 +1591,6 @@ Package pdftex.def Info: ./methodes/figure/intersurface.png used on input line
 57.
 (pdftex.def)             Requested size: 227.62204pt x 201.50383pt.
  [37] [38 <./methodes/figure/intersurface.png>]
-! Missing { inserted.
-<to be read again> 
-                   \begingroup 
-l.93 ...ossible de définir la contribution $g_\IJ
-                                                  $ de la paire de résidus ...
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-
-LaTeX Warning: Command \IJ invalid in math mode on input line 93.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.93 ...ssible de définir la contribution $g_\IJ$
-                                                   de la paire de résidus $...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing { inserted.
-<to be read again> 
-                   \begingroup 
-l.98 ...n peut noter qu'aux distances fixes $r_\ij
-                                                  $, et avec $B=B_IBJ$, $g_{...
-A left brace was mandatory here, so I've put one in.
-You might want to delete and/or insert some corrections
-so that I will find a matching right brace soon.
-(If you're confused by all this, try typing `I}' now.)
-
-
-LaTeX Warning: Command \ij invalid in math mode on input line 98.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.98 ... peut noter qu'aux distances fixes $r_\ij$
-                                                  , et avec $B=B_IBJ$, $g_{I...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-! Package amsmath Error: Multiple \label's: label 'eq:approx' will be lost.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.101 ...{IJ} B^{-1/2} + c_5^{IJ} B^{-3/2}  \label
-                                                  {eq:approx}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 ! Missing { inserted.
 <to be read again> 
                    \begingroup 
@@ -1777,14 +1615,14 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-<./methodes/figure/matrice.png, id=1506, 508.299pt x 215.204pt>
+<./methodes/figure/matrice.png, id=1507, 508.299pt x 215.204pt>
 File: ./methodes/figure/matrice.png Graphic file (type png)
 
 <use ./methodes/figure/matrice.png>
 Package pdftex.def Info: ./methodes/figure/matrice.png used on input line 113.
 (pdftex.def)             Requested size: 426.79134pt x 180.69788pt.
  [39] [40 <./methodes/figure/matrice.png>]
-[41] <./methodes/figure/inputener.png, id=1544, 746.79pt x 329.23pt>
+[41] <./methodes/figure/inputener.png, id=1545, 746.79pt x 329.23pt>
 File: ./methodes/figure/inputener.png Graphic file (type png)
 
 <use ./methodes/figure/inputener.png>
@@ -1829,7 +1667,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<./methodes/figure/inputenerGB.png, id=1545, 404.712pt x 188.705pt>
+<./methodes/figure/inputenerGB.png, id=1546, 404.712pt x 188.705pt>
 File: ./methodes/figure/inputenerGB.png Graphic file (type png)
 
 <use ./methodes/figure/inputenerGB.png>
@@ -1902,102 +1740,50 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             See the microtype manual for details.
 
 ! Double subscript.
-l.247  | E(r_P_
-               i_,r_p_j) | > s_{vois}
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-! Double subscript.
-l.247  | E(r_P_i_
-                 ,r_p_j) | > s_{vois}
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-! Double subscript.
-l.247  | E(r_P_i_,r_p_
-                      j) | > s_{vois}
+l.247  | E(r_{P_i}_
+                   ,r_{p_j}) | > s_{vois}
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 [44] [45]
-<./methodes/figure/cycleThermoLigand.png, id=1577, 434.80475pt x 254.12976pt>
+<./methodes/figure/cycleThermoLigand.png, id=1578, 434.80475pt x 254.12976pt>
 File: ./methodes/figure/cycleThermoLigand.png Graphic file (type png)
 
 <use ./methodes/figure/cycleThermoLigand.png>
 Package pdftex.def Info: ./methodes/figure/cycleThermoLigand.png used on input 
 line 273.
 (pdftex.def)             Requested size: 142.26378pt x 83.14958pt.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.273 ...idth=5cm]{figure/cycleThermoLigand.png} &
-                                                  
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-[46 <./methodes/figure/cycleThermoLigand.png>]
-
-! Package inputenc Error: Unicode char − (U+2212)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.285 \verb!grp1 1−
-                     3! \\
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[47] <./methodes/figure/grp_matrix.png, id=1593, 563.706pt x 192.72pt>
+ [46 <./methodes/figure/cycleThermoLigand.png>] [47]
+<./methodes/figure/grp_matrix.png, id=1594, 563.706pt x 192.72pt>
 File: ./methodes/figure/grp_matrix.png Graphic file (type png)
 
 <use ./methodes/figure/grp_matrix.png>
 Package pdftex.def Info: ./methodes/figure/grp_matrix.png used on input line 32
-1.
+0.
 (pdftex.def)             Requested size: 341.43306pt x 116.73268pt.
 
-<./methodes/figure/group_matrix.png, id=1595, 301.125pt x 132.495pt>
+<./methodes/figure/group_matrix.png, id=1596, 301.125pt x 132.495pt>
 File: ./methodes/figure/group_matrix.png Graphic file (type png)
 
 <use ./methodes/figure/group_matrix.png>
 Package pdftex.def Info: ./methodes/figure/group_matrix.png used on input line 
-343.
+342.
 (pdftex.def)             Requested size: 142.26378pt x 62.59814pt.
- [48 <./methodes/figure/grp_matrix.png>] <./methodes/figure/output.png, id=1604
+ [48 <./methodes/figure/grp_matrix.png>] <./methodes/figure/output.png, id=1605
 , 712.45483pt x 381.00966pt>
 File: ./methodes/figure/output.png Graphic file (type png)
 
 <use ./methodes/figure/output.png>
-Package pdftex.def Info: ./methodes/figure/output.png used on input line 359.
+Package pdftex.def Info: ./methodes/figure/output.png used on input line 358.
 (pdftex.def)             Requested size: 398.33858pt x 213.02675pt.
  [49 <./methodes/figure/group_matrix.png>]
 [50 <./methodes/figure/output.png>]
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 384.
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 383.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-)
-! Extra }, or forgotten $.
-l.384 ...ac{1}{l}\sum_{1<i<l} \mathds{1}(s_i,n_i)}
-                                                   \times 100
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Extra }, or forgotten $.
-l.391 ...{1}{m}\sum_{1<j<m} \mathds{1}(s_i^j,n_i)}
-                                                   \times 100
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-[51] [52] [53]) [54
+) [51] [52]
+[53]) [54
 
 
 
@@ -2005,7 +1791,7 @@ deleted material, e.g., by typing `I$}'.
 \openout2 = `annexe_proteus.aux'.
 
  (./annexe_proteus.tex
-<./methodes/figure/structures_physique.png, id=1665, 602.7318pt x 754.4988pt>
+<./methodes/figure/structures_physique.png, id=1666, 602.7318pt x 754.4988pt>
 File: ./methodes/figure/structures_physique.png Graphic file (type png)
 
 <use ./methodes/figure/structures_physique.png>
@@ -2013,7 +1799,7 @@ Package pdftex.def Info: ./methodes/figure/structures_physique.png used on inpu
 t line 8.
 (pdftex.def)             Requested size: 369.88582pt x 463.02966pt.
 
-<./methodes/figure/structures_modele_logique.png, id=1668, 736.1904pt x 537.207
+<./methodes/figure/structures_modele_logique.png, id=1669, 736.1904pt x 537.207
 pt>
 File: ./methodes/figure/structures_modele_logique.png Graphic file (type png)
  <use ./methodes/figure/structures_modele_logique.png>
@@ -2021,7 +1807,7 @@ Package pdftex.def Info: ./methodes/figure/structures_modele_logique.png used o
 n input line 19.
 (pdftex.def)             Requested size: 426.79134pt x 311.43272pt.
 
-<./methodes/figure/structures_dynamiques.png, id=1671, 755.9442pt x 654.7662pt>
+<./methodes/figure/structures_dynamiques.png, id=1672, 755.9442pt x 654.7662pt>
 File: ./methodes/figure/structures_dynamiques.png Graphic file (type png)
 <use ./methodes/figure/structures_dynamiques.png>
 Package pdftex.def Info: ./methodes/figure/structures_dynamiques.png used on in
@@ -2037,7 +1823,7 @@ tures_modele_logique.png>] [58 <./methodes/figure/structures_dynamiques.png>]
 
 (./developpements/chapter.tex
 Chapitre 3.
-<./developpements/figure/PDB.png, id=1693, 2233.85385pt x 1057.39304pt>
+<./developpements/figure/PDB.png, id=1694, 2233.85385pt x 1057.39304pt>
 File: ./developpements/figure/PDB.png Graphic file (type png)
 
 <use ./developpements/figure/PDB.png>
@@ -2055,7 +1841,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--33
  []
 
 [60 <./developpements/figure/PDB.png>]
-<./developpements/figure/openMP.png, id=1705, 4514.466pt x 3311.572pt>
+<./developpements/figure/openMP.png, id=1706, 4514.466pt x 3311.572pt>
 File: ./developpements/figure/openMP.png Graphic file (type png)
 
 <use ./developpements/figure/openMP.png>
@@ -2100,7 +1886,7 @@ I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-<./developpements/figure/re8_Ttraj.png, id=1720, 578.16pt x 433.62pt>
+<./developpements/figure/re8_Ttraj.png, id=1721, 578.16pt x 433.62pt>
 File: ./developpements/figure/re8_Ttraj.png Graphic file (type png)
 
 <use ./developpements/figure/re8_Ttraj.png>
@@ -2108,7 +1894,7 @@ Package pdftex.def Info: ./developpements/figure/re8_Ttraj.png used on input li
 ne 71.
 (pdftex.def)             Requested size: 341.43306pt x 256.07178pt.
 
-<./developpements/figure/re8_distri.png, id=1721, 578.16pt x 433.62pt>
+<./developpements/figure/re8_distri.png, id=1722, 578.16pt x 433.62pt>
 File: ./developpements/figure/re8_distri.png Graphic file (type png)
 
 <use ./developpements/figure/re8_distri.png>
@@ -2217,7 +2003,7 @@ Package natbib Warning: Citation `Schmidt10' on page 74 undefined on input line
 Package natbib Warning: Citation `Murphy02' on page 76 undefined on input line 
 337.
 
-[76] <./comparaisons/figure/align0.png, id=1884, 1666.18484pt x 1421.5509pt>
+[76] <./comparaisons/figure/align0.png, id=1885, 1666.18484pt x 1421.5509pt>
 File: ./comparaisons/figure/align0.png Graphic file (type png)
 
 <use ./comparaisons/figure/align0.png>
@@ -2237,7 +2023,7 @@ Package natbib Warning: Citation `Schmidt10' on page 77 undefined on input line
 LaTeX Warning: Reference `fig:logo' on page 77 undefined on input line 387.
 
 [77 <./comparaisons/figure/align0.png>]
-<./comparaisons/figure/2BYG_bestall_core3D.pdf, id=1894, 796.9775pt x 597.23125
+<./comparaisons/figure/2BYG_bestall_core3D.pdf, id=1895, 796.9775pt x 597.23125
 pt>
 File: ./comparaisons/figure/2BYG_bestall_core3D.pdf Graphic file (type pdf)
  <use ./comparaisons/figure/2BYG_bestall_core3D.pdf>
@@ -2254,14 +2040,14 @@ LaTeX Warning: Reference `fig:3Dstruct' on page 78 undefined on input line 403.
 
 
 
-<./comparaisons/figure/1ABO_core_simil_byseq.png, id=1895, 578.16pt x 433.62pt>
+<./comparaisons/figure/1ABO_core_simil_byseq.png, id=1896, 578.16pt x 433.62pt>
 File: ./comparaisons/figure/1ABO_core_simil_byseq.png Graphic file (type png)
 <use ./comparaisons/figure/1ABO_core_simil_byseq.png>
 Package pdftex.def Info: ./comparaisons/figure/1ABO_core_simil_byseq.png used o
 n input line 409.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
 
-<./comparaisons/figure/1BM2_core_simil_byseq.png, id=1896, 578.16pt x 433.62pt>
+<./comparaisons/figure/1BM2_core_simil_byseq.png, id=1897, 578.16pt x 433.62pt>
 File: ./comparaisons/figure/1BM2_core_simil_byseq.png Graphic file (type png)
 <use ./comparaisons/figure/1BM2_core_simil_byseq.png>
 Package pdftex.def Info: ./comparaisons/figure/1BM2_core_simil_byseq.png used o
@@ -2274,7 +2060,7 @@ Overfull \hbox (8.2185pt too wide) in paragraph at lines 429--443
 
 [79 <./comparaisons/figure/2BYG_bestall_core3D.pdf>] [80 <./comparaisons/figure
 /1ABO_core_simil_byseq.png> <./comparaisons/figure/1BM2_core_simil_byseq.png>]
-<./comparaisons/figure/speed.png, id=1919, 1269.0612pt x 1003.46895pt>
+<./comparaisons/figure/speed.png, id=1920, 1269.0612pt x 1003.46895pt>
 File: ./comparaisons/figure/speed.png Graphic file (type png)
 
 <use ./comparaisons/figure/speed.png>
@@ -2286,7 +2072,7 @@ Overfull \hbox (11.99997pt too wide) in paragraph at lines 468--478
  [][] 
  []
 
-<./comparaisons/figure/error.png, id=1922, 1231.11945pt x 848.4498pt>
+<./comparaisons/figure/error.png, id=1923, 1231.11945pt x 848.4498pt>
 File: ./comparaisons/figure/error.png Graphic file (type png)
 
 <use ./comparaisons/figure/error.png>
@@ -2329,7 +2115,7 @@ Package natbib Warning: Citation `Schmidt10' on page 88 undefined on input line
 Package natbib Warning: Citation `Schmidt10' on page 88 undefined on input line
  747.
 
-<./comparaisons/figure/1CKA_entropy_seqnb.png, id=1971, 578.16pt x 433.62pt>
+<./comparaisons/figure/1CKA_entropy_seqnb.png, id=1972, 578.16pt x 433.62pt>
 File: ./comparaisons/figure/1CKA_entropy_seqnb.png Graphic file (type png)
 
 <use ./comparaisons/figure/1CKA_entropy_seqnb.png>
@@ -2383,65 +2169,21 @@ Overfull \hbox (8.2185pt too wide) in paragraph at lines 839--853
 ])
 \openout2 = `annexe_posi.aux'.
 
- (./annexe_posi.tex
-
-LaTeX Warning: Reference `para:voisin' on page 95 undefined on input line 8.
-
-! Undefined control sequence.
-<recently read> \mathcla 
-                         
-l.8 ...t qu'un ensemble de $N$ positions $\mathcla
-                                                  {V}$ est un \og voisinage ...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \mathcla 
-                         
-l.8 ...ires de positions $(i$ et $j)$ de $\mathcla
-                                                  {V}$ sont voisines pour $s...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[95
+ (./annexe_posi.tex [95
 
 
 
 
 
 ]
-! Undefined control sequence.
-l.19 \item si $ s_{vois} \gep
-                              1 $ retour à l'étape 2 sinon arrêt.
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+
+LaTeX Warning: Float too large for page by 54.57841pt on input line 77.
 
 
-LaTeX Warning: Float too large for page by 54.57841pt on input line 80.
+LaTeX Warning: Float too large for page by 54.57841pt on input line 138.
 
 
-LaTeX Warning: Float too large for page by 54.57841pt on input line 141.
-
-! Extra alignment tab has been changed to \cr.
-<template> \endtemplate 
-                        
-l.201   }
-         
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-
-Overfull \hbox (81.95023pt too wide) in paragraph at lines 264--266
+Overfull \hbox (46.13509pt too wide) in paragraph at lines 261--263
  [][] 
  []
 
@@ -2450,15 +2192,6 @@ Overfull \hbox (81.95023pt too wide) in paragraph at lines 264--266
 
  (./PDZ/chapter.tex
 Chapitre 5.
-! Undefined control sequence.
-l.6 ...étudiés et utilisés en conception \texit
-                                                  {in silico}. Des ligands o...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 [101
 
 
@@ -2467,7 +2200,7 @@ and I'll forget about whatever was undefined.
 ] [102]
 ! Extra }, or forgotten $.
 l.46   kT \ln \mathcal{L} = \sum_S}
-                                   \sum_{i \in aa} n_S(t
+                                   \sum_{i \in aa} n_S(t) E^r_t - \sum_S} G^...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2475,8 +2208,8 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 ! Extra }, or forgotten $.
-l.47 ) E^r_t - \sum_S}
-                       G^f_S - N kT \ln Z = \sum_{t \in aa} N(t) E^r_t - \su...
+l.46 ...m_S}\sum_{i \in aa} n_S(t) E^r_t - \sum_S}
+                                                   G^f_S - N kT \ln Z = \sum...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2484,8 +2217,8 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 ! Extra }, or forgotten $.
-l.47 ...n Z = \sum_{t \in aa} N(t) E^r_t - \sum_S}
-                                                   G^f_S - N kT \ln Z,
+l.46 ...n Z = \sum_{t \in aa} N(t) E^r_t - \sum_S}
+                                                   G^f_S - N kT \ln Z
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2494,29 +2227,17 @@ deleted material, e.g., by typing `I$}'.
 
 [103] [104]
 
-LaTeX Warning: Command \r invalid in math mode on input line 118.
+LaTeX Warning: Command \r invalid in math mode on input line 110.
 
-
-LaTeX Warning: Reference `Gaillard17' on page 105 undefined on input line 118.
-
-[105]
-
-Package natbib Warning: Citation `Aleksandrov10' on page 106 undefined on input
- line 123.
-
-[106] [107]
-Overfull \hbox (2.26656pt too wide) in paragraph at lines 179--179
+[105] [106] [107]
+Overfull \hbox (2.26656pt too wide) in paragraph at lines 171--171
 []\T1/lmr/bx/n/17.28 S�quences ex-p�-ri-men-tales et mo-d�les struc-tu-raux 
  []
-
-
-LaTeX Warning: Reference `tab:corePDZ' on page 108 undefined on input line 181.
-
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.232       }
+l.224       }
              
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2524,7 +2245,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.232       }
+l.224       }
              
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2532,242 +2253,193 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-[108]
-
-Package caption Warning: \label without proper reference on input line 300.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:corePDZ' on page 109 undefined on input line 271.
-
-
-
-Package caption Warning: \label without proper reference on input line 300.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:corePDZ' on page 109 undefined on input line 271.
-
-
-[109]
-
-Package caption Warning: \label without proper reference on input line 300.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:corePDZ' on page 110 undefined on input line 296.
-
-
-[110] <./PDZ/images/natives_alignees.png, id=2166, 1219.16348pt x 181.86626pt>
+[108] [109] [110]
+<./PDZ/images/natives_alignees.png, id=2173, 1219.16348pt x 181.86626pt>
 File: ./PDZ/images/natives_alignees.png Graphic file (type png)
 
 <use ./PDZ/images/natives_alignees.png>
-Package pdftex.def Info: ./PDZ/images/natives_alignees.png used on input line 3
-03.
+Package pdftex.def Info: ./PDZ/images/natives_alignees.png used on input line 2
+93.
 (pdftex.def)             Requested size: 512.1496pt x 76.39995pt.
 
-<./PDZ/images/corePDZ2.png, id=2167, 1313.3868pt x 1252.68pt>
+<./PDZ/images/corePDZ2.png, id=2174, 1313.3868pt x 1252.68pt>
 File: ./PDZ/images/corePDZ2.png Graphic file (type png)
 
 <use ./PDZ/images/corePDZ2.png>
-Package pdftex.def Info: ./PDZ/images/corePDZ2.png used on input line 304.
+Package pdftex.def Info: ./PDZ/images/corePDZ2.png used on input line 294.
 (pdftex.def)             Requested size: 455.24408pt x 434.20119pt.
 
-Overfull \hbox (68.90549pt too wide) in paragraph at lines 302--306
+Overfull \hbox (68.90549pt too wide) in paragraph at lines 292--296
  [][] 
  []
 
-<./PDZ/homologues/1G9O.png, id=2168, 662.9987pt x 541.62791pt>
+<./PDZ/homologues/1G9O.png, id=2175, 662.9987pt x 541.62791pt>
 File: ./PDZ/homologues/1G9O.png Graphic file (type png)
 
 <use ./PDZ/homologues/1G9O.png>
-Package pdftex.def Info: ./PDZ/homologues/1G9O.png used on input line 317.
+Package pdftex.def Info: ./PDZ/homologues/1G9O.png used on input line 309.
 (pdftex.def)             Requested size: 483.69684pt x 395.16194pt.
 
-Overfull \hbox (40.45273pt too wide) in paragraph at lines 316--319
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 308--311
  [][] 
  []
 
-<./PDZ/proteus/1G9O.png, id=2169, 644.14565pt x 696.4922pt>
+<./PDZ/proteus/1G9O.png, id=2176, 644.14565pt x 696.4922pt>
 File: ./PDZ/proteus/1G9O.png Graphic file (type png)
 
 <use ./PDZ/proteus/1G9O.png>
-Package pdftex.def Info: ./PDZ/proteus/1G9O.png used on input line 326.
+Package pdftex.def Info: ./PDZ/proteus/1G9O.png used on input line 318.
 (pdftex.def)             Requested size: 483.69684pt x 523.01616pt.
 
-Overfull \hbox (40.45273pt too wide) in paragraph at lines 325--328
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 317--320
  [][] 
  []
 
 [111] [112 <./PDZ/images/natives_alignees.png> <./PDZ/images/corePDZ2.png>]
 [113 <./PDZ/homologues/1G9O.png>] [114 <./PDZ/proteus/1G9O.png (PNG copy)>]
-<./PDZ/homologues/1IHJ.png, id=2191, 677.13847pt x 463.79868pt>
+<./PDZ/homologues/1IHJ.png, id=2197, 677.13847pt x 463.79868pt>
 File: ./PDZ/homologues/1IHJ.png Graphic file (type png)
 
 <use ./PDZ/homologues/1IHJ.png>
-Package pdftex.def Info: ./PDZ/homologues/1IHJ.png used on input line 337.
+Package pdftex.def Info: ./PDZ/homologues/1IHJ.png used on input line 329.
 (pdftex.def)             Requested size: 483.69684pt x 331.30215pt.
 
-Overfull \hbox (40.45273pt too wide) in paragraph at lines 336--339
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 328--331
  [][] 
  []
 
-<./PDZ/proteus/1IHJ.png, id=2192, 669.28305pt x 697.28638pt>
+<./PDZ/proteus/1IHJ.png, id=2198, 669.28305pt x 697.28638pt>
 File: ./PDZ/proteus/1IHJ.png Graphic file (type png)
 
 <use ./PDZ/proteus/1IHJ.png>
-Package pdftex.def Info: ./PDZ/proteus/1IHJ.png used on input line 346.
+Package pdftex.def Info: ./PDZ/proteus/1IHJ.png used on input line 338.
 (pdftex.def)             Requested size: 483.69684pt x 503.92903pt.
 
-Overfull \hbox (40.45273pt too wide) in paragraph at lines 345--348
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 337--340
  [][] 
  []
 
 [115 <./PDZ/homologues/1IHJ.png>] [116 <./PDZ/proteus/1IHJ.png (PNG copy)>]
-<./PDZ/homologues/1R6J.png, id=2202, 595.44196pt x 532.09781pt>
+<./PDZ/homologues/1R6J.png, id=2208, 595.44196pt x 532.09781pt>
 File: ./PDZ/homologues/1R6J.png Graphic file (type png)
 
 <use ./PDZ/homologues/1R6J.png>
-Package pdftex.def Info: ./PDZ/homologues/1R6J.png used on input line 356.
+Package pdftex.def Info: ./PDZ/homologues/1R6J.png used on input line 348.
 (pdftex.def)             Requested size: 483.69684pt x 432.2391pt.
 
-Overfull \hbox (40.45273pt too wide) in paragraph at lines 355--358
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 347--350
  [][] 
  []
 
-<./PDZ/proteus/1R6J.png, id=2203, 582.08772pt x 694.90384pt>
+<./PDZ/proteus/1R6J.png, id=2209, 582.08772pt x 694.90384pt>
 File: ./PDZ/proteus/1R6J.png Graphic file (type png)
 
 <use ./PDZ/proteus/1R6J.png>
-Package pdftex.def Info: ./PDZ/proteus/1R6J.png used on input line 365.
+Package pdftex.def Info: ./PDZ/proteus/1R6J.png used on input line 357.
 (pdftex.def)             Requested size: 483.69684pt x 577.45926pt.
 
-Overfull \hbox (40.45273pt too wide) in paragraph at lines 364--367
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 356--359
  [][] 
  []
 
 [117 <./PDZ/homologues/1R6J.png>] [118 <./PDZ/proteus/1R6J.png (PNG copy)>]
-<./PDZ/homologues/1N7E.png, id=2213, 680.28065pt x 525.7444pt>
+<./PDZ/homologues/1N7E.png, id=2219, 680.28065pt x 525.7444pt>
 File: ./PDZ/homologues/1N7E.png Graphic file (type png)
 
 <use ./PDZ/homologues/1N7E.png>
-Package pdftex.def Info: ./PDZ/homologues/1N7E.png used on input line 375.
+Package pdftex.def Info: ./PDZ/homologues/1N7E.png used on input line 367.
 (pdftex.def)             Requested size: 483.69684pt x 373.82663pt.
 
-Overfull \hbox (40.45273pt too wide) in paragraph at lines 374--377
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 366--369
  [][] 
  []
 
-<./PDZ/proteus/1N7E.png, id=2214, 678.70956pt x 694.10966pt>
+<./PDZ/proteus/1N7E.png, id=2220, 678.70956pt x 694.10966pt>
 File: ./PDZ/proteus/1N7E.png Graphic file (type png)
 
 <use ./PDZ/proteus/1N7E.png>
-Package pdftex.def Info: ./PDZ/proteus/1N7E.png used on input line 384.
+Package pdftex.def Info: ./PDZ/proteus/1N7E.png used on input line 376.
 (pdftex.def)             Requested size: 483.69684pt x 494.68538pt.
 
-Overfull \hbox (40.45273pt too wide) in paragraph at lines 383--386
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 375--378
  [][] 
  []
 
 [119 <./PDZ/homologues/1N7E.png>] [120 <./PDZ/proteus/1N7E.png (PNG copy)>]
-<./PDZ/homologues/2BYG.png, id=2225, 701.49033pt x 471.74043pt>
+<./PDZ/homologues/2BYG.png, id=2231, 701.49033pt x 471.74043pt>
 File: ./PDZ/homologues/2BYG.png Graphic file (type png)
 
 <use ./PDZ/homologues/2BYG.png>
-Package pdftex.def Info: ./PDZ/homologues/2BYG.png used on input line 394.
+Package pdftex.def Info: ./PDZ/homologues/2BYG.png used on input line 386.
 (pdftex.def)             Requested size: 483.69684pt x 325.2853pt.
 
-Overfull \hbox (40.45273pt too wide) in paragraph at lines 393--396
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 385--388
  [][] 
  []
 
-<./PDZ/proteus/2BYG.png, id=2226, 689.70717pt x 694.90384pt>
+<./PDZ/proteus/2BYG.png, id=2232, 689.70717pt x 694.90384pt>
 File: ./PDZ/proteus/2BYG.png Graphic file (type png)
 
 <use ./PDZ/proteus/2BYG.png>
-Package pdftex.def Info: ./PDZ/proteus/2BYG.png used on input line 403.
+Package pdftex.def Info: ./PDZ/proteus/2BYG.png used on input line 395.
 (pdftex.def)             Requested size: 483.69684pt x 487.35187pt.
 
-Overfull \hbox (40.45273pt too wide) in paragraph at lines 402--405
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 394--397
  [][] 
  []
 
 [121 <./PDZ/homologues/2BYG.png>] [122 <./PDZ/proteus/2BYG.png (PNG copy)>]
-<./PDZ/homologues/3K82.png, id=2236, 696.77707pt x 546.39296pt>
+<./PDZ/homologues/3K82.png, id=2242, 696.77707pt x 546.39296pt>
 File: ./PDZ/homologues/3K82.png Graphic file (type png)
 
 <use ./PDZ/homologues/3K82.png>
-Package pdftex.def Info: ./PDZ/homologues/3K82.png used on input line 413.
+Package pdftex.def Info: ./PDZ/homologues/3K82.png used on input line 405.
 (pdftex.def)             Requested size: 483.69684pt x 379.31262pt.
 
-Overfull \hbox (40.45273pt too wide) in paragraph at lines 412--415
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 404--407
  [][] 
  []
 
-<./PDZ/proteus/3K82.png, id=2237, 688.1361pt x 697.28638pt>
+<./PDZ/proteus/3K82.png, id=2243, 688.1361pt x 697.28638pt>
 File: ./PDZ/proteus/3K82.png Graphic file (type png)
 
 <use ./PDZ/proteus/3K82.png>
-Package pdftex.def Info: ./PDZ/proteus/3K82.png used on input line 422.
+Package pdftex.def Info: ./PDZ/proteus/3K82.png used on input line 414.
 (pdftex.def)             Requested size: 483.69684pt x 490.12932pt.
 
-Overfull \hbox (40.45273pt too wide) in paragraph at lines 421--424
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 413--416
  [][] 
  []
 
 [123 <./PDZ/homologues/3K82.png>] [124 <./PDZ/proteus/3K82.png (PNG copy)>]
-<./PDZ/homologues/TIAM1.png, id=2247, 687.35054pt x 540.03957pt>
+<./PDZ/homologues/TIAM1.png, id=2253, 687.35054pt x 540.03957pt>
 File: ./PDZ/homologues/TIAM1.png Graphic file (type png)
 
 <use ./PDZ/homologues/TIAM1.png>
-Package pdftex.def Info: ./PDZ/homologues/TIAM1.png used on input line 432.
+Package pdftex.def Info: ./PDZ/homologues/TIAM1.png used on input line 424.
 (pdftex.def)             Requested size: 483.69684pt x 380.02751pt.
 
-Overfull \hbox (40.45273pt too wide) in paragraph at lines 431--434
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 423--426
  [][] 
  []
 
 [125 <./PDZ/homologues/TIAM1.png (PNG copy)>]
-<./PDZ/homologues/CASK.png, id=2253, 606.43956pt x 555.92308pt>
+<./PDZ/homologues/CASK.png, id=2259, 606.43956pt x 555.92308pt>
 File: ./PDZ/homologues/CASK.png Graphic file (type png)
 
 <use ./PDZ/homologues/CASK.png>
-Package pdftex.def Info: ./PDZ/homologues/CASK.png used on input line 441.
+Package pdftex.def Info: ./PDZ/homologues/CASK.png used on input line 433.
 (pdftex.def)             Requested size: 483.69684pt x 443.39879pt.
 
-Overfull \hbox (40.45273pt too wide) in paragraph at lines 440--443
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 432--435
  [][] 
  []
 
 [126 <./PDZ/homologues/CASK.png (PNG copy)>]
-
-Package natbib Warning: Citation `Eswar06' on page 127 undefined on input line 
-453.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 463--464
-
- []
-
-
-Overfull \hbox (1.70612pt too wide) in paragraph at lines 466--466
+Overfull \hbox (1.70612pt too wide) in paragraph at lines 458--458
 []\T1/lmtt/m/n/12 fixbb -s Cask.pdb -resfile Cask.res -nstruct 10000 -ex1 -ex2 
 -linmem_ig 10[] 
  []
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.467 o
-       ù les options ex1 et ex2 activent une recherche améliorée des rota...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
 
 [127
 
@@ -2778,956 +2450,452 @@ or  <return>  to continue without it.
 
 
 
-]
+] [128] [129] [130]
 
-LaTeX Warning: Reference `subsection:Superfamily' on page 128 undefined on inpu
-t line 473.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
+[131]
+<./PDZ/graphes/modelB6+/1G9O_simil_full.png, id=2327, 722.7pt x 433.62pt>
+File: ./PDZ/graphes/modelB6+/1G9O_simil_full.png Graphic file (type png)
 
-LaTeX Warning: Command \' invalid in math mode on input line 479.
+<use ./PDZ/graphes/modelB6+/1G9O_simil_full.png>
+Package pdftex.def Info: ./PDZ/graphes/modelB6+/1G9O_simil_full.png used on inp
+ut line 641.
+(pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
+<./PDZ/graphes/modelB6+/1IHJ_simil_full.png, id=2328, 722.7pt x 433.62pt>
+File: ./PDZ/graphes/modelB6+/1IHJ_simil_full.png Graphic file (type png)
 
-LaTeX Warning: Command \' invalid in math mode on input line 479.
+<use ./PDZ/graphes/modelB6+/1IHJ_simil_full.png>
+Package pdftex.def Info: ./PDZ/graphes/modelB6+/1IHJ_simil_full.png used on inp
+ut line 642.
+(pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
+<./PDZ/graphes/modelB6+/1R6J_simil_full.png, id=2329, 722.7pt x 433.62pt>
+File: ./PDZ/graphes/modelB6+/1R6J_simil_full.png Graphic file (type png)
 
-LaTeX Warning: Command \' invalid in math mode on input line 479.
+<use ./PDZ/graphes/modelB6+/1R6J_simil_full.png>
+Package pdftex.def Info: ./PDZ/graphes/modelB6+/1R6J_simil_full.png used on inp
+ut line 643.
+(pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
+<./PDZ/graphes/modelB6+/1N7E_simil_full.png, id=2330, 722.7pt x 433.62pt>
+File: ./PDZ/graphes/modelB6+/1N7E_simil_full.png Graphic file (type png)
 
-LaTeX Warning: Command \' invalid in math mode on input line 479.
+<use ./PDZ/graphes/modelB6+/1N7E_simil_full.png>
+Package pdftex.def Info: ./PDZ/graphes/modelB6+/1N7E_simil_full.png used on inp
+ut line 644.
+(pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
+<./PDZ/graphes/modelB6+/2BYG_simil_full.png, id=2331, 722.7pt x 433.62pt>
+File: ./PDZ/graphes/modelB6+/2BYG_simil_full.png Graphic file (type png)
 
-LaTeX Warning: Command \' invalid in math mode on input line 479.
+<use ./PDZ/graphes/modelB6+/2BYG_simil_full.png>
+Package pdftex.def Info: ./PDZ/graphes/modelB6+/2BYG_simil_full.png used on inp
+ut line 645.
+(pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.480 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+<./PDZ/graphes/modelB6+/3K82_simil_full.png, id=2332, 963.6pt x 578.16pt>
+File: ./PDZ/graphes/modelB6+/3K82_simil_full.png Graphic file (type png)
 
+<use ./PDZ/graphes/modelB6+/3K82_simil_full.png>
+Package pdftex.def Info: ./PDZ/graphes/modelB6+/3K82_simil_full.png used on inp
+ut line 646.
+(pdftex.def)             Requested size: 239.00298pt x 143.4016pt.
 
-Overfull \hbox (256.36967pt too wide) in paragraph at lines 479--480
-\OT1/lmr/m/n/12 (-20) 0\OML/lmm/m/it/12 ;\OT1/lmr/m/n/12 (-20) 05\OML/lmm/m/it/
-12 Kcal=molpourtouslestypesd[]acidesamin\OT1/lmr/m/n/12 (-20) �\OML/lmm/m/it/12
- ssurles\OT1/lmr/m/n/12 (-20) 5\OML/lmm/m/it/12 dernierscyclesd[]optimisation:L
-etableau[][]\OT1/lmr/m/n/12 (-20) 5\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 (-20) 6[][
-]\OML/lmm/m/it/12 donneles\OT1/lmr/m/n/12 (-20) �\OML/lmm/m/it/12 nergiesder\OT
-1/lmr/m/n/12 (-20) �\OML/lmm/m/it/12 f\OT1/lmr/m/n/12 (-20) �\OML/lmm/m/it/12 r
-enceconverg\OT1/lmr/m/n/12 (-20) �\OML/lmm/m/it/12 es:$ 
+Overfull \hbox (46.76184pt too wide) in paragraph at lines 640--648
+ [][] 
  []
 
-[128] [129] [130]
-! You can't use `\hrule' here except with leaders.
-\caption@hrule ->\hrule 
-                        \@height \z@ 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-To put a horizontal rule in an hbox or an alignment,
-you should use \leaders or \hrulefill (see The TeXbook).
+[132]
+<./PDZ/graphes/modelB6+/1G9O_simil_core.png, id=2338, 722.7pt x 433.62pt>
+File: ./PDZ/graphes/modelB6+/1G9O_simil_core.png Graphic file (type png)
 
-! Missing number, treated as zero.
-<to be read again> 
-                   \vskip 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
+<use ./PDZ/graphes/modelB6+/1G9O_simil_core.png>
+Package pdftex.def Info: ./PDZ/graphes/modelB6+/1G9O_simil_core.png used on inp
+ut line 655.
+(pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \vskip 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+<./PDZ/graphes/modelB6+/1IHJ_simil_core.png, id=2339, 722.7pt x 433.62pt>
+File: ./PDZ/graphes/modelB6+/1IHJ_simil_core.png Graphic file (type png)
 
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+<use ./PDZ/graphes/modelB6+/1IHJ_simil_core.png>
+Package pdftex.def Info: ./PDZ/graphes/modelB6+/1IHJ_simil_core.png used on inp
+ut line 656.
+(pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-! Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+<./PDZ/graphes/modelB6+/1R6J_simil_core.png, id=2340, 722.7pt x 449.2785pt>
+File: ./PDZ/graphes/modelB6+/1R6J_simil_core.png Graphic file (type png)
 
-! Missing } inserted.
-<inserted text> 
-                }
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+<use ./PDZ/graphes/modelB6+/1R6J_simil_core.png>
+Package pdftex.def Info: ./PDZ/graphes/modelB6+/1R6J_simil_core.png used on inp
+ut line 657.
+(pdftex.def)             Requested size: 239.00298pt x 148.5777pt.
 
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
+<./PDZ/graphes/modelB6+/1N7E_simil_core.png, id=2341, 722.7pt x 433.62pt>
+File: ./PDZ/graphes/modelB6+/1N7E_simil_core.png Graphic file (type png)
 
-! Missing } inserted.
-<inserted text> 
-                }
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+<use ./PDZ/graphes/modelB6+/1N7E_simil_core.png>
+Package pdftex.def Info: ./PDZ/graphes/modelB6+/1N7E_simil_core.png used on inp
+ut line 658.
+(pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
+<./PDZ/graphes/modelB6+/2BYG_simil_core.png, id=2342, 722.7pt x 448.7967pt>
+File: ./PDZ/graphes/modelB6+/2BYG_simil_core.png Graphic file (type png)
 
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
+<use ./PDZ/graphes/modelB6+/2BYG_simil_core.png>
+Package pdftex.def Info: ./PDZ/graphes/modelB6+/2BYG_simil_core.png used on inp
+ut line 659.
+(pdftex.def)             Requested size: 239.00298pt x 148.41837pt.
+
+<./PDZ/graphes/modelB6+/3K82_simil_core.png, id=2343, 722.7pt x 433.62pt>
+File: ./PDZ/graphes/modelB6+/3K82_simil_core.png Graphic file (type png)
+
+<use ./PDZ/graphes/modelB6+/3K82_simil_core.png>
+Package pdftex.def Info: ./PDZ/graphes/modelB6+/3K82_simil_core.png used on inp
+ut line 660.
+(pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
+
+Overfull \hbox (46.76184pt too wide) in paragraph at lines 654--662
+ [][] 
+ []
+
+[133] [134 <./PDZ/graphes/modelB6+/1G9O_simil_full.png> <./PDZ/graphes/modelB6+
+/1IHJ_simil_full.png> <./PDZ/graphes/modelB6+/1R6J_simil_full.png> <./PDZ/graph
+es/modelB6+/1N7E_simil_full.png> <./PDZ/graphes/modelB6+/2BYG_simil_full.png> <
+./PDZ/graphes/modelB6+/3K82_simil_full.png>] [135 <./PDZ/graphes/modelB6+/1G9O_
+simil_core.png> <./PDZ/graphes/modelB6+/1IHJ_simil_core.png> <./PDZ/graphes/mod
+elB6+/1R6J_simil_core.png> <./PDZ/graphes/modelB6+/1N7E_simil_core.png> <./PDZ/
+graphes/modelB6+/2BYG_simil_core.png> <./PDZ/graphes/modelB6+/3K82_simil_core.p
+ng>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[136] [137] [138]
+<./PDZ/graphes/FDB/1G9O_simil_cut.png, id=2391, 722.7pt x 433.62pt>
+File: ./PDZ/graphes/FDB/1G9O_simil_cut.png Graphic file (type png)
+
+<use ./PDZ/graphes/FDB/1G9O_simil_cut.png>
+Package pdftex.def Info: ./PDZ/graphes/FDB/1G9O_simil_cut.png used on input lin
+e 812.
+(pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
+
+<./PDZ/graphes/FDB/1G9O_simil_core.png, id=2392, 722.7pt x 433.62pt>
+File: ./PDZ/graphes/FDB/1G9O_simil_core.png Graphic file (type png)
+
+<use ./PDZ/graphes/FDB/1G9O_simil_core.png>
+Package pdftex.def Info: ./PDZ/graphes/FDB/1G9O_simil_core.png used on input li
+ne 813.
+(pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
+
+<./PDZ/graphes/FDB/1R6J_simil_cut.png, id=2393, 722.7pt x 433.62pt>
+File: ./PDZ/graphes/FDB/1R6J_simil_cut.png Graphic file (type png)
+
+<use ./PDZ/graphes/FDB/1R6J_simil_cut.png>
+Package pdftex.def Info: ./PDZ/graphes/FDB/1R6J_simil_cut.png used on input lin
+e 814.
+(pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
+
+<./PDZ/graphes/FDB/1R6J_simil_core.png, id=2394, 722.7pt x 433.62pt>
+File: ./PDZ/graphes/FDB/1R6J_simil_core.png Graphic file (type png)
+
+<use ./PDZ/graphes/FDB/1R6J_simil_core.png>
+Package pdftex.def Info: ./PDZ/graphes/FDB/1R6J_simil_core.png used on input li
+ne 815.
+(pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
+
+<./PDZ/graphes/FDB/2BYG_simil_cut.png, id=2395, 722.7pt x 433.62pt>
+File: ./PDZ/graphes/FDB/2BYG_simil_cut.png Graphic file (type png)
+
+<use ./PDZ/graphes/FDB/2BYG_simil_cut.png>
+Package pdftex.def Info: ./PDZ/graphes/FDB/2BYG_simil_cut.png used on input lin
+e 816.
+(pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
+
+<./PDZ/graphes/FDB/2BYG_simil_core.png, id=2396, 722.7pt x 433.62pt>
+File: ./PDZ/graphes/FDB/2BYG_simil_core.png Graphic file (type png)
+
+<use ./PDZ/graphes/FDB/2BYG_simil_core.png>
+Package pdftex.def Info: ./PDZ/graphes/FDB/2BYG_simil_core.png used on input li
+ne 817.
+(pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
+
+Overfull \hbox (46.76184pt too wide) in paragraph at lines 811--819
+ [][] 
+ []
+
+[139] <./PDZ/logos/core.png, id=2405, 1571.8725pt x 1887.6924pt>
+File: ./PDZ/logos/core.png Graphic file (type png)
+
+<use ./PDZ/logos/core.png>
+Package pdftex.def Info: ./PDZ/logos/core.png used on input line 855.
+(pdftex.def)             Requested size: 426.79134pt x 512.53534pt.
+
+<./PDZ/logos/exposed.png, id=2406, 1648.9605pt x 1351.6899pt>
+File: ./PDZ/logos/exposed.png Graphic file (type png)
+
+<use ./PDZ/logos/exposed.png>
+Package pdftex.def Info: ./PDZ/logos/exposed.png used on input line 865.
+(pdftex.def)             Requested size: 426.79134pt x 349.84296pt.
+ [140 <./PDZ/graphes/FDB/1G9O_simil_cut.png> <./PDZ/graphes/FDB/1G9O_simil_core
+.png> <./PDZ/graphes/FDB/1R6J_simil_cut.png> <./PDZ/graphes/FDB/1R6J_simil_core
+.png> <./PDZ/graphes/FDB/2BYG_simil_cut.png> <./PDZ/graphes/FDB/2BYG_simil_core
+.png>] [141 <./PDZ/logos/core.png>]
+<./PDZ/titration/alignTiam1.png, id=2423, 838.67615pt x 441.19115pt>
+File: ./PDZ/titration/alignTiam1.png Graphic file (type png)
+
+<use ./PDZ/titration/alignTiam1.png>
+Package pdftex.def Info: ./PDZ/titration/alignTiam1.png used on input line 878.
+
+(pdftex.def)             Requested size: 483.69684pt x 254.45712pt.
+
+Overfull \hbox (40.45273pt too wide) in paragraph at lines 877--882
+ [][] 
+ []
+
+[142 <./PDZ/logos/exposed.png>] [143 <./PDZ/titration/alignTiam1.png>]
+<./PDZ/titration/structure_Tiam1.png, id=2435, 4701.565pt x 3523.1625pt>
+File: ./PDZ/titration/structure_Tiam1.png Graphic file (type png)
+
+<use ./PDZ/titration/structure_Tiam1.png>
+Package pdftex.def Info: ./PDZ/titration/structure_Tiam1.png used on input line
+ 891.
+(pdftex.def)             Requested size: 625.96062pt x 469.04782pt.
+
+
+LaTeX Warning: Float too large for page by 57.15373pt on input line 895.
+
+[144 <./PDZ/titration/structure_Tiam1.png>]
+<./PDZ/titration/alignCASK.png, id=2444, 798.94485pt x 490.35194pt>
+File: ./PDZ/titration/alignCASK.png Graphic file (type png)
+
+<use ./PDZ/titration/alignCASK.png>
+Package pdftex.def Info: ./PDZ/titration/alignCASK.png used on input line 910.
+(pdftex.def)             Requested size: 426.79134pt x 261.94289pt.
+ [145
+
+
+] [146 <./PDZ/titration/alignCASK.png>] [147] [148]) [149] [150
+
+
+]
+\openout2 = `conc.aux'.
+
+ (./conc.tex) [151
+
+
+] [152
+
+
+] (./these.bbl (./these.brf)
+\tf@brf=\write7
+\openout7 = `these.brf'.
+
+
+
+! Package inputenc Error: Unicode char ﬁ (U+FB01)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
                                                   
+l.23 
+     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[153
+
+] [154] [155]
+
+! Package inputenc Error: Unicode char ﬃ (U+FB03)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.242 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[156]
+
+! Package inputenc Error: Unicode char ﬁ (U+FB01)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.262 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! Package inputenc Error: Unicode char ﬁ (U+FB01)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.287 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! Package inputenc Error: Unicode char ﬂ (U+FB02)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.307 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[157]
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/lmr/m/sc/12'.
+(microtype)             Ignoring protrusion settings for this character.
+
+
+! Package inputenc Error: Unicode char ﬁ (U+FB01)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.327 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Misplaced alignment tab character &.
+<argument> Journal of Biomolecular Structure &
+                                               Dynamics
+l.370 
+      
 I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
 up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+[158] [159] [160] [161] [162] [163]
 
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
-
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
+! Package inputenc Error: Unicode char ́ (U+301)
+(inputenc)                not set up for use with LaTeX.
 
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
                                                   
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+l.723 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
 
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+! Package inputenc Error: Unicode char ﬁ (U+FB01)
+(inputenc)                not set up for use with LaTeX.
 
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
                                                   
-I'm guessing that you meant to end an alignment here.
+l.730 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+) [164]
+\openout2 = `resume.aux'.
 
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
+ (./resume.tex) [165
 
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
 
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
 
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+]
 
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
+Package natbib Warning: There were undefined citations.
 
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 350.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 350.
+(./these.aux (./merci.aux) (./dedicace.aux) (./glossaire.aux) (./intro.aux)
+(./contexte.aux) (./CPD/chapter.aux) (./methodes/chapter.aux)
+(./annexe_proteus.aux) (./developpements/chapter.aux)
+(./comparaisons/chapter.aux) (./annexe_posi.aux) (./PDZ/chapter.aux)
+(./conc.aux) (./resume.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 350.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 350.
+Package rerunfilecheck Info: File `these.out' has not changed.
+(rerunfilecheck)             Checksum: 58ACD047DA9E121BED1623FC938621F8;10661.
+Package rerunfilecheck Info: File `these.brf' has not changed.
+(rerunfilecheck)             Checksum: 94D8DF607120D094C8761D55EA51213E;9415.
 
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
 
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+LaTeX Warning: There were undefined references.
 
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
 
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+LaTeX Warning: There were multiply-defined labels.
 
-! Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-I'm guessing that you meant to end an alignment here.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 350.
+ )
+(\end occurred inside a group at level 2)
 
-! Misplaced \cr.
-<inserted text> \cr 
-                    
-l.598 ... Superfamily pour les séquences Rosetta}
-                                                  
-(That makes 100 errors; please try again.) 
+### simple group (level 2) entered at line 403 ({)
+### simple group (level 1) entered at line 403 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 15735 strings out of 494875
- 239851 string characters out of 6178748
- 455586 words of memory out of 5000000
- 17821 multiletter control sequences out of 15000+600000
- 122542 words of font info for 184 fonts, out of 8000000 for 9000
+ 16817 strings out of 494875
+ 257926 string characters out of 6178748
+ 457491 words of memory out of 5000000
+ 18739 multiletter control sequences out of 15000+600000
+ 127952 words of font info for 206 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 46i,18n,48p,2057b,663s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,18n,48p,2057b,1245s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texm
+f/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.e
+nc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/e
+nc/dvips/lm/lm-mathex.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/dou
+blestroke/dsrom12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxo10.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/tex
+mf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmm
+i6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/font
+s/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/
+public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
+fb>
+Output written on these.pdf (185 pages, 28968692 bytes).
+PDF statistics:
+ 2967 PDF objects out of 2984 (max. 8388607)
+ 2588 compressed objects within 26 object streams
+ 669 named destinations out of 1000 (max. 500000)
+ 35744 words of extra memory for PDF output out of 35830 (max. 10000000)
 
-!  ==> Fatal error occurred, no output PDF file produced!

@@ -90,15 +90,15 @@ avec $ \tau = \frac{1}{\epsilon_p} - \frac{1}{\epsilon_s}$, $q_i$ la charge de l
 \begin{equation}
 \left( \sum_{i \in I} q_i^2 \right) \frac{1}{B_I} = \sum_{i \in I} \frac{q_i^2}{b_i}
 \end{equation}
-Donc, $B_I$ est la moyenne harmonique des $b_i$, avec $i \in I$, pondéré par les charges au carré. Il est alors possible de définir la contribution $g_\IJ$ de la paire de résidus $I$ et $J$ à l'énergie $\Delta G_{elec}$, voir \vref{eq:GB}, par:
+Donc, $B_I$ est la moyenne harmonique des $b_i$, avec $i \in I$, pondéré par les charges au carré. Il est alors possible de définir la contribution $g_{IJ}$ de la paire de résidus $I$ et $J$ à l'énergie $\Delta G_{elec}$, voir \vref{eq:GB}, par:
 \begin{equation} 
 g_{IJ} = \sum_{i \in I, j \in J} \tau q_i q_j \left( r_{ij}^2 + B_I B_J \exp[-r_{ij}^2/4 B_I B_J] \right)^{-1/2}
 \label{eq:screen}
 \end{equation}
-avec la somme pour $I=J$ excluant le cas $i \neq j$. On peut noter qu'aux distances fixes $r_\ij$, et avec $B=B_IBJ$, $g_{IJ} (B)$ varie faiblement en fonction de B. Archontis et Simonson \cite{Archontis05}, proposent alors d'approximer cette fonction par:
+avec la somme pour $I=J$ excluant le cas $i \neq j$. On peut noter qu'aux distances fixes $r_{ij}$, et avec $B=B_IBJ$, $g_{IJ} (B)$ varie faiblement en fonction de B. Archontis et Simonson \cite{Archontis05}, proposent alors d'approximer cette fonction par:
 \begin{equation}
   \label{eq:approx}
-g_{IJ}(B) \approx c_1^{IJ} + c_2^{IJ} B + c_3^{IJ} B^2 + c_4^{IJ} B^{-1/2} + c_5^{IJ} B^{-3/2}  \label{eq:approx}
+g_{IJ}(B) \approx c_1^{IJ} + c_2^{IJ} B + c_3^{IJ} B^2 + c_4^{IJ} B^{-1/2} + c_5^{IJ} B^{-3/2} 
 \end{equation}
 Les coefficients $c_n^{IJ}$ peuvent être précalculés et stockés dans la matrice d'énergie, puisque les distances $r_\ij$ ne sont pas des variables pour un couple de chaînes latérales $I$, $J$ donné. 
 Comme les rayons de solvatation d'un résidu sont eux-mêmes des sommes sur les paires, le calcul de l'énergie GB à l'aide de l'approximation \ref{eq:approx} est maintenant décomposable par paires.
@@ -243,8 +243,8 @@ chacune prend en paramètre une valeur comprise entre $0$ et $1$. Les deux premi
 
 Le choix d'une première position à modifier se fait par tirage aléatoire sur l'ensemble des positions du système. En revanche, le choix de la seconde position à modifier se fait par tirage aléatoire dans le voisinage de la première position. Le voisinage d'une position se définit de la façon suivante. Deux positions $i$ et $j$ sont voisines s'il existe un rotamère $r_i$ de $i$ et un rotamère $r_j$ de $j$ tels que:
 \begin{displaymath}
-  \label{\ref{para:voisin}}
- | E(r_P_i_,r_p_j) | > s_{vois}
+  \label{eq:voisin}
+ | E(r_{P_i}_,r_{p_j}) | > s_{vois}
 \end{displaymath} 
 avec $s_{vois}$ le seuil donné par l'utilisateur dans la balise \verb!<Neighbor_Threshold>!. Le voisinage d'une position $i$ est l'ensemble de ses voisins. Ce système de déplacements MC a été revu pendant ma thèse, voir section \vref{sec:dev}.
 
@@ -270,9 +270,8 @@ avec $P$ la protéine, $L_1$ et $L_2$ deux ligands et $P:L_i$ un complexe proté
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=5cm]{figure/cycleThermoLigand.png} &
+       \includegraphics[width=5cm]{figure/cycleThermoLigand.png} 
      \end{tabular}
-     
      \caption{Cycle thermodynamique qui définit l'affinité.}
 \label{fig:cycleThermoLigand}
    \end{figure}
@@ -282,7 +281,7 @@ Le critère de spécificité combine une augmentation du poids d'un ligand et la
 \label{sub:group}
 L'utilisateur a la possibilité de définir des groupes au sein du système biologique étudié. Un groupe est associé à une partie du système. Il se définit en donnant la liste des positions qu'il contient dans la balise \verb!<Group_Definition>! du fichier de configuration. Par exemple:\\
 \verb!<Group_Definition>! \\
-\verb!grp1 1−3! \\
+\verb!grp1 1-3! \\
 \verb!grp2 4 5! \\
 \verb!grp3 6-8! \\
 \verb!</Group_Definition>! \\
@@ -381,14 +380,14 @@ Nous travaillons avec la base de données à la version 1.75, et en conjonction,
 
 Soient $S$ et $N$ deux séquences d'acides aminés de même longueur $l$. Le Taux d'identité $Id(S,N)$ de $S$ par rapport $N$ est égal au pourcentage de positions où l'acide aminé est identique dans $S$ et $N$. C'est-à-dire:
 \begin{equation}
-Id(S,N) =\frac{1}{l}\sum_{1<i<l} \mathds{1}(s_i,n_i)} \times 100
+Id(S,N) =\frac{1}{l}\sum_{1<i<l} \mathds{1}(s_i,n_i) \times 100
 \end{equation}
 avec $s_i$ et $n_i$ l'acide animé en $i$ de $S$ et de $N$ respectivement, et $\mathds{1}(x,y)$ la fonction qui vaut $1$ lorsque $x=y$ et $0$ sinon. 
 \subsection{Taux d'identité par position}
 \label{TauxID}
 Le taux d'identité d'un alignement $A_S$ à la position i par rapport à une séquence $N$ de même longueur se définit comme:
 \begin{equation}
-Id(A_{S},i) = \frac{1}{m}\sum_{1<j<m} \mathds{1}(s_i^j,n_i)} \times 100
+Id(A_{S},i) = \frac{1}{m}\sum_{1<j<m} \mathds{1}(s_i^j,n_i) \times 100
 \end{equation}
 avec $m$ le nombre de séquences de $A_S$. Ce taux d'identité donne une mesure de la ressemblance entre un alignement et une séquence. Cela nous permet de comparer nos séquences calculées à la séquence native. Mais cela n'est pas notre seul objectif. Nous voulons également les comparer à l'ensemble des séquences naturelles de la famille de la native.  
 \subsection{Alignements Pfam}
