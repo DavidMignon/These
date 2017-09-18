@@ -6,20 +6,7 @@ Ce chapitre reprend l'article publié dans \og Journal of Chemical Theory and Co
 
 
 \subsection*{Abstract}
-Computational protein design depends critically on an energy function, a conformation space model, and an
-algorithm to search the space of sequences and conformations. We compare three search algorithms that are
-stochastic: a heuristic method, a Monte Carlo method (MC), and a Replica Exchange Monte Carlo method (REMC)
-that propagates several walkers, or replicas at different temperatures. The methods are applied to nine test
-proteins, with 1, 5, 10, 20, 30, or all amino acid positions allowed to mutate, for a total of about 200 tests.
-Results are also compared to a recent, exact, ``Cost Function Network'' method (CFN) that identifies the global
-minimum energy conformation (GMEC) in favorable cases. The designed sequences accurately reproduce the experimental
-amino acid types for positions in each protein's hydrophobic core. The heuristic and REMC methods are in good
-mutual agreement, yielding very similar optimal solutions; they accurately reproduce the GMEC when it is known,
-with a few exceptions. Plain MC performs well for most but not all cases, occasionally departing from the GMEC
-by 3--4 kcal/mol. With REMC, the diversity of the sequences sampled, as measured by the mean sequence entropy,
-agrees well with exact enumeration in the range where the latter is possible: about 2 kcal/mol above the GMEC.
-Beyond this range, room temperature walkers routinely sample sequences up to 10 kcal/mol above the GMEC, providing
-thermal averages and at least a rough solution to the inverse protein folding problem.
+Computational protein design depends on an energy function and an algorithm to search the sequence/conformation space. We compare three stochastic search algorithms: a heuristic, Monte Carlo (MC), and a Replica Exchange Monte Carlo method (REMC). The heuristic performs a steepest-descent minimization starting from thousands of random starting points. The methods are applied to nine test proteins from three structural families, with a fixed backbone structure, a molecular mechanics energy function, and with 1, 5, 10, 20, 30, or all amino acids allowed to mutate. Results are compared to an exact, “Cost Function Network” method that identifies the global minimum energy conformation (GMEC) in favorable cases. The designed sequences accurately reproduce experimental sequences in the hydrophobic core. The heuristic and REMC agree closely and reproduce the GMEC when it is known, with a few exceptions. Plain MC performs well for most cases, occasionally departing from the GMEC by 3–4 kcal/mol. With REMC, the diversity of the sequences sampled agrees with exact enumeration where the latter is possible: up to 2 kcal/mol above the GMEC. Beyond, room temperature replicas sample sequences up to 10 kcal/mol above the GMEC, providing thermal averages and a solution to the inverse protein folding problem.
 
 \pagebreak
 
@@ -386,7 +373,6 @@ sophisticated Generalized Born solvent model and a more highly optimized unfolde
 model, sequence quality would be even better (manuscript in preparation).
 Representative sequence logos for the protein core are shown in Fig.\ \ref{fig:logo}, illustrating the agreement
 between designed and experimental sequences. For the SH3 protein 1CKA, the design mostly recovers the native sidechain type, or a homologous type that is common in other natural sequences from Pfam. Exceptions include position 170, where we obtain I or V, whereas the native type is W; however, L and V are also occasionally found in Pfam.At position 139, we sample R instead of the native A or V, found in Pfam; however, the hydrophobic part of the designed Arg sidechain is homologous to A and V, while its ionized tip actually sits outside the hydrophobic core, at the protein surface. Finally, at position 143, we sample W, which is homologous to Y and F found in Pfam. For the PDZ domain 2BYG, agreement with the native and Pfam sequences is similar, with a few departures: at positions 207 and 245, we sample W instead of the natural types I, L, V, P; at position 253, we sample H, compared to mostly I, L, V, and sometimes F in Pfam; at position 265,we always sample Y, whereas the Pfam types are diverse (and mostly hydrophobic).
-
 
     \begin{figure}[!htbp]
       \centering
