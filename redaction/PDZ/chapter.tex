@@ -1,30 +1,30 @@
-\chapter{PDZ}
+\chapter{Application aux domaines PDZ}
 \label{chap:PDZ}
 
 \section{Introduction}
 
-Nous cherchons maintenant, à évaluer la performance de notre modèle CPD sur un ensemble de protéines. Les domaines PDZ (\og Postynaptic density-95 / Discs large / Zonula occludens-1\fg) sont de petits domaines globulaires qui établissent des réseaux d'interactions entre protéines dans la cellule \citep{Harris01,Hung02,Tonikian08,Gfeller11,Subbaiah11}. Ils forment des interactions spécifiques avec des protéines cibles, généralement en reconnaissant quelques acides aminés à l'extrémité C-terminale. En raison de leur importance biologique, les domaines PDZ et leur interaction avec les protéines cibles ont été largement étudiés et utilisés en conception in silico. Des ligands ont été conçus  pour moduler l'activité de domaines PDZ impliqués dans diverses pathologies \citep{Roberts12,Zheng15}. Des domaines  PDZ et leurs  ligands redessinés ont été utilisés pour élucider les principes du repliement des protéines et de l'évolution \cite{Kong09,Mclaughlin12,Melero14}. Ainsi, ces domaines avec leurs ligands peptidiques fournissent des \og benchmarks\fg pour tester les méthodes informatiques elles-mêmes \cite{Reina02,Smith10}.
+Nous cherchons maintenant, à évaluer la performance de notre modèle CPD sur un ensemble de protéines PDZ. Les domaines PDZ (\og Postynaptic density-95 / Discs large / Zonula occludens-1\fg) sont de petits domaines globulaires qui établissent des réseaux d'interactions entre protéines dans la cellule \citep{Harris01,Hung02,Tonikian08,Gfeller11,Subbaiah11}. Ils forment des interactions spécifiques avec des protéines cibles, généralement en reconnaissant quelques acides aminés à l'extrémité C-terminale. En raison de leur importance biologique, les domaines PDZ et leur interaction avec les protéines cibles ont été largement étudiés et utilisés en conception in silico. Des ligands ont été conçus  pour moduler l'activité de domaines PDZ impliqués dans diverses pathologies \citep{Roberts12,Zheng15}. Des domaines  PDZ et leurs  ligands redessinés ont été utilisés pour élucider les principes du repliement des protéines et de l'évolution \cite{Kong09,Mclaughlin12,Melero14}. Ainsi, ces domaines avec leurs ligands peptidiques fournissent d'excellents \og benchmarks\fg pour tester les méthodes informatiques elles-mêmes \cite{Reina02,Smith10}.
 
-À partir d'une sélection de domaines PDZ, nous optimisons les énergies de référence, paramètres essentiels dans notre modèle, grâce à la méthode du maximum de vraisemblance. La performance du modèle est testée en générant des séquences par Proteus pour chaque protéine de la sélection. Pour cela, nous nous basons sur les résultats précédents, en particulier ceux de la section \ref{BESTprotocol}, pour définir les valeurs des paramètres du Monte Carlo. Nous confrontons nos résultats à ceux de la fonction d'énergie de Rosetta, fonction qui a connu le plus de succès et qui est la plus souvent citée \cite{Baker06}. Elle comprend un terme de répulsion de Lennard-Jones, un terme Coulomb, un terme de liaison hydrogène, un terme de solvatation Lazaridis-Karplus et des énergies de référence d'état dépliées, mais est plus empirique que la nôtre. Il y a un grand nombre de paramètres spécifiquement optimisés pour le CPD, qui offrent des performances optimales, mais une interprétation physique moins transparente que Proteus.
+À partir d'une sélection de domaines PDZ, nous optimisons les énergies de référence, paramètres essentiels dans notre modèle, grâce à la méthode du maximum de vraisemblance. Puis, La performance du modèle est testée en générant des séquences par Proteus pour chaque protéine de la sélection. Pour cela, nous nous basons sur les résultats précédents, en particulier ceux de la section \ref{BESTprotocol}, pour définir les paramètres du Monte Carlo. Nous confrontons nos résultats à ceux de la fonction d'énergie de Rosetta, fonction qui a connu le plus de succès et qui est la plus souvent citée \cite{Baker06}. Elle comprend un terme de répulsion de Lennard-Jones, un terme Coulomb, un terme de liaison hydrogène, un terme de solvatation Lazaridis-Karplus et des énergies de référence d'état dépliées, mais est plus empirique que la nôtre. Il y a un grand nombre de paramètres spécifiquement optimisés pour le CPD, qui offrent des performances optimales, mais une interprétation physique moins transparente que Proteus.
    
-La production de nos séquences calculées est effectuée par des simulations Monte Carlo où toutes les positions de la chaîne polypeptidique sont autorisées à muter librement, excepté celles occupées par une glycine ou une proline qui conservent leur type d'acide aminé. Ces exceptions découlent de la contrainte du backbone fixe, puisque ces deux types d'acides aminés influent sur la structure du squelette. Nous obtenons ainsi des milliers de variantes pour chaque domaine étudié. Nos tests comprennent une validation directe et une validation croisée dans laquelle les énergies de référence optimisées sur un sous-ensemble de notre sélection sont utilisées sur un autre sous-ensemble de cette même sélection.
+La production de nos séquences calculées est effectuée par des simulations Monte Carlo où toutes les positions de la chaîne polypeptidique sont autorisées à muter librement, excepté celles occupées par une glycine ou une proline qui conservent leur type sauvage. Ces exceptions découlent de la contrainte du backbone fixe, puisque ces deux types d'acides aminés influent sur la structure du squelette. Nous obtenons des milliers de séquences pour chaque domaine PDZ. Nos tests comprennent une validation directe et une validation croisée dans laquelle les énergies de référence optimisées sur un sous-ensemble de domaines sont utilisées sur un autre sous-ensemble.
 
 Nous réalisons également une série de simulations Monte Carlo de deux domaines PDZ où le potentiel chimique hydrophobe des types d'acides aminés est progressivement augmenté, polarisant artificiellement la composition de la protéine. Comme le biais hydrophobe augmente, les acides aminés hydrophobes envahissent progressivement la protéine de l'intérieur. La propension de chaque position du noyau à devenir hydrophobe à un niveau de biais plus ou moins élevé peut être considérée comme un indice d'hydrophobicité. Il dépend de la structure et nous renseigne sur la capacité de la protéine à supporter des mutations.
 
 \section{Le modèle d'état déplié}
 \subsection{Les énergies de référence}
 \label{sec:enerref}
-Nous travaillons avec l'énergie de repliement de la protéine, c'est-à-dire la différence entre
-son énergie à l'état replié et son énergie à l'état déplié. Un mouvement élémentaire possible est une \og mutation\fg. Il s'agit d'une modification du type de chaîne latérale à une position choisie $i$ dans la protéine pliée, en assignant un rotamère particulier à la nouvelle chaîne latérale et de la modification inverse dans l'état déplié, voir les détails en \ref{sec:Phy}. Pour une séquence $S$ particulière, nous avons introduit à la section \ref{sec:etatreplie} l'énergie de l'état dépliée comme:
+Les simulations MC sont gouvernées par l'énergie de repliement de la protéine, c'est-à-dire la différence entre
+son énergie à l'état replié et déplié. Un mouvement élémentaire possible est une \og mutation\fg. Il s'agit d'une modification du type de chaîne latérale à une position choisie $i$ dans la protéine pliée, en assignant un rotamère particulier à la nouvelle chaîne latérale.On effectue en même temps la modification inverse dans l'état déplié, voir les détails en \ref{sec:Phy}. Pour une séquence $S$ particulière, nous avons introduit à la section \ref{sec:etatreplie} l'énergie de l'état déplié comme:
 \begin{equation}
   E^u=\sum_{i\in S}E^r_{t_i}
   \label{eq:unfolded}
 \end{equation} 
-ici, $i$ est la position dans la séquence et $t_i$ le type en $i$, la somme se faisant sur tous les résidus de $S$. Les grandeurs $E_t^r$ sont les  \og énergies de référence\fg. Ce sont des paramètres essentiels dans notre modèle de simulation. 
+Ici, $i$ est la position dans la séquence et $t_i$ le type en $i$, la somme se faisant sur tous les résidus de $S$. Les grandeurs $E_t^r$ sont les  \og énergies de référence\fg. Ce sont des paramètres essentiels dans notre modèle de simulation. 
 
 \subsection{La vraisemblance des énergies de référence}
 
-Notre objectif maintenant est de  déterminer les énergies de référence empiriquement afin que les simulations produisent des fréquences d'acides aminés qui correspondent à un ensemble de valeurs cibles, notamment des valeurs expérimentales. Pour cela, nous choisissons les $E_t^r$ qui maximisent la probabilité de Boltzmann d'un ensemble de séquences expérimentales.
+Notre objectif est de  déterminer les énergies de référence empiriquement afin que les simulations produisent des fréquences d'acides aminés qui correspondent à un ensemble de valeurs cibles, des valeurs expérimentales. Pour cela, nous choisissons les $E_t^r$ qui maximisent la probabilité de Boltzmann d'un ensemble de séquences expérimentales.
 C'est à dire, nous retenons les $E_t^r$ les plus vraisemblables étant donnée l'observation des séquences expérimentales. Soit $S$ une séquence particulière. Sa probabilité de Boltzmann est:
 \begin{equation}
   \label{eq:PDZ_Bolt}
@@ -39,7 +39,7 @@ $\Delta G_S$ est l'énergie libre de repliement de $S$, $G^f_S$ est l'énergie l
 \begin{equation}
 kT \ln p(S) = \sum_{i\in S} E^r(t_i) - G^f_S - kT \ln Z = \sum_{t\in aa}n_S(t)E^r_t - G^f_S - kT\ln Z
 \end{equation}
-la somme à droite se fait sur l'ensemble des types d'acides aminés et $n_S(t)$ est le nombre d'acides aminés de type $t$ dans $S$.
+La somme à droite se fait sur l'ensemble des types d'acides aminés et $n_S(t)$ est le nombre d'acides aminés de type $t$ dans $S$.
 
 Nous considérons maintenant un ensemble $\mathcal{S}$ de $N$ séquences cibles; on appelle $\mathcal{L}$ la probabilité d'observer l'ensemble $\mathcal{S}$ en entier. $\mathcal{L}$ est fonction des paramètres du modèle $E_t^r$. Comme nous voulons le maximum de $\mathcal{L}$ sur les $E_t^r$, nous nous référons  à  $\mathcal{L}$ comme la vraisemblance des $E_t^r$ \cite{Kleinman06}. Nous avons:
 \begin{equation}
@@ -914,8 +914,7 @@ $\psi_h = \frac{1}{N} \frac{\delta N}{\delta E} = 0,9$ changements par position 
   \label{titrAlignCask}
 \end{figure}
 
-
-%\includepdf[pages=-]{publicationPDZ.pdf}
+\includepdf[pages=-]{publicationPDZ.pdf}
 
 
 \section{Conclusion}

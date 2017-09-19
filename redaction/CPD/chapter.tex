@@ -399,7 +399,7 @@ Cette méthode permet dans les bons cas (par exemple pour les petits systèmes) 
 
 La méthode des réseaux de fonctions de coût est issue du domaine de l'optimisation combinatoire. Elle est utilisable si la fonction d'énergie est décomposable par paires. Il s'agit avant tout d'une recherche de la séquence-conformation qui minimise l'énergie globale ou GMEC. Dans certaines conditions, elle peut également fournir un ensemble de séquences-conformations proches du GMEC.
 
-Un réseau de fonction de coût, ou \og cost function network  \fg (CFN), est constitué d'un ensemble de variables $\mathcal{X}$ et d'un ensemble $\mathcal{C}$ de fonctions des variables $\mathcal{X}$ (les fonctions de coûts). Ici, nous considérons uniquement des CFN avec des fonctions constantes, des fonctions d'une seule variables (dîtes fonctions unaire) ou des fonctions de deux variables (dîtes binaires). Un problème CPD est représenté par un CFN de la façon suivante. À chaque résidu $i$ de la protéine on associe une variable $v_i$ ayant comme valeurs possibles les rotamères de $i$. À chaque variable $v_i$, on définit une fonction unaire $C_1(v_i)$ représentant l'énergie \og self\fg en $i$, $C_1(r_i)=E_i(r_i)$. À chaque couple de position $i,j$, on définit une fonction binaire $C_2(v_i,v_j)$ représentant les énergies d'interactions possibles entre $i$ et $j$, $C_2(r_i,r_j)=E_{ij}(r_i,r_j)$. Alors, une séquence-conformation correspond à une valeur pour chaque variable de $\mathcal{X}$, on parle de solution du CFN. La recherche du minimum global d'énergie revient ainsi à trouver une solution qui minimise la somme de toutes les fonctions de coût. Pour travailler avec des fonctions de coûts à valeurs entières positives, on multiplie toutes les valeurs par la précision des énergies et on translate les valeurs vers les nombres positifs.
+Un réseau de fonction de coût, ou \og cost function network  \fg (CFN), est constitué d'un ensemble de variables $\mathcal{X}$ et d'un ensemble $\mathcal{C}$ de fonctions des variables $\mathcal{X}$ (les fonctions de coûts). Ici, nous considérons uniquement des CFN avec des fonctions d'au plus deux variables (constantes, unaires ou binaires). Un problème CPD est représenté par un CFN de la façon suivante. À chaque résidu $i$ de la protéine on associe une variable $v_i$ ayant comme valeurs possibles les rotamères de $i$. À chaque variable $v_i$, on définit une fonction unaire $C_1(v_i)$ représentant l'énergie \og self\fg en $i$, $C_1(r_i)=E_i(r_i)$. À chaque couple de position $i,j$, on définit une fonction binaire $C_2(v_i,v_j)$ représentant les énergies d'interactions possibles entre $i$ et $j$, $C_2(r_i,r_j)=E_{ij}(r_i,r_j)$. Alors, une séquence-conformation correspond à une valeur pour chaque variable de $\mathcal{X}$, on parle de solution du CFN. La recherche du minimum global d'énergie revient ainsi à trouver une solution qui minimise la somme de toutes les fonctions de coût. Pour travailler avec des fonctions de coûts à valeurs entières positives, on multiplie toutes les valeurs par la précision des énergies et on translate les valeurs vers les nombres positifs.
 %
 \subsubsection{L'algorithme \og Depth-First Branch and Bound \fg (DFBB)}
 
@@ -418,9 +418,8 @@ Un exemple est présenté à la figure \ref{fig:DFBB}. Il devient alors nécessa
     \includegraphics[width=12cm]{figure/DFBB.png} \\
   \end{tabular}
   \caption{\textbf{Principe de l'algorithme du Depth-First Branch and Bound} Les solutions d'un CFN sont représentées sous forme d'un arbre dans lequel le sommet $S_0$ représente l'ensemble des solutions et les fils $S_1$ et $S_4$ une partition de $S_0$, avec pour chacun une première variable $v_1$ fixée. Le DFBB, descend jusqu'au sommet $S_2$ qu'il peut évaluer: un minorant de $S_2$ est 25. 25 devient le nouveau majorant du GMEC. L'algorithme remonte et redescend vers $S_3$. Ici le coût constant plus le coût des affectations de $v_1$ et $v_2$ est supérieur au majorant: On peut élaguer l'arbre au sommet $S_3$.}
-  \label{fig:DFBB}
+  \label{fig:DFBB}  
 \end{figure}
-
 
 \subsubsection{Equivalence Preserving Transformation}
 Une EPT, ou \og Equivalence Preserving Transformation\fg, transforme un CFN $A$ en un CFN $B$ tel que pour chaque affectation des variables, le total des coûts  est identique. $A$ et $B$ sont dits \og en cohérence locale \fg. Le principe est de déplacer les coûts entre fonctions pour de les attribuer aux fonctions qui portent sur une seule variable au plus (les coûts unitaires et les coûts constants). L'objectif est de faire apparaître de bons minorants \cite{schiex00} pour le DFBB. L'avantage ici, est de pouvoir conserver les transformations dans un chemin de l'arbre de recherche tout au long de l'optimisation. Il existe deux types de transformations:
@@ -433,18 +432,18 @@ Un exemple inspiré de la thèse de Seydou Traoré est présenté à  la figure 
 \begin{figure}[!htbp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=14cm]{figure/coherences_local.png} \\
+    \includegraphics[width=14cm]{figure/coherence_local.png} \\
   \end{tabular}
-  \caption{\textbf{Exemple de transformations EPT sur un CFN composé de 2 variables $i$ et $j$ ayant deux valeurs possibles.} La transformation de $A$ vers $B$ est une projection de $j$ vers le coût constant $C_0$. Puis une projection des fonctions binaires mène en $C$. La seconde valeur de $j$ est distribuée sur les arcs en $D$. Cela permet deux nouvelles projections qui mènent à $E$ puis à $F$. $A$ et $F$ sont en cohérence locale.}
+  \caption{\textbf{Exemple de transformations EPT sur un CFN composé de 2 variables $v_i$ et $v_j$ ayant deux valeurs possibles.} La transformation de $A$ vers $B$ est une projection de $v_j$ vers le coût constant $C_0$. Puis une projection des fonctions binaires mène en $C$. La seconde valeur de $v_j$ est distribuée sur les arcs en $D$. Cela permet deux nouvelles projections qui mènent à $E$ puis à $F$. $A$ et $F$ sont en cohérence locale.}
   \label{fig:EPT}
 \end{figure}
 
 Cette approche a montré sa supériorité, avec l'outil toulbar2 \cite{Allouche14,Traore13}, par rapport à un ensemble de résolveurs de CFN parmi les plus réputés actuellement qui exploitent notamment l'approche DEE/A* ou le backtracking. toulbar2 en combinant FFBB, EPT et DEE a été capable de trouver le GMEC dans le plus grand nombre de problèmes issu du CPD proposés aux différents outils.
 \subsection{L'heuristique Multistart Steepest Descent (MSD)}
 \label{MSD}
-En 2000, Wernisch, Hery et Wodak \cite{Wernisch00} partent du constat que l'espace des phases et les fonctions d'énergies qu'il est possible d'utiliser ne capturent que partiellement la réalité des protéines in vivo. Ainsi, le GMEC ne correspond pas forcément à la séquence la plus stable. D'autre part, il est bien connu que des protéines homologues éloignées avec des taux d'identité à moins de $50\%$ peuvent conserver quasiment la même structure 3D. Ce qui révèle l'immensité des séquences-conformations compatibles à un pli. Ainsi, leur objectif n'est pas de résoudre un problème d'optimisation, mais d'exhiber un ensemble de séquences de basse énergie. Ils proposent alors une heuristique conçue pour le CPD. Il s'agit d'une procédure simple qui a pour objectif de produire très facilement une grande quantité de séquences-conformations de basse énergie, sans se focaliser sur l'optimum.
+En 2000, Wernisch, Hery et Wodak \cite{Wernisch00} partent du constat que l'espace conformationnel et les fonctions d'énergie utilisées ne capturent que partiellement la réalité. Ainsi, le GMEC ne correspondra pas forcément à la séquence la plus stable. D'autre part, des protéines avec des taux d'identité de moins de $50\%$ peuvent conserver quasiment la même structure 3D. Cela révèle l'immensité du nombre de séquences-conformations propre à un pli. Ainsi, leur objectif n'est pas de résoudre un problème d'optimisation, mais d'exhiber un ensemble de séquences de basse énergie. Ils proposent alors une heuristique conçue pour le CPD. Il s'agit d'une procédure simple qui produit une grande quantité de séquences-conformations de basse énergie, sans se focaliser sur le GMEC.
 
-Un cycle heuristique se déroule de la façon suivante. Au départ, une séquence-conformation est construite en attribuant de façon aléatoire un type d'acide aminé et un rotamère à chaque position de la chaîne. Ensuite, en parcourant la séquence du début jusqu'à la fin, l'algorithme procède par des ajustements successifs à chaque position. Pour chaque position $i$ de la séquence, tous les états possibles sont évalués, le reste de la séquence et des rotamères étant fixé. Le meilleur rotamère est alors fixé en $i$. La séquence est ainsi ajustée par plusieurs passages successifs, jusqu'à convergence de l'énergie, voir l'algorithme \ref{alg:MSD}.
+Un cycle heuristique se déroule de la façon suivante. Au départ, une séquence-conformation est construite en attribuant de façon aléatoire un type d'acide aminé et un rotamère à chaque position de la chaîne. Ensuite, en parcourant la séquence du début jusqu'à la fin, l'algorithme procède par des ajustements successifs à chaque position. Pour chaque position $i$ de la séquence, tous les états possibles sont évalués, le reste de la séquence et des rotamères étant fixés. Le meilleur rotamère est alors attribué en $i$. La séquence est ainsi ajustée par plusieurs passages successifs, jusqu'à convergence de l'énergie, voir l'algorithme \ref{alg:MSD}.
 
 Un cycle est très rapide, ce qui permet de produire dans les cas usuels, plusieurs milliers de séquences par heure. L'utilisation mémoire hormis le stockage des énergies est quasi nulle. Il n'impose pas que la fonction d'énergie soit décomposable par paires, mais il s'en accommode très bien, en rendant possible l'utilisation de la mémoire par bloc pour l'ensemble des énergies impliquant une position $i$ donnée.
 
@@ -466,11 +465,10 @@ Un cycle est très rapide, ce qui permet de produire dans les cas usuels, plusie
 
 \subsection{L'algorithme génétique}
 
+Holland et ces collaborateurs \cite{Goldberg88} introduisent une nouvelle approche inspirée des principes biologiques de la sélection naturelle, avec des opérations comme des mutations, des croisements et la sélection. L'algorithme génétique a pour objectif d'obtenir un ensemble de solutions proches de l'optimum en un temps raisonnable.
+Le schéma général est le suivant. Une population de séquences-conformations est générée de façon aléatoire. L'énergie de tous les membres de la population est évaluée. Une sélection basée sur l'énergie est appliquée, ce qui diminue la taille de la population. Des mutations aléatoires et des croisements sont appliqués à la nouvelle population, ce qui l'augmente. Enfin, une condition d'arrêt est évaluée. Si elle n'est pas réalisée, l'algorithme retourne à l'étape d'évaluation (voir la figure \ref{fig:algo_gene}). 
 
-Holland et ces collaborateurs \cite{Goldberg88} introduisent une nouvelle approche inspirée des principes biologiques de la sélection naturelle, avec des opérations comme des mutations, des croisements et la sélection. L'algorithme génétique a pour objectif d'obtenir un ensemble de solutions proche de l'optimum en un temps raisonnable.
-Le schéma général du déroulement est le suivant. Une population de séquences-conformations est générée de façon aléatoire. L'énergie de tous les membres de la population est évaluée. Un critère de sélection basé sur l'énergie est appliqué à la population, qui donc diminue la taille de la population. Un ensemble de mutations aléatoires et un ensemble de croisements sont appliqués sur la nouvelle population ce qui permet d'augmenter. Alors, une condition d'arrêt est évaluée, si elle n'est pas réalisée l'algorithme retourne à l'étape d'évaluation (voir la figure \ref{fig:algo_gene}). 
-
-\begin{figure}[!htbp]
+\begin{figure}[!h]
   \centering
   \begin{tabular}{c}
     \includegraphics[width=5cm]{figure/algo_genetique.png} \\
@@ -480,64 +478,53 @@ Le schéma général du déroulement est le suivant. Une population de séquence
 \end{figure}
 
 
-Le membre de meilleure énergie de la population tend à se reproduire le plus vite dans la population. 
-Donc la valeur moyenne de l'énergie de l'ensemble des séquences-conformations converge.
-On peut voir ici que le nombre de membres de la population est un paramètre de l'algorithme. Plus ce nombre est faible plus la convergence va être rapide. A contrario, plus ce nombre est grand, plus l'exploration de l'espace d'états est meilleure. Les atouts de l'algorithme génétique sont sa capacité à franchir des barrières énergétiques par des changements de séquences rapides via le mécanisme des croisements et sa capacité à optimiser en parallèle différents secteurs de la structure.
+L'individu de meilleure énergie au sein population tend à se reproduire le plus vite. Donc la valeur moyenne de l'énergie de l'ensemble des séquences-conformations converge. On peut voir ici que le nombre de membres de la population est un paramètre de l'algorithme. Plus ce nombre est faible plus la convergence va être rapide. A contrario, plus ce nombre est grand, meilleur est l'exploration de l'espace d'états. Les atouts de l'algorithme génétique sont sa capacité à franchir des barrières énergétiques par des changements de séquences rapides via des croisements et sa capacité à optimiser en parallèle différents secteurs de la structure.
 
 \subsection{Le Monte Carlo}
 \label{sub:MC}
-Dans son acceptation la plus générale, un algorithme Monte Carlo est un algorithme stochastique ( il utilise une source de hasard) qui approche probablement la solution exacte en un temps d'exécution déterminable a priori. Cela le distingue, parmi les algorithmes stochastiques, d'un algorithme de Las Vegas qui donne un résultat exact dans un temps d'exécution non déterministe, et d'un algorithme d'Atlantic City qui donne des résultats probablement corrects dans un temps probablement rapide.
+Dans son acceptation la plus générale, un algorithme Monte Carlo est un algorithme stochastique ( il utilise une source de hasard) qui approche probablement la solution exacte en un temps d'exécution déterminable a priori. Cela le distingue, parmi les algorithmes stochastiques, d'un algorithme de Las Vegas qui donne un résultat exact dans un temps d'exécution non déterministe, et d'un algorithme d'Atlantic City qui donne des résultats probablement corrects dans un temps probablement rapide. Parmi les algorithmes Monte Carlo, les algorithmes Monte Carlo par Chaînes de Markov (MCMC) ont été particulièrement étudiés. Ce ne sont pas des algorithmes d'optimisation, mais des algorithmes d'échantillonnage d'une distribution de probabilité $\pi$. On veut générer des éléments $x_i$ de l'espace des phases tels que la distribution $D=\{x_i,\ i \in \mathbb{N} \}$ converge vers $\pi$ (dans un sens à préciser).
 
-Parmi les algorithmes Monte Carlo, les algorithmes Monte Carlo par Chaînes de Markov (MCMC) ont été particulièrement étudiés. Ce ne sont pas des algorithmes d'optimisation, mais des algorithmes d'échantillonnage d'une distribution de probabilité $\pi$. On veut générer des éléments $x_i$ de l'espace des phases tels que la distribution que constitue $D=\{x_i, i \in \mathbb{N} \}$ converge vers $\pi$.
-
-Il existe plusieurs méthodes pour répondre à cette question, mais les MCMC sont bien adaptés dans les situations où l'espace des états est de grande dimension. Un autre avantage des algorithmes MCMC est qu'elles ne nécessitent pas la connaissance de la constante de normalisation de $\pi$. Cela constitue un attrait important parce que dans beaucoup de situations cette constante de normalisation est particulièrement difficile à calculer. Pour ces raisons, l'échantillonnage par MCMC est très populaire depuis plus de cinquante ans.
-
-Dans la suite, nous donnons des conditions suffisantes pour que ce type l'algorithme converge dans le cadre d'un espace d'états $E$ fini, puis nous détaillons le plus célèbre d'entre eux, l'algorithme de Metropolis-Hasting. L'idée générale est de générer un élément $x_i$ en utilisant dans les états déjà visités uniquement $x_{i-1}$. Ce type de processus, où la mémoire utilisée est réduite à l'état précédent caractérise les processus de Markov.
+Il existe plusieurs méthodes pour répondre à cette question, mais les MCMC sont bien adaptés aux situations où l'espace des états est de grande dimension. Un autre avantage des algorithmes MCMC est qu'elles ne nécessitent pas la connaissance de la constante de normalisation de $\pi$. Cela constitue un attrait important parce que dans beaucoup de situations cette constante de normalisation est particulièrement difficile à calculer. Pour ces raisons, l'échantillonnage par MCMC est très populaire depuis plus de cinquante ans. Dans la suite, nous donnons des conditions suffisantes pour que ce type l'algorithme converge dans le cadre d'un espace d'états $E$ fini, puis nous détaillons le plus célèbre d'entre eux, l'algorithme de Metropolis-Hasting. L'idée générale est de générer un élément $x_i$ en utilisant dans les états déjà visités uniquement $x_{i-1}$. Ce type de processus, où la mémoire utilisée est réduite à l'état précédent caractérise les processus de Markov.
 
 
 On appelle processus stochastique, une suite de variables aléatoires $\{X_n\}$ à valeurs dans $E$.
 Une chaîne de Markov est un processus stochastique tel que:\\
-$$ \forall n \geqslant 0 ,\ \forall (i_0,,..,i_{n-1},i) \in E^{n+1},\  P(X_n=i|X_{n-1}=i_0,..,X_{0}=i_{n-1}) = P(X_n=i|X_{n-1}=i_0) $$
-Une chaîne de Markov est homogène si:\\ 
-\begin{displaymath}
+\[ \forall n \geqslant 0 ,\ \forall (x_0,,..,x_{n-1},x) \in E^{n+1},\  P(X_n=x|X_{n-1}=x_0,..,X_{0}=x_{n-1}) = P(X_n=x|X_{n-1}=x_0) \]
+Une chaîne de Markov est homogène si:
+\begin{equation}
   \label{eq_homog}
-\forall n \geqslant 0 ,\ \forall i,j \in E,\ P(X_n=i|X_{n-1}=j)= P(X_{n+1}=i|X_n=j) 
-\end{displaymath}
-C'est-à-dire que la probabilité de transition P est indépendante de n. Dans la suite, on ne considère que des chaînes de Markov homogènes et on note:\\
-$$P(X_n=b | X_{n-1}=a) = P(b|a)$$
-Dans la suite, pour simplifier les notations, on utilise l'écriture matricielle avec \\
-$$\mu_0 =(p(X_0=i))_{i \in E},$$
+\forall n \geqslant 0 ,\ \forall x_i,x_j \in E,\ P(X_n=x_i|X_{n-1}=x_j)= P(X_{n+1}=x_i|X_n=x_j) 
+\end{equation}
+C'est-à-dire que la probabilité de transition $P$ est indépendante de $n$. Dans la suite, on ne considère que des chaînes de Markov homogènes et on note:
+\[P(X_n=a | X_{n-1}=b) = P(a|b)\]
+Dans la suite, pour simplifier les notations, on utilise l'écriture matricielle avec
+\[\mu_0 =(P(X_0=a))_{a \in E}\]
 on a alors
-$$\mu_1 =\mu_0 . P$$ avec . le produit matriciel.
+\[\mu_1 =\mu_0 . P\] avec . le produit matriciel.
 
 \subsubsection{Le principe de la balance détaillée}
 
-Le principe de la balance détaillée est un principe général de comportement des systèmes dynamiques, il a été utilisé par Boltzmann pour la construction de la physique statistique et Cercignani et Lampis ont montré qu'il était vrai pour les gaz polyatomiques \cite{Cercignani81}. Il peut s'exprimer de la façon suivante. Pour un système dynamique à l'équilibre $\mathcal{S}$, $a$ et $b$ deux éléments de l'espace des phases associé à $\mathcal{S}$, la probabilité de transition de a vers b est égale à la probabilité de transition de b vers a, ou encore: 
-
+Le principe de la balance détaillée est un principe général de comportement des systèmes dynamiques. Il a été utilisé par Boltzmann pour la construction de la physique statistique et Cercignani et Lampis ont montré qu'il était vrai pour les gaz polyatomiques \cite{Cercignani81}. Il peut s'exprimer de la façon suivante. Pour un système dynamique $\mathcal{S}$ à l'équilibre, $a$ et $b$ deux éléments de l'espace des phases associé à $\mathcal{S}$, la probabilité de transition de $a$ vers $b$ est égale à la probabilité de transition de $b$ vers $a$, ou encore: 
 \begin{equation}
-\forall i,j \in \mathcal{S},\ \mathcal{P}(i \rightarrow j) = \mathcal{P}(j \rightarrow i) 
+\forall a,b \in \mathcal{S},\ \mathcal{P}(a \rightarrow b) = \mathcal{P}(b \rightarrow a) 
 \end{equation}
-Pour pouvoir appliquer ce principe aux chaînes de Markov, introduisons une définition proche:\\
-Soit $q$ une probabilité sur $E$, une chaîne de Markov est dite réversible par rapport à $q$ si
-
+Pour pouvoir appliquer ce principe aux chaînes de Markov, introduisons une définition proche. Soit $q$ une probabilité sur $E$, une chaîne de Markov est dite réversible par rapport à $q$ si
 \begin{equation}
-\forall i,j \in E,\ q(j)P(i|j)=q(j)P(j|i)
+\forall a,b \in E,\ q(b)P(a|b)=q(a)P(b|a)
 \end{equation}
 On a alors:
 \begin{equation}
-\forall i \in E,\ q.P (i) = \sum_{j \in E} q(j)P(i|j) = \sum_{j \in E} q(i)P(j|i) = q(i) \sum_{i \in E}P(j|i) = q(i)
+\forall a \in E,\ q.P (a) = \sum_{b \in E} q(b)P(a|b) = \sum_{b \in E} q(a)P(b|a) = q(a) \sum_{b \in E}P(b|a) = q(a)
 \end{equation}
-Ainsi, la probabilité $q$ avant la transition $P$ vaut la probabilité après, la chaîne est dite stationnaire pour $q$. Il nous faut alors construire une chaîne de Markov réversible pour la cible $\pi$. Mais cela une suffit pas, en effet, même si une distribution stationnaire est connue, rien ne dit que la chaîne va y entrer. 
+Ainsi, la probabilité $q$ est inchangée après la transition $P$, la chaîne est dite stationnaire pour $q$. Il nous faut alors construire une chaîne de Markov réversible pour la distribution cible $\pi$. Mais cela ne suffit pas, en effet, même si $\{X_n\}$ est stationnaire pour $\pi$, rien ne dit que la chaîne va, à un moment, distribuer les états comme $\pi$.
 
-Si E est discret, une chaîne de Markov réversible est dîtes ergodique si et seulement si:
-
+Si $E$ est discret, une chaîne de Markov réversible est dîte ergodique si et seulement si:
 \begin{itemize}
-\item pour tous $i$ et $j$ de l'espace d'état il existe un chemin de $i$  vers $j$  de probabilité non nulle. 
-\item Il existe aucun $x$ de $E$, tel que la chaîne revient en $x$ périodiquement.
+\item pour tous $a$ et $b$ de l'espace d'états il existe un chemin de $a$  vers $b$  de probabilité non nulle. 
+\item Il n'existe pas de $a$ de $E$ tel que la chaîne revienne en $x$ périodiquement.
 \item  Au cours du temps, tous les états sont visités par la chaîne avec une probabilité non nulle. 
 \end{itemize}
-On a alors, le résultat suivant:
-Une chaîne ergodique converge vers son unique distribution stationnaire.
+On a alors, le résultat suivant: une chaîne ergodique converge vers son unique distribution stationnaire.
 
 \subsubsection{L'algorithme de Metropolis}
 
@@ -545,45 +532,42 @@ Nous pouvons maintenant décrire l'algorithme de Metropolis-Hastings. L'idée in
 
 \begin{equation}
   \label{eq:Boltzmann}
-\pi^B(i) = \frac{\exp(-\beta E_i)}{\sum_{j \in E}\exp(-\beta E_j)} 
+\pi(x_i) = \frac{\exp(-\beta E_{x_i})}{\sum_{x_j \in E}\exp(-\beta E_{x_j})} 
 \end{equation}
 avec $\beta = \frac{1}{kT}$, $E_{x_i}$  l'énergie de $x_i$, $T$ la température et $k$ la constante de Boltzmann. La constante de normalisation de la probabilité s'appelle la fonction de partition du système. Elle est particulièrement difficile à calculer.
 
 On définit alors la probabilité de transition $P$ comme le produit de deux probabilités:
-
 \begin{equation}
   \label{decomp_Metro}
-P (j|i) = sel(j|i)acc(j|i)
+P (x_j|x_i) = sel(x_j|x_i)acc(x_j|x_i)
 \end{equation}
-avec $sel$ une probabilité de sélectionner l'état $j$ de $E$ lorsque le système est dans l'état $i$ et $acc$ la probabilité d'accepter l'état $j$ étant en $i$. Si la chaîne respecte le principe de la balance détaillée par rapport à $\pi^B$, on a:
-
+avec $sel$ une probabilité de sélectionner l'état $x_j$ de $E$ lorsque le système est dans l'état $x_i$ et $acc$ la probabilité d'accepter l'état $x_j$ étant en $x_i$. Si la chaîne respecte le principe de la balance détaillée par rapport à $\pi$, on a:
 \begin{equation}
   \label{balance}
-\pi^B(i)sel(j|i)acc(j|i) = \pi^B(j)sel(i|j)acc(i|j) 
+\pi(x_i)sel(x_j|x_i)acc(x_j|x_i) = \pi(x_j)sel(x_i|x_j)acc(x_i|x_j) 
 \end{equation}
 Si on se limite à une probabilité de sélection symétrique:
-
 \begin{equation}
     \label{bd_Metropolis}
-\pi^B(i)acc(j|i) = \pi^B(j)acc(i|j) 
+\pi(x_i)acc(x_j|x_i) = \pi(x_j)acc(x_i|x_j) 
 \end{equation}
 ce qui équivaut à
 \begin{equation}
-\frac{acc(j|i)}{acc(i|j)} =\frac{\pi^B(j)}{\pi^B(i)} = \frac{\exp(-\beta E_j)}{\exp(-\beta E_i)} = \exp(-\beta \Delta E) 
+\frac{acc(j|i)}{acc(i|j)} =\frac{\pi(j)}{\pi(i)} = \frac{\exp(-\beta E_{x_j})}{\exp(-\beta E_{x_i})} = \exp(-\beta \Delta E) 
 \end{equation}\\
-avec $\Delta E =  E_j - E_i$. Ainsi, le calcul de la fonction de partition est évité! Métropolis propose alors la probabilité d'acceptation suivante:\\
-si $\Delta E >0$ alors $acc(i|j) = \exp(- \beta \Delta E)$ \\
-sinon
-$acc(i|j)=1$\\
+avec $\Delta E =  E_{x_j} - E_{x_i}$. Ainsi, le calcul de la fonction de partition est évité! Métropolis propose alors la probabilité d'acceptation suivante: 
+\begin{equation}
+acc(x_i|x_j) = \exp(- \beta \Delta E)\ \text{si}\ \Delta E >0;\ acc(x_i|x_j)=1 \text{sinon}
+\end{equation}
 On a bien: 
 \begin{equation}
-\forall i,j \in E,\ \frac{acc(j|i)}{acc(i|j)} = \exp(\beta \Delta E)
+\forall\ x_i, x_j \in E,\ \frac{acc(x_j|x_i)}{acc(x_i|x_j)} = \exp(\beta \Delta E)
 \end{equation}\\
-Il suffit alors de choisir une probabilité de sélection symétrique ne violant pas les conditions ergodiques pour obtenir notre convergence. Par la suite, Hastings généralise l'algorithme à une probabilité $sel()$ non symétrique avec acc() telle que:\\
-si $\Delta E >0$ alors $acc(i|j) = \exp(- \beta \Delta E) \frac{sel(j|i)}{sel(i|j)}$ \label{eq:Hasting}\\
-sinon $acc(i|j)=1$\\
-Si l'on injecte cette nouvelle probabilité dans l'équation ~\ref{balance}, on a encore le respect de la balance détaillée et la convergence. La séquence d'instruction est résumée par L'algorithme \ref{alg:Metro}. Dans toute la suite, l'algorithme Monte Carlo (MC) désigne l'algorithme de Metropolis-Hastings, ce qui est un usage courant.
-
+Il suffit alors de choisir une probabilité de sélection symétrique ne violant pas les conditions ergodiques pour obtenir notre convergence. Par la suite, Hastings généralise l'algorithme à une probabilité $sel()$ non symétrique avec acc() telle que:
+\begin{equation}
+acc(x_i|x_j) = \exp(-\beta \Delta E) \frac{sel(x_j|x_i)}{sel(x_i|x_j)}\ \text{si}\ \Delta E >0;\ acc(x_i|x_j)=1\ \text{sinon}
+\end{equation}
+Si l'on injecte cette nouvelle probabilité dans l'équation \ref{balance}, on a encore le respect de la balance détaillée et la convergence. La séquence d'instructions est résumée par l'algorithme \ref{alg:Metro}. Dans toute la suite, l'algorithme Monte Carlo (MC) désigne l'algorithme de Metropolis-Hastings, ce qui est un usage courant.
 
 \begin{algorithm}
   Une séquence-conformation $S_0$ est choisie aléatoirement\;
@@ -609,37 +593,36 @@ Si l'on injecte cette nouvelle probabilité dans l'équation ~\ref{balance}, on 
 \subsection{Le Monte Carlo avec échanges de répliques (REMC)}
 \label{REMC}
 
-Une amélioration de l'algorithme de Métropolis-Hastings, connu sous le nom de \og Replica Exchange Monte Carlo\fg a été introduite par Swendsen and Wang \cite{Swendsen86}. La méthode est également connue sont le nom \og parallel tempering\fg. L'objectif est d'accélérer la convergence en permettant au processus stochastique de visiter plusieurs zones énergétiques simultanément. Ainsi, l'algorithme couple l'exploration dans des bassins de basses énergies, importante pour la recherche des solutions proche de l'optimum, avec l'exploration dans des zones de plus hautes énergies, ce qui facilite la sortie des minimums locaux.
+Une amélioration de l'algorithme de Métropolis-Hastings, connu sous le nom de \og Replica Exchange Monte Carlo\fg a été introduite par Swendsen and Wang \cite{Swendsen86}. La méthode est également connue sont le nom \og parallel tempering\fg. L'objectif est d'accélérer la convergence en permettant au processus stochastique de visiter plusieurs zones énergétiques simultanément. Ainsi, l'algorithme couple l'exploration des bassins de basses énergies proches de l'optimum, avec l'exploration des zones de plus hautes énergies, ce qui facilite la sortie des minimums locaux.
 
-On considère $N$ simulations MC du système à $N$ différentes températures. Ces répliques du système sont indépendantes les unes par rapport aux autres. On note $T^m$ avec $m=1,..,N$ les températures. Toutes ces températures sont différentes et il y a toujours une réplique à chaque température. Ainsi, nous nous plaçons dans un ensemble généralisé noté $E^N$, constitué des $N$-uplets $(x^1,...,x^n)$ avec les $x^i$ éléments de $E$, et $1 \leqslant i \leqslant N$  indexant les répliques. On travaille avec une chaîne de Markov $\{X_t\}_{1<t}$ , avec $X_t=(x^1_t,...,x^n_t)$ une variable aléatoire à valeur dans $E^N$. On ajoute maintenant, un nouveau type de déplacement, celui qui consiste à intervertir au temps $t$ l'état $x^i$ de la simulation à la température $T^i$ avec l'état $x^{i+1}$ à la température $T^{i+1}$. On a alors:
-
+On considère $N$ simulations MC du système à $N$ températures. Ces répliques du système sont indépendantes les unes par rapport aux autres. On note $T_m$ avec $m=1,..,N$ les températures. Toutes ces températures sont différentes et il y a toujours une réplique à chaque température. Ainsi, nous nous plaçons dans un ensemble généralisé noté $E^N$, constitué des $N$-uplets $(x_1,...,x_n)$ avec les $x_i$ éléments de $E$, et $1 \leqslant i \leqslant N$  indexant les répliques. On travaille avec une chaîne de Markov $\{X(t),\ t \in \mathbb{N}\}$ , avec $X(t)=(x_1(t),...,x_n(t))$ une variable aléatoire à valeur dans $E^N$ au temps $t$. On ajoute maintenant, un nouveau type de déplacement, celui qui consiste à intervertir au temps $t$ l'état $x_i$ de la simulation à la température $T_i$ avec l'état $x_{i+1}$ à la température $T_{i+1}$. On a alors:
 \begin{equation}
   \label{REMC_move}
-X_{t+1}=(x_{t+1}^1,..,x_{t+1}^i,x_{t+1}^{i+1},..,x_{t+1}^n) = (x_t^1,..,x_t^{i+1},x_t^i,..,x_t^n)
-\end{equation}\\
+\begin{cases}
+& x_{i+1}(t+1)=x_i(t)\\
+& \ \ \ x_{i}(t+1)=x_{i+1}(t)
+\end{cases}
+\end{equation}
 L'algorithme consiste alors à effectuer de façon itérative:
 \begin{itemize}
 \item un ensemble de $k$ déplacements de type MC, avec $k$ une constante  
 \item une tentative de déplacement de type \ref{REMC_move} 
 \end{itemize}
-
-Pour que le processus respecte la balance détaillée, il est nécessaire d'utiliser ce nouveau mouvement dans certaines conditions. Il est donc associé à une probabilité d'acceptation $acc_{swap}$ spécifique. Pour la déterminer, nous reprenons la même démarche que pour le Monte Carlo simple. Comme les répliques sont sans interactions, la distribution cible de la chaîne de Markov est égale aux produits des distributions cibles aux différentes températures:
-
+Pour que le processus respecte la balance détaillée, le nouveau déplacement doit respecter certaines conditions. Nous introduisons une probabilité d'acceptation $acc_{swap}$ spécifique. Pour la déterminer, nous reprenons la même démarche que pour le Monte Carlo simple. Comme les répliques sont sans interactions, la distribution cible de la chaîne de Markov est égale aux produits des distributions cibles aux différentes températures:
 \begin{equation}
-\pi^B(X_t)=\frac{1}{Z} \exp(-\sum_{i=1}^N \frac{E_{x^i}}{kT^i})
-\end{equation}\\
-En injectant cette expression de $\pi^B$ et ~\ref{REMC_move} dans \ref{bd_Metropolis}, on obtient:
-
-
+\pi(X)=\frac{1}{Z} \exp(-\sum_{i=1}^N \frac{E_{x_i}}{kT_i})
+\end{equation}
+En injectant cette expression de $\pi^$ et les équations \ref{REMC_move} dans \ref{bd_Metropolis}, on obtient:
 \begin{displaymath}
-\frac{acc_{swap}(X_{t+1}|X_t)}{acc_{swap}(X_t|X_{t+1})} =\frac{\pi^B(X_t)}{\pi^B(X_{t+1})}
-                                                     = \frac{ \exp(-E_{x^i}/kT^i) \exp(-E_{x^{i+1}}/kT^{i+1})}{\exp(-E_{x^{i+1}}/kT^i) \exp(-E_{x^i}/kT^{i+1})} 
+\frac{acc_{swap}(X(t+1)|X(t))}{acc_{swap}(X(t)|X(t+1))} =\frac{\pi(X(t))}{\pi(X(t+1))}
+                                                     = \frac{ \exp(-E_{x_i}/kT_i) \exp(-E_{x_{i+1}}/kT_{i+1})}{\exp(-E_{x_{i+1}}/kT_i) \exp(-E_{x_i}/kT_{i+1})} 
                                                        = \exp(-\Delta) 
-\end{displaymath}\\
-avec $\Delta = (\frac{1}{kT^i} -\frac{1}{kT^{i+1}})(E_{x^i} - E_{x^{i+1}})$. \\
-Ceci peut être satisfait par le critère de Metropolis:\\
-si $\Delta >0$ alors $acc_{swap} (X_{t+1}|X_t) = \exp(- \Delta)$ \\
-sinon $acc_{swap} (X_{t+1}|X_t) = 1$\\
+\end{displaymath}
+avec $\Delta = (\frac{1}{kT_i} -\frac{1}{kT_{i+1}})(E_{x_i} - E_{x_{i+1}})$. \\
+Ceci peut être satisfait par le critère de Metropolis:
+\begin{displaymath}
+acc_{swap}(X(t+1)|X(t)) = \exp(- \Delta)\ \text{si}\ \Delta >0;\ acc_{swap}(X(t+1)|X(t)) = 1\ \text{sinon}\ 
+\end{displaymath}
 Le REMC peut alors se décrire comme l'algorithme \ref{algoREMC}.
 
 \begin{algorithm}
@@ -660,7 +643,7 @@ la probabilité d'acceptation acc_{swap} est calculée \;
 \end{algorithm}
 
 
-Il reste au simulateur à adapter le nombre de répliques, les températures utilisées et la fréquence des tentatives d'échange à sa problématique. La capacité de REMC à être exécuté sur des machines parallèles à entrainer sa grande popularité, en particulier dans le domaine de la modélisation moléculaire, mais aussi en physique, chimie, intelligence artificielle.
+Il reste au simulateur à adapter le nombre de répliques, les températures utilisées et la fréquence des tentatives d'échange à sa problématique. La capacité de REMC à être exécuté sur des machines parallèles à entrainé sa grande popularité, en particulier dans le domaine de la modélisation moléculaire, mais aussi en physique, chimie, intelligence artificielle.
 
 %%% Local Variables:
 %%% mode: latex
