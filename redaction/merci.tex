@@ -1,3 +1,125 @@
 \chapter*{Remerciements}
 
-XXX
+Je remercie les membres du jury, Julien Bigot, Alain Denis, Sophie Barbe, Jean-François Gibrat, Yves-Henri Sanojouand pour avoir accepté de lire cette Thèse et d'évaluer mon travail. Je remercie particulierement Thomas Simonson, mon directeur, pour son encadrement de qualité, son énergie à aller de l'avant, son ouverture d'esprit et pour tout ce que ce travail m'a déjà apporté. Je remercie Yves Mechulam, mon directeur du laboratoire, d'avoir accepte que je realise cet travail, et de m'avoir donner de très bonnes conditions pour le faire tout au long de ces nombreuses années.
+Ma thèse s'incrit dans un projet bien plus large dans lequel beaucoup de personne au déjà collaborées. J'ai bénécifié de leurs travaux. Et je remercie en particulier Thomas Gaillard, pour la qualité de la modèlisation sans laquelle je n'aurrai pas pu avancer, Nicolas Panel pour notre collaboration sur la famille PDZ et son expertise de Cask et Tiam1, Franchescho Villa pour ses tests proteus et le GB, Karen Druart  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Le travail d’une thèse est le travail de trois longues années, qui n’aurait été possible
+sans l’aide et le soutient de mon entourage, tant professionnel que personnel. Je vais
+profiter de ces quelques lignes pour remercier ces personnes qui ont contribué de près ou
+de loin à cette partie de ma vie.
+Tout d’abord, je tiens à remercier les membres du jury, Anne-Claude Camproux, Juan
+Cortes, Annick Dejaegere et Yann Ponty, d’avoir accepté de lire ce manuscrit et d’évaluer
+mes travaux de thèse. Chacun de vos domaines ont permis de mettre en relief chaque
+facette de ma thèse. Je remercie également Yves Mechulam, directeur du Laboratoire de
+Biochimie, d’avoir accepté ma présence, parfois tardive, au sein du laboratoire et d’avoir
+mis à ma disposition les outils nécessaires pour réaliser au mieux ces recherches. Merci au
+CEA et à l’IDEX d’avoir financé cette thèse.
+Ensuite, je tiens à remercier Thomas Simonson qui a majoritairement encadré cette
+thèse. Je le remercie pour sa disponibilité, son accompagnement et la confiance qu’il
+m’a accordé au cours de ces travaux de recherche. Il a été présent à tout moment pour
+discuter des différents problèmes rencontrés et a été à l’écoute de mes propositions. Il
+m’a permis de nombreuses fois de prendre du recul sur mes travaux et d’élargir ma vision
+scientifique. Ceci a permis d’ajouter de nouvelles expériences, rendant l’ensemble de mes
+travaux cohérent. Aussi, je le remercie sincèrement pour sa présence lors de la rédaction
+de ce manuscrit, d’avoir conservé mes idées à travers les nombreuses corrections qu’il a
+proposé. Il a ainsi rendu ce manuscrit plus fluide et plus agréable à lire.
+Je remercie mon second directeur de thèse Edouard Audit qui a permis cette collaboration
+entre la Maison de la Simulation et le Laboratoire de Biochimie. Cette collaboration
+a donné une dimension pluridisciplinaire à ma thèse. Je le remercie pour sa présence aux
+i
+réunions, où il a donné son point de vue critique sur chaque point de ma thèse. Ceci a
+remis en question certains de mes résultats et de faire naître de nouvelles hypothèses,
+étoffant ainsi mes travaux.
+Je remercie également Julien Bigot pour sa participation active à ma thèse. Il a été
+présent au cours de ces trois années, où il m’a appris à affiner mes résultats, à organiser
+une démarche scientifique et à aller au-delà de mes limites. Je le remercie pour
+son aide, notamment en informatique, ce qui m’a permis de découvrir le monde de la
+parallélisation, des multi-threads et des speed-up. Je le remercie aussi pour sa présence
+extra-professionnelle, surtout notamment les petits séjours en Ardèche avec nos collègues,
+qui m’ont aéré l’esprit chaque été !
+Enfin, je voudrais remercier mes collaborateurs de l’IDRIS, Isabelle Dupays et Laurent
+Leger, qui ont mis en place de la parallélisation, ainsi que Matthieu Haefele de la MDLS
+qui a participé à la communication XPLOR/proteus.
+Je remercie mes collègues de mes deux laboratoires. Tout d’abord, je tiens à remercier
+tous mes collègues de BIOC et l’équipe de Bioinfo pour leur soutient. Plus particulièrement,
+je tiens à remercier Clara pour ses longs chemins sinueux pour aller manger,
+Pierre-Damien pour les soirées travaux/apéros/prêt-de-maison, Nicolas pour les soirées
+apéros/concerts-classiques et de m’avoir tourné le dos pendant 3 ans (et demi avec ton
+stage), Zoltan pour la découverte de la Dobos torta et de tes talents de cuisinier, Claire
+pour ta joie de vivre, Savvas pour la maturité scientifique et personnelle que tu as pu
+m’apporter, Mélanie pour ta disponibilité dans ton bureau et les multiples bavardages
+girly, Thomas G. pour toutes les discussions scientifiques qu’on a pu aborder, David pour
+les remplacements de disques durs brûlés et les discussions Proteus, Titine pour ta bonne
+humeur et la découverte de jeux vidéos, Michou pour ta gentillesse, Pierre pour ta disponibilité
+lorsque j’avais des questions sur les analyses expérimentales, Michel pour tes blagues
+très drôles (la dernière en date : ribosome/ribos-“femme”), Marc D. pour nos discussions
+arts et techniques, ainsi que Sylvain, Francesco, Mimi, Marc G., Emma, Alexey, les Pascaux,
+Guillaume, Catherine, Cédric, Gaby, Clément, Aurianne, Etienne, Régis, Giuliano,
+ii
+Jérôme, Nhan, Amlam, Ditipriya, qui ont chacun apporté une touche personnelle dans la
+vie quotidienne du laboratoire.
+Je remercie également mes collègues de la MDLS, que j’ai pu côtoyer, avec qui j’ai
+partagé des moments importants de la thèse (sacrées Journées des Thèses), des soirées, ou
+bien juste un café : Julien B., Ralitsa, Maxime, Pascal, Seb, Thibault, Valérie, Frédéric,
+Julien D., Florence, Mohamed, Pierre-Elliott, Philippe, Lu, Thomas, Matthieu, Adeline,
+Daniel, Michel, Pierre, Samuel, Martial, Mathieu, Pascal, Fabien, Rehan, Esra, Giorgio.
+Plus personnellement, je voudrais remercier Gautier Moroy, qui a été mon responsable
+de stage de M1, puis mon tuteur de thèse. Je le remercie pour son soutient, et sa disponibilité
+pour discuter des différents problèmes rencontrés, de m’avoir aidé à tenir bon lors de
+l’été 2012. Je voudrais remercier mes acolytes de l’association 2AEM-ISDD : Véronique,
+Mélaine, Grace et Answald. Merci pour cette expérience sans fin... Je voudrais remercier
+mes amis qui m’ont soutenu ces dernières années : Mélaine (encore !) pour le soutient
+intense que tu m’as apporté, ta joie, ta bonne humeur, pour le partage de la place “major
+de promo”, de m’avoir initié aux joies du festival (à dormir dans une tente glacée), et
+pour ces quelques jours de vacances à la plage ; Inès pour ton intégrité et ton don de
+savoir rassurer et apaiser les gens ; Alexandre pour tes précieux conseils scientifiques et
+associatifs ; Julien C. pour le partage d’expérience (alors cette thèse ?) ; Laura, Lionel et
+Nicolas C. pour votre bonne humeur et ces voyages à travers la France !
+Enfin, je voudrais remercier ma famille, qui sans eux, je ne serais pas arrivée jusque
+là. Tout d’abord, je voudrais remercier les membres de ma famille qui sont loin mais tout
+de même présents : Simone et Jean-Claude, Monique, Myriam et Laurent. Merci pour
+tout ! Mes frères et soeurs : Sandy, Olivia, Nicolas et Louise, qui ont suivi les péripéties
+à distance mais qui ne s’en sont pas moins senti impliqués. Un petit plus pour ma petite
+soeur qui découvre au lycée l’ADN, la transcription et la traduction des protéines. Elle
+a pu saisir malgré son jeune âge l’intérêt de ma thèse et nous avons pu discuter science
+plusieurs heures. C’est un peu grâce à elle que j’ai appris à vulgariser mes travaux. Je
+remercie énormément mon papa qui m’a soutenu, encouragé et conseillé toutes ces années
+d’études et qui m’a donné la force d’aller aussi loin. Et pour finir, je voudrais remercier mon
+iii
+compagnon David, qui m’a supporté ces derniers mois. Les gens qui me connaissent savent
+que ce fut une tâche ardue. Mais il y est parvenu ! Et je le remercie pour sa compréhension
+sur mes horaires tardives, mon implication dans la rédaction de ce mémoire et sur la
+préparation de ma soutenance. Et merci d’avoir subit mes répétitions de soutenance.
+Merci à tous...
+iv

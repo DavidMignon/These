@@ -17,7 +17,6 @@
 \usepackage[T1]{fontenc}      % encodage des fonts latex         
 \usepackage{lmodern}                                             
 \usepackage{microtype}        % typo supplémentaires             
-
 %%\usepackage[latin1]{inputenc}
 %%\usepackage[T1]{fontenc}
 %%\usepackage{lmodern}
@@ -162,6 +161,8 @@ Examinateurs : & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 {\footnotesize \bf Laboratoire de XXX}
 \end{center}
 \newpage
+
+
 \thispagestyle{empty}
 \null{}
 \addtolength{\textheight}{-3cm}
@@ -261,7 +262,6 @@ Examinateurs : & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 \date{XXX}
 
 \begin{document}
-
 % Title
 \pagenumbering{alph}
 \pdfbookmark[0]{Couverture}{cover}
@@ -299,7 +299,7 @@ Examinateurs : & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 \mainmatter{}
 \clearplaindoublepage{}
 
-\graphicspath{{./PDZ/}{./PDZ/graphes/}{./CPD/}{./CPD/figure/}{./comparaisons/figure/}{./methodes/}{./developpements/}}
+\graphicspath{{./Couverture}{./PDZ/}{./PDZ/graphes/}{./CPD/}{./CPD/figure/}{./comparaisons/figure/}{./methodes/}{./developpements/}}
 
 \include{CPD/chapter}
 \clearplaindoublepage{}
@@ -315,7 +315,6 @@ Examinateurs : & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 \clearplaindoublepage{}
 \include{PDZ/chapter}
 \clearplaindoublepage{}
-\include{conc}
 \clearplaindoublepage{}
 %\appendix
 %\include{annexe2}
