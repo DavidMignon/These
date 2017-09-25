@@ -1,8 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.6.23)  20 SEP 2017 16:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.14)  25 SEP 2017 15:57
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
-**\nonstopmode\input these.tex
+**\input these.tex
 (./these.tex (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo
@@ -941,27 +942,6 @@ File: pppdftex.def 2017/01/14 v0.5h Pdfpages driver for pdfTeX (AM)
 \c@AM@survey=\count152
 \AM@templatesizebox=\box66
 ) (./these.aux
-! Undefined control sequence.
-l.31 \pgfsyspdfmark
-                    {pgfid1}{5816760}{50762699}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31 \pgfsyspdfmark {p
-                      gfid1}{5816760}{50762699}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 (./merci.aux) (./dedicace.aux) (./glossaire.aux) (./CPD/chapter.aux)
 (./methodes/chapter.aux) (./annexe_proteus.aux) (./developpements/chapter.aux)
 (./comparaisons/chapter.aux
@@ -995,8 +975,8 @@ LaTeX Warning: Label `eq:energy' multiply defined.
 
 ) (./resume.aux)
 
-! Package natbib Error: Bibliography not compatible with author-year citations.
-
+./these.aux:167: Package natbib Error: Bibliography not compatible with author-
+year citations.
 (natbib)                Press <return> to continue in numerical citation style.
 
 
@@ -1004,7 +984,7 @@ See the natbib package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.171 ...and\NAT@force@numbers{}\NAT@force@numbers
+l.167 ...and\NAT@force@numbers{}\NAT@force@numbers
                                                   
 Check the bibliography entries for non-compliant syntax,
 or select author-year BibTeX style, e.g. plainnat
@@ -1084,27 +1064,6 @@ LaTeX Info: Redefining \dots on input line 264.
 LaTeX Info: Redefining \up on input line 264.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-Overfull \hbox (2091.2917pt too wide) in paragraph at lines 31--13
-[]\T1/cmr/m/n/12 pgfid1581676050762699                                         
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-                                                                               
-             [][][][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 31--13
-
- []
-
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count153
 \scratchdimen=\dimen173
@@ -1233,50 +1192,51 @@ Package microtype Info: Character `029' is missing
 
 
 
-] [2
+] [2] [3] [4
 
 
 ]
 \openout2 = `dedicace.aux'.
 
- (./dedicace.tex) [3
+ (./dedicace.tex) [5
 
-] [4
+] [6
 
 
 ] (./these.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12> on input line 6.
- [5
+ [7
 
-] [6] [7])
+] [8] [9])
 \tf@toc=\write4
 \openout4 = `these.toc'.
 
- [8] (./these.lof
-[9
+ [10]
+(./these.lof [11
 
 
-] [10] [11] [12] [13])
+] [12] [13] [14] [15])
 \tf@lof=\write5
 \openout5 = `these.lof'.
 
- [14] (./these.lot [15
+ [16] (./these.lot [17
 
 
 ])
 \tf@lot=\write6
 \openout6 = `these.lot'.
 
- [16]
+ [18]
 \openout2 = `glossaire.aux'.
 
- (./glossaire.tex
+
+(./glossaire.tex
 
 Package multicol Warning: Using `1' columns doesn't seem a good idea.
  I therefore use two columns instead on input line 6.
 
-! Undefined control sequence.
+./glossaire.tex:26: Undefined control sequence.
 <recently read> \Beta 
                       
 l.26 \item [$\Beta $]
@@ -1287,11 +1247,11 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-) [17
+) [19
 
 
 
-] [18
+] [20
 
 
 ]
@@ -1299,14 +1259,14 @@ and I'll forget about whatever was undefined.
 
  (./CPD/chapter.tex
 Chapitre 1.
-<./CPD/figure/CPD.png, id=1058, 433.25865pt x 645.73245pt>
+<./CPD/figure/CPD.png, id=1066, 433.25865pt x 645.73245pt>
 File: ./CPD/figure/CPD.png Graphic file (type png)
 
 <use ./CPD/figure/CPD.png>
 Package pdftex.def Info: ./CPD/figure/CPD.png used on input line 12.
 (pdftex.def)             Requested size: 199.16928pt x 296.84346pt.
 
-! Extra alignment tab has been changed to \cr.
+./CPD/chapter.tex:12: Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
 l.12 ...cludegraphics[width=7cm]{figure/CPD.png} &
@@ -1349,28 +1309,28 @@ LaTeX Warning: Command \` invalid in math mode on input line 94.
 
 LaTeX Warning: Command \` invalid in math mode on input line 105.
 
-[6] <./CPD/figure/liaison.png, id=1144, 597.70844pt x 845.32205pt>
+[6] <./CPD/figure/liaison.png, id=1152, 597.70844pt x 845.32205pt>
 File: ./CPD/figure/liaison.png Graphic file (type png)
 
 <use ./CPD/figure/liaison.png>
 Package pdftex.def Info: ./CPD/figure/liaison.png used on input line 118.
 (pdftex.def)             Requested size: 85.35826pt x 120.7176pt.
 
-<./CPD/figure/angle.png, id=1145, 528.47438pt x 462.22687pt>
+<./CPD/figure/angle.png, id=1153, 528.47438pt x 462.22687pt>
 File: ./CPD/figure/angle.png Graphic file (type png)
 
 <use ./CPD/figure/angle.png>
 Package pdftex.def Info: ./CPD/figure/angle.png used on input line 119.
 (pdftex.def)             Requested size: 85.35826pt x 74.65605pt.
 
-<./CPD/figure/dihedre.png, id=1146, 1014.79124pt x 1020.81375pt>
+<./CPD/figure/dihedre.png, id=1154, 1014.79124pt x 1020.81375pt>
 File: ./CPD/figure/dihedre.png Graphic file (type png)
 
 <use ./CPD/figure/dihedre.png>
 Package pdftex.def Info: ./CPD/figure/dihedre.png used on input line 120.
 (pdftex.def)             Requested size: 142.26378pt x 143.09987pt.
 
-<./CPD/figure/impropre.png, id=1147, 1005.7575pt x 635.37375pt>
+<./CPD/figure/impropre.png, id=1155, 1005.7575pt x 635.37375pt>
 File: ./CPD/figure/impropre.png Graphic file (type png)
 
 <use ./CPD/figure/impropre.png>
@@ -1382,14 +1342,14 @@ LaTeX Warning: Command \' invalid in math mode on input line 132.
 
 [7 <./CPD/figure/liaison.png> <./CPD/figure/angle.png> <./CPD/figure/dihedre.pn
 g> <./CPD/figure/impropre.png>] [8] [9] [10]
-<./CPD/figure/surface.png, id=1183, 939.51pt x 309.3156pt>
+<./CPD/figure/surface.png, id=1192, 939.51pt x 309.3156pt>
 File: ./CPD/figure/surface.png Graphic file (type png)
 
 <use ./CPD/figure/surface.png>
 Package pdftex.def Info: ./CPD/figure/surface.png used on input line 205.
 (pdftex.def)             Requested size: 369.88582pt x 121.77478pt.
 
-! Extra alignment tab has been changed to \cr.
+./CPD/chapter.tex:205: Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
 l.205 ...raphics[width=13cm]{figure/surface.png} &
@@ -1398,7 +1358,7 @@ You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
-! Undefined control sequence.
+./CPD/chapter.tex:215: Undefined control sequence.
 l.215 ...a  alors, en utilisant le modèle \texblt
                                                   {SA} pour le terme surfaci...
 The control sequence at the end of the top line
@@ -1407,14 +1367,14 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<./CPD/figure/ecrantage.png, id=1186, 284.481pt x 280.539pt>
+<./CPD/figure/ecrantage.png, id=1195, 284.481pt x 280.539pt>
 File: ./CPD/figure/ecrantage.png Graphic file (type png)
 
 <use ./CPD/figure/ecrantage.png>
 Package pdftex.def Info: ./CPD/figure/ecrantage.png used on input line 230.
 (pdftex.def)             Requested size: 170.71652pt x 168.35464pt.
 
-! Extra alignment tab has been changed to \cr.
+./CPD/chapter.tex:230: Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
 l.230 ...aphics[width=6cm]{figure/ecrantage.png} &
@@ -1424,14 +1384,14 @@ in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
 [11 <./CPD/figure/surface.png>] [12 <./CPD/figure/ecrantage.png>] [13]
-<./CPD/figure/rayon_Born.png, id=1222, 496.10344pt x 606.76688pt>
+<./CPD/figure/rayon_Born.png, id=1231, 496.10344pt x 606.76688pt>
 File: ./CPD/figure/rayon_Born.png Graphic file (type png)
 
 <use ./CPD/figure/rayon_Born.png>
 Package pdftex.def Info: ./CPD/figure/rayon_Born.png used on input line 307.
 (pdftex.def)             Requested size: 170.71652pt x 208.7978pt.
 
-! Extra alignment tab has been changed to \cr.
+./CPD/chapter.tex:307: Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
 l.307 ...phics[width=6cm]{figure/rayon_Born.png} &
@@ -1446,7 +1406,7 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 (hyperref)                than one, level fixed on input line 321.
 
 [15]
-! Extra }, or forgotten $.
+./CPD/chapter.tex:346: Extra }, or forgotten $.
 l.346 ...{\sum_{l_i=1}^{N_i} \exp(-\beta E(l_i))}}
                                                   
 I've deleted a group-closing symbol because it seems to be
@@ -1460,14 +1420,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 369--373
 
  []
 
-[17] <./CPD/figure/DEE.png, id=1269, 499.8675pt x 335.75438pt>
+[17] <./CPD/figure/DEE.png, id=1277, 499.8675pt x 335.75438pt>
 File: ./CPD/figure/DEE.png Graphic file (type png)
 
 <use ./CPD/figure/DEE.png>
 Package pdftex.def Info: ./CPD/figure/DEE.png used on input line 386.
 (pdftex.def)             Requested size: 227.62204pt x 152.89143pt.
 
-! Extra alignment tab has been changed to \cr.
+./CPD/chapter.tex:386: Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
 l.386 ...ludegraphics[width=8cm]{figure/DEE.png} &
@@ -1477,14 +1437,14 @@ in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
 [18 <./CPD/figure/DEE.png>] [19]
-<./CPD/figure/DFBB.png, id=1287, 476.5002pt x 298.4751pt>
+<./CPD/figure/DFBB.png, id=1295, 476.5002pt x 298.4751pt>
 File: ./CPD/figure/DFBB.png Graphic file (type png)
 
 <use ./CPD/figure/DFBB.png>
 Package pdftex.def Info: ./CPD/figure/DFBB.png used on input line 418.
 (pdftex.def)             Requested size: 341.43306pt x 213.88173pt.
  [20 <./CPD/figure/DFBB.png>]
-<./CPD/figure/coherence_local.png, id=1295, 861.4584pt x 557.6835pt>
+<./CPD/figure/coherence_local.png, id=1303, 861.4584pt x 557.6835pt>
 File: ./CPD/figure/coherence_local.png Graphic file (type png)
 
 <use ./CPD/figure/coherence_local.png>
@@ -1498,7 +1458,7 @@ e. Au d�-part, une s�quence-conformation
  []
 
 [21] [22 <./CPD/figure/coherence_local.png>]
-<./CPD/figure/algo_genetique.png, id=1317, 423.5022pt x 906.0249pt>
+<./CPD/figure/algo_genetique.png, id=1326, 423.5022pt x 906.0249pt>
 File: ./CPD/figure/algo_genetique.png Graphic file (type png)
 
 <use ./CPD/figure/algo_genetique.png>
@@ -1527,7 +1487,7 @@ t/12 X[] \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 x[]\OT1/lmr/m/n/12 )
  []
 
 [25] [26] [27] [28]
-! Missing { inserted.
+./CPD/chapter.tex:615: Missing { inserted.
 <to be read again> 
                    $
 l.615 En injectant cette expression de $\pi^$
@@ -1537,7 +1497,7 @@ You might want to delete and/or insert some corrections
 so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
-! Missing } inserted.
+./CPD/chapter.tex:615: Missing } inserted.
 <inserted text> 
                 }
 l.615 En injectant cette expression de $\pi^$
@@ -1548,7 +1508,7 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-! Missing $ inserted.
+./CPD/chapter.tex:642: Missing $ inserted.
 <inserted text> 
                 $
 l.642 \caption
@@ -1559,7 +1519,7 @@ you left one out. Proceed, with fingers crossed.
 
 LaTeX Warning: Command \' invalid in math mode on input line 642.
 
-! Missing $ inserted.
+./CPD/chapter.tex:642: Missing $ inserted.
 <inserted text> 
                 $
 l.642 \caption
@@ -1567,7 +1527,7 @@ l.642 \caption
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-! Missing $ inserted.
+./CPD/chapter.tex:642: Missing $ inserted.
 <inserted text> 
                 $
 l.642 \caption
@@ -1575,7 +1535,7 @@ l.642 \caption
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-! Extra }, or forgotten $.
+./CPD/chapter.tex:642: Extra }, or forgotten $.
 \algocf@Vline ... }\vtop {\algocf@addskiptotal #1}
                                                   \Hlne }}\vskip \skiphlne \...
 l.642 \caption
@@ -1586,7 +1546,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-! Missing $ inserted.
+./CPD/chapter.tex:642: Missing $ inserted.
 <inserted text> 
                 $
 l.642 \caption
@@ -1594,7 +1554,7 @@ l.642 \caption
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-! Missing } inserted.
+./CPD/chapter.tex:642: Missing } inserted.
 <inserted text> 
                 }
 l.642 \caption
@@ -1616,7 +1576,7 @@ Chapitre 2.
 [31
 
 
-] <./methodes/figure/cycleThermo.png, id=1429, 586.24283pt x 277.66895pt>
+] <./methodes/figure/cycleThermo.png, id=1437, 586.24283pt x 277.66895pt>
 File: ./methodes/figure/cycleThermo.png Graphic file (type png)
 
 <use ./methodes/figure/cycleThermo.png>
@@ -1624,7 +1584,7 @@ Package pdftex.def Info: ./methodes/figure/cycleThermo.png used on input line 2
 3.
 (pdftex.def)             Requested size: 256.0748pt x 121.2892pt.
  [32 <./methodes/figure/cycleThermo.png>] [33] <./methodes/figure/intersurface.
-png, id=1454, 960.68pt x 850.45pt>
+png, id=1463, 960.68pt x 850.45pt>
 File: ./methodes/figure/intersurface.png Graphic file (type png)
 
 <use ./methodes/figure/intersurface.png>
@@ -1632,7 +1592,7 @@ Package pdftex.def Info: ./methodes/figure/intersurface.png used on input line
 69.
 (pdftex.def)             Requested size: 227.62204pt x 201.50383pt.
  [34 <./methodes/figure/intersurface.png>] [35]
-! Missing { inserted.
+./methodes/chapter.tex:115: Missing { inserted.
 <to be read again> 
                    \begingroup 
 l.115 ... d'énergie, puisque les distances $r_\ij
@@ -1645,7 +1605,7 @@ so that I will find a matching right brace soon.
 
 LaTeX Warning: Command \ij invalid in math mode on input line 115.
 
-! Missing } inserted.
+./methodes/chapter.tex:115: Missing } inserted.
 <inserted text> 
                 }
 l.115 ...d'énergie, puisque les distances $r_\ij$
@@ -1656,14 +1616,14 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-<./methodes/figure/matrice.png, id=1486, 508.0581pt x 210.3057pt>
+<./methodes/figure/matrice.png, id=1494, 508.0581pt x 210.3057pt>
 File: ./methodes/figure/matrice.png Graphic file (type png)
 
 <use ./methodes/figure/matrice.png>
 Package pdftex.def Info: ./methodes/figure/matrice.png used on input line 124.
 (pdftex.def)             Requested size: 426.79134pt x 176.67482pt.
  [36] [37 <./methodes/figure/matrice.png>]
-[38] <./methodes/figure/inputener.png, id=1525, 357.7365pt x 599.841pt>
+[38] <./methodes/figure/inputener.png, id=1533, 357.7365pt x 599.841pt>
 File: ./methodes/figure/inputener.png Graphic file (type png)
 
 <use ./methodes/figure/inputener.png>
@@ -1671,7 +1631,7 @@ Package pdftex.def Info: ./methodes/figure/inputener.png used on input line 173
 .
 (pdftex.def)             Requested size: 312.9803pt x 524.81381pt.
 
-! Undefined control sequence.
+./methodes/chapter.tex:175: Undefined control sequence.
 <argument> ...{thefigure}}}{\ignorespaces \textbt 
                                                   {les fichiers d'énergies ...
 l.175 ...t{les fichiers d'énergies en mode CASA}}
@@ -1682,7 +1642,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Undefined control sequence.
+./methodes/chapter.tex:175: Undefined control sequence.
 <argument> \textbt 
                    {les fichiers d'énergies en mode CASA}
 l.175 ...t{les fichiers d'énergies en mode CASA}}
@@ -1693,7 +1653,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Undefined control sequence.
+./methodes/chapter.tex:175: Undefined control sequence.
 <argument> \textbt 
                    {les fichiers d'énergies en mode CASA}
 l.175 ...t{les fichiers d'énergies en mode CASA}}
@@ -1704,7 +1664,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<./methodes/figure/inputenerGB.png, id=1526, 404.712pt x 150.68295pt>
+<./methodes/figure/inputenerGB.png, id=1534, 404.712pt x 150.68295pt>
 File: ./methodes/figure/inputenerGB.png Graphic file (type png)
 
 <use ./methodes/figure/inputenerGB.png>
@@ -1712,7 +1672,7 @@ Package pdftex.def Info: ./methodes/figure/inputenerGB.png used on input line 1
 82.
 (pdftex.def)             Requested size: 369.88582pt x 137.72409pt.
 
-! Undefined control sequence.
+./methodes/chapter.tex:184: Undefined control sequence.
 <argument> ...{thefigure}}}{\ignorespaces \textbt 
                                                   {les fichiers d'énergies ...
 l.184 ...hiers d'énergies en mode GB/NEA et FDB}}
@@ -1723,7 +1683,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Undefined control sequence.
+./methodes/chapter.tex:184: Undefined control sequence.
 <argument> \textbt 
                    {les fichiers d'énergies en mode GB/NEA et FDB}
 l.184 ...hiers d'énergies en mode GB/NEA et FDB}}
@@ -1734,7 +1694,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Undefined control sequence.
+./methodes/chapter.tex:184: Undefined control sequence.
 <argument> \textbt 
                    {les fichiers d'énergies en mode GB/NEA et FDB}
 l.184 ...hiers d'énergies en mode GB/NEA et FDB}}
@@ -1762,13 +1722,13 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-! Double subscript.
+./methodes/chapter.tex:252: Double subscript.
 l.252  | E(r_i_
                ,r_j) | > S
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 [41 <./methodes/figure/inputenerGB.png>] [42]
-<./methodes/figure/cycleThermoLigand.png, id=1556, 434.80475pt x 254.12976pt>
+<./methodes/figure/cycleThermoLigand.png, id=1564, 434.80475pt x 254.12976pt>
 File: ./methodes/figure/cycleThermoLigand.png Graphic file (type png)
 
 <use ./methodes/figure/cycleThermoLigand.png>
@@ -1776,7 +1736,7 @@ Package pdftex.def Info: ./methodes/figure/cycleThermoLigand.png used on input
 line 277.
 (pdftex.def)             Requested size: 142.26378pt x 83.14958pt.
  [43 <./methodes/figure/cycleThermoLigand.png>] [44]
-<./methodes/figure/grp_matrix.png, id=1570, 563.706pt x 192.72pt>
+<./methodes/figure/grp_matrix.png, id=1578, 563.706pt x 192.72pt>
 File: ./methodes/figure/grp_matrix.png Graphic file (type png)
 
 <use ./methodes/figure/grp_matrix.png>
@@ -1784,14 +1744,14 @@ Package pdftex.def Info: ./methodes/figure/grp_matrix.png used on input line 32
 4.
 (pdftex.def)             Requested size: 341.43306pt x 116.73268pt.
 
-<./methodes/figure/group_matrix.png, id=1572, 301.125pt x 132.495pt>
+<./methodes/figure/group_matrix.png, id=1580, 301.125pt x 132.495pt>
 File: ./methodes/figure/group_matrix.png Graphic file (type png)
 
 <use ./methodes/figure/group_matrix.png>
 Package pdftex.def Info: ./methodes/figure/group_matrix.png used on input line 
 346.
 (pdftex.def)             Requested size: 142.26378pt x 62.59814pt.
- [45 <./methodes/figure/grp_matrix.png>] <./methodes/figure/output.png, id=1581
+ [45 <./methodes/figure/grp_matrix.png>] <./methodes/figure/output.png, id=1591
 , 712.45483pt x 381.00966pt>
 File: ./methodes/figure/output.png Graphic file (type png)
 
@@ -1810,7 +1770,7 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 \openout2 = `annexe_proteus.aux'.
 
  (./annexe_proteus.tex
-<./methodes/figure/structures_physique.png, id=1639, 602.7318pt x 754.4988pt>
+<./methodes/figure/structures_physique.png, id=1647, 602.7318pt x 754.4988pt>
 File: ./methodes/figure/structures_physique.png Graphic file (type png)
 
 <use ./methodes/figure/structures_physique.png>
@@ -1818,7 +1778,7 @@ Package pdftex.def Info: ./methodes/figure/structures_physique.png used on inpu
 t line 8.
 (pdftex.def)             Requested size: 369.88582pt x 463.02966pt.
 
-<./methodes/figure/structures_modele_logique.png, id=1642, 489.39886pt x 535.23
+<./methodes/figure/structures_modele_logique.png, id=1650, 489.39886pt x 535.23
 453pt>
 File: ./methodes/figure/structures_modele_logique.png Graphic file (type png)
  <use ./methodes/figure/structures_modele_logique.png>
@@ -1831,7 +1791,7 @@ Overfull \hbox (11.99997pt too wide) in paragraph at lines 18--21
  []
 
 
-<./methodes/figure/structures_dynamiques.png, id=1645, 501.3129pt x 654.2844pt>
+<./methodes/figure/structures_dynamiques.png, id=1653, 501.3129pt x 654.2844pt>
 File: ./methodes/figure/structures_dynamiques.png Graphic file (type png)
 <use ./methodes/figure/structures_dynamiques.png>
 Package pdftex.def Info: ./methodes/figure/structures_dynamiques.png used on in
@@ -1854,7 +1814,7 @@ tures_modele_logique.png>] [54 <./methodes/figure/structures_dynamiques.png>]
 
  (./developpements/chapter.tex
 Chapitre 3.
-<./developpements/figure/PDB.png, id=1668, 2233.85385pt x 1057.39304pt>
+<./developpements/figure/PDB.png, id=1676, 2233.85385pt x 1057.39304pt>
 File: ./developpements/figure/PDB.png Graphic file (type png)
 
 <use ./developpements/figure/PDB.png>
@@ -1872,7 +1832,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--34
  []
 
 [56 <./developpements/figure/PDB.png>]
-<./developpements/figure/openMP.png, id=1679, 3574.7151pt x 2817.0846pt>
+<./developpements/figure/openMP.png, id=1687, 3574.7151pt x 2817.0846pt>
 File: ./developpements/figure/openMP.png Graphic file (type png)
 
 <use ./developpements/figure/openMP.png>
@@ -1880,7 +1840,8 @@ Package pdftex.def Info: ./developpements/figure/openMP.png used on input line
 51.
 (pdftex.def)             Requested size: 398.33858pt x 313.87788pt.
 
-! You can't use `macro parameter character #' in horizontal mode.
+./developpements/chapter.tex:62: You can't use `macro parameter character #' in
+ horizontal mode.
 l.62 ...llèle est initiée par la directive \og #
                                                   pragma omp parallel\fg: le...
 Sorry, but I'm not programmed to handle this case;
@@ -1888,7 +1849,8 @@ I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-! You can't use `macro parameter character #' in horizontal mode.
+./developpements/chapter.tex:62: You can't use `macro parameter character #' in
+ horizontal mode.
 l.62 ... pas simultanée. Donc une directive \og #
                                                   pragma omp barrier\fg est ...
 Sorry, but I'm not programmed to handle this case;
@@ -1896,7 +1858,8 @@ I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-! You can't use `macro parameter character #' in horizontal mode.
+./developpements/chapter.tex:62: You can't use `macro parameter character #' in
+ horizontal mode.
 l.62 ...ve, ils sont libérés. La directive \og #
                                                   pragma omp master\fg dédi...
 Sorry, but I'm not programmed to handle this case;
@@ -1905,7 +1868,8 @@ If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
 [57] [58 <./developpements/figure/openMP.png>]
-! You can't use `macro parameter character #' in horizontal mode.
+./developpements/chapter.tex:64: You can't use `macro parameter character #' in
+ horizontal mode.
 l.64 ...urne une valeur unique, une directive \og#
                                                   pragma omp atomic capture ...
 Sorry, but I'm not programmed to handle this case;
@@ -1913,7 +1877,7 @@ I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-<./developpements/figure/re8_Ttraj.png, id=1693, 578.16pt x 433.62pt>
+<./developpements/figure/re8_Ttraj.png, id=1702, 578.16pt x 433.62pt>
 File: ./developpements/figure/re8_Ttraj.png Graphic file (type png)
 
 <use ./developpements/figure/re8_Ttraj.png>
@@ -1921,7 +1885,7 @@ Package pdftex.def Info: ./developpements/figure/re8_Ttraj.png used on input li
 ne 69.
 (pdftex.def)             Requested size: 341.43306pt x 256.07178pt.
 
-<./developpements/figure/re8_distri.png, id=1694, 578.16pt x 433.62pt>
+<./developpements/figure/re8_distri.png, id=1703, 578.16pt x 433.62pt>
 File: ./developpements/figure/re8_distri.png Graphic file (type png)
 
 <use ./developpements/figure/re8_distri.png>
@@ -1938,9 +1902,6 @@ istri.png>] [61] [62])
 
  (./comparaisons/chapter.tex
 Chapitre 4.
-
-LaTeX Warning: Reference `Mignon16' on page 63 undefined on input line 5.
-
 [63
 
 
@@ -1950,256 +1911,261 @@ LaTeX Warning: Reference `Mignon16' on page 63 undefined on input line 5.
 ]
 
 Package natbib Warning: Citation `Kuhlman06' on page 64 undefined on input line
- 15.
+ 23.
 
 
 Package natbib Warning: Citation `Schmidt10' on page 64 undefined on input line
- 28.
+ 33.
 
 
 Package natbib Warning: Citation `Druart15' on page 64 undefined on input line 
-31.
+36.
 
 
 Package natbib Warning: Citation `Aleksandrov10b' on page 64 undefined on input
- line 33.
+ line 37.
 
 
 Package natbib Warning: Citation `Gordon99' on page 64 undefined on input line 
-39.
+43.
 
 
-Package natbib Warning: Citation `Hong09' on page 64 undefined on input line 39
+Package natbib Warning: Citation `Hong09' on page 64 undefined on input line 43
 .
 
 
 Package natbib Warning: Citation `FrenkelBK' on page 64 undefined on input line
- 44.
+ 46.
 
 
 Package natbib Warning: Citation `ChipotBK' on page 64 undefined on input line 
-44.
+46.
 
 [64]
 
 Package natbib Warning: Citation `Schmidt10' on page 65 undefined on input line
- 48.
+ 50.
 
 
 Package natbib Warning: Citation `FrenkelBK' on page 65 undefined on input line
- 49.
+ 54.
 
 
 Package natbib Warning: Citation `GrimmetBK' on page 65 undefined on input line
- 49.
-
-[65]
-
-Package natbib Warning: Citation `FrenkelBK' on page 66 undefined on input line
- 98.
+ 54.
 
 
-Package natbib Warning: Citation `GrimmetBK' on page 66 undefined on input line
- 98.
+Package natbib Warning: Citation `Hong09' on page 65 undefined on input line 63
+.
 
-[66]
+[65] [66]
 
 Package natbib Warning: Citation `FrenkelBK' on page 67 undefined on input line
- 135.
+ 102.
 
 
 Package natbib Warning: Citation `GrimmetBK' on page 67 undefined on input line
- 135.
+ 102.
+
+[67]
+
+Package natbib Warning: Citation `FrenkelBK' on page 68 undefined on input line
+ 140.
 
 
-Package natbib Warning: Citation `FrenkelBK' on page 67 undefined on input line
- 142.
+Package natbib Warning: Citation `GrimmetBK' on page 68 undefined on input line
+ 140.
 
 
-Package natbib Warning: Citation `GrimmetBK' on page 67 undefined on input line
- 142.
-
-[67] [68] [69]
-
-Package natbib Warning: Citation `Charmm' on page 70 undefined on input line 25
-3.
+Package natbib Warning: Citation `FrenkelBK' on page 68 undefined on input line
+ 147.
 
 
-Package natbib Warning: Citation `Schmidt10' on page 70 undefined on input line
- 274.
+Package natbib Warning: Citation `GrimmetBK' on page 68 undefined on input line
+ 147.
 
-[70] [71]
+[68] [69]
 
-Package natbib Warning: Citation `Murphy02' on page 72 undefined on input line 
-324.
+Package natbib Warning: Citation `Simoncini15' on page 70 undefined on input li
+ne 233.
 
-[72] <./comparaisons/figure/align0.png, id=1858, 1666.18484pt x 1421.5509pt>
+[70]
+
+Package natbib Warning: Citation `Charmm' on page 71 undefined on input line 24
+1.
+
+
+LaTeX Warning: Reference `??' on page 71 undefined on input line 247.
+
+
+Package natbib Warning: Citation `Schmidt10' on page 71 undefined on input line
+ 251.
+
+[71] [72]
+
+Package natbib Warning: Citation `Murphy02' on page 73 undefined on input line 
+285.
+
+[73] <./comparaisons/figure/align0.png, id=1877, 1666.18484pt x 1421.5509pt>
 File: ./comparaisons/figure/align0.png Graphic file (type png)
 
 <use ./comparaisons/figure/align0.png>
-Package pdftex.def Info: ./comparaisons/figure/align0.png used on input line 34
-9.
+Package pdftex.def Info: ./comparaisons/figure/align0.png used on input line 29
+6.
 (pdftex.def)             Requested size: 455.24408pt x 388.4007pt.
 
-Overfull \hbox (11.99997pt too wide) in paragraph at lines 348--356
+Overfull \hbox (11.99997pt too wide) in paragraph at lines 295--301
  [][] 
  []
 
 
-Package natbib Warning: Citation `Schmidt10' on page 73 undefined on input line
- 369.
+Package natbib Warning: Citation `Schmidt10' on page 74 undefined on input line
+ 305.
 
 
-LaTeX Warning: Reference `fig:logo' on page 73 undefined on input line 374.
+LaTeX Warning: Reference `fig:logo' on page 74 undefined on input line 307.
 
-[73 <./comparaisons/figure/align0.png>]
-<./comparaisons/figure/2BYG_bestall_core3D.pdf, id=1867, 796.9775pt x 597.23125
+
+<./comparaisons/figure/2BYG_bestall_core3D.pdf, id=1882, 796.9775pt x 597.23125
 pt>
 File: ./comparaisons/figure/2BYG_bestall_core3D.pdf Graphic file (type pdf)
  <use ./comparaisons/figure/2BYG_bestall_core3D.pdf>
 Package pdftex.def Info: ./comparaisons/figure/2BYG_bestall_core3D.pdf used on 
-input line 380.
+input line 312.
 (pdftex.def)             Requested size: 455.24408pt x 341.14526pt.
 
-Overfull \hbox (11.99997pt too wide) in paragraph at lines 379--382
+Overfull \hbox (11.99997pt too wide) in paragraph at lines 311--314
  [][] 
  []
 
+[74]
 
-LaTeX Warning: Reference `fig:3Dstruct' on page 74 undefined on input line 389.
+LaTeX Warning: Reference `fig:3Dstruct' on page 75 undefined on input line 318.
 
 
-
-<./comparaisons/figure/1ABO_core_simil_byseq.png, id=1868, 578.16pt x 433.62pt>
+[75 <./comparaisons/figure/align0.png>]
+<./comparaisons/figure/1ABO_core_simil_byseq.png, id=1893, 578.16pt x 433.62pt>
 File: ./comparaisons/figure/1ABO_core_simil_byseq.png Graphic file (type png)
 <use ./comparaisons/figure/1ABO_core_simil_byseq.png>
 Package pdftex.def Info: ./comparaisons/figure/1ABO_core_simil_byseq.png used o
-n input line 395.
+n input line 326.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
 
-<./comparaisons/figure/1BM2_core_simil_byseq.png, id=1869, 578.16pt x 433.62pt>
+<./comparaisons/figure/1BM2_core_simil_byseq.png, id=1894, 578.16pt x 433.62pt>
 File: ./comparaisons/figure/1BM2_core_simil_byseq.png Graphic file (type png)
 <use ./comparaisons/figure/1BM2_core_simil_byseq.png>
 Package pdftex.def Info: ./comparaisons/figure/1BM2_core_simil_byseq.png used o
-n input line 396.
+n input line 327.
 (pdftex.def)             Requested size: 284.52756pt x 213.39536pt.
- [74]
-Overfull \hbox (8.2185pt too wide) in paragraph at lines 415--429
+
+Overfull \hbox (8.2185pt too wide) in paragraph at lines 346--360
  [] 
  []
 
-[75 <./comparaisons/figure/2BYG_bestall_core3D.pdf>] [76 <./comparaisons/figure
+[76 <./comparaisons/figure/2BYG_bestall_core3D.pdf>] [77 <./comparaisons/figure
 /1ABO_core_simil_byseq.png> <./comparaisons/figure/1BM2_core_simil_byseq.png>]
-<./comparaisons/figure/speed.png, id=1892, 1269.0612pt x 1003.46895pt>
+<./comparaisons/figure/speed.png, id=1913, 1269.0612pt x 1003.46895pt>
 File: ./comparaisons/figure/speed.png Graphic file (type png)
 
 <use ./comparaisons/figure/speed.png>
-Package pdftex.def Info: ./comparaisons/figure/speed.png used on input line 455
+Package pdftex.def Info: ./comparaisons/figure/speed.png used on input line 374
 .
 (pdftex.def)             Requested size: 455.24408pt x 359.96237pt.
 
-Overfull \hbox (11.99997pt too wide) in paragraph at lines 454--464
+Overfull \hbox (11.99997pt too wide) in paragraph at lines 373--378
  [][] 
  []
 
-<./comparaisons/figure/error.png, id=1895, 1231.11945pt x 848.4498pt>
+<./comparaisons/figure/error.png, id=1916, 1231.11945pt x 848.4498pt>
 File: ./comparaisons/figure/error.png Graphic file (type png)
 
 <use ./comparaisons/figure/error.png>
-Package pdftex.def Info: ./comparaisons/figure/error.png used on input line 482
+Package pdftex.def Info: ./comparaisons/figure/error.png used on input line 391
 .
 (pdftex.def)             Requested size: 455.24408pt x 313.74026pt.
 
-Overfull \hbox (11.99997pt too wide) in paragraph at lines 481--492
+Overfull \hbox (11.99997pt too wide) in paragraph at lines 390--395
  [][] 
  []
 
+[78]
 
-LaTeX Warning: Reference `fig:delta' on page 77 undefined on input line 509.
+LaTeX Warning: Reference `fig:delta' on page 79 undefined on input line 402.
 
 
-LaTeX Warning: Reference `fig:errors' on page 77 undefined on input line 515.
+LaTeX Warning: Reference `fig:errors' on page 79 undefined on input line 402.
 
-[77] [78 <./comparaisons/figure/speed.png>]
+[79 <./comparaisons/figure/speed.png>]
 
-LaTeX Warning: Reference `fig:delta' on page 79 undefined on input line 521.
+LaTeX Warning: Reference `fig:delta' on page 80 undefined on input line 405.
 
-[79 <./comparaisons/figure/error.png>]
 
-LaTeX Warning: Reference `fig:errors' on page 80 undefined on input line 599.
+Package natbib Warning: Citation `Simoncini15' on page 80 undefined on input li
+ne 405.
 
-[80] [81]
+[80 <./comparaisons/figure/error.png>]
 
-LaTeX Warning: Reference `fig:errors' on page 82 undefined on input line 616.
+LaTeX Warning: Reference `fig:errors' on page 81 undefined on input line 455.
+
+
+Package natbib Warning: Citation `Simoncini15' on page 81 undefined on input li
+ne 456.
+
+[81] [82]
+
+LaTeX Warning: Reference `fig:errors' on page 83 undefined on input line 464.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 627.
+(Font)              <10> on input line 472.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 627.
-[82] [83]
+(Font)              <7> on input line 472.
+[83] [84]
 
-Package natbib Warning: Citation `Schmidt10' on page 84 undefined on input line
- 731.
+Package natbib Warning: Citation `Schmidt10' on page 85 undefined on input line
+ 561.
 
 
-Package natbib Warning: Citation `Schmidt10' on page 84 undefined on input line
- 733.
+Package natbib Warning: Citation `Schmidt10' on page 85 undefined on input line
+ 561.
 
-<./comparaisons/figure/1CKA_entropy_seqnb.png, id=1944, 578.16pt x 433.62pt>
+<./comparaisons/figure/1CKA_entropy_seqnb.png, id=1966, 578.16pt x 433.62pt>
 File: ./comparaisons/figure/1CKA_entropy_seqnb.png Graphic file (type png)
 
 <use ./comparaisons/figure/1CKA_entropy_seqnb.png>
 Package pdftex.def Info: ./comparaisons/figure/1CKA_entropy_seqnb.png used on i
-nput line 745.
+nput line 569.
 (pdftex.def)             Requested size: 455.24408pt x 341.43124pt.
 
-Overfull \hbox (11.99997pt too wide) in paragraph at lines 744--747
+Overfull \hbox (11.99997pt too wide) in paragraph at lines 568--571
  [][] 
  []
 
-[84]
+[85] [86 <./comparaisons/figure/1CKA_entropy_seqnb.png>]
 
-Package natbib Warning: Citation `Fung08' on page 85 undefined on input line 77
-4.
-
-
-Package natbib Warning: Citation `Huang11' on page 85 undefined on input line 7
-74.
+Package natbib Warning: Citation `Simoncini15' on page 87 undefined on input li
+ne 589.
 
 
-Package natbib Warning: Citation `Ng11' on page 85 undefined on input line 776.
+Package natbib Warning: Citation `Schmidt10' on page 87 undefined on input line
+ 591.
 
 
+Package natbib Warning: Citation `Simonson15' on page 87 undefined on input lin
+e 591.
 
-Package natbib Warning: Citation `Lucore15' on page 85 undefined on input line 
-776.
-
-
-Package natbib Warning: Citation `Hallen15' on page 85 undefined on input line 
-776.
-
-[85 <./comparaisons/figure/1CKA_entropy_seqnb.png>]
-
-Package natbib Warning: Citation `Schmidt10' on page 86 undefined on input line
- 789.
-
-
-Package natbib Warning: Citation `Simonson15' on page 86 undefined on input lin
-e 790.
-
-
-Overfull \hbox (8.2185pt too wide) in paragraph at lines 825--839
+[87]
+Overfull \hbox (8.2185pt too wide) in paragraph at lines 623--637
  [] 
  []
 
-[86] [87] [88] [89
+[88] [89] [90] [91
 
-] [90
+] [92
 
 ])
 \openout2 = `annexe_posi.aux'.
 
- (./annexe_posi.tex [91
+ (./annexe_posi.tex [93
 
 
 
@@ -2217,18 +2183,18 @@ Overfull \hbox (46.13509pt too wide) in paragraph at lines 261--263
  [][] 
  []
 
-) [92] [93] [94] [95] [96]
+) [94] [95] [96] [97] [98]
 \openout2 = `PDZ/chapter.aux'.
 
  (./PDZ/chapter.tex
 Chapitre 5.
-[97
+[99
 
 
 
 
-] [98]
-! Extra }, or forgotten $.
+] [100]
+./PDZ/chapter.tex:46: Extra }, or forgotten $.
 l.46   kT \ln \mathcal{L} = \sum_S}
                                    \sum_{i \in aa} n_S(t) E^r_t - \sum_S} G^...
 I've deleted a group-closing symbol because it seems to be
@@ -2237,7 +2203,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-! Extra }, or forgotten $.
+./PDZ/chapter.tex:46: Extra }, or forgotten $.
 l.46 ...m_S}\sum_{i \in aa} n_S(t) E^r_t - \sum_S}
                                                    G^f_S - N kT \ln Z = \sum...
 I've deleted a group-closing symbol because it seems to be
@@ -2246,7 +2212,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-! Extra }, or forgotten $.
+./PDZ/chapter.tex:46: Extra }, or forgotten $.
 l.46 ...n Z = \sum_{t \in aa} N(t) E^r_t - \sum_S}
                                                    G^f_S - N kT \ln Z
 I've deleted a group-closing symbol because it seems to be
@@ -2255,17 +2221,17 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-[99] [100]
+[101] [102]
 
 LaTeX Warning: Command \r invalid in math mode on input line 110.
 
-[101] [102]
+[103] [104]
 Overfull \hbox (2.26656pt too wide) in paragraph at lines 171--171
 []\T1/lmr/bx/n/17.28 S�quences ex-p�-ri-men-tales et mo-d�les struc-tu-raux 
  []
 
-[103]
-! Missing $ inserted.
+[105]
+./PDZ/chapter.tex:224: Missing $ inserted.
 <inserted text> 
                 $
 l.224       }
@@ -2273,7 +2239,7 @@ l.224       }
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-! Missing $ inserted.
+./PDZ/chapter.tex:224: Missing $ inserted.
 <inserted text> 
                 $
 l.224       }
@@ -2284,8 +2250,8 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-[104] [105]
-<./PDZ/images/natives_alignees.png, id=2140, 1219.16348pt x 181.86626pt>
+[106] [107]
+<./PDZ/images/natives_alignees.png, id=2163, 1219.16348pt x 181.86626pt>
 File: ./PDZ/images/natives_alignees.png Graphic file (type png)
 
 <use ./PDZ/images/natives_alignees.png>
@@ -2293,7 +2259,7 @@ Package pdftex.def Info: ./PDZ/images/natives_alignees.png used on input line 2
 93.
 (pdftex.def)             Requested size: 512.1496pt x 76.39995pt.
 
-<./PDZ/images/corePDZ2.png, id=2141, 1751.54375pt x 1670.24pt>
+<./PDZ/images/corePDZ2.png, id=2164, 1751.54375pt x 1670.24pt>
 File: ./PDZ/images/corePDZ2.png Graphic file (type png)
 
 <use ./PDZ/images/corePDZ2.png>
@@ -2304,8 +2270,8 @@ Overfull \hbox (68.90549pt too wide) in paragraph at lines 292--296
  [][] 
  []
 
-[106] [107 <./PDZ/images/natives_alignees.png> <./PDZ/images/corePDZ2.png>]
-<./PDZ/homologues/1G9O.png, id=2153, 662.9987pt x 541.62791pt>
+[108] [109 <./PDZ/images/natives_alignees.png> <./PDZ/images/corePDZ2.png>]
+<./PDZ/homologues/1G9O.png, id=2176, 662.9987pt x 541.62791pt>
 File: ./PDZ/homologues/1G9O.png Graphic file (type png)
 
 <use ./PDZ/homologues/1G9O.png>
@@ -2316,7 +2282,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 308--311
  [][] 
  []
 
-<./PDZ/proteus/1G9O.png, id=2154, 644.14565pt x 696.4922pt>
+<./PDZ/proteus/1G9O.png, id=2177, 644.14565pt x 696.4922pt>
 File: ./PDZ/proteus/1G9O.png Graphic file (type png)
 
 <use ./PDZ/proteus/1G9O.png>
@@ -2327,8 +2293,8 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 317--320
  [][] 
  []
 
-[108] [109 <./PDZ/homologues/1G9O.png>] [110 <./PDZ/proteus/1G9O.png (PNG copy)
->] <./PDZ/homologues/1IHJ.png, id=2169, 677.13847pt x 463.79868pt>
+[110] [111 <./PDZ/homologues/1G9O.png>] [112 <./PDZ/proteus/1G9O.png (PNG copy)
+>] <./PDZ/homologues/1IHJ.png, id=2192, 677.13847pt x 463.79868pt>
 File: ./PDZ/homologues/1IHJ.png Graphic file (type png)
 
 <use ./PDZ/homologues/1IHJ.png>
@@ -2339,7 +2305,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 328--331
  [][] 
  []
 
-<./PDZ/proteus/1IHJ.png, id=2170, 669.28305pt x 697.28638pt>
+<./PDZ/proteus/1IHJ.png, id=2193, 669.28305pt x 697.28638pt>
 File: ./PDZ/proteus/1IHJ.png Graphic file (type png)
 
 <use ./PDZ/proteus/1IHJ.png>
@@ -2350,8 +2316,8 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 337--340
  [][] 
  []
 
-[111 <./PDZ/homologues/1IHJ.png>] [112 <./PDZ/proteus/1IHJ.png (PNG copy)>]
-<./PDZ/homologues/1R6J.png, id=2180, 595.44196pt x 532.09781pt>
+[113 <./PDZ/homologues/1IHJ.png>] [114 <./PDZ/proteus/1IHJ.png (PNG copy)>]
+<./PDZ/homologues/1R6J.png, id=2203, 595.44196pt x 532.09781pt>
 File: ./PDZ/homologues/1R6J.png Graphic file (type png)
 
 <use ./PDZ/homologues/1R6J.png>
@@ -2362,7 +2328,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 347--350
  [][] 
  []
 
-<./PDZ/proteus/1R6J.png, id=2181, 582.08772pt x 694.90384pt>
+<./PDZ/proteus/1R6J.png, id=2204, 582.08772pt x 694.90384pt>
 File: ./PDZ/proteus/1R6J.png Graphic file (type png)
 
 <use ./PDZ/proteus/1R6J.png>
@@ -2373,8 +2339,8 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 356--359
  [][] 
  []
 
-[113 <./PDZ/homologues/1R6J.png>] [114 <./PDZ/proteus/1R6J.png (PNG copy)>]
-<./PDZ/homologues/1N7E.png, id=2192, 680.28065pt x 525.7444pt>
+[115 <./PDZ/homologues/1R6J.png>] [116 <./PDZ/proteus/1R6J.png (PNG copy)>]
+<./PDZ/homologues/1N7E.png, id=2214, 680.28065pt x 525.7444pt>
 File: ./PDZ/homologues/1N7E.png Graphic file (type png)
 
 <use ./PDZ/homologues/1N7E.png>
@@ -2385,7 +2351,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 366--369
  [][] 
  []
 
-<./PDZ/proteus/1N7E.png, id=2193, 678.70956pt x 694.10966pt>
+<./PDZ/proteus/1N7E.png, id=2215, 678.70956pt x 694.10966pt>
 File: ./PDZ/proteus/1N7E.png Graphic file (type png)
 
 <use ./PDZ/proteus/1N7E.png>
@@ -2396,8 +2362,8 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 375--378
  [][] 
  []
 
-[115 <./PDZ/homologues/1N7E.png>] [116 <./PDZ/proteus/1N7E.png (PNG copy)>]
-<./PDZ/homologues/2BYG.png, id=2203, 701.49033pt x 471.74043pt>
+[117 <./PDZ/homologues/1N7E.png>] [118 <./PDZ/proteus/1N7E.png (PNG copy)>]
+<./PDZ/homologues/2BYG.png, id=2226, 701.49033pt x 471.74043pt>
 File: ./PDZ/homologues/2BYG.png Graphic file (type png)
 
 <use ./PDZ/homologues/2BYG.png>
@@ -2408,7 +2374,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 385--388
  [][] 
  []
 
-<./PDZ/proteus/2BYG.png, id=2204, 689.70717pt x 694.90384pt>
+<./PDZ/proteus/2BYG.png, id=2227, 689.70717pt x 694.90384pt>
 File: ./PDZ/proteus/2BYG.png Graphic file (type png)
 
 <use ./PDZ/proteus/2BYG.png>
@@ -2419,8 +2385,8 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 394--397
  [][] 
  []
 
-[117 <./PDZ/homologues/2BYG.png>] [118 <./PDZ/proteus/2BYG.png (PNG copy)>]
-<./PDZ/homologues/3K82.png, id=2214, 696.77707pt x 546.39296pt>
+[119 <./PDZ/homologues/2BYG.png>] [120 <./PDZ/proteus/2BYG.png (PNG copy)>]
+<./PDZ/homologues/3K82.png, id=2237, 696.77707pt x 546.39296pt>
 File: ./PDZ/homologues/3K82.png Graphic file (type png)
 
 <use ./PDZ/homologues/3K82.png>
@@ -2431,7 +2397,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 404--407
  [][] 
  []
 
-<./PDZ/proteus/3K82.png, id=2215, 688.1361pt x 697.28638pt>
+<./PDZ/proteus/3K82.png, id=2238, 688.1361pt x 697.28638pt>
 File: ./PDZ/proteus/3K82.png Graphic file (type png)
 
 <use ./PDZ/proteus/3K82.png>
@@ -2442,8 +2408,8 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 413--416
  [][] 
  []
 
-[119 <./PDZ/homologues/3K82.png>] [120 <./PDZ/proteus/3K82.png (PNG copy)>]
-<./PDZ/homologues/TIAM1.png, id=2226, 687.35054pt x 540.03957pt>
+[121 <./PDZ/homologues/3K82.png>] [122 <./PDZ/proteus/3K82.png (PNG copy)>]
+<./PDZ/homologues/TIAM1.png, id=2248, 687.35054pt x 540.03957pt>
 File: ./PDZ/homologues/TIAM1.png Graphic file (type png)
 
 <use ./PDZ/homologues/TIAM1.png>
@@ -2454,8 +2420,8 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 423--426
  [][] 
  []
 
-[121 <./PDZ/homologues/TIAM1.png (PNG copy)>]
-<./PDZ/homologues/CASK.png, id=2231, 606.43956pt x 555.92308pt>
+[123 <./PDZ/homologues/TIAM1.png (PNG copy)>]
+<./PDZ/homologues/CASK.png, id=2254, 606.43956pt x 555.92308pt>
 File: ./PDZ/homologues/CASK.png Graphic file (type png)
 
 <use ./PDZ/homologues/CASK.png>
@@ -2466,13 +2432,13 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 432--435
  [][] 
  []
 
-[122 <./PDZ/homologues/CASK.png (PNG copy)>]
+[124 <./PDZ/homologues/CASK.png (PNG copy)>]
 Overfull \hbox (1.70612pt too wide) in paragraph at lines 458--458
 []\T1/lmtt/m/n/12 fixbb -s Cask.pdb -resfile Cask.res -nstruct 10000 -ex1 -ex2 
 -linmem_ig 10[] 
  []
 
-[123
+[125
 
 
 
@@ -2481,12 +2447,12 @@ Overfull \hbox (1.70612pt too wide) in paragraph at lines 458--458
 
 
 
-] [124] [125] [126]
+] [126] [127] [128]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[127]
-<./PDZ/graphes/modelB6+/1G9O_simil_full.png, id=2299, 722.7pt x 433.62pt>
+[129]
+<./PDZ/graphes/modelB6+/1G9O_simil_full.png, id=2322, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1G9O_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1G9O_simil_full.png>
@@ -2494,7 +2460,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1G9O_simil_full.png used on inp
 ut line 641.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/1IHJ_simil_full.png, id=2300, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/1IHJ_simil_full.png, id=2323, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1IHJ_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1IHJ_simil_full.png>
@@ -2502,7 +2468,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1IHJ_simil_full.png used on inp
 ut line 642.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/1R6J_simil_full.png, id=2301, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/1R6J_simil_full.png, id=2324, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1R6J_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1R6J_simil_full.png>
@@ -2510,7 +2476,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1R6J_simil_full.png used on inp
 ut line 643.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/1N7E_simil_full.png, id=2302, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/1N7E_simil_full.png, id=2325, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1N7E_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1N7E_simil_full.png>
@@ -2518,7 +2484,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1N7E_simil_full.png used on inp
 ut line 644.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/2BYG_simil_full.png, id=2303, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/2BYG_simil_full.png, id=2326, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/2BYG_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/2BYG_simil_full.png>
@@ -2526,7 +2492,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/2BYG_simil_full.png used on inp
 ut line 645.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/3K82_simil_full.png, id=2304, 963.6pt x 578.16pt>
+<./PDZ/graphes/modelB6+/3K82_simil_full.png, id=2327, 963.6pt x 578.16pt>
 File: ./PDZ/graphes/modelB6+/3K82_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/3K82_simil_full.png>
@@ -2538,8 +2504,8 @@ Overfull \hbox (46.76184pt too wide) in paragraph at lines 640--648
  [][] 
  []
 
-[128]
-<./PDZ/graphes/modelB6+/1G9O_simil_core.png, id=2310, 722.7pt x 433.62pt>
+[130]
+<./PDZ/graphes/modelB6+/1G9O_simil_core.png, id=2333, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1G9O_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1G9O_simil_core.png>
@@ -2547,7 +2513,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1G9O_simil_core.png used on inp
 ut line 655.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/1IHJ_simil_core.png, id=2311, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/1IHJ_simil_core.png, id=2334, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1IHJ_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1IHJ_simil_core.png>
@@ -2555,7 +2521,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1IHJ_simil_core.png used on inp
 ut line 656.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/1R6J_simil_core.png, id=2312, 722.7pt x 449.2785pt>
+<./PDZ/graphes/modelB6+/1R6J_simil_core.png, id=2335, 722.7pt x 449.2785pt>
 File: ./PDZ/graphes/modelB6+/1R6J_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1R6J_simil_core.png>
@@ -2563,7 +2529,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1R6J_simil_core.png used on inp
 ut line 657.
 (pdftex.def)             Requested size: 239.00298pt x 148.5777pt.
 
-<./PDZ/graphes/modelB6+/1N7E_simil_core.png, id=2313, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/1N7E_simil_core.png, id=2336, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/1N7E_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1N7E_simil_core.png>
@@ -2571,7 +2537,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1N7E_simil_core.png used on inp
 ut line 658.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/modelB6+/2BYG_simil_core.png, id=2314, 722.7pt x 448.7967pt>
+<./PDZ/graphes/modelB6+/2BYG_simil_core.png, id=2337, 722.7pt x 448.7967pt>
 File: ./PDZ/graphes/modelB6+/2BYG_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/2BYG_simil_core.png>
@@ -2579,7 +2545,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/2BYG_simil_core.png used on inp
 ut line 659.
 (pdftex.def)             Requested size: 239.00298pt x 148.41837pt.
 
-<./PDZ/graphes/modelB6+/3K82_simil_core.png, id=2315, 722.7pt x 433.62pt>
+<./PDZ/graphes/modelB6+/3K82_simil_core.png, id=2338, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/modelB6+/3K82_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/3K82_simil_core.png>
@@ -2591,10 +2557,10 @@ Overfull \hbox (46.76184pt too wide) in paragraph at lines 654--662
  [][] 
  []
 
-[129] [130 <./PDZ/graphes/modelB6+/1G9O_simil_full.png> <./PDZ/graphes/modelB6+
+[131] [132 <./PDZ/graphes/modelB6+/1G9O_simil_full.png> <./PDZ/graphes/modelB6+
 /1IHJ_simil_full.png> <./PDZ/graphes/modelB6+/1R6J_simil_full.png> <./PDZ/graph
 es/modelB6+/1N7E_simil_full.png> <./PDZ/graphes/modelB6+/2BYG_simil_full.png> <
-./PDZ/graphes/modelB6+/3K82_simil_full.png>] [131 <./PDZ/graphes/modelB6+/1G9O_
+./PDZ/graphes/modelB6+/3K82_simil_full.png>] [133 <./PDZ/graphes/modelB6+/1G9O_
 simil_core.png> <./PDZ/graphes/modelB6+/1IHJ_simil_core.png> <./PDZ/graphes/mod
 elB6+/1R6J_simil_core.png> <./PDZ/graphes/modelB6+/1N7E_simil_core.png> <./PDZ/
 graphes/modelB6+/2BYG_simil_core.png> <./PDZ/graphes/modelB6+/3K82_simil_core.p
@@ -2602,8 +2568,8 @@ ng>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[132] [133] [134]
-<./PDZ/graphes/FDB/1G9O_simil_cut.png, id=2363, 722.7pt x 433.62pt>
+[134] [135] [136]
+<./PDZ/graphes/FDB/1G9O_simil_cut.png, id=2386, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/FDB/1G9O_simil_cut.png Graphic file (type png)
 
 <use ./PDZ/graphes/FDB/1G9O_simil_cut.png>
@@ -2611,7 +2577,7 @@ Package pdftex.def Info: ./PDZ/graphes/FDB/1G9O_simil_cut.png used on input lin
 e 812.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/FDB/1G9O_simil_core.png, id=2364, 722.7pt x 433.62pt>
+<./PDZ/graphes/FDB/1G9O_simil_core.png, id=2387, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/FDB/1G9O_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/FDB/1G9O_simil_core.png>
@@ -2619,7 +2585,7 @@ Package pdftex.def Info: ./PDZ/graphes/FDB/1G9O_simil_core.png used on input li
 ne 813.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/FDB/1R6J_simil_cut.png, id=2365, 722.7pt x 433.62pt>
+<./PDZ/graphes/FDB/1R6J_simil_cut.png, id=2388, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/FDB/1R6J_simil_cut.png Graphic file (type png)
 
 <use ./PDZ/graphes/FDB/1R6J_simil_cut.png>
@@ -2627,7 +2593,7 @@ Package pdftex.def Info: ./PDZ/graphes/FDB/1R6J_simil_cut.png used on input lin
 e 814.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/FDB/1R6J_simil_core.png, id=2366, 722.7pt x 433.62pt>
+<./PDZ/graphes/FDB/1R6J_simil_core.png, id=2389, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/FDB/1R6J_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/FDB/1R6J_simil_core.png>
@@ -2635,7 +2601,7 @@ Package pdftex.def Info: ./PDZ/graphes/FDB/1R6J_simil_core.png used on input li
 ne 815.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/FDB/2BYG_simil_cut.png, id=2367, 722.7pt x 433.62pt>
+<./PDZ/graphes/FDB/2BYG_simil_cut.png, id=2390, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/FDB/2BYG_simil_cut.png Graphic file (type png)
 
 <use ./PDZ/graphes/FDB/2BYG_simil_cut.png>
@@ -2643,7 +2609,7 @@ Package pdftex.def Info: ./PDZ/graphes/FDB/2BYG_simil_cut.png used on input lin
 e 816.
 (pdftex.def)             Requested size: 239.00298pt x 143.3994pt.
 
-<./PDZ/graphes/FDB/2BYG_simil_core.png, id=2368, 722.7pt x 433.62pt>
+<./PDZ/graphes/FDB/2BYG_simil_core.png, id=2391, 722.7pt x 433.62pt>
 File: ./PDZ/graphes/FDB/2BYG_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/FDB/2BYG_simil_core.png>
@@ -2655,24 +2621,24 @@ Overfull \hbox (46.76184pt too wide) in paragraph at lines 811--819
  [][] 
  []
 
-[135] <./PDZ/logos/core.png, id=2377, 1571.8725pt x 1887.6924pt>
+[137] <./PDZ/logos/core.png, id=2400, 1571.8725pt x 1887.6924pt>
 File: ./PDZ/logos/core.png Graphic file (type png)
 
 <use ./PDZ/logos/core.png>
 Package pdftex.def Info: ./PDZ/logos/core.png used on input line 855.
 (pdftex.def)             Requested size: 426.79134pt x 512.53534pt.
 
-<./PDZ/logos/exposed.png, id=2378, 1648.9605pt x 1351.6899pt>
+<./PDZ/logos/exposed.png, id=2401, 1648.9605pt x 1351.6899pt>
 File: ./PDZ/logos/exposed.png Graphic file (type png)
 
 <use ./PDZ/logos/exposed.png>
 Package pdftex.def Info: ./PDZ/logos/exposed.png used on input line 865.
 (pdftex.def)             Requested size: 426.79134pt x 349.84296pt.
- [136 <./PDZ/graphes/FDB/1G9O_simil_cut.png> <./PDZ/graphes/FDB/1G9O_simil_core
+ [138 <./PDZ/graphes/FDB/1G9O_simil_cut.png> <./PDZ/graphes/FDB/1G9O_simil_core
 .png> <./PDZ/graphes/FDB/1R6J_simil_cut.png> <./PDZ/graphes/FDB/1R6J_simil_core
 .png> <./PDZ/graphes/FDB/2BYG_simil_cut.png> <./PDZ/graphes/FDB/2BYG_simil_core
-.png>] [137 <./PDZ/logos/core.png>]
-<./PDZ/titration/alignTiam1.png, id=2395, 838.67615pt x 441.19115pt>
+.png>] [139 <./PDZ/logos/core.png>]
+<./PDZ/titration/alignTiam1.png, id=2417, 838.67615pt x 441.19115pt>
 File: ./PDZ/titration/alignTiam1.png Graphic file (type png)
 
 <use ./PDZ/titration/alignTiam1.png>
@@ -2684,8 +2650,8 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 877--882
  [][] 
  []
 
-[138 <./PDZ/logos/exposed.png>] [139 <./PDZ/titration/alignTiam1.png>]
-<./PDZ/titration/structure_Tiam1.png, id=2406, 4701.565pt x 3523.1625pt>
+[140 <./PDZ/logos/exposed.png>] [141 <./PDZ/titration/alignTiam1.png>]
+<./PDZ/titration/structure_Tiam1.png, id=2430, 4701.565pt x 3523.1625pt>
 File: ./PDZ/titration/structure_Tiam1.png Graphic file (type png)
 
 <use ./PDZ/titration/structure_Tiam1.png>
@@ -2696,15 +2662,15 @@ Package pdftex.def Info: ./PDZ/titration/structure_Tiam1.png used on input line
 
 LaTeX Warning: Float too large for page by 57.15373pt on input line 895.
 
-[140 <./PDZ/titration/structure_Tiam1.png>]
-<./PDZ/titration/alignCASK.png, id=2415, 798.94485pt x 490.35194pt>
+[142 <./PDZ/titration/structure_Tiam1.png>]
+<./PDZ/titration/alignCASK.png, id=2439, 798.94485pt x 490.35194pt>
 File: ./PDZ/titration/alignCASK.png Graphic file (type png)
 
 <use ./PDZ/titration/alignCASK.png>
 Package pdftex.def Info: ./PDZ/titration/alignCASK.png used on input line 910.
 (pdftex.def)             Requested size: 426.79134pt x 261.94289pt.
 
-<./PDZ/publicationPDZ.pdf, id=2416, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2440, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf>
@@ -2715,7 +2681,7 @@ File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./PDZ/publicationPDZ.pdf used on input line 917.
 (pdftex.def)             Requested size: 609.7977pt x 803.44675pt.
 
-<./PDZ/publicationPDZ.pdf, id=2419, page=1, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2443, page=1, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 1>
@@ -2728,7 +2694,7 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page1 used on input line 917
 .
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 
-[141
+[143
 
 
 ]
@@ -2749,8 +2715,8 @@ Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page1 used on input line 917
 .
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 
-[142 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2505, page=2, 609.7992pt x 803.4487pt>
+[144 <./PDZ/publicationPDZ.pdf>]
+<./PDZ/publicationPDZ.pdf, id=2528, page=2, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 2>
@@ -2768,8 +2734,8 @@ File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page2 used on input line 917
 .
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
- [143 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2569, page=3, 609.7992pt x 803.4487pt>
+ [145 <./PDZ/publicationPDZ.pdf>]
+<./PDZ/publicationPDZ.pdf, id=2591, page=3, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 3>
@@ -2787,8 +2753,8 @@ File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page3 used on input line 917
 .
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
- [144 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2610, page=4, 609.7992pt x 803.4487pt>
+ [146 <./PDZ/publicationPDZ.pdf>]
+<./PDZ/publicationPDZ.pdf, id=2632, page=4, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 4>
@@ -2806,8 +2772,8 @@ File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page4 used on input line 917
 .
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
- [145 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2631, page=5, 609.7992pt x 803.4487pt>
+ [147 <./PDZ/publicationPDZ.pdf>]
+<./PDZ/publicationPDZ.pdf, id=2654, page=5, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 5>
@@ -2825,8 +2791,8 @@ File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page5 used on input line 917
 .
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
- [146 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2650, page=6, 609.7992pt x 803.4487pt>
+ [148 <./PDZ/publicationPDZ.pdf>]
+<./PDZ/publicationPDZ.pdf, id=2673, page=6, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 6>
@@ -2844,8 +2810,8 @@ File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page6 used on input line 917
 .
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
- [147 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2664, page=7, 609.7992pt x 803.4487pt>
+ [149 <./PDZ/publicationPDZ.pdf>]
+<./PDZ/publicationPDZ.pdf, id=2687, page=7, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 7>
@@ -2863,8 +2829,8 @@ File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page7 used on input line 917
 .
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
- [148 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2673, page=8, 609.7992pt x 803.4487pt>
+ [150 <./PDZ/publicationPDZ.pdf>]
+<./PDZ/publicationPDZ.pdf, id=2696, page=8, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 8>
@@ -2882,8 +2848,8 @@ File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page8 used on input line 917
 .
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
- [149 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2679, page=9, 609.7992pt x 803.4487pt>
+ [151 <./PDZ/publicationPDZ.pdf>]
+<./PDZ/publicationPDZ.pdf, id=2701, page=9, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
 <use ./PDZ/publicationPDZ.pdf, page 9>
@@ -2901,224 +2867,224 @@ File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page9 used on input line 917
 .
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
- [150 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2685, page=10, 609.7992pt x 803.4487pt>
-File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
-
-<use ./PDZ/publicationPDZ.pdf, page 10>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page10 used on input line 91
-7.
-(pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
-File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
-
-<use ./PDZ/publicationPDZ.pdf, page 10>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page10 used on input line 91
-7.
-(pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
-File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
-
-<use ./PDZ/publicationPDZ.pdf, page 10>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page10 used on input line 91
-7.
-(pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
- [151 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2691, page=11, 609.7992pt x 803.4487pt>
-File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
-
-<use ./PDZ/publicationPDZ.pdf, page 11>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page11 used on input line 91
-7.
-(pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
-File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
-
-<use ./PDZ/publicationPDZ.pdf, page 11>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page11 used on input line 91
-7.
-(pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
-File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
-
-<use ./PDZ/publicationPDZ.pdf, page 11>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page11 used on input line 91
-7.
-(pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [152 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2697, page=12, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2707, page=10, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 12>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page12 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 10>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page10 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 12>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page12 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 10>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page10 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 12>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page12 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 10>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page10 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [153 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2705, page=13, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2714, page=11, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 13>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page13 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 11>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page11 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 13>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page13 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 11>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page11 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 13>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page13 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 11>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page11 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [154 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2711, page=14, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2720, page=12, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 14>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page14 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 12>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page12 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 14>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page14 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 12>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page12 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 14>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page14 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 12>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page12 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [155 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2718, page=15, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2728, page=13, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 15>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page15 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 13>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page13 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 15>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page15 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 13>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page13 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 15>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page15 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 13>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page13 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [156 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2723, page=16, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2734, page=14, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 16>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page16 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 14>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page14 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 16>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page16 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 14>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page14 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 16>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page16 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 14>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page14 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [157 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2728, page=17, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2740, page=15, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 17>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page17 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 15>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page15 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 17>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page17 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 15>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page15 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 17>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page17 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 15>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page15 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [158 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2742, page=18, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2745, page=16, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 18>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page18 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 16>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page16 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 18>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page18 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 16>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page16 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 18>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page18 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 16>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page16 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [159 <./PDZ/publicationPDZ.pdf>]
-<./PDZ/publicationPDZ.pdf, id=2747, page=19, 609.7992pt x 803.4487pt>
+<./PDZ/publicationPDZ.pdf, id=2751, page=17, 609.7992pt x 803.4487pt>
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 19>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page19 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 17>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page17 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 19>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page19 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 17>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page17 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
 File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-<use ./PDZ/publicationPDZ.pdf, page 19>
-Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page19 used on input line 91
+<use ./PDZ/publicationPDZ.pdf, page 17>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page17 used on input line 91
 7.
 (pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
  [160 <./PDZ/publicationPDZ.pdf>]
-[161 <./PDZ/titration/alignCASK.png>] [162] [163]
+<./PDZ/publicationPDZ.pdf, id=2765, page=18, 609.7992pt x 803.4487pt>
+File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
 
-Package natbib Warning: Citation `Panel17' on page 164 undefined on input line 
+<use ./PDZ/publicationPDZ.pdf, page 18>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page18 used on input line 91
+7.
+(pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
+File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
+
+<use ./PDZ/publicationPDZ.pdf, page 18>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page18 used on input line 91
+7.
+(pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
+File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
+
+<use ./PDZ/publicationPDZ.pdf, page 18>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page18 used on input line 91
+7.
+(pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
+ [161 <./PDZ/publicationPDZ.pdf>]
+<./PDZ/publicationPDZ.pdf, id=2770, page=19, 609.7992pt x 803.4487pt>
+File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
+
+<use ./PDZ/publicationPDZ.pdf, page 19>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page19 used on input line 91
+7.
+(pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
+File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
+
+<use ./PDZ/publicationPDZ.pdf, page 19>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page19 used on input line 91
+7.
+(pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
+File: ./PDZ/publicationPDZ.pdf Graphic file (type pdf)
+
+<use ./PDZ/publicationPDZ.pdf, page 19>
+Package pdftex.def Info: ./PDZ/publicationPDZ.pdf, page19 used on input line 91
+7.
+(pdftex.def)             Requested size: 598.28769pt x 788.28159pt.
+ [162 <./PDZ/publicationPDZ.pdf>]
+[163 <./PDZ/titration/alignCASK.png>] [164] [165]
+
+Package natbib Warning: Citation `Panel17' on page 166 undefined on input line 
 943.
 
-) [164] (./these.bbl (./these.brf)
+) [166] (./these.bbl (./these.brf)
 \tf@brf=\write7
 \openout7 = `these.brf'.
 
- [165
+ [167
 
 
 
 
-] [166] [167]
+] [168] [169]
 
-! Package inputenc Error: Unicode char ﬃ (U+FB03)
+./these.bbl:222: Package inputenc Error: Unicode char ﬃ (U+FB03)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -3132,7 +3098,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-! Package inputenc Error: Unicode char ﬁ (U+FB01)
+./these.bbl:242: Package inputenc Error: Unicode char ﬁ (U+FB01)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -3145,9 +3111,9 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[168]
+[170]
 
-! Package inputenc Error: Unicode char ﬁ (U+FB01)
+./these.bbl:267: Package inputenc Error: Unicode char ﬁ (U+FB01)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -3161,7 +3127,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-! Package inputenc Error: Unicode char ﬂ (U+FB02)
+./these.bbl:287: Package inputenc Error: Unicode char ﬂ (U+FB02)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -3178,7 +3144,7 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
 
-! Package inputenc Error: Unicode char ﬁ (U+FB01)
+./these.bbl:307: Package inputenc Error: Unicode char ﬁ (U+FB01)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -3191,8 +3157,8 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[169]
-! Misplaced alignment tab character &.
+[171]
+./these.bbl:357: Misplaced alignment tab character &.
 <argument> Journal of Biomolecular Structure &
                                                Dynamics
 l.357 
@@ -3204,9 +3170,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[170] [171] [172] [173] [174] [175]
+[172] [173] [174] [175] [176] [177]
 
-! Package inputenc Error: Unicode char ́ (U+301)
+./these.bbl:710: Package inputenc Error: Unicode char ́ (U+301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -3220,7 +3186,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-! Package inputenc Error: Unicode char ﬁ (U+FB01)
+./these.bbl:717: Package inputenc Error: Unicode char ﬁ (U+FB01)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -3233,10 +3199,10 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-) [176]
+) [178]
 \openout2 = `resume.aux'.
 
- (./resume.tex) [177
+ (./resume.tex) [179
 
 
 
@@ -3252,11 +3218,22 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 341.
 (./PDZ/chapter.aux) (./resume.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 341.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 341.
-Package rerunfilecheck Info: File `these.out' has not changed.
-(rerunfilecheck)             Checksum: 3FFAB5222CA8CE533EBEB6A81B5100F0;10558.
-Package rerunfilecheck Info: File `these.brf' has not changed.
-(rerunfilecheck)             Checksum: D4528136FD8B4947D031ECEB765E126F;9238.
 
+
+Package rerunfilecheck Warning: File `these.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `these.out':
+(rerunfilecheck)             Before: 3FFAB5222CA8CE533EBEB6A81B5100F0;10558
+(rerunfilecheck)             After:  E8A96A38BE484D820B00A77C97B3CDCA;10568.
+
+Package rerunfilecheck Warning: File `these.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `these.brf':
+(rerunfilecheck)             Before: D4528136FD8B4947D031ECEB765E126F;9238
+(rerunfilecheck)             After:  14609DEFC1FB529F7EF0F3727A34AE6C;9293.
 
 LaTeX Warning: There were undefined references.
 
@@ -3264,47 +3241,55 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 341.
- )
-(\end occurred inside a group at level 2)
-
-### simple group (level 2) entered at line 389 ({)
-### simple group (level 1) entered at line 389 ({)
-### bottom level 
+ ) 
 Here is how much of TeX's memory you used:
- 16862 strings out of 494875
- 260010 string characters out of 6178748
- 455425 words of memory out of 5000000
- 18768 multiletter control sequences out of 15000+600000
- 128084 words of font info for 208 fonts, out of 8000000 for 9000
+ 16864 strings out of 494875
+ 260031 string characters out of 6178748
+ 454304 words of memory out of 5000000
+ 18763 multiletter control sequences out of 15000+600000
+ 127951 words of font info for 207 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 46i,18n,48p,2055b,1273s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texm
-f/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.e
-nc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/e
-nc/dvips/lm/lm-mathex.enc} </home/mignon/.texlive2016/texmf-var/fonts/pk/ljfour
-/jknappen/ec/ecrm1200.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/s
-tix/STIXGeneral-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/st
-ix/STIXGeneral-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/do
-ublestroke/dsrom12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/pub
-lic/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxo10.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/te
-xmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lm
-mi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fon
-ts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb>
-</usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1
-/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt1
-2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.
-pfb>
-Output written on these.pdf (197 pages, 34017044 bytes).
+ 46i,18n,48p,2043b,967s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{section*.54} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.62} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.55} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.63} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.48} has been referenced but does not 
+exist, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvip
+s/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/t
+exmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-m
+athex.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-It
+alic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-Reg
+ular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsrom12
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmbxo10.pfb></usr/share/texmf/fonts/type
+1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/pu
+blic/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type
+1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on these.pdf (201 pages, 34026483 bytes).
 PDF statistics:
- 3280 PDF objects out of 3580 (max. 8388607)
- 2749 compressed objects within 28 object streams
- 681 named destinations out of 1000 (max. 500000)
+ 3291 PDF objects out of 3580 (max. 8388607)
+ 2768 compressed objects within 28 object streams
+ 690 named destinations out of 1000 (max. 500000)
  35838 words of extra memory for PDF output out of 42996 (max. 10000000)
 
