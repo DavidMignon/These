@@ -33,8 +33,8 @@ First, if the typical error in the energy function is $\sigma$, we should enumer
 Second, it may be of interest to characterize the diversity of a sequence family, by enumerating sets of sequences compatible with its backbone fold (the ``inverse folding problem'') \cite{Ponder87,Koehl02,Larson02,Schmidt09,Schmidt10}.
 Third, we may want to compute properties that are averaged over structural and possibly sequence fluctuations at a given
 temperature, which requires that we explore solutions within the thermal range.
-An example is the calculation of ligand binding constants, following a method introduced recently \cite{Druart15}.
-Calculation of acid/base constants by constant-pH Monte Carlo (MC) is another example, which can be seen as a subproblem of CPD, with sidechain protonation state changes are treated as mutations \cite{Aleksandrov10b,Polydorides13,Kilambi12}.
+An example is the calculation of ligand binding constants, following a method introduced recently \cite{Druart16,Polydorides16}.
+Calculation of acid/base constants by constant-pH Monte Carlo (MC) is another example, which can be seen as a subproblem of CPD, with sidechain protonation state changes are treated as mutations \cite{Aleksandrov10,Polydorides13,Kilambi12}.
 
 Thus, the complexity and cost of a CPD calculation will depend on several factors.
 While energy calculations usually represent the bulk of the cost, the power and efficiency of the exploration method are also very important.
@@ -51,7 +51,7 @@ but has been effective in applications \cite{Wernisch00,Schmidt09,Schmidt10}.It 
 The second method is a MC exploration.
 To obtain Boltzmann sampling with MC, rather weak conditions are required.
 Specifically, if the sequence/conformation space is finite (as here), if any two states in this space can be connected by moves from the allowed move set (as here), if the move scheme is time-independent (as here), if we assume there are no periodic series of states that can trap the system, and if the move probability has a simple reversibility property (the Kolmogorov condition [30], verified here), then a very long trajectory is guaranteed to converge to a stationary state and obey the so-called detailed balance condition [28] (see below).
-This in turn makes it easy to design a move acceptance scheme that leads to Boltzmann statistics, such as the classic Metropolis scheme \cite{Metropolis53,FrenkelBK,GrimmetBK}.
+This in turn makes it easy to design a move acceptance scheme that leads to Boltzmann statistics, such as the classic Metropolis scheme \cite{Metropolis53,FrenkelBK}.
 The third method is an enhanced, multiwalker MC, which performs ``replica exchange'' \cite{Sugita99,Kofke02,Earl05}.
 Several walkers, or replicas are propagated at different temperatures, and exchange conformations at regular intervals according to a MC test.
 We refer to it as Replica Exchange Monte Carlo (REMC).
@@ -99,7 +99,7 @@ where $E_u(t_i)$ is a free energy associated with sidechain type $t_i$ in the un
 separates it into an energy component $e_u(t_i)$ and a conformational entropy term, where $kT$ is the thermal energy
 and $n_u(t_i)$ is the number of conformations or rotamers available to sidechain type $t_i$ in the unfolded state.
 
-We perform a Monte Carlo simulation \cite{Metropolis53,FrenkelBK,GrimmetBK} where one copy of the folded protein
+We perform a Monte Carlo simulation \cite{Metropolis53,FrenkelBK} where one copy of the folded protein
 is explicitly represented.
 The unfolded state is included implicitly, by propagating the simulation with the energy
 function $E_M = E_f - E_u$ (the folding energy).
@@ -137,14 +137,14 @@ This is exactly the experimental system we want our Markov chain to mimic.
 In this interpretation, a MC mutation move S $\rightarrow$ S' amounts to unfolding one copy of S and refolding one copy of S'.
 
 It remains to specify the move generation probabilities and choose an appropriate acceptance scheme \cite{Metropolis53,
-FrenkelBK,GrimmetBK}.
+FrenkelBK}.
 Let $\alpha(o \rightarrow n)$ be the probability to select a trial move between two states
 o and n and $acc(o \rightarrow n)$ the probability to accept it. Under weak assumptions, the simulation obeys the so-colled detailed balance condition:
 \begin{equation}
 N(o) \pi(o \rightarrow n) = N(n) \pi(n \rightarrow o), \label{eq:balance}
 \end{equation}
 where $N(o)$, $N(n)$ are the equilibrium populations of states o and n and $\pi(o \rightarrow n)$ is the probability to make the $o \rightarrow n$ move. Detailed balance is guaranteed in the limit of a very long simulation if the move set allows us to connect any two states in the sequence/conformation space (as here), if the system is ``aperiodic'' (there are no series of states that can form “periodic orbits”, trapping the system indefinitely), and if the so-called Kolmogorov reversibility condition is verified (as here): the products of probabilities around closed loops of states are the same in both directions. We cannot prove the aperiodic condition, but it appears very likely and is treated as an assumption.  
-To produce Boltzmann statistics, we choose the acceptance probabilities \cite{Metropolis53,FrenkelBK,GrimmetBK}:
+To produce Boltzmann statistics, we choose the acceptance probabilities \cite{Metropolis53,FrenkelBK}:
 \begin{equation} \label{eq:rule}
 acc(o \rightarrow n) = \exp(-\beta \Delta E_M) \frac{ \alpha(n \rightarrow o) }{ \alpha(o \rightarrow n) }
 {\rm \hspace*{3mm} if \hspace*{2mm} } \Delta E_M > 0; 1 {\rm \hspace*{2mm} otherwise}
@@ -197,7 +197,7 @@ For two-position moves, the second position is selected among those that have a 
 For REMC, we use four or eight walkers, with thermal energies $kT_i$ that range from 0.125
 to 2 or 3 kcal/mol, and are spaced in a geometric progression: T$_{i+1}$/T$_i$ = constant, following Kofke \cite{Kofke02}.
 Conformation swaps are attempted at regular intervals, between walkers at adjacent temperatures.
-The precise parameter settings are given in Table \ref{tab:parameters}.
+The precise parameter settings are given in table \ref{tab:parameters}.
 
 \begin{table}[H]                            
 \caption{Selected MC and REMC protocols}
@@ -238,16 +238,44 @@ The energy function has the form:
 \begin{equation} \label{eq:energy}
 E = E_{\rm bonds} + E_{\rm angles} + E_{\rm dihe} + E_{\rm impr} + E_{\rm vdw} + E_{\rm Coul} + E_{\rm solv} 
 \end{equation}
-The first six terms represent the protein internal energy. They were taken from the Charmm19 empirical energy function \cite{Charmm}. The last term represents the contribution of solvent. We used a ``Coulomb + Accessible Surface Area'', or CASA implicit solvent model \cite{Lopes07,Schmidt08b}:
+The first six terms represent the protein internal energy. They were taken from the Charmm19 empirical energy function \cite{Brooks09}. The last term represents the contribution of solvent. We used a ``Coulomb + Accessible Surface Area'', or CASA implicit solvent model \cite{Lopes07,Schmidt08b}:
 \begin{equation} \label{eq:casa}
 E_{\rm solv} = \left( \frac{1}{\epsilon} -1 \right) E_{\rm Coul} + \sum_i \sigma_i A_i
 \end{equation}
 Here, $\epsilon$ is a dielectric constant that scales the Coulomb energy, set to 23, following earlier tests \cite{Schmidt08b}. $A_i$ is the solvent accessible surface area of atom i; $\sigma_i$ is a parameter that reflects each atom's preference to be exposed or hidden from solvent. The solute atoms were divided into four groups with the following $\sigma_i$ values (cal/mol/\AA$^2$): unpolar (-5), aromatic (-40), polar (-8) and ionic (-10). Hydrogen atoms were assigned a surface coefficient of zero. Surface areas were computed by the Lee and Richards algorithm \cite{Lee71}, using a 1.5 {\AA} probe radius. Pairwise additivity errors for the surface energy term were corrected by applying a reduction factor of 0.5 to buried pairs \cite{Street98,Lopes07}. Energy calculations were done with a modified version of the Xplor program \cite{Xplor,Simonson13b}.
 
-The energies $E_u(t)$ associated with the unfolded state were determined empirically to give reasonable amino acid compositions for the protein families considered here \cite{Schmidt08}; they are reported in Table \ref{??}.
+The energies $E_u(t)$ associated with the unfolded state were determined empirically to give reasonable amino acid compositions for the protein families considered here \cite{Schmidt08}; they are reported in table \ref{tab:erefcasa}.
+
+
+\begin{table}[!htbp]
+
+      \begin{center}
+        \caption{Reference energies for unfolded state (kcal/mol).}
+        \label{tab:erefcasa}
+      \begin{tabular}{lclc}
+        \toprule
+
+        Ala    &  -8.519    &  Ile    & -10.530    \\
+        Arg    & -22.107    &  Leu    & -12.227    \\
+        Asn    & -16.715    &  Lys    & -20.999    \\
+        Asp    & -19.699    &  Met    & -11.985    \\
+        Cys    & -9.426     &  Phe    & -18.017    \\
+        Gln    & -17.718    &  Ser    & -11.881    \\
+        Glu    & -20.048    &  Thr    & -11.413    \\
+        His(d) & -17.824    &  Trp    & -19.267    \\
+        His(e) & -17.824    &  Tyr    & -20.893    \\
+        His+   & -21.704    &  Val    & -9.5654    \\
+        \bottomrule
+      \end{tabular}
+
+{\small \noindent Three His variants are given protonated on ND1 (d), NE2 (e), or both (+).
+}
+      \end{center}      
+    \end{table}
+
 
 \subsection{Test systems and preparation}
-We considered nine protein domains, from the SH3, SH2, and PDZ families, listed in Table \ref{tab:proteins}.
+We considered nine protein domains, from the SH3, SH2, and PDZ families, listed in table \ref{tab:proteins}.
 Each domain is known to fold stably and has an associated crystal structure used for our calculations. Systems were prepared and energy matrices computed using procedures described previously \cite{Schmidt09,Schmidt10}.
 Briefly, each PDB structure was minimized through 200 steps of conjugate gradient minimization. For each residue pair, interaction energies were computed after 15 steps of energy minimization, with the backbone fixed and only the interactions of the pair with each other and the backbone included. Sidechain rotamers were described by a slightly expanded version of the library of Tuffery et al \cite{Tuffery91}, which has a total of 254 rotamers (sum over all amino acid types).
 The expansion consists in allowing additional hydrogen orientations for OH and SH groups [49].
@@ -282,13 +310,13 @@ To compare the diversity in the designed sequences with the diversity in natural
 \begin{equation} \label{eq:entropy}
 S_i = - \sum_{i=1}^6 f_j (i) ln f_j (i)
 \end{equation}
-where $f_j(i)$ is the frequency of residue type $j$ at position $i$, either in the designed sequences or in the natural sequences (organized into a multiple alignment). Instead of the usual, 20 amino acid types, we employ six residue types, corresponding to the following groups: \{LVIMC\}, \{FYW\}, \{G\}, \{ASTP\}, \{EDNQ\}, and \{KRH\}. This classification was obtained by a cluster analysis of the BLOSUM62 matrix \cite{Murphy02}, and also by analyzing residue-residue contact energies in proteins \cite{Launay07}. To get a sense of how many amino acid types appear at a specific position $i$, we usually report the residue entropy in its exponentiated form, $\exp(S_i)$,which ranges from 1 to 6. 
+where $f_j(i)$ is the frequency of residue type $j$ at position $i$, either in the designed sequences or in the natural sequences (organized into a multiple alignment). Instead of the usual, 20 amino acid types, we employ six residue types, corresponding to the following groups: \{LVIMC\}, \{FYW\}, \{G\}, \{ASTP\}, \{EDNQ\}, and \{KRH\}. This classification was obtained by a cluster analysis of the BLOSUM62 matrix \cite{Murphy00}, and also by analyzing residue-residue contact energies in proteins \cite{Launay07}. To get a sense of how many amino acid types appear at a specific position $i$, we usually report the residue entropy in its exponentiated form, $\exp(S_i)$,which ranges from 1 to 6. 
 
 \section{Results}
 Our main focus is to characterize sequence/structure exploration methods and their ability to sample low energy sequences. We begin, however, by showing that the sequences we sample are similar to experimental ones. Indeed, the performance of exploration methods depends on the shape and ruggedness of the energy surface, and should be tested in situations where the energy function is sufficiently realistic, as judged by the quality of the designed sequences. After that, we compare the ability of the four exploration methods to identify low energy sequences, including the GMEC. Finally, we consider the diversity of sequence sets, or density of states sampled by each method.
 
 \subsection{Quality of the designed sequences}
-We first report information on the quality of our designed sequences. We use sets of REMC sequences to illustrate the main features. The best REMC protocol, REMCd (Table \ref{tab:parameters}) was used. Results with the other exploration methods are expected to be similar. Indeed, while the methods sometimes exhibit differences of up to a few kcal/mol between their best sequences, the average sequence quality of the 100-1000 best sequences is typically similar between methods. Table \ref{tab:quality} summarizes results for our nine test proteins in design calculations where all positions were allowed to change types. All mutations were allowed, except mutations to/from Gly and Pro, since these are likely to change the backbone structure.
+We first report information on the quality of our designed sequences. We use sets of REMC sequences to illustrate the main features. The best REMC protocol, REMCd (table \ref{tab:parameters}) was used. Results with the other exploration methods are expected to be similar. Indeed, while the methods sometimes exhibit differences of up to a few kcal/mol between their best sequences, the average sequence quality of the 100-1000 best sequences is typically similar between methods. Table \ref{tab:quality} summarizes results for our nine test proteins in design calculations where all positions were allowed to change types. All mutations were allowed, except mutations to/from Gly and Pro, since these are likely to change the backbone structure.
  
 \begin{figure}[!htbp]
   \includegraphics[width=16cm]{align0.png} 
@@ -299,9 +327,9 @@ experimental sequences. Positions shown correspond to the hydrophobic core of ea
       \label{fig:logos}
 \end{figure}
 
-REMC was done with height replicas at temperatures between 0.175 and 3 $kT$ units. Simulation lengths were 750 million steps (per replica). The top 10000 sequence/conformation combinations were retained, corresponding to 200--400 unique sequences. For eight of the nine test proteins, all the retained sequences were recognized as members of the correct superfamily and family, with match lengths and E-values given in Table \ref{tab:quality}. Thus, our designed sequences are mostly similar to experimental ones. Sequence identities to wildtype are 31\% on average (Table \ref{tab:quality}), similar to earlier studies with the same energy function \cite{Schmidt09,Schmidt10}. The good agreement with experiment is also illustrated by computing similarity scores between the designed sequences and sequences from the Pfam database. For the protein core region, the similarity is similar to that between experimental sequences, as shown in figure \ref{fig:logos}. Notice that we use here a simple CASA solvent model, since our focus is not the quality of the designed sequences, but the performance of our search algorithms. With a more sophisticated Generalized Born solvent model and a more highly optimized unfolded state model, sequence quality would be even better (manuscript in preparation).
+REMC was done with height replicas at temperatures between 0.175 and 3 $kT$ units. Simulation lengths were 750 million steps (per replica). The top 10000 sequence/conformation combinations were retained, corresponding to 200--400 unique sequences. For eight of the nine test proteins, all the retained sequences were recognized as members of the correct superfamily and family, with match lengths and E-values given in table \ref{tab:quality}. Thus, our designed sequences are mostly similar to experimental ones. Sequence identities to wildtype are 31\% on average (table \ref{tab:quality}), similar to earlier studies with the same energy function \cite{Schmidt09,Schmidt10}. The good agreement with experiment is also illustrated by computing similarity scores between the designed sequences and sequences from the Pfam database. For the protein core region, the similarity is similar to that between experimental sequences, as shown in figure \ref{fig:logos}. Notice that we use here a simple CASA solvent model, since our focus is not the quality of the designed sequences, but the performance of our search algorithms. With a more sophisticated Generalized Born solvent model and a more highly optimized unfolded state model, sequence quality would be even better (manuscript in preparation).
 
-Representative sequence logos for the protein core are shown in Fig.\ \ref{fig:logo}, illustrating the agreement between designed and experimental sequences. For the SH3 protein 1CKA, the design mostly recovers the native sidechain type, or a homologous type that is common in other natural sequences from Pfam. Exceptions include position 170, where we obtain I or V, whereas the native type is W; however, L and V are also occasionally found in Pfam. At position 139, we sample R instead of the native A or V, found in Pfam; however, the hydrophobic part of the designed Arg sidechain is homologous to A and V, while its ionized tip actually sits outside the hydrophobic core, at the protein surface. Finally, at position 143, we sample W, which is homologous to Y and F found in Pfam. For the PDZ domain 2BYG, agreement with the native and Pfam sequences is similar, with a few departures: at positions 207 and 245, we sample W instead of the natural types I, L, V, P; at position 253, we sample H, compared to mostly I, L, V, and sometimes F in Pfam; at position 265,we always sample Y, whereas the Pfam types are diverse (and mostly hydrophobic).
+Representative sequence logos for the protein core are shown in Fig.\ \ref{fig:logos}, illustrating the agreement between designed and experimental sequences. For the SH3 protein 1CKA, the design mostly recovers the native sidechain type, or a homologous type that is common in other natural sequences from Pfam. Exceptions include position 170, where we obtain I or V, whereas the native type is W; however, L and V are also occasionally found in Pfam. At position 139, we sample R instead of the native A or V, found in Pfam; however, the hydrophobic part of the designed Arg sidechain is homologous to A and V, while its ionized tip actually sits outside the hydrophobic core, at the protein surface. Finally, at position 143, we sample W, which is homologous to Y and F found in Pfam. For the PDZ domain 2BYG, agreement with the native and Pfam sequences is similar, with a few departures: at positions 207 and 245, we sample W instead of the natural types I, L, V, P; at position 253, we sample H, compared to mostly I, L, V, and sometimes F in Pfam; at position 265,we always sample Y, whereas the Pfam types are diverse (and mostly hydrophobic).
 
     \begin{figure}[!htbp]
       \centering
@@ -309,11 +337,11 @@ Representative sequence logos for the protein core are shown in Fig.\ \ref{fig:l
         \includegraphics[trim = 0mm 32mm 0mm 10mm, clip, width=12cm]{2BYG_bestall_core3D.pdf} 
       \end{tabular}      
       \caption{The lowest energy sequence/structure combination is shown for the 2BYG PDZ domain (stereo view; selected sidechains only; white sticks), superimposed on the Xray structure (yellow sticks); the sidechains shown are the ones in the sequence logo, Fig.2. The main mutated positions are labelled; other positions are either not mutated or mutated within the ILV group. Figure produced with pymol [72]}
-      \label{fig:logos}
+      \label{fig:3Dstruct}
     \end{figure}
 For the same PDZ domain, the lowest energy sequence/structure combination is shown in figure \ref{fig:3Dstruct}, superimposed on the Xray structure; only the hydrophobic core sidechains are shown, for clarity. Most of the native/designed sidechains overlap very well, although the double mutation (F205L, L245W) leads to some local repacking.
 
-    For the 1A81 SH3 domain, the lowest energy sequences are not recognized by Superfamily, but if we assay sequences that are 8-12 kcal/mol above the GMEC, about 10\% are correctly recognized by Superfamily as SH3 sequences. Similarly, if the top 10,000 sequences produced by the heuristic algorithm are tested, 57\% of them are recognized by Superfamily as SH3 family members. The heuristic sequences are also 8-12 kcal/mol above the GMEC (see below). This protein illustrates the imperfect parameterization of our energy function, with the consequence that higher energy sequences can actually be more realistic, in some cases, than lower energy ones. Thus, the signifiance of the GMEC is only as good as the energy function.
+    For the 1A81 SH2 domain, the lowest energy sequences are not recognized by Superfamily, but if we assay sequences that are 8-12 kcal/mol above the GMEC, about 10\% are correctly recognized by Superfamily as SH3 sequences. Similarly, if the top 10,000 sequences produced by the heuristic algorithm are tested, 57\% of them are recognized by Superfamily as SH3 family members. The heuristic sequences are also 8-12 kcal/mol above the GMEC (see below). This protein illustrates the imperfect parameterization of our energy function, with the consequence that higher energy sequences can actually be more realistic, in some cases, than lower energy ones. Thus, the signifiance of the GMEC is only as good as the energy function.
 
 
     \begin{figure}[!htbp]
@@ -373,22 +401,22 @@ Run times for different test calculations and search methods. CPU times per core
       \label{fig:cpu}
     \end{figure}
 
-The MC and REMC methods require choices of move probabilities and temperatures, which affect the sampling in ways that vary from protein to protein. Fig.\ \ref{fig:protocols} shows the lowest energy sampled with a small collection of protocols: one heuristic, one MC, and five REMC protocols, applied to our nine proteins, with all positions allowed to mutate (except Gly/Pro). The protocol details are given in Table \ref{tab:parameters}. For these large design problems, the GMEC is not known. Instead, for each protein, the overall best energy (the best of the seven protocols) is taken as the reference, or zero value.
+The MC and REMC methods require choices of move probabilities and temperatures, which affect the sampling in ways that vary from protein to protein. Fig.\ \ref{fig:fulldelta} shows the lowest energy sampled with a small collection of protocols: one heuristic, one MC, and five REMC protocols, applied to our nine proteins, with all positions allowed to mutate (except Gly/Pro). The protocol details are given in table \ref{tab:parameters}. For these large design problems, the GMEC is not known. Instead, for each protein, the overall best energy (the best of the seven protocols) is taken as the reference, or zero value.
 
 
     \begin{figure}[!htbp]
       \centering
         \includegraphics[width=12cm]{full_delta.png} 
       \caption{
-Comparison between selected heuristic, MC, and REMC protocols for whole protein design. The best energy obtained with each protocol is shown for the nine test proteins. Zero represents the overall best energy for each protein. The mean ``error'' is indicated on the right for each protocol (the mean difference from the overall best energy). The protocols are a heuristic method (Heur), an MC method, two REMC protocols with 4 walkers (REMC a, b), and three REMC protocols with 8 walkers (yellow lines and dots, REMC c, d, e). Details of the protocols are in Table \ref{tab:parameters}; each curve is labelled according to the protocol name.
+Comparison between selected heuristic, MC, and REMC protocols for whole protein design. The best energy obtained with each protocol is shown for the nine test proteins. Zero represents the overall best energy for each protein. The mean ``error'' is indicated on the right for each protocol (the mean difference from the overall best energy). The protocols are a heuristic method (Heur), an MC method, two REMC protocols with 4 walkers (REMC a, b), and three REMC protocols with 8 walkers (yellow lines and dots, REMC c, d, e). Details of the protocols are in table \ref{tab:parameters}; each curve is labelled according to the protocol name.
 }
-       \label{fig:protocols}
+       \label{fig:fulldelta}
     \end{figure}
 
-For a given protein, the best energy varies by up to 12 kcal/mol from one protocol to another (compare the 1BM2 REMCa and REMCc energies or the 1CKA MC and REMCd energies). For each protocol, the best energy obtained was averaged over the nine proteins, giving a mean ``error''; these values are also reported in Fig.\ \ref{fig:protocols}. The lowest mean error is 1.0 kcal/mol, with REMCd. In other words, REMCd gives a best energy that is, on average, 1.0 kcal/mol above the overall best energy. Based on these and other similar tests, for the rest of this work, we used the specific MC protocol in Table \ref{tab:parameters} and the REMCd replica exchange protocol, which are generally good but not necessarily optimal for every situation. 
+For a given protein, the best energy varies by up to 12 kcal/mol from one protocol to another (compare the 1BM2 REMCa and REMCc energies or the 1CKA MC and REMCd energies). For each protocol, the best energy obtained was averaged over the nine proteins, giving a mean ``error''; these values are also reported in Fig.\ \ref{fig:fulldelta}. The lowest mean error is 1.0 kcal/mol, with REMCd. In other words, REMCd gives a best energy that is, on average, 1.0 kcal/mol above the overall best energy. Based on these and other similar tests, for the rest of this work, we used the specific MC protocol in table \ref{tab:parameters} and the REMCd replica exchange protocol, which are generally good but not necessarily optimal for every situation. 
 
 \subsubsection{Optimal sequences/structures with up to 10 designed positions}
-As our first series of tests, we did calculations for each test protein with zero, one, or five designed positions. Results are summarized in Fig.\ \ref{fig:delta}. With zero positions, only rotamers are optimized (at all positions in the protein). With one, we systematically designed each position of each protein in turn (plus rotamers at all positions). With 5, we picked the positions randomly, close together in the structure, in five different ways, for a total of 45 tests. Two positions were considered close by if they have at least one rotamer combination that gives an interaction energy of 10 kcal/mol or more (in absolute magnitude; eg, steric overlap). In all these cases, CFN found the GMEC very rapidly (seconds); the heuristic also found the GMEC, with much longer run times (an hour). MC found the GMEC in all but a few cases (Fig.\ \ref{fig:errors}), with run times of a few minutes. 
+As our first series of tests, we did calculations for each test protein with zero, one, or five designed positions. Results are summarized in Fig.\ \ref{fig:fulldelta}. With zero positions, only rotamers are optimized (at all positions in the protein). With one, we systematically designed each position of each protein in turn (plus rotamers at all positions). With 5, we picked the positions randomly, close together in the structure, in five different ways, for a total of 45 tests. Two positions were considered close by if they have at least one rotamer combination that gives an interaction energy of 10 kcal/mol or more (in absolute magnitude; eg, steric overlap). In all these cases, CFN found the GMEC very rapidly (seconds); the heuristic also found the GMEC, with much longer run times (an hour). MC found the GMEC in all but a few cases (Fig.\ \ref{fig:errors}), with run times of a few minutes. 
 
 \begin{figure}[!htbp]
   \begin{center}
@@ -410,7 +438,7 @@ heuristic cycles) for the four rightmost proteins.
 \end{figure}
 
 As a second series of tests, we chose randomly for each protein a set of 10 positions to design; the other positions had fixed types but explored all possible rotamers. The selected positions were close by in the protein structure. For each protein, we made five separate choices of positions to design, for a total of 45 test cases. The CFN, heuristic, and MC methods were run for all 45 cases; REMC was run only when MC gave a poor result (6 cases, involving 5 proteins).
-Results are summarized in Fig.\ \ref{fig:delta} and Table \ref{tab:10act}. Twenty cases where all methods found the GMEC are not listed in the Table, leaving 25 where at least one method did not find the GMEC. CFN performed very well: only in one case did it not find the GMEC. The lowest energy was sampled in this case with the heuristic, and the best CFN energy was 5.7 kcal/mol higher (despite using the more aggressive CFN protocol). With a third, more recent CFN protocol \cite{Simoncini15}, this result did not change. 
+Results are summarized in Fig.\ \ref{fig:errors} and table \ref{tab:10act}. Twenty cases where all methods found the GMEC are not listed in the table, leaving 25 where at least one method did not find the GMEC. CFN performed very well: only in one case did it not find the GMEC. The lowest energy was sampled in this case with the heuristic, and the best CFN energy was 5.7 kcal/mol higher (despite using the more aggressive CFN protocol). With a third, more recent CFN protocol \cite{Simoncini15}, this result did not change. 
 
 The heuristic performed about as well as CFN for 10-position design. In one case, CFN did not find the GMEC and the heuristic gave the lowest energy (2BYG-1). In 39 cases, the heuristic found the GMEC. In three cases, it was within 0.15 kcal/mol of the GMEC, with no mutations (only rotamer differences). In one case (1CKA-5), it was 0.29 kcal/mol above the GMEC, with no mutations. Tripling the number of heuristic cycles allowed the GMEC to be reached (within 0.07 kcal/mol) in all these cases, with run times below 6 h. There was only one real failure, 1M61-2, where the best heuristic solution was 3.5 kcal/mol above the GMEC, with three mutations relative to the GMEC. For this case, the GMEC was recovered (within 0.01 kcal/mol) if the number of cycles was increased to 990,000, for a run time of 7 h. Switching from the heuristic structure (after 330,000 cycles) to the GMEC requires concerted changes in 3 adjacent sidechain positions. This is only possible during a heuristic cycle if there is a downhill, connecting pathway made of single position changes, which is evidently very rare for this particular test. Thus, the heuristic method can only find the GMEC if it draws the right combination of types/rotamers at the very beginning of a cycle; hence the need for 990,000 cycles.
 
@@ -460,7 +488,7 @@ Plain MC did slightly less well for 10-position design. In 21 cases, it found th
 
 \subsubsection{Optimal sequences with 20 or 30 designed positions}
 We did similar tests with 20 designed positions, selected randomly in 5 different ways for each protein, as above.
-Results are given in Fig.\ \ref{fig:errors} and Table \ref{tab:20act}. CFN found the GMEC in 28 out of 45 cases;
+Results are given in Fig.\ \ref{fig:errors} and table \ref{tab:20act}. CFN found the GMEC in 28 out of 45 cases;
 in two others, it found the best energy of the four methods. For 6 of these 30 cases, the more aggressive protocol was necessary, and run times were 2--22 h (11 on average). For 14 of the other 15 cases, the best CFN energy was 0.1--7.5 kcal/mol above the best solution found by the other methods, and 2.8 kcal/mol on average, despite using the more aggressive protocol. For the worst case, the CFN energy was 13.9 kcal/mol above the best solution. Of th 17 cases where the CFN was not identified, half were rerun with a third, more recent CFN protocol \cite{Simoncini15}; in just one of these cases (1BM2-4, a very mild failure) did the newer protocol identify the GMEC.
 
 The heuristic method found the GMEC in 22 of the 28 cases where it is known. For the other six cases, it was within 0.40 kcal/mol of the GMEC, with 0--4 mutations (2.7 on average). For the 17 cases where the GMEC was not identified by CFN, the heuristic produced the lowest energy of all methods, except one case (104C-1) where it was 0.35 kcal/mol above CFN.
@@ -469,7 +497,7 @@ Overall, the heuristic either found the best energy of the four methods or was w
 MC converged to the best energy in 11 cases; in 25 other cases, it was within 0.50 kcal/mol of the best energy. In the other nine cases, its best energy was at most 3.2 kcal/mol above the best energy (sampled by the heuristic and/or CFN).
 Finally, REMC was done for all the test cases. In six cases, its best energy was more than 0.50 kcal/mol from the best energy. However, the differences were notably smaller than for plain MC, with an average of just 0.8 kcal/mol for the 6 worst cases and a maximum (for 1G90-1) of 1.25 kcal/mol.
 
-The same tests were done with 30 designed positions; see Fig.\ \ref{fig:errors} and Table \ref{tab:20act}. CFN found the GMEC in just one case; in 5 others, it did not find the GMEC but gave the lowest energy overall. In four other cases, it was within 0.50 kcal/mol of the best energy sampled by the other methods. For the other 35 cases, its best energy was higher than the best method, with differences of 10 kcal/mol or more in 20 cases.
+The same tests were done with 30 designed positions; see Fig.\ \ref{fig:errors} and table \ref{tab:20act}. CFN found the GMEC in just one case; in 5 others, it did not find the GMEC but gave the lowest energy overall. In four other cases, it was within 0.50 kcal/mol of the best energy sampled by the other methods. For the other 35 cases, its best energy was higher than the best method, with differences of 10 kcal/mol or more in 20 cases.
 
 
 \begin{table}[!htbp]   
@@ -527,7 +555,7 @@ Protein&  CFN     & Heur.\ & MC     & REMC   & mutations$^a$ & CFN & Heur.\ & MC
 2BYG 5 &  1.8604  & 0.     & 0.0933 & 0.0386 & 2 & 0.5003    & 0.     & 0.6876 &        \\   
 \hline
 \end{tabular}
-{\small \noindent Format as in Table \ref{tab:10act}. gmec* indicates the more aggressive protocol.
+{\small \noindent Format as in table \ref{tab:10act}. gmec* indicates the more aggressive protocol.
 $^a$Between CFN/Heur.}
 \end{center}
 \end{table}
@@ -540,7 +568,7 @@ The heuristic produced the lowest energy in all but four cases, with differences
 \subsection{Density of states above the GMEC}
 The exact CFN method can enumerate exhaustively sequence/conformation states above the GMEC, up to a given energy threshold, if the threshold is not too large. MC and REMC explore states randomly, within a typical energy range that depends on temperature. To characterize the diversity of the sequence ensembles, we focus on the CFN and REMC methods, and we consider both the sequence entropy and the total number of states. 
 
-The mean, exponentiated sequence entropies $\langle e^{S_i}\rangle$ are reported in Table \ref{tab:entropy} for each test protein. The sequence entropies for the corresponding Pfam alignments (both seed and full) are also shown. The values are averaged over the designed positions in the protein chain, and can be interpreted as a mean number of amino acid classes sampled at each position. There are six classes (see Methods), one of which (Gly) is not available to the designed positions but is present in Pfam. The entropies are much smaller in the designed sets than in the Pfam sets.
+The mean, exponentiated sequence entropies $\langle e^{S_i}\rangle$ are reported in table \ref{tab:entropy} for each test protein. The sequence entropies for the corresponding Pfam alignments (both seed and full) are also shown. The values are averaged over the designed positions in the protein chain, and can be interpreted as a mean number of amino acid classes sampled at each position. There are six classes (see Methods), one of which (Gly) is not available to the designed positions but is present in Pfam. The entropies are much smaller in the designed sets than in the Pfam sets.
 
 
 \begin{table}[!htbp]                            
@@ -575,7 +603,7 @@ The sequence entropy $S(E)$ is shown in figure \ref{fig:entropy} for the 1CKA SH
       \centering
         \includegraphics[trim = 0mm 0mm 25mm 0mm, clip,width=12cm]{1CKA_entropy_seqnb.png} 
 \caption{ 
-Sequence entropy $S(E)$ and number of states $N(E)$ within a given energy range $E$ above the GMEC for the 1CKA SH3 domain. All positions were allowed to vary except Gly/Pro. The entropy (large dots) is a single position sequence entropy, Eq.\ (\ref{eq:entropy}), averaged over all the variable positions. CFN results (black) are based on a complete enumeration of all states within the energy range (at most $E$ kcal/mol above the GMEC). REMC results (gray) are based on the states sampled by all eight walkers during a single trajectory. The number of states (small dots) corresponds to all the different combinations of sequences and rotamers.
+Sequence entropy $S(E)$ and number of states $N(E)$ within a given energy range $E$ above the GMEC for the 1CKA SH3 domain. Ten positions were allowed to vary. The entropy (large dots) is a single position sequence entropy, Eq.\ (\ref{eq:entropy}), averaged over all the variable positions. CFN results (black) are based on a complete enumeration of all states within the energy range (at most $E$ kcal/mol above the GMEC). REMC results (gray) are based on the states sampled by all eight walkers during a single trajectory. The number of states (small dots) corresponds to all the different combinations of sequences and rotamers.
 }
        \label{fig:entropy}
     \end{figure}
@@ -590,7 +618,7 @@ Stochastic search methods are very common in CPD. They often take the form of MC
 Here, we tested three stochastic search methods, and compared their ability to identify low energy sequences in problems of increasing size/complexity. While the capability to identify the low energy sequences is important, we should keep in mind that their significance is only as good as the energy function, as illustrated above for 1A81. Direct comparison to the exact GMEC was possible routinely for problems involving up to 10 designed positions, and for 28 of 45 tests with 20 designed positions. The 10-position designs involved total rotamer numbers of 2500--3000; for the 20- and 30-position designs, there are about 2000 and 4000 more rotamers, respectively.
 The larger tests are relevant for whole protein design projects, as well as projects that redesign one or more large protein surfaces (eg, protein crystal design). For these tests, the GMEC was usually not available, despite using a very recent Toulbar2 protocol \cite{Simoncini15} .
 Therefore, the stochastic methods could only be evaluated indirectly.
-The indirect quality indicators were  (a) consistency between the methods and (b) general sequence quality compared to experiment. Agreement between the heuristic and REMC solutions was very good in general, and agreement with experimental Pfam sequences was excellent for core residues, as observed previously with the same energy function (but a heuristic exploration method) \cite{Schmidt09,Schmidt10}. Results with a more advanced protein force field and Generalized Born solvent are expected to be even better \cite{Polydorides11,Simonson15}.
+The indirect quality indicators were  (a) consistency between the methods and (b) general sequence quality compared to experiment. Agreement between the heuristic and REMC solutions was very good in general, and agreement with experimental Pfam sequences was excellent for core residues, as observed previously with the same energy function (but a heuristic exploration method) \cite{Schmidt09,Schmidt10}. Results with a more advanced protein force field and Generalized Born solvent are expected to be even better \cite{Polydorides11,Simonson15a}.
 Designed surface residues were less similar to experiment, which can be partly explained because the experimental sequences are subject to additional constraints and selective pressures (such as domain-domain interactions), not included in the design.  
 
 Overall, the heuristic and REMC methods gave very good agreement with each other and with the GMEC when available, except for some of the whole-protein design tests.

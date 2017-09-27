@@ -564,7 +564,7 @@ On a bien:
 \forall\ x_i, x_j \in E,\ \frac{acc(x_j|x_i)}{acc(x_i|x_j)} = \exp(\beta \Delta E)
 \end{equation}\\
 Il suffit alors de choisir une probabilité de sélection symétrique ne violant pas les conditions ergodiques pour obtenir notre convergence. Par la suite, Hastings généralise l'algorithme à une probabilité $sel()$ non symétrique avec acc() telle que:
-\begin{equation}
+\begin{equation}\label{eq:Hasting}
 acc(x_i|x_j) = \exp(-\beta \Delta E) \frac{sel(x_j|x_i)}{sel(x_i|x_j)}\ \text{si}\ \Delta E >0;\ acc(x_i|x_j)=1\ \text{sinon}
 \end{equation}
 Si l'on injecte cette nouvelle probabilité dans l'équation \ref{balance}, on a encore le respect de la balance détaillée et la convergence. La séquence d'instructions est résumée par l'algorithme \ref{alg:Metro}. Dans toute la suite, l'algorithme Monte Carlo (MC) désigne l'algorithme de Metropolis-Hastings, ce qui est un usage courant.
