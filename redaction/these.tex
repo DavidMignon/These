@@ -49,11 +49,12 @@
 %\usepackage[french,onelanguage]{algorithm2e} %for pseudo code
 \usepackage[french,onelanguage,vlined,linesnumbered,inoutnumbered]{algorithm2e}
 \usepackage{enumitem}
+\usepackage[verbose]{backref}
 % lists gérées hors de frenchb
 \frenchbsetup{StandardLists=true}
 \pdfcompresslevel=9
 \hypersetup{%
-  pdftitle={Computational protein design: a tool for protein engineering and synthetic biology}, 
+  pdftitle={Computational protein design: un outil pour l’ingénierie des protéines et la biologie synthétique}, 
   pdfauthor={David Mignon},
   pdfkeywords={motclé1,motclé2,motclé3},
   pdfsubject={Thèse de doctorat},
@@ -73,7 +74,7 @@
 \addtolength{\oddsidemargin}{-0.5cm}
 \addtolength{\evensidemargin}{+0.5cm}
 
-% Pages où se trouvent les citations
+ % Pages où se trouvent les citations
 \renewcommand*{\backref}[1]{}
 \renewcommand*{\backrefalt}[4]{%
   % alternative interface
@@ -92,11 +93,12 @@
   \else
     {\small cité pages~}%
   \fi
-  {\small#2}\par
-}
+     {\small#2}
+     \par
+     }
 \renewcommand*{\backrefsep}{, } 
-\renewcommand*{\backreftwosep}{et~}
-\renewcommand*{\backreflastsep}{et~}
+\renewcommand*{\backreftwosep}{ et~}
+\renewcommand*{\backreflastsep}{ et~}
 
 % Pas d'espace après la virgule en mode mathématique
 \DecimalMathComma{}
@@ -125,7 +127,7 @@
 \begin{center}
 {\LARGE \bf \@title\\}
 \vfill
-{\LARGE \bf Computational protein design: a tool for protein engineering and synthetic biology\\}
+{\LARGE \bf Computational protein design: un outil pour l’ingénierie des protéines et la biologie synthétique\\}
 \vspace{4ex}
 {\small présentée et soutenue publiquement le \@date\\}
 \vspace{2ex}
@@ -142,15 +144,15 @@
 \vfill
 \begin{small}
 {\bf Composition du jury}
-\begin{center}
+\begin{center}  
 \begin{tabular}{lll}
-Rapporteurs :  & Dr. Prénom1 \bsc{Nom1} & Rapporteur externe\\
-               & Dr. Prénom2 \bsc{Nom2} & Rapporteur externe\\
-               & Pr. Prénom3 \bsc{Nom3} & Rapporteur interne\\
-               & &\\
-Examinateurs : & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
-               & Dr. Prénom5 \bsc{Nom5} & Directeur de thèse\\
-               & Dr. Prénom6 \bsc{Nom6} & Directeur de thèse\\
+Rapporteurs :       & Pr. Jean-François \bsc{Gibrat} \\
+                    & Pr. Yves-Henri \bsc{Sanojouand}\\
+                    & &\\
+Examinateurs :      & Dr. Sophie \bsc{Barbe} \\
+                    & Dr. Julien \bsc{Bigot} \\
+                    & Pr. Alain  \bsc{Denise} \\
+Directeur de thèse: & Pr. Thomas \bsc{Simonson} \\
 \end{tabular}
 \end{center}
 \end{small}
@@ -158,10 +160,9 @@ Examinateurs : & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 \begin{center}
 \hrule
 \vspace{2ex}
-{\footnotesize \bf Laboratoire de XXX}
+{\footnotesize \bf Laboratoire de Biochimie de l' \'Ecole Polytechnique}
 \end{center}
 \newpage
-
 
 \thispagestyle{empty}
 \null{}
@@ -303,6 +304,7 @@ Examinateurs : & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 \include{methodes/chapter}
 \clearplaindoublepage{}
 \include{annexe_proteus}
+\include{annexe_groupes}
 \clearplaindoublepage{}
 \include{developpements/chapter}
 \clearplaindoublepage{}
@@ -328,7 +330,7 @@ Examinateurs : & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 \clearplaindoublepage{}
 \thispagestyle{plain}
 \pdfbookmark[0]{Remerciements}{acknowledgements}
-\include{merci}
+%\include{merci}
 
 % Backmatter
 \backmatter{}

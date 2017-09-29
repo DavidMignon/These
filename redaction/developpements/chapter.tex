@@ -1,4 +1,4 @@
-\chapter{Développements}
+\chapter{Développements algorithmiques}
 \label{chap:developpements}
 
 Ce chapitre expose les modifications faites dans le logiciel Proteus et dans Xplor pendant la préparation de cette thèse. Xplor est un logiciel conçu pour la biologie structurale développé à l'origine par Axel T. Brünger à l'université de Yale \cite{Xplor}. Il propose un langage de script permettant d'exploiter ses fonctionnalités. Pour adapter Xplor au CPD nous y ajoutons la gestion de jeux de coordonnées multiples (rotamères) pour chaque résidu. Plusieurs modèles de solvant implicite ont également été ajoutés.
@@ -28,7 +28,7 @@ La copie de modèle se fait par la commande:\\
 avec \verb!A! et \verb!B!  pouvant prendre les valeurs \verb!main!, \verb!comp!, \verb!xref! ou \verb!model!.
 Le mot \verb!idx=i=j! n'est pas obligatoire. Par défaut, si \verb!from=model! alors \verb!idx=1! et si \verb!to=model! le nouvel indice créé sera le plus grand indice plus un. L'ancienne syntaxe est toujours supportée. La commande:\\ 
 \verb!write coor sele=(resid $1 and resn $aa1) from=model output=new.pdb end!\\
-imprime les modèles de chacune des resclass définies par la sélection dans un fichier PDB. On écrit une ligne par atome de la resclass avec l'indice du modèle, pour tous les modèles. 
+imprime les modèles de chacune des resclass définies par la sélection dans un fichier PDB. on écrit une ligne par atome de la resclass avec l'indice du modèle, pour tous les modèles. 
 Il est possible de limiter l'impression à un seul modèle $i$ par une commande du type:\\
 \verb!write coor from=model idx=i output=new.pdb end!\\
 
@@ -79,10 +79,6 @@ Tout au long d'une trajectoire, des séquences-conformations sont imprimées. Po
 Une amélioration a été apportée à la fonction d'acceptation MC de proteus. Pour réaliser une mutation du type $t$ vers $t'$, nous effectuons un changement de type d'acide aminé dans la structure repliée et le changement inverse dans la structure dépliée, voir la section \ref{sec:Phy}. La probabilité d'une mutation est donc le produit de la probabilité de choisir $t'$ par la probabilité de choisir une structure repliée particulière avec $t'$ et une structure dépliée particulière avec $t$. Dans proteus, ces changements sont sélectionnés par tirage aléatoire uniforme sur l'ensemble des états possibles. 
 
 Se pose alors la question des états possibles des chaînes latérales à l'état déplié. Plusieurs points de vue sont possibles. On peut considérer qu'il existe autant de rotamères à l'état déplié qu'à état replié et qu'ils ont tous la même énergie. Cette possibilité a l'avantage de rendre la probabilité de mutation symétrique, c'est-à-dire que le passage du type $t$ vers $t'$ est aussi probable que le passage de $t'$ vers $t$. Mais elle a l'inconvénient d'être peu réaliste parce que les rotamères sont les positionnements préférentiels à l'état replié et non à l'état déplié. Nous avons fait évoluer proteus vers un autre point de vue, en considérant qu'une chaîne latérale à l'état déplié n'a qu'un seul rotamère dominant. Cela induit une dissymétrie dans la probabilité de sélection qui est corrigée par une probabilité d'acceptation du type de l'équation \ref{eq:Hasting}. Cette nouvelle probabilité d'acceptation est décrite en détail en \vref{eq:rule}.
-
-\section{Seuil d'impression}
-\label{sec:dev}
-La quantité de séquences-conformations écrite dans les fichiers de sortie peut devenir importante surtout en REMC. Pour limiter la taille des fichiers et faciliter le post-traitement, nous introduisons la balise \verb!<Print_Threshold>!. Elle prend en paramètre un seuil $s$ qui conditionne l'impression d'une séquence-conformation de la façon suivante. Chaque marcheur conserve au cours d'une simulation la meilleure énergie obtenue $E_{best}$. À tout moment une séquence-conformation est imprimée seulement si l'écart entre son énergie et $E_{best}$  est strictement plus petit que $s$. Ainsi, un seuil de $0$ limite les impressions aux seules séquences-conformations qui améliorent l'énergie durant la simulation.
 
 \section{Nouveau système de déplacements}
 

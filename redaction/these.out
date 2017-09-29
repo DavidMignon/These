@@ -25,7 +25,7 @@
 \BOOKMARK [1][-]{section.1.4}{L'algorithme d'exploration}{chapter.1}% 25
 \BOOKMARK [2][-]{subsection.1.4.1}{L'algorithme du champ moyen}{section.1.4}% 26
 \BOOKMARK [2][-]{subsection.1.4.2}{Le Dead-End Elimination}{section.1.4}% 27
-\BOOKMARK [2][-]{subsection.1.4.3}{Le CFN}{section.1.4}% 28
+\BOOKMARK [2][-]{subsection.1.4.3}{Le CFN ou \253 Cost Function Network \273}{section.1.4}% 28
 \BOOKMARK [3][-]{section*.18}{L'algorithme \253 Depth-First Branch and Bound \273 \(DFBB\)}{subsection.1.4.3}% 29
 \BOOKMARK [3][-]{section*.20}{Equivalence Preserving Transformation}{subsection.1.4.3}% 30
 \BOOKMARK [2][-]{subsection.1.4.4}{L'heuristique Multistart Steepest Descent \(MSD\)}{section.1.4}% 31
@@ -49,18 +49,18 @@
 \BOOKMARK [2][-]{subsection.2.5.1}{Les d\351placements Monte Carlo}{section.2.5}% 49
 \BOOKMARK [2][-]{subsection.2.5.2}{Restriction de l'espace s\351quence-conformation}{section.2.5}% 50
 \BOOKMARK [2][-]{subsection.2.5.3}{D\351finition de la fonction de score }{section.2.5}% 51
-\BOOKMARK [3][-]{section*.35}{D\351finition de groupes}{subsection.2.5.3}% 52
-\BOOKMARK [3][-]{section*.37}{D\351claration de la fonction de score}{subsection.2.5.3}% 53
-\BOOKMARK [1][-]{section.2.6}{Les fichiers de sortie}{chapter.2}% 54
-\BOOKMARK [1][-]{section.2.7}{Outils d'analyse de s\351quences}{chapter.2}% 55
-\BOOKMARK [2][-]{subsection.2.7.1}{Superfamily/SCOP}{section.2.7}% 56
-\BOOKMARK [2][-]{subsection.2.7.2}{Taux d'identit\351 de s\351quences}{section.2.7}% 57
-\BOOKMARK [2][-]{subsection.2.7.3}{Taux d'identit\351 par position}{section.2.7}% 58
-\BOOKMARK [2][-]{subsection.2.7.4}{Alignements Pfam}{section.2.7}% 59
-\BOOKMARK [2][-]{subsection.2.7.5}{Score BLOSUM}{section.2.7}% 60
-\BOOKMARK [2][-]{subsection.2.7.6}{Similarit\351 d'un ensemble \340 un alignement Pfam}{section.2.7}% 61
-\BOOKMARK [2][-]{subsection.2.7.7}{Entropie par position}{section.2.7}% 62
-\BOOKMARK [0][-]{chapter.3}{D\351veloppements}{}% 63
+\BOOKMARK [1][-]{section.2.6}{Les fichiers de sortie}{chapter.2}% 52
+\BOOKMARK [1][-]{section.2.7}{Outils d'analyse de s\351quences}{chapter.2}% 53
+\BOOKMARK [2][-]{subsection.2.7.1}{Superfamily/SCOP}{section.2.7}% 54
+\BOOKMARK [2][-]{subsection.2.7.2}{Taux d'identit\351 de s\351quences}{section.2.7}% 55
+\BOOKMARK [2][-]{subsection.2.7.3}{Taux d'identit\351 par position}{section.2.7}% 56
+\BOOKMARK [2][-]{subsection.2.7.4}{Alignements Pfam}{section.2.7}% 57
+\BOOKMARK [2][-]{subsection.2.7.5}{Score BLOSUM}{section.2.7}% 58
+\BOOKMARK [2][-]{subsection.2.7.6}{Similarit\351 d'un ensemble \340 un alignement Pfam}{section.2.7}% 59
+\BOOKMARK [2][-]{subsection.2.7.7}{Entropie par position}{section.2.7}% 60
+\BOOKMARK [3][-]{section*.41}{D\351finition de groupes}{subsection.2.7.7}% 61
+\BOOKMARK [3][-]{section*.43}{D\351claration de la fonction de score}{subsection.2.7.7}% 62
+\BOOKMARK [0][-]{chapter.3}{D\351veloppements algorithmiques}{}% 63
 \BOOKMARK [1][-]{section.3.1}{Les Mod\350les }{chapter.3}% 64
 \BOOKMARK [1][-]{section.3.2}{OpenMP pour le REMC}{chapter.3}% 65
 \BOOKMARK [2][-]{subsection.3.2.1}{Pr\351sentation d'OpenMP}{section.3.2}% 66
@@ -83,9 +83,9 @@
 \BOOKMARK [1][-]{section.4.3}{Results}{chapter.4}% 83
 \BOOKMARK [2][-]{subsection.4.3.1}{Quality of the designed sequences}{section.4.3}% 84
 \BOOKMARK [2][-]{subsection.4.3.2}{Finding the GMEC}{section.4.3}% 85
-\BOOKMARK [3][-]{section*.55}{CPU and memory limits for each method}{subsection.4.3.2}% 86
-\BOOKMARK [3][-]{section*.58}{Optimal sequences/structures with up to 10 designed positions}{subsection.4.3.2}% 87
-\BOOKMARK [3][-]{section*.61}{Optimal sequences with 20 or 30 designed positions}{subsection.4.3.2}% 88
+\BOOKMARK [3][-]{section*.56}{CPU and memory limits for each method}{subsection.4.3.2}% 86
+\BOOKMARK [3][-]{section*.59}{Optimal sequences/structures with up to 10 designed positions}{subsection.4.3.2}% 87
+\BOOKMARK [3][-]{section*.62}{Optimal sequences with 20 or 30 designed positions}{subsection.4.3.2}% 88
 \BOOKMARK [2][-]{subsection.4.3.3}{Density of states above the GMEC}{section.4.3}% 89
 \BOOKMARK [1][-]{section.4.4}{Concluding Discussion}{chapter.4}% 90
 \BOOKMARK [0][-]{chapter.5}{Application aux domaines PDZ}{}% 91
@@ -125,7 +125,7 @@
 \BOOKMARK [1][-]{section.5.9}{Conclusion}{chapter.5}% 125
 \BOOKMARK [2][-]{subsection.5.9.1}{Mod\350le mis en \234uvre}{section.5.9}% 126
 \BOOKMARK [2][-]{subsection.5.9.2}{Tests et application}{section.5.9}% 127
-\BOOKMARK [0][-]{section*.107}{Bibliographie}{}% 128
+\BOOKMARK [0][-]{section*.108}{Bibliographie}{}% 128
 \BOOKMARK [0][-]{acknowledgements.0}{Remerciements}{}% 129
 \BOOKMARK [0][-]{resume.0}{Resume}{}% 130
 \BOOKMARK [0][-]{abstract.0}{Abstract}{}% 131

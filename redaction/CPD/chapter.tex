@@ -1,10 +1,10 @@
 \chapter{Le \og CPD\fg: Conception de protéine par ordinateur}
 \label{chap:CPD}
-L'ingénierie des protéines est l'ensemble des techniques pour modifier la fonction, ou la structure d'une protéine en modifiant sa séquence d'acides aminés. Les objectifs sont variés. On peut citer l'augmentation de la stabilité, la modification des fonctionnements enzymatiques ou encore l'ajout d'une conformation alternative à une protéine.
+L'ingénierie des protéines est l'ensemble des techniques pour modifier la structure  ou la structure d'une protéine en modifiant sa séquence d'acides aminés. Les objectifs sont variés. On peut citer l'augmentation de la stabilité, la modification des fonctionnements enzymatiques ou encore l'ajout d'une conformation alternative à une protéine.
 
-Dans ce domaine existe la mutagenèse dirigée dans laquelle la première étape est l'identification des mutations intéressantes pour l'objectif fixé, puis des méthodes de génie génétique sont utilisées pour produire les mutants dont les propriétés souhaitées pourront être vérifiées a posteriori. Une deuxième approche est l'évolution dirigée, dans laquelle un ensemble de mutations aléatoires est effectué sur une séquence de protéine d'intérêt et toutes les séquences ainsi produites sont testées afin de trouver la caractéristique attendue. La sélection se fait alors, comme celle de l'évolution naturelle dont elle reprend les mécanismes, sur les séquences positives aux tests.
+Une approche est la mutagenèse dirigée. La première étape est l'identification des mutations intéressantes, puis des méthodes de génie génétique sont utilisées pour produire les mutants dont les propriétés souhaitées pourront être vérifiées a posteriori. Une deuxième approche est l'évolution dirigée, dans laquelle un ensemble de mutations aléatoires est effectué sur protéine et toutes les séquences ainsi produites sont testées afin de trouver la fonction attendue. La sélection se fait alors, comme celle de l'évolution naturelle dont elle reprend les mécanismes, sur les séquences positives aux tests.
 
-Une autre approche qui exploite la capacité de calculs des ordinateurs est apparue avec la naissance des méthodes d'ingénierie des protéines \og in silico\fg. L'une d'elles, le \og Computational Protein Design\fg ou CPD consiste à déterminer les séquences d'acides aminés compatibles avec une structure protéique donnée, on parle également de résolution du problème inverse du repliement (voir \ref{graph:CPD}). Cela implique la connaissance de la structure tridimensionnelle de la protéine. Cette méthode comporte trois éléments principaux:
+Une autre approche est apparue avec la naissance des méthodes d'ingénierie des protéines \og in silico\fg. L'une d'elles, le \og Computational Protein Design\fg ou CPD consiste à déterminer les séquences d'acides aminés compatibles avec une structure protéique donnée, on parle également de résolution du problème inverse du repliement (voir \ref{graph:CPD}). Cela implique la connaissance de la structure tridimensionnelle de la protéine. Cette méthode comporte trois éléments principaux:
 
    \begin{figure}[!htbp]
      \centering
@@ -20,26 +20,26 @@ Une autre approche qui exploite la capacité de calculs des ordinateurs est appa
 \begin{enumerate}[leftmargin=*]
 
 \item \textbf{La définition d'un espace de conformations de la protéine}\\
-C'est sur elle que repose la prédiction de structure des séquences considérées. Elle doit être capable de représenter une ou un petit nombre de conformations de la chaîne principale du polypeptide et un ensemble de positionnements de la chaîne latérale de chacun des résidus possibles.
+C'est sur elle que repose la prédiction de structure des séquences considérées. Elle doit inclure une ou plusieurs conformations de la chaîne principale du polypeptide et un ensemble de positionnements de la chaîne latérale de chaque résidu.
 \item \textbf{Une fonction d'énergie}\\
 Elle permet d'évaluer la pertinence des conformations. 
-\item \textbf{Un algorithme d'exploration de l'espace de conformation}\\
+\item \textbf{Un algorithme d'exploration de l'espace de séquences-conformations}\\
 Il exploite la fonction d'énergie pour échantillonner les séquences favorables.
 \end{enumerate}
 
-Dans la suite de ce chapitre, nous détaillons les trois composantes du CPD. Nous aborderons le problème de la modélisation des protéines, de leur espace de conformation et de l'espace séquences-conformations. Puis, nous verrons les fonctions d'énergies classiques. Seront détaillées, les approches pour la modélisation du solvant qui est une partie importante de la fonction d'énergie. Plusieurs algorithmes d'exploration de l'ensemble des états possibles vont être abordés.  
+Dans la suite de ce chapitre, nous détaillons les trois composantes du CPD. Nous aborderons le problème de la modélisation des protéines, de leur espace de conformation et de l'espace séquences-conformations. Puis, nous verrons les fonctions d'énergies classiques. Seront détaillées les approches pour la modélisation du solvant qui est une partie importante de la fonction d'énergie. Plusieurs algorithmes d'exploration de l'ensemble des états possibles vont être abordés.  
 
 \section{L'espace des séquences-conformations}
 Pour faire du CPD, il faut une représentation de l'ensemble des conformations que les chaînes polypeptidiques peuvent adopter. L'ensemble des cas possibles peut se concevoir comme le choix d'une séquence $S$ d'acides aminés de longueur $N$ et la détermination d'une conformation $C$ prise par $S$ dans l'espace 3D. Ainsi l'espace d'états est celui des couples $(S,C)$ pour $N$ donné. Dans la suite, on appelle une séquence-conformation un élément de cet ensemble de couples. L'ensemble des séquences de $N$ acides aminés se conçoit sans difficulté comme les $N$-uplets de l'ensemble à $20$ éléments formé des différents types d'acide aminé. En revanche, la définition de l'ensemble des conformations d'une chaîne polypeptidique doit être développée.
 
 \subsection{L'état replié }
 \label{sec:etatreplie}
-La mécanique moléculaire propose d'appliquer les représentations de la mécanique classique aux molécules. Les atomes sont représentés sous forme de sphères. La protéine dans un milieu aqueux est flexible et en permanence en mouvement. C'est en particulier le cas pour les chaînes latérales et les boucles flexibles. L'espace des d'états d'une chaîne polypeptidique, dans le cadre de la mécanique moléculaire est alors constitué d'un vaste espace continu de conformation possibles.
+La mécanique moléculaire propose d'appliquer les représentations de la mécanique classique aux molécules. Les atomes sont représentés sous forme de sphères. La protéine dans un milieu aqueux est flexible et en permanence en mouvement. C'est en particulier le cas pour les chaînes latérales et les boucles flexibles. L'espace d'états d'une chaîne polypeptidique, dans le cadre de la mécanique moléculaire est alors constitué d'un vaste espace continu de conformation possibles.
 
-D'autre part, si un domaine polypeptidique a un nombre $N$ de résidus compris entre 50 et 100, et que chacune des $N$ positions de la chaîne peut adopter l'un des 20 types d'acides aminés, le nombre de polypeptides à considérer est égale à  $N^{20}$. Il en résulte un espace des séquences-conformations trop grand pour être utilisable. Il faut donc réduire la taille de l'espace des conformations. Pour cela, Ponder et Richards \cite{Ponder87} proposent une approche en deux points:
+D'autre part, si un domaine polypeptidique a un nombre N de résidus compris entre 50 et 100, et que chacune des N positions de la chaîne peut adopter l'un des 20 types d'acides aminés, le nombre de séquences à considérer est égale à  N$^{20}$. Il en résulte un espace des séquences-conformations trop grand pour être utilisable. Il faut donc réduire la taille de l'espace des conformations. Pour cela, Ponder et Richards \cite{Ponder87} proposent une approche en deux points:
 \begin{enumerate}[leftmargin=*]
 \item Le squelette de la protéine est fixé.
-\item Les conformations des chaînes latérales sont réduites à un ensemble fini de positionnements possibles dans l'espace euclidien.
+\item Les conformations des chaînes latérales sont réduites à un ensemble fini de positionnements possibles dans l'espace euclidien, les \og rotamères\fg.
 \end{enumerate}  
 Ensuite, des variations sur ce principe ont étés introduites, avec notamment la prise en compte de la mobilité de la chaîne principale dans un ensemble discret ou continu d'états. L'approche qui consiste à générer un ensemble de squelettes et à faire des calculs CPD pour l'ensemble a été utilisée par Su et Mayo \cite{Su97}. 
 Présentons maintenant, la modélisation des chaînes latérales et celle du backbone, c'est-à-dire le squelette polypeptidique.
@@ -49,7 +49,7 @@ Présentons maintenant, la modélisation des chaînes latérales et celle du bac
 Finkelstein et Ptitsyn \cite{Finkelstein77}, Janin et al. \cite{Janin78} ainsi que Ponder et Rischards \cite{Ponder87} ont établi que la chaîne latérale des résidus adopte de façon préférentielle un petit ensemble de conformations. Janin introduit alors le terme de \og rotamère\fg pour désigner ces conformations. Il est alors possible de réduire l'espace continu des conformations des acides aminés à cet ensemble discret de rotamères. La plupart des méthodes de CPD utilisent cette discrétisation. Beaucoup de librairies de rotamères ont été proposées dans la littérature. La plupart sont indépendantes du backbone. Mais il existe également des librairies qui dépendent du squelette de la protéine voir \cite{McGregor87,Dunbrack93}. 
 
 \subsubsection{Le squelette}
-Partant du fait que les positionnements des chaînes latérales n'influencent que faiblement la structure adoptée par le backbone, la chaîne principale de la protéine est fixée dans beaucoup de programmes CPD. Le problème de la prédiction de structure est alors ramené à celui du placement des chaînes latérales sur ce squelette. De par la configuration particulière de la proline et de la cystéine avec le backbone, ces deux types sont souvent traités à part. Cette approche a obtenu de nombreux succès, voir par exemple \cite{Dahiyat97b}.
+Comme le positionnement des chaînes latérales n'influence que faiblement la structure adoptée par le squelette, celui-ci est fixé dans beaucoup de programmes CPD. Le problème de la prédiction de structure est alors ramené à celui du placement des chaînes latérales sur ce squelette. De par la configuration particulière de la proline et de la cystéine avec le backbone, ces deux types sont souvent traités à part. Cette approche a obtenu de nombreux succès, voir par exemple \cite{Dahiyat97b}.
 
 Cependant, cette approximation peut avoir des conséquences importantes. Un type d'acide aminé considéré comme défavorable peut devenir favorable après une petite adaptation du backbone et il a été établi que quelques mouvements de squelettes peuvent faire varier significativement l'énergie de la conformation \cite{Desjarlais99}.
 En réponse à ce problème, Druart et al. \cite{Druart16} proposent une méthode de Monte Carlo hybride travaillant sur un modèle multi backbone. Une autre approche consiste à donner une certaine liberté aux angles $\Phi$, $\Psi$ en introduisant des variations aléatoires \cite{Desjarlais99}. Dantas et al. \cite{Dantas07} font des simulations avec minimisation après chaque mouvement de chaîne latérale. Kuhlman et al. \cite{Kuhlman03}  optimisent alternativement la structure du squelette et la séquence d'acides aminés.
@@ -58,11 +58,11 @@ Enfin, citons l'utilisation d'une classe particulière de mouvement des squelett
 
 \subsection{L'état déplié }
 \label{sub:deplie}
-En général, la stabilité d'une protéine est évaluée par une variation de l'énergie libre entre son état déplié et son état replié. Il faut alors connaître l'énergie de l'état déplié. Mais cet état est déstructuré par définition et ne correspond pas à une conformation unique; la modélisation exhaustive est difficile. Une approche simple consiste à représenter cet état par une chaîne étendue dans laquelle un résidu de la protéine est en interaction principalement avec le solvant et avec le backbone. Ainsi l'énergie libre de l'état déplié dépend de la séquence uniquement par la composition en acides aminés de celle-ci. En pratique, on peut utiliser pour chaque type d'acide aminé X de la protéine  un tripeptide ALA--X--ALA, et on identifie son exposition au solvant à celle de X dans l'état déplié \cite{Dahiyat96}. On en déduit une énergie par type X que l'on somme sur la séquence pour obtenir l'énergie de la protéine dépliée. 
+En général, la stabilité d'une protéine est évaluée par une variation de l'énergie libre entre son état déplié et son état replié. Il faut alors connaître l'énergie de l'état déplié. Mais cet état est déstructuré par définition et ne correspond pas à une conformation unique; la modélisation exhaustive est difficile. Une approche simple consiste à représenter cet état par une chaîne étendue dans laquelle un résidu de la protéine est en interaction principalement avec le solvant et avec le backbone. Ainsi l'énergie libre de l'état déplié dépend de la séquence uniquement par la composition en acides aminés de celle-ci. En pratique, on peut utiliser pour chaque type d'acide aminé X de la protéine  un tripeptide ALA--X--ALA, et on identifie son exposition au solvant à celle dans l'état déplié \cite{Dahiyat96}. On en déduit une énergie par type X que l'on somme sur la séquence pour obtenir l'énergie de la protéine dépliée. 
 
 \section{L'énergie d'une protéine}
 
-La fonction d'énergie ou fonction de score permet d'évaluer la stabilité de chaque conformation de la protéine. Cette fonction doit prendre en compte les détails des interactions entre les atomes de la protéine, les effets de l'environnement aqueux et en même temps, être suffisamment rapide à calculer pour évaluer en un temps raisonnable une partie la plus significative possible de l'espace des conformations. Une classe importante est basée sur la mécanique moléculaire.
+La fonction d'énergie permet d'évaluer la stabilité de chaque conformation de la protéine. Cette fonction doit prendre en compte les détails des interactions entre les atomes de la protéine, les effets de l'environnement aqueux et en même temps, être suffisamment rapide à calculer pour évaluer en un temps raisonnable une partie la plus significative possible de l'espace des conformations. Une classe importante est basée sur la mécanique moléculaire.
 
 \subsection{La mécanique moléculaire}
 \label{sub:mecamol}
@@ -137,7 +137,7 @@ L'énergie $E_{elec}$ pour l'énergie électrostatique est donnée par un potent
 \end{equation}\\
 $q_i$ et $q_j$ représentent les charges respectives des atomes $i$ et $j$ et $r_{ij}$ la distance entre les atomes $i$ et $j$, $\epsilon$ la constante diélectrique du milieu.
 
-L'énergie  $E_{VdW}$ de Van der Waals s'explique par les interactions électriques de faible intensité entre deux atomes, dus au fait que la répartition des charges électriques n'est pas uniforme autour des noyaux. Elle rassemble les effets des forces de Keesom, Delye, London et Pauli. Le potentiel de Lennard-Jones est l'approximation classique de cette énergie. Voici son expression:
+L'énergie  $E_{VdW}$ de Van der Waals s'explique par les interactions électriques de faible intensité entre deux atomes, dus au fait que la répartition des charges électriques n'est pas uniforme autour des noyaux. Elle rassemble les effets des forces de Keesom, Dedye, London et Pauli. Le potentiel de Lennard-Jones est l'approximation classique de cette énergie. Voici son expression:
 \begin{equation}
     \label{VdW}
 E_{vdw} = \sum_{i<j}D_0 [(\frac{r_0}{r_{ij}})^{12} - (\frac{r_0}{r_{ij}})^6]  
@@ -152,9 +152,9 @@ Même si la mécanique moléculaire prédomine dans le monde du CPD, il existe d
 \section{La modélisation du solvant}
 Les protéines sont étudiées dans un solvant aqueux. La solution qui est considérée dans les calculs est un mélange dans lequel l'eau est présente en quantité largement plus importante que la protéine. Bien qu'il existe d'autres types de solvant, ils ne sont pas abordés ici. Les interactions entre solutés et solvant jouent un rôle clé dans la structure de la protéine, mais également dans sa fonction. La modélisation du solvant est alors un point capital pour le CPD.
 
-Une molécule d'eau a une charge électrique nette nulle. Mais il existe une dissymétrie du nuage électronique: les électrons se situent de façon préférentielle au voisinage du noyau de l'oxygène par rapport à ceux des deux noyaux d'hydrogènes. On dit que la molécule est polaire, et cette polarisation peut être approchée par un moment dipolaire. Cette polarité permet la formation de liaisons hydrogènes entre molécules d'eau et avec tous autres groupes polaires. Ainsi, l'eau à l'état liquide possède beaucoup de liaisons hydrogènes.
+Une molécule d'eau a une charge électrique nette nulle. Mais il existe une dissymétrie du nuage électronique: les électrons se situent de façon préférentielle au voisinage du noyau de l'oxygène par rapport à ceux des deux noyaux d'hydrogènes. On dit que la molécule est polaire, et cette polarisation peut être approchée par un moment dipolaire. Cette polarité permet la formation de liaisons hydrogènes entre molécules d'eau et avec tout autre groupe polaire. Ainsi, l'eau à l'état liquide possède beaucoup de liaisons hydrogènes.
 
-Lorsqu'une protéine est solvatée, les molécules du solvant se placent de telle façon que le nombre de liaisons hydrogène soit maximal. Les molécules de la première couche de solvatation forment alors des liaisons avec les groupes polaires de la protéine ou pour les groupes non polaires, s'orientent pour former des liaisons avec d'autres molécules d'eau. Cette réorganisation de la structure moléculaire de l'eau a trois conséquences importantes:
+Lorsqu'une protéine est solvatée, les molécules du solvant se placent de telle façon que le nombre de liaisons hydrogène soit maximal. Les molécules de la première couche de solvatation forment alors des liaisons avec les groupes polaires de la protéine, près des groupes non polaires, s'orientent pour former des liaisons avec d'autres molécules d'eau. Cette réorganisation de la structure moléculaire de l'eau a trois conséquences importantes:
 
 \begin{itemize}
 \item Une diminution de l'entropie au voisinage de la protéine  
@@ -168,15 +168,15 @@ La connaissance des positions et les vitesses des atomes de toutes les molécule
 
 \subsection{Le modèle de solvant explicite}
 
-Pour calculer les grandeurs d'intérêt du solvant, il faut pouvoir situer le système dans l'espace des phases, c'est-à-dire, l'espace à $6\,N$ dimensions pour une simulation du solvant avec $N$ molécules d'eau telle que chaque élément de cet espace décrive une configuration des positions et des vitesses dans l'espace 3D de la collection de molécules.
+Pour calculer les grandeurs d'intérêt du solvant, il faut pouvoir situer le système dans l'espace des phases, un espace à $6\,N$ dimensions pour une simulation du solvant avec $N$ molécules d'eau.
 Une première méthode est la dynamique moléculaire dans laquelle, à partir d'une configuration initiale des molécules d'eau, les équations de la mécanique classique sont résolues pour déterminer les positions et les vitesses au cours du temps. Une seconde méthode consiste à échantillonner l'espace des phases par la méthode Monte Carlo dans laquelle l'espace est visité grâce à une série de déplacements aléatoires qui sont acceptés ou non en fonction de critères basés sur l'énergie (voir la section \ref{sub:MC}).
 
-Mais, quelle que soit la méthode utilisée, pour pouvoir obtenir une représentation de qualité des effets du solvant sur la protéine, il faut échantillonner correctement les états du solvant dans l'espace des phases, ce qui demande de multiplier les dynamiques moléculaires avec différentes configurations initiales ou de calculer des trajectoires Monte Carlo suffisamment longues.
+Quelle que soit la méthode utilisée, pour pouvoir obtenir une représentation de qualité des effets du solvant sur la protéine, il faut échantillonner correctement les états du solvant dans l'espace des phases, ce qui demande de multiplier les dynamiques moléculaires avec différentes configurations initiales ou de calculer des trajectoires Monte Carlo suffisamment longues.
 L'utilisation d'un modèle de solvant explicite entraîne alors une situation dans laquelle une simulation très coûteuse en termes de puissance de calculs consacre la plus grande partie du temps à évaluer des interactions entre des molécules d'eau. Ce n'est pas un objectif pour le CPD.
 
 \subsection{Le modèle implicite}
 
-Le principe des modèles implicites du solvant est de tenter de représenter l'effet moyen du solvant sur la protéine par l'utilisation d'un milieu continu dans lequel la protéine serait immergée. Le solvant et la protéine sont représentés chacun par un milieu diélectrique uniforme.
+Le principe des modèles implicites du solvant est de représenter l'effet moyen du solvant sur la protéine par l'utilisation d'un milieu continu dans lequel la protéine serait immergée. Le solvant et la protéine sont représentés chacun par un milieu diélectrique uniforme.
 Pour mesurer l'effet de la solvatation, la bonne quantité est l'énergie libre de solvatation mise en jeu pendant ce processus. Elle se définit comme la différence entre l'énergie libre de la solution et l'énergie libre d'un système dans lequel le solvant et le soluté sont séparés et à l'état pur. Notons cette différence $\Delta G_{solv}$. On peut décrire $\Delta G_{solv}$ comme la somme de trois termes:
 
 \begin{equation}
@@ -188,10 +188,10 @@ avec:
 \begin{itemize}
 \item $\Delta G_{elec}$ l'effet électrostatique, qui correspond à la réorganisation des charges de la protéine dans le solvant, y compris ses charges partielles (polarisation).
 \item $\Delta G_{vdw}$ est l'effet des forces de Van der Waals.
-\item $\Delta G_{cav}$ est l'effet qui correspond au coût de la création de la cavité pour le solvant, en termes d'entropie et de pression. Il inclut le coût de réorganisation des molécules du solvant.
+\item $\Delta G_{cav}$ est l'effet qui correspond au coût de la création de la cavité, en termes d'entropie et de pression. Il inclut le coût de réorganisation des molécules du solvant.
 \end{itemize}
 
-Une méthode standard pour approcher $\Delta G_{solv}$ est de traiter le premier terme séparément des autres. En effet, il est possible d'approcher la somme des deux derniers termes de l'équation  \ref{eq:enersolv} en utilisant la surface accessible au solvant de la protéine. La surface accessible au solvant est l'ensemble des points par lesquels peut passer le centre d'une sphère, modélisant une molécule d'eau, qui roule sur la surface de Van der Waals de la protéine, voir figure \ref{graph:surface}. L'approximation s'écrit:
+Une méthode standard pour approcher $\Delta G_{solv}$ est de traiter le premier terme séparément des autres. En effet, il est possible d'approcher la somme des deux derniers termes de l'équation  \ref{eq:enersolv} en utilisant la surface accessible au solvant de la protéine. Cette surface est l'ensemble des points par lesquels peut passer le centre d'une sphère, modélisant une molécule d'eau, qui roule sur la surface de Van der Waals de la protéine, voir figure \ref{graph:surface}. L'approximation s'écrit:
 \begin{equation}
   \label{eq:SA}
 \Delta G_{solv}^{vdw} + \Delta G_{solv}^{cav} \approx E_{solv}^{surf} = \sum_i \sigma_{t_i} A_i
@@ -235,16 +235,16 @@ et $ \epsilon $ la constante diélectrique du solvant. Ainsi, l'effet du solvant
    \end{figure}
    
 \subsection{Le modèle Poisson-Boltzmann}
-La méthode de Poisson-Boltzmann est très utilisée parce qu'elle prend en compte l'effet ionique et toute la forme de la protéine. Dans cette méthode, la protéine est supposée fixe, elle forme une cavité dans un milieu continu diélectrique qui peut être polarisé (on parle de continuum), il s'agit donc encore d'un modèle de solvant implicite. Par contre, les charges de la protéine sont traitées de façon explicite. Ainsi ce modèle prend en compte l'écrantage du solvant et les interactions électrostatiques entre groupes chargés de la protéine et du solvant polarisé. Si le continuum est muni d'une distribution de charge $\rho$ alors le potentiel électrostatique dans ce milieu est donné par l'équation de Poisson:
+La méthode de Poisson-Boltzmann est très utilisée parce qu'elle prend en compte l'effet ionique et toute la forme de la protéine. Dans cette méthode, la protéine est supposée fixe, elle forme une cavité dans un milieu continu diélectrique qui peut être polarisé (on parle de continuum), il s'agit donc encore d'un modèle de solvant implicite. Ainsi le modèle prend en compte l'écrantage par le solvant et les interactions électrostatiques entre groupes chargés de la protéine et du solvant polarisé. Si le continuum est muni d'une distribution de charge $\rho$ alors le potentiel électrostatique dans ce milieu est donné par l'équation de Poisson:
 
 \begin{equation}
   \label{eq:poisson}
   \nabla [ \epsilon(x) \phi(x)] = - 4 \pi \rho(x)   
 \end{equation}
 avec $\epsilon(x)$ la constante diélectrique (ici c'est une fonction à deux valeurs possibles selon le milieu), $\phi (x)$ le potentiel électrostatique, $\nabla \phi(x)$ la divergence de $\phi$ en $x$.
-Typiquement $\epsilon$ prend une valeur faible, entre $1$ et $8$ pour la protéine et élevée pour le solvant, proche de $80$ pour l'eau.
+Typiquement $\epsilon$ prend une valeur faible, entre $1$ et $8$ pour la protéine et élevée pour le solvant, proche de $80$.
 
-L'équation de Poisson-Boltzmann est une extension de l'équation de Poisson dans laquelle les charges d'ions mobiles sont prises en compte. La théorie de Debye-Hückel donne la distribution des ions comme suivant une loi de Boltzmann:
+L'équation de Poisson-Boltzmann est une extension de l'équation de Poisson dans laquelle les charges d'ions mobiles sont prises en compte. La théorie de Debye-Hückel donne la distribution des ions comme suivant une loi de Boltzmann, conduisant à:
 \begin{equation}
   \nabla [ \epsilon (x) \phi(x)] = -4 \pi ( \rho(x) - \epsilon(x) \kappa^2 \phi(x))
 \end{equation}
@@ -281,7 +281,6 @@ ou, si $i=j$:
 \begin{equation}
   G_{elec} = - \tau \frac{q_i^2}{2a_i}
 \end{equation}
-
 avec $ \tau = \frac{1}{\epsilon_p} - \frac{1}{\epsilon_s}$, $\epsilon_p$ la constante diélectrique des particules $i$ et $j$ et $\epsilon_s$ celle du solvant. L'idée consiste alors à étendre la somme des deux derniers termes de \ref{eq:GB2} aux distances $r_{ij}$ intermédiaires:
 
 \begin{equation}
@@ -326,7 +325,7 @@ Il reste à déterminer un algorithme d'exploration de l'espace d'états qui per
 
 Le premier groupe est constitué des méthodes déterministes dans lesquelles les choix effectués sont toujours déterminés a priori ou déterminés en fonction des éléments obtenus au cours de l'exécution du programme. On trouve par exemple dans ce groupe, les méthodes exhaustives qui exhibent la totalité des solutions du problème. Elles peuvent être appliquées à de petites espaces conformationnels. On trouve aussi des méthodes dites semi-exhaustives dans lesquelles la complexité combinatoire est réduite en autorisant uniquement certaines conformations à certains moments de l'exploration.
 
-Une classe intéressante d'approche déterministes est constituée des algorithmes exacts qui se focalisent non pas sur l'objectif du CPD, mais sur la conformation de meilleure énergie ou \og Global Minimum Energy Conformation \fg (GMEC). Typiquement, ces algorithmes exploitent les structures de la fonction d'énergie et de l'espace d'états. Un type de méthodes est alors exploitable pour un type de fonction d'énergie. Bien souvent, ces algorithmes nécessitent également la discrétisation de l'espace des phases. Cela peut devenir problématique dans les situations où le backbone est flexible.
+Une classe intéressante d'approches déterministes est constituée des algorithmes exacts qui se focalisent non pas sur l'objectif du CPD, mais sur la conformation de meilleure énergie ou \og Global Minimum Energy Conformation \fg (GMEC). Typiquement, ces algorithmes exploitent les structures de la fonction d'énergie et de l'espace d'états. Un type de méthodes est alors exploitable pour un type de fonction d'énergie. Bien souvent, ces algorithmes nécessitent également la discrétisation de l'espace des phases. Cela peut devenir problématique dans les situations où le backbone est flexible.
   
 Le second groupe est celui des méthodes stochastiques et/ou heuristiques. Elles ont vocation à déterminer des solutions de qualité sans obtenir de garantie sur l'optimum en termes d'énergie, dans un temps d'exécution réaliste. Elles sont non-déterministes c'est-à-dire qu'elles choisissent certains éléments de façon aléatoire, en pratique la \og source de hasard\fg est constituée de générateurs de nombres pseudo-aléatoires. Elles permettent des espaces d'états non discrétisés, par exemple \cite{Perry12} où les rotamères peuvent varier de façon continue. Plusieurs peuvent s'utiliser sans exiger de structure particulière pour la fonction d'énergie. Par contre, la convergence bien qu'elle puisse être établie en théorie, reste en pratique difficile à cerner et n'offre pas la possibilité de reconnaître le GMEC. On doit au besoin choisir une condition d'arrêt de l'exécution sans lien direct avec ce minimum.  
 
@@ -367,18 +366,18 @@ Cette méthode garantit la convergence vers un ensemble de rotamères stables à
 Le \og Dead End Elimination\fg (DEE)  consiste à éliminer des rotamères ou des combinaisons de rotamères qui ne peuvent pas faire partie de la conformation qui minimise l'énergie ou GMEC. Comme pour le champ moyen, l'énergie doit être décomposable par paires. Il y a deux critères d'élimination \cite{Desmet92}:
 
 \textbf{Le critère simple:} le rotamère $r_i$ du résidu $i$ est éliminé si la meilleure énergie (la plus faible) qu'il est possible d'obtenir pour une conformation comprenant ce rotamère est moins bonne que la pire énergie obtenue avec un rotamère $r_i'$  à la même position. Notons $E(c)$, l'énergie d'une séquence-conformation $C$. Une expression mathématique de ce critère peut être le suivant:\\
-Si $min_{r_i \in C }E(C) > max_{r_i' \in C} E(C) $ alors $r_i$ est éliminé. \\
+Si $\displaystyle \min_{C;\,r_i \in C }E(C) > \max_{C;\, r_i' \in C} E(C)$ alors $r_i$ est éliminé. \\
 En utilisant l'expression d'une fonction d'énergie décomposée par paires (équation \ref{eq:pairwise}), avec $N$ le nombre de positions, le critère peut s'écrire de la façon suivante:\\
-Si $E_i(r_i) + \sum_{j\neq i} \min_{r_j} E_{ij}(r_i,r_j) > E_i(r_i') + \sum_{j\neq i}^{N} \max_{r_j}E_{ij}(r_i',r_j)$ alors $r_i$ est éliminé.\\ 
+Si $\displaystyle E_i(r_i) + \sum_{j\neq i} \min_{r_j} E_{ij}(r_i,r_j) > E_i(r_i') + \sum_{j\neq i}^{N} \max_{r_j}E_{ij}(r_i',r_j)$ alors $r_i$ est éliminé.\\ 
 
-\textbf{Le critère double:} il exprime une condition analogue sur un couple de rotamères $(r_i,r_j)$ suffisante pour qu'il ne puisse pas faire partie du GMEC. Pour son expression on introduit l'énergie d'une paire $r_i$ , $r_j$: $E^{r_i,r_j} = E_i(r_i) + E_j(r_j) + E_{ij}(r_i,r_j)$. Il s'exprime ainsi comme suit.\\
-S'il existe $(r_i,r_j)$ tel que\\
-$E^{r_i,r_j} + \sum_{k=1}^N \min_{r_k} (E_{ik}(r_i,r_k) + E_{jk}(r_j,r_k)) >  E^{r_i',r_j'} + \sum_{k=1}^N \max_{r_k} (E_{ik}(r_i',r_k) + E_{jk}(r_j',r_k))$ \\
+\textbf{Le critère double:} il exprime une condition analogue sur un couple de rotamères $(r_i,r_j)$ suffisante pour qu'il ne puisse pas faire partie du GMEC. Pour son expression on introduit l'énergie d'une paire $r_i$ , $r_j$: $E^{r_i,r_j} = E_i(r_i) + E_j(r_j) + E_{ij}(r_i,r_j)$. Il s'exprime ainsi comme suit:\\
+Si\\
+$\displaystyle E^{r_i,r_j} + \sum_{k=1}^N \min_{r_k} (E_{ik}(r_i,r_k) + E_{jk}(r_j,r_k)) >  E^{r_i',r_j'} + \sum_{k=1}^N \max_{r_k} (E_{ik}(r_i',r_k) + E_{jk}(r_j',r_k))$ \\
 alors la paire $r_i$, $r_j$ est éliminée.\\
 L'élimination d'un couple $(r_i,r_j)$, n'exclut pas pour autant la présence de $r_i$ ou de $r_j$ dans la solution optimale. 
 
-\textbf{Le critère de Goldstein \cite{Goldstein94}:} il s'agit d'une amélioration du critère simple du DEE, voir la figure \ref{fig:DEE}. Il peut exister des situations dans lesquelles l'énergie avec un rotamère $r_i$  est toujours diminuée en la remplaçant par un autre rotamère $r'_i$. On peut donc l'éliminer. Or, cela n'implique pas forcément la condition du critère simple. Ce critère peut s'exprimer de la façon suivante:\\
-S'il existe $r_{i'}$ tel que $E_i^{r_i} - E_i^{r_{i'}}+ \sum_{k=1}^N \min_{r_k} (E_{ik}(r_i,r_k) - E_{i'k}(r_i',r_k)) > 0$ alors $r_i$ est éliminé.
+\textbf{Le critère de Goldstein \cite{Goldstein94}:} il s'agit d'une amélioration du critère simple du DEE, voir la figure \ref{fig:DEE}. Il peut exister des situations dans lesquelles l'énergie avec un rotamère $r_i$  est toujours diminuée en la remplaçant par un autre rotamère $r'_i$. On peut donc l'éliminer. Or, cela n'implique pas forcément la condition du critère simple. Ce nouveau critère peut s'exprimer de la façon suivante:\\
+S'il existe $r_{i'}$ tel que $\displaystyle E_i^{r_i} - E_i^{r_{i'}}+ \sum_{k=1}^N \min_{r_k} (E_{ik}(r_i,r_k) - E_{i'k}(r_i',r_k)) > 0$ alors $r_i$ est éliminé.
 
    \begin{figure}[!htbp]
      \centering
@@ -386,32 +385,30 @@ S'il existe $r_{i'}$ tel que $E_i^{r_i} - E_i^{r_{i'}}+ \sum_{k=1}^N \min_{r_k} 
        \includegraphics[width=8cm]{figure/DEE.png} &
      \end{tabular}
      
-     \caption{\textbf{DEE, graphes de la fonction d'énergie pour des rotamères fixés à la position $i$} le critère simple permet l'élimination du rotamère $r^1_i$ parce que l'énergie des conformations qui le contiennent, l' énergie rouge, est toujours moins bonne que la noire. Mais seul de critère de Goldstein permet d'éliminer $r^2_i$ parce que l'écart entre le graphe bleu et le graphe noir est positif pour chaque conformation.}
+     \caption{\textbf{DEE, graphes de la fonction d'énergie pour des rotamères fixés à la position $i$} Le critère simple permet l'élimination du rotamère $r^1_i$ parce que l'énergie des conformations qui le contiennent, l'énergie rouge, est toujours moins bonne que la noire. Mais seul de critère de Goldstein permet d'éliminer $r^2_i$ parce que l'écart entre le graphe bleu et le graphe noir est positif pour chaque conformation.}
 \label{fig:DEE}
    \end{figure}
 
-Au cours de l'optimisation, les deux critères peuvent être utilisés alternativement, jusqu'à ce qu'il n'y est plus de rotamère à éliminer. Il est alors possible d'utiliser une approche exhaustive sur l'espace d'états réduit pour obtenir le GMEC.
-
-Cette méthode permet dans les bons cas (par exemple pour les petits systèmes) de converger en un temps raisonnable \cite{Leach98}. Beaucoup de variantes du DEE \cite{Pierce00,Lilien05} ont été proposées notamment en travaillant sur des combinaisons de plus de deux rotamères.
+Au cours de l'optimisation, les deux critères peuvent être utilisés alternativement, jusqu'à ce qu'il n'y est plus de rotamère à éliminer. Il est alors possible d'utiliser une approche exhaustive sur l'espace d'états réduit pour obtenir le GMEC. Cette méthode permet dans les bons cas (par exemple pour les petits systèmes) de converger en un temps raisonnable \cite{Leach98}. Beaucoup de variantes du DEE \cite{Pierce00,Lilien05} ont été proposées notamment en travaillant sur des combinaisons de plus de deux rotamères.
 
 
-\subsection{Le CFN}
+\subsection{Le CFN ou \og Cost Function Network\fg}
 
 La méthode des réseaux de fonctions de coût est issue du domaine de l'optimisation combinatoire. Elle est utilisable si la fonction d'énergie est décomposable par paires. Il s'agit avant tout d'une recherche de la séquence-conformation qui minimise l'énergie globale ou GMEC. Dans certaines conditions, elle peut également fournir un ensemble de séquences-conformations proches du GMEC.
 
-Un réseau de fonction de coût, ou \og cost function network  \fg (CFN), est constitué d'un ensemble de variables $\mathcal{X}$ et d'un ensemble $\mathcal{C}$ de fonctions des variables $\mathcal{X}$ (les fonctions de coûts). Ici, nous considérons uniquement des CFN avec des fonctions d'au plus deux variables (constantes, unaires ou binaires). Un problème CPD est représenté par un CFN de la façon suivante. À chaque résidu $i$ de la protéine on associe une variable $v_i$ ayant comme valeurs possibles les rotamères de $i$. À chaque variable $v_i$, on définit une fonction unaire $C_1(v_i)$ représentant l'énergie \og self\fg en $i$, $C_1(r_i)=E_i(r_i)$. À chaque couple de position $i,j$, on définit une fonction binaire $C_2(v_i,v_j)$ représentant les énergies d'interactions possibles entre $i$ et $j$, $C_2(r_i,r_j)=E_{ij}(r_i,r_j)$. Alors, une séquence-conformation correspond à une valeur pour chaque variable de $\mathcal{X}$, on parle de solution du CFN. La recherche du minimum global d'énergie revient ainsi à trouver une solution qui minimise la somme de toutes les fonctions de coût. Pour travailler avec des fonctions de coûts à valeurs entières positives, on multiplie toutes les valeurs par la précision des énergies et on translate les valeurs vers les nombres positifs.
+Un réseau de fonction de coût, ou \og cost function network  \fg (CFN), est constitué d'un ensemble de variables $\mathcal{X}$ et d'un ensemble $\mathcal{C}$ de fonctions des variables $\mathcal{X}$ (les fonctions de coûts). Ici, nous considérons uniquement des CFN avec des fonctions d'au plus deux variables (constantes, unaires ou binaires). Un problème CPD est représenté par un CFN de la façon suivante. À chaque résidu $i$ de la protéine on associe une variable $v_i$ ayant comme valeurs possibles les rotamères de $i$. À chaque variable $v_i$, on définit une fonction unaire $C_1(v_i)$ représentant l'énergie \og self\fg en $i$, $C_1(r_i)=E_i(r_i)$. À chaque couple de positions $i,j$, on définit une fonction binaire $C_2(v_i,v_j)$ représentant les énergies d'interactions possibles entre $i$ et $j$, $C_2(r_i,r_j)=E_{ij}(r_i,r_j)$. Alors, une séquence-conformation correspond à une valeur pour chaque variable de $\mathcal{X}$; on parle de solution du CFN. La recherche du minimum global d'énergie revient ainsi à trouver une solution qui minimise la somme de toutes les fonctions de coût. Pour travailler avec des fonctions de coûts à valeurs entières positives, on multiplie toutes les valeurs par la précision des énergies et on translate les valeurs vers les nombres positifs.
 %
 \subsubsection{L'algorithme \og Depth-First Branch and Bound \fg (DFBB)}
 
 La résolution d'un CFN est tentée généralement par un algorithme de type  \og Depth-First Branch and Bound \fg (DFBB). Les ingrédients sont les suivants:
 \begin{description}[leftmargin=*] 
-\item [Un principe de séparation:] il est utilisé pour la construction d'un arbre qui organise les solutions. Un ensemble de solutions peut être vu comme le premier sommet $S_0$ d'une arborescence en construction. La séparation est l'action de partager, selon certain critère, cet ensemble en sous-ensembles  qui deviennent les fils de $S_0$, ce partage doitt constituer une partition de l'ensemble des solutions du départ. Le critère de séparation classique est d'énumérer les valeurs possibles d'une variable $v_i$ du  CFN. À chacune des valeurs $x$ possibles de $v_i$ on définit le sous-ensemble de $S_0$ ayant dans toutes ses solutions $v_i=x$. Ainsi, si $v_i$ à $N$ valeurs possible, $N$ fils de $S_0$ sont créés.
-\item [Un majorant:] le majorant du problème correspond au meilleur coût connu. Il majore le GMEC.
+\item [Un principe de séparation:] il est utilisé pour la construction d'un arbre qui organise les solutions. Un ensemble de solutions peut être vu comme le premier sommet $S_0$ d'une arborescence en construction. La séparation est l'action de partager, selon certains critères, cet ensemble en sous-ensembles  qui deviennent les fils de $S_0$; ce partage doit constituer une partition de l'ensemble des solutions du départ. Le critère de séparation classique est d'énumérer les valeurs possibles d'une variable $v_i$ du  CFN. À chacune des valeurs $x$ possibles de $v_i$ on définit le sous-ensemble de $S_0$ ayant dans toutes ses solutions $v_i=x$. Ainsi, si $v_i$ à $N$ valeurs possible, $N$ fils de $S_0$ sont créés.
+\item [Un majorant:] le majorant du problème correspond au meilleur coût connu ($+\infty$ au début du calcul). Il majore le GMEC.
 \item [Un minorant d'un sommet:] le minorant correspond à une valeur que l'on sait être inférieure ou égale au coût de toutes les solutions d'un sommet.  
 \item [Un principe d'évaluation:] évaluer un sommet $S$, c'est déterminer un de ses minorants. Si un sommet est évalué et est supérieur au majorant courant, on sait qu'aucune solution de $S$ ne peut être le GMEC. La totalité du sous-arbre peut être élaguée, c'est-à-dire exclue de l'optimisation.  
-\item [Une stratégie de développement:] elle consiste à choisir une méthode de développement de l'arbre des solutions; c'est déterminer l'ordre sur les sommets de l'arborescence dans lequel on va appliquer le critère de séparation. Dans le DFBB, la stratégie consiste à descendre dans les branches jusqu'à trouver un sous-arbre qu'il est possible d'élaguer, alors l'algorithme remonte d'une branche pour redescendre dans une autre direction. Ce parcours en profondeur à l'avantage de limiter l'utilisation de la mémoire, parce qu'il n'est nécessaire de conserver que la description de la branche qui a été explorée.
+\item [Une stratégie de développement:] elle consiste à choisir une méthode de développement de l'arbre des solutions; c'est déterminer l'ordre sur les sommets de l'arborescence dans lequel on va appliquer le critère de séparation. Dans le DFBB, la stratégie consiste à descendre dans les branches jusqu'à trouver un sous-arbre qu'il est possible d'élaguer, alors l'algorithme remonte d'une branche pour redescendre dans une autre direction. Ce parcours en profondeur à l'avantage de limiter l'utilisation de la mémoire, parce qu'il n'est nécessaire de conserver que la description de la branche qui a été explorée.Un exemple est présenté à la figure \ref{fig:DFBB}. Il devient alors nécessaire de trouver de bons minorants.
 \end{description}  
-Un exemple est présenté à la figure \ref{fig:DFBB}. Il devient alors nécessaire de trouver de bons minorants.
+
 \begin{figure}[!htbp]
   \centering
   \begin{tabular}{c}
@@ -422,7 +419,7 @@ Un exemple est présenté à la figure \ref{fig:DFBB}. Il devient alors nécessa
 \end{figure}
 
 \subsubsection{Equivalence Preserving Transformation}
-Une EPT, ou \og Equivalence Preserving Transformation\fg, transforme un CFN $A$ en un CFN $B$ tel que pour chaque affectation des variables, le total des coûts  est identique. $A$ et $B$ sont dits \og en cohérence locale \fg. Le principe est de déplacer les coûts entre fonctions pour de les attribuer aux fonctions qui portent sur une seule variable au plus (les coûts unitaires et les coûts constants). L'objectif est de faire apparaître de bons minorants \cite{schiex00} pour le DFBB. L'avantage ici, est de pouvoir conserver les transformations dans un chemin de l'arbre de recherche tout au long de l'optimisation. Il existe deux types de transformations:
+Une EPT, ou \og Equivalence Preserving Transformation\fg, transforme un CFN $A$ en un CFN $B$ tel que pour chaque solution (chaque affectation des variables), le total des coûts  est identique. $A$ et $B$ sont dits \og en cohérence locale \fg. Le principe est de déplacer les coûts entre fonctions pour les attribuer aux fonctions les plus simples, qui portent sur une seule variable au plus (les coûts unitaires et constants). L'objectif est de faire apparaître de bons minorants pour le DFBB \cite{schiex00}. L'avantage ici, est de pouvoir conserver les transformations dans un chemin de l'arbre de recherche tout au long de l'optimisation. Il existe deux types de transformations:
 \begin{itemize}
 \item la première appelée projection consiste à transférer un coût de l'ensemble des coûts unaires vers le coût constant, des coûts binaires vers le coût constant ou encore des coûts binaires vers les coûts unaires.
 \item le second type de transformation fait l'inverse, c'est à dire transfère un coût d'une fonction unaire vers les fonctions binaires impliquant la même valeur de variable. Une telle transformation permet une augmentation du transfert total vers le coût constant.
@@ -438,14 +435,12 @@ Un exemple inspiré de la thèse de Seydou Traoré est présenté à  la figure 
   \label{fig:EPT}
 \end{figure}
 
-Cette approche a montré sa supériorité, avec l'outil toulbar2 \cite{Allouche14,Traore13}, par rapport à un ensemble de résolveurs de CFN parmi les plus réputés actuellement qui exploitent notamment l'approche DEE/A* ou le backtracking. toulbar2 en combinant FFBB, EPT et DEE a été capable de trouver le GMEC dans le plus grand nombre de problèmes issu du CPD proposés aux différents outils.
+Cette approche a montré sa supériorité, avec l'outil toulbar2 \cite{Allouche14,Traore13}, par rapport à un ensemble de résolveurs de CFN parmi les plus réputés actuellement qui exploitent notamment l'approche DEE/A* ou le backtracking. Toulbar2 en combinant FFBB, EPT et DEE a été capable de trouver le GMEC dans le plus grand nombre de problèmes issu du CPD proposés aux différents outils.
 \subsection{L'heuristique Multistart Steepest Descent (MSD)}
 \label{MSD}
 En 2000, Wernisch, Hery et Wodak \cite{Wernisch00} partent du constat que l'espace conformationnel et les fonctions d'énergie utilisées ne capturent que partiellement la réalité. Ainsi, le GMEC ne correspondra pas forcément à la séquence la plus stable. D'autre part, des protéines avec des taux d'identité de moins de $50\%$ peuvent conserver quasiment la même structure 3D. Cela révèle l'immensité du nombre de séquences-conformations propre à un pli. Ainsi, leur objectif n'est pas de résoudre un problème d'optimisation, mais d'exhiber un ensemble de séquences de basse énergie. Ils proposent alors une heuristique conçue pour le CPD. Il s'agit d'une procédure simple qui produit une grande quantité de séquences-conformations de basse énergie, sans se focaliser sur le GMEC.
 
-Un cycle heuristique se déroule de la façon suivante. Au départ, une séquence-conformation est construite en attribuant de façon aléatoire un type d'acide aminé et un rotamère à chaque position de la chaîne. Ensuite, en parcourant la séquence du début jusqu'à la fin, l'algorithme procède par des ajustements successifs à chaque position. Pour chaque position $i$ de la séquence, tous les états possibles sont évalués, le reste de la séquence et des rotamères étant fixés. Le meilleur rotamère est alors attribué en $i$. La séquence est ainsi ajustée par plusieurs passages successifs, jusqu'à convergence de l'énergie, voir l'algorithme \ref{alg:MSD}.
-
-Un cycle est très rapide, ce qui permet de produire dans les cas usuels, plusieurs milliers de séquences par heure. L'utilisation mémoire hormis le stockage des énergies est quasi nulle. Il n'impose pas que la fonction d'énergie soit décomposable par paires, mais il s'en accommode très bien, en rendant possible l'utilisation de la mémoire par bloc pour l'ensemble des énergies impliquant une position $i$ donnée.
+Un cycle heuristique se déroule de la façon suivante. Au départ, une séquence-conformation est construite en attribuant de façon aléatoire un type d'acide aminé et un rotamère à chaque position de la chaîne. Ensuite, en parcourant la séquence du début jusqu'à la fin, l'algorithme procède par des ajustements successifs à chaque position. Pour chaque position $i$ de la séquence, tous les états possibles sont évalués, le reste de la séquence et des rotamères étant fixés. Le meilleur rotamère est alors attribué en $i$, puis on passe à la position suivante. La séquence est ainsi ajustée par plusieurs passages successifs, jusqu'à convergence de l'énergie, voir l'algorithme \ref{alg:MSD}. Un cycle est très rapide, ce qui permet de produire dans les cas usuels, plusieurs milliers de séquences par heure. L'utilisation mémoire hormis le stockage des énergies est quasi nulle. Il n'impose pas que la fonction d'énergie soit décomposable par paires, mais il s'en accommode très bien, en rendant possible l'utilisation de la mémoire par bloc pour l'ensemble des énergies impliquant une position $i$ donnée.
 
 \begin{algorithm}
   \For{chaque cycle heuristique}{ 
@@ -466,7 +461,7 @@ Un cycle est très rapide, ce qui permet de produire dans les cas usuels, plusie
 \subsection{L'algorithme génétique}
 
 Holland et ces collaborateurs \cite{Goldberg88} introduisent une nouvelle approche inspirée des principes biologiques de la sélection naturelle, avec des opérations comme des mutations, des croisements et la sélection. L'algorithme génétique a pour objectif d'obtenir un ensemble de solutions proches de l'optimum en un temps raisonnable.
-Le schéma général est le suivant. Une population de séquences-conformations est générée de façon aléatoire. L'énergie de tous les membres de la population est évaluée. Une sélection basée sur l'énergie est appliquée, ce qui diminue la taille de la population. Des mutations aléatoires et des croisements sont appliqués à la nouvelle population, ce qui l'augmente. Enfin, une condition d'arrêt est évaluée. Si elle n'est pas réalisée, l'algorithme retourne à l'étape d'évaluation (voir la figure \ref{fig:algo_gene}). 
+Le schéma général est le suivant. Une population de séquences-conformations est générée de façon aléatoire. L'énergie de tous les membres de la population est évaluée. Une sélection basée sur l'énergie est appliquée, ce qui diminue la taille de la population. Des mutations aléatoires et des croisements sont appliqués à la nouvelle population, qui augmente. Enfin, une condition d'arrêt est évaluée. Si elle n'est pas réalisée, l'algorithme retourne à l'étape d'évaluation (voir la figure \ref{fig:algo_gene}). 
 
 \begin{figure}[!h]
   \centering
@@ -478,13 +473,13 @@ Le schéma général est le suivant. Une population de séquences-conformations 
 \end{figure}
 
 
-L'individu de meilleure énergie au sein population tend à se reproduire le plus vite. Donc la valeur moyenne de l'énergie de l'ensemble des séquences-conformations converge. On peut voir ici que le nombre de membres de la population est un paramètre de l'algorithme. Plus ce nombre est faible plus la convergence va être rapide. A contrario, plus ce nombre est grand, meilleur est l'exploration de l'espace d'états. Les atouts de l'algorithme génétique sont sa capacité à franchir des barrières énergétiques par des changements de séquences rapides via des croisements et sa capacité à optimiser en parallèle différents secteurs de la structure.
+L'individu de meilleure énergie au sein de la population tend à se reproduire le plus vite. Donc la valeur moyenne de l'énergie de l'ensemble des séquences-conformations converge. On peut voir ici que le nombre de membres de la population est un paramètre de l'algorithme. Plus ce nombre est faible plus la convergence va être rapide. A contrario, plus ce nombre est grand, meilleure est l'exploration de l'espace d'états. Les atouts de l'algorithme génétique sont sa capacité à franchir des barrières énergétiques par des changements de séquences rapides via des croisements et sa capacité à optimiser en parallèle différents secteurs de la structure.
 
 \subsection{Le Monte Carlo}
 \label{sub:MC}
-Dans son acceptation la plus générale, un algorithme Monte Carlo est un algorithme stochastique ( il utilise une source de hasard) qui approche probablement la solution exacte en un temps d'exécution déterminable a priori. Cela le distingue, parmi les algorithmes stochastiques, d'un algorithme de Las Vegas qui donne un résultat exact dans un temps d'exécution non déterministe, et d'un algorithme d'Atlantic City qui donne des résultats probablement corrects dans un temps probablement rapide. Parmi les algorithmes Monte Carlo, les algorithmes Monte Carlo par Chaînes de Markov (MCMC) ont été particulièrement étudiés. Ce ne sont pas des algorithmes d'optimisation, mais des algorithmes d'échantillonnage d'une distribution de probabilité $\pi$. On veut générer des éléments $x_i$ de l'espace des phases tels que la distribution $D=\{x_i,\ i \in \mathbb{N} \}$ converge vers $\pi$ (dans un sens à préciser).
+Dans son acceptation la plus générale, un algorithme Monte Carlo est un algorithme stochastique (il utilise une source de hasard) qui approche probablement la solution exacte en un temps d'exécution déterminable a priori. Cela le distingue, parmi les algorithmes stochastiques, d'un algorithme de Las Vegas qui donne un résultat exact dans un temps d'exécution non déterministe, et d'un algorithme d'Atlantic City qui donne des résultats probablement corrects dans un temps probablement rapide. Parmi les algorithmes Monte Carlo, les algorithmes Monte Carlo par Chaînes de Markov (MCMC) ont été particulièrement étudiés. Ce ne sont pas des algorithmes d'optimisation, mais des algorithmes d'échantillonnage d'une distribution de probabilité $\pi$. On veut générer des éléments $x_i$ de l'espace des phases tels que la distribution $D=\{x_i,\ i \in \mathbb{N} \}$ converge vers $\pi$ (dans un sens mathématique à préciser).
 
-Il existe plusieurs méthodes pour répondre à cette question, mais les MCMC sont bien adaptés aux situations où l'espace des états est de grande dimension. Un autre avantage des algorithmes MCMC est qu'elles ne nécessitent pas la connaissance de la constante de normalisation de $\pi$. Cela constitue un attrait important parce que dans beaucoup de situations cette constante de normalisation est particulièrement difficile à calculer. Pour ces raisons, l'échantillonnage par MCMC est très populaire depuis plus de cinquante ans. Dans la suite, nous donnons des conditions suffisantes pour que ce type l'algorithme converge dans le cadre d'un espace d'états $E$ fini, puis nous détaillons le plus célèbre d'entre eux, l'algorithme de Metropolis-Hasting. L'idée générale est de générer un élément $x_i$ en utilisant dans les états déjà visités uniquement $x_{i-1}$. Ce type de processus, où la mémoire utilisée est réduite à l'état précédent caractérise les processus de Markov.
+Il existe plusieurs méthodes pour répondre à cette question, mais les MCMC sont bien adaptés aux situations où l'espace des états est de grande dimension. Un autre avantage des algorithmes MCMC est qu'elles ne nécessitent pas la connaissance de la constante de normalisation de $\pi$. Cela constitue un attrait important parce que dans beaucoup de situations cette constante de normalisation est particulièrement difficile à calculer. Pour ces raisons, l'échantillonnage par MCMC est très populaire depuis plus de cinquante ans. Dans la suite, nous donnons des conditions suffisantes pour que ce type l'algorithme converge dans le cadre d'un espace d'états $E$ fini, puis nous détaillons le plus célèbre d'entre eux, l'algorithme de Metropolis-Hasting. L'idée est de générer un élément $x_i$ en utilisant dans les états déjà visités uniquement $x_{i-1}$. Ce type de processus, où la mémoire utilisée est réduite à l'état précédent caractérise les processus de Markov.
 
 
 On appelle processus stochastique, une suite de variables aléatoires $\{X_n\}$ à valeurs dans $E$.
@@ -497,10 +492,9 @@ Une chaîne de Markov est homogène si:
 \end{equation}
 C'est-à-dire que la probabilité de transition $P$ est indépendante de $n$. Dans la suite, on ne considère que des chaînes de Markov homogènes et on note:
 \[P(X_n=a | X_{n-1}=b) = P(a|b)\]
-Dans la suite, pour simplifier les notations, on utilise l'écriture matricielle avec
-\[\mu_0 =(P(X_0=a))_{a \in E}\]
-on a alors
-\[\mu_1 =\mu_0 . P\] avec . le produit matriciel.
+Pour simplifier les notations, on introduit une matrice de transition $P$ avec $P_{ab}=P(X_1=b|X_0=a)$ et on écrit
+$\mu_0 =(P(X_0=a))_{a \in E}$ et $\mu_1 =(P(X_1=a))_{a \in E}$. On a alors:
+\[\mu_1 =P \mu_0\] 
 
 \subsubsection{Le principe de la balance détaillée}
 
@@ -508,19 +502,19 @@ Le principe de la balance détaillée est un principe général de comportement 
 \begin{equation}
 \forall a,b \in \mathcal{S},\ \mathcal{P}(a \rightarrow b) = \mathcal{P}(b \rightarrow a) 
 \end{equation}
-Pour pouvoir appliquer ce principe aux chaînes de Markov, introduisons une définition proche. Soit $q$ une probabilité sur $E$, une chaîne de Markov est dite réversible par rapport à $q$ si
+Pour pouvoir appliquer ce principe aux chaînes de Markov, introduisons une définition proche. Soit $q$ une probabilité sur $E$. Une chaîne de Markov est dite réversible par rapport à $q$ si
 \begin{equation}
 \forall a,b \in E,\ q(b)P(a|b)=q(a)P(b|a)
 \end{equation}
 On a alors:
 \begin{equation}
-\forall a \in E,\ q.P (a) = \sum_{b \in E} q(b)P(a|b) = \sum_{b \in E} q(a)P(b|a) = q(a) \sum_{b \in E}P(b|a) = q(a)
+\forall a \in E,\ P q(a) = \sum_{b \in E} q(b)P(a|b) = \sum_{b \in E} q(a)P(b|a) = q(a) \sum_{b \in E}P(b|a) = q(a)
 \end{equation}
-Ainsi, la probabilité $q$ est inchangée après la transition $P$, la chaîne est dite stationnaire pour $q$. Il nous faut alors construire une chaîne de Markov réversible pour la distribution cible $\pi$. Mais cela ne suffit pas, en effet, même si $\{X_n\}$ est stationnaire pour $\pi$, rien ne dit que la chaîne va, à un moment, distribuer les états comme $\pi$.
+Ainsi, la probabilité $q$ est inchangée après la transition $P$, la chaîne est dite stationnaire pour $q$.
 
-Si $E$ est discret, une chaîne de Markov réversible est dîte ergodique si et seulement si:
+Il nous faut alors construire une chaîne de Markov réversible pour la distribution cible $\pi$. Mais cela ne suffit pas. En effet, même si $\{X_n\}$ est stationnaire pour $\pi$, rien ne dit que la chaîne va, à un moment, distribuer les états comme $\pi$. Se pose la question de la convergence vers $\pi$. Or, si $E$ est discret, une chaîne de Markov réversible est dîte ergodique si et seulement si:
 \begin{itemize}
-\item pour tous $a$ et $b$ de l'espace d'états il existe un chemin de $a$  vers $b$  de probabilité non nulle. 
+\item Pour tous $a$ et $b$ de l'espace d'états il existe un chemin de $a$  vers $b$  de probabilité non nulle. 
 \item Il n'existe pas de $a$ de $E$ tel que la chaîne revienne en $x$ périodiquement.
 \item  Au cours du temps, tous les états sont visités par la chaîne avec une probabilité non nulle. 
 \end{itemize}
@@ -557,13 +551,13 @@ ce qui équivaut à
 \end{equation}\\
 avec $\Delta E =  E_{x_j} - E_{x_i}$. Ainsi, le calcul de la fonction de partition est évité! Métropolis propose alors la probabilité d'acceptation suivante: 
 \begin{equation}
-acc(x_i|x_j) = \exp(- \beta \Delta E)\ \text{si}\ \Delta E >0;\ acc(x_i|x_j)=1 \text{sinon}
+acc(x_i|x_j) = \exp(- \beta \Delta E)\ \text{si}\ \Delta E >0;\ acc(x_i|x_j)=1\ \text{sinon}
 \end{equation}
 On a bien: 
 \begin{equation}
 \forall\ x_i, x_j \in E,\ \frac{acc(x_j|x_i)}{acc(x_i|x_j)} = \exp(\beta \Delta E)
 \end{equation}\\
-Il suffit alors de choisir une probabilité de sélection symétrique ne violant pas les conditions ergodiques pour obtenir notre convergence. Par la suite, Hastings généralise l'algorithme à une probabilité $sel()$ non symétrique avec acc() telle que:
+Il suffit alors de choisir une probabilité de sélection symétrique ne violant pas les conditions ergodiques pour obtenir notre convergence. Par la suite, Hastings généralise l'algorithme à une probabilité $sel()$ non symétrique en choisissant acc() telle que:
 \begin{equation}\label{eq:Hasting}
 acc(x_i|x_j) = \exp(-\beta \Delta E) \frac{sel(x_j|x_i)}{sel(x_i|x_j)}\ \text{si}\ \Delta E >0;\ acc(x_i|x_j)=1\ \text{sinon}
 \end{equation}
@@ -595,7 +589,7 @@ Si l'on injecte cette nouvelle probabilité dans l'équation \ref{balance}, on a
 
 Une amélioration de l'algorithme de Métropolis-Hastings, connu sous le nom de \og Replica Exchange Monte Carlo\fg a été introduite par Swendsen and Wang \cite{Swendsen86}. La méthode est également connue sont le nom \og parallel tempering\fg. L'objectif est d'accélérer la convergence en permettant au processus stochastique de visiter plusieurs zones énergétiques simultanément. Ainsi, l'algorithme couple l'exploration des bassins de basses énergies proches de l'optimum, avec l'exploration des zones de plus hautes énergies, ce qui facilite la sortie des minimums locaux.
 
-On considère $N$ simulations MC du système à $N$ températures. Ces répliques du système sont indépendantes les unes par rapport aux autres. On note $T_m$ avec $m=1,..,N$ les températures. Toutes ces températures sont différentes et il y a toujours une réplique à chaque température. Ainsi, nous nous plaçons dans un ensemble généralisé noté $E^N$, constitué des $N$-uplets $(x_1,...,x_n)$ avec les $x_i$ éléments de $E$, et $1 \leqslant i \leqslant N$  indexant les répliques. On travaille avec une chaîne de Markov $\{X(t),\ t \in \mathbb{N}\}$ , avec $X(t)=(x_1(t),...,x_n(t))$ une variable aléatoire à valeur dans $E^N$ au temps $t$. On ajoute maintenant, un nouveau type de déplacement, celui qui consiste à intervertir au temps $t$ l'état $x_i$ de la simulation à la température $T_i$ avec l'état $x_{i+1}$ à la température $T_{i+1}$. On a alors:
+On considère $N$ simulations MC du système à $N$ températures. Ces répliques du système sont indépendantes les unes par rapport aux autres. On note $T_m$ avec $m=1,..,N$ les températures. Toutes ces températures sont différentes et il y a toujours une réplique à chaque température. Ainsi, nous nous plaçons dans un ensemble généralisé noté $E^N$, constitué des $N$-uplets $(x_1,...,x_n)$ avec les $x_i$ éléments de $E$, et $1 \leqslant i \leqslant N$  indexant les répliques. On travaille avec une chaîne de Markov $\{X(t),\ t \in \mathbb{N}\}$ , avec $X(t)=(x_1(t),...,x_n(t))$ une variable aléatoire à valeur dans $E^N$ au temps $t$. On ajoute maintenant un nouveau type de déplacement, qui consiste à intervertir au temps $t$ l'état $x_i$ de la simulation à la température $T_i$ avec l'état $x_{i+1}$ à la température $T_{i+1}$. On a alors:
 \begin{equation}
   \label{REMC_move}
 \begin{cases}
