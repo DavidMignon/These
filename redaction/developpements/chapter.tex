@@ -17,7 +17,7 @@ Proteus, lors de la préparation du système, place chaque chaîne latérale pos
      \caption{\textbf{Exemple de fichier PDB avec déclaration de 3 modèles.} L'avant-dernière colonne contient l'index des modèles. Par exemple, il y a un modèle pour GLY à la position 39 du segment A et un autre pour ASP, position 111, segment A.}
 \label{fig:PDB}
    \end{figure}
-
+ 
 L'utilisateur ne manipule que les modèles; les resclass n'apparaissent ni dans les fichiers d'entrée/sortie ni dans les commandes. Un modèle se déclare par des lignes ATOM d'un fichier PDB. Il y a deux possibilités de lecture des modèles. La commande:\\
 \verb!coor disp=model @file.pdb!\\
 ajoute chaque modèle de file.pdb dans un tableau en mémoire. Un nombre est lu à la colonne 67-71, il représente l'indice du modèle pour une resclass. Le lien avec la resclass se fait par la liste des atomes contenant l'indice, voir un exemple à la figure \ref{fig:PDB}. La commande:\\
