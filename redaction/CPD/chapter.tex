@@ -9,7 +9,7 @@ Une autre approche est apparue avec la naissance des méthodes d'ingénierie des
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=7cm]{figure/CPD.png} &
+       \includegraphics[width=7cm]{figure/CPD.pdf} &
      \end{tabular}
      
      \caption{Le CPD pour \og Computational Protein Design\fg recherche les séquences d'acides aminés compatibles avec une protéine dont la structure 3D  est connue, c'est-à-dire compatibles avec un repliement et éventuellement une affinité à un ligand.}
@@ -115,10 +115,10 @@ Ici, $A$ est la constante de force et $\omega$ représente l'angle entre les pla
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=3cm]{figure/liaison.png} &
-       \includegraphics[width=3cm]{figure/angle.png} \\
-       \includegraphics[width=5cm]{figure/dihedre.png} &
-       \includegraphics[width=5cm]{figure/impropre.png} \\
+       \includegraphics[width=3cm]{figure/liaison.pdf} &
+       \includegraphics[width=3cm]{figure/angle.pdf} \\
+       \includegraphics[width=5cm]{figure/dihedre.pdf} &
+       \includegraphics[width=5cm]{figure/impropre.pdf} \\
 
      \end{tabular}
      
@@ -202,7 +202,7 @@ Dans la suite, on appelle cette somme, le terme surfacique de l'énergie de solv
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=13cm]{figure/surface.png} &
+       \includegraphics[width=13cm]{figure/surface.pdf} &
      \end{tabular}
      
      \caption{\textbf{Les trois types classiques de surfaces pour une molécule} À gauche et en rouge la surface de Van der Waals (SVdW), au centre et en bleu, la surface accessible au solvant (SA), à droite, et en vert  la surface de Connolly ou surface moléculaire (SM). La surface SA est l'ensemble des positions pouvant être occupées par le centre d'une sphère (figurant une molécule du solvant) roulant sur SVdW. La surface SM est la plus petite enveloppe de SVdW dont chaque point peut être en contact avec la sphère. } 
@@ -227,7 +227,7 @@ et $ \epsilon $ la constante diélectrique du solvant. Ainsi, l'effet du solvant
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=6cm]{figure/ecrantage.png} &
+       \includegraphics[width=6cm]{figure/ecrantage.pdf} &
      \end{tabular}
      
      \caption{\textbf{Représentation schématique de l'organisation des dipôles des molécules d'eau autour d'un soluté sphérique chargé positivement à sa surface}. Les dipôles des premières couches de solvatation s'orientent suivant les lignes du champ électrique produit par le soluté.}
@@ -303,7 +303,7 @@ avec $b_i$ et $b_j$, de nouveaux paramètres, que l'on nomme les rayons de solva
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=6cm]{figure/rayon_Born.png} &
+       \includegraphics[width=6cm]{figure/rayon_Born.pdf} &
      \end{tabular}
      
      \caption{\textbf{Des rayons de Born de deux atomes dans une protéine} Le rayon de Born pour l'atome enfui est environ le rayon de la protéine, alors que le rayon de Born d'un atome à la surface est environ son rayon de Van der Waals.} 
@@ -382,7 +382,7 @@ S'il existe $r_{i'}$ tel que $\displaystyle E_i^{r_i} - E_i^{r_{i'}}+ \sum_{k=1}
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=8cm]{figure/DEE.png} &
+       \includegraphics[width=8cm]{figure/DEE.pdf} &
      \end{tabular}
      
      \caption{\textbf{DEE, graphes de la fonction d'énergie pour des rotamères fixés à la position $i$} Le critère simple permet l'élimination du rotamère $r^1_i$ parce que l'énergie des conformations qui le contiennent, l'énergie rouge, est toujours moins bonne que la noire. Mais seul de critère de Goldstein permet d'éliminer $r^2_i$ parce que l'écart entre le graphe bleu et le graphe noir est positif pour chaque conformation.}
@@ -412,7 +412,7 @@ La résolution d'un CFN est tentée généralement par un algorithme de type  \o
 \begin{figure}[!htbp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=12cm]{figure/DFBB.png} \\
+    \includegraphics[width=12cm]{figure/DFBB.pdf} \\
   \end{tabular}
   \caption{\textbf{Principe de l'algorithme du Depth-First Branch and Bound} Les solutions d'un CFN sont représentées sous forme d'un arbre dans lequel le sommet $S_0$ représente l'ensemble des solutions et les fils $S_1$ et $S_4$ une partition de $S_0$, avec pour chacun une première variable $v_1$ fixée. Le DFBB, descend jusqu'au sommet $S_2$ qu'il peut évaluer: un minorant de $S_2$ est 25. 25 devient le nouveau majorant du GMEC. L'algorithme remonte et redescend vers $S_3$. Ici le coût constant plus le coût des affectations de $v_1$ et $v_2$ est supérieur au majorant: On peut élaguer l'arbre au sommet $S_3$.}
   \label{fig:DFBB}  
@@ -429,7 +429,7 @@ Un exemple inspiré de la thèse de Seydou Traoré est présenté à  la figure 
 \begin{figure}[!htbp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=14cm]{figure/coherence_local.png} \\
+    \includegraphics[width=14cm]{figure/coherences_local.pdf} \\
   \end{tabular}
   \caption{\textbf{Exemple de transformations EPT sur un CFN composé de 2 variables $v_i$ et $v_j$ ayant deux valeurs possibles.} La transformation de $A$ vers $B$ est une projection de $v_j$ vers le coût constant $C_0$. Puis une projection des fonctions binaires mène en $C$. La seconde valeur de $v_j$ est distribuée sur les arcs en $D$. Cela permet deux nouvelles projections qui mènent à $E$ puis à $F$. $A$ et $F$ sont en cohérence locale.}
   \label{fig:EPT}
@@ -466,7 +466,7 @@ Le schéma général est le suivant. Une population de séquences-conformations 
 \begin{figure}[!h]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=5cm]{figure/algo_genetique.png} \\
+    \includegraphics[width=5cm]{figure/algo_genetique.pdf} \\
   \end{tabular}
   \caption{\textbf{L'algorithme génétique}}
   \label{fig:algo_gene}
