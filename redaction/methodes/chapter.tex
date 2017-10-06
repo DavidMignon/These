@@ -168,7 +168,7 @@ Le second fichier rassemble les énergies entre les paires de rotamères. Il com
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=16cm]{figure/inputener.pdf} 
+       \includegraphics[width=12cm]{figure/inputener.pdf} 
      \end{tabular}     
      \caption{\textbt{Les fichiers d'énergies en mode CASA}}
 \label{fig:CAenerfile}
@@ -177,7 +177,7 @@ Le second fichier rassemble les énergies entre les paires de rotamères. Il com
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=16cm]{figure/inputenerGB.pdf} 
+       \includegraphics[width=16cm]{figure/inputenerFDB.pdf} 
      \end{tabular}     
      \caption{\textbt{Les fichiers d'énergies en mode GB/FDB}}
 \label{fig:GBenerfile}
@@ -233,11 +233,13 @@ Il est possible de réduire l'espace des états que peut prendre une séquence-c
       \caption{une partie des balises possibles du fichier de configuration de proteus}      
 
       \label{tab:balise_proteus}
+      
 
-  \end{table}
+    \end{table}
+    
 
 \subsection{Les déplacements Monte Carlo}
-\label{sub:MC_move}
+\label{sub:MC_move}  
 Dans l'algorithme de Metropolis, il est nécessaire de définir une probabilité de sélectionner un état $B$ lorsque le système est dans l'état $A$. Pour proteus, une transition se définit par des modifications à certaines positions de la séquence-conformation courante. Il y a deux classes de modifications élémentaires: une mutation et un changement de rotamère. Cinq balises permettent de définir des probabilités associées à ces modifications: \\
 \verb!<Rot_Proba>! \\
 \verb!<Mut_Proba>! \\
