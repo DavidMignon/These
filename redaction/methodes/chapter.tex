@@ -30,7 +30,7 @@ Nous faisons des simulations avec deux mouvements élémentaires possibles: un c
 \begin{equation}
 \Delta E_{m_1}= E^f(...,t_i,r'_i,...) - E^f(...,t_i,r_i,...)     
 \end{equation}   
-avec $E^f$ l'énergie de l'état replié. Pour le changement d'énergie $\Delta E_{m_2}$ d'une mutation de $t_i$ vers $t'i$, nous appliquons l'equation \ref{deltaG} à la séquence-conformation avant et après la mutation:    
+avec $E^f$ l'énergie de l'état replié. Pour le changement d'énergie $\Delta E_{m_2}$ d'une mutation de $t_i$ vers $t'_i$, nous appliquons l'equation \ref{deltaG} à la séquence-conformation avant et après la mutation:    
 \begin{equation}
 \Delta E_{m_2}= (E^f(...,t'_i,r'_i,...) - E^f(...,t_i,r_i,...)) - (E^u(t'_i) - E^u(t_i))     
 \end{equation}   
@@ -251,7 +251,7 @@ Chacune prend en paramètre une valeur comprise entre $0$ et $1$. Les deux premi
   \label{eq:voisin}
  | E(r_i_,r_j) | > S
 \end{displaymath} 
-avec $S$ le seuil donné par l'utilisateur dans la balise \verb!<Neighbor_Threshold>!. Le voisinage d'une position $i$ est l'ensemble de ses voisins. Ce système de déplacements MC a été revu pendant ma thèse, voir section \vref{sec:dev}.
+avec $S$ le seuil donné par l'utilisateur dans la balise \verb!<Neighbor_Threshold>!. Le voisinage d'une position $i$ est l'ensemble de ses voisins. Ce système de déplacements MC a été revu pendant ma thèse, voir section \vref{sec:newmove}.
 
 \subsection{Restriction de l'espace séquence-conformation}
 \label{sub:restric}
@@ -273,9 +273,7 @@ avec $P$ la protéine, $L_1$ et $L_2$ deux ligands et $P\!:\!L_i$ un complexe pr
 
    \begin{figure}[!htbp]
      \centering
-     \begin{tabular}{c}
-       \includegraphics[width=5cm]{figure/cycleThermoLigand.pdf} 
-     \end{tabular}
+       \includegraphics[width=6cm]{figure/cycleThermoLigand.pdf} 
      \caption{Cycle thermodynamique qui définit l'affinité.}
 \label{fig:cycleThermoLigand}
    \end{figure}

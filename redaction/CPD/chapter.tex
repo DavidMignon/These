@@ -1,6 +1,6 @@
 \chapter{Le \og CPD\fg: Conception de protéine par ordinateur}
 \label{chap:CPD}
-L'ingénierie des protéines est l'ensemble des techniques pour modifier la structure  ou la structure d'une protéine en modifiant sa séquence d'acides aminés. Les objectifs sont variés. On peut citer l'augmentation de la stabilité, la modification des fonctionnements enzymatiques ou encore l'ajout d'une conformation alternative à une protéine.
+L'ingénierie des protéines est l'ensemble des techniques pour modifier la structure ou la fonction d'une protéine en modifiant sa séquence d'acides aminés. Les objectifs sont variés. On peut citer l'augmentation de la stabilité, la modification des fonctionnements enzymatiques ou encore l'ajout d'une conformation alternative à une protéine.
 
 Une approche est la mutagenèse dirigée. La première étape est l'identification des mutations intéressantes, puis des méthodes de génie génétique sont utilisées pour produire les mutants dont les propriétés souhaitées pourront être vérifiées a posteriori. Une deuxième approche est l'évolution dirigée, dans laquelle un ensemble de mutations aléatoires est effectué sur protéine et toutes les séquences ainsi produites sont testées afin de trouver la fonction attendue. La sélection se fait alors, comme celle de l'évolution naturelle dont elle reprend les mécanismes, sur les séquences positives aux tests.
 
@@ -12,7 +12,7 @@ Une autre approche est apparue avec la naissance des méthodes d'ingénierie des
        \includegraphics[width=7cm]{figure/CPD.pdf} &
      \end{tabular}
      
-     \caption{Le CPD pour \og Computational Protein Design\fg recherche les séquences d'acides aminés compatibles avec une protéine dont la structure 3D  est connue, c'est-à-dire compatibles avec un repliement et éventuellement une affinité à un ligand.}
+     \caption{Le CPD pour \og Computational Protein Design\fg recherche les séquences d'acides aminés compatibles avec une protéine dont la structure 3D  est connue, c'est-à-dire compatibles avec un repliement et éventuellement une affinité pour un ligand.}
 \label{graph:CPD}
    \end{figure}
 
@@ -36,7 +36,7 @@ Pour faire du CPD, il faut une représentation de l'ensemble des conformations q
 \label{sec:etatreplie}
 La mécanique moléculaire propose d'appliquer les représentations de la mécanique classique aux molécules. Les atomes sont représentés sous forme de sphères. La protéine dans un milieu aqueux est flexible et en permanence en mouvement. C'est en particulier le cas pour les chaînes latérales et les boucles flexibles. L'espace d'états d'une chaîne polypeptidique, dans le cadre de la mécanique moléculaire est alors constitué d'un vaste espace continu de conformation possibles.
 
-D'autre part, si un domaine polypeptidique a un nombre N de résidus compris entre 50 et 100, et que chacune des N positions de la chaîne peut adopter l'un des 20 types d'acides aminés, le nombre de séquences à considérer est égale à  N$^{20}$. Il en résulte un espace des séquences-conformations trop grand pour être utilisable. Il faut donc réduire la taille de l'espace des conformations. Pour cela, Ponder et Richards \cite{Ponder87} proposent une approche en deux points:
+D'autre part, si un domaine polypeptidique a un nombre $N$ de résidus et que chacun peut adopter l'un des 20 types d'acides aminés, le nombre de séquences à considérer est égale à  $20^{N}$. Il en résulte un espace des séquences-conformations trop grand pour être utilisable. Il faut donc réduire la taille de l'espace des conformations. Pour cela, Ponder et Richards \cite{Ponder87} proposent une approche en deux points:
 \begin{enumerate}[leftmargin=*]
 \item Le squelette de la protéine est fixé.
 \item Les conformations des chaînes latérales sont réduites à un ensemble fini de positionnements possibles dans l'espace euclidien, les \og rotamères\fg.
@@ -46,10 +46,10 @@ Présentons maintenant, la modélisation des chaînes latérales et celle du bac
 
 \subsubsection{Les chaînes latérales}
 
-Finkelstein et Ptitsyn \cite{Finkelstein77}, Janin et al. \cite{Janin78} ainsi que Ponder et Rischards \cite{Ponder87} ont établi que la chaîne latérale des résidus adopte de façon préférentielle un petit ensemble de conformations. Janin introduit alors le terme de \og rotamère\fg pour désigner ces conformations. Il est alors possible de réduire l'espace continu des conformations des acides aminés à cet ensemble discret de rotamères. La plupart des méthodes de CPD utilisent cette discrétisation. Beaucoup de librairies de rotamères ont été proposées dans la littérature. La plupart sont indépendantes du backbone. Mais il existe également des librairies qui dépendent du squelette de la protéine voir \cite{McGregor87,Dunbrack93}. 
+Finkelstein et Ptitsyn \cite{Finkelstein77}, Janin et al. \cite{Janin78} ainsi que Ponder et Richards \cite{Ponder87} ont établi que la chaîne latérale des résidus adopte de façon préférentielle un petit ensemble de conformations. Janin introduit alors le terme de \og rotamère\fg pour désigner ces conformations. Il est alors possible de réduire l'espace continu des conformations des acides aminés à cet ensemble discret de rotamères. La plupart des méthodes de CPD utilisent cette discrétisation. Beaucoup de librairies de rotamères ont été proposées dans la littérature. La plupart sont indépendantes du backbone. Mais il existe également des librairies qui dépendent du squelette de la protéine, voir \cite{McGregor87,Dunbrack93}. 
 
 \subsubsection{Le squelette}
-Comme le positionnement des chaînes latérales n'influence que faiblement la structure adoptée par le squelette, celui-ci est fixé dans beaucoup de programmes CPD. Le problème de la prédiction de structure est alors ramené à celui du placement des chaînes latérales sur ce squelette. De par la configuration particulière de la proline et de la cystéine avec le backbone, ces deux types sont souvent traités à part. Cette approche a obtenu de nombreux succès, voir par exemple \cite{Dahiyat97b}.
+Comme le positionnement des chaînes latérales n'influence que faiblement la structure adoptée par le squelette, celui-ci est fixé dans beaucoup de programmes CPD. Le problème de la prédiction de structure est alors ramené à celui du placement des chaînes latérales sur ce squelette. De par la configuration particulière de la proline et de la cystéine dans le backbone, ces deux types sont souvent traités à part. Cette approche a obtenu de nombreux succès, voir par exemple \cite{Dahiyat97b}.
 
 Cependant, cette approximation peut avoir des conséquences importantes. Un type d'acide aminé considéré comme défavorable peut devenir favorable après une petite adaptation du backbone et il a été établi que quelques mouvements de squelettes peuvent faire varier significativement l'énergie de la conformation \cite{Desjarlais99}.
 En réponse à ce problème, Druart et al. \cite{Druart16} proposent une méthode de Monte Carlo hybride travaillant sur un modèle multi backbone. Une autre approche consiste à donner une certaine liberté aux angles $\Phi$, $\Psi$ en introduisant des variations aléatoires \cite{Desjarlais99}. Dantas et al. \cite{Dantas07} font des simulations avec minimisation après chaque mouvement de chaîne latérale. Kuhlman et al. \cite{Kuhlman03}  optimisent alternativement la structure du squelette et la séquence d'acides aminés.
@@ -115,8 +115,8 @@ Ici, $A$ est la constante de force et $\omega$ représente l'angle entre les pla
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{cc}
-       \includegraphics[width=3cm]{figure/liaison.pdf} &
-       \includegraphics[width=3cm]{figure/angle.pdf} \\
+       \includegraphics[width=3.5cm]{figure/liaison.pdf} &
+       \includegraphics[width=3.5cm]{figure/angle.pdf} \\
        \includegraphics[width=5cm]{figure/dihedre.pdf} &
        \includegraphics[width=5cm]{figure/impropre.pdf} \\
 
@@ -137,7 +137,7 @@ L'énergie $E_{elec}$ pour l'énergie électrostatique est donnée par un potent
 \end{equation}\\
 $q_i$ et $q_j$ représentent les charges respectives des atomes $i$ et $j$ et $r_{ij}$ la distance entre les atomes $i$ et $j$, $\epsilon$ la constante diélectrique du milieu.
 
-L'énergie  $E_{VdW}$ de Van der Waals s'explique par les interactions électriques de faible intensité entre deux atomes, dus au fait que la répartition des charges électriques n'est pas uniforme autour des noyaux. Elle rassemble les effets des forces de Keesom, Dedye, London et Pauli. Le potentiel de Lennard-Jones est l'approximation classique de cette énergie. Voici son expression:
+L'énergie  $E_{VdW}$ de Van der Waals s'explique par les interactions électriques de faible intensité entre deux atomes, dus au fait que la répartition des charges électriques n'est pas uniforme autour des noyaux. Elle rassemble les effets des forces de Keesom, Debye, London et Pauli. Le potentiel de Lennard-Jones est l'approximation classique de cette énergie. Voici son expression:
 \begin{equation}
     \label{VdW}
 E_{vdw} = \sum_{i<j}D_0 [(\frac{r_0}{r_{ij}})^{12} - (\frac{r_0}{r_{ij}})^6]  
@@ -317,7 +317,7 @@ b_i=b_i(r_1,r_2,..,r_N)
 Ainsi, l'interaction entre une paire $i$ et $j$ dépend des postions de tous les atomes.
 \paragraph{\og Native Environnement Approximation\fg (NEA)}
 \label{NEA}
-Dans la variante NEA pour \og Native Environnement Approximation \fg  du modèle GB, le rayon de solvatation des atomes de chaque chaîne latérale est calculé avant l'étape d'exploration, en fixant tout le reste du système dans sa séquence native et sa conformation native \cite{Polydorides11,Simonson13,Gaillard14}. Par la suite, les $b_i$ ont des valeurs constantes, qui ne dépendent pas de la conformation. Ainsi $G_{elec}$ prend la forme d'une somme de termes qui ne dépendant chacun que d'une paire d'atomes $i$, $j$: on dit qu'elle est \og décomposable par paires\fg.
+Dans la variante NEA pour \og Native Environnement Approximation \fg  du modèle GB, le rayon de solvatation des atomes de chaque chaîne latérale est calculé avant l'étape d'exploration, en fixant tout le reste du système dans sa séquence native et sa conformation native \cite{Polydorides11,Simonson13,Gaillard14}. Par la suite, les $b_i$ ont des valeurs constantes, qui ne dépendent pas de la conformation. Ainsi $G_{elec}$ prend la forme d'une somme de termes qui ne dépendent chacun que d'une paire d'atomes $i$, $j$: on dit qu'elle est \og décomposable par paires\fg.
 
 \section{L'algorithme d'exploration}
 
@@ -406,7 +406,7 @@ La résolution d'un CFN est tentée généralement par un algorithme de type  \o
 \item [Un majorant:] le majorant du problème correspond au meilleur coût connu ($+\infty$ au début du calcul). Il majore le GMEC.
 \item [Un minorant d'un sommet:] le minorant correspond à une valeur que l'on sait être inférieure ou égale au coût de toutes les solutions d'un sommet.  
 \item [Un principe d'évaluation:] évaluer un sommet $S$, c'est déterminer un de ses minorants. Si un sommet est évalué et est supérieur au majorant courant, on sait qu'aucune solution de $S$ ne peut être le GMEC. La totalité du sous-arbre peut être élaguée, c'est-à-dire exclue de l'optimisation.  
-\item [Une stratégie de développement:] elle consiste à choisir une méthode de développement de l'arbre des solutions; c'est déterminer l'ordre sur les sommets de l'arborescence dans lequel on va appliquer le critère de séparation. Dans le DFBB, la stratégie consiste à descendre dans les branches jusqu'à trouver un sous-arbre qu'il est possible d'élaguer, alors l'algorithme remonte d'une branche pour redescendre dans une autre direction. Ce parcours en profondeur à l'avantage de limiter l'utilisation de la mémoire, parce qu'il n'est nécessaire de conserver que la description de la branche qui a été explorée.Un exemple est présenté à la figure \ref{fig:DFBB}. Il devient alors nécessaire de trouver de bons minorants.
+\item [Une stratégie de développement:] elle consiste à choisir une méthode de développement de l'arbre des solutions; c'est déterminer l'ordre sur les sommets de l'arborescence dans lequel on va appliquer le critère de séparation. Dans le DFBB, la stratégie consiste à descendre dans les branches jusqu'à trouver un sous-arbre qu'il est possible d'élaguer, alors l'algorithme remonte d'une branche pour redescendre dans une autre direction. Ce parcours en profondeur à l'avantage de limiter l'utilisation de la mémoire, parce qu'il n'est nécessaire de conserver que la description de la branche qui a été explorée. Un exemple est présenté à la figure \ref{fig:DFBB}. Il devient alors nécessaire de trouver de bons minorants.
 \end{description}  
 
 \begin{figure}[!htbp]
@@ -495,7 +495,8 @@ C'est-à-dire que la probabilité de transition $P$ est indépendante de $n$. Da
 Pour simplifier les notations, on introduit une matrice de transition $P$ avec $P_{ab}=P(X_1=b|X_0=a)$ et on écrit
 $\mu_0 =(P(X_0=a))_{a \in E}$ et $\mu_1 =(P(X_1=a))_{a \in E}$. On a alors:
 \[\mu_1 =P \mu_0\] 
-
+et plus généralement
+\[\mu_n =P \mu_{n-1}\] 
 \subsubsection{Le principe de la balance détaillée}
 
 Le principe de la balance détaillée est un principe général de comportement des systèmes dynamiques. Il a été utilisé par Boltzmann pour la construction de la physique statistique et Cercignani et Lampis ont montré qu'il était vrai pour les gaz polyatomiques \cite{Cercignani81}. Il peut s'exprimer de la façon suivante. Pour un système dynamique $\mathcal{S}$ à l'équilibre, $a$ et $b$ deux éléments de l'espace des phases associé à $\mathcal{S}$, la probabilité de transition de $a$ vers $b$ est égale à la probabilité de transition de $b$ vers $a$, ou encore: 
@@ -508,7 +509,7 @@ Pour pouvoir appliquer ce principe aux chaînes de Markov, introduisons une déf
 \end{equation}
 On a alors:
 \begin{equation}
-\forall a \in E,\ P q(a) = \sum_{b \in E} q(b)P(a|b) = \sum_{b \in E} q(a)P(b|a) = q(a) \sum_{b \in E}P(b|a) = q(a)
+\forall a \in E,\ (Pq)(a) = \sum_{b \in E} q(b)P(a|b) = \sum_{b \in E} q(a)P(b|a) = q(a) \sum_{b \in E}P(b|a) = q(a)
 \end{equation}
 Ainsi, la probabilité $q$ est inchangée après la transition $P$, la chaîne est dite stationnaire pour $q$.
 
@@ -518,7 +519,7 @@ Il nous faut alors construire une chaîne de Markov réversible pour la distribu
 \item Il n'existe pas de $a$ de $E$ tel que la chaîne revienne en $x$ périodiquement.
 \item  Au cours du temps, tous les états sont visités par la chaîne avec une probabilité non nulle. 
 \end{itemize}
-On a alors, le résultat suivant: une chaîne ergodique converge vers son unique distribution stationnaire.
+On a alors le résultat suivant: une chaîne ergodique converge vers son unique distribution stationnaire.
 
 \subsubsection{L'algorithme de Metropolis}
 
@@ -587,7 +588,7 @@ Si l'on injecte cette nouvelle probabilité dans l'équation \ref{balance}, on a
 \subsection{Le Monte Carlo avec échanges de répliques (REMC)}
 \label{REMC}
 
-Une amélioration de l'algorithme de Métropolis-Hastings, connu sous le nom de \og Replica Exchange Monte Carlo\fg a été introduite par Swendsen and Wang \cite{Swendsen86}. La méthode est également connue sont le nom \og parallel tempering\fg. L'objectif est d'accélérer la convergence en permettant au processus stochastique de visiter plusieurs zones énergétiques simultanément. Ainsi, l'algorithme couple l'exploration des bassins de basses énergies proches de l'optimum, avec l'exploration des zones de plus hautes énergies, ce qui facilite la sortie des minimums locaux.
+Une amélioration de l'algorithme de Métropolis-Hastings, connu sous le nom de \og Replica Exchange Monte Carlo\fg a été introduite par Swendsen and Wang \cite{Swendsen86}. La méthode est également connue sous le nom \og parallel tempering\fg. L'objectif est d'accélérer la convergence en permettant au processus stochastique de visiter plusieurs zones énergétiques simultanément. Ainsi, l'algorithme couple l'exploration des bassins de basses énergies proches de l'optimum, avec l'exploration des zones de plus hautes énergies, ce qui facilite la sortie des minimums locaux.
 
 On considère $N$ simulations MC du système à $N$ températures. Ces répliques du système sont indépendantes les unes par rapport aux autres. On note $T_m$ avec $m=1,..,N$ les températures. Toutes ces températures sont différentes et il y a toujours une réplique à chaque température. Ainsi, nous nous plaçons dans un ensemble généralisé noté $E^N$, constitué des $N$-uplets $(x_1,...,x_n)$ avec les $x_i$ éléments de $E$, et $1 \leqslant i \leqslant N$  indexant les répliques. On travaille avec une chaîne de Markov $\{X(t),\ t \in \mathbb{N}\}$ , avec $X(t)=(x_1(t),...,x_n(t))$ une variable aléatoire à valeur dans $E^N$ au temps $t$. On ajoute maintenant un nouveau type de déplacement, qui consiste à intervertir au temps $t$ l'état $x_i$ de la simulation à la température $T_i$ avec l'état $x_{i+1}$ à la température $T_{i+1}$. On a alors:
 \begin{equation}

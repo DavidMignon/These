@@ -48,7 +48,7 @@ Les variables d'environnement contrôlent les mêmes informations que les foncti
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=14cm]{figure/openMP.png} 
+       \includegraphics[width=14cm]{figure/openMP.pdf} 
      \end{tabular}     
      \caption{\textbf{La correspondance entre les directives OpenMP à droite et le comportement des fils d'exécution à gauche sur un REMC simplifié.} Sont schématisés, la création d'une région parallèle, deux synchronisations (les lignes pointillées à gauche), une région exécutée uniquement par un fil maître, une affectation séquentielle. }
 \label{fig:openMP}
@@ -81,7 +81,7 @@ Une amélioration a été apportée à la fonction d'acceptation MC de proteus. 
 Se pose alors la question des états possibles des chaînes latérales à l'état déplié. Plusieurs points de vue sont possibles. On peut considérer qu'il existe autant de rotamères à l'état déplié qu'à état replié et qu'ils ont tous la même énergie. Cette possibilité a l'avantage de rendre la probabilité de mutation symétrique, c'est-à-dire que le passage du type $t$ vers $t'$ est aussi probable que le passage de $t'$ vers $t$. Mais elle a l'inconvénient d'être peu réaliste parce que les rotamères sont les positionnements préférentiels à l'état replié et non à l'état déplié. Nous avons fait évoluer proteus vers un autre point de vue, en considérant qu'une chaîne latérale à l'état déplié n'a qu'un seul rotamère dominant. Cela induit une dissymétrie dans la probabilité de sélection qui est corrigée par une probabilité d'acceptation du type de l'équation \ref{eq:Hasting}. Cette nouvelle probabilité d'acceptation est décrite en détail en \vref{eq:rule}.
 
 \section{Nouveau système de déplacements}
-
+\label{sec:newmove}
 Le système de déplacements expliqué en \ref{sub:MC_move}  souffre de certaines rigidités. Il ne permet pas de distribuer les modifications selon les positions dans la chaîne polypeptidique. Il n'est pas possible de répartir alternativement les mouvements entre mutations et changement de rotamères.
 
 Alors, nous introduisons deux nouvelles balises. La première permet la définition de deux poids à chaque position (dupliquée ou non). Le premier poids pondère la sélection d'une position lors d'une mutation, l'autre pondère la sélection d'une position lors d'un changement de rotamères:\\
