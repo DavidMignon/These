@@ -320,7 +320,7 @@ We first report information on the quality of our designed sequences. We use set
  
 \begin{figure}[!htbp]
         \centering
-  \includegraphics[width=14cm]{align0.png} 
+  \includegraphics[width=14cm]{align0.pdf} 
   \caption{
 Sequence logos for the core region of two designed proteins: 1CKA (SH3) and 2BYG (PDZ). The low energy CPD sequences are compared to the sequences of the full Pfam collection of
 experimental sequences. Positions shown correspond to the hydrophobic core of each protein; residue numbers are indicated (PDB numbering).
@@ -354,7 +354,7 @@ For the same PDZ domain, the lowest energy sequence/structure combination is sho
       \caption{Histogram of Blosum40 similarity scores to Pfam sequences for the core region of two
 designed proteins: 1ABO (SH3) and 1BM2 (SH2). The similarity between Pfam sequences is
 also shown, considering either the Pfam seed alignment or the much larger full alignment.
-}
+} 
       \label{fig:similarity}
     \end{figure}
 
@@ -394,7 +394,7 @@ The ability of an exploration method to sample low energy sequences depends on t
 
     \begin{figure}[!htbp]
       \centering
-        \includegraphics[width=10cm]{speed.png} 
+        \includegraphics[width=12cm]{speed.pdf} 
       \caption{
 Run times for different test calculations and search methods. CPU times per core are shown; only the REMC calculations use multiple cores (OpenMP parallelization). CFN results are only given for 20 designed positions or fewer. REMC was only done for the larger calculations. Results are shown for a large, representative subset of the test calculations. A few CFN calculations were allowed to run beyond the 24h CPU limit. For clarity, the average Heur and REMC values are included as dashed lines.
       }
@@ -421,7 +421,7 @@ As our first series of tests, we did calculations for each test protein with zer
 
 \begin{figure}[!htbp]
   \begin{center}
-    \includegraphics[width=10cm]{errors.png}
+    \includegraphics[width=10cm]{errors.pdf} 
   \end{center}
   \caption{The lowest energies obtained with the different exploration
 methods for 5-, 10-, 20-, and 30-position design. Differences with respect
@@ -602,7 +602,7 @@ The sequence entropy $S(E)$ is shown in figure \ref{fig:entropy} for the 1CKA SH
 
     \begin{figure}[!htbp]
       \centering
-        \includegraphics[trim = 0mm 0mm 25mm 0mm, clip,width=12cm]{1CKA_entropy_seqnb.png} 
+        \includegraphics[trim = 0mm 0mm 1mm 0mm, clip,width=12cm]{1CKA_entropy_seqnb.png} 
 \caption{ 
 Sequence entropy $S(E)$ and number of states $N(E)$ within a given energy range $E$ above the GMEC for the 1CKA SH3 domain. Ten positions were allowed to vary. The entropy (large dots) is a single position sequence entropy, Eq.\ (\ref{eq:entropy}), averaged over all the variable positions. CFN results (black) are based on a complete enumeration of all states within the energy range (at most $E$ kcal/mol above the GMEC). REMC results (gray) are based on the states sampled by all eight walkers during a single trajectory. The number of states (small dots) corresponds to all the different combinations of sequences and rotamers.
 }
