@@ -435,7 +435,7 @@ Un exemple inspiré de la thèse de Seydou Traoré est présenté à  la figure 
   \label{fig:EPT}
 \end{figure}
 
-Cette approche a montré sa supériorité, avec l'outil toulbar2 \cite{Allouche14,Traore13}, par rapport à un ensemble de résolveurs de CFN parmi les plus réputés actuellement qui exploitent notamment l'approche DEE/A* ou le backtracking. Toulbar2 en combinant FFBB, EPT et DEE a été capable de trouver le GMEC dans le plus grand nombre de problèmes issu du CPD proposés aux différents outils.
+Cette approche a montré sa supériorité, avec l'outil Toulbar2 \cite{Allouche14,Traore13}, par rapport à un ensemble de résolveurs de CFN parmi les plus réputés actuellement qui exploitent notamment l'approche DEE/A* ou le backtracking. Toulbar2 en combinant FFBB, EPT et DEE a été capable de trouver le GMEC dans le plus grand nombre de problèmes issu du CPD proposés aux différents outils.
 \subsection{L'heuristique Multistart Steepest Descent (MSD)}
 \label{MSD}
 En 2000, Wernisch, Hery et Wodak \cite{Wernisch00} partent du constat que l'espace conformationnel et les fonctions d'énergie utilisées ne capturent que partiellement la réalité. Ainsi, le GMEC ne correspondra pas forcément à la séquence la plus stable. D'autre part, des protéines avec des taux d'identité de moins de $50\%$ peuvent conserver quasiment la même structure 3D. Cela révèle l'immensité du nombre de séquences-conformations propre à un pli. Ainsi, leur objectif n'est pas de résoudre un problème d'optimisation, mais d'exhiber un ensemble de séquences de basse énergie. Ils proposent alors une heuristique conçue pour le CPD. Il s'agit d'une procédure simple qui produit une grande quantité de séquences-conformations de basse énergie, sans se focaliser sur le GMEC.
