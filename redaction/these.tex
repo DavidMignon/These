@@ -180,11 +180,16 @@
 
 \begin{document}
 % Title
-\pagenumbering{alph}
+%\pagenumbering{alph}
 \pdfbookmark[0]{Couverture}{cover}
 %\maketitle
 \includepdf[pages=-]{pagezero.pdf}
-\clearemptydoublepage{}
+\newpage
+\pagestyle{empty}
+\strut
+\newpage
+\strut
+\newpage
 
 % Frontmatter
 \frontmatter
@@ -253,9 +258,6 @@
 \clearplaindoublepage{}
 \thispagestyle{plain}
 \phantomsection{}
-\addcontentsline{toc}{chapter}{Remerciements}
-\pdfbookmark[0]{Remerciements}{acknowledgements}
-\include{merci}
 
 % Backmatter
 \backmatter{}
@@ -263,6 +265,15 @@
 \addtolength{\oddsidemargin}{-0.5cm}
 \addtolength{\evensidemargin}{+0.5cm}
 \singlespacing{}
+\addcontentsline{toc}{chapter}{Remerciements}
+%\pdfbookmark[0]{Remerciements}{acknowledgements}
+\include{merci}
+\newpage
+\strut
+\newpage
+\strut
+\newpage
+
 %\include{resume}
 \includepdf[pages=-]{resume.pdf}
 

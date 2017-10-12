@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.6.23)  11 OCT 2017 18:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.6.23)  12 OCT 2017 17:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1122,7 +1122,7 @@ LaTeX Info: Redefining \Ref on input line 181.
 Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-<pagezero.pdf, id=526, 597.23125pt x 845.1575pt>
+<pagezero.pdf, id=522, 597.23125pt x 845.1575pt>
 File: pagezero.pdf Graphic file (type pdf)
  <use pagezero.pdf>
 Package pdftex.def Info: pagezero.pdf used on input line 186.
@@ -1132,7 +1132,7 @@ File: pagezero.pdf Graphic file (type pdf)
 <use pagezero.pdf>
 Package pdftex.def Info: pagezero.pdf used on input line 186.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
- <pagezero.pdf, id=529, page=1, 597.23125pt x 845.1575pt>
+ <pagezero.pdf, id=525, page=1, 597.23125pt x 845.1575pt>
 File: pagezero.pdf Graphic file (type pdf)
 
 <use pagezero.pdf, page 1>
@@ -1158,13 +1158,13 @@ Package pdftex.def Info: pagezero.pdf, page1 used on input line 186.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
  [1
 
- <./pagezero.pdf>] [2
+ <./pagezero.pdf>] [2] [3] [4
 
 ]
 \openout2 = `dedicace.aux'.
 
- (./dedicace.tex) [1
-
+ (./dedicace.tex)
+[1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
@@ -1252,7 +1252,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
  (./CPD/chapter.tex
 Chapitre 1.
-<./CPD/figure/CPD.pdf, id=1092, 460.06282pt x 645.58849pt>
+<./CPD/figure/CPD.pdf, id=1096, 460.06282pt x 645.58849pt>
 File: ./CPD/figure/CPD.pdf Graphic file (type pdf)
 
 <use ./CPD/figure/CPD.pdf>
@@ -1268,12 +1268,32 @@ You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
-[1
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.31 
+      [1
 
 
 
 
-] [2 <./CPD/figure/CPD.pdf>] [3] [4]
+]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.38 
+      [2 <./CPD/figure/CPD.pdf>]pdfTeX warning (ext4): destination with the sam
+e identifier (name{page.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.56 
+      [3]pdfTeX warning (ext4): destination with the same identifier (name{page
+.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.71 
+      [4]
 LaTeX Font Info:    Try loading font information for OMS+lmr on input line 75.
  (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1345,7 +1365,7 @@ le pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./CPD/figure/impropre.pdf): PDF inclusion: multi
 ple pdfs with page group included in a single page
->] [7] [8] <./CPD/figure/surface.pdf, id=1342, 939.36652pt x 309.56195pt>
+>] [7] [8] <./CPD/figure/surface.pdf, id=1341, 939.36652pt x 309.56195pt>
 File: ./CPD/figure/surface.pdf Graphic file (type pdf)
 
 <use ./CPD/figure/surface.pdf>
@@ -1370,7 +1390,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[9] <./CPD/figure/ecrantage.pdf, id=1353, 284.49101pt x 280.52402pt>
+[9] <./CPD/figure/ecrantage.pdf, id=1352, 284.49101pt x 280.52402pt>
 File: ./CPD/figure/ecrantage.pdf Graphic file (type pdf)
 
 <use ./CPD/figure/ecrantage.pdf>
@@ -1426,7 +1446,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 368--372
 
  []
 
-[15] <./CPD/figure/DEE.pdf, id=1442, 500.18222pt x 335.69577pt>
+[15] <./CPD/figure/DEE.pdf, id=1441, 500.18222pt x 335.69577pt>
 File: ./CPD/figure/DEE.pdf Graphic file (type pdf)
 
 <use ./CPD/figure/DEE.pdf>
@@ -1443,7 +1463,7 @@ in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
 [16 <./CPD/figure/DEE.pdf>]
-<./CPD/figure/DFBB.pdf, id=1471, 475.17747pt x 245.684pt>
+<./CPD/figure/DFBB.pdf, id=1470, 475.17747pt x 245.684pt>
 File: ./CPD/figure/DFBB.pdf Graphic file (type pdf)
 
 <use ./CPD/figure/DFBB.pdf>
@@ -1464,7 +1484,7 @@ e. Au dé-part, une séquence-conformation
  []
 
 [19 <./CPD/figure/coherences_local.pdf>]
-<./CPD/figure/algo_genetique.pdf, id=1515, 423.4203pt x 906.03662pt>
+<./CPD/figure/algo_genetique.pdf, id=1514, 423.4203pt x 906.03662pt>
 File: ./CPD/figure/algo_genetique.pdf Graphic file (type pdf)
 
 <use ./CPD/figure/algo_genetique.pdf>
@@ -1576,7 +1596,7 @@ my insertion and my current dilemma will both disappear.
 
  (./methodes/chapter.tex
 Chapitre 2.
-<./CPD/figure/cycleThermo.pdf, id=1623, 381.41039pt x 278.26613pt>
+<./CPD/figure/cycleThermo.pdf, id=1622, 381.41039pt x 278.26613pt>
 File: ./CPD/figure/cycleThermo.pdf Graphic file (type pdf)
 
 <use ./CPD/figure/cycleThermo.pdf>
@@ -1588,7 +1608,7 @@ Package pdftex.def Info: ./CPD/figure/cycleThermo.pdf used on input line 21.
 
 
 ] [28 <./CPD/figure/cycleThermo.pdf>]
-<./methodes/figure/intersurface.pdf, id=1662, 967.25667pt x 847.38113pt>
+<./methodes/figure/intersurface.pdf, id=1661, 967.25667pt x 847.38113pt>
 File: ./methodes/figure/intersurface.pdf Graphic file (type pdf)
 
 <use ./methodes/figure/intersurface.pdf>
@@ -1627,7 +1647,7 @@ File: ./methodes/figure/matrice.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./methodes/figure/matrice.pdf used on input line 122.
 (pdftex.def)             Requested size: 426.79134pt x 176.72139pt.
  [31] [32 <./methodes/figure/matrice.pdf>]
-[33] <./methodes/figure/inputener.pdf, id=1785, 388.25824pt x 634.37662pt>
+[33] <./methodes/figure/inputener.pdf, id=1784, 388.25824pt x 634.37662pt>
 File: ./methodes/figure/inputener.pdf Graphic file (type pdf)
 
 <use ./methodes/figure/inputener.pdf>
@@ -1668,7 +1688,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<./methodes/figure/inputenerFDB.pdf, id=1786, 396.85345pt x 96.62169pt>
+<./methodes/figure/inputenerFDB.pdf, id=1785, 396.85345pt x 96.62169pt>
 File: ./methodes/figure/inputenerFDB.pdf Graphic file (type pdf)
 
 <use ./methodes/figure/inputenerFDB.pdf>
@@ -1735,7 +1755,7 @@ l.252  | E(r_i_
 I treat `x_1_2' essentially like `x_1{}_2'.
 
 [37]
-<./methodes/figure/cycleThermoLigand.pdf, id=1866, 434.84305pt x 253.84248pt>
+<./methodes/figure/cycleThermoLigand.pdf, id=1865, 434.84305pt x 253.84248pt>
 File: ./methodes/figure/cycleThermoLigand.pdf Graphic file (type pdf)
 
 <use ./methodes/figure/cycleThermoLigand.pdf>
@@ -1743,7 +1763,7 @@ Package pdftex.def Info: ./methodes/figure/cycleThermoLigand.pdf used on input
 line 276.
 (pdftex.def)             Requested size: 170.71652pt x 99.65663pt.
  [38 <./methodes/figure/cycleThermoLigand.pdf>]
-<./methodes/figure/output.pdf, id=1890, 711.15915pt x 383.73042pt>
+<./methodes/figure/output.pdf, id=1889, 711.15915pt x 383.73042pt>
 File: ./methodes/figure/output.pdf Graphic file (type pdf)
 
 <use ./methodes/figure/output.pdf>
@@ -1837,7 +1857,7 @@ df>] [50
 
  (./developpements/chapter.tex
 Chapitre 3.
-<./developpements/figure/PDB.pdf, id=2483, 2431.19571pt x 1049.30545pt>
+<./developpements/figure/PDB.pdf, id=2482, 2431.19571pt x 1049.30545pt>
 File: ./developpements/figure/PDB.pdf Graphic file (type pdf)
 
 <use ./developpements/figure/PDB.pdf>
@@ -1853,7 +1873,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--34
 
 
 ] [52 <./developpements/figure/PDB.pdf>]
-<./developpements/figure/openMP.pdf, id=2510, 3649.95798pt x 2817.04178pt>
+<./developpements/figure/openMP.pdf, id=2509, 3649.95798pt x 2817.04178pt>
 File: ./developpements/figure/openMP.pdf Graphic file (type pdf)
 
 <use ./developpements/figure/openMP.pdf>
@@ -1922,7 +1942,7 @@ Chapitre 4.
 
 
 ] [60] [61] [62] [63] [64] [65] [66] [67] [68]
-<./comparaisons/figure/align0.pdf, id=2755, 475.0548pt x 434.27705pt>
+<./comparaisons/figure/align0.pdf, id=2754, 475.0548pt x 434.27705pt>
 File: ./comparaisons/figure/align0.pdf Graphic file (type pdf)
 
 <use ./comparaisons/figure/align0.pdf>
@@ -1930,7 +1950,7 @@ Package pdftex.def Info: ./comparaisons/figure/align0.pdf used on input line 32
 3.
 (pdftex.def)             Requested size: 398.33858pt x 364.1607pt.
  [69 <./comparaisons/figure/align0.pdf>]
-<./comparaisons/figure/2BYG_bestall_core3D.pdf, id=2776, 796.9775pt x 597.23125
+<./comparaisons/figure/2BYG_bestall_core3D.pdf, id=2775, 796.9775pt x 597.23125
 pt>
 File: ./comparaisons/figure/2BYG_bestall_core3D.pdf Graphic file (type pdf)
  <use ./comparaisons/figure/2BYG_bestall_core3D.pdf>
@@ -1938,7 +1958,7 @@ Package pdftex.def Info: ./comparaisons/figure/2BYG_bestall_core3D.pdf used on
 input line 338.
 (pdftex.def)             Requested size: 341.43306pt x 204.66165pt.
  [70 <./comparaisons/figure/2BYG_bestall_core3D.pdf>]
-<./comparaisons/figure/1ABO_core_simil_byseq.png, id=2792, 711.65875pt x 552.06
+<./comparaisons/figure/1ABO_core_simil_byseq.png, id=2791, 711.65875pt x 552.06
 25pt>
 File: ./comparaisons/figure/1ABO_core_simil_byseq.png Graphic file (type png)
  <use ./comparaisons/figure/1ABO_core_simil_byseq.png>
@@ -1946,7 +1966,7 @@ Package pdftex.def Info: ./comparaisons/figure/1ABO_core_simil_byseq.png used o
 n input line 351.
 (pdftex.def)             Requested size: 227.62204pt x 176.57094pt.
 
-<./comparaisons/figure/1BM2_core_simil_byseq.png, id=2793, 204.09048pt x 159.28
+<./comparaisons/figure/1BM2_core_simil_byseq.png, id=2792, 204.09048pt x 159.28
 308pt>
 File: ./comparaisons/figure/1BM2_core_simil_byseq.png Graphic file (type png)
  <use ./comparaisons/figure/1BM2_core_simil_byseq.png>
@@ -1981,7 +2001,7 @@ Package pdftex.def Info: ./comparaisons/figure/full_delta.png used on input lin
 e 410.
 (pdftex.def)             Requested size: 341.43306pt x 279.01945pt.
  [73 <./comparaisons/figure/full_delta.png (PNG copy)>]
-<./comparaisons/figure/errors.pdf, id=2836, 426.8748pt x 326.6604pt>
+<./comparaisons/figure/errors.pdf, id=2835, 426.8748pt x 326.6604pt>
 File: ./comparaisons/figure/errors.pdf Graphic file (type pdf)
 
 <use ./comparaisons/figure/errors.pdf>
@@ -2107,7 +2127,7 @@ Overfull \hbox (1.70612pt too wide) in paragraph at lines 321--321
  []
 
 [100] [101] [102] [103]
-<./PDZ/graphes/modelB6+/1G9O_simil_full.png, id=3160, 227.6505pt x 136.5903pt>
+<./PDZ/graphes/modelB6+/1G9O_simil_full.png, id=3159, 227.6505pt x 136.5903pt>
 File: ./PDZ/graphes/modelB6+/1G9O_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1G9O_simil_full.png>
@@ -2115,7 +2135,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1G9O_simil_full.png used on inp
 ut line 504.
 (pdftex.def)             Requested size: 239.00298pt x 143.40735pt.
 
-<./PDZ/graphes/modelB6+/1IHJ_simil_full.png, id=3161, 227.6505pt x 136.5903pt>
+<./PDZ/graphes/modelB6+/1IHJ_simil_full.png, id=3160, 227.6505pt x 136.5903pt>
 File: ./PDZ/graphes/modelB6+/1IHJ_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1IHJ_simil_full.png>
@@ -2123,7 +2143,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1IHJ_simil_full.png used on inp
 ut line 505.
 (pdftex.def)             Requested size: 239.00298pt x 143.40735pt.
 
-<./PDZ/graphes/modelB6+/1R6J_simil_full.png, id=3162, 227.4096pt x 136.3494pt>
+<./PDZ/graphes/modelB6+/1R6J_simil_full.png, id=3161, 227.4096pt x 136.3494pt>
 File: ./PDZ/graphes/modelB6+/1R6J_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1R6J_simil_full.png>
@@ -2131,7 +2151,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1R6J_simil_full.png used on inp
 ut line 506.
 (pdftex.def)             Requested size: 239.00298pt x 143.30214pt.
 
-<./PDZ/graphes/modelB6+/1N7E_simil_full.png, id=3163, 227.6505pt x 136.5903pt>
+<./PDZ/graphes/modelB6+/1N7E_simil_full.png, id=3162, 227.6505pt x 136.5903pt>
 File: ./PDZ/graphes/modelB6+/1N7E_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1N7E_simil_full.png>
@@ -2139,7 +2159,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1N7E_simil_full.png used on inp
 ut line 507.
 (pdftex.def)             Requested size: 239.00298pt x 143.40735pt.
 
-<./PDZ/graphes/modelB6+/2BYG_simil_full.png, id=3164, 227.6505pt x 136.5903pt>
+<./PDZ/graphes/modelB6+/2BYG_simil_full.png, id=3163, 227.6505pt x 136.5903pt>
 File: ./PDZ/graphes/modelB6+/2BYG_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/2BYG_simil_full.png>
@@ -2147,7 +2167,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/2BYG_simil_full.png used on inp
 ut line 508.
 (pdftex.def)             Requested size: 239.00298pt x 143.40735pt.
 
-<./PDZ/graphes/modelB6+/3K82_simil_full.png, id=3165, 227.4096pt x 136.3494pt>
+<./PDZ/graphes/modelB6+/3K82_simil_full.png, id=3164, 227.4096pt x 136.3494pt>
 File: ./PDZ/graphes/modelB6+/3K82_simil_full.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/3K82_simil_full.png>
@@ -2160,7 +2180,7 @@ Overfull \hbox (46.76184pt too wide) in paragraph at lines 503--511
  []
 
 
-<./PDZ/graphes/modelB6+/1G9O_simil_core.png, id=3166, 232.2276pt x 139.2402pt>
+<./PDZ/graphes/modelB6+/1G9O_simil_core.png, id=3165, 232.2276pt x 139.2402pt>
 File: ./PDZ/graphes/modelB6+/1G9O_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1G9O_simil_core.png>
@@ -2168,7 +2188,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1G9O_simil_core.png used on inp
 ut line 518.
 (pdftex.def)             Requested size: 239.00298pt x 143.3064pt.
 
-<./PDZ/graphes/modelB6+/1IHJ_simil_core.png, id=3167, 227.4096pt x 136.3494pt>
+<./PDZ/graphes/modelB6+/1IHJ_simil_core.png, id=3166, 227.4096pt x 136.3494pt>
 File: ./PDZ/graphes/modelB6+/1IHJ_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1IHJ_simil_core.png>
@@ -2176,7 +2196,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1IHJ_simil_core.png used on inp
 ut line 519.
 (pdftex.def)             Requested size: 239.00298pt x 143.30214pt.
 
-<./PDZ/graphes/modelB6+/1R6J_simil_core.png, id=3168, 227.4096pt x 141.6492pt>
+<./PDZ/graphes/modelB6+/1R6J_simil_core.png, id=3167, 227.4096pt x 141.6492pt>
 File: ./PDZ/graphes/modelB6+/1R6J_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/1R6J_simil_core.png>
@@ -2184,7 +2204,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1R6J_simil_core.png used on inp
 ut line 520.
 (pdftex.def)             Requested size: 239.00298pt x 148.8722pt.
 
-<./PDZ/graphes/modelB6+/1N7E_simil_core.png, id=3169, 256.19714pt x 153.57375pt
+<./PDZ/graphes/modelB6+/1N7E_simil_core.png, id=3168, 256.19714pt x 153.57375pt
 >
 File: ./PDZ/graphes/modelB6+/1N7E_simil_core.png Graphic file (type png)
  <use ./PDZ/graphes/modelB6+/1N7E_simil_core.png>
@@ -2192,7 +2212,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/1N7E_simil_core.png used on inp
 ut line 521.
 (pdftex.def)             Requested size: 239.00298pt x 143.26967pt.
 
-<./PDZ/graphes/modelB6+/2BYG_simil_core.png, id=3170, 227.6505pt x 141.4083pt>
+<./PDZ/graphes/modelB6+/2BYG_simil_core.png, id=3169, 227.6505pt x 141.4083pt>
 File: ./PDZ/graphes/modelB6+/2BYG_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/2BYG_simil_core.png>
@@ -2200,7 +2220,7 @@ Package pdftex.def Info: ./PDZ/graphes/modelB6+/2BYG_simil_core.png used on inp
 ut line 522.
 (pdftex.def)             Requested size: 239.00298pt x 148.4658pt.
 
-<./PDZ/graphes/modelB6+/3K82_simil_core.png, id=3171, 227.6505pt x 136.5903pt>
+<./PDZ/graphes/modelB6+/3K82_simil_core.png, id=3170, 227.6505pt x 136.5903pt>
 File: ./PDZ/graphes/modelB6+/3K82_simil_core.png Graphic file (type png)
 
 <use ./PDZ/graphes/modelB6+/3K82_simil_core.png>
@@ -2279,21 +2299,21 @@ Overfull \hbox (46.76184pt too wide) in paragraph at lines 674--682
 [109] [110 <./PDZ/graphes/FDB/1G9O_simil_cut.png> <./PDZ/graphes/FDB/1G9O_simil
 _core.png> <./PDZ/graphes/FDB/1R6J_simil_cut.png> <./PDZ/graphes/FDB/1R6J_simil
 _core.png> <./PDZ/graphes/FDB/2BYG_simil_cut.png> <./PDZ/graphes/FDB/2BYG_simil
-_core.png>] <./PDZ/logos/core.pdf, id=3239, 1558.78601pt x 1887.78749pt>
+_core.png>] <./PDZ/logos/core.pdf, id=3238, 1558.78601pt x 1887.78749pt>
 File: ./PDZ/logos/core.pdf Graphic file (type pdf)
 
 <use ./PDZ/logos/core.pdf>
 Package pdftex.def Info: ./PDZ/logos/core.pdf used on input line 718.
 (pdftex.def)             Requested size: 426.79134pt x 516.85315pt.
 
-<./PDZ/logos/exposed.pdf, id=3240, 1648.97868pt x 1351.76784pt>
+<./PDZ/logos/exposed.pdf, id=3239, 1648.97868pt x 1351.76784pt>
 File: ./PDZ/logos/exposed.pdf Graphic file (type pdf)
 
 <use ./PDZ/logos/exposed.pdf>
 Package pdftex.def Info: ./PDZ/logos/exposed.pdf used on input line 728.
 (pdftex.def)             Requested size: 426.79134pt x 349.86313pt.
 
-<./PDZ/titration/alignTiam1.pdf, id=3241, 840.40372pt x 441.90535pt>
+<./PDZ/titration/alignTiam1.pdf, id=3240, 840.40372pt x 441.90535pt>
 File: ./PDZ/titration/alignTiam1.pdf Graphic file (type pdf)
 
 <use ./PDZ/titration/alignTiam1.pdf>
@@ -2335,7 +2355,7 @@ Package pdftex.def Info: ./PDZ/titration/alignCASK.pdf used on input line 773.
 \openout2 = `annexe_PDZ.aux'.
 
  (./annexe_PDZ.tex
-<./PDZ/homologues/1G9O.png, id=6148, 662.9987pt x 541.62791pt>
+<./PDZ/homologues/1G9O.png, id=6147, 662.9987pt x 541.62791pt>
 File: ./PDZ/homologues/1G9O.png Graphic file (type png)
 
 <use ./PDZ/homologues/1G9O.png>
@@ -2346,7 +2366,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 7--10
  [][] 
  []
 
-<./PDZ/proteus/1G9O.png, id=6149, 644.14565pt x 696.4922pt>
+<./PDZ/proteus/1G9O.png, id=6148, 644.14565pt x 696.4922pt>
 File: ./PDZ/proteus/1G9O.png Graphic file (type png)
 
 <use ./PDZ/proteus/1G9O.png>
@@ -2388,7 +2408,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 36--39
 [121
 
  <./PDZ/homologues/1IHJ.png>] [122 <./PDZ/proteus/1IHJ.png (PNG copy)>]
-<./PDZ/homologues/1R6J.png, id=6173, 595.44196pt x 532.09781pt>
+<./PDZ/homologues/1R6J.png, id=6172, 595.44196pt x 532.09781pt>
 File: ./PDZ/homologues/1R6J.png Graphic file (type png)
 
 <use ./PDZ/homologues/1R6J.png>
@@ -2399,7 +2419,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 46--49
  [][] 
  []
 
-<./PDZ/proteus/1R6J.png, id=6174, 582.08772pt x 694.90384pt>
+<./PDZ/proteus/1R6J.png, id=6173, 582.08772pt x 694.90384pt>
 File: ./PDZ/proteus/1R6J.png Graphic file (type png)
 
 <use ./PDZ/proteus/1R6J.png>
@@ -2413,7 +2433,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 55--58
 [123
 
  <./PDZ/homologues/1R6J.png>] [124 <./PDZ/proteus/1R6J.png (PNG copy)>]
-<./PDZ/homologues/1N7E.png, id=6184, 680.28065pt x 525.7444pt>
+<./PDZ/homologues/1N7E.png, id=6183, 680.28065pt x 525.7444pt>
 File: ./PDZ/homologues/1N7E.png Graphic file (type png)
 
 <use ./PDZ/homologues/1N7E.png>
@@ -2424,7 +2444,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 65--68
  [][] 
  []
 
-<./PDZ/proteus/1N7E.png, id=6185, 678.70956pt x 694.10966pt>
+<./PDZ/proteus/1N7E.png, id=6184, 678.70956pt x 694.10966pt>
 File: ./PDZ/proteus/1N7E.png Graphic file (type png)
 
 <use ./PDZ/proteus/1N7E.png>
@@ -2463,7 +2483,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 93--96
 [127
 
  <./PDZ/homologues/2BYG.png>] [128 <./PDZ/proteus/2BYG.png (PNG copy)>]
-<./PDZ/homologues/3K82.png, id=6207, 696.77707pt x 546.39296pt>
+<./PDZ/homologues/3K82.png, id=6206, 696.77707pt x 546.39296pt>
 File: ./PDZ/homologues/3K82.png Graphic file (type png)
 
 <use ./PDZ/homologues/3K82.png>
@@ -2474,7 +2494,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 103--106
  [][] 
  []
 
-<./PDZ/proteus/3K82.png, id=6208, 688.1361pt x 697.28638pt>
+<./PDZ/proteus/3K82.png, id=6207, 688.1361pt x 697.28638pt>
 File: ./PDZ/proteus/3K82.png Graphic file (type png)
 
 <use ./PDZ/proteus/3K82.png>
@@ -2488,7 +2508,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 112--115
 [129
 
  <./PDZ/homologues/3K82.png>] [130 <./PDZ/proteus/3K82.png (PNG copy)>]
-<./PDZ/homologues/TIAM1.png, id=6218, 687.35054pt x 540.03957pt>
+<./PDZ/homologues/TIAM1.png, id=6217, 687.35054pt x 540.03957pt>
 File: ./PDZ/homologues/TIAM1.png Graphic file (type png)
 
 <use ./PDZ/homologues/TIAM1.png>
@@ -2723,94 +2743,94 @@ or  <return>  to continue without it.
 
 
 
+
 ] [148
 
-
-]
-<resume.pdf, id=6516, 597.23125pt x 845.1575pt>
+] [149]
+<resume.pdf, id=6520, 597.23125pt x 845.1575pt>
 File: resume.pdf Graphic file (type pdf)
  <use resume.pdf>
-Package pdftex.def Info: resume.pdf used on input line 267.
+Package pdftex.def Info: resume.pdf used on input line 278.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 File: resume.pdf Graphic file (type pdf)
 
 <use resume.pdf>
-Package pdftex.def Info: resume.pdf used on input line 267.
+Package pdftex.def Info: resume.pdf used on input line 278.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
- <resume.pdf, id=6519, page=1, 597.23125pt x 845.1575pt>
+ <resume.pdf, id=6523, page=1, 597.23125pt x 845.1575pt>
 File: resume.pdf Graphic file (type pdf)
 
 <use resume.pdf, page 1>
-Package pdftex.def Info: resume.pdf, page1 used on input line 267.
+Package pdftex.def Info: resume.pdf, page1 used on input line 278.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 File: resume.pdf Graphic file (type pdf)
  <use resume.pdf, page 1>
-Package pdftex.def Info: resume.pdf, page1 used on input line 267.
+Package pdftex.def Info: resume.pdf, page1 used on input line 278.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
 File: resume.pdf Graphic file (type pdf)
  <use resume.pdf, page 1>
-Package pdftex.def Info: resume.pdf, page1 used on input line 267.
+Package pdftex.def Info: resume.pdf, page1 used on input line 278.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
 File: resume.pdf Graphic file (type pdf)
 
 <use resume.pdf, page 1>
-Package pdftex.def Info: resume.pdf, page1 used on input line 267.
+Package pdftex.def Info: resume.pdf, page1 used on input line 278.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
 File: resume.pdf Graphic file (type pdf)
  <use resume.pdf, page 1>
-Package pdftex.def Info: resume.pdf, page1 used on input line 267.
+Package pdftex.def Info: resume.pdf, page1 used on input line 278.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
- [149 <./resume.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 269.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 269.
+ [150 <./resume.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 280.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 280.
 
 (./these.aux (./dedicace.aux) (./glossaire.aux) (./CPD/chapter.aux)
 (./methodes/chapter.aux) (./annexe_proteus.aux) (./annexe_groupes.aux)
 (./developpements/chapter.aux) (./comparaisons/chapter.aux) (./annexe_posi.aux)
 (./PDZ/chapter.aux) (./annexe_PDZ.aux) (./publications.aux) (./merci.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 269.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 269.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 280.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 280.
 Package rerunfilecheck Info: File `these.out' has not changed.
-(rerunfilecheck)             Checksum: 7093C1428556F849773DB72454252A48;10577.
+(rerunfilecheck)             Checksum: 0490ACDE3D3D1577C5485EDD6A3F5D4A;10518.
 Package rerunfilecheck Info: File `these.brf' has not changed.
 (rerunfilecheck)             Checksum: 4F9FA835967748278B4C1FC5430A4502;10500.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 269.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 280.
  ) 
 Here is how much of TeX's memory you used:
- 16808 strings out of 494875
- 258573 string characters out of 6178748
- 464864 words of memory out of 5000000
- 18751 multiletter control sequences out of 15000+600000
- 109607 words of font info for 190 fonts, out of 8000000 for 9000
+ 16802 strings out of 494875
+ 258482 string characters out of 6178748
+ 464826 words of memory out of 5000000
+ 18748 multiletter control sequences out of 15000+600000
+ 106577 words of font info for 189 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 46i,18n,48p,2055b,1016s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,18n,48p,2055b,1014s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
 -mathex.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsro
 m12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fo
-nts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxo10.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb><
-/usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1
-/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/sh
-are/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
-ymbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sy
-mbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qhvb.pfb>
-Output written on these.pdf (167 pages, 8086765 bytes).
+nts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/publi
+c/tex-gyre/qhvb.pfb>
+Output written on these.pdf (170 pages, 8035637 bytes).
 PDF statistics:
- 6767 PDF objects out of 7423 (max. 8388607)
- 4723 compressed objects within 48 object streams
- 657 named destinations out of 1000 (max. 500000)
- 29628 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 6768 PDF objects out of 7423 (max. 8388607)
+ 4722 compressed objects within 48 object streams
+ 655 named destinations out of 1000 (max. 500000)
+ 29108 words of extra memory for PDF output out of 29859 (max. 10000000)
 
