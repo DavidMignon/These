@@ -1,0 +1,619 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Soutenance David Mignon</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+		  <div class="slides">
+<!---------------------------------------------------------------------------------------------------------->
+<section>
+  <div style="position: absolute; width: 300px; height: 400px; left: 600px; top: 4px;">
+      <img data-natural-height="792" data-natural-width="579" style="" data-lazy-loaded="" data-src="img/PSlogo.svg"/>
+  </div>
+  <div style="position: absolute; width: 151px; height: 206px; left: 30px; top: 4px;">
+      <img data-natural-height="792" data-natural-width="579" style="" data-lazy-loaded="" data-src="img/Xlogo.jpg"/>
+  </div>  
+  <div style="position: absolute; left: 130px; top: 300px;">
+    <p style="text-align:center;font-size:48px">
+      <span>Computational Protein Design:</span>
+      <span>un outil pour l'ingénierie des protéines</span>
+      <span>et la biologie synthètique</span>
+    </p>
+    <h2 style="text-align:center">
+      <strong>
+        <span style="font-size:0.7em">David Mignon</span>
+      </strong>
+    </h2>
+    <p style="text-align:center">
+        <span>sous la direction de Thomas Simonson</span>
+    </p>
+    
+    <p style="text-align:center">
+      <span style="color:#808080">
+        <span style="font-size:0.9em">Laboratoire de Biochimie,
+          <strong> &Eacute;cole Polytechnique</strong>
+        </span>
+      </span>
+    </p>
+
+    </p>
+  </div>
+</section>
+<!-----------------------------------------Slide 2 --------------------------------------------------------->
+<section>
+    <div style="width: 806px; left: 56px; top: 19px; height: auto;">
+      <h3>Computational Protein Design (CPD)</h3>
+      <p>Concevoir ou modifier des protéines par informatique pour leur conférer de nouvelles propriétés</p>
+    </div>
+    <div style="min-width: 30px; min-height: 30px; width: 408px; height: 577px; left: 516px; top: 152px;" data-block-type="image" class="sl-block">
+        <img data-natural-height="1123" data-natural-width="794" style="" data-lazy-loaded="" data-src="img/CPD.svg"/>
+    </div>
+
+
+    
+    <div>
+      <p style="text-align:left">Applications:</p>
+      <ul>
+        <li>protéines redessinées</li>
+        <li>enzymes, complexes</li>
+        <li>insertion d'acides aminés non-naturels</li>
+      </ul>
+      <p style="text-align:left">Principaux programmes de CPD:</p>
+      <ul>
+        <li style="text-align: justify;">ORBIT (Mayo,1996)</li>
+        <li style="text-align: justify;">Toulbar2 (Allouche,2014)</li>
+        <li style="text-align: justify;">Proteus (Simonson,2008)</li>
+        <li style="text-align: justify;">Rosetta (Baker,2003)</li>
+      </ul>
+    </div>
+
+</section>
+<!-----------------------------------------Slide 3 --------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Proteus bb fixe, side chains rotame un modèle simple deplié</span>
+    </p>
+
+<table>
+
+   <tr>
+
+       <td>Carmen</td>
+
+       <td>33 ans</td>
+
+       <td>Espagne</td>
+
+   </tr>
+
+   <tr>
+
+       <td>Michelle</td>
+
+       <td>26 ans</td>
+
+       <td>États-Unis</td>
+
+   </tr>
+
+</table>
+
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 4 --------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">La matrice l'énergie</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 5 --------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">le problème du solvant</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 6 --------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Casa</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 7 --------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">GB: le principe</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 8 --------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">GB2 le NEA/FDB</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 9 --------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">changement de rotam et mutation</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 10 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Les Algorithmes d'exploration des séquences</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 11 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Toulbar2</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 12 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">L'heuristique</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 13 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Computational Protein Design:</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 14 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Le Monte Carlo</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 15 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">REMC</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 16 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Ensemble des tests</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 17 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Résultats à moins de 30 positions</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 18 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Positions actives</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 19 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Supefamily</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 20 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Comparaison des temps de calculs???</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 21--------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Conclusion comparaison??</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 22 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Retour sur l'état déplié/maximum de vraisemblance</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 23 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">La famille PDZ</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 24 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Superfamily</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 25 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Similarité des séquences</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 26 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">comparaison NEA/GB</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 27 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Utilisation de Rosetta</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 28 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Résultat NEA/GB </span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 29 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Application boost hydrophobe</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 30 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">alignement et structure boost</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 31 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Computational Protein Design:</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 32 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Conclusion</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 33 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">dev openMP</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 34 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px"></span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 35 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Computational Protein Design:</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 36 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Computational Protein Design:</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 37 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Computational Protein Design:</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 38 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Computational Protein Design:</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 39 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Computational Protein Design:</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 39 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Computational Protein Design:</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 39 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Computational Protein Design:</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 39 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Computational Protein Design:</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 40 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Computational Protein Design:</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 41 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Computational Protein Design:</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 42 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Computational Protein Design:</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 43 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Computational Protein Design:</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 44 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Computational Protein Design:</span>
+    </p>
+    
+  </div>
+
+</section>
+<!-----------------------------------------Slide 45 -------------------------------------------------------->
+<section>
+  <div>
+    <p>
+      <span style="font-size:48px">Computational Protein Design:</span>
+    </p>
+    
+  </div>
+
+</section>
+
+<!---------------------------------------------------------------------------------------------------------->
+
+		    <section data-background-transition="fade" data-background="test/examples/assets/image1.png">
+                                        <h2>Background image</h2>
+                    </section>
+		    <section>
+		      <h3>The Lorenz Equations</h3>
+		      
+		      \[\begin{aligned}
+		      \dot{x} &amp; = \sigma(y-x) \\
+		      \dot{y} &amp; = \rho x - y - xz \\
+		      \dot{z} &amp; = -\beta z + xy
+		      \end{aligned} \]
+		    </section>
+		    <section>Slide 45</section>
+		  </div>
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+		  Reveal.initialize({
+
+		        controls: false,
+			slideNumber:true,
+			transition:'convex',
+			transitionSpeed:'fast',
+			margin:0.1,
+			math: {
+		             mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+		             config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+                	},
+			dependencies: [
+			                { src: 'plugin/math/math.js', async: true },
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+		  ]
+		  
+			});
+		</script>
+	</body>
+</html>
