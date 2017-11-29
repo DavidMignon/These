@@ -11,6 +11,8 @@ png_name=sys.argv[2]
 # The next line is essential to prevent any threading errors. Call this function before using any PyMOl methods!
 pymol.finish_launching()
 cmd.set('ray_trace_frames', 1)  # Should the frames be ray-traced? If yes, rendering will take longer, but look nicer.
+
+cmd.set('ray_opaque_background', 0)  
 cmd.viewport(1600, 1600) # Choose the desired resolution for the movie here (in pixels).
 
 
