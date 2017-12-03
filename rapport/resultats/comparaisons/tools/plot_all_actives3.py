@@ -47,6 +47,7 @@ proteins = np.genfromtxt(result_file,usecols=(1),dtype=None)
 
 H,MC,RE4a,RE4b,RE8a,RE8b,RE8c = np.loadtxt(result_file,usecols=[2,3,4,5,6,7,8],unpack=True)
 
+
 line_H,     =ax.plot(proteins,H,color='red',linewidth=4,label="H")
 line_MC,    =ax.plot(proteins,MC,color='green',linestyle='dashed',linewidth=4,label="MC")
 line_RE4a,  =ax.plot(proteins,RE4a,color='blue',linewidth=2,label="RE4a")
@@ -55,9 +56,9 @@ line_RE8a, =ax.plot(proteins,RE8a,color='0.6',linestyle='dashed',linewidth=4,lab
 line_RE8b, =ax.plot(proteins,RE8b,color='black',linewidth=4,label="RE8b")
 line_RE8c, =ax.plot(proteins,RE8c,color='0.8',linestyle=':',linewidth=3,label="RE8c")
 
-
 ax.xaxis.set_ticks([1,2,3,4,5,6,7,8,9])
 ax.xaxis.set_major_formatter(formatter)
+
 ax.set_xlim(1, 9)
 ax.set_ylim(0, 11)
 ax.yaxis.set_ticks([0.,2.,4.,6.,8.,10.])
@@ -65,6 +66,7 @@ ax.yaxis.set_ticks([0.,2.,4.,6.,8.,10.])
 ax.grid(False)
 
 ax.set_ylabel(u'\u0394'+ 'E (kcal/mol)', fontsize=11)
+
 
 
 #ax.set_xlabel("Proteins", fontsize=11)
@@ -80,8 +82,8 @@ ax.set_position([box.x0, box.y0, box.width * 0.95, box.height])
 
 
 # Put a legend to the right of the current axis
-ax.legend(loc='center left',fontsize=9,labelspacing=0.2 ,numpoints=1,bbox_to_anchor=(1, 0.5), ncol=1,handles=[line_H,line_MC,line_RE4a,line_RE4b,line_RE8a,line_RE8b,line_RE8c])
 
+ax.legend(loc='center left',fontsize=9,labelspacing=0.2 ,numpoints=1,bbox_to_anchor=(1, 0.5), ncol=1,handles=[line_H,line_MC,line_RE4a,line_RE4b,line_RE8a,line_RE8b,line_RE8c])
 
 canvas.print_figure(output_file)
 
