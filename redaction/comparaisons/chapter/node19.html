@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Concluding Discussion</TITLE>
+<META NAME="description" CONTENT="Concluding Discussion">
+<META NAME="keywords" CONTENT="chapter">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="chapter.css">
+
+<LINK REL="previous" HREF="node12.html">
+<LINK REL="up" HREF="node1.html">
+<LINK REL="next" HREF="node20.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html250"
+  HREF="node20.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html248"
+  HREF="node1.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html244"
+  HREF="node18.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html251"
+  HREF="node20.html">About this document ...</A>
+<B> Up:</B> <A NAME="tex2html249"
+  HREF="node1.html">Comparing three stochastic search</A>
+<B> Previous:</B> <A NAME="tex2html245"
+  HREF="node18.html">Density of states above</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00140000000000000000">
+Concluding Discussion</A>
+</H1>
+Stochastic search methods are very common in CPD. They often take the form of MC-based simulated anealing (SA) [1, 58]; various forms of biased or quenched Monte Carlo are also popular [59, 61–63]. For example, MC moves can be chosen to preferentially affect residues that have a high local energy [62] and/or selected degrees of freedom can be subjected to energy minimization (quenched) during or after an MC move. The steepest-descent heuristic used here [32] has similarities to quenched MC. These particular quenched or biased stochastic methods do not sample a Boltzmann distribution of states, but aim to be as effective as possible at identifying low energy sequences, including the GMEC. They can be extended to very large search spaces that include backbone flexibility [64–66], and they do not directly depend on additive energy functions (although additivity can dramatically increase efficiency). In contrast, while exact methods like CFN have been extended beyond discrete rotamer sets [21, 67], and can handle slight departures from a purely additive energy function (ones including 3- or 4-body energy terms) [68, 69], they cannot readily handle arbitrary energy functions or a flexible backbone. Other stochastic methods preserve the Boltzmann character of the statistical ensemble, including plain Monte Carlo, Replica Exchange MC, and configuration bias MC methods [28, 58]. At the same time, REMC benefits from high temperature sampling, like simulated annealing, with energy ranges of 10 kcal/mol or more above the GMEC readily accessible in this work.
+Here, we tested three stochastic search methods, and compared their ability to identify low energy sequences in problems of increasing size/complexity. While the capability to identify the low energy sequences is important, we should keep in mind that their significance is only as good as the energy function, as illustrated above for 1A81. Direct comparison to the exact GMEC was possible routinely for problems involving up to 10 designed positions, and for 28 of 45 tests with 20 designed positions. The 10-position designs involved total rotamer numbers of 2500-3000; for the 20- and 30-position designs, there are about 2000 and 4000 more rotamers, respectively.
+The larger tests are relevant for whole protein design projects, as well as projects that redesign one or more large protein surfaces (eg, protein crystal design). For these tests, the GMEC was usually not available, despite using a very recent Toulbar2 protocol [#!Simoncini15!#] .
+Therefore, the stochastic methods could only be evaluated indirectly.
+The indirect quality indicators were  (a) consistency between the methods and (b) general sequence quality compared to experiment. Agreement between the heuristic and REMC solutions was very good in general, and agreement with experimental Pfam sequences was excellent for core residues, as observed previously with the same energy function (but a heuristic exploration method) [#!Schmidt09!#,#!Schmidt10!#]. Results with a more advanced protein force field and Generalized Born solvent are expected to be even better [#!Polydorides11!#,#!Simonson15a!#].
+Designed surface residues were less similar to experiment, which can be partly explained because the experimental sequences are subject to additional constraints and selective pressures (such as domain-domain interactions), not included in the design.  
+
+<P>
+Overall, the heuristic and REMC methods gave very good agreement with each other and with the GMEC when available, except for some of the whole-protein design tests.
+CFN, in its Toulbar2 implementation was very effective for up to 10 designed positions. Exploration speed was similar for all methods for 10-position design, and similar for the stochastic methods applied to the larger problems. With 8-walker REMC and 0.75 billion steps per walker, the three largest departures from the overall best energy, among 67 large, difficult tests, were 4, 3, and 2.4 kcal/mol.
+Sequence diversity was also recapitulated accurately, compared to exact enumeration, in the very limited range where the latter was possible.
+In addition, REMC sampled suboptimal solutions as much as 10 kcal/mol above the GMEC, providing thermal averages and an approximate solution to the inverse folding problem.
+We have recently extended the REMC method to allow backbone moves, with the help of a hybrid move scheme to be described elsewhere.
+Overall, both the heuristic and REMC method appear to be effective search and sampling methods for most problems and problem sizes.
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html250"
+  HREF="node20.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html248"
+  HREF="node1.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html244"
+  HREF="node18.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html251"
+  HREF="node20.html">About this document ...</A>
+<B> Up:</B> <A NAME="tex2html249"
+  HREF="node1.html">Comparing three stochastic search</A>
+<B> Previous:</B> <A NAME="tex2html245"
+  HREF="node18.html">Density of states above</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+mignon
+2017-11-30
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Energy function</TITLE>
+<META NAME="description" CONTENT="Energy function">
+<META NAME="keywords" CONTENT="chapter">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="chapter.css">
+
+<LINK REL="next" HREF="node10.html">
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="node4.html">
+<LINK REL="next" HREF="node10.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html149"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html147"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html141"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html150"
+  HREF="node10.html">Test systems and preparation</A>
+<B> Up:</B> <A NAME="tex2html148"
+  HREF="node4.html">Methods</A>
+<B> Previous:</B> <A NAME="tex2html142"
+  HREF="node8.html">Cost function network method</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00125000000000000000">
+Energy function</A>
+</H2>
+The energy function has the form:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+E = E_{\rm bonds} + E_{\rm angles} + E_{\rm dihe} + E_{\rm impr} + E_{\rm vdw} + E_{\rm Coul} + E_{\rm solv}
+\end{equation}
+ -->
+<A NAME="eq:energy"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:energy"></A><IMG
+ WIDTH="14" HEIGHT="10" BORDER="0"
+ SRC="img73.png"
+ ALT="\begin{displaymath}
+E = E_{\rm bonds} + E_{\rm angles} + E_{\rm dihe} + E_{\rm impr} + E_{\rm vdw} + E_{\rm Coul} + E_{\rm solv}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="eqn-number">11</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The first six terms represent the protein internal energy. They were taken from the Charmm19 empirical energy function [#!Brooks09!#]. The last term represents the contribution of solvent. We used a ``Coulomb + Accessible Surface Area'', or CASA implicit solvent model [#!Lopes07!#,#!Schmidt08b!#]:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+E_{\rm solv} = \left( \frac{1}{\epsilon} -1 \right) E_{\rm Coul} + \sum_i \sigma_i A_i
+\end{equation}
+ -->
+<A NAME="eq:casa"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:casa"></A><IMG
+ WIDTH="434" HEIGHT="17" BORDER="0"
+ SRC="img74.png"
+ ALT="\begin{displaymath}
+E_{\rm solv} = \left( \frac{1}{\epsilon} -1 \right) E_{\rm Coul} + \sum_i \sigma_i A_i
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="eqn-number">12</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Here, <SPAN CLASS="MATH"><IMG
+ WIDTH="238" HEIGHT="42" ALIGN="BOTTOM" BORDER="0"
+ SRC="img75.png"
+ ALT="$\epsilon$"></SPAN> is a dielectric constant that scales the Coulomb energy, set to 23, following earlier tests [#!Schmidt08b!#]. <SPAN CLASS="MATH"><IMG
+ WIDTH="8" HEIGHT="11" ALIGN="MIDDLE" BORDER="0"
+ SRC="img76.png"
+ ALT="$A_i$"></SPAN> is the solvent accessible surface area of atom i; <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="27" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.png"
+ ALT="$\sigma_i$"></SPAN> is a parameter that reflects each atom's preference to be exposed or hidden from solvent. The solute atoms were divided into four groups with the following <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="27" ALIGN="MIDDLE" BORDER="0"
+ SRC="img77.png"
+ ALT="$\sigma_i$"></SPAN> values (cal/mol/&#197;<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img78.png"
+ ALT="$^2$"></SPAN>): unpolar (-5), aromatic (-40), polar (-8) and ionic (-10). Hydrogen atoms were assigned a surface coefficient of zero. Surface areas were computed by the Lee and Richards algorithm [#!Lee71!#], using a 1.5 &#197; probe radius. Pairwise additivity errors for the surface energy term were corrected by applying a reduction factor of 0.5 to buried pairs [#!Street98!#,#!Lopes07!#]. Energy calculations were done with a modified version of the Xplor program [#!Xplor!#,#!Simonson13b!#].
+
+<P>
+The energies <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="18" ALIGN="MIDDLE" BORDER="0"
+ SRC="img79.png"
+ ALT="$E_u(t)$"></SPAN> associated with the unfolded state were determined empirically to give reasonable amino acid compositions for the protein families considered here [#!Schmidt08!#]; they are reported in table <A HREF="#tab:erefcasa">4.2</A>.
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+
+<P>
+<DIV ALIGN="CENTER">
+        <A NAME="tab:erefcasa"></A>      <A NAME="153"></A>
+<TABLE CELLPADDING=3>
+<CAPTION><STRONG>Table 4.2:</STRONG>
+Reference energies for unfolded state (kcal/mol).</CAPTION>
+<TR><TD ALIGN="LEFT"><P>
+Ala</TD>
+<TD ALIGN="CENTER">-8.519</TD>
+<TD ALIGN="LEFT">Ile</TD>
+<TD ALIGN="CENTER">-10.530</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Arg</TD>
+<TD ALIGN="CENTER">-22.107</TD>
+<TD ALIGN="LEFT">Leu</TD>
+<TD ALIGN="CENTER">-12.227</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Asn</TD>
+<TD ALIGN="CENTER">-16.715</TD>
+<TD ALIGN="LEFT">Lys</TD>
+<TD ALIGN="CENTER">-20.999</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Asp</TD>
+<TD ALIGN="CENTER">-19.699</TD>
+<TD ALIGN="LEFT">Met</TD>
+<TD ALIGN="CENTER">-11.985</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Cys</TD>
+<TD ALIGN="CENTER">-9.426</TD>
+<TD ALIGN="LEFT">Phe</TD>
+<TD ALIGN="CENTER">-18.017</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Gln</TD>
+<TD ALIGN="CENTER">-17.718</TD>
+<TD ALIGN="LEFT">Ser</TD>
+<TD ALIGN="CENTER">-11.881</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Glu</TD>
+<TD ALIGN="CENTER">-20.048</TD>
+<TD ALIGN="LEFT">Thr</TD>
+<TD ALIGN="CENTER">-11.413</TD>
+</TR>
+<TR><TD ALIGN="LEFT">His(d)</TD>
+<TD ALIGN="CENTER">-17.824</TD>
+<TD ALIGN="LEFT">Trp</TD>
+<TD ALIGN="CENTER">-19.267</TD>
+</TR>
+<TR><TD ALIGN="LEFT">His(e)</TD>
+<TD ALIGN="CENTER">-17.824</TD>
+<TD ALIGN="LEFT">Tyr</TD>
+<TD ALIGN="CENTER">-20.893</TD>
+</TR>
+<TR><TD ALIGN="LEFT">His+</TD>
+<TD ALIGN="CENTER">-21.704</TD>
+<TD ALIGN="LEFT">Val</TD>
+<TD ALIGN="CENTER">-9.5654</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+</TR>
+</TABLE>
+</DIV>
+<P>
+<DIV ALIGN="CENTER"><SMALL CLASS="SMALL">Three His variants are given protonated on ND1 (d), NE2 (e), or both (+).
+</SMALL>
+      
+</DIV>
+</DIV>
+<BR>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html149"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html147"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html141"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html150"
+  HREF="node10.html">Test systems and preparation</A>
+<B> Up:</B> <A NAME="tex2html148"
+  HREF="node4.html">Methods</A>
+<B> Previous:</B> <A NAME="tex2html142"
+  HREF="node8.html">Cost function network method</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+mignon
+2017-11-30
+</ADDRESS>
+</BODY>
+</HTML>

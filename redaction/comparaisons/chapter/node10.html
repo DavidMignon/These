@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Test systems and preparation</TITLE>
+<META NAME="description" CONTENT="Test systems and preparation">
+<META NAME="keywords" CONTENT="chapter">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="chapter.css">
+
+<LINK REL="next" HREF="node11.html">
+<LINK REL="previous" HREF="node9.html">
+<LINK REL="up" HREF="node4.html">
+<LINK REL="next" HREF="node11.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html159"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html157"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html151"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html160"
+  HREF="node11.html">Sequence characterization</A>
+<B> Up:</B> <A NAME="tex2html158"
+  HREF="node4.html">Methods</A>
+<B> Previous:</B> <A NAME="tex2html152"
+  HREF="node9.html">Energy function</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00126000000000000000">
+Test systems and preparation</A>
+</H2>
+We considered nine protein domains, from the SH3, SH2, and PDZ families, listed in table <A HREF="#tab:proteins">4.3</A>.
+Each domain is known to fold stably and has an associated crystal structure used for our calculations. Systems were prepared and energy matrices computed using procedures described previously [#!Schmidt09!#,#!Schmidt10!#].
+Briefly, each PDB structure was minimized through 200 steps of conjugate gradient minimization. For each residue pair, interaction energies were computed after 15 steps of energy minimization, with the backbone fixed and only the interactions of the pair with each other and the backbone included. Sidechain rotamers were described by a slightly expanded version of the library of Tuffery et al [#!Tuffery91!#], which has a total of 254 rotamers (sum over all amino acid types).
+The expansion consists in allowing additional hydrogen orientations for OH and SH groups [49].
+This rotamer library was chosen for its simplicity and because it gives very good performance in sidechain placement tests, comparable to the specialized Scwrl4 program (which uses a much larger library) [#!Krivov09!#,#!Gaillard16!#].
+
+<P>
+For each protein, we ran tests with 1, 5, 10, 20, 30 or all positions allowed to mutate. The positions selected are listed in <A HREF="#chap:annexeposi"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]"
+ SRC="/usr/share/latex2html/icons/crossref.png"></A>. For each protein, the sets of 5–30 designed positions were chosen randomly, in five different ways. The choice was constrained so that all the designed positions have a significant interaction with all others.
+Specifically, for each pair of designed positions, there should be at least one rotamer combination where the (unsigned) interaction energy is above a chosen threshold <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img80.png"
+ ALT="$Emin$"></SPAN>. The threshold was 10 kcal/mol for the 5- and 10-position tests.
+It was 1 kcal/mol for the 20- and 30-position tests. With this criterion, the sets of designed positions are all quite compact, and highly coupled.
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+
+<A NAME="tab:proteins"></A>                      
+<DIV ALIGN="CENTER">
+<A NAME="168"></A>
+<TABLE CELLPADDING=3 BORDER="1">
+<CAPTION><STRONG>Table 4.3:</STRONG>
+Test proteins</CAPTION>
+<TR><TD ALIGN="CENTER">type</TD>
+<TD ALIGN="CENTER">PDB</TD>
+<TD ALIGN="CENTER">length</TD>
+<TD ALIGN="CENTER">acronym</TD>
+<TD ALIGN="CENTER">type</TD>
+<TD ALIGN="CENTER">PDB</TD>
+<TD ALIGN="CENTER">length</TD>
+<TD ALIGN="CENTER">acronym</TD>
+</TR>
+<TR><TD ALIGN="CENTER">PDZ</TD>
+<TD ALIGN="CENTER">1G9O</TD>
+<TD ALIGN="CENTER">91</TD>
+<TD ALIGN="CENTER">NHERF</TD>
+<TD ALIGN="CENTER">SH2</TD>
+<TD ALIGN="CENTER">1A81</TD>
+<TD ALIGN="CENTER">108</TD>
+<TD ALIGN="CENTER">Syk kinase</TD>
+</TR>
+<TR><TD ALIGN="CENTER">PDZ</TD>
+<TD ALIGN="CENTER">1R6J</TD>
+<TD ALIGN="CENTER">82</TD>
+<TD ALIGN="CENTER">syntenin</TD>
+<TD ALIGN="CENTER">SH2</TD>
+<TD ALIGN="CENTER">1BM2</TD>
+<TD ALIGN="CENTER">98</TD>
+<TD ALIGN="CENTER">Grb2</TD>
+</TR>
+<TR><TD ALIGN="CENTER">PDZ</TD>
+<TD ALIGN="CENTER">2BYG</TD>
+<TD ALIGN="CENTER">97</TD>
+<TD ALIGN="CENTER">DLH2</TD>
+<TD ALIGN="CENTER">SH2</TD>
+<TD ALIGN="CENTER">1M61</TD>
+<TD ALIGN="CENTER">109</TD>
+<TD ALIGN="CENTER">Zap70</TD>
+</TR>
+<TR><TD ALIGN="CENTER">SH3</TD>
+<TD ALIGN="CENTER">1ABO</TD>
+<TD ALIGN="CENTER">58</TD>
+<TD ALIGN="CENTER">Abl</TD>
+<TD ALIGN="CENTER">SH2</TD>
+<TD ALIGN="CENTER">1O4C</TD>
+<TD ALIGN="CENTER">104</TD>
+<TD ALIGN="CENTER">Src kinase</TD>
+</TR>
+<TR><TD ALIGN="CENTER">SH3</TD>
+<TD ALIGN="CENTER">1CKA</TD>
+<TD ALIGN="CENTER">57</TD>
+<TD ALIGN="CENTER">c-Crk</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+</TR>
+</TABLE>
+</DIV>
+</DIV>
+<BR>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html159"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html157"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html151"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html160"
+  HREF="node11.html">Sequence characterization</A>
+<B> Up:</B> <A NAME="tex2html158"
+  HREF="node4.html">Methods</A>
+<B> Previous:</B> <A NAME="tex2html152"
+  HREF="node9.html">Energy function</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+mignon
+2017-11-30
+</ADDRESS>
+</BODY>
+</HTML>

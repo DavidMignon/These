@@ -30,8 +30,8 @@ except:
     sys.exit(2)
 
 
-conv = {'0': 1, '1': 2, '5': 3, '10': 4,'20': 5, '30': 6}
-conv_inv = {1:0,2:1,3:5,4:10,5:20,6:30}
+conv = {'5':1 , '10': 2,'20': 3, '30': 4}
+conv_inv = {1:5,2:10,3:20,4:30}
 
 def base(x, pos):
     return conv_inv[x]
@@ -58,8 +58,6 @@ ax.bar(0.6,8,0.8,bottom=-0.2,color='0.9',linewidth=0)
 ax.bar(1.6,8,0.8,bottom=-0.2,color='0.9',linewidth=0)
 ax.bar(2.6,8,0.8,bottom=-0.2,color='0.9',linewidth=0)
 ax.bar(3.6,8,0.8,bottom=-0.2,color='0.9',linewidth=0)
-ax.bar(4.6,8,0.8,bottom=-0.2,color='0.9',linewidth=0)
-ax.bar(5.6,8,0.8,bottom=-0.2,color='0.9',linewidth=0)
 
 
 
@@ -72,10 +70,10 @@ for ligne in lignes[1:]:
         my_marker='o'
         translation1=0.1
     elif data[3]=="H":
-        my_marker='*'
+        my_marker='s'
         translation1=0        
     elif data[3]=="RE":
-        my_marker='s'
+        my_marker='^'
         translation1=0.1        
     if data[0]=="H":
         my_color="red"
@@ -89,11 +87,11 @@ for ligne in lignes[1:]:
     
     ax.plot(conv[data[1]]+translation1+translation2,float(data[2]),color=my_color,marker=my_marker)
 
-ax.xaxis.set_ticks([1,2,3,4,5,6])
+ax.xaxis.set_ticks([1,2,3,4])
 ax.xaxis.set_major_formatter(formatter)
-ax.set_xlim(0.5, 6.5)
-ax.set_ylim(-0.2, 7.8)
-ax.yaxis.set_ticks([0.,1.,2.,3.,4,5,6,7])
+ax.set_xlim(0.5, 4.5)
+ax.set_ylim(-0.2, 6)
+ax.yaxis.set_ticks([0.,1.,2.,3.,4,5,6])
 
 ax.grid(False)
 #ax.set_ylabel(u'')
@@ -120,10 +118,6 @@ star = mlines.Line2D(range(1), range(1), color="white", marker='*', markerfaceco
 
 # Put a legend to the right of the current axis
 ax.legend(loc='center left',fontsize=9,labelspacing=0.2 ,numpoints=1,bbox_to_anchor=(1, 0.5),fancybox=True, shadow=True, ncol=1,handles=[red_patch,blue_patch,green_patch,circle,star,square])
-
-
-
-
 
 
 canvas.print_figure(output_file)

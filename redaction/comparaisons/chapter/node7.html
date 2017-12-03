@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Heuristic sequence optimization</TITLE>
+<META NAME="description" CONTENT="Heuristic sequence optimization">
+<META NAME="keywords" CONTENT="chapter">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="chapter.css">
+
+<LINK REL="next" HREF="node8.html">
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="node4.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html129"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html127"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html121"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html130"
+  HREF="node8.html">Cost function network method</A>
+<B> Up:</B> <A NAME="tex2html128"
+  HREF="node4.html">Methods</A>
+<B> Previous:</B> <A NAME="tex2html122"
+  HREF="node6.html">MC and REMC: implementation</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00123000000000000000">
+Heuristic sequence optimization</A>
+</H2>
+The heuristic sequence optimization uses a multistart, steepest-descent minimization, where thousands of random starting configurations are minimized,leading to a large collection of local energy minima [#!Wernisch00!#,#!Schmidt08!#].
+One ``heuristic cycle''proceeds as follows: an initial amino acid sequence and set of sidechain rotamers are chosen randomly. These are improved in a stepwise way. At a given amino acid position <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="24" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$i$"></SPAN>, the best amino acid type and rotamer are selected, with the rest of the sequence held fixed. The same is done for the following position <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="18" ALIGN="MIDDLE" BORDER="0"
+ SRC="img71.png"
+ ALT="$i+1$"></SPAN>, and so on, performing multiple passes over the amino acid sequence until the energy no longer improves or a set, large number of passes is reached (500 passes). The final sequence, rotamer set, and energy are output, ending the cycle. Below, we typically perform  <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="26" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.png"
+ ALT="${\sim}$"></SPAN>100.000 heuristic cycles for each protein.
+
+<P>
+<BR><HR>
+<ADDRESS>
+mignon
+2017-11-30
+</ADDRESS>
+</BODY>
+</HTML>

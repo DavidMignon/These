@@ -1,0 +1,268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>MC and REMC: implementation details</TITLE>
+<META NAME="description" CONTENT="MC and REMC: implementation details">
+<META NAME="keywords" CONTENT="chapter">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="chapter.css">
+
+<LINK REL="next" HREF="node7.html">
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="node4.html">
+<LINK REL="next" HREF="node7.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html119"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html117"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html111"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html120"
+  HREF="node7.html">Heuristic sequence optimization</A>
+<B> Up:</B> <A NAME="tex2html118"
+  HREF="node4.html">Methods</A>
+<B> Previous:</B> <A NAME="tex2html112"
+  HREF="node5.html">Monte Carlo: general framework</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00122000000000000000"></A>
+<A NAME="sub:REMCdetails"></A>
+<BR>
+MC and REMC: implementation details
+</H2>
+For plain MC, we use one- and two-position moves, where either rotamers, types, or both are changed.
+For two-position moves, the second position is selected among those that have a significant (unsigned) interaction energy with the first one, meaning that there is at least one rotamer conbination where their interaction is 10 kcal/mol or more.
+For REMC, we use four or eight walkers, with thermal energies <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="27" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$kT_i$"></SPAN> that range from 0.125
+to 2 or 3 kcal/mol, and are spaced in a geometric progression: T<SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="27" ALIGN="MIDDLE" BORDER="0"
+ SRC="img65.png"
+ ALT="$_{i+1}$"></SPAN>/T<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="MIDDLE" BORDER="0"
+ SRC="img66.png"
+ ALT="$_i$"></SPAN> = constant, following Kofke [#!Kofke02!#].
+Conformation swaps are attempted at regular intervals, between walkers at adjacent temperatures.
+The precise parameter settings are given in table <A HREF="#tab:parameters">4.1</A>.
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+
+<A NAME="tab:parameters"></A>                      
+<DIV ALIGN="CENTER">
+<A NAME="107"></A>
+<TABLE CELLPADDING=3 BORDER="1">
+<CAPTION><STRONG>Table 4.1:</STRONG>
+Selected MC and REMC protocols</CAPTION>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">   
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  walker                   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> trajectory </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> move probabilities<SPAN CLASS="MATH"><IMG
+ WIDTH="7" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img67.png"
+ ALT="$^a$"></SPAN> </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> walker     </SMALL></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">  
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  temperature(s)           </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> length     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> rot;mut;mut+rot; </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> swap       </SMALL></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">  
+name  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="$kT$"></SPAN> (kcal/mol)           </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> (steps)    </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> mut+mut;         </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> periodicity<SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img68.png"
+ ALT="$^b$"></SPAN> </SMALL>
+<P></P>
+</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">    
+MC    </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.2                       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">   6 10<SPAN CLASS="MATH"><IMG
+ WIDTH="8" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img69.png"
+ ALT="$^9$"></SPAN> </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0; 1; 0.1; 0     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  -          </SMALL>
+<P></P>
+</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">       
+REMCa </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.125; 0.25; 0.5; 1       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1.5 10<SPAN CLASS="MATH"><IMG
+ WIDTH="8" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img69.png"
+ ALT="$^9$"></SPAN> </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1; 0; 0.1; 0     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 7.5 10<SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img70.png"
+ ALT="$^6$"></SPAN> </SMALL>
+<P></P>
+</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">    
+REMCb </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.25; 0.5; 1; 2           </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1.5 10<SPAN CLASS="MATH"><IMG
+ WIDTH="8" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img69.png"
+ ALT="$^9$"></SPAN> </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1; 0; 0.1; 0     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 7.5 10<SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img70.png"
+ ALT="$^6$"></SPAN> </SMALL>
+<P></P>
+</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">  
+REMCc </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.175; 0.263; 0.395;      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.75 10<SPAN CLASS="MATH"><IMG
+ WIDTH="8" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img69.png"
+ ALT="$^9$"></SPAN></SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0; 1; 0.1; 0     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 7.5 10<SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img70.png"
+ ALT="$^6$"></SPAN> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.592; 0.888; 1.333; 2; 3 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  </SMALL>
+<P></P>
+</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 
+REMCd </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.175; 0.263; 0.395;      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">0.75 10<SPAN CLASS="MATH"><IMG
+ WIDTH="8" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img69.png"
+ ALT="$^9$"></SPAN> </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1; 0; 0.1; 0     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 7.5 10<SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img70.png"
+ ALT="$^6$"></SPAN> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.592; 0.888; 1.333; 2; 3 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  </SMALL>
+<P></P>
+</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 
+REMCe </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.175; 0.263; 0.395;      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">0.75 10<SPAN CLASS="MATH"><IMG
+ WIDTH="8" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img69.png"
+ ALT="$^9$"></SPAN> </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1; 0; 0.1; 0     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">     10<SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img70.png"
+ ALT="$^6$"></SPAN> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">  
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.592; 0.888; 1.333; 2;   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  </SMALL>
+<P></P>
+</TD>
+</TR>
+</TABLE></DIV>
+<SMALL CLASS="SMALL"><SPAN CLASS="MATH"><IMG
+ WIDTH="7" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img67.png"
+ ALT="$^a$"></SPAN>Probabilities at each MC step to change, respectively, a rotamer; a sidechain type; a type at one position and a rotamer at another;
+a type at two positions. <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img68.png"
+ ALT="$^b$"></SPAN>The interval between attempts to exchange states
+between two walkers (using a Metropolis test).
+</SMALL>
+
+</DIV>
+<BR>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html119"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html117"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html111"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html120"
+  HREF="node7.html">Heuristic sequence optimization</A>
+<B> Up:</B> <A NAME="tex2html118"
+  HREF="node4.html">Methods</A>
+<B> Previous:</B> <A NAME="tex2html112"
+  HREF="node5.html">Monte Carlo: general framework</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+mignon
+2017-11-30
+</ADDRESS>
+</BODY>
+</HTML>

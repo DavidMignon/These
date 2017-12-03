@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>CPU and memory limits for each method</TITLE>
+<META NAME="description" CONTENT="CPU and memory limits for each method">
+<META NAME="keywords" CONTENT="chapter">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="chapter.css">
+
+<LINK REL="next" HREF="node16.html">
+<LINK REL="previous" HREF="node14.html">
+<LINK REL="up" HREF="node14.html">
+<LINK REL="next" HREF="node16.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html216"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html214"
+  HREF="node14.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html208"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html217"
+  HREF="node16.html">Optimal sequences/structures with up</A>
+<B> Up:</B> <A NAME="tex2html215"
+  HREF="node14.html">Finding the GMEC</A>
+<B> Previous:</B> <A NAME="tex2html209"
+  HREF="node14.html">Finding the GMEC</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00132100000000000000"></A>
+<A NAME="BESTprotocol"></A>
+<BR>
+CPU and memory limits for each method
+</H3>
+The ability of an exploration method to sample low energy sequences depends on the CPU and memory ressources available, as well as on detailed parameterization choices. Here, we set somewhat arbitrary limits, to remain within a practical run situation. For CFN, we set a maximum time limit of 24 h and a memory limit of 30 gbytes (gb). For the heuristic method, we used 110,000 heuristic cycles, increased to 330,000 or 990,000 cycles in a few cases; even for these cases, run times did not exceed 24 h. For MC, we ran up to 10<SPAN CLASS="MATH"><IMG
+ WIDTH="8" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img69.png"
+ ALT="$^9$"></SPAN> simulation steps, which corresponded to CPU times of 9 h at most. For REMC, we ran 0.75 10<SPAN CLASS="MATH"><IMG
+ WIDTH="8" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img69.png"
+ ALT="$^9$"></SPAN> simulation steps per replica, with a few exceptions. We used an OpenMP, shared memory parallelization on a single processor, with one replica per core. Total CPU time per core was never more than 3 hours, for a total CPU use of less than 24 h. For the heuristic, MC, and REMC methods, memory requirements are modest; about 2 gb for the largest calculations. Run times are shown in Fig. <A HREF="#fig:cpu">4.4</A> as a function of the number of designed positions, which varies from one position to the entire protein (about 90 positions). For comparison, the CPU time needed to compute the energy matrix for a single pair of designed positions, using an advanced energy function (Generalized Born solvent plus a sophisticated surface area term) and a single core of a recent Intel processor is about 5 hours.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:cpu"></A><A NAME="237"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.4:</STRONG>
+
+Run times for different test calculations and search methods. CPU times per core are shown; only the REMC calculations use multiple cores (OpenMP parallelization). CFN results are only given for 20 designed positions or fewer. REMC was only done for the larger calculations. Results are shown for a large, representative subset of the test calculations. A few CFN calculations were allowed to run beyond the 24h CPU limit. For clarity, the average Heur and REMC values are included as dashed lines.
+      </CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+</DIV>        [width=12cm]speed.pdf
+
+<P></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The MC and REMC methods require choices of move probabilities and temperatures, which affect the sampling in ways that vary from protein to protein. Fig. <A HREF="#fig:fulldelta">4.5</A> shows the lowest energy sampled with a small collection of protocols: one heuristic, one MC, and five REMC protocols, applied to our nine proteins, with all positions allowed to mutate (except Gly/Pro). The protocol details are given in table <A HREF="node6.html#tab:parameters">4.1</A>. For these large design problems, the GMEC is not known. Instead, for each protein, the overall best energy (the best of the seven protocols) is taken as the reference, or zero value.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:fulldelta"></A><A NAME="330"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.5:</STRONG>
+
+Comparison between selected heuristic, MC, and REMC protocols for whole protein design. The best energy obtained with each protocol is shown for the nine test proteins. Zero represents the overall best energy for each protein. The mean ``error'' is indicated on the right for each protocol (the mean difference from the overall best energy). The protocols are a heuristic method (Heur), an MC method, two REMC protocols with 4 walkers (REMC a, b), and three REMC protocols with 8 walkers (yellow lines and dots, REMC c, d, e). Details of the protocols are in table <A HREF="node6.html#tab:parameters">4.1</A>; each curve is labelled according to the protocol name.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+</DIV>        [width=12cm]full_delta.png</TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+For a given protein, the best energy varies by up to 12 kcal/mol from one protocol to another (compare the 1BM2 REMCa and REMCc energies or the 1CKA MC and REMCd energies). For each protocol, the best energy obtained was averaged over the nine proteins, giving a mean ``error''; these values are also reported in Fig. <A HREF="#fig:fulldelta">4.5</A>. The lowest mean error is 1.0 kcal/mol, with REMCd. In other words, REMCd gives a best energy that is, on average, 1.0 kcal/mol above the overall best energy. Based on these and other similar tests, for the rest of this work, we used the specific MC protocol in table <A HREF="node6.html#tab:parameters">4.1</A> and the REMCd replica exchange protocol, which are generally good but not necessarily optimal for every situation. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html216"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html214"
+  HREF="node14.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html208"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html217"
+  HREF="node16.html">Optimal sequences/structures with up</A>
+<B> Up:</B> <A NAME="tex2html215"
+  HREF="node14.html">Finding the GMEC</A>
+<B> Previous:</B> <A NAME="tex2html209"
+  HREF="node14.html">Finding the GMEC</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+mignon
+2017-11-30
+</ADDRESS>
+</BODY>
+</HTML>

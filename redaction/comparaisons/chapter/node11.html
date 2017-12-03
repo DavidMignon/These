@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Sequence characterization</TITLE>
+<META NAME="description" CONTENT="Sequence characterization">
+<META NAME="keywords" CONTENT="chapter">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="chapter.css">
+
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="up" HREF="node4.html">
+<LINK REL="next" HREF="node12.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html167"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html165"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html161"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html168"
+  HREF="node12.html">Results</A>
+<B> Up:</B> <A NAME="tex2html166"
+  HREF="node4.html">Methods</A>
+<B> Previous:</B> <A NAME="tex2html162"
+  HREF="node10.html">Test systems and preparation</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00127000000000000000">
+Sequence characterization</A>
+</H2>
+Designed sequences were compared to the Pfam alignment for the corresponding family, using the Blosum40 scoring matrix and a gap penalty of -6. Each Pfam sequence was also compared to its own Pfam alignment. For these Pfam/Pfam comparisons, if a test protein T was part of the Pfam alignment, the T/T self comparison was left out, to be more consistent with the designed/Pfam comparisons. If the test protein T was not part of the Pfam alignment, we used Blast to identify its closest Pfam homologue H and left the T/H comparison out, for consistency. The Pfam alignments were either the ``seed'' alignment for each family (around 50 sequences) or much larger, ``full'' alignments, with 6287, 3052, and 14944 sequences, respectively, for the SH3, SH2, and PDZ families. Similarities were computed for protein core residues, defined by their near-complete burial, and listed in Results.
+
+<P>
+Designed sequences were submitted to the Superfamily library of Hidden Markov Models [#!Gough01!#,#!Wilson07!#], which attempts to classify sequences according to the SCOP classification [#!Andreeva04!#]. Classification was based on SCOP version 1.75 and version 3.5 of the Superfamily tools. Superfamily executes the hmmscan program, which implements a Hidden Markov model for each SCOP family and superfamily; here hmmscan was executed with an E-value threshold of 10<SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img81.png"
+ ALT="$^{-10}$"></SPAN>, using a total of 15438 models to represent the SCOP database.
+
+<P>
+To compare the diversity in the designed sequences with the diversity in natural sequences, we used a standard, position-dependent sequence entropy [#!DurbinBK!#], computed as follows:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+S_i = - \sum_{i=1}^6 f_j (i) ln f_j (i)
+\end{equation}
+ -->
+<A NAME="eq:entropy"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:entropy"></A><IMG
+ WIDTH="25" HEIGHT="18" BORDER="0"
+ SRC="img82.png"
+ ALT="\begin{displaymath}
+S_i = - \sum_{i=1}^6 f_j (i) ln f_j (i)
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="eqn-number">13</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="155" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.png"
+ ALT="$f_j(i)$"></SPAN> is the frequency of residue type <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img84.png"
+ ALT="$j$"></SPAN> at position <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="24" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$i$"></SPAN>, either in the designed sequences or in the natural sequences (organized into a multiple alignment). Instead of the usual, 20 amino acid types, we employ six residue types, corresponding to the following groups: {LVIMC}, {FYW}, {G}, {ASTP}, {EDNQ}, and {KRH}. This classification was obtained by a cluster analysis of the BLOSUM62 matrix [#!Murphy00!#], and also by analyzing residue-residue contact energies in proteins [#!Launay07!#]. To get a sense of how many amino acid types appear at a specific position <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="24" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$i$"></SPAN>, we usually report the residue entropy in its exponentiated form, <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="26" ALIGN="MIDDLE" BORDER="0"
+ SRC="img85.png"
+ ALT="$\exp(S_i)$"></SPAN>,which ranges from 1 to 6. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html167"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html165"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html161"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html168"
+  HREF="node12.html">Results</A>
+<B> Up:</B> <A NAME="tex2html166"
+  HREF="node4.html">Methods</A>
+<B> Previous:</B> <A NAME="tex2html162"
+  HREF="node10.html">Test systems and preparation</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+mignon
+2017-11-30
+</ADDRESS>
+</BODY>
+</HTML>

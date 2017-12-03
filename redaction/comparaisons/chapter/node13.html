@@ -1,0 +1,282 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Quality of the designed sequences</TITLE>
+<META NAME="description" CONTENT="Quality of the designed sequences">
+<META NAME="keywords" CONTENT="chapter">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="chapter.css">
+
+<LINK REL="next" HREF="node14.html">
+<LINK REL="previous" HREF="node12.html">
+<LINK REL="up" HREF="node12.html">
+<LINK REL="next" HREF="node14.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html193"
+  HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html191"
+  HREF="node12.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html185"
+  HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html194"
+  HREF="node14.html">Finding the GMEC</A>
+<B> Up:</B> <A NAME="tex2html192"
+  HREF="node12.html">Results</A>
+<B> Previous:</B> <A NAME="tex2html186"
+  HREF="node12.html">Results</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00131000000000000000">
+Quality of the designed sequences</A>
+</H2>
+We first report information on the quality of our designed sequences. We use sets of REMC sequences to illustrate the main features. The best REMC protocol, REMCd (table <A HREF="node6.html#tab:parameters">4.1</A>) was used. Results with the other exploration methods are expected to be similar. Indeed, while the methods sometimes exhibit differences of up to a few kcal/mol between their best sequences, the average sequence quality of the 100-1000 best sequences is typically similar between methods. Table <A HREF="#tab:quality">4.4</A> summarizes results for our nine test proteins in design calculations where all positions were allowed to change types. All mutations were allowed, except mutations to/from Gly and Pro, since these are likely to change the backbone structure.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:logos"></A><A NAME="193"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.1:</STRONG>
+
+Sequence logos for the core region of two designed proteins: 1CKA (SH3) and 2BYG (PDZ). The low energy CPD sequences are compared to the sequences of the full Pfam collection of
+experimental sequences. Positions shown correspond to the hydrophobic core of each protein; residue numbers are indicated (PDB numbering).
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+</DIV>  [width=14cm]align0.pdf</TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+REMC was done with height replicas at temperatures between 0.175 and 3 <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="$kT$"></SPAN> units. Simulation lengths were 750 million steps (per replica). The top 10000 sequence/conformation combinations were retained, corresponding to 200-400 unique sequences. For eight of the nine test proteins, all the retained sequences were recognized as members of the correct superfamily and family, with match lengths and E-values given in table <A HREF="#tab:quality">4.4</A>. Thus, our designed sequences are mostly similar to experimental ones. Sequence identities to wildtype are 31% on average (table <A HREF="#tab:quality">4.4</A>), similar to earlier studies with the same energy function [#!Schmidt09!#,#!Schmidt10!#]. The good agreement with experiment is also illustrated by computing similarity scores between the designed sequences and sequences from the Pfam database. For the protein core region, the similarity is similar to that between experimental sequences, as shown in figure <A HREF="#fig:logos">4.1</A>. Notice that we use here a simple CASA solvent model, since our focus is not the quality of the designed sequences, but the performance of our search algorithms. With a more sophisticated Generalized Born solvent model and a more highly optimized unfolded state model, sequence quality would be even better (manuscript in preparation).
+
+<P>
+Representative sequence logos for the protein core are shown in Fig. <A HREF="#fig:logos">4.1</A>, illustrating the agreement between designed and experimental sequences. For the SH3 protein 1CKA, the design mostly recovers the native sidechain type, or a homologous type that is common in other natural sequences from Pfam. Exceptions include position 170, where we obtain I or V, whereas the native type is W; however, L and V are also occasionally found in Pfam. At position 139, we sample R instead of the native A or V, found in Pfam; however, the hydrophobic part of the designed Arg sidechain is homologous to A and V, while its ionized tip actually sits outside the hydrophobic core, at the protein surface. Finally, at position 143, we sample W, which is homologous to Y and F found in Pfam. For the PDZ domain 2BYG, agreement with the native and Pfam sequences is similar, with a few departures: at positions 207 and 245, we sample W instead of the natural types I, L, V, P; at position 253, we sample H, compared to mostly I, L, V, and sometimes F in Pfam; at position 265,we always sample Y, whereas the Pfam types are diverse (and mostly hydrophobic).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:3Dstruct"></A><A NAME="206"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.2:</STRONG>
+The lowest energy sequence/structure combination is shown for the 2BYG PDZ domain (stereo view; selected sidechains only; white sticks), superimposed on the Xray structure (yellow sticks); the sidechains shown are the ones in the sequence logo, Fig.2. The main mutated positions are labelled; other positions are either not mutated or mutated within the ILV group. Figure produced with pymol [72]</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+</DIV>      <TABLE CELLPADDING=3 ALIGN="CENTER">
+<TR><TD ALIGN="CENTER">[trim = 0mm 32mm 0mm 10mm, clip, width=12cm]2BYG_bestall_core3D.pdf</TD>
+</TR>
+</TABLE></TD></TR>
+</TABLE>
+</DIV>
+For the same PDZ domain, the lowest energy sequence/structure combination is shown in figure <A HREF="#fig:3Dstruct">4.2</A>, superimposed on the Xray structure; only the hydrophobic core sidechains are shown, for clarity. Most of the native/designed sidechains overlap very well, although the double mutation (F205L, L245W) leads to some local repacking.
+
+<P>
+For the 1A81 SH2 domain, the lowest energy sequences are not recognized by Superfamily, but if we assay sequences that are 8-12 kcal/mol above the GMEC, about 10% are correctly recognized by Superfamily as SH3 sequences. Similarly, if the top 10,000 sequences produced by the heuristic algorithm are tested, 57% of them are recognized by Superfamily as SH3 family members. The heuristic sequences are also 8-12 kcal/mol above the GMEC (see below). This protein illustrates the imperfect parameterization of our energy function, with the consequence that higher energy sequences can actually be more realistic, in some cases, than lower energy ones. Thus, the signifiance of the GMEC is only as good as the energy function.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:similarity"></A><A NAME="216"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.3:</STRONG>
+Histogram of Blosum40 similarity scores to Pfam sequences for the core region of two
+designed proteins: 1ABO (SH3) and 1BM2 (SH2). The similarity between Pfam sequences is
+also shown, considering either the Pfam seed alignment or the much larger full alignment.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+
+</DIV>      <TABLE CELLPADDING=3 ALIGN="CENTER">
+<TR><TD ALIGN="CENTER">[width=8cm]1ABO_core_simil_byseq.png</TD>
+<TD ALIGN="CENTER">[width=8cm]1BM2_core_simil_byseq.png</TD>
+</TR>
+</TABLE></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+
+<SMALL CLASS="SMALL"><A NAME="tab:quality"></A>                      
+</SMALL>
+<DIV ALIGN="CENTER"><A NAME="220"></A>
+<TABLE CELLPADDING=3 BORDER="1">
+<CAPTION><STRONG>Table 4.4:</STRONG>
+Designed sequence quality measures</CAPTION>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">   
+        </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> Number of </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> Identity </SMALL></TD>
+<TD ALIGN="CENTER" COLSPAN=5><SMALL CLASS="SMALL"> <SPAN>Superfamily tests </SPAN>   </SMALL></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 
+        </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> sequences </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> % to    </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> Match </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> Superfamily </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> Superfamily  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> Family  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> Family        </SMALL></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 
+Protein </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> tested    </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> wildtype </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> length </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> E-value     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> success rate </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> E-value </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> success rate  </SMALL></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">  
+1A81    </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 236       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 27       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> none   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">             </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">              </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">               </SMALL></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 
+1ABO    </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 203       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 32       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 51/58  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 4.4e-4      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 100%        </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 2.8e-3  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 100%         </SMALL></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 
+1BM2    </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 209       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 27       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 78/98  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 4.2e-5      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 100%        </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 2.6e-3  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 100%         </SMALL></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 
+1CKA    </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 416       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 33       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 40/57  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1.1e-5      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 100%        </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 3.4e-3  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 100%         </SMALL></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 
+1G9O    </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 338       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 36       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 79/91  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 7.0e-7      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 100%        </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 2.5e-3  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 100%         </SMALL></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 
+1M61    </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 405       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 42       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 97/109 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 7.2e-7      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 100%        </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 2.6e-4  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 100%         </SMALL></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 
+1O4C    </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 274       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 21       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 95/104 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 2.1e-4      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 100%        </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 4.5e-3  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 100%         </SMALL></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 
+1R6J    </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 270       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 34       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 74/82  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 9.8e-6      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 100%        </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 4.6e-3  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 100%         </SMALL></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 
+2BYG    </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 426       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 28       </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 59/97  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1.4e-5      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 100%        </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 7.1e-3  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 100%         </SMALL></TD>
+</TR>
+</TABLE></DIV>
+</DIV>
+<BR>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html193"
+  HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html191"
+  HREF="node12.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html185"
+  HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html194"
+  HREF="node14.html">Finding the GMEC</A>
+<B> Up:</B> <A NAME="tex2html192"
+  HREF="node12.html">Results</A>
+<B> Previous:</B> <A NAME="tex2html186"
+  HREF="node12.html">Results</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+mignon
+2017-11-30
+</ADDRESS>
+</BODY>
+</HTML>

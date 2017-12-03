@@ -1,0 +1,610 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Monte Carlo: general framework</TITLE>
+<META NAME="description" CONTENT="Monte Carlo: general framework">
+<META NAME="keywords" CONTENT="chapter">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="chapter.css">
+
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node4.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html109"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html107"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html101"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html110"
+  HREF="node6.html">MC and REMC: implementation</A>
+<B> Up:</B> <A NAME="tex2html108"
+  HREF="node4.html">Methods</A>
+<B> Previous:</B> <A NAME="tex2html102"
+  HREF="node4.html">Methods</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00121000000000000000">
+Monte Carlo: general framework</A>
+</H2>
+We consider a polypeptide of <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$n$"></SPAN> amino acids.
+Its sequence S is written  S = <!-- MATH
+ $t_1 t_2 \cdots t_n$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="11" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$t_1 t_2 \cdots t_n$"></SPAN>, where <SPAN CLASS="MATH"><IMG
+ WIDTH="66" HEIGHT="24" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$t_i$"></SPAN> is
+the sidechain type of amino acid <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="24" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$i$"></SPAN>.
+We assume that each amino acid <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="24" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$i$"></SPAN> can take on a few different types <SPAN CLASS="MATH"><IMG
+ WIDTH="7" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="$t$"></SPAN>,
+<SPAN CLASS="MATH"><IMG
+ WIDTH="7" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.png"
+ ALT="$t'$"></SPAN>, .... that form a set <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="17" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$T_i$"></SPAN>.
+For each sequence, there are two classes of structures: folded and unfolded.
+For the folded form, all the sequences S share the same, precise geometry for the polypeptide backbone; only the
+sidechain positions can vary.
+Specifically, the sidechain of each amino acid <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="24" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$i$"></SPAN> can explore a few discrete
+conformations or rotamers <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="26" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="$r$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="11" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$r'$"></SPAN>, ... (around 10 per type <SPAN CLASS="MATH"><IMG
+ WIDTH="66" HEIGHT="24" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$t_i$"></SPAN>). The folded energy is <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="17" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$E_f$"></SPAN>
+The structure of the unfolded form is not specified; the energy is assumed to be independent of the particular unfolded structure, and to have the additive form:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+E_u(S) = \sum_{i=1}^n E_u(t_i) = \sum_{i=1}^n \left( e_u(t_i) - kT \log n_u(t_i) \right),
+\end{equation}
+ -->
+<A NAME="eq:unfolded"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:unfolded"></A><IMG
+ WIDTH="22" HEIGHT="26" BORDER="0"
+ SRC="img17.png"
+ ALT="\begin{displaymath}
+E_u(S) = \sum_{i=1}^n E_u(t_i) = \sum_{i=1}^n \left( e_u(t_i) - kT \log n_u(t_i) \right),
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="eqn-number">1</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="345" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$E_u(t_i)$"></SPAN> is a free energy associated with sidechain type <SPAN CLASS="MATH"><IMG
+ WIDTH="66" HEIGHT="24" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$t_i$"></SPAN> in the unfolded state, and the rightmost form
+separates it into an energy component <SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$e_u(t_i)$"></SPAN> and a conformational entropy term, where <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="$kT$"></SPAN> is the thermal energy
+and <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$n_u(t_i)$"></SPAN> is the number of conformations or rotamers available to sidechain type <SPAN CLASS="MATH"><IMG
+ WIDTH="66" HEIGHT="24" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$t_i$"></SPAN> in the unfolded state.
+
+<P>
+We perform a Monte Carlo simulation [#!Metropolis53!#,#!FrenkelBK!#] where one copy of the folded protein
+is explicitly represented.
+The unfolded state is included implicitly, by propagating the simulation with the energy
+function <!-- MATH
+ $E_M = E_f - E_u$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$E_M = E_f - E_u$"></SPAN> (the folding energy).
+One possible elementary MC move is to change a rotamer <SPAN CLASS="MATH"><IMG
+ WIDTH="108" HEIGHT="26" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$r_i$"></SPAN> in the
+current folded sequence; the energy change is <!-- MATH
+ $\Delta E_M = \Delta E_f = E(... t_i,r'_i ...) - E(... t_i,r_i ...)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="18" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$\Delta E_M = \Delta E_f = E(... t_i,r'_i ...) - E(... t_i,r_i ...)$"></SPAN>.
+Another possible move is a mutation: we modify the sidechain type <!-- MATH
+ $t_i \rightarrow t_i'$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="300" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$t_i \rightarrow t_i'$"></SPAN> at a chosen position <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="24" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$i$"></SPAN>
+in the folded protein, assigning a particular rotamer <SPAN CLASS="MATH"><IMG
+ WIDTH="48" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$r_i'$"></SPAN> to the new sidechain.
+The energy change is
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\Delta E_M = \Delta E_f - \Delta E_u =
+\left( E_f(... t'_i,r'_i ...) - E_f(... t_i,r_i ...) \right) - \left( E_u(t'_i) - E_u(t_i) \right)
+\end{equation}
+ -->
+<A NAME="eq:deltaE"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:deltaE"></A><IMG
+ WIDTH="14" HEIGHT="30" BORDER="0"
+ SRC="img27.png"
+ ALT="\begin{displaymath}
+\Delta E_M = \Delta E_f - \Delta E_u =
+\left( E_f(... t'_i,r...
+..... t_i,r_i ...) \right) - \left( E_u(t'_i) - E_u(t_i) \right)
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="eqn-number">2</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+<SPAN CLASS="MATH"><IMG
+ WIDTH="516" HEIGHT="19" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$\Delta E_M$"></SPAN> measures the stability change due to the mutation (for the given set of rotamers); it is as if we
+performed the reverse mutation <!-- MATH
+ $t_i' \rightarrow t_i$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="27" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$t_i' \rightarrow t_i$"></SPAN> in the unfolded form. 
+
+<P>
+If the moves are generated and accepted with an appropriate Metropolis-like scheme, the Markov chain will
+visit states according to their Boltzmann probability: 
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+p_M(S,c) = \frac{ e^{-\beta(E_f(S,c)-E_u(S))} }{ \sum_{S'} \sum_{c'} e^{-\beta(E_f(S',c')-E_u(S'))} }
+\end{equation}
+ -->
+<A NAME="eq:proba"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:proba"></A><IMG
+ WIDTH="48" HEIGHT="30" BORDER="0"
+ SRC="img30.png"
+ ALT="\begin{displaymath}
+p_M(S,c) = \frac{ e^{-\beta(E_f(S,c)-E_u(S))} }{ \sum_{S'} \sum_{c'} e^{-\beta(E_f(S',c')-E_u(S'))} }
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="eqn-number">3</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="285" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.png"
+ ALT="$\beta =1/kT$"></SPAN> and the subscript M indicates probabilities sampled by the Markov chain.
+For two conformations <SPAN CLASS="MATH"><IMG
+ WIDTH="69" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img32.png"
+ ALT="$c$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="8" HEIGHT="11" ALIGN="BOTTOM" BORDER="0"
+ SRC="img33.png"
+ ALT="$c'$"></SPAN> of sequence S, the Markov probability ratio is <!-- MATH
+ $p_M(S,c)/p_M(S,c') = e^{-\beta (E_f(S,c)-E_f(S,c'))}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="17" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.png"
+ ALT="$p_M(S,c)/p_M(S,c') = e^{-\beta (E_f(S,c)-E_f(S,c'))}$"></SPAN>.For two sequences S, S', the probability ratio is
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\frac{p_M(S)}{p_M(S')} = \frac{ \sum_c e^{-\beta (E_f(S,c)-E_u(S))} }
+                             { \sum_{c'} e^{-\beta(E_f(S',c')-E_u(S'))} }
+                      = \frac{ e^{-\beta \Delta G_{\rm fold}(S)}}{e^{-\beta \Delta G_{\rm fold}(S')}}
+\end{equation}
+ -->
+<A NAME="eq:boltzmann"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:boltzmann"></A><IMG
+ WIDTH="290" HEIGHT="36" BORDER="0"
+ SRC="img35.png"
+ ALT="\begin{displaymath}
+\frac{p_M(S)}{p_M(S')} = \frac{ \sum_c e^{-\beta (E_f(S,c)-E...
+...a \Delta G_{\rm fold}(S)}}{e^{-\beta \Delta G_{\rm fold}(S')}}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="eqn-number">4</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+In the ratio of Markov probabilities, we recognize the ratio of Boltzmann factors for S and S' folding, so that we
+have the second equality, where <!-- MATH
+ $\Delta G_{\rm fold}(S)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="361" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$\Delta G_{\rm fold}(S)$"></SPAN> denotes the folding free energy of sequence S (respectively, S').
+
+<P>
+Eq. (<A HREF="#eq:boltzmann">4.4</A>) has a simple interpretation: the Markov chain, with the chosen energy function <!-- MATH
+ $E_M =E_f - E_u$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$E_M = E_f - E_u$"></SPAN> and appropriate move probabilities, leads to the same distribution of states as a macroscopic, equilibrium,
+physical system where all sequences S, S', ... are present at equal concentrations, and are distributed between their
+folded and unfolded states according to their relative stabilities.
+This is exactly the experimental system we want our Markov chain to mimic.
+In this interpretation, a MC mutation move S <SPAN CLASS="MATH"><IMG
+ WIDTH="76" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img37.png"
+ ALT="$\rightarrow$"></SPAN> S' amounts to unfolding one copy of S and refolding one copy of S'.
+
+<P>
+It remains to specify the move generation probabilities and choose an appropriate acceptance scheme [#!Metropolis53!#,#!FrenkelBK!#].
+Let <!-- MATH
+ $\alpha(o \rightarrow n)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="11" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$\alpha(o \rightarrow n)$"></SPAN> be the probability to select a trial move between two states
+o and n and <!-- MATH
+ $acc(o \rightarrow n)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="66" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.png"
+ ALT="$acc(o \rightarrow n)$"></SPAN> the probability to accept it. Under weak assumptions, the simulation obeys the so-colled detailed balance condition:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+N(o) \pi(o \rightarrow n) = N(n) \pi(n \rightarrow o),
+\end{equation}
+ -->
+<A NAME="eq:balance"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:balance"></A><IMG
+ WIDTH="78" HEIGHT="29" BORDER="0"
+ SRC="img40.png"
+ ALT="\begin{displaymath}
+N(o) \pi(o \rightarrow n) = N(n) \pi(n \rightarrow o),
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="eqn-number">5</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="225" HEIGHT="16" ALIGN="MIDDLE" BORDER="0"
+ SRC="img41.png"
+ ALT="$N(o)$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.png"
+ ALT="$N(n)$"></SPAN> are the equilibrium populations of states o and n and <!-- MATH
+ $\pi(o \rightarrow n)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="38" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img43.png"
+ ALT="$\pi(o \rightarrow n)$"></SPAN> is the probability to make the <!-- MATH
+ $o \rightarrow n$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="66" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.png"
+ ALT="$o \rightarrow n$"></SPAN> move. Detailed balance is guaranteed in the limit of a very long simulation if the move set allows us to connect any two states in the sequence/conformation space (as here), if the system is ``aperiodic'' (there are no series of states that can form “periodic orbits”, trapping the system indefinitely), and if the so-called Kolmogorov reversibility condition is verified (as here): the products of probabilities around closed loops of states are the same in both directions. We cannot prove the aperiodic condition, but it appears very likely and is treated as an assumption.  
+To produce Boltzmann statistics, we choose the acceptance probabilities [#!Metropolis53!#,#!FrenkelBK!#]:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+acc(o \rightarrow n) = \exp(-\beta \Delta E_M) \frac{ \alpha(n \rightarrow o) }{ \alpha(o \rightarrow n) }
+{\rm\hspace*{3mm} if \hspace*{2mm} } \Delta E_M > 0; 1 {\rm\hspace*{2mm} otherwise}
+\end{equation}
+ -->
+<A NAME="eq:rule"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:rule"></A><IMG
+ WIDTH="44" HEIGHT="12" BORDER="0"
+ SRC="img45.png"
+ ALT="\begin{displaymath}
+acc(o \rightarrow n) = \exp(-\beta \Delta E_M) \frac{ \alpha...
+...\hspace*{2mm} } \Delta E_M &gt; 0; 1 {\rm\hspace*{2mm} otherwise}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="eqn-number">6</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <!-- MATH
+ $\Delta E_M = E_M(n) - E_M(o)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="463" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img46.png"
+ ALT="$\Delta E_M = E_M(n) - E_M(o)$"></SPAN> is the o <SPAN CLASS="MATH"><IMG
+ WIDTH="76" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img37.png"
+ ALT="$\rightarrow$"></SPAN> n energy difference. 
+Notice that this scheme obeys the Kolmogorov reversibility condition.
+
+<P>
+For a rotamer move at a particular position in the polypeptide chain, of type <SPAN CLASS="MATH"><IMG
+ WIDTH="7" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="$t$"></SPAN>, we define the move generation
+probability as <!-- MATH
+ $\alpha(o \rightarrow n) = \frac{1}{n_f(t)} = \alpha(o \rightarrow n)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="175" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img47.png"
+ ALT="$\alpha(o \rightarrow n) = \frac{1}{n_f(t)} = \alpha(o \rightarrow n)$"></SPAN>; all possible choices for
+the new rotamer are equiprobable, forward and backward rotamer moves have the same generation probability, and
+eq. (<A HREF="#eq:rule">4.6</A>) reduces to the simple Metropolis test [#!Metropolis53!#].
+
+<P>
+For a mutation move at a particular position, we define <!-- MATH
+ $\alpha(o \rightarrow n)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="11" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$\alpha(o \rightarrow n)$"></SPAN> as follows: 
+<BR><B>(a)</B> select a new type <SPAN CLASS="MATH"><IMG
+ WIDTH="7" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.png"
+ ALT="$t'$"></SPAN> with equal probabilities <!-- MATH
+ $\alpha_t(o \rightarrow n) = \frac{1}{N}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="207" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img48.png"
+ ALT="$\alpha_t(o \rightarrow n) = \frac{1}{N}$"></SPAN> 
+for all <SPAN CLASS="MATH"><IMG
+ WIDTH="108" HEIGHT="33" ALIGN="BOTTOM" BORDER="0"
+ SRC="img49.png"
+ ALT="$N$"></SPAN> possible types; 
+<BR><B>(b)</B> choose a rotamer <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="11" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$r'$"></SPAN> for the new sidechain with equal probabilities <!-- MATH
+ $\alpha_r(o \rightarrow n)
+= \frac{1}{n_f(t')}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="MIDDLE" BORDER="0"
+ SRC="img50.png"
+ ALT="$\alpha_r(o \rightarrow n)
+= \frac{1}{n_f(t')}$"></SPAN> for all <SPAN CLASS="MATH"><IMG
+ WIDTH="132" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.png"
+ ALT="$n_f(t')$"></SPAN> possible folded state rotamers. 
+<BR>
+The overall probability is therefore
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\alpha(o \rightarrow n) = \alpha_t(o \rightarrow n) \alpha_r(o \rightarrow n) = \frac{1}{N n_f(t')}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="42" HEIGHT="30" BORDER="0"
+ SRC="img52.png"
+ ALT="\begin{displaymath}
+\alpha(o \rightarrow n) = \alpha_t(o \rightarrow n) \alpha_r(o \rightarrow n) = \frac{1}{N n_f(t')}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="eqn-number">7</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The <!-- MATH
+ $o \rightarrow n$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="66" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.png"
+ ALT="$o \rightarrow n$"></SPAN> and <!-- MATH
+ $n \rightarrow o$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="306" HEIGHT="38" ALIGN="BOTTOM" BORDER="0"
+ SRC="img53.png"
+ ALT="$n \rightarrow o$"></SPAN> probabilities are different whenever the old and new sidechain
+types have different numbers of possible rotamers.
+With these move probabilities, the mutation acceptance
+probability can be written:
+<BR>
+<DIV ALIGN="CENTER"><A NAME="eq:rule2"></A>
+<!-- MATH
+ \begin{eqnarray}
+acc(t \rightarrow t') &=& e^{-\beta (\Delta E_f - \Delta E_u)} \frac{ n_f(t) }{ n_f(t') }
+ = e^{-\beta (\Delta E_f - \Delta e_u)} \frac{ n_f(t) n_u(t') }{ n_u(t) n_f(t') }
+             {\rm\hspace*{3mm} if \hspace*{2mm} } \Delta E_M > 0 \\
+                      &=& 1 {\rm\hspace*{3mm} otherwise}
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="44" HEIGHT="12" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$\displaystyle acc(t \rightarrow t')$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="77" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" WIDTH="50%" NOWRAP><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.png"
+ ALT="$\displaystyle e^{-\beta (\Delta E_f - \Delta E_u)} \frac{ n_f(t) }{ n_f(t') }
+=...
+...n_u(t') }{ n_u(t) n_f(t') }
+{\rm\hspace*{3mm} if \hspace*{2mm} } \Delta E_M &gt; 0$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="eqn-number">8</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT">&nbsp;</TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="77" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" WIDTH="50%" NOWRAP><IMG
+ WIDTH="450" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$\displaystyle 1 {\rm\hspace*{3mm} otherwise}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="eqn-number">9</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+If the number of rotamers in the folded and unfolded states are the same, <SPAN CLASS="MATH"><IMG
+ WIDTH="93" HEIGHT="27" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="$n_u = n_f$"></SPAN>, the fraction on the right
+will cancel out.
+However, the rotamer numbers also appear in the energy change that determines whether the move is
+uphill, <SPAN CLASS="MATH"><IMG
+ WIDTH="516" HEIGHT="19" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$\Delta E_M$"></SPAN>.
+
+<P>
+With REMC, several simulations (``replicas'' or ``walkers'') are propagated in parallel, at different temperatures;
+periodic swaps are attempted between two walkers's conformations.
+The swap is accepted with probability
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+acc(t \rightarrow t') = {\rm Min} \left[ 1, e^{(\beta_i - \beta_j)(\Delta E_i - \Delta E_j)} \right]
+\end{equation}
+ -->
+<A NAME="eq:remc"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:remc"></A><IMG
+ WIDTH="58" HEIGHT="18" BORDER="0"
+ SRC="img59.png"
+ ALT="\begin{displaymath}
+acc(t \rightarrow t') = {\rm Min} \left[ 1, e^{(\beta_i - \beta_j)(\Delta E_i - \Delta E_j)} \right]
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="eqn-number">10</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="282" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img60.png"
+ ALT="$\beta_i$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$\beta_j$"></SPAN> are the inverse temperatures of the two walkers and <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img62.png"
+ ALT="$\Delta E_i$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="27" ALIGN="MIDDLE" BORDER="0"
+ SRC="img63.png"
+ ALT="$\Delta E_j$"></SPAN>
+are the changes in their folding energies, due to the conformation change [#!Kofke02!#,#!Earl05!#].
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html109"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html107"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html101"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html110"
+  HREF="node6.html">MC and REMC: implementation</A>
+<B> Up:</B> <A NAME="tex2html108"
+  HREF="node4.html">Methods</A>
+<B> Previous:</B> <A NAME="tex2html102"
+  HREF="node4.html">Methods</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+mignon
+2017-11-30
+</ADDRESS>
+</BODY>
+</HTML>

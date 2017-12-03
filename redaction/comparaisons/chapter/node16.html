@@ -1,0 +1,425 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Optimal sequences/structures with up to 10 designed positions</TITLE>
+<META NAME="description" CONTENT="Optimal sequences/structures with up to 10 designed positions">
+<META NAME="keywords" CONTENT="chapter">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="chapter.css">
+
+<LINK REL="next" HREF="node17.html">
+<LINK REL="previous" HREF="node15.html">
+<LINK REL="up" HREF="node14.html">
+<LINK REL="next" HREF="node17.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html226"
+  HREF="node17.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html224"
+  HREF="node14.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html218"
+  HREF="node15.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html227"
+  HREF="node17.html">Optimal sequences with 20</A>
+<B> Up:</B> <A NAME="tex2html225"
+  HREF="node14.html">Finding the GMEC</A>
+<B> Previous:</B> <A NAME="tex2html219"
+  HREF="node15.html">CPU and memory limits</A>
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00132200000000000000">
+Optimal sequences/structures with up to 10 designed positions</A>
+</H3>
+As our first series of tests, we did calculations for each test protein with zero, one, or five designed positions. Results are summarized in Fig. <A HREF="node15.html#fig:fulldelta">4.5</A>. With zero positions, only rotamers are optimized (at all positions in the protein). With one, we systematically designed each position of each protein in turn (plus rotamers at all positions). With 5, we picked the positions randomly, close together in the structure, in five different ways, for a total of 45 tests. Two positions were considered close by if they have at least one rotamer combination that gives an interaction energy of 10 kcal/mol or more (in absolute magnitude; eg, steric overlap). In all these cases, CFN found the GMEC very rapidly (seconds); the heuristic also found the GMEC, with much longer run times (an hour). MC found the GMEC in all but a few cases (Fig. <A HREF="#fig:errors">4.6</A>), with run times of a few minutes. 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:errors"></A><A NAME="256"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4.6:</STRONG>
+The lowest energies obtained with the different exploration
+methods for 5-, 10-, 20-, and 30-position design. Differences with respect
+to the GMEC or the overall best energy are shown, excluding the smallest
+values (less than 0.4 kcal/mol above the best energy). The color of each
+point indicates the nature of the test; its shape indicates which method
+gave the best energy. Two examples are highlighted by arrows: the black
+arrow shows the heuristic result for a 10-position test where the best
+energy was given by CFN; the gray arrow shows the MC result for a 20-
+position test where the best energy was given by the heuristic. The dashed
+red line shows heuristic results with a more aggressive protocol (330,000
+heuristic cycles) for the four rightmost proteins.
+</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+[width=10cm]errors.pdf 
+  
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+As a second series of tests, we chose randomly for each protein a set of 10 positions to design; the other positions had fixed types but explored all possible rotamers. The selected positions were close by in the protein structure. For each protein, we made five separate choices of positions to design, for a total of 45 test cases. The CFN, heuristic, and MC methods were run for all 45 cases; REMC was run only when MC gave a poor result (6 cases, involving 5 proteins).
+Results are summarized in Fig. <A HREF="#fig:errors">4.6</A> and table <A HREF="#tab:10act">4.5</A>. Twenty cases where all methods found the GMEC are not listed in the table, leaving 25 where at least one method did not find the GMEC. CFN performed very well: only in one case did it not find the GMEC. The lowest energy was sampled in this case with the heuristic, and the best CFN energy was 5.7 kcal/mol higher (despite using the more aggressive CFN protocol). With a third, more recent CFN protocol [#!Simoncini15!#], this result did not change. 
+
+<P>
+The heuristic performed about as well as CFN for 10-position design. In one case, CFN did not find the GMEC and the heuristic gave the lowest energy (2BYG-1). In 39 cases, the heuristic found the GMEC. In three cases, it was within 0.15 kcal/mol of the GMEC, with no mutations (only rotamer differences). In one case (1CKA-5), it was 0.29 kcal/mol above the GMEC, with no mutations. Tripling the number of heuristic cycles allowed the GMEC to be reached (within 0.07 kcal/mol) in all these cases, with run times below 6 h. There was only one real failure, 1M61-2, where the best heuristic solution was 3.5 kcal/mol above the GMEC, with three mutations relative to the GMEC. For this case, the GMEC was recovered (within 0.01 kcal/mol) if the number of cycles was increased to 990,000, for a run time of 7 h. Switching from the heuristic structure (after 330,000 cycles) to the GMEC requires concerted changes in 3 adjacent sidechain positions. This is only possible during a heuristic cycle if there is a downhill, connecting pathway made of single position changes, which is evidently very rare for this particular test. Thus, the heuristic method can only find the GMEC if it draws the right combination of types/rotamers at the very beginning of a cycle; hence the need for 990,000 cycles.
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+
+<SMALL CLASS="SMALL"><A NAME="tab:10act"></A>               
+</SMALL>
+<DIV ALIGN="CENTER"><A NAME="263"></A>
+<TABLE CELLPADDING=3 BORDER="1">
+<CAPTION><STRONG>Table 4.5:</STRONG>
+Tests with 10 designed positions</CAPTION>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">   
+rotamers<SPAN CLASS="MATH"><IMG
+ WIDTH="7" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img67.png"
+ ALT="$^a$"></SPAN></SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> length<SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img68.png"
+ ALT="$^b$"></SPAN></SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> Protein</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> CFN<SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img86.png"
+ ALT="$^c$"></SPAN> </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> Heur.<SPAN CLASS="MATH"><IMG
+ WIDTH="8" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img87.png"
+ ALT="$^d$"></SPAN> </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  MC </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> REMC </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">  
+2991  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 108(17) </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1A81 3 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.001  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.1595   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">          
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1A81 4 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.0317   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">     
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1A81 5 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.0563   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">     
+2520  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 58(8)   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1ABO 1 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.0675 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.9054   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.8041  </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">    
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1ABO 4 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.0128   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">             
+2957  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 98(10)  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1BM2 1 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.0950   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">          
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1BM2 5 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.1082   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">     
+2508  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 57(8)   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1CKA 5 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.2859 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  3.2525   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.      </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">            
+2819  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 91(15)  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1G9O 3 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.1366 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.1366   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">  
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1G9O 5 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  3.9599   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.      </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">  
+2957  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 109(21) </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1M61 1 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.0776   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">                
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1M61 2 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 3.5105 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  4.5062   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.3215  </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">                
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1M61 5 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.0432   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">      
+3037  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 104(8)  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1O4C 1 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.1121   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">     
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1O4C 2 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.1046   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">          
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1O4C 3 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.1519   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">              
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1O4C 4 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.1545   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">              
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1O4C 5 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.1753   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">       
+2773  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 82(10)  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1R6J 1 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  2.4022   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.3986  </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">         
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1R6J 2 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  1.0398   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.3049  </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">         
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1R6J 3 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.0106   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">        
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 1R6J 5 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.0162   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">         
+2888  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 97(15)  </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 2BYG 1 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 5.7485</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.0337   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">         
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 2BYG 3 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.0833   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><SMALL CLASS="SMALL">         
+      </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 2BYG 4 </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> gmec</SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL"> 0.     </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">  0.2149   </SMALL></TD>
+<TD ALIGN="CENTER"><SMALL CLASS="SMALL">         </SMALL></TD>
+<TD></TD>
+</TR>
+</TABLE></DIV><SMALL CLASS="SMALL">
+<SMALL CLASS="SMALL"><SPAN CLASS="MATH"><IMG
+ WIDTH="7" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img67.png"
+ ALT="$^a$"></SPAN>Total number of rotamers available to the system. 
+Each designed position can explore 206 rotamers; the others explore about 10 rotamers each. <SPAN CLASS="MATH"><IMG
+ WIDTH="9" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img68.png"
+ ALT="$^b$"></SPAN>Total protein length (number of Gly+Pro in parentheses).
+<SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="29" ALIGN="BOTTOM" BORDER="0"
+ SRC="img86.png"
+ ALT="$^c$"></SPAN>gmec indicates the GMEC was successfully identified. <SPAN CLASS="MATH"><IMG
+ WIDTH="8" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img87.png"
+ ALT="$^d$"></SPAN>For all four exploration methods and each test, we report the difference between the best energy obtained and the overall best energy (the best over all methods, which may or not be the GMEC). 10-position tests where all four methods found the GMEC are not listed.
+</SMALL>
+</SMALL>
+</DIV>
+<BR>
+
+<P>
+Plain MC did slightly less well for 10-position design. In 21 cases, it found the GMEC. In 18 cases, its best sequence was within 0.2 kcal/mol of the GMEC, with 0-3 mutations (one on average). Notice that 0.2 kcal/mol is the thermal energy for the MC protocol used. In six cases, its best sequence was between 0.9 and 4.5 kcal/mol above the GMEC, with 2-7 mutations (3 on average). For these six cases, REMC was run, and sampled sequences within 0.40 kcal/mol of the GMEC, except for one case where its best sequence was 0.80 kcal/mol above the GMEC. Overall, MC or REMC reached the GMEC to within 0.40 kcal/mol in all but one case. A 0.40 kcal/mol energy difference is actually less than the average pairwise additivity errors in the energy function [#!Lopes07!#,#!Schmidt08b!#,#!Gaillard14!#], and so one might consider this performance to be about as good as the CFN and heuristic methods. In terms of speed, for 10-position design, all the methods were comparable (a few hours per run on average).
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html226"
+  HREF="node17.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html224"
+  HREF="node14.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html218"
+  HREF="node15.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html227"
+  HREF="node17.html">Optimal sequences with 20</A>
+<B> Up:</B> <A NAME="tex2html225"
+  HREF="node14.html">Finding the GMEC</A>
+<B> Previous:</B> <A NAME="tex2html219"
+  HREF="node15.html">CPU and memory limits</A></DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+mignon
+2017-11-30
+</ADDRESS>
+</BODY>
+</HTML>
