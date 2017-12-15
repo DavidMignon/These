@@ -39,10 +39,13 @@ canvas = FigureCanvas(fig)
 ax = fig.add_subplot(111)
 ax.set_title(titre)
 
-ax.plot(posi_toulbar2,time_toulbar2,label='toulbar2',color="red")
-ax.plot(posi_H,time_H,label='Heuristic',color="blue")
-ax.plot(posi_MC,time_MC,label='Monte-Carlo',color="black")
-ax.plot(posi_RE,time_RE,label='Replica Exchange',color="green")
+
+
+
+ax.plot(posi_RE,time_RE,label='REMC',color="green",linestyle='None',marker='o',markersize='15')
+ax.plot(posi_MC,time_MC,label='Monte-Carlo',color="black",linestyle='None',marker='o',markersize='10')
+ax.plot(posi_H,time_H,label='MSD',color="blue",linestyle='None',marker='o',markersize='6')
+ax.plot(posi_toulbar2,time_toulbar2,label='CFN',color="red",linestyle='None',marker='o',markersize='3')
 ax.grid(True)
 ax.set_ylabel('temps CPU en seconde')
 ax.set_xlabel('nombre de positions actives')
