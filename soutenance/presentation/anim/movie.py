@@ -22,21 +22,21 @@ cmd.viewport(800, 800) # Choose the desired resolution for the movie here (in pi
 # parametres generaux pour realiser un film
     # le parametre cache_frames permet de m
 
-for idx in range(1,1001):
-    cmd.load("LYS-%04d.pdb"%idx,"mov")
+#for idx in range(1,1001):
+#    cmd.load("LYS-%04d.pdb"%idx,"mov")
 
 
     
-cmd.load("LYS-00.pdb","00")
-cmd.load("LYS-01.pdb","01")
-cmd.load("LYS-02.pdb","02")
-cmd.load("LYS-03.pdb","03")
-cmd.load("LYS-04.pdb","04")
-cmd.load("LYS-05.pdb","05")
-cmd.load("LYS-06.pdb","06")
-cmd.load("LYS-07.pdb","07")
-cmd.load("LYS-08.pdb","08")
-cmd.load("LYS-09.pdb","09")
+cmd.load("LYS-0.pdb","00")
+cmd.load("LYS-1.pdb","01")
+cmd.load("LYS-2.pdb","02")
+cmd.load("LYS-3.pdb","03")
+cmd.load("LYS-4.pdb","04")
+cmd.load("LYS-5.pdb","05")
+cmd.load("LYS-6.pdb","06")
+cmd.load("LYS-7.pdb","07")
+cmd.load("LYS-8.pdb","08")
+cmd.load("LYS-9.pdb","09")
 cmd.load("LYS-10.pdb","10")
 cmd.load("LYS-11.pdb","11")
 cmd.load("LYS-12.pdb","12")
