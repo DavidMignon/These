@@ -24,17 +24,15 @@ pymol.cmd.show_as('sticks',sname)
 pymol.cmd.zoom( sname,buffer=2.0,state=0, complete=1)
 pymol.cmd.bg_color(color="white")
 pymol.cmd.select('bb', 'name c+o+n+ca')
-pymol.cmd.color('white','bb')
-pymol.cmd.set('transparency',0.2,'bb')
-pymol.cmd.set_view ('''
-     0.409596264,    0.825154960,    0.389035106,\
-    -0.496200919,    0.559361875,   -0.664000809,\
-    -0.765517235,    0.078932054,    0.638556123,\
-     0.000000000,    0.000000000,  -44.314689636,\
-    31.154973984,   23.909875870,   15.216966629,\
-    34.938037872,   53.691341400,  -20.000000000 ''')
+#pymol.cmd.show_as('lines','BB')
+#PYMOL.CMD.SET_COLOR('MYGRAY',[0.99,0.99,0,67])
+pymol.cmd.color('GRAY90','BB')
+pymol.cmd.set_view('''
+     0.592790246,    0.508775711,   -0.624296784,\
+     0.784792244,   -0.190873161,    0.589633703,\
+     0.180830300,   -0.839473367,   -0.512431860,\
+     0.000000000,    0.000000000,  -46.831863403,\
+    30.447391510,   24.353721619,   14.624580383,\
+    36.922599792,   56.741127014,  -20.000000000 ''')
 
-pymol.cmd.png("my_image.png")
 
-# Get out!
-pymol.cmd.quit()

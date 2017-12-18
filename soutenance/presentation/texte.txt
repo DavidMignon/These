@@ -2,14 +2,17 @@
  
  -----------
  
-Bonjour, je vais vous presenter mon travail de thèese : Computational Protein Design un outil pour l'ingénieurei des protéines et la biologie synthètique. que j'ai realiser au Laboratoire de biochimie de l 'école Polytechnique.
+
+Bonjour, je vais donc vous presenter, mon travail sur l'outil de dessin computanniole de protéine du laboratoire de biochimie.
+
+
 
 -----------
 
 Le Computational Protein Design, c'est concevoir ou modifier des protéines par informatique pour leur conférer de nouvelles propriétés.
 
-Les applications possibles sont par exemples le redisign des protéines.
-la conception d'enzyme, étude de complexes.
+Les applications possibles sont par exemples le redisign complet des protéines.
+la conception d'enzyme, étude de complexes protéines ligand.
 
 ou l'étude d'insertion d' a a non naturels.
 
@@ -61,10 +64,37 @@ le premier mesure l'effet hydrophobe on utilise pour l'estime le modèle Surface
 le second terme represente l'effet du solvant sur les interactions électrostatique des charges de la protéines.
 ON travail avec deux modèles 
 Nous utilisons le modèle de Coulomb et le Born Generalisé , nomé GB dans la suite.
-le GB est plus sophistiqué  que le Coulomb.
+le GB est plus sophistiqué  que le Coulomb. avec un paramètre par atome de la proteins le rayon de solvatation.
 
 
 -----------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________________________________________
+
+
 
 Ma thèse se presente en trois partis:
 
@@ -83,15 +113,199 @@ Enfin nous utilison Proteus pour le CPD de la famille PDZ
 
 -------------------------------------------------------
 
+Nous comparons les algorithmes sur un ensemble de 9 protéines.
+
+appartemant à 3 familles SH2 SH3 et PDZ. 
+allant de 57 à 109 positions
+
+Nous travallons avec le champ de forfe Amber, le modele de solant CASA, avec une constance dielectrique à 23.
+Toutes les positions sont mutables sauf proline et glycine.
+
+et nos energis de références sont optimiser sur les 3 familles.
+
+--------------------------------------------------------
+
+Pour nos comparaisons nous qualibrons nos protocoles pour que le temps d'execution soit toujours limité à 24 h
+
+Cela correspond à 110 000 cycles pour l'heuristiques.
+6 milliard de pas pour le Monte Carlo.
+
+et pour le REMC nous conservons le meme nombre de pas mais un cumulés sur les diffenrets marcheurs qui s'execute en parallele à l'aide openMP.
+
+Pour le MC et REMC nous avons trois type de déplacements:
+- changement de rotamère
+
+- la mutation
+
+et un déplacement composées de la moficication de 2 positions un changement de rotamere et une mutation
+
+Nous utilisons sieurs paramétrage pour le REMC .
+
+avec diffenret nombre de marcheurs  4 ou 8
+
+diffenrent jeux de températues 
+
+different type de déplacement et de frequence et diffenrrete de frequence de swap.
+
+-----------------------------------------------
+
+Voici les résultats des comparaison des meilleurs energies de chaque protocoles.
+
+
+le delta E c'est la difference par rapport à la meilleure energies tout algoritmhe confondu.
+
+Il n'y a pas d'algorithme qui domine pour toutes les proteines.
+
+
+L'heuristique MSD et le MC mono marcheur sont les plus irreguliers avec des écarts à plus de 10 kcal su meilleur. et des proteines avec le meillerus resultat ou très proches  3 pour le MC en vert 3 pour l'heuristique.
+l'ecart moyen est entours de 5 pour MSD et MC
+
+
+Les remc sont globalement les meilleurs
+
+et les remc 8 marcheurs et noir et glis globament meilleurs que les remc 4 marcheurs en bleu.
+
+avec un ecart  vers 1 kcal.
+
+1 protocole REMC est toujours à moins de 4 kcal/mol du meiileur.
+
+
+Nous allons nous nous interesse r de plus à ce protocole.
+en caracterisant les séquences produites.
+
+On compare les séquences de ce protocole avec les séquences naturelles.
+
+ON utilise Pfam une base de donnée qui propose de ensemble d'alignement 
+par famille de domaine.
+Nous utilisons deux de leur type de l'aligment seed qui contient uniqueemnt des séquences naturelle les plus representatives et l' aligment Full plus etendu.
+
+Nous utilisont également Superfamily un outil de reconnaissance de structure 3D qui se base sur la classificationde domaine SCOP.
+
+
+Nous regasdons également de taux d'identité à la séquence native.
+
+
+
+Ici sont presentes les histogrmmes de similarités  pour deux de nos proteins PDZ.
+
+en noir continue les resultats de nos séquences et pfam seed et gris pfan full
+
+nous calculons la similarité d'un alignement  Pfam contre lui-meme pour situer Proteus.
+
+on a nos sequences au niveau des meilleurs de pfam pour le seed dans les deux cas.
+
+
+et meilleur que les seauence Pfam full dans les deux cas.
+
+
+
+Pour la Comparaisons avec Superfamilly
+
+nous selectionnons  des 100à0 seq-con de meilleurs energies.
+
+
+cela represente entre 203 er 426 séquences d'aaa selon les proteines.
+
+Le pourcentage d'identité / native se siute entre 21 et 42 .
+
+sur les 9 proteins 8 sont on 100 % des sequences mais pas de succes pour la 1A81.
+Les e-value sont entour de 10 - 5 pour la superfamille (le niveau superueur dans la hierachie SCOP) et 10 - 3 pour la famillle.
+
+
+Nous pasons maitenant à un autre critère de comparaison. La recherche du GMEC.
+ pour cela l(espace pour nos 9 séquences est réduit en fixant  certaine position avec leur type d'acide aminé natif avec toujours la liberté de visiter les differetns rotamere de ce type.
 
 
 
 
+l'espace est reduit progrssivement  des tests a 30 positions actives à 1 seules au passant par 20 10 et 5.
+
+
+les positins sont selectionnés partmi des position en interactions les ensembles de positions
+
+
+IL y a 5 tests pour chaque groupe de position et ceci pour les 9 protéines.
+
+
+On commence par tenté d'etablir le GMEC avec Toulbar en l'executant avec une premiere configuration pendant 24h au maximum. et nous tantons une seconde configuration u cas d'échec.
+
+ensuite on execute l'exploration Proteus avec le MSD et MC dans tous les cas. ON en complete avec le REMC dans le cas le MC n'est pas bon.
+
+------------
+
+On passse au resultats, Nous avons le gmec pour les tous les tests à 1 et 5 positions actives.
+1 gmec sur les 45 tests nous manque les test à 10.
+
+Un peu plus de la moitié pour les tests à 20 et avec 27/45
+
+Et un seul sur les 45 tests avec 30 postions actives.
+
+Le MSD trouve presque tous les GMEC connus.
+ et donne les meilleurs resultats pour la plupart des autres tests.
+
+le monte Carlo mono
+
+------------------------------------
+ici on à les resultats pour les tests de 5 à 30 positions actives.
 
 
 
+Sont representé des differentces avec la meilleure éner gie trouvé.
+
+d'une deference avec un gmec un poit à la forme d'un disque
+
+seul des delta superieur à 0,4 sont representé. sur les 45 tests de chaque ensebmbles.
+
+___________________________________
+
+Ici on etudie un cas precie selon d'un test à 10 positons actives.
+c'est au cas ou le GMEC est connu.
+
+ON utilise une fonction particuliere de Toulbar qui permet d'énumerer de faconeexaustive .
+les sequence/confor au voisinage immediat du gmec ici 2 k/cal.
+
+quasiment toutes les sequences sont trouvé jusqu'a 1 kcal/mol du gmec par REMC.
+
+et
+
+l'entropie naturelle est reprsenvé , sur les sequences à moins de 2 kcal ;.
+
+c'est a dire la diversité de séquences.
+
+-------------------------
+
+Pour finir cette partie voici un exemple de structure obtenue  pour la protéine 2BYG et 10 positoins actives.
+uniquement les chaînes larétales en vue stereo.
+
+en jaune la structure native et superposée la strutuce proteus de meilleur energie.
+ on voit que le recouverment est bon pour la plus part des chaines laterales.
+
+sauf ici et ici.
 
 
+---------------------------------------
+
+Les energies de références 
+
+
+
+On commence par l'optimisation des energies de réferences.
+
+
+L'éenergie de l'état déplié d'une séquence s'ecrit comme une somme sur les psostions de la séquence d
+'ee à chaque type de residue aque nous appelons les énergie de refernces.
+
+ ce sont les paramètres ajustables de notre modèle.
+
+L'objectif de optimisation des de faire reproduire dans nos sequences les frequences 'acide aminés cibles.
+
+Pour defenir des fréquences cible nous allons les calculer à partir d'ensemble de séqeuncs mologues naturelles.
+
+
+
+nous avons utilisone 3 algorithms :
+
+la 
 
 
 
