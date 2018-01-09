@@ -9,7 +9,7 @@ Une autre approche est apparue avec la naissance des méthodes d'ingénierie des
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=7cm]{figure/CPD.pdf} &
+       \includegraphics[width=7cm]{figure/CPD.pdf} 
      \end{tabular}
      
      \caption{Le CPD pour \og Computational Protein Design\fg recherche les séquences d'acides aminés compatibles avec une protéine dont la structure 3D  est connue, c'est-à-dire compatibles avec un repliement et éventuellement une affinité pour un ligand.}
@@ -93,7 +93,7 @@ L'énergie d'interaction liée comprend un terme d'élongation des liaisons, un 
 \begin{equation}
   E_{liée} = E_{liaison} + E_{angle} +E_{dièdre} + E_{impr}
 \end{equation}
-L'énergie de déformations des liaisons $E_{liaison}$ s'exprime de la façon suivante:
+L'énergie d'élongation des liaisons $E_{liaison}$ s'exprime de la façon suivante:
 \begin{equation}
   E_{liaison} = \frac{1}{2} \sum_{i=1}^{n} k_{i} (r_i - r^o_i)^2
 \end{equation}
@@ -202,7 +202,7 @@ Dans la suite, on appelle cette somme, le terme surfacique de l'énergie de solv
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=13cm]{figure/surface.pdf} &
+       \includegraphics[width=13cm]{figure/surface.pdf} 
      \end{tabular}
      
      \caption{\textbf{Les trois types classiques de surfaces pour une molécule} À gauche et en rouge la surface de Van der Waals (SVdW), au centre et en bleu, la surface accessible au solvant (SA), à droite, et en vert  la surface de Connolly ou surface moléculaire (SM). La surface SA est l'ensemble des positions pouvant être occupées par le centre d'une sphère (figurant une molécule du solvant) roulant sur SVdW. La surface SM est la plus petite enveloppe de SVdW dont chaque point peut être en contact avec la sphère. } 
@@ -212,7 +212,7 @@ Dans la suite, on appelle cette somme, le terme surfacique de l'énergie de solv
 
 \subsection{Le modèle CASA}
 \label{sub:CASA}
-Pendant la réorganisation du solvant, les molécules d'eau s'orientent, au moins pour les plus proches du soluté, selon les lignes du champ électrique créé par la protéine, voir figure \ref{graph:ecrantage}. L'idée du modèle \og Coulomb accessible surface area\fg (CASA) est alors de considérer que l'effet électrostatique induit par le solvant est proportionnel à l'effet électrostatique produit par la protéine. On a  alors, en utilisant le modèle \texblt{SA} pour le terme surfacique:
+Pendant la réorganisation du solvant, les molécules d'eau s'orientent, au moins pour les plus proches du soluté, selon les lignes du champ électrique créé par la protéine, voir figure \ref{graph:ecrantage}. L'idée du modèle \og Coulomb accessible surface area\fg (CASA) est alors de considérer que l'effet électrostatique induit par le solvant est proportionnel à l'effet électrostatique produit par la protéine. On a  alors, en utilisant le modèle \texbf{SA} pour le terme surfacique:
 
 \begin{equation}
 \Delta G_{solv} \approx E_{screen} + \sum_i \sigma_{t_i} A_i
@@ -227,7 +227,7 @@ et $ \epsilon $ la constante diélectrique du solvant. Ainsi, l'effet du solvant
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=6cm]{figure/ecrantage.pdf} &
+       \includegraphics[width=6cm]{figure/ecrantage.pdf} 
      \end{tabular}
      
      \caption{\textbf{Représentation schématique de l'organisation des dipôles des molécules d'eau autour d'un soluté sphérique chargé positivement à sa surface}. Les dipôles des premières couches de solvatation s'orientent suivant les lignes du champ électrique produit par le soluté.}
@@ -303,7 +303,7 @@ avec $b_i$ et $b_j$, de nouveaux paramètres, que l'on nomme les rayons de solva
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=6cm]{figure/rayon_Born.pdf} &
+       \includegraphics[width=6cm]{figure/rayon_Born.pdf} 
      \end{tabular}
      
      \caption{\textbf{Des rayons de Born de deux atomes dans une protéine} Le rayon de Born pour l'atome enfui est environ le rayon de la protéine, alors que le rayon de Born d'un atome à la surface est environ son rayon de Van der Waals.} 
@@ -342,7 +342,7 @@ avec $r_i$ et $r_j$ les rotamères de la conformation C aux résidus $i$ et $j$,
 La méthode du champ moyen substitue l'ensemble des interactions entre un rotamère $r_0$ et les autres rotamères par une interaction unique moyenne. Pour calculer une interaction moyenne, la probabilité de Boltzmann est utilisée de la façon suivante. On note $P(r_{i})$ la probabilité que la chaîne latérale à la position $i$ soit dans le rotamère $r_i$. On a:
 \begin{equation}
   \label{eq:CM1}
-P(r_i) =\frac{\exp(-\beta E(r_{i}))}{\sum_{l_i=1}^{N_i} \exp(-\beta E(l_i))}}
+P(r_i) =\frac{\exp(-\beta E(r_{i}))}{\sum_{l_i=1}^{N_i} \exp(-\beta E(l_i))}
 \end{equation}
 avec $N_i$ le nombre total de rotamères à la position $i$, et $\beta = \frac{1}{kT}$,  $k$ étant la constante de Boltzmann et $T$ la température.
 
@@ -382,7 +382,7 @@ S'il existe $r_{i'}$ tel que $\displaystyle E_i^{r_i} - E_i^{r_{i'}}+ \sum_{k=1}
    \begin{figure}[!htbp]
      \centering
      \begin{tabular}{c}
-       \includegraphics[width=8cm]{figure/DEE.pdf} &
+       \includegraphics[width=8cm]{figure/DEE.pdf} 
      \end{tabular}
      
      \caption{\textbf{DEE, graphes de la fonction d'énergie pour des rotamères fixés à la position $i$} Le critère simple permet l'élimination du rotamère $r^1_i$ parce que l'énergie des conformations qui le contiennent, l'énergie rouge, est toujours moins bonne que la noire. Mais seul de critère de Goldstein permet d'éliminer $r^2_i$ parce que l'écart entre le graphe bleu et le graphe noir est positif pour chaque conformation.}
@@ -516,7 +516,7 @@ Ainsi, la probabilité $q$ est inchangée après la transition $P$, la chaîne e
 Il nous faut alors construire une chaîne de Markov réversible pour la distribution cible $\pi$. Mais cela ne suffit pas. En effet, même si $\{X_n\}$ est stationnaire pour $\pi$, rien ne dit que la chaîne va, à un moment, distribuer les états comme $\pi$. Se pose la question de la convergence vers $\pi$. Or, si $E$ est discret, une chaîne de Markov réversible est dîte ergodique si et seulement si:
 \begin{itemize}
 \item Pour tous $a$ et $b$ de l'espace d'états il existe un chemin de $a$  vers $b$  de probabilité non nulle. 
-\item Il n'existe pas de $a$ de $E$ tel que la chaîne revienne en $x$ périodiquement.
+\item Il n'existe pas de $a$ de $E$ tel que la chaîne revienne en $a$ périodiquement.
 \item  Au cours du temps, tous les états sont visités par la chaîne avec une probabilité non nulle. 
 \end{itemize}
 On a alors le résultat suivant: une chaîne ergodique converge vers son unique distribution stationnaire.
@@ -548,7 +548,7 @@ Si on se limite à une probabilité de sélection symétrique:
 \end{equation}
 ce qui équivaut à
 \begin{equation}
-\frac{acc(j|i)}{acc(i|j)} =\frac{\pi(j)}{\pi(i)} = \frac{\exp(-\beta E_{x_j})}{\exp(-\beta E_{x_i})} = \exp(-\beta \Delta E) 
+\frac{acc(x_j|x_i)}{acc(x_i|x_j)} =\frac{\pi(x_j)}{\pi(x_i)} = \frac{\exp(-\beta E_{x_j})}{\exp(-\beta E_{x_i})} = \exp(-\beta \Delta E) 
 \end{equation}\\
 avec $\Delta E =  E_{x_j} - E_{x_i}$. Ainsi, le calcul de la fonction de partition est évité! Métropolis propose alors la probabilité d'acceptation suivante: 
 \begin{equation}
@@ -607,7 +607,7 @@ Pour que le processus respecte la balance détaillée, le nouveau déplacement d
 \begin{equation}
 \pi(X)=\frac{1}{Z} \exp(-\sum_{i=1}^N \frac{E_{x_i}}{kT_i})
 \end{equation}
-En injectant cette expression de $\pi^$ et les équations \ref{REMC_move} dans \ref{bd_Metropolis}, on obtient:
+En injectant cette expression de $\pi$ et les équations \ref{REMC_move} dans \ref{bd_Metropolis}, on obtient:
 \begin{displaymath}
 \frac{acc_{swap}(X(t+1)|X(t))}{acc_{swap}(X(t)|X(t+1))} =\frac{\pi(X(t))}{\pi(X(t+1))}
                                                      = \frac{ \exp(-E_{x_i}/kT_i) \exp(-E_{x_{i+1}}/kT_{i+1})}{\exp(-E_{x_{i+1}}/kT_i) \exp(-E_{x_i}/kT_{i+1})} 
@@ -638,7 +638,7 @@ la probabilité d'acceptation acc_{swap} est calculée \;
 \end{algorithm}
 
 
-Il reste au simulateur à adapter le nombre de répliques, les températures utilisées et la fréquence des tentatives d'échange à sa problématique. La capacité de REMC à être exécuté sur des machines parallèles à entrainé sa grande popularité, en particulier dans le domaine de la modélisation moléculaire, mais aussi en physique, chimie, intelligence artificielle.
+Il reste au simulateur à adapter le nombre de répliques, les températures utilisées et la fréquence des tentatives d'échange à sa problématique. La capacité de REMC à être exécuté sur des machines parallèles a entrainé sa grande popularité, en particulier dans le domaine de la modélisation moléculaire, mais aussi en physique, chimie, intelligence artificielle.
 
 %%% Local Variables:
 %%% mode: latex

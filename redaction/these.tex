@@ -47,9 +47,9 @@
 \usepackage[plainpages=false,pdfpagelabels,pagebackref]{hyperref}
 \usepackage[french]{varioref}
 %\usepackage[french,onelanguage]{algorithm2e} %for pseudo code
-\usepackage[french,onelanguage,vlined,linesnumbered,inoutnumbered]{algorithm2e}
+\usepackage[french,onelanguage,vlined,linesnumbered,inoutnumbered]{algorithm2e} 
 \usepackage{enumitem}
-\usepackage[verbose]{backref}
+\usepackage{backref}
 % lists gérées hors de frenchb
 \frenchbsetup{StandardLists=true}
 \pdfcompresslevel=9
@@ -180,20 +180,15 @@
 
 \begin{document}
 % Title
-%\pagenumbering{alph}
+\pagenumbering{gobble}
+\begin{titlepage}
 \pdfbookmark[0]{Couverture}{cover}
 %\maketitle
 \includepdf[pages=-]{pagezero.pdf}
-\newpage
 \pagestyle{empty}
-\strut
-\newpage
-\strut
-\newpage
-
+\end{titlepage}
 % Frontmatter
 \frontmatter
-\clearplaindoublepage{}
 \thispagestyle{plain}
 \pdfbookmark[0]{Dédicace}{dedication}
 \include{dedicace}
@@ -247,6 +242,8 @@
 \include{publications}
 \clearplaindoublepage{}
 \phantomsection{}
+% Backmatter
+\backmatter{}
 \addcontentsline{toc}{chapter}{Bibliographie}
 \markboth{Bibliographie}{Bibliographie}
 \selectlanguage{english} 
@@ -259,8 +256,6 @@
 \thispagestyle{plain}
 \phantomsection{}
 
-% Backmatter
-\backmatter{}
 \pagestyle{empty}
 \addtolength{\oddsidemargin}{-0.5cm}
 \addtolength{\evensidemargin}{+0.5cm}

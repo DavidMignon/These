@@ -64,7 +64,7 @@ Other exact methods exist, some of which appear to be even faster than CFN \cite
 Our goal, however, is not to ``rank'' the stochastic and exact methods, but rather to compare our three stochastic methods to each other, and this is facilitated if an exact enumeration of low energy states has also been done.
 
 We use a CPD model that is rather simple but representative of a large class of applications.
-We use a fixes backbone structure, a discrete set of sidechain rotamers and we assume that the energy function is pairwise additive;
+We use a fixe backbone structure, a discrete set of sidechain rotamers and we assume that the energy function is pairwise additive;
 that is, the energy has the form of a sum over residue pairs \cite{Schmidt08b,Schmidt08,Simonson13b}.
 With these simplifications, all possible residue pair interactions can be computed ahead of time and stored in a lookup table \cite{Dahiyat97}; exploration is then done in a second stage.
 Thus, the cost of energy calculations and sequence/structure exploration are well-separated.
@@ -216,7 +216,7 @@ REMCc & 0.175; 0.263; 0.395;      & 0.75 10$^9$& 0; 1; 0.1; 0     & 7.5 10$^6$  
 REMCd & 0.175; 0.263; 0.395;      &0.75 10$^9$ & 1; 0; 0.1; 0     & 7.5 10$^6$  \\
       & 0.592; 0.888; 1.333; 2; 3 &  &  &  \smallskip \\
 REMCe & 0.175; 0.263; 0.395;      &0.75 10$^9$ & 1; 0; 0.1; 0     &     10$^6$  \\ 
-      & 0.592; 0.888; 1.333; 2;   &  &  &  \smallskip \\ \hline
+      & 0.592; 0.888; 1.333; 2; 3  &  &  &  \smallskip \\ \hline
 \end{tabular}
 \end{center}
 {\small \noindent $^a$Probabilities at each MC step to change, respectively, a rotamer; a sidechain type; a type at one position and a rotamer at another;
@@ -235,7 +235,7 @@ The CFN method is implemented in the Toulbar2 program \cite{Traore13,Allouche14}
 
 \subsection{Energy function}
 The energy function has the form:
-\begin{equation} \label{eq:energy}
+\begin{equation}
 E = E_{\rm bonds} + E_{\rm angles} + E_{\rm dihe} + E_{\rm impr} + E_{\rm vdw} + E_{\rm Coul} + E_{\rm solv} 
 \end{equation}
 The first six terms represent the protein internal energy. They were taken from the Charmm19 empirical energy function \cite{Brooks09}. The last term represents the contribution of solvent. We used a ``Coulomb + Accessible Surface Area'', or CASA implicit solvent model \cite{Lopes07,Schmidt08b}:
@@ -409,7 +409,7 @@ The MC and REMC methods require choices of move probabilities and temperatures, 
       \centering
         \includegraphics[width=12cm]{full_delta.png} 
       \caption{
-Comparison between selected heuristic, MC, and REMC protocols for whole protein design. The best energy obtained with each protocol is shown for the nine test proteins. Zero represents the overall best energy for each protein. The mean ``error'' is indicated on the right for each protocol (the mean difference from the overall best energy). The protocols are a heuristic method (Heur), an MC method, two REMC protocols with 4 walkers (REMC a, b), and three REMC protocols with 8 walkers (yellow lines and dots, REMC c, d, e). Details of the protocols are in table \ref{tab:parameters}; each curve is labelled according to the protocol name.
+Comparison between selected heuristic, MC, and REMC protocols for whole protein design. The best energy obtained with each protocol is shown for the nine test proteins. Zero represents the overall best energy for each protein. The mean ``error'' is indicated on the right for each protocol (the mean difference from the overall best energy). The protocols are a heuristic method (Heur), an MC method, two REMC protocols with 4 walkers (REMC a, b), and three REMC protocols with 8 walkers (yellow lines and dots, REMC c, d, e). Details of the protocols are in table \ref{tab:parameters}; each curve is labelled according to the protocol nam. The dashed red line shows heuristic results with a more aggressive protocol (330,000 heuristic cycles) for the four rightmost proteins.
 }
        \label{fig:fulldelta}
     \end{figure}
@@ -431,9 +431,7 @@ point indicates the nature of the test; its shape indicates which method
 gave the best energy. Two examples are highlighted by arrows: the black
 arrow shows the heuristic result for a 10-position test where the best
 energy was given by CFN; the gray arrow shows the MC result for a 20-
-position test where the best energy was given by the heuristic. The dashed
-red line shows heuristic results with a more aggressive protocol (330,000
-heuristic cycles) for the four rightmost proteins.
+position test where the best energy was given by the heuristic. 
 }
       \label{fig:errors}
 \end{figure}
@@ -490,7 +488,7 @@ Plain MC did slightly less well for 10-position design. In 21 cases, it found th
 \subsubsection{Optimal sequences with 20 or 30 designed positions}
 We did similar tests with 20 designed positions, selected randomly in 5 different ways for each protein, as above.
 Results are given in Fig.\ \ref{fig:errors} and table \ref{tab:20act}. CFN found the GMEC in 28 out of 45 cases;
-in two others, it found the best energy of the four methods. For 6 of these 30 cases, the more aggressive protocol was necessary, and run times were 2--22 h (11 on average). For 14 of the other 15 cases, the best CFN energy was 0.1--7.5 kcal/mol above the best solution found by the other methods, and 2.8 kcal/mol on average, despite using the more aggressive protocol. For the worst case, the CFN energy was 13.9 kcal/mol above the best solution. Of th 17 cases where the CFN was not identified, half were rerun with a third, more recent CFN protocol \cite{Simoncini15}; in just one of these cases (1BM2-4, a very mild failure) did the newer protocol identify the GMEC.
+in two others, it found the best energy of the four methods. For 6 of these 30 cases, the more aggressive protocol was necessary, and run times were 2--22 h (11 on average). For 14 of the other 15 cases, the best CFN energy was 0.1--7.5 kcal/mol above the best solution found by the other methods, and 2.8 kcal/mol on average, despite using the more aggressive protocol. For the worst case, the CFN energy was 13.9 kcal/mol above the best solution. Of the 17 cases where the CFN was not identified, half were rerun with a third, more recent CFN protocol \cite{Simoncini15}; in just one of these cases (1BM2-4, a very mild failure) did the newer protocol identify the GMEC.
 
 The heuristic method found the GMEC in 22 of the 28 cases where it is known. For the other six cases, it was within 0.40 kcal/mol of the GMEC, with 0--4 mutations (2.7 on average). For the 17 cases where the GMEC was not identified by CFN, the heuristic produced the lowest energy of all methods, except one case (104C-1) where it was 0.35 kcal/mol above CFN.
 Overall, the heuristic either found the best energy of the four methods or was within 0.40 kcal/mol of the best energy.

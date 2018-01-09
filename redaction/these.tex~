@@ -17,11 +17,10 @@
 \usepackage[T1]{fontenc}      % encodage des fonts latex         
 \usepackage{lmodern}                                             
 \usepackage{microtype}        % typo supplémentaires             
-
 %%\usepackage[latin1]{inputenc}
 %%\usepackage[T1]{fontenc}
 %%\usepackage{lmodern}
-\usepackage[authoryear,square,colon]{natbib}
+\usepackage[authoryear,square,colon,compress]{natbib}
 \usepackage[english,frenchb]{babel}
 \usepackage{calc}
 \usepackage{amsmath,amsfonts,amssymb}
@@ -38,7 +37,7 @@
 \usepackage{float}
 
 \bibpunct{[}{]}{\,;}{a}{}{,}
-\bibliographystyle{my}
+\bibliographystyle{mystyle}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{multirow}
@@ -46,9 +45,16 @@
 \usepackage{lscape}
 \usepackage{xspace}
 \usepackage[plainpages=false,pdfpagelabels,pagebackref]{hyperref}
+\usepackage[french]{varioref}
+%\usepackage[french,onelanguage]{algorithm2e} %for pseudo code
+\usepackage[french,onelanguage,vlined,linesnumbered,inoutnumbered]{algorithm2e}
+\usepackage{enumitem}
+\usepackage{backref}
+% lists gérées hors de frenchb
+\frenchbsetup{StandardLists=true}
 \pdfcompresslevel=9
 \hypersetup{%
-  pdftitle={Titre de la thèse}, 
+  pdftitle={Computational protein design: un outil pour l’ingénierie des protéines et la biologie synthétique}, 
   pdfauthor={David Mignon},
   pdfkeywords={motclé1,motclé2,motclé3},
   pdfsubject={Thèse de doctorat},
@@ -58,13 +64,17 @@
   citecolor=black
 }
 
+\usepackage{pdfpages}
+%natbib cite configuration
+\bibpunct{[}{]}{,}{a}{}{;}
+
 % Titlepage adjustment
 \addtolength{\textheight}{+3cm}
 \addtolength{\topmargin}{-1.5cm}
 \addtolength{\oddsidemargin}{-0.5cm}
 \addtolength{\evensidemargin}{+0.5cm}
 
-% Pages où se trouvent les citations
+ % Pages où se trouvent les citations
 \renewcommand*{\backref}[1]{}
 \renewcommand*{\backrefalt}[4]{%
   % alternative interface
@@ -83,81 +93,18 @@
   \else
     {\small cité pages~}%
   \fi
-  {\small#2}\par
-}
+     {\small#2}
+     \par
+     }
 \renewcommand*{\backrefsep}{, } 
-\renewcommand*{\backreftwosep}{et~}
-\renewcommand*{\backreflastsep}{et~}
+\renewcommand*{\backreftwosep}{ et~}
+\renewcommand*{\backreflastsep}{ et~}
 
 % Pas d'espace après la virgule en mode mathématique
 \DecimalMathComma{}
 
 \makeatletter
 % Custom titlepage
-\def\maketitle{
-\thispagestyle{empty}
-\noindent
-\begin{minipage}[b]{0.2\textwidth}
-\begin{flushleft}
-\includegraphics[width=0.85\textwidth]{X_logo.jpg}
-\end{flushleft}
-\end{minipage}
-\hfill
-\begin{minipage}[b]{0.75\textwidth}
-{\footnotesize \bf \hfill Institut de XXX\\}
-\vspace{-\baselineskip}
-\vspace{2ex}
-\hrule
-\vspace{1.5ex}
-{\footnotesize \bf \hfill École Doctorale de XXX}
-\end{minipage}
-\vfill
-\begin{center}
-{\LARGE \bf \@title\\}
-\vfill
-{\LARGE \bf THÈSE\\}
-\vspace{4ex}
-{\small présentée et soutenue publiquement le \@date\\}
-\vspace{2ex}
-{\small pour l'obtention du\\}
-\vspace{4ex}
-{\large \bf Doctorat de l'Université XXX\\}
-\vspace{1ex}
-{\small \bf (spécialité XXX)\\}
-\vspace{2ex}
-{\small par\\}
-\vspace{1ex}
-{\large \@author\\}
-\end{center}
-\vfill
-\begin{small}
-{\bf Composition du jury}
-\begin{center}
-\begin{tabular}{lll}
-Rapporteurs :  & Dr. Prénom1 \bsc{Nom1} & Rapporteur externe\\
-               & Dr. Prénom2 \bsc{Nom2} & Rapporteur externe\\
-               & Pr. Prénom3 \bsc{Nom3} & Rapporteur interne\\
-               & &\\
-Examinateurs : & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
-               & Dr. Prénom5 \bsc{Nom5} & Directeur de thèse\\
-               & Dr. Prénom6 \bsc{Nom6} & Directeur de thèse\\
-\end{tabular}
-\end{center}
-\end{small}
-\vfill
-\begin{center}
-\hrule
-\vspace{2ex}
-{\footnotesize \bf Laboratoire de XXX}
-\end{center}
-\newpage
-\thispagestyle{empty}
-\null{}
-\addtolength{\textheight}{-3cm}
-\addtolength{\topmargin}{+1.5cm}
-\addtolength{\oddsidemargin}{+0.5cm}
-\addtolength{\evensidemargin}{-0.5cm}
-}
 
 % paragraphe dans le sommaire
 \setcounter{tocdepth}{5}
@@ -175,30 +122,13 @@ Examinateurs : & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 \par\nobreak
 \vskip 40\p@
 }}
-%% Custom section
-%\renewcommand\section{
-%\@startsection{section}{1}{\z@}%
-%{-3.5ex \@plus -1ex \@minus -.2ex}%
-%{2.3ex \@plus.2ex}%
-%{\color{gold}\reset@font\Large\sffamily\bfseries}}
-%% Custom subsection
-%\renewcommand\subsection{
-%\@startsection{subsection}{2}{\z@}%
-%{-3.25ex\@plus -1ex \@minus -.2ex}%
-%{1.5ex \@plus .2ex}%
-%{\reset@font\large\sffamily\bfseries}}
-%% Custom subsubsection
-%\renewcommand\subsubsection{
-%\@startsection{subsubsection}{3}{\z@}%
-%{-3.25ex\@plus -1ex \@minus -.2ex}%
-%{1.5ex \@plus .2ex}%
-%{\reset@font\normalsize\sffamily\bfseries}}
 \makeatother
 
 % Define colors
 \definecolor{gold}{rgb}{0.75,0.5,0}
 \definecolor{lightgold}{rgb}{1,0.9,0.4}
 \definecolor{gray}{rgb}{0.8,0.8,0.8}
+
 
 % Negative space to remove automatic spacing
 \newcommand\negspace{\hspace{-0.3em}}
@@ -244,28 +174,24 @@ Examinateurs : & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 
 \title{Titre de la thèse}
 
-\author{David \bsc{Mignon}}
+\author{M. David \bsc{Mignon}}
 
 \date{XXX}
 
 \begin{document}
-
 % Title
-\pagenumbering{alph}
+\pagenumbering{gobble}
+\begin{titlepage}
 \pdfbookmark[0]{Couverture}{cover}
-\maketitle 
-\clearemptydoublepage{}
-
+%\maketitle
+\includepdf[pages=-]{pagezero.pdf}
+\pagestyle{empty}
+\end{titlepage}
 % Frontmatter
 \frontmatter
 \thispagestyle{plain}
-\pdfbookmark[0]{Remerciements}{acknowledgements}
-\include{merci}
-\clearplaindoublepage{}
-\thispagestyle{plain}
 \pdfbookmark[0]{Dédicace}{dedication}
 \include{dedicace}
-
 \clearplaindoublepage{}
 \pdfbookmark[0]{Table des matières}{contents}
 \tableofcontents
@@ -286,54 +212,65 @@ Examinateurs : & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 
 % Mainmatter
 \mainmatter{}
-\include{intro}
-\clearplaindoublepage{}
-\include{contexte}
 \clearplaindoublepage{}
 
-%________________________________
-
-\clearplaindoublepage{}
-
-\graphicspath{{./comparaisons/graphe/}{./comparaisons/image/}{./comparaisons/graphe/mc/}{./PDZ/graphe/}{./PDZ/image/}{./PDZ/sequence/}{./PDZ/}{./PDZ/graphe/modelB}}
+\graphicspath{{./Couverture}{./PDZ/}{./PDZ/graphes/}{./CPD/}{./CPD/figure/}{./comparaisons/figure/}{./methodes/}{./developpements/}}
 
 \include{CPD/chapter}
-\include{proteus/chapter}
+\clearplaindoublepage{}
+\include{methodes/chapter}
+\clearplaindoublepage{}
+\include{annexe_proteus}
+\clearplaindoublepage{}
+\include{annexe_groupes}
+\clearplaindoublepage{}
+\include{developpements/chapter}
+\clearplaindoublepage{}
 \include{comparaisons/chapter}
-\include{PDZ/chapter}
-
-%________________________________
-
-
-% ---------------------
 \clearplaindoublepage{}
-
-\clearplaindoublepage{}
-\include{conc}
-\clearplaindoublepage{}
-\appendix
 \include{annexe_posi}
 \clearplaindoublepage{}
+\include{PDZ/chapter}
+\clearplaindoublepage{}
+\include{annexe_PDZ}
+\clearplaindoublepage{}
+%\appendix
 %\include{annexe2}
 %\clearplaindoublepage{}
 \phantomsection{}
+\addcontentsline{toc}{chapter}{Publications}
+\include{publications}
+\clearplaindoublepage{}
+\phantomsection{}
+% Backmatter
+\backmatter{}
 \addcontentsline{toc}{chapter}{Bibliographie}
 \markboth{Bibliographie}{Bibliographie}
-\selectlanguage{english}
+\selectlanguage{english} 
 \renewcommand{\bibname}{Bibliographie}
 \singlespacing{}
 \bibliography{biblio}
 \onehalfspacing{}
 \selectlanguage{frenchb}
 \clearplaindoublepage{}
+\thispagestyle{plain}
+\phantomsection{}
 
-% Backmatter
-\backmatter{}
 \pagestyle{empty}
 \addtolength{\oddsidemargin}{-0.5cm}
 \addtolength{\evensidemargin}{+0.5cm}
 \singlespacing{}
-\include{resume}
+\addcontentsline{toc}{chapter}{Remerciements}
+%\pdfbookmark[0]{Remerciements}{acknowledgements}
+\include{merci}
+\newpage
+\strut
+\newpage
+\strut
+\newpage
+
+%\include{resume}
+\includepdf[pages=-]{resume.pdf}
 
 \end{document}
 
@@ -341,3 +278,4 @@ Examinateurs : & Dr. Prénom4 \bsc{Nom4} & Examinateur\\
 %%% mode: latex
 %%% TeX-master: t
 %%% End:
+

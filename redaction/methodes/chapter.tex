@@ -67,7 +67,7 @@ Ce terme n'est pas décomposable par paires de résidus, parce que la surface d'
        \includegraphics[width=8cm]{figure/intersurface.pdf} 
      \end{tabular}
      
-     \caption{\textbf{Une représentation de la surface accessible de trois résidus.} Les résidus A et B réduisent mutuellement leur surface exposée au solvant: c'est la zone verte. De même pour B, C : la zone rouge et  A, C, la zone bleue. Un calcul par paires de résidus naïf surestime la surface accessible en comptant deux choix la zone noire. }
+     \caption{\textbf{Une représentation de la surface accessible de trois résidus.} Les résidus A et B réduisent mutuellement leur surface exposée au solvant: c'est la zone verte. De même pour B, C : la zone rouge et  A, C, la zone bleue. Un calcul par paires de résidus naïf surestime la surface accessible en comptant deux fois la zone noire. }
 \label{fig:intersurf}
    \end{figure}
 
@@ -110,7 +110,7 @@ Pour $I=J$, on exclue les termes $i=j$. On peut noter qu'aux distances fixes $r_
   \label{eq:approx}
 g_{IJ}(B) \approx c_1^{IJ} + c_2^{IJ} B + c_3^{IJ} B^2 + c_4^{IJ} B^{-1/2} + c_5^{IJ} B^{-3/2} 
 \end{equation}
-Les coefficients $c_n^{IJ}$ peuvent être précalculés et stockés dans la matrice d'énergie, puisque les distances $r_\ij$ ne sont pas des variables pour un couple de chaînes latérales $I$, $J$ et un choix de rotamères donnés. Comme les rayons de sont eux-mêmes des sommes sur les paires, le calcul de l'énergie GB à l'aide de l'approximation \ref{eq:approx} est maintenant décomposable par paires.
+Les coefficients $c_n^{IJ}$ peuvent être précalculés et stockés dans la matrice d'énergie, puisque les distances $r_{ij}$ ne sont pas des variables pour un couple de chaînes latérales $I$, $J$ et un choix de rotamères donnés. Pour une conformation donnée, le calcul de l'énergie GB à l'aide de l'approximation \ref{eq:approx} est maintenant décomposable par paires.
 
 \section{La matrice d'énergie}
 
@@ -170,7 +170,7 @@ Le second fichier rassemble les énergies entre les paires de rotamères. Il com
      \begin{tabular}{c}
        \includegraphics[width=12cm]{figure/inputener.pdf} 
      \end{tabular}     
-     \caption{\textbt{Les fichiers d'énergies en mode CASA}}
+     \caption{Les fichiers d'énergies en mode CASA}
 \label{fig:CAenerfile}
    \end{figure}
 
@@ -179,7 +179,7 @@ Le second fichier rassemble les énergies entre les paires de rotamères. Il com
      \begin{tabular}{c}
        \includegraphics[width=16cm]{figure/inputenerFDB.pdf} 
      \end{tabular}     
-     \caption{\textbt{Les fichiers d'énergies en mode GB/FDB}}
+     \caption{Les fichiers d'énergies en mode GB/FDB}
 \label{fig:GBenerfile}
    \end{figure} 
    
@@ -249,7 +249,7 @@ Dans l'algorithme de Metropolis, il est nécessaire de définir une probabilité
 Chacune prend en paramètre une valeur comprise entre $0$ et $1$. Les deux premières fixent la probabilité des deux modifications élémentaires. Les trois autres fixent la probabilité de modifier deux positions simultanément, au cours d'un même pas Monte-Carlo. Le choix d'une première position à modifier se fait par tirage équiprobable sur l'ensemble des positions. Le choix de la seconde position se fait par tirage dans le voisinage de la première. Deux positions $i$ et $j$ sont voisines s'il existe un rotamère $r_i$ de $i$ et un rotamère $r_j$ de $j$ tels que:
 \begin{displaymath}
   \label{eq:voisin}
- | E(r_i_,r_j) | > S
+ | E(r_i,r_j) | > S
 \end{displaymath} 
 avec $S$ le seuil donné par l'utilisateur dans la balise \verb!<Neighbor_Threshold>!. Le voisinage d'une position $i$ est l'ensemble de ses voisins. Ce système de déplacements MC a été revu pendant ma thèse, voir section \vref{sec:newmove}.
 
