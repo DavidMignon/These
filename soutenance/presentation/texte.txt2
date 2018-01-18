@@ -1,0 +1,218 @@
+ 
+ 
+ -----------
+ 
+
+
+-----------
+
+Le Computational Protein Design, c'est concevoir ou modifier des protéines par informatique pour leur conférer de nouvelles propriétés.
+
+Les applications possibles sont par exemples le redisign des protéines.
+la conception d'enzyme, étude de complexes proteines ligands.
+
+ou l'étude d'insertion d' aa non naturels.
+
+Le CPD se compose de trois élément principaux.
+
+1- un espace de conformations de la protéine qui décruit les états possibles de la structure.
+
+2- une fonction d'énergie pour mesurer la qualité des couples (séquences conformations).
+
+3- une algorithme d'exploration de l'espace séauence-conformations pour recherche les meilleur états
+
+
+Les principaux programmes du domine sont 
+
+...
+...
+;..
+...
+
+--------------------------------------
+
+Alors detaillons maintenans le fonctionnement de proteus
+
+
+Nous avons pour l'espace de conformations:
+
+un backbone fixe il s'agit du squelette d'une proéine native
+
+
+un nombre fini de positionnement de chaîne latérale  .
+
+on parle de rotamère  , on utilisaons une bibliothèque de rotamère inpédandante du squelette fixé Tuffery 95.
+
+et les proline et les glycines natives sont conservées.
+
+Nous avons besion de l'énergie de l'état déplié que nous définisson comme la somme le long de la séquence d'une énergie de référence propre au type d'acide aminé.
+------------
+
+
+Pour notre fonction d' énergie:
+
+En ce qui concerne l'énergie interne de la protéine, nous la calculons avec la mécanique  moléculaire. nous utilison le champ de force Amber
+
+La modélisation du solvant est un point très important. Nous travaillons avec des modèle de solvant implicites. Ce sont des modèle qui cherche à représenter l'effet moyen de l'eau sur la protéine. Au lieu de considère l'effet d'un grand nombre de molécule d'eau , le solvant et la protéine sont représentés chacun par un mileu diélectrique uniforme
+
+L'effet du solvant peut de décomposer un deux termes,
+
+le premier mesure l'effet hydrophobe on utilise pour l'estime le modèle Surface Area. il s'agit d'approche ce terme par une moyenne de la surface accessible au solvant de chaque atome pondéré selon le type de l'atome.
+
+le second terme represente l'effet du solvant sur les interactions électrostatique des charges de la protéines.
+ON travail avec deux modèles 
+Nous utilisons le modèle de Coulomb et le Born Generalisé , nomé GB dans la suite.
+Le modèle Coulomb approche ce terme par un unique parametre epsilon
+le GB est plus sophistiqué  que le Coulomb, avec un paramètre par atome de la proteins le rayon de solvatation.
+
+
+-----------------------------------------------
+
+Ma thèse se presente en trois partis:
+
+Le travail sur l'exploration de l'espace d'état dans Proteus
+
+avec une nouvelle méthode Monte Carlo mono et multi marcheur
+
+des comparaisons avec d'aute algo present dans Proteus
+
+
+des mesure  de la qualité de l'échantillonnage Monte Carlo
+
+Ensuite une partie l'optimisation et Paramètrage de Proteus
+
+avec de nouvelle méthodes d'optimisation des énergies de références et l'utilisation, d'une nouvelle approximation GB
+
+
+Enfin nous utilisons Proteus pour le CPD de la famille PDZ
+
+avec évaluation  de séquences obtenues, et comparaison avec celles de Rosetta
+
+et Enfin, nous presentons une méthode que permet Proteus de croisance du coeur hydrophobe sur des membre la famille PDZ.
+
+-------------------------------------------------------
+Le principe de l'exploration:
+
+Nous travaillons avec deux types de déplacements élémentaires.
+
+Le premier type de déplacement est un changement de rotamère à une position i sur la protéine repliée.
+
+Pour quantifier le cout energitique de ce déplacement, on considère un  exemplaire de la chaine dans la configuration de départ et un second exemplaire de la même chaîne dans la seconde configuration.
+
+Le delta d'energie est alors simplement la difference d'énergie libre des deux etats.
+
+Le second type de déplacement se fait dans l'espace des séquences:
+ On considère un couple de chaîne polypeptidique l'une repliée l'autre dépliée elles different uniquement par le type de chaîne latérale à la position i.
+
+Une mutation consiste à faire passer la chaîne dépliée  vers l'état replié
+et en même temps la chaîne repliéee vers son état déplié.
+
+le delta d'energie d'une mutation s'écrit alors comme la difference du delta de repliement et du delta  de dépliement.
+---------------------------------------------------
+
+Notre fonction d'énergie est décomposable par paire de résidu  c'est à dire que l'énergie d'une conformation peut s'écrire comme une somme sur un terme d'energie E_i propre à la position i et d'une somme  de terme Eij d'energie d'interaction des couples de position i,j.
+
+L'interet de cette décomposition est de rendre possible l'utilisation de plusieirs algoritmes d'exploration.
+
+Cela permet d'accélérer l'étape d'exploration par pré-calcul des insteractions , ON peut tout stocker dans une matrice d'energie.
+
+Mais cela nécessite des approximation en plus:
+Notement pour la rendre le terme surfacique décomposable par paire de residue et pour l'environnment GB qui depend de la positions relative de chaque atome.
+
+Une première méthode est le NEA pour native enviroment Approximation.
+
+Les rayons du solvatation d'une chaîne latérale sont en fixant tout le reste de la protéine dans sa structure native.
+---------------
+Je passe maintenant à la presentation du Monte Carlo. c'est l'algorithme de Metropolis-Hastings.
+L'objectif est de générer une collection d'états échantillonnés selon la distribution de Boltzmann.
+
+l'idée est visiter un sous ensemble d'état en partant d'une séquence/conformation choisi en hazard et en lui appliquant des modifications succcesives via une boucle iterative.
+
+La réalisation d'un pas c'est à dire une modification acceptée est controlé par 2 probabilités sigma pour le choix de la modification et alpha pour accepter ou non la modifcation choisie.
+
+------------------------------------------
+Alors avec une boucle itérative comme on vient de décrire l'algorithme définit une chaîne de Markov.
+
+Si la balance détaillée est respéctée, c'est à dire s'il est aussi si la probabilité de transition entre  l'etat x et l'état y est égale à la transition inverse alors la chaîne possède une distribution stationnaire.
+Si en plus la chaîne est ergodique elle va converger vers cette distribution.
+
+Si sigma est symétrique:
+
+Metropolis donne une solution avec la proba d'accepter de passer dans l'état y étatn dans l'état x égale au minimum de 1 et du rapport des proba cible.
+Ce qui donne avec pour  proba de boltzmann
+
+-----------------------------------------
+
+Pour Proteus nous utilisons l'algorithme de Métropolis Hastings qui consiste en choisir  une séquence conformation S initiale.
+
+définir une modification possible  à partir de sigma choisir une position ou deux positions à modifier, selectionner un type et ou un rotamère.
+
+et alpha de la forme suivante ici on retrouve la facteur de Métropolis, il est indépendatn de la fonctionde partition, et ici la généralisation d'Hasting qui prend en compte le caractére non symetrique de notre fonction sigma.
+
+Au retrouve ici un exemple de trajectoire du marcheur Monte Carlo avec ici l'état initiale deux états proposés mais refusé et la l'échatillon en construction correspondant.
+
+______________________________________________
+
+Le Monte Carlo
+peut être amélioré avec le Replica exchange Monte Carlo.
+
+L'idée est d'accelerer la convergence en tulisant plusieurs marcheurs simulatement, qui vont visiter different domainre de la fonction d'énergie.
+
+On lance N marcheurs Monte Carlo chacun à une temperatures differentes. 0 une certaine peroide on selectionne deux marcheurs avec des temperatures concecutivent et ont echange les temperatures avec la probabilité siuvante: min entre 1 et cette expression qui ressemble au alpha predecent.
+
+Et c'est pour la même raison c'est à dire respecter la balance détaillé pour ce nouveau mouvement  mais cette fois si dans l'espace generalisée des N rpliques. donc on a toujours les propriete physique de la trajectoire.
+________________________________________________
+
+Passons maitenant à un autre type d'algorithme présent dans Proteus. Le multistart Steepest Descent
+
+C'est un alogoritmee de Wernisch et Wodak.proposé pour le cpd parce qu'il est adapter à l'espace de recherche.
+Pour chaque cycle de cette heuristique on commence par choisir une séquence conformation au hasard, il y a un exemple à droite.
+
+Commence par se place à la premiere position et on fixe l'état de toutes les autres positions.
+puis un teste toutes l'etat  possibilité en i pour determiner le meilleur acide aminé avec le meilleur rotamère.
+
+on mfixe lapostion i avec ce type et ce rotamre et on passe à la position suivante. et ainsi de suite justqu' a la fin de la séquence.
+On recommence se passage complet de la séquence tant que l'énergie est améliorée.
+puis on enreigistre le résultat c'set la fin d'un cycle heuristiqie.
+-----------------------------------------
+On passe maintenant à une methodes exacte  de recherhe du minimum global de la fonction d'énergie et de la séqunce /conformation associé qu'on appelle le GMEC emploiyé par Toulbar2.
+La méthode se base sur l'algorithme Depth First branch and Bound.
+
+On considère l'espace des états possbiles tout entier comme le premier sommet d'un arbre ici S_0 .on partage cet ensemble en 2 sous-ensembles qui formet les sommets fils et ainsi de suite. l'arbre est developper en descendant dans les branches autatn que possible, simon on remote d"un sommet.
+ Un autre ingrediant c'est le calcul d'un minorant du cout de toutes les solutions d'un sommet.
+
+
+Ce minorant permet d'elaguer l'arbre à un sommet si son minorant est usperieur à la meilleur solution connu.
+
+ici ce sommet à un minorant à 26 et une somution plus petite est commu donc on peut elauer l'arbre.
+---------------------------------------------
+Pour resumé nous avons trois types d'exploration  dans Proteus.
+
+Le MSD qui visite un nombre limiter d'etat par cycle, mais un cycle est rapide. ce ui permet d'en faire beaucoup.
+Le monte Carlo , il peut visiter tous les etats, mais converge lenetmente.
+et une version paralleliser du Monte Carlo le REMC qui conserve les propriete physique de la trajectoire.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
