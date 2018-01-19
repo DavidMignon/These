@@ -26,11 +26,11 @@ avec respectivement $S^P_A$, $S^P_B$, $S^D_B$ et $S^D_B$, le système avec la s�
    \end{figure}
 
 
-Nous faisons des simulations avec deux mouvements élémentaires possibles: un changement de rotamère dans la sequence repliée courante et une mutation qui consiste à modifier le type de la chaîne latérale à une position $i$ tirée au hasard. Le changement d'énergie $\Delta E_{m_1}$ associé à un changement de rotamère $r_i$ vers $r'_i$ est:
+Nous faisons des simulations avec deux mouvements élémentaires possibles: un changement de rotamère dans la séquence repliée courante et une mutation qui consiste à modifier le type de la chaîne latérale à une position $i$ tirée au hasard. Le changement d'énergie $\Delta E_{m_1}$ associé à un changement de rotamère $r_i$ vers $r'_i$ est:
 \begin{equation}
 \Delta E_{m_1}= E^f(...,t_i,r'_i,...) - E^f(...,t_i,r_i,...)     
 \end{equation}   
-avec $E^f$ l'énergie de l'état replié. Pour le changement d'énergie $\Delta E_{m_2}$ d'une mutation de $t_i$ vers $t'_i$, nous appliquons l'equation \ref{deltaG} à la séquence-conformation avant et après la mutation:    
+avec $E^f$ l'énergie de l'état replié. Pour le changement d'énergie $\Delta E_{m_2}$ d'une mutation de $t_i$ vers $t'_i$, nous appliquons l'équation \ref{deltaG} à la séquence-conformation avant et après la mutation:    
 \begin{equation}
 \Delta E_{m_2}= (E^f(...,t'_i,r'_i,...) - E^f(...,t_i,r_i,...)) - (E^u(t'_i) - E^u(t_i))     
 \end{equation}   
@@ -105,7 +105,7 @@ $B_I$ est donc la moyenne harmonique des $b_i$ pondérés par les charges au car
 g_{IJ} = \sum_{i \in I, j \in J} \tau q_i q_j \left( r_{ij}^2 + B_I B_J \exp[-r_{ij}^2/4 B_I B_J] \right)^{-1/2}
 \label{eq:screen}
 \end{equation}
-Pour $I=J$, on exclue les termes $i=j$. On peut noter qu'aux distances fixes $r_{ij}$, et avec $B=B_IB_J$, $g_{IJ} (B)$ varie faiblement en fonction de $B$. Archontis et Simonson \cite{Archontis05}, proposent d'approximer cette fonction par:
+Pour $I=J$, on exclut les termes $i=j$. On peut noter qu'aux distances fixes $r_{ij}$, et avec $B=B_IB_J$, $g_{IJ} (B)$ varie faiblement en fonction de $B$. Archontis et Simonson \cite{Archontis05}, proposent d'approximer cette fonction par:
 \begin{equation}
   \label{eq:approx}
 g_{IJ}(B) \approx c_1^{IJ} + c_2^{IJ} B + c_3^{IJ} B^2 + c_4^{IJ} B^{-1/2} + c_5^{IJ} B^{-3/2} 

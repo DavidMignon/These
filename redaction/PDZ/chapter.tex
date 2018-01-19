@@ -163,7 +163,7 @@ $E^r_c$ est un paramètre ajustable, tandis que $\delta E^r_t$ est une constante
 \label{tab:AAgroups}      
     \end{table}
 Plus précisément, nous effectuons des simulations MC d'un peptide étendu (le peptide \textit{Syndecan1}) et calculons les énergies moyennes pour chaque type d'acide aminé à chaque position peptidique (à l'exclusion des positions terminales). Nous prenons les différences entre les types d'acides aminés et les moyennons sur les positions peptidiques.
-Pour optimiser les valeurs $E^r_t$, nous utilisons une des trois méthodes de la section \ref{enumMeth} avec comme fréquences cibles les fréquences expérimentales soit des classes d'acides aminés, soit des types d'acides aminés. Le  début d'optimisation se fait sur les classes, puis lorsque la convergence de la fonction proxy $C$ est correctement établie, nous relâchons cette contrainte pour optimiser sur l'ensemble des types d'acide aminé mutables. Typiquement, vingt cycles d'optimisation sont effectués sur les classes, puis encore vingt cycles sur les types.  
+Pour optimiser les valeurs $E^r_t$, nous utilisons une des trois méthodes de la section \ref{enumMeth} avec comme fréquences cibles les fréquences expérimentales des classes d'acides aminés ou des types d'acides aminés. Le  début d'optimisation se fait sur les classes, puis lorsque la convergence de la fonction proxy $C$ est correctement établie, nous relâchons cette contrainte pour optimiser sur l'ensemble des types d'acide aminé mutables. Typiquement, vingt cycles d'optimisation sont effectués sur les classes, puis encore vingt cycles sur les types.  
 
 \section{Séquences expérimentales et modèles structuraux}
 \subsection{L'ensemble des protéines PDZ}
@@ -193,7 +193,7 @@ Nous sélectionnons huit protéines de la famille PDZ dont les structures crista
 
 \subsection{Alignements Blast croisés}
    
-Pour caractériser les homologies dans cet ensemble de huit domaines PDZ, une série de requêtes BLAST est effectuée sur chaque paire de séquences en utilisant le programme \verb!blastp! avec les options comme indiqué en \ref{SimPfam}. Il apparaît que Syntenin et Tiam1 sont atypiques dans l'ensemble: il n'y a pas d'homologues avec une E-value inférieure à $10^{-7}$ et plusieurs E-value supérieur à 10. PSD95 est la protéine la plus consensuelle, ayant d'une part une homologie avec toutes les autres à au plus $6$ $10^{-4}$, et d'autre part ayant quatre homologues à moins de $2$ $10^{-10}$, pour un pourcentage d'identité compris entre $30$ et $46$. Globalement, il n'y a que peu d'homologies, la plus forte n'étant que de $3$ $10^{-15}$ entre PSD95 et DLG2 pour un pourcentage d'identité de $37$. Les détails sont dans le tableau \ref{tab:Xblast}.
+Pour caractériser les homologies dans cet ensemble de huit domaines PDZ, une série de requêtes BLAST est effectuée sur chaque paire de séquences en utilisant le programme \verb!blastp! avec les options comme indiqué en \ref{SimPfam}. Il apparaît que Syntenin et Tiam1 sont atypiques dans l'ensemble: il n'y a pas d'homologues avec une E-value inférieure à $10^{-7}$ et plusieurs E-value supérieures à 10. PSD95 est la protéine la plus consensuelle, ayant d'une part une homologie avec toutes les autres à au plus $6$ $10^{-4}$, et d'autre part ayant quatre homologues à moins de $2$ $10^{-10}$, pour un pourcentage d'identité compris entre $30$ et $46$. Globalement, il n'y a que peu d'homologies, la plus forte n'étant que de $3$ $10^{-15}$ entre PSD95 et DLG2 pour un pourcentage d'identité de $37$. Les détails sont dans le tableau \ref{tab:Xblast}.
 
     \begin{table}[!htbp]
 %       \raggedleft{}
@@ -204,7 +204,7 @@ Pour caractériser les homologies dans cet ensemble de huit domaines PDZ, une s�
       \begin{tabular}{ccccccccc}
 
         \toprule
-        Proteine & NHREF        & INAD      & GRIP        & Syntenin        & DLG2       & PSD95       & CASK       & TIAM1 \\
+        Protéine & NHREF        & INAD      & GRIP        & Syntenin        & DLG2       & PSD95       & CASK       & TIAM1 \\
         \cmidrule{1-9}
 
         NHREF    & 2 $10^{-66}$ (100) & 5 $10^{-10}$ (40) & 2 10^{-3} (25)        & 3 $ 10^{-7}$ (25) & 2 $ 10^{-11}$ (35)     & 1 $ 10^{-12}$ (30) & 5 $ 10^{-5}$ (25) & 9 $ 10^{-7}$(35)\\     
@@ -257,14 +257,14 @@ Nous obtenons un premier ensemble pour chaque cas en nous limitant aux homologue
 
 \subsection{Alignements des protéines expérimentales et leurs homologues}
 
-Afin d'obtenir une caractérisation structurale de notre sélection de protéines, nous réalisons un alignement des huit séquences natives, présentées en haut de la figure \ref{fig:corePDZ}. Cet alignement nous sert de base pour la définition d'un alignement structural. Nous pouvons alors définir un cœur hydrophobe de nos protéines \og PDZ \fg , il est représenté au centre de \ref{fig:corePDZ}. Les 14 positions utilisées pour définir le cœur hydrophobe sont bien conservées dans l'alignement \og seed \fg de Pfam, mais pas totalement. L'Arg, Lys et Gln apparaissent à certaines positions, puisque dans de petites protéines comme des domaines PDZ, la longue partie hydrophobe de ces chaînes latérales peut être enfouie dans le cœur tout en ayant à la pointe polaire exposé au solvant. Quelques résidus Asp et Glu apparaissent aussi, dans les endroits où l'alignement des séquences peut ne pas très bien refléter la superposition 3D les chaînes latérales.
+Afin d'obtenir une caractérisation structurale de notre sélection de protéines, nous réalisons un alignement des huit séquences natives, présentées en haut de la figure \ref{fig:corePDZ}. Cet alignement nous sert de base pour la définition d'un alignement structural. Nous pouvons alors définir un cœur hydrophobe de nos protéines \og PDZ \fg , il est représenté au centre de \ref{fig:corePDZ}. Les 14 positions utilisées pour définir le cœur hydrophobe sont bien conservées dans l'alignement \og seed \fg de Pfam, mais pas totalement. L'Arg, Lys et Gln apparaissent à certaines positions, puisque dans de petites protéines comme des domaines PDZ, la longue partie hydrophobe de ces chaînes latérales peut être enfouie dans le cœur tout en ayant à la pointe polaire exposée au solvant. Quelques résidus Asp et Glu apparaissent aussi, dans les endroits où l'alignement des séquences peut ne pas très bien refléter la superposition 3D les chaînes latérales.
 
     \begin{table}[!htbp]
       \centering
       \caption{Similarité des séquences expérimentales homologues des huit protéines PDZ.}
       \begin{tabular}{ccccccccc}
         \toprule
-        Proteine & NHREF        & INAD      & GRIP        & Syntenin        & DLG2       & PSD95       & Cask       & Tiam1 \\
+        Protéine & NHREF        & INAD      & GRIP        & Syntenin        & DLG2       & PSD95       & Cask       & Tiam1 \\
         \cmidrule{1-9}
 
         NHREF    & 326 &  64 &  15 &  15 &  59 & 112 & 49  &   1  \\     
@@ -290,7 +290,7 @@ Comme nous avons caractérisé les homologies des séquences natives, nous calcu
        \includegraphics[width=18cm]{images/native_align.pdf} \\
        \includegraphics[width=16cm]{images/corePDZ2.png} \\
      \end{tabular}
-     \caption{\textbf{Le cœur PDZ sélectionné} En haut, l'alignement des huit séquences sauvages étudiées, les positions du cœur sont en jaunes. Au centre, la structure 3D des six cœurs de $\mathcal{S}_1$ superposés. En bas, La séquence et les \og positions PDB \fg de chaque cœur.}
+     \caption{\textbf{Le cœur PDZ sélectionné} En haut, l'alignement des huit séquences sauvages étudiées, les positions du cœur sont en jaunes. Au centre, la structure 3D des six cœurs de $\mathcal{S}_1$ superposés. En bas, la séquence et les \og positions PDB \fg de chaque cœur.}
      \label{fig:corePDZ}      
     \end{figure}
     
@@ -433,7 +433,7 @@ PRO&0,1&&1,8&&0,0&(-0,9)&0,0&(-4,9)\\
   \begin{tabular}{cccccc}
     
     \toprule
-    Protein & Match/seq & Superfamily & Superfamily & Family & Family \\
+    Protéine & Match/seq & Superfamily & Superfamily & Family & Family \\
             & size      & Evalue      & success     & Evalue & success\\
     \cmidrule{1-6}
     NHREF  & 81/91 &     2,0 $10^{-12}$ & 10000  & 1,0 $10^{-2}$ & 10000  \\
@@ -477,7 +477,7 @@ La diversité des séquences naturelles et des séquences calculées est caract�
       \label{tab:Entropie_PDZ}      
       \begin{tabular}{cccc}
         \toprule
-        Protein & Proteus & Rosetta & Pfam seed \\
+        Protéine & Proteus & Rosetta & Pfam seed \\
         \cmidrule{1-4}
         NHREF  & 1,38 & 1,45 & 3,15  \\
         INAD  & 1,37 & 1,55 & 3,06  \\

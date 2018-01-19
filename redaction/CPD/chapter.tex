@@ -34,7 +34,7 @@ Pour faire du CPD, il faut une représentation de l'ensemble des conformations q
 
 \subsection{L'état replié }
 \label{sec:etatreplie}
-La mécanique moléculaire propose d'appliquer les représentations de la mécanique classique aux molécules. Les atomes sont représentés sous forme de sphères. La protéine dans un milieu aqueux est flexible et en permanence en mouvement. C'est en particulier le cas pour les chaînes latérales et les boucles flexibles. L'espace d'états d'une chaîne polypeptidique, dans le cadre de la mécanique moléculaire est alors constitué d'un vaste espace continu de conformation possibles.
+La mécanique moléculaire propose d'appliquer les représentations de la mécanique classique aux molécules. Les atomes sont représentés sous forme de sphères. La protéine dans un milieu aqueux est flexible et en permanence en mouvement. C'est en particulier le cas pour les chaînes latérales et les boucles flexibles. L'espace d'états d'une chaîne polypeptidique, dans le cadre de la mécanique moléculaire est alors constitué d'un vaste espace continu de conformations possibles.
 
 D'autre part, si un domaine polypeptidique a un nombre $N$ de résidus et que chacun peut adopter l'un des 20 types d'acides aminés, le nombre de séquences à considérer est égale à  $20^{N}$. Il en résulte un espace des séquences-conformations trop grand pour être utilisable. Il faut donc réduire la taille de l'espace des conformations. Pour cela, Ponder et Richards \cite{Ponder87} proposent une approche en deux points:
 \begin{enumerate}[leftmargin=*]
@@ -54,7 +54,7 @@ Comme le positionnement des chaînes latérales n'influence que faiblement la st
 Cependant, cette approximation peut avoir des conséquences importantes. Un type d'acide aminé considéré comme défavorable peut devenir favorable après une petite adaptation du backbone et il a été établi que quelques mouvements de squelettes peuvent faire varier significativement l'énergie de la conformation \cite{Desjarlais99}.
 En réponse à ce problème, Druart et al. \cite{Druart16} proposent une méthode de Monte Carlo hybride travaillant sur un modèle multi backbone. Une autre approche consiste à donner une certaine liberté aux angles $\Phi$, $\Psi$ en introduisant des variations aléatoires \cite{Desjarlais99}. Dantas et al. \cite{Dantas07} font des simulations avec minimisation après chaque mouvement de chaîne latérale. Kuhlman et al. \cite{Kuhlman03}  optimisent alternativement la structure du squelette et la séquence d'acides aminés.
 
-Enfin, citons l'utilisation d'une classe particulière de mouvement des squelettes protéiques appelé \og backrub \fg. Ce sont des mouvements naturels du backbone mis en évidence par David et al. \cite{Davis06}, à partir de structures cristallographiques. Ces mouvements consistent en des déplacements de l'ensemble $C_{\alpha}-C_{\beta}$ à une position $i$ donnée de la chaîne, sans déplacement des carbones $C_{\alpha_{i+1}}$ et $C_{\alpha_{i-1}}$. Ces mouvements backrub ont permis \cite{Georgiev08,Smith08} d'améliorer la qualité des prédictions des mutants par rapport à des simulations à squelette rigide.
+Enfin, citons l'utilisation d'une classe particulière de mouvement des squelettes protéiques appelée \og backrub \fg. Ce sont des mouvements naturels du backbone mis en évidence par David et al. \cite{Davis06}, à partir de structures cristallographiques. Ces mouvements consistent en des déplacements de l'ensemble $C_{\alpha}-C_{\beta}$ à une position $i$ donnée de la chaîne, sans déplacement des carbones $C_{\alpha_{i+1}}$ et $C_{\alpha_{i-1}}$. Ces mouvements backrub ont permis \cite{Georgiev08,Smith08} d'améliorer la qualité des prédictions des mutants par rapport à des simulations à squelette rigide.
 
 \subsection{L'état déplié }
 \label{sub:deplie}
@@ -122,7 +122,7 @@ Ici, $A$ est la constante de force et $\omega$ représente l'angle entre les pla
 
      \end{tabular}
      
-     \caption{\textbf{Représentation des énergies liées} De la gauche vers la droite et du haut vers le bas, sont représentés les énergies de liaison, d'angle, du dièdre et du dièdre impropre.}
+     \caption{\textbf{Représentation des énergies liées} De la gauche vers la droite et du haut vers le bas, sont représentées les énergies de liaison, d'angle, du dièdre et du dièdre impropre.}
 \label{graph:Eliees}
    \end{figure}
 
@@ -314,14 +314,14 @@ Il reste à choisir une approximation pour les rayons de Born. La méthode class
 \begin{displaymath}
 b_i=b_i(r_1,r_2,..,r_N)
 \end{displaymath}
-Ainsi, l'interaction entre une paire $i$ et $j$ dépend des postions de tous les atomes.
+Ainsi, l'interaction entre une paire $i$ et $j$ dépend des positions de tous les atomes.
 \paragraph{\og Native Environnement Approximation\fg (NEA)}
 \label{NEA}
 Dans la variante NEA pour \og Native Environnement Approximation \fg  du modèle GB, le rayon de solvatation des atomes de chaque chaîne latérale est calculé avant l'étape d'exploration, en fixant tout le reste du système dans sa séquence native et sa conformation native \cite{Polydorides11,Simonson13,Gaillard14}. Par la suite, les $b_i$ ont des valeurs constantes, qui ne dépendent pas de la conformation. Ainsi $G_{elec}$ prend la forme d'une somme de termes qui ne dépendent chacun que d'une paire d'atomes $i$, $j$: on dit qu'elle est \og décomposable par paires\fg.
 
 \section{L'algorithme d'exploration}
 
-Il reste à déterminer un algorithme d'exploration de l'espace d'états qui permet la sélection d'un sous-ensemble de séquences les plus pertinentes. L'objectif du CPD est d'obtenir l'ensemble des séquences d'acides aminés compatibles avec une structure 3D ou qui réalisent une fonction donnée. Un tel algorithme a pour grand défi de faire face à l'immensité de l'espace d'états. On peut classer les différentes approchent utilisées en deux groupes.
+Il reste à déterminer un algorithme d'exploration de l'espace d'états qui permet la sélection d'un sous-ensemble de séquences les plus pertinentes. L'objectif du CPD est d'obtenir l'ensemble des séquences d'acides aminés compatibles avec une structure 3D ou qui réalisent une fonction donnée. Un tel algorithme a pour grand défi de faire face à l'immensité de l'espace d'états. On peut classer les différentes approches utilisées en deux groupes.
 
 Le premier groupe est constitué des méthodes déterministes dans lesquelles les choix effectués sont toujours déterminés a priori ou déterminés en fonction des éléments obtenus au cours de l'exécution du programme. On trouve par exemple dans ce groupe, les méthodes exhaustives qui exhibent la totalité des solutions du problème. Elles peuvent être appliquées à de petites espaces conformationnels. On trouve aussi des méthodes dites semi-exhaustives dans lesquelles la complexité combinatoire est réduite en autorisant uniquement certaines conformations à certains moments de l'exploration.
 
