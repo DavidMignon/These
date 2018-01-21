@@ -41,7 +41,7 @@ D'autre part, si un domaine polypeptidique a un nombre $N$ de résidus et que ch
 \item Le squelette de la protéine est fixé.
 \item Les conformations des chaînes latérales sont réduites à un ensemble fini de positionnements possibles dans l'espace euclidien, les \og rotamères\fg.
 \end{enumerate}  
-Ensuite, des variations sur ce principe ont étés introduites, avec notamment la prise en compte de la mobilité de la chaîne principale dans un ensemble discret ou continu d'états. L'approche qui consiste à générer un ensemble de squelettes et à faire des calculs CPD pour l'ensemble a été utilisée par Su et Mayo \cite{Su97}. 
+Ensuite, des variations sur ce principe ont été introduites, avec notamment la prise en compte de la mobilité de la chaîne principale dans un ensemble discret ou continu d'états. L'approche qui consiste à générer un ensemble de squelettes et à faire des calculs CPD pour l'ensemble a été utilisée par Su et Mayo \cite{Su97}. 
 Présentons maintenant, la modélisation des chaînes latérales et celle du backbone, c'est-à-dire le squelette polypeptidique.
 
 \subsubsection{Les chaînes latérales}
@@ -147,12 +147,12 @@ avec $D_0$ et $r_0$ des constantes, $r_{ij}$ la distance entre l'atome $i$ et l'
 
 \subsection{D'autres approches}
 
-Même si la mécanique moléculaire prédomine dans le monde du CPD, il existe d'autres approches. Zollars et al. utilisent une fonction empirique pour la modélisation des liaisons hydrogènes avec une fonction d'énergie de Coulomb qui contient un $\epsilon$ qui varie en fonction de la distance interatomique \cite{Zollars06}. Il existe des fonctions d'énergie comportant des éléments relevant de statistiques sur les protéines \cite{Pokala05}. Il existe encore des fonctions d'énergie à gros grains notamment dans la modélisation des forces de Van der Waals utiles pour les interactions protéine-protéine \cite{Korkut09}.
+Même si la mécanique moléculaire prédomine dans le monde du CPD, il existe d'autres approches. Zollars et al. utilisent une fonction empirique pour la modélisation des liaisons hydrogène avec une fonction d'énergie de Coulomb qui contient un $\epsilon$ qui varie en fonction de la distance interatomique \cite{Zollars06}. Il existe des fonctions d'énergie comportant des éléments relevant de statistiques sur les protéines \cite{Pokala05}. Il existe encore des fonctions d'énergie à gros grains notamment dans la modélisation des forces de Van der Waals utiles pour les interactions protéine-protéine \cite{Korkut09}.
 
 \section{La modélisation du solvant}
 Les protéines sont étudiées dans un solvant aqueux. La solution qui est considérée dans les calculs est un mélange dans lequel l'eau est présente en quantité largement plus importante que la protéine. Bien qu'il existe d'autres types de solvant, ils ne sont pas abordés ici. Les interactions entre solutés et solvant jouent un rôle clé dans la structure de la protéine, mais également dans sa fonction. La modélisation du solvant est alors un point capital pour le CPD.
 
-Une molécule d'eau a une charge électrique nette nulle. Mais il existe une dissymétrie du nuage électronique: les électrons se situent de façon préférentielle au voisinage du noyau de l'oxygène par rapport à ceux des deux noyaux d'hydrogènes. On dit que la molécule est polaire, et cette polarisation peut être approchée par un moment dipolaire. Cette polarité permet la formation de liaisons hydrogènes entre molécules d'eau et avec tout autre groupe polaire. Ainsi, l'eau à l'état liquide possède beaucoup de liaisons hydrogènes.
+Une molécule d'eau a une charge électrique nette nulle. Mais il existe une dissymétrie du nuage électronique: les électrons se situent de façon préférentielle au voisinage du noyau de l'oxygène par rapport à ceux des deux noyaux d'hydrogènes. On dit que la molécule est polaire, et cette polarisation peut être approchée par un moment dipolaire. Cette polarité permet la formation de liaisons hydrogène entre molécules d'eau et avec tout autre groupe polaire. Ainsi, l'eau à l'état liquide possède beaucoup de liaisons hydrogène.
 
 Lorsqu'une protéine est solvatée, les molécules du solvant se placent de telle façon que le nombre de liaisons hydrogène soit maximal. Les molécules de la première couche de solvatation forment alors des liaisons avec les groupes polaires de la protéine, près des groupes non polaires, s'orientent pour former des liaisons avec d'autres molécules d'eau. Cette réorganisation de la structure moléculaire de l'eau a trois conséquences importantes:
 
@@ -355,7 +355,7 @@ avec $l_j$ parcourant tous les rotamères aux positions autres que $i$.
 
 Les formules \ref{eq:CM1} et \ref{eq:CM2}, constituent un système itératif. Ainsi, l'algorithme se déroule de la façon suivante:
 \begin{enumerate}[leftmargin=*]
-\item  A chaque position, les rotamères sont équiprobables.
+\item  À chaque position, les rotamères sont équiprobables.
 \item  Les énergies moyennes sont calculées grâce à la formule \ref{eq:CM2}.
 \item  De nouvelles probabilités de Boltzmann sont calculées à partir des énergies moyennes précédentes et la formule \ref{eq:CM1}.
 \item  Retour à l'étape 2 jusqu'à convergence des énergies.
@@ -365,7 +365,7 @@ Cette méthode garantit la convergence vers un ensemble de rotamères stables à
 \subsection{Le Dead-End Elimination}
 Le \og Dead End Elimination\fg (DEE)  consiste à éliminer des rotamères ou des combinaisons de rotamères qui ne peuvent pas faire partie de la conformation qui minimise l'énergie ou GMEC. Comme pour le champ moyen, l'énergie doit être décomposable par paires. Il y a deux critères d'élimination \cite{Desmet92}:
 
-\textbf{Le critère simple:} le rotamère $r_i$ du résidu $i$ est éliminé si la meilleure énergie (la plus faible) qu'il est possible d'obtenir pour une conformation comprenant ce rotamère est moins bonne que la pire énergie obtenue avec un rotamère $r_i'$  à la même position. Notons $E(c)$, l'énergie d'une séquence-conformation $C$. Une expression mathématique de ce critère peut être le suivant:\\
+\textbf{Le critère simple:} le rotamère $r_i$ du résidu $i$ est éliminé si la meilleure énergie (la plus faible) qu'il est possible d'obtenir pour une conformation comprenant ce rotamère est moins bonne que la pire énergie obtenue avec un rotamère $r_i'$  à la même position. Notons $E(c)$, l'énergie d'une séqueqnce-conformation $C$. Une expression mathématique de ce critère peut être le suivant:\\
 Si $\displaystyle \min_{C;\,r_i \in C }E(C) > \max_{C;\, r_i' \in C} E(C)$ alors $r_i$ est éliminé. \\
 En utilisant l'expression d'une fonction d'énergie décomposée par paires (équation \ref{eq:pairwise}), avec $N$ le nombre de positions, le critère peut s'écrire de la façon suivante:\\
 Si $\displaystyle E_i(r_i) + \sum_{j\neq i} \min_{r_j} E_{ij}(r_i,r_j) > E_i(r_i') + \sum_{j\neq i}^{N} \max_{r_j}E_{ij}(r_i',r_j)$ alors $r_i$ est éliminé.\\ 
@@ -389,7 +389,7 @@ S'il existe $r_{i'}$ tel que $\displaystyle E_i^{r_i} - E_i^{r_{i'}}+ \sum_{k=1}
 \label{fig:DEE}
    \end{figure}
 
-Au cours de l'optimisation, les deux critères peuvent être utilisés alternativement, jusqu'à ce qu'il n'y est plus de rotamère à éliminer. Il est alors possible d'utiliser une approche exhaustive sur l'espace d'états réduit pour obtenir le GMEC. Cette méthode permet dans les bons cas (par exemple pour les petits systèmes) de converger en un temps raisonnable \cite{Leach98}. Beaucoup de variantes du DEE \cite{Pierce00,Lilien05} ont été proposées notamment en travaillant sur des combinaisons de plus de deux rotamères.
+Au cours de l'optimisation, les deux critères peuvent être utilisés alternativement, jusqu'à ce qu'il n'y ait plus de rotamères à éliminer. Il est alors possible d'utiliser une approche exhaustive sur l'espace d'états réduit pour obtenir le GMEC. Cette méthode permet dans les bons cas (par exemple pour les petits systèmes) de converger en un temps raisonnable \cite{Leach98}. Beaucoup de variantes du DEE \cite{Pierce00,Lilien05} ont été proposées notamment en travaillant sur des combinaisons de plus de deux rotamères.
 
 
 \subsection{Le CFN ou \og Cost Function Network\fg}
@@ -435,7 +435,7 @@ Un exemple inspiré de la thèse de Seydou Traoré est présenté à  la figure 
   \label{fig:EPT}
 \end{figure}
 
-Cette approche a montré sa supériorité, avec l'outil Toulbar2 \cite{Allouche14,Traore13}, par rapport à un ensemble de résolveurs de CFN parmi les plus réputés actuellement qui exploitent notamment l'approche DEE/A* ou le backtracking. Toulbar2 en combinant FFBB, EPT et DEE a été capable de trouver le GMEC dans le plus grand nombre de problèmes issu du CPD proposés aux différents outils.
+Cette approche a montré sa supériorité, avec l'outil Toulbar2 \cite{Allouche14,Traore13}, par rapport à un ensemble de résolveurs de CFN parmi les plus réputés actuellement qui exploitent notamment l'approche DEE/A* ou le backtracking. Toulbar2 en combinant FFBB, EPT et DEE a été capable de trouver le GMEC dans le plus grand nombre de problèmes issus du CPD proposés aux différents outils.
 \subsection{L'heuristique Multistart Steepest Descent (MSD)}
 \label{MSD}
 En 2000, Wernisch, Hery et Wodak \cite{Wernisch00} partent du constat que l'espace conformationnel et les fonctions d'énergie utilisées ne capturent que partiellement la réalité. Ainsi, le GMEC ne correspondra pas forcément à la séquence la plus stable. D'autre part, des protéines avec des taux d'identité de moins de $50\%$ peuvent conserver quasiment la même structure 3D. Cela révèle l'immensité du nombre de séquences-conformations propre à un pli. Ainsi, leur objectif n'est pas de résoudre un problème d'optimisation, mais d'exhiber un ensemble de séquences de basse énergie. Ils proposent alors une heuristique conçue pour le CPD. Il s'agit d'une procédure simple qui produit une grande quantité de séquences-conformations de basse énergie, sans se focaliser sur le GMEC.
@@ -638,7 +638,7 @@ la probabilité d'acceptation acc_{swap} est calculée \;
 \end{algorithm}
 
 
-Il reste au simulateur à adapter le nombre de répliques, les températures utilisées et la fréquence des tentatives d'échange à sa problématique. La capacité de REMC à être exécuté sur des machines parallèles a entrainé sa grande popularité, en particulier dans le domaine de la modélisation moléculaire, mais aussi en physique, chimie, intelligence artificielle.
+Il reste au simulateur à adapter le nombre de répliques, les températures utilisées et la fréquence des tentatives d'échange à sa problématique. La capacité de REMC à être exécuté sur des machines parallèles a entraîné sa grande popularité, en particulier dans le domaine de la modélisation moléculaire, mais aussi en physique, chimie, intelligence artificielle.
 
 %%% Local Variables:
 %%% mode: latex

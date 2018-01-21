@@ -34,7 +34,7 @@ avec $E^f$ l'énergie de l'état replié. Pour le changement d'énergie $\Delta 
 \begin{equation}
 \Delta E_{m_2}= (E^f(...,t'_i,r'_i,...) - E^f(...,t_i,r_i,...)) - (E^u(t'_i) - E^u(t_i))     
 \end{equation}   
-avec $E^f$ l'énergie de la l'état replié et $E^u$ l'énergie de l'état déplié. Cela peut s'interpréter comme le changement à la position $i$ de $t_i$ vers $t'_i$ dans l'état repliée et du changement inverse $t'_i$ vers $t_i$ dans l'état déplié. Comme nos simulations Monte Carlo respectent le schéma de Métropolis, les séquences-conformations sont visitées suivant leur probabilité de Boltzmann. Ainsi le ratio des populations de deux séquences-conformations obtenues est fonction de leur stabilité relative. 
+avec $E^f$ l'énergie de la l'état replié et $E^u$ l'énergie de l'état déplié. Cela peut s'interpréter comme le changement à la position $i$ de $t_i$ vers $t'_i$ dans l'état replié et du changement inverse $t'_i$ vers $t_i$ dans l'état déplié. Comme nos simulations Monte Carlo respectent le schéma de Métropolis, les séquences-conformations sont visitées suivant leur probabilité de Boltzmann. Ainsi le ratio des populations de deux séquences-conformations obtenues est fonction de leur stabilité relative. 
    
 
 \section{Organisation générale}
@@ -45,7 +45,7 @@ Proteus est constitué de trois parties:
 \item un ensemble de scripts Xplor, qui pilote le calcul de la matrice d'énergie. 
 \item un programme écrit en C, que nous appelons \og proteus\fg qui explore l'espace des séquences-conformations
 \end{itemize}
-Proteus est flexible et largement configurable. Il permet l'utilisation de plusieurs champs de force, de plusieurs modèles de solvant, et de plusieurs librairies de rotamères. La partie en C, proteus, propose plusieurs algorithmes d'exploration comme le MSD, MC ou REMC. Le programme proteus permet de diviser le système en plusieurs groupes ou d'en dupliquer une partie. Ceux-ci pouvent alors être combinés dans une fonction de score basée sur la fonction d'énergie physique afin de favoriser la stabilité de certains sous-ensembles du système ou certaines affinités. Plusieurs succès ont déjà était obtenue avec Proteus par exemple le redesign de la tyrosyl-ARNt synthétase \cite{Simonson16}, les calculs de $pK_a$ \cite{Villa17} ou la création de nouveaux domaines PDZ \cite{Mignon17}.
+Proteus est flexible et largement configurable. Il permet l'utilisation de plusieurs champs de force, de plusieurs modèles de solvant, et de plusieurs librairies de rotamères. La partie en C, proteus, propose plusieurs algorithmes d'exploration comme le MSD, MC ou REMC. Le programme proteus permet de diviser le système en plusieurs groupes ou d'en dupliquer une partie. Ceux-ci peuvent alors être combinés dans une fonction de score basée sur la fonction d'énergie physique afin de favoriser la stabilité de certains sous-ensembles du système ou certaines affinités. Plusieurs succès ont déjà été obtenus avec Proteus par exemple le redesign de la tyrosyl-ARNt synthétase \cite{Simonson16}, les calculs de $pK_a$ \cite{Villa17} ou la création de nouveaux domaines PDZ \cite{Mignon17}.
 
 Proteus autorise le choix de plusieurs fonctions d'énergie. La plus simple \og MMCASA \fg combine la mécanique moléculaire pour la protéine et un modèle de solvant implicite CASA (voir  \vref{sub:CASA}). Deux types \og MMGBSA \fg sont également possibles, dans lesquels le traitement du solvant est effectué par un modèle de Born Genéralisé. Nous détaillons les points importants de Proteus dans la suite.
 
@@ -114,7 +114,7 @@ Les coefficients $c_n^{IJ}$ peuvent être précalculés et stockés dans la matr
 
 \section{La matrice d'énergie}
 
-Proteus utilise un backbone fixe, un espace discret de rotamères et une fonction d'énergie décomposable par paires. Ces trois éléments permettent de précalculer toutes les énergies d'interactions possibles. À cet ensemble d'interactions, il faut ajouter les interactions des résidus avec le backbone, pour chacun des rotamères possibles, pour constituer un ensemble complet de valeurs énergétiques. Cet ensemble  permet d'obtenir rapiement la valeur de la fonction d'énergie pour chaque séquence-conformation. Cet ensemble peut être organisé sous la forme d'une matrice symétrique dans laquelle chaque couple de positions dans la chaîne polypeptidique apparaît avec sa multiplicité de couples de rotamères possibles, voir la figure \ref{fig:matener}.      
+Proteus utilise un backbone fixe, un espace discret de rotamères et une fonction d'énergie décomposable par paires. Ces trois éléments permettent de précalculer toutes les énergies d'interactions possibles. À cet ensemble d'interactions, il faut ajouter les interactions des résidus avec le backbone, pour chacun des rotamères possibles, pour constituer un ensemble complet de valeurs énergétiques. Cet ensemble  permet d'obtenir rapidement la valeur de la fonction d'énergie pour chaque séquence-conformation. Cet ensemble peut être organisé sous la forme d'une matrice symétrique dans laquelle chaque couple de positions dans la chaîne polypeptidique apparaît avec sa multiplicité de couples de rotamères possibles, voir la figure \ref{fig:matener}.      
 
    \begin{figure}[!htbp]
      \centering
@@ -209,7 +209,7 @@ Il est possible de réduire l'espace des états que peut prendre une séquence-c
                         & Sequence\_Pass\_Number  &  le nombre maximum d'itérations sur  la structure à chaque cycle HEURISTIC    \\ \hline  
 
         fonction d'énergie &  Optimization\_Configuration &   définition de la fonction d'énergie\\               \cline{2-3}
-                        &  Group\_definition &   groupes  d'énergies et d'énergies d'interactions\\  \hline  
+                        &  Group\_Definition &   groupes  d'énergies et d'énergies d'interactions\\  \hline  
         restrictions de l'espace de  séquences-rotamères & Space\_Constraints   &  restreint les états pouvant être visités \\ \hline                
                          
      paramètre  & Temperature & attribue les températures aux marcheurs REMC  \\          \hline     
@@ -277,7 +277,7 @@ avec $P$ la protéine, $L_1$ et $L_2$ deux ligands et $P\!:\!L_i$ un complexe pr
      \caption{Cycle thermodynamique qui définit l'affinité.}
 \label{fig:cycleThermoLigand}
    \end{figure}
-Le critère de spécificité combine une augmentation du poids d'un ligand et la réduction du poids d'un autre. En effet, Proteus permet la décomposition des équations \ref{deltaG} et \ref{deltaG2} en contributions intramoléculaire et intermoléculaire. De plus, il autorise une pondération des différents termes et permet de dupliquer des parties du système. Cela permet également des optimisations simultanées de deux conformations à séquences identiques, mais non fixées. Un exemple est donnée avec la déclaration de deux balises suivantes:\\
+Le critère de spécificité combine une augmentation du poids d'un ligand et la réduction du poids d'un autre. En effet, Proteus permet la décomposition des équations \ref{deltaG} et \ref{deltaG2} en contributions intramoléculaire et intermoléculaire. De plus, il autorise une pondération des différents termes et permet de dupliquer des parties du système. Cela permet également des optimisations simultanées de deux conformations à séquences identiques, mais non fixées. Un exemple est donné avec la déclaration de deux balises suivantes:\\
 \verb!<Group_Definition>!\\
 \verb!prot 5-611!\\
 \verb!lig 901!\\
@@ -316,7 +316,7 @@ Superfamily \cite{Madera04} comprend:
 \item une base de données de modèles de Markov cachés, où chaque modèle représente une structure 3D d'un domaine de la classification SCOP \cite{Andreeva04}.
 \item une série de scripts qui annotent les séquences données en entrée. Ici, nous utilisons uniquement l'association de chaque séquence au modèle SCOP le plus vraisemblable. 
 \end{itemize}
-Nous travaillons avec la version 1.75 et nous utilisons SAM (version 3.5) \cite{hughey95} et HMMER (version 3.0) \cite{HMMER}, deux outils de manipulation de modèles de Markov cachés pour la biologie recommandées par l'équipe de Superfamily. La base SCOP contient 15 438 modèles.
+Nous travaillons avec la version 1.75 et nous utilisons SAM (version 3.5) \cite{hughey95} et HMMER (version 3.0) \cite{HMMER}, deux outils de manipulation de modèles de Markov cachés pour la biologie recommandés par l'équipe de Superfamily. La base SCOP contient 15 438 modèles.
 
 \subsection{Taux d'identité de séquences}
 

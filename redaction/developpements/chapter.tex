@@ -28,7 +28,7 @@ La copie de modèle se fait par la commande:\\
 avec \verb!A! et \verb!B!  pouvant prendre les valeurs \verb!main!, \verb!comp!, \verb!xref! ou \verb!model!.
 Le mot \verb!idx=i=j! n'est pas obligatoire. Par défaut, si \verb!from=model! alors \verb!idx=1! et si \verb!to=model! le nouvel indice créé sera le plus grand indice plus un. L'ancienne syntaxe est toujours supportée. La commande:\\ 
 \verb!write coor sele=(resid $1 and resn $aa1) from=model output=new.pdb end!\\
-imprime les modèles de chacune des resclass définies par la sélection dans un fichier PDB. on écrit une ligne par atome de la resclass avec l'indice du modèle, pour tous les modèles. 
+imprime les modèles de chacune des resclass définies par la sélection dans un fichier PDB. On écrit une ligne par atome de la resclass avec l'indice du modèle, pour tous les modèles. 
 Il est possible de limiter l'impression à un seul modèle $i$ par une commande du type:\\
 \verb!write coor from=model idx=i output=new.pdb end!\\
 
@@ -101,7 +101,7 @@ Chaque ligne à l'intérieur de la balise définit une forme de pas. Le nombre �
 
 
 \section{Label}
-Dans certaines situations, le fichier de configuration de proteus peut devenir particulièrement grand. C'est le cas par exemple lorsque les énergies de références y sont définies. En effet, cela nécessite la déclaration d'une énergie pour chaque type d'acide aminé à chaque position de la chaîne polypeptidique du système étudié. Pour simplifier certaines déclaration, la nouvelle balise \verb!<Label>! permet de définir un alias sur un ensemble de mots. La syntaxe est la suivante:\\
+Dans certaines situations, le fichier de configuration de proteus peut devenir particulièrement grand. C'est le cas par exemple lorsque les énergies de références y sont définies. En effet, cela nécessite la déclaration d'une énergie pour chaque type d'acide aminé à chaque position de la chaîne polypeptidique du système étudié. Pour simplifier certaines déclarations, la nouvelle balise \verb!<Label>! permet de définir un alias sur un ensemble de mots. La syntaxe est la suivante:\\
 \verb!<Label>! \\
 \verb!exposed 11 15 17 19 ! \\
 \verb!buried  12 13 14 16 18 20 21 ! \\

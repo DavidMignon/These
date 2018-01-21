@@ -1,0 +1,281 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modèle de thèse LaTeX en français basé sur la classe book
+% 
+% Thomas Gaillard, juillet 2010, (CC) BY-SA.
+% <thomas.gaillard@polytechnique.edu>
+%
+% Ce modèle est disponible sous licence Creative Commons paternité - partage à l¿identique.
+% Une copie de cette licence est disponible à l'adresse <http://creativecommons.org/licenses/by-sa/3.0/deed.fr>
+% ou par courrier à Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,12pt]{book}
+\usepackage[heightrounded,textheight=22.7658cm,vcentering,inner=3cm,outer=2cm]{geometry}
+%\usepackage[heightrounded,top=3cm,bottom=3cm,inner=3cm,outer=2cm,verbose]{geometry}
+\usepackage[utf8]{inputenc}   % le fichier .tex est en UTF-8
+%\usepackage[francais]{babel}  %typo française                    
+\usepackage[T1]{fontenc}      % encodage des fonts latex         
+\usepackage{lmodern}                                             
+\usepackage{microtype}        % typo supplémentaires             
+%%\usepackage[latin1]{inputenc}
+%%\usepackage[T1]{fontenc}
+%%\usepackage{lmodern}
+\usepackage[authoryear,square,colon,compress]{natbib}
+\usepackage[english,frenchb]{babel}
+\usepackage{calc}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+\frenchspacing
+\usepackage{setspace}
+\onehalfspacing{}
+\usepackage{float}
+
+\bibpunct{[}{]}{\,;}{a}{}{,}
+\bibliographystyle{mystyle}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{lscape}
+\usepackage{xspace}
+\usepackage[plainpages=false,pdfpagelabels,pagebackref]{hyperref}
+\usepackage[french]{varioref}
+%\usepackage[french,onelanguage]{algorithm2e} %for pseudo code
+\usepackage[french,onelanguage,vlined,linesnumbered,inoutnumbered]{algorithm2e} 
+\usepackage{enumitem}
+\usepackage{backref}
+% lists gérées hors de frenchb
+\frenchbsetup{StandardLists=true}
+\pdfcompresslevel=9
+\hypersetup{%
+  pdftitle={Computational protein design: un outil pour l’ingénierie des protéines et la biologie synthétique}, 
+  pdfauthor={David Mignon},
+  pdfkeywords={motclé1,motclé2,motclé3},
+  pdfsubject={Thèse de doctorat},
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
+  citecolor=black
+}
+ 
+\usepackage{pdfpages}
+%natbib cite configuration
+\bibpunct{[}{]}{,}{a}{}{;}
+
+% Titlepage adjustment
+\addtolength{\textheight}{+3cm} 
+\addtolength{\topmargin}{-1.5cm}
+\addtolength{\oddsidemargin}{-0.5cm}
+\addtolength{\evensidemargin}{+0.5cm}
+
+ % Pages où se trouvent les citations
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{%
+  % alternative interface
+  % #1: number of distinct back references
+  % #2: backref list with distinct entries
+  % #3: number of back references including duplicates
+  % #4: backref list including duplicates
+  \par
+  \nopagebreak
+  \ifnum#1=1 %
+    \ifnum#3=1 %
+      {\small cité page~}%
+    \else
+      {\small cité page~}%
+    \fi
+  \else
+    {\small cité pages~}%
+  \fi
+     {\small#2}
+     \par
+     }
+\renewcommand*{\backrefsep}{, } 
+\renewcommand*{\backreftwosep}{ et~}
+\renewcommand*{\backreflastsep}{ et~}
+
+% Pas d'espace après la virgule en mode mathématique
+\DecimalMathComma{}
+
+\makeatletter
+% Custom titlepage
+
+% paragraphe dans le sommaire
+\setcounter{tocdepth}{5}
+
+% Custom chapter % Careful : unnumbered chapters are not redefined in the same way
+\def\@makechapterhead#1{%
+\vspace*{50\p@}%
+{\parindent \z@
+\ifnum \c@secnumdepth >\m@ne
+\colorbox{gray}{\parbox{\textwidth-\marginparsep}{\vspace{2pt}\Large\bfseries \@chapapp\space \thechapter}}
+\par\nobreak
+\fi
+\interlinepenalty\@M
+\raggedright \normalfont \Huge \bfseries #1
+\par\nobreak
+\vskip 40\p@
+}}
+\makeatother
+
+% Define colors
+\definecolor{gold}{rgb}{0.75,0.5,0}
+\definecolor{lightgold}{rgb}{1,0.9,0.4}
+\definecolor{gray}{rgb}{0.8,0.8,0.8}
+
+
+% Negative space to remove automatic spacing
+\newcommand\negspace{\hspace{-0.3em}}
+
+% Pénalités pour les lignes isolées
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom{}
+
+% Placement des flottants
+\renewcommand{\topfraction}{0.85} % 0.70
+\renewcommand{\textfraction}{0.1} % 0.20
+\renewcommand{\floatpagefraction}{0.75} % 0.50
+
+% Noms des flottants et titres des listes
+\addto\captionsfrench{%
+   \def\figurename{Figure}%
+   \def\tablename{Table}%
+   \def\listfigurename{Liste des figures}%
+   \def\listtablename{Liste des tables}%
+}
+
+% Gestion des en-têtes
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\nouppercase{\bfseries\slshape\leftmark}}
+\fancyhead[RO]{\nouppercase{\bfseries\slshape\rightmark}}
+\fancyfoot[LE,RO]{\nouppercase{\bfseries\thepage}}
+\addtolength{\headheight}{2.5pt} % espace pour le filet
+\fancypagestyle{plain}{% pages de têtes de chapitre
+  \fancyhead{}         % supprime l'en-tête
+  \renewcommand{\headrulewidth}{0pt} % et le filet
+}
+
+% Page sans en-têtes et pied de page
+\newcommand{\clearemptydoublepage}{%
+\newpage{\pagestyle{empty}\cleardoublepage}}
+
+% Page sans en-têtes
+\newcommand{\clearplaindoublepage}{%
+\newpage{\pagestyle{plain}\cleardoublepage}}
+
+
+\title{Titre de la thèse}
+
+\author{M. David \bsc{Mignon}}
+
+\date{XXX}
+
+\begin{document}
+% Title
+\pagenumbering{gobble}
+\begin{titlepage}
+\pdfbookmark[0]{Couverture}{cover}|
+%\maketitle
+\includepdf[pages=-]{pagezero.pdf}
+\pagestyle{empty}
+\end{titlepage} 
+% Frontmatter
+\frontmatter
+\thispagestyle{plain}
+\pdfbookmark[0]{Dédicace}{dedication}
+\include{dedicace}
+\clearplaindoublepage{}
+\pdfbookmark[0]{Table des matières}{contents}
+\tableofcontents
+\clearplaindoublepage{}
+\phantomsection{}
+\addcontentsline{toc}{chapter}{Liste des figures}
+\listoffigures
+\clearplaindoublepage{}
+\phantomsection{}
+\addcontentsline{toc}{chapter}{Liste des tables}
+\listoftables
+\clearplaindoublepage{}
+\include{glossaire}
+
+%------------------------
+
+\clearplaindoublepage{}
+
+% Mainmatter
+\mainmatter{}
+\clearplaindoublepage{}
+
+\graphicspath{{./Couverture}{./PDZ/}{./PDZ/graphes/}{./CPD/}{./CPD/figure/}{./comparaisons/figure/}{./methodes/}{./developpements/}}
+
+\include{CPD/chapter}
+\clearplaindoublepage{}
+\include{methodes/chapter}
+\clearplaindoublepage{}
+\include{annexe_proteus}
+\clearplaindoublepage{}
+\include{annexe_groupes}
+\clearplaindoublepage{}
+\include{developpements/chapter}
+\clearplaindoublepage{}
+\include{comparaisons/chapter}
+\clearplaindoublepage{}
+\include{annexe_posi}
+\clearplaindoublepage{}
+\include{PDZ/chapter}
+\clearplaindoublepage{}
+\include{annexe_PDZ}
+\clearplaindoublepage{}
+%\appendix
+%\include{annexe2}
+%\clearplaindoublepage{}
+\phantomsection{}
+\addcontentsline{toc}{chapter}{Publications}
+\include{publications}
+\clearplaindoublepage{}
+\phantomsection{}
+% Backmatter
+\backmatter{}
+\addcontentsline{toc}{chapter}{Bibliographie}
+\markboth{Bibliographie}{Bibliographie}
+\selectlanguage{english} 
+\renewcommand{\bibname}{Bibliographie}
+\singlespacing{}
+\bibliography{biblio}
+\onehalfspacing{}
+\selectlanguage{frenchb}
+\clearplaindoublepage{}
+\thispagestyle{plain}
+\phantomsection{}
+
+\pagestyle{empty}
+\addtolength{\oddsidemargin}{-0.5cm}
+\addtolength{\evensidemargin}{+0.5cm}
+\singlespacing{}
+\addcontentsline{toc}{chapter}{Remerciements}
+%\pdfbookmark[0]{Remerciements}{acknowledgements}
+\include{merci}
+\newpage
+\strut
+\newpage
+\strut
+\newpage
+
+%\include{resume}
+\includepdf[pages=-]{resume.pdf}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
