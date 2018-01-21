@@ -1,9 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.7.14)  21 JAN 2018 17:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.1.8)  21 JAN 2018 18:12
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**\input these.tex
+**\nonstopmode\input these.tex
 (./these.tex (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo
@@ -951,8 +950,8 @@ LaTeX Warning: Label `eq:entropy' multiply defined.
 ) (./annexe_posi.aux) (./PDZ/chapter.aux) (./annexe_PDZ.aux)
 (./publications.aux) (./merci.aux)
 
-./these.aux:197: Package natbib Error: Bibliography not compatible with author-
-year citations.
+! Package natbib Error: Bibliography not compatible with author-year citations.
+
 (natbib)                Press <return> to continue in numerical citation style.
 
 
@@ -1324,7 +1323,7 @@ File: ./CPD/figure/surface.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./CPD/figure/surface.pdf used on input line 205.
 (pdftex.def)             Requested size: 369.88582pt x 121.89539pt.
 
-./CPD/chapter.tex:215: Undefined control sequence.
+! Undefined control sequence.
 l.215 ... a  alors, en utilisant le modèle \texbf
                                                   {SA} pour le terme surfaci...
 The control sequence at the end of the top line
@@ -1416,7 +1415,7 @@ t/12 X[] \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 x[]\OT1/lmr/m/n/12 )
  []
 
 [21 <./CPD/figure/algo_genetique.pdf>] [22] [23] [24]
-./CPD/chapter.tex:637: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.637 \caption
@@ -1427,7 +1426,7 @@ you left one out. Proceed, with fingers crossed.
 
 LaTeX Warning: Command \' invalid in math mode on input line 637.
 
-./CPD/chapter.tex:637: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.637 \caption
@@ -1435,7 +1434,7 @@ l.637 \caption
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./CPD/chapter.tex:637: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.637 \caption
@@ -1443,7 +1442,7 @@ l.637 \caption
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./CPD/chapter.tex:637: Extra }, or forgotten $.
+! Extra }, or forgotten $.
 \algocf@Vline ... }\vtop {\algocf@addskiptotal #1}
                                                   \Hlne }}\vskip \skiphlne \...
 l.637 \caption
@@ -1454,7 +1453,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./CPD/chapter.tex:637: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.637 \caption
@@ -1462,7 +1461,7 @@ l.637 \caption
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./CPD/chapter.tex:637: Missing } inserted.
+! Missing } inserted.
 <inserted text> 
                 }
 l.637 \caption
@@ -1809,7 +1808,7 @@ Overfull \hbox (2.26656pt too wide) in paragraph at lines 168--168
 []\T1/lmr/bx/n/17.28 S�quences ex-p�-ri-men-tales et mo-d�les struc-tu-raux 
  []
 
-./PDZ/chapter.tex:221: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.221       }
@@ -1817,7 +1816,7 @@ l.221       }
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./PDZ/chapter.tex:221: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.221       }
@@ -2265,7 +2264,7 @@ Overfull \hbox (40.45273pt too wide) in paragraph at lines 131--134
 \openout2 = `publications.aux'.
 
  (./publications.tex
-./publications.tex:4: Undefined control sequence.
+! Undefined control sequence.
 l.4 \newblock \enquote
                       {Computational protein design: the proteus software and
 The control sequence at the end of the top line
@@ -2274,7 +2273,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./publications.tex:9: Undefined control sequence.
+! Undefined control sequence.
 l.9 \newblock \enquote
                       {Proteus and the design of ligand binding sites}.
 The control sequence at the end of the top line
@@ -2283,7 +2282,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./publications.tex:13: Undefined control sequence.
+! Undefined control sequence.
 l.13 \newblock \enquote
                        {Comparing three stochastic search algorithms for
 The control sequence at the end of the top line
@@ -2292,7 +2291,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./publications.tex:18: Undefined control sequence.
+! Undefined control sequence.
 l.18 \newblock \enquote
                        {Computational design of the tiam1 pdz domain and its...
 The control sequence at the end of the top line
@@ -2301,7 +2300,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./publications.tex:22: Undefined control sequence.
+! Undefined control sequence.
 l.22 \newblock \enquote
                        {Comparing pairwise-additive and many-body generalize...
 The control sequence at the end of the top line
@@ -2348,7 +2347,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--25
 
 ] [136] [137]
 
-./these.bbl:213: Package inputenc Error: Unicode char ﬃ (U+FB03)
+! Package inputenc Error: Unicode char ﬃ (U+FB03)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -2362,7 +2361,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./these.bbl:234: Package inputenc Error: Unicode char ﬁ (U+FB01)
+! Package inputenc Error: Unicode char ﬁ (U+FB01)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -2376,7 +2375,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./these.bbl:257: Package inputenc Error: Unicode char ﬁ (U+FB01)
+! Package inputenc Error: Unicode char ﬁ (U+FB01)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -2391,7 +2390,7 @@ or  <return>  to continue without it.
 
 [138]
 
-./these.bbl:280: Package inputenc Error: Unicode char ﬂ (U+FB02)
+! Package inputenc Error: Unicode char ﬂ (U+FB02)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -2408,7 +2407,7 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
 
-./these.bbl:298: Package inputenc Error: Unicode char ﬁ (U+FB01)
+! Package inputenc Error: Unicode char ﬁ (U+FB01)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -2421,7 +2420,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./these.bbl:341: Misplaced alignment tab character &.
+! Misplaced alignment tab character &.
 <argument> Journal of Biomolecular Structure &
                                                Dynamics
 l.341 
@@ -2435,7 +2434,7 @@ might try typing `S' now just to see what is salvageable.
 
 [139] [140] [141] [142] [143]
 
-./these.bbl:643: Package inputenc Error: Unicode char ﬃ (U+FB03)
+! Package inputenc Error: Unicode char ﬃ (U+FB03)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -2450,7 +2449,7 @@ or  <return>  to continue without it.
 
 [144] [145]
 
-./these.bbl:801: Package inputenc Error: Unicode char ́ (U+301)
+! Package inputenc Error: Unicode char ́ (U+301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -2464,7 +2463,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./these.bbl:808: Package inputenc Error: Unicode char ﬁ (U+FB01)
+! Package inputenc Error: Unicode char ﬁ (U+FB01)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -2543,12 +2542,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 275.
  ) 
 Here is how much of TeX's memory you used:
  17015 strings out of 494875
- 260851 string characters out of 6178748
+ 260851 string characters out of 6178749
  466470 words of memory out of 5000000
  18923 multiletter control sequences out of 15000+600000
  110597 words of font info for 198 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 46i,18n,48p,2043b,1111s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,18n,48p,2055b,1111s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
