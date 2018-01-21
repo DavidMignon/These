@@ -229,7 +229,7 @@ Pour caractériser les homologies dans cet ensemble de huit domaines PDZ, une s�
 Pour définir les fréquences d'acides aminés cibles nécessaires pour maximiser nos vraisemblances, nous sélectionnons un ensemble de séquences homologues pour chacune des six premières protéines de notre sélection. En effet, nous excluons Cask et Tiam1 pour le calcul des énergies de références. Pour cela, nous effectuons des recherches BLAST avec comme requête la séquence extraite du fichier PDB sur la base de données \og Swiss-prot + trEmBL \fg d'Uniprot avec la matrice BLOSUM62, l'option \og Gapped\fg et sans l'option \og filtre\fg.
 
 Nous obtenons un premier ensemble pour chaque cas en nous limitant aux homologues de bonne qualité au regard de la E-value et du pourcentage d'identité, tout en conservant en même temps une certaine diversité. Cela oblige pour certaines protéines à accepter des E-values plus hautes que $10^{-40}$, notamment INAD et NHREF, respectivement $10^{-32}$ et $10^{-10}$, pour avoir un nombre d'homologues suffisant. Ensuite, les redondances les plus flagrantes sont enlevées manuellement. Finalement, les ensembles se composent de 42 à 126 homologues, avec des pourcentages d'identité supérieurs à 66\% excepté pour INAD où il a fallu descendre jusqu'à 38\%, voir le tableau \ref{tab:select_homo}. Les alignements des séquences homologues retenues pour un groupe constitué des six premières protéines sont représentés aux figures \ref{align_homo:NHREF}, \ref{align_homo:INAD}, \ref{align_homo:Syntenin}, \ref{align_homo:GRIP}, \ref{align_homo:DLG2} et \ref{align_homo:PSD95}.
-
+ 
 
     \begin{table}[!htbp]
       \centering
